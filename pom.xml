@@ -5,16 +5,35 @@
 
   <groupId>org.rulez.demokracia</groupId>
   <artifactId>TaskMarket</artifactId>
-  <version>0.0.1-master.a2490eb</version>
+  <version>0.0.1-feature_analysis.8ac2318</version>
   <packaging>war</packaging>
-
   <name>TaskMarket</name>
-  <url>http://maven.apache.org</url>
+  <description>process support for the Kode Konveyor process</description>
+  <url>http://github.com/kode-konveyor/TaskMarket</url>
 
+  <licenses>
+          <license>
+                  <name>Proprietary</name>
+                  <url>All right reserved</url>
+          </license>
+  </licenses>
+  <developers>
+          <developer>
+                  <name>Kode Konveyor OU</name>
+                  <email>info@kodekonveyor.com</email>
+                  <organization>Kode Konveyor OU</organization>
+                  <organizationUrl>https://kodekonveyor.com</organizationUrl>
+          </developer>
+  </developers>
+  <scm>
+          <connection>scm:git:git://github.com/kode-konveyor/TaskMarket.git</connection>
+          <developerConnection>scm:git:ssh://github.com:kode-konveyor/TaskMarket.git</developerConnection>
+          <url>http://github.com/kode-konveyor/TaskMarket/tree/master</url>
+  </scm>
   <properties>
     <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-    <maven.compiler.source>1.8</maven.compiler.source>
-    <maven.compiler.target>1.8</maven.compiler.target>
+    <maven.compiler.source>11</maven.compiler.source>
+    <maven.compiler.target>11</maven.compiler.target>
     <sonar.github.repository>kode-konveyor/TaskMarket</sonar.github.repository>
   </properties>
 
@@ -120,7 +139,7 @@
 	          <docletArtifact>
 	            <groupId>com.github.markusbernhardt</groupId>
 	            <artifactId>xml-doclet</artifactId>
-	            <version>1.0.5</version>
+	            <version>1.0.6-SNAPSHOT</version>
 	          </docletArtifact>
 	        </configuration>
 	        <reports>
@@ -139,7 +158,7 @@
 	          <docletArtifact>
 	            <groupId>com.github.markusbernhardt</groupId>
 	            <artifactId>xml-doclet</artifactId>
-	            <version>1.0.5</version>
+	            <version>1.0.6-SNAPSHOT</version>
 	          </docletArtifact>
 	        </configuration>
 	        <reports>
@@ -169,7 +188,7 @@
     <dependency>
       <groupId>com.github.markusbernhardt</groupId>
       <artifactId>xml-doclet</artifactId>
-      <version>1.0.5</version>
+      <version>1.0.6-SNAPSHOT</version>
     </dependency>
     <dependency>
       <groupId>org.apache.commons</groupId>

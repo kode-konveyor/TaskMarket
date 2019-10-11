@@ -22,3 +22,6 @@ issuesReport.json
 zentaworkaround
 /build/
 /inputs
+javabuild
+shippable/
+
