@@ -14,7 +14,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import com.kodekonveyor.market.http.HttpErrorService;
 import com.kodekonveyor.market.http.HttpPostService;
 
-public class LoginCallbackService {
+public class LoginCallbackService implements ContextParameters {
 	
 	public static final String REQUESTPARAM_NEXT = "next";
 
@@ -23,10 +23,6 @@ public class LoginCallbackService {
 	@Autowired
 	HttpErrorService httpErrorService;
 	
-	public static final String NO_CODE_PARAM_NAME = "noCode";
-	public static final String TOKEN_URL_PARAM_NAME = "tokenUrl";
-	public static final String CODE_REQ_PARAM_NAME = "code";
-
 
 	public void call(HttpServletRequest req, HttpServletResponse resp) {
 		ServletContext context = req.getServletContext();

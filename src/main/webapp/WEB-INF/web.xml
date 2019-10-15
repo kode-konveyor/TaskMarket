@@ -4,17 +4,32 @@
          xsi:schemaLocation="http://java.sun.com/xml/ns/javaee
     http://java.sun.com/xml/ns/javaee/web-app_3_1.xsd"
          version="3.1">
-	<listener>
-	    <listener-class>
-	        org.springframework.web.context.ContextLoaderListener
-	    </listener-class>
-	</listener>
-    <context-param>
-        <param-name>province</param-name>
-        <param-value>Mendoza</param-value>
-    </context-param>
-    <context-param>
-        <param-name>country</param-name>
-        <param-value>Argentina</param-value>
-    </context-param>
+	<context-param>
+		<param-name>clientId</param-name>
+		<param-value>theClientId</param-value>
+	</context-param>
+	<context-param>
+		<param-name>githubAuthUrl</param-name>
+		<param-value>https://github.com/login/oauth/authorize</param-value>
+	</context-param>
+	<context-param>
+		<param-name>callbackUri</param-name>
+		<param-value>https://market.kodekonveyor.com/market/callback</param-value>
+	</context-param>
+	<context-param>
+		<param-name>noNextUrl</param-name>
+		<param-value>/?error=No next parameter given to login</param-value>
+	</context-param>
+	<context-param>
+		<param-name>noCode</param-name>
+		<param-value>/?error=No code parameter</param-value>
+	</context-param>
+	<context-param>
+		<param-name>tokenUrl</param-name>
+		<param-value>https://github.com/login/oauth/access_token</param-value>
+	</context-param>
+	<context-param>
+		<param-name>code</param-name>
+		<param-value>code</param-value>
+	</context-param>
 </web-app>

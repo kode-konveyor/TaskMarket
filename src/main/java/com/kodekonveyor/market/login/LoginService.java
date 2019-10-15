@@ -10,13 +10,8 @@ import javax.servlet.http.HttpServletResponse;
 import org.springframework.stereotype.Service;
 
 @Service
-public class LoginService {
+public class LoginService implements ContextParameters {
 
-	public static final String CLIENT_ID_PARAM_NAME = "clientId";
-	public static final String GITHUB_AUTH_URL_PARAM_NAME = "githubAuthUrl";
-	public static final String CALLBACK_URI_PARAM_NAME = "callbackUri";
-	public static final String NO_NEXT_URL_PARAM_NAME = "noNextUrl";
-	
 	public void call(HttpServletRequest req, HttpServletResponse resp) throws IOException {
 		ServletContext context = req.getServletContext();
 		String next = req.getParameter("next");
