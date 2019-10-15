@@ -7,19 +7,24 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-import org.springframework.beans.factory.annotation.Autowired;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
+import com.kodekonveyor.market.WebAppInitializer;
 import com.kodekonveyor.market.login.LoginCallbackService;
 
 @WebServlet("/callback")
 public class LoginCallbackServlet extends HttpServlet {
 	private static final long serialVersionUID = -661561285565686194L;
 
-	@Autowired
-	LoginCallbackService loginCallbackService;
+	private final Logger logger = LoggerFactory.getLogger(LoginServlet.class);
 
 	@Override
 	protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws IOException {
-			loginCallbackService.call(req,resp);
+		LoginCallbackService loginCallbackService = WebAppInitializer.context.getBean(LoginCallbackService.class);
+
+		logger.info("service:"+loginCallbackService);
+
+		loginCallbackService.call(req,resp);
 	}
 }

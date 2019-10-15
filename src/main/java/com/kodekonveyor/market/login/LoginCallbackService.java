@@ -10,13 +10,15 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
 
 import com.kodekonveyor.market.http.HttpErrorService;
 import com.kodekonveyor.market.http.HttpPostService;
 
+@Service
 public class LoginCallbackService implements ContextParameters {
 	
-	public static final String REQUESTPARAM_NEXT = "next";
+	public static final String REQUESTPARAM_CODE = "code";
 
 	@Autowired
 	HttpPostService httpPostService;
@@ -26,7 +28,7 @@ public class LoginCallbackService implements ContextParameters {
 
 	public void call(HttpServletRequest req, HttpServletResponse resp) {
 		ServletContext context = req.getServletContext();
-		String next = req.getParameter(REQUESTPARAM_NEXT);
+		String next = req.getParameter(REQUESTPARAM_CODE);
 		if (null == next) {
 			String noCodeUrl = context.getInitParameter(NO_CODE_PARAM_NAME);
 			try {

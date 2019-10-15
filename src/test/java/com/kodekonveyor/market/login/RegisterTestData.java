@@ -55,7 +55,7 @@ public class RegisterTestData {
 	}
 	private static HttpServletRequest callbackRequestContainsCodeParam() {
 		HttpServletRequest req = getReq();
-		Mockito.doReturn(CODE_TOKEN_VALUE).when(req).getParameter(LoginCallbackService.REQUESTPARAM_NEXT);
+		Mockito.doReturn(CODE_TOKEN_VALUE).when(req).getParameter(LoginCallbackService.REQUESTPARAM_CODE);
 		return req;
 	}
 
