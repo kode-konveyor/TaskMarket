@@ -1,107 +1,83 @@
 package com.kodekonveyor.market.login;
 
-import java.io.UnsupportedEncodingException;
-import java.net.URI;
-import java.net.URISyntaxException;
-import java.net.URLEncoder;
+import static org.mockito.Mockito.doReturn;
+import static org.mockito.Mockito.mock;
+
+import java.io.IOException;
+import java.io.PrintWriter;
+import java.io.StringWriter;
 
 import javax.servlet.ServletContext;
 import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
 
 import org.mockito.Mockito;
+import org.modelmapper.ModelMapper;
 
 public class RegisterTestData {
 
-	public static final String CLIENT_ID_VALUE = "clientIdValue";
-	public static final String NO_NEXT_URL = "/?error=No next parameter given";
-	public static final String GITHUB_AUTH_URL = "https://github.com/login/oauth/authorize";
-	public static final String CALLBACK_URI_STRING = "https://market.kodekonveyor.com/dynamic/auth";
-	public static final URI CALLBACK_URI = get_CALBACK_URI();
-	public static final String NEXT_VALUE = "/hello";
-	public static final String USER_NAME = "magwas";
-	public static final String CODE_TOKEN_VALUE = "the_code_token";
-	public static final String TOKEN_RETURN = "access_token=e72e16c7e42f292c6912e7710c838347ae178b4a&token_type=bearer";
-	public static final String NO_CODE_VALUE = "/?error=Got back no code from github";
-	public static final String TOKEN_URL_STRING = "https://github.com/login/oauth/access_token";
-	public static final URI TOKEN_URI = get_TOKEN_URI();
+  public final User USER_ENTITY = getUSER_ENTITY();
+  public final String REGISTER_LOG =
+      "register:UserDTO(login=userke, id=111, email=user@example.com, auth0id=null";
+  public final String GITHUB_USERID = "111";
+  public final String GITHUB_EMAIL = "user@example.com";
+  public final String GITHUB_USER = "userke";
+  public final String AUTH0_USER =
+      "github|" + GITHUB_USERID + "@eu.example.com";
+  public final String GITHUB_SECRET = "s3cr3t";
+  public StringWriter RESPONSE_WRITER;
+  public UserDTO USER_DTO = getUSER_DTO();
+  public HttpServletRequest AUTHENTICATED_REQUEST = get_AUTHENTICATED_REQUEST();
+  public HttpServletRequest UNAUTHENTICATED_REQUEST =
+      get_UNAUTHENTICATED_REQUEST();
 
-	public static final String RIGHT_REDIRECT_URI = right_redirect_uri();
+  private HttpServletRequest
+      get_AUTHENTICATED_REQUEST() {
+    final HttpServletRequest request = get_UNAUTHENTICATED_REQUEST();
+    doReturn(AUTH0_USER).when(request).getRemoteUser();
+    return request;
+  }
 
-	public static final HttpServletRequest CALLBACK_REQUEST = 
-			getReq();
-	public static final HttpServletRequest CALLBACK_REQUEST_WITH_CODE = 
-			callbackRequestContainsCodeParam();
-	public static final HttpServletRequest LOGIN_SERVLET_REQUEST_WITH_USER_AND_NEXT = 
-			getLoginServletRequestWitUserWithNext();
-	public static final HttpServletRequest LOGIN_SERVLET_REQUEST_WITHOUT_USER_WITHOUT_NEXT = 
-			getLoginServletRequest();
-	public static final HttpServletRequest LOGIN_SERVLET_REQUEST_WITHOUT_USER_WITH_NEXT = 
-			getLoginServletRequestWithoutUserWithNext();
+  private User getUSER_ENTITY() {
+    final ModelMapper mapper = new ModelMapper();
+    return mapper.map(getUSER_DTO(), User.class);
 
-	private static URI get_TOKEN_URI() {
-		try {
-			return new URI(TOKEN_URL_STRING);
-		} catch (URISyntaxException e) {
-			throw new RuntimeException(e);
-		}
-	}
+  }
 
-	private static URI get_CALBACK_URI() {
-		try {
-			return new URI(CALLBACK_URI_STRING);
-		} catch (URISyntaxException e) {
-			throw new RuntimeException(e);
-		}
-	}
-	private static HttpServletRequest callbackRequestContainsCodeParam() {
-		HttpServletRequest req = getReq();
-		Mockito.doReturn(CODE_TOKEN_VALUE).when(req).getParameter(LoginCallbackService.REQUESTPARAM_CODE);
-		return req;
-	}
+  private HttpServletRequest get_UNAUTHENTICATED_REQUEST() {
+    final HttpServletRequest request = mock(HttpServletRequest.class);
+    return request;
+  }
 
-	private static String right_redirect_uri() {
-		try {
-			return GITHUB_AUTH_URL +
-					 "?client_id="+
-					 CLIENT_ID_VALUE
-					+ "&redirect_uri="
-					+ URLEncoder.encode(CALLBACK_URI_STRING,"UTF-8");
-		} catch (UnsupportedEncodingException e) {
-			throw new RuntimeException(e);
-		}
-	}
-	
-	private static HttpServletRequest getLoginServletRequestWithoutUserWithNext() {
-		HttpServletRequest req = getLoginServletRequest();
-		Mockito.doReturn(NEXT_VALUE).when(req).getParameter("next");
-		return req;		
-	}
+  public HttpServletResponse getRESPONSE() throws IOException {
+    final HttpServletResponse resp = Mockito.mock(HttpServletResponse.class);
+    RESPONSE_WRITER = getRESPONSE_WRITER();
+    final PrintWriter writer = new PrintWriter(RESPONSE_WRITER);
+    Mockito.doReturn(writer).when(resp).getWriter();
+    return resp;
+  }
 
-	private static HttpServletRequest getLoginServletRequestWitUserWithNext() {
-		HttpServletRequest req = getLoginServletRequestWithoutUserWithNext();
-		Mockito.doReturn(USER_NAME).when(req).getRemoteUser();
-		return req;		
-	}
+  private UserDTO getUSER_DTO() {
+    final UserDTO userDTO = new UserDTO();
+    userDTO.setLogin(GITHUB_USER);
+    userDTO.setEmail(GITHUB_EMAIL);
+    userDTO.setId(Long.parseLong(GITHUB_USERID));
+    return userDTO;
+  }
 
-	private static HttpServletRequest getLoginServletRequest() {
-		HttpServletRequest req = Mockito.mock(HttpServletRequest.class);
-		ServletContext context = Mockito.mock(ServletContext.class);
-		Mockito.doReturn(context).when(req).getServletContext();
-		Mockito.doReturn(CLIENT_ID_VALUE).when(context).getInitParameter(LoginService.CLIENT_ID_PARAM_NAME);
-		Mockito.doReturn(GITHUB_AUTH_URL).when(context).getInitParameter(LoginService.GITHUB_AUTH_URL_PARAM_NAME);
-		Mockito.doReturn(CALLBACK_URI_STRING).when(context).getInitParameter(LoginService.CALLBACK_URI_PARAM_NAME);
-		Mockito.doReturn(NO_NEXT_URL).when(context).getInitParameter(LoginService.NO_NEXT_URL_PARAM_NAME);
+  public StringWriter getRESPONSE_WRITER() {
+    return new StringWriter();
+  }
 
-		return req;
-	}
+  public HttpServletRequest getREQUEST_AUTHENTICATED() {
+    final HttpServletRequest req = Mockito.mock(HttpServletRequest.class);
+    final ServletContext context = Mockito.mock(ServletContext.class);
+    Mockito.doReturn(context).when(req).getServletContext();
+    Mockito.doReturn(GITHUB_SECRET).when(context)
+        .getInitParameter(ContextParameters.GITHUB_SECRET);
 
-	private static HttpServletRequest getReq() {
-		HttpServletRequest req = Mockito.mock(HttpServletRequest.class);
-		ServletContext context = Mockito.mock(ServletContext.class);
-		Mockito.doReturn(context).when(req).getServletContext();
-		Mockito.doReturn(NO_CODE_VALUE).when(context).getInitParameter(LoginCallbackService.NO_CODE_PARAM_NAME);
-		Mockito.doReturn(TOKEN_URL_STRING).when(context).getInitParameter(LoginCallbackService.TOKEN_URL_PARAM_NAME);
-		return req;
-	}
-	
+    Mockito.doReturn(AUTH0_USER).when(req).getRemoteUser();
+    return req;
+  }
+
 }

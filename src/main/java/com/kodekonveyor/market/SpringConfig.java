@@ -1,38 +1,53 @@
 package com.kodekonveyor.market;
 
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
+import javax.sql.DataSource;
+
+import org.modelmapper.ModelMapper;
+import org.springframework.beans.factory.annotation.Value;
+import org.springframework.boot.SpringBootConfiguration;
+import org.springframework.boot.autoconfigure.EnableAutoConfiguration;
+import org.springframework.boot.autoconfigure.domain.EntityScan;
+import org.springframework.boot.jdbc.DataSourceBuilder;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.ComponentScan;
 import org.springframework.context.annotation.Configuration;
+import org.springframework.data.jpa.repository.config.EnableJpaRepositories;
+import org.springframework.transaction.annotation.EnableTransactionManagement;
 import org.springframework.web.servlet.config.annotation.EnableWebMvc;
-import org.springframework.web.servlet.config.annotation.ResourceHandlerRegistry;
 import org.springframework.web.servlet.config.annotation.WebMvcConfigurer;
-import org.springframework.web.servlet.view.InternalResourceViewResolver;
-import org.springframework.web.servlet.view.JstlView;
 
-@EnableWebMvc
 @Configuration
-@ComponentScan({"com.kodekonveyor.market"})
+@SpringBootConfiguration
+@ComponentScan({
+    "com.kodekonveyor.market"
+})
+@EnableAutoConfiguration
+@EntityScan("com.kodekonveyor.market")
+@EnableJpaRepositories("com.kodekonveyor.market")
+@EnableWebMvc
+@EnableTransactionManagement
 public class SpringConfig implements WebMvcConfigurer {
 
-	private final Logger logger = LoggerFactory.getLogger(SpringConfig.class);
+  @Value("${com.kodekonveyor.market.jdbcUri}")
+  private String jdbcUri;
+  //"org.postgresql.Driver");
 
-    @Override
-    public void addResourceHandlers(ResourceHandlerRegistry registry) {
-    	logger.info("addResourceHandlers");
-        registry.addResourceHandler("/resources/**")
-                .addResourceLocations("/resources/");
-    }
+  @Value("${com.kodekonveyor.market.jdbcDriver}")
+  private String jdbcDriver;
+  //"jdbc:postgresql://infra.kodekonveyor.com:5432/users?user=market&ssl=true&sslmode=verify-ca&sslpassword="
 
-    @Bean
-    public InternalResourceViewResolver viewResolver() {
-    	logger.info("viewResolver");
-        InternalResourceViewResolver viewResolver
-                = new InternalResourceViewResolver();
-        viewResolver.setViewClass(JstlView.class);
-        viewResolver.setPrefix("/WEB-INF/views/");
-        viewResolver.setSuffix(".jsp");
-        return viewResolver;
-    }
+  @Bean
+  public ModelMapper modelMapper() {
+    return new ModelMapper();
+  }
+
+  @Bean
+  public DataSource dataSource() {
+    final DataSourceBuilder<?> dataSourceBuilder = DataSourceBuilder.create();
+    dataSourceBuilder.driverClassName(jdbcDriver);
+    dataSourceBuilder.url(jdbcUri);
+    final DataSource build = dataSourceBuilder.build();
+    return build;
+  }
+
 }
