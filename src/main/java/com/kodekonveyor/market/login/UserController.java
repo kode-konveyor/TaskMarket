@@ -35,8 +35,12 @@ public class UserController implements UserMessages {
         SecurityContextHolder
             .getContext().getAuthentication();
     if (!(authentication instanceof AnonymousAuthenticationToken)) {
-      final String currentUserName = authentication.getName();
-      loggerService.call("current username from spring:" + currentUserName);
+      if (null == authentication)
+        loggerService.call("authentication is null");
+      else {
+        final String currentUserName = authentication.getName();
+        loggerService.call("current username from spring:" + currentUserName);
+      }
     } else
       loggerService.call("spring sees anon user");
     final String remoteUser = request.getRemoteUser();

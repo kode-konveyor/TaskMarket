@@ -16,7 +16,7 @@
 	<context:annotation-config/>
 	<context:component-scan base-package="com.kodekonveyor.market"></context:component-scan>
 	<jpa:repositories base-package="com.kodekonveyor.market" />
-
+	<bean id="authTokenFilter" class="com.kodekonveyor.market.authentication.RemoteAuthenticationFilter" scope="singleton" />
 	<bean id="entityManagerFactory"
 	    class="org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean">
 	    <property name="packagesToScan" value="com.kodekonveyor.market" />
