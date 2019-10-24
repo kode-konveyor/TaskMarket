@@ -5,7 +5,7 @@
 
   <groupId>org.rulez.demokracia</groupId>
   <artifactId>TaskMarket</artifactId>
-  <version>0.0.1-feature_analysis.3d22929</version>
+  <version>0.0.1-feature_analysis.76b3aee</version>
   <packaging>war</packaging>
   <name>TaskMarket</name>
   <description>process support for the Kode Konveyor process</description>
@@ -34,6 +34,7 @@
     <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
     <maven.compiler.source>11</maven.compiler.source>
     <maven.compiler.target>11</maven.compiler.target>
+    <sonar.github.repository>kode-konveyor/TaskMarket</sonar.github.repository>
   </properties>
   <build>
     <plugins>
@@ -184,6 +185,11 @@
         <artifactId>spring-webmvc</artifactId>
 	    <version>5.2.0.RELEASE</version>
     </dependency>
+	<dependency>
+	    <groupId>org.springframework.security</groupId>
+	    <artifactId>spring-security-core</artifactId>
+	    <version>5.2.0.RELEASE</version>
+	</dependency>
 	<dependency>
 	   <groupId>org.springframework.boot</groupId>
 	   <artifactId>spring-boot-starter-data-jpa</artifactId>

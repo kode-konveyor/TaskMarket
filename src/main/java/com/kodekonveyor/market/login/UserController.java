@@ -7,6 +7,9 @@ import javax.transaction.Transactional;
 
 import org.modelmapper.ModelMapper;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.security.authentication.AnonymousAuthenticationToken;
+import org.springframework.security.core.Authentication;
+import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RestController;
 
@@ -28,6 +31,14 @@ public class UserController implements UserMessages {
   @GetMapping("/member/user")
   @Transactional
   public UserDTO call(final HttpServletRequest request) {
+    final Authentication authentication =
+        SecurityContextHolder
+            .getContext().getAuthentication();
+    if (!(authentication instanceof AnonymousAuthenticationToken)) {
+      final String currentUserName = authentication.getName();
+      loggerService.call("current username from spring:" + currentUserName);
+    } else
+      loggerService.call("spring sees anon user");
     final String remoteUser = request.getRemoteUser();
     if (null == remoteUser)
       throw new NotLoggedInException(PLEASE_LOG_IN, LOGIN_URL);
