@@ -16,6 +16,9 @@ import org.springframework.transaction.annotation.EnableTransactionManagement;
 import org.springframework.web.servlet.config.annotation.EnableWebMvc;
 import org.springframework.web.servlet.config.annotation.WebMvcConfigurer;
 
+import com.kodekonveyor.annotations.ExcludeFromCodeCoverage;
+import com.kodekonveyor.annotations.InterfaceClass;
+
 @Configuration
 @SpringBootConfiguration
 @ComponentScan({
@@ -26,6 +29,8 @@ import org.springframework.web.servlet.config.annotation.WebMvcConfigurer;
 @EnableJpaRepositories("com.kodekonveyor.market")
 @EnableWebMvc
 @EnableTransactionManagement
+@InterfaceClass
+@ExcludeFromCodeCoverage("interface to underlaying framework")
 public class SpringConfig implements WebMvcConfigurer {
 
   @Value("${com.kodekonveyor.market.jdbcUri}")
@@ -46,8 +51,7 @@ public class SpringConfig implements WebMvcConfigurer {
     final DataSourceBuilder<?> dataSourceBuilder = DataSourceBuilder.create();
     dataSourceBuilder.driverClassName(jdbcDriver);
     dataSourceBuilder.url(jdbcUri);
-    final DataSource build = dataSourceBuilder.build();
-    return build;
+    return dataSourceBuilder.build();
   }
 
 }

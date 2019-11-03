@@ -9,11 +9,13 @@ import com.fasterxml.jackson.core.JsonParseException;
 import com.fasterxml.jackson.databind.DeserializationFeature;
 import com.fasterxml.jackson.databind.JsonMappingException;
 import com.fasterxml.jackson.databind.ObjectMapper;
+import com.kodekonveyor.annotations.ExcludeFromCodeCoverage;
 
 @Service
-public class ObjectMapperProxy {
+@ExcludeFromCodeCoverage("interface to underlying library")
+public class ObjectMapperService {
 
-  static final ObjectMapper mapper = new ObjectMapper();
+  private static final ObjectMapper mapper = new ObjectMapper();
 
   public <ValueType> ValueType
       readValue(final URL url, final Class<ValueType> cls)

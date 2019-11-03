@@ -2,11 +2,17 @@ package com.kodekonveyor.market;
 
 import org.springframework.web.servlet.support.AbstractAnnotationConfigDispatcherServletInitializer;
 
+import com.kodekonveyor.annotations.ExcludeFromCodeCoverage;
+import com.kodekonveyor.annotations.InterfaceClass;
+
+@InterfaceClass
+@ExcludeFromCodeCoverage("interface to underlaying framework")
+
 public class WebInitializer
     extends AbstractAnnotationConfigDispatcherServletInitializer {
 
   @Override
-  protected Class<?>[] getRootConfigClasses() {
+  protected Class<?>[] getRootConfigClasses() { //NOPMD
     return null;
   }
 

@@ -1,4 +1,4 @@
-package com.kodekonveyor.market.authentication;
+package com.kodekonveyor.authentication;
 
 import java.util.ArrayList;
 import java.util.Collection;
@@ -6,14 +6,12 @@ import java.util.Collection;
 import org.springframework.security.core.Authentication;
 import org.springframework.security.core.GrantedAuthority;
 
-import com.kodekonveyor.market.login.User;
-
-public class RemoteAuthentication implements Authentication {
+public class RemoteAuthenticationDTO implements Authentication {
 
   private static final long serialVersionUID = 1L;
-  private final User user;
+  private final UserEntity user;
 
-  public RemoteAuthentication(final User user) {
+  public RemoteAuthenticationDTO(final UserEntity user) {
     this.user = user;
   }
 
@@ -43,8 +41,8 @@ public class RemoteAuthentication implements Authentication {
   }
 
   @Override
-  public void setAuthenticated(final boolean isAuthenticated)
-      throws IllegalArgumentException {
+  public void setAuthenticated(final boolean isAuthenticated) {
+    throw new IllegalArgumentException();
   }
 
   @Override

@@ -8,13 +8,17 @@ import org.springframework.web.context.WebApplicationContext;
 import org.springframework.web.context.support.XmlWebApplicationContext;
 import org.springframework.web.filter.CharacterEncodingFilter;
 
+import com.kodekonveyor.annotations.ExcludeFromCodeCoverage;
+import com.kodekonveyor.annotations.InterfaceClass;
+
+@InterfaceClass
+@ExcludeFromCodeCoverage("interface to underlaying framework")
 public class WebAppInitializer implements WebApplicationInitializer {
 
   public static XmlWebApplicationContext context;
 
   @Override
   public void onStartup(final ServletContext servletContext) {
-    System.out.println("onStartup");
 
     final WebApplicationContext context = getContext();
     servletContext.addListener(new ContextLoaderListener(context));

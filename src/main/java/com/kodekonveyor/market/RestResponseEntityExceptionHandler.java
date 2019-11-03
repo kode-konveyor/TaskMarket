@@ -9,26 +9,28 @@ import org.springframework.web.bind.annotation.ExceptionHandler;
 import org.springframework.web.context.request.WebRequest;
 import org.springframework.web.servlet.mvc.method.annotation.ResponseEntityExceptionHandler;
 
+import com.kodekonveyor.annotations.ExcludeFromCodeCoverage;
+import com.kodekonveyor.annotations.InterfaceClass;
+
 @ControllerAdvice
+@InterfaceClass
+@ExcludeFromCodeCoverage("interface to underlaying framework")
 public class RestResponseEntityExceptionHandler
     extends ResponseEntityExceptionHandler {
 
   @Autowired
-  LoggerService loggerService;
+  private LoggerService loggerService;
 
-  @ExceptionHandler(value = {
-      NotLoggedInException.class
-  })
-  protected ResponseEntity<Object> handleNotLoggedInException(
-      final NotLoggedInException ex, final WebRequest request
+  @ExceptionHandler(NotLoggedInException.class)
+  public ResponseEntity<Object> handleNotLoggedInException(
+      final NotLoggedInException exception, final WebRequest request
   ) {
-    final String bodyOfResponse = ex.getMessage();
+    final String bodyOfResponse = exception.getMessage();
 
     loggerService.call("not logged in");
     final HttpHeaders headers = new HttpHeaders();
-    headers.add("Location", ex.getRedirectUri());
     return handleExceptionInternal(
-        ex, bodyOfResponse,
+        exception, bodyOfResponse,
         headers, HttpStatus.FOUND, request
     );
   }

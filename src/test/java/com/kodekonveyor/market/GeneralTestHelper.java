@@ -1,11 +1,11 @@
 package com.kodekonveyor.market;
 
-import static org.junit.Assert.fail;
+import static org.assertj.core.api.Assertions.fail;
 
 import java.util.List;
 import java.util.Map;
 
-public class TestHelper {
+public class GeneralTestHelper {
 
   public static void
       assertContains(final String contained, final String container) {

@@ -10,17 +10,19 @@ import org.springframework.stereotype.Service;
 import org.springframework.web.server.ResponseStatusException;
 
 import com.fasterxml.jackson.databind.DeserializationFeature;
+import com.kodekonveyor.annotations.ExcludeFromCodeCoverage;
 import com.kodekonveyor.market.LoggerService;
-import com.kodekonveyor.market.proxies.ObjectMapperProxy;
+import com.kodekonveyor.market.proxies.ObjectMapperService;
 
 @Service
+@ExcludeFromCodeCoverage("interface to underlying framework")
 public class GithubGetService {
 
   @Autowired
-  LoggerService loggerService;
+  private LoggerService loggerService;
 
   @Autowired
-  ObjectMapperProxy objectMapperProxy;
+  private ObjectMapperService objectMapperProxy;
 
   public <ValueType> ValueType
       call(final String command, final Class<ValueType> cls) {

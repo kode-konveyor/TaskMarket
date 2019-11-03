@@ -8,6 +8,4 @@
 			xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
 			xmlns:zenta="http://magwas.rulez.org/zenta">
 
-
 </xsl:stylesheet>
-

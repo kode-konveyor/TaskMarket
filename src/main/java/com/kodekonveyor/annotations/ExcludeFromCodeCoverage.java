@@ -1,6 +1,6 @@
 package com.kodekonveyor.annotations;
 
-public @interface TestedBehaviour {
+public @interface ExcludeFromCodeCoverage {
 
 	String value();
 

@@ -1,38 +1,32 @@
-package com.kodekonveyor.market.login;
+package com.kodekonveyor.authentication;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
-import javax.persistence.Table;
 
+import com.kodekonveyor.annotations.ExcludeFromCodeCoverage;
+
+import lombok.EqualsAndHashCode;
 import lombok.Getter;
 import lombok.Setter;
 import lombok.ToString;
 
+@Entity
 @Getter
 @Setter
-@Entity
+@EqualsAndHashCode
 @ToString
-@Table(name = "market_users")
-public class User {
+@ExcludeFromCodeCoverage("no code")
+public class UserEntity {
 
   @Id
   @GeneratedValue(strategy = GenerationType.IDENTITY)
-  private long id;
+  private long id;// NOPMD
   @Column(name = "username")
   private String login;
   @Column(name = "auth0id")
   private String auth0id;
-  @Column(name = "email")
-  private String email;
-  private String name;
-  private String country;
-  private String company;
-  private String address;
-  private String registrationNumber;
-  private String representedBy;
-  private String skypeName;
-  private String paymentChannel;
+
 }
