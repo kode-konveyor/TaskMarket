@@ -17,6 +17,7 @@ import org.mockito.quality.Strictness;
 import com.kodekonveyor.annotations.TestedBehaviour;
 import com.kodekonveyor.annotations.TestedService;
 import com.kodekonveyor.exception.ThrowableTester;
+import com.kodekonveyor.market.LoggerService;
 import com.kodekonveyor.market.NotLoggedInException;
 
 @ExtendWith(MockitoExtension.class)
@@ -30,6 +31,9 @@ public class AuthenticatedUserServiceDataAccessTest {
   private AuthenticatedUserService authenticatedUserService;
   @Mock
   private UserEntityRepository userEntityRepository;
+  @Mock
+  private LoggerService loggerService;
+
   private UserTestData userTestData;
   private ThrowableTester tester;
 

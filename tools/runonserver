@@ -1,2 +1,2 @@
 #!/bin/bash
-git add --all ;git commit -am "testing"; git push market ; ssh root@market  'cd market.build;git pull;mvn clean package;cp target/*.war /var/lib/tomcat9/webapps/market.war'
+git add --all ;git commit -am "testing"; git push market ; ssh root@market  'cd market.build;git pull;mvn clean package;cp target/*.war /var/lib/tomcat9/webapps/market.war;cat /dev/xconsole'

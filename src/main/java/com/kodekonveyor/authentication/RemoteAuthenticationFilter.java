@@ -5,7 +5,7 @@ import java.util.List;
 
 import javax.servlet.Filter;
 import javax.servlet.FilterChain;
-import javax.servlet.FilterConfig;
+import javax.servlet.ServletContext;
 import javax.servlet.ServletException;
 import javax.servlet.ServletRequest;
 import javax.servlet.ServletResponse;
@@ -15,6 +15,10 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.core.Authentication;
 import org.springframework.security.core.context.SecurityContext;
 import org.springframework.security.core.context.SecurityContextHolder;
+import org.springframework.stereotype.Service;
+import org.springframework.web.context.WebApplicationContext;
+import org.springframework.web.context.support.WebApplicationContextUtils;
+import org.springframework.web.filter.GenericFilterBean;
 
 import com.kodekonveyor.annotations.ExcludeFromCodeCoverage;
 import com.kodekonveyor.annotations.InterfaceClass;
@@ -22,7 +26,9 @@ import com.kodekonveyor.market.LoggerService;
 
 @InterfaceClass
 @ExcludeFromCodeCoverage("interface to underlying framework")
-public class RemoteAuthenticationFilter implements Filter {
+@Service
+public class RemoteAuthenticationFilter extends GenericFilterBean
+    implements Filter {
 
   @Autowired
   private UserEntityRepository userEntityRepository;
@@ -35,6 +41,15 @@ public class RemoteAuthenticationFilter implements Filter {
       final ServletRequest req, final ServletResponse res,
       final FilterChain filterChain
   ) throws IOException, ServletException {
+    if (loggerService == null) {
+      final ServletContext servletContext = req.getServletContext();
+      final WebApplicationContext webApplicationContext =
+          WebApplicationContextUtils.getWebApplicationContext(servletContext);
+      loggerService = webApplicationContext.getBean(LoggerService.class);
+      userEntityRepository =
+          webApplicationContext.getBean(UserEntityRepository.class);
+    }
+    loggerService.call("authenticating ");
     final SecurityContext context = SecurityContextHolder.getContext();
     if (
       context.getAuthentication() == null ||
@@ -42,6 +57,7 @@ public class RemoteAuthenticationFilter implements Filter {
     ) {
       final HttpServletRequest httpRequest = (HttpServletRequest) req;
       final String auth0id = httpRequest.getRemoteUser();
+      loggerService.call("auth0id:" + auth0id);
       final List<UserEntity> users =
           userEntityRepository.findByAuth0id(auth0id);
       if (!users.isEmpty()) {
@@ -52,14 +68,6 @@ public class RemoteAuthenticationFilter implements Filter {
     }
 
     filterChain.doFilter(req, res);
-  }
-
-  @Override
-  public void destroy() {
-  }
-
-  @Override
-  public void init(final FilterConfig filterConfig) throws ServletException {
   }
 
 }

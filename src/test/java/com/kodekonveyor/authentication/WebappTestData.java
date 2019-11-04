@@ -19,17 +19,17 @@ public class WebappTestData {
 
   public WebappTestData(final UserTestData userTestData) {
     this.userTestData = userTestData;
-    REQUEST = getREQUEST();
-    REQUEST_WITH_UNKNOWN_USER = getREQUEST_WITH_UNKNOWN_USER();
+    REQUEST = createREQUEST();
+    REQUEST_WITH_UNKNOWN_USER = createREQUEST_WITH_UNKNOWN_USER();
   }
 
-  public final HttpServletRequest getREQUEST() {
+  private HttpServletRequest createREQUEST() {
     final HttpServletRequest response = mock(HttpServletRequest.class);
     doReturn(userTestData.AUTH0ID).when(response).getRemoteUser();
     return response;
   }
 
-  public final ServletRequest getREQUEST_WITH_UNKNOWN_USER() {
+  private ServletRequest createREQUEST_WITH_UNKNOWN_USER() {
     final HttpServletRequest response = mock(HttpServletRequest.class);
     doReturn(userTestData.BAD_AUTH0ID).when(response).getRemoteUser();
     return response;

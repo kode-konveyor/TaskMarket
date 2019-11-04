@@ -7,9 +7,12 @@ import java.util.regex.Pattern;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.core.Authentication;
 import org.springframework.security.core.context.SecurityContextHolder;
+import org.springframework.stereotype.Service;
 
+import com.kodekonveyor.market.LoggerService;
 import com.kodekonveyor.market.NotLoggedInException;
 
+@Service
 public class AuthenticatedUserService {
 
   final static private Pattern pattern = Pattern.compile("github\\|(.*?)@.*");
@@ -19,8 +22,13 @@ public class AuthenticatedUserService {
   @Autowired
   private UserEntityRepository userEntityRepository;
 
+  @Autowired
+  private LoggerService loggerService;
+
   public UserEntity call() {
+    loggerService.call("AuthenticatedUserService");
     final String auth0id = getAuth0idForUser();
+    loggerService.call("auth0id:" + auth0id);
     checkCredential(auth0id);
     final List<UserEntity> userList =
         userEntityRepository.findByAuth0id(auth0id);

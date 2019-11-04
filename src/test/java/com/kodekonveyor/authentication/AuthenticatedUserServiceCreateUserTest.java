@@ -16,6 +16,7 @@ import org.mockito.quality.Strictness;
 
 import com.kodekonveyor.annotations.TestedBehaviour;
 import com.kodekonveyor.annotations.TestedService;
+import com.kodekonveyor.market.LoggerService;
 
 @ExtendWith(MockitoExtension.class)
 @MockitoSettings(strictness = Strictness.LENIENT)
@@ -28,6 +29,10 @@ public class AuthenticatedUserServiceCreateUserTest {
   private AuthenticatedUserService authenticatedUserService;
   @Mock
   private UserEntityRepository userEntityRepository;
+
+  @Mock
+  private LoggerService loggerService;
+
   private UserTestData userTestData;
 
   @BeforeEach

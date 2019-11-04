@@ -1,8 +1,7 @@
 package com.kodekonveyor.authentication;
 
 import static org.junit.Assert.assertEquals;
-import static org.mockito.Mockito.never;
-import static org.mockito.Mockito.verify;
+import static org.mockito.Mockito.*;
 
 import java.io.IOException;
 
@@ -94,7 +93,7 @@ public class RemoteAuthenticationFilterTest {
     AuthenticationStubs.nullAuthentication();
     remoteAuthenticationFilter
         .doFilter(testData.REQUEST, servletResponse, filterChain);
-    verify(loggerService).call(stringCaptor.capture());
+    verify(loggerService, times(3)).call(stringCaptor.capture());
     GeneralTestHelper.assertContains("authenticated", stringCaptor.getValue());
   }
 
