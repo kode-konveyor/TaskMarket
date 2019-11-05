@@ -79,6 +79,7 @@ and should be marked with @Delegate or @InterfaceClass"
    matches(@Image,'[A-Z][a-z0-9]*Service$') or
    matches(@Image,'[A-Z][a-z0-9]*Controller$') or
    matches(@Image,'[A-Z][a-z0-9]*Test$') or
+   matches(@Image,'[A-Z][a-z0-9]*TestBase$') or
    matches(@Image,'[A-Z][a-z0-9]*TestData$') or
    matches(@Image,'[A-Z][a-z0-9]*TestHelper$') or
    matches(@Image,'[A-Z][a-z0-9]*Entity$') or
@@ -131,19 +132,19 @@ see message
       <property name="xpath">
          <value>
 <![CDATA[
-//ClassOrInterfaceDeclaration[matches(@Image,&apos;TestData$&apos;)]/(
+//ClassOrInterfaceDeclaration[matches(@Image,'TestData$')]/(
 //FieldDeclaration[
     not(
-        matches(VariableDeclarator/VariableDeclaratorId/@Image,&apos;^[A-Z0-9_]*$&apos;) or
-        matches(VariableDeclarator/VariableDeclaratorId/@Image,&apos;^[a-z0-9_]*TestData$&apos;)
+        matches(VariableDeclarator/VariableDeclaratorId/@Image,'^[A-Z0-9_]*$') or
+        matches(VariableDeclarator/VariableDeclaratorId/@Image,'^[a-z0-9_]*TestData$')
     ) or
     @Static = true()
 ]|
 //MethodDeclaration[
-    not(matches(MethodDeclarator/@Image,&apos;^create[A-Z0-9_]*$&apos;)) or
+    not(matches(MethodDeclarator/@Image,'^create[A-Z0-9_]*$')) or
     @Private = false()
 ]|
-.[..//MarkerAnnotation[Name/@Image=&apos;Getter&apos;]]
+.[..//MarkerAnnotation[Name/@Image='Getter']]
 )
 ]]>
          </value>

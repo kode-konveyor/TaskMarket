@@ -6,9 +6,6 @@ import static org.mockito.Mockito.mock;
 import javax.servlet.ServletRequest;
 import javax.servlet.http.HttpServletRequest;
 
-import lombok.Getter;
-
-@Getter
 public class WebappTestData {
 
   public final HttpServletRequest REQUEST;

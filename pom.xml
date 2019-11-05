@@ -5,7 +5,7 @@
 
   <groupId>org.rulez.demokracia</groupId>
   <artifactId>TaskMarket</artifactId>
-  <version>0.0.1-feature_analysis.faecf3a</version>
+  <version>0.0.1-feature_analysis.2a74982</version>
   <packaging>war</packaging>
   <name>TaskMarket</name>
   <description>process support for the Kode Konveyor process</description>
@@ -139,7 +139,7 @@
              <ignoreAnnotations>true</ignoreAnnotations>
              <includeTests>true</includeTests>
              <rulesets>
-              <ruleset>/usr/local/toolchain/pmd/main.xml</ruleset>
+              <ruleset>/build/pmd/main.xml</ruleset>
              </rulesets>
             </configuration>
       </plugin>

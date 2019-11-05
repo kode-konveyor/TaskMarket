@@ -7,8 +7,6 @@ import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.extension.ExtendWith;
 import org.junit.runner.RunWith;
-import org.mockito.InjectMocks;
-import org.mockito.Mock;
 import org.mockito.junit.MockitoJUnitRunner;
 import org.mockito.junit.jupiter.MockitoExtension;
 import org.mockito.junit.jupiter.MockitoSettings;
@@ -17,7 +15,6 @@ import org.mockito.quality.Strictness;
 import com.kodekonveyor.annotations.TestedBehaviour;
 import com.kodekonveyor.annotations.TestedService;
 import com.kodekonveyor.exception.ThrowableTester;
-import com.kodekonveyor.market.LoggerService;
 import com.kodekonveyor.market.NotLoggedInException;
 
 @ExtendWith(MockitoExtension.class)
@@ -25,22 +22,15 @@ import com.kodekonveyor.market.NotLoggedInException;
 @RunWith(MockitoJUnitRunner.class)
 @TestedBehaviour("Data access")
 @TestedService("AuthenticatedUserService")
-public class AuthenticatedUserServiceDataAccessTest {
+public class AuthenticatedUserServiceDataAccessTest
+    extends AuthenticatedUserServiceTestBase {
 
-  @InjectMocks
-  private AuthenticatedUserService authenticatedUserService;
-  @Mock
-  private UserEntityRepository userEntityRepository;
-  @Mock
-  private LoggerService loggerService;
-
-  private UserTestData userTestData;
   private ThrowableTester tester;
 
+  @Override
   @BeforeEach
   public void setUp() {
-    userTestData = new UserTestData();
-    UserEntityRepositoryStubs.behaviour(userEntityRepository, userTestData);
+    super.setUp();
     tester = new ThrowableTester();
   }
 
