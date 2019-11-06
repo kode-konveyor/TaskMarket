@@ -10,7 +10,7 @@ import org.springframework.web.bind.annotation.RestController;
 import com.kodekonveyor.market.LoggerService;
 
 @RestController
-public class ListleadController {
+public class ListLeadController {
 
   @Autowired
   LeadEntityRepository leadEntityRepository;

@@ -21,7 +21,7 @@ import com.kodekonveyor.annotations.TestedService;
 @MockitoSettings(strictness = Strictness.LENIENT)
 @RunWith(MockitoJUnitRunner.class)
 @TestedBehaviour("Uses the userEntity to return various data")
-@TestedService("RemoteAuthentication")
+@TestedService("RemoteAuthenticationDTO")
 public class RemoteAuthenticationDTOTest {
 
   private RemoteAuthenticationDTO auth;

@@ -15,6 +15,12 @@ public class LeadTestData {
   public LeadEntity LEAD_ENTITY_NO_ID;
   public List<LeadDTO> LEAD_LIST;
   public List<LeadEntity> LEAD_ENTITY_LIST;
+  public final String LIST_LEAD_LOG = "member/lead";
+  public String REGISTER_LOG;
+
+  private String createREGISTER_LOG() {
+    return "received lead:" + LEAD;
+  }
 
   public LeadTestData(final RegisterTestData registerTestData) {
     this.registerTestData = registerTestData;
@@ -23,6 +29,7 @@ public class LeadTestData {
     LEAD_LIST = List.of(LEAD);
     LEAD_ENTITY = createLEAD_ENTITY();
     LEAD_ENTITY_LIST = List.of(LEAD_ENTITY);
+    REGISTER_LOG = createREGISTER_LOG();
   }
 
   private LeadEntity createLEAD_ENTITY() {

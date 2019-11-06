@@ -56,14 +56,16 @@
         <xsl:for-each select="$unitCoverageMisses/*[not(
         	@method=$excluded/excludedMethod/@name or
         	@class=$excluded/excludedClass/@name or
-        	ends-with(@class,'DTO')
+        	ends-with(@class,'DTO') or
+        	ends-with(@class,'Entity')
         	)]">
 ERROR: unit coverage miss at <xsl:value-of select="@method"/>
         </xsl:for-each>
         <xsl:for-each select="$mutationCoverageMisses/*[not(
         	@method=$excluded/excludedMethod/@name or
         	@class=$excluded/excludedClass/@name or
-        	ends-with(@class,'DTO')
+        	ends-with(@class,'DTO') or
+        	ends-with(@class,'Entity')
         	)]">
 ERROR: mutation coverage miss at <xsl:value-of select="@method"/>
         </xsl:for-each>

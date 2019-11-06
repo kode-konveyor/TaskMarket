@@ -14,7 +14,7 @@
         inputerrorid="$p1"
         errorURL="concat('http://repo.kodekonveyor.com/TaskMarket/KodeKonveyor/master/index.html#',$p1)"
         errortitlestring="zenta:modelErrorTitle($p1,$p4)"
-        errordescription="zenta:modelErrorDescription($p1,$p4)"
+        errordescription="zenta:modelErrorDescription($p1,$p4,$p5)"
       	/>
 <check
 		title="Unimplemented behaviours"

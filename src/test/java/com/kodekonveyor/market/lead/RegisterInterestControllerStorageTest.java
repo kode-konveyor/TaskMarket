@@ -60,4 +60,11 @@ public class RegisterInterestControllerStorageTest {
     assertEquals(leadTestData.LEAD, ret);
   }
 
+  @Test
+  @DisplayName("The call of the service is logged with the created entity")
+  void test3() {
+    registerInterestController.call(leadTestData.LEAD);
+    verify(loggerService).call(leadTestData.REGISTER_LOG);
+  }
+
 }

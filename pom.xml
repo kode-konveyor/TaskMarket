@@ -5,7 +5,7 @@
 
   <groupId>org.rulez.demokracia</groupId>
   <artifactId>TaskMarket</artifactId>
-  <version>0.0.1-feature_analysis.52ac32b</version>
+  <version>0.0.1-feature_analysis.17695cb</version>
   <packaging>war</packaging>
   <name>TaskMarket</name>
   <description>process support for the Kode Konveyor process</description>
@@ -160,6 +160,7 @@
 	            <artifactId>xml-doclet</artifactId>
 	            <version>1.0.6-SNAPSHOT</version>
 	          </docletArtifact>
+		  <show>private</show>
 	        </configuration>
 	        <reports>
               <report>javadoc</report>
@@ -179,6 +180,7 @@
 	            <artifactId>xml-doclet</artifactId>
 	            <version>1.0.6-SNAPSHOT</version>
 	          </docletArtifact>
+		  <show>private</show>
 	        </configuration>
 	        <reports>
 	          <report>test-javadoc</report>
