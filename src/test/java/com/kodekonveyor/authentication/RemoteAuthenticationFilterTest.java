@@ -1,7 +1,7 @@
 package com.kodekonveyor.authentication;
 
 import static org.junit.Assert.assertEquals;
-import static org.mockito.Mockito.*;
+import static org.mockito.Mockito.*;//NOPMD
 
 import java.io.IOException;
 

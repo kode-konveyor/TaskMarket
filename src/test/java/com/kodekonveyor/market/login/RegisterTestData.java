@@ -23,7 +23,7 @@ public class RegisterTestData {
   public HttpServletRequest AUTHENTICATED_REQUEST;
   public HttpServletRequest UNAUTHENTICATED_REQUEST;
 
-  private final UserTestData userTestData;
+  public final UserTestData userTestData;
 
   public RegisterTestData(final UserTestData userTestData) {
     this.userTestData = userTestData;

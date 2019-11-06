@@ -19,11 +19,10 @@ import com.kodekonveyor.annotations.TestedService;
 @RunWith(MockitoJUnitRunner.class)
 @TestedBehaviour("Data access")
 @TestedService("AuthenticatedUserService")
-public class AuthenticatedUserServiceCreateUserTest extends AuthenticatedUserServiceTestBase {
+public class AuthenticatedUserServiceCreateUserTest
+    extends AuthenticatedUserServiceTestBase {
 
   @Test
-  @TestedBehaviour("Creates user if does not exist")
-  @TestedService("AuthenticatedUserService")
   @DisplayName("When there is no user for the credential, we create it")
   public void test6() {
     AuthenticationStubs.badAuthenticated(userTestData);
