@@ -6,6 +6,6 @@
 	xsi:schemaLocation="http://pmd.sourceforge.net/ruleset/2.0.0 https://pmd.sourceforge.io/ruleset_2_0_0.xsd">
 	<description>WAR project PMD rules of Kode Konveyor</description>
 
-	<rule ref="/build/pmd/upstream.xml"/>
-	<rule ref="/build/pmd/konveyor.xml"/>
+	<rule ref="pmd/upstream.xml"/>
+	<rule ref="pmd/konveyor.xml"/>
 </ruleset>
