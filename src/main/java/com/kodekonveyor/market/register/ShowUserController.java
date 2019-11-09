@@ -17,7 +17,6 @@ public class ShowUserController {
   public MarketUserDTO call() {
     final UserEntity userEntity = authenticatedUserService.call();
     final MarketUserDTO marketUserDTO = new MarketUserDTO();
-    marketUserDTO.setAuth0id(userEntity.getAuth0id());
     marketUserDTO.setLogin(userEntity.getLogin());
     return marketUserDTO;
   }

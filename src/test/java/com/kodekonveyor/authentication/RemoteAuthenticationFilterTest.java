@@ -105,7 +105,7 @@ public class RemoteAuthenticationFilterTest {
     AuthenticationStubs.nullAuthentication();
     remoteAuthenticationFilter
         .doFilter(testData.REQUEST, servletResponse, filterChain);
-    assertRemoteUserIsCorrectlySet();
+    assertRemoteUserIsCorrectlySet(userTestData.LOGIN);
   }
 
   @DisplayName(
@@ -116,7 +116,7 @@ public class RemoteAuthenticationFilterTest {
     AuthenticationStubs.anonymous();
     remoteAuthenticationFilter
         .doFilter(testData.REQUEST, servletResponse, filterChain);
-    assertRemoteUserIsCorrectlySet();
+    assertRemoteUserIsCorrectlySet(userTestData.LOGIN);
   }
 
   @DisplayName(
@@ -127,19 +127,19 @@ public class RemoteAuthenticationFilterTest {
     AuthenticationStubs.nullAuthentication();
     remoteAuthenticationFilter
         .doFilter(testData.REQUEST, servletResponse, filterChain);
-    assertRemoteUserIsCorrectlySet();
+    assertRemoteUserIsCorrectlySet(userTestData.LOGIN);
   }
 
-  private void assertRemoteUserIsCorrectlySet() {
+  private void assertRemoteUserIsCorrectlySet(final String login) {
     verify(AuthenticationStubs.securityContext)
         .setAuthentication(newAuthentication.capture());
     assertEquals(
-        userTestData.AUTH0ID, newAuthentication.getValue().getCredentials()
+        login, newAuthentication.getValue().getCredentials()
     );
   }
 
   @DisplayName(
-    "if Authentication is null and the remote user does not exists, does not set an authenticated user"
+    "if Authentication is null and the remote user does not exists, creates an authenticated user"
   )
   @Test
   public void test4() throws IOException, ServletException {
@@ -147,8 +147,7 @@ public class RemoteAuthenticationFilterTest {
     remoteAuthenticationFilter.doFilter(
         testData.REQUEST_WITH_UNKNOWN_USER, servletResponse, filterChain
     );
-    verify(AuthenticationStubs.securityContext, never())
-        .setAuthentication(newAuthentication.capture());
+    assertRemoteUserIsCorrectlySet(userTestData.BAD_LOGIN);
   }
 
 }

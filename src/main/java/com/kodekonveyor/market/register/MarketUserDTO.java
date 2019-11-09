@@ -11,7 +11,6 @@ import lombok.ToString;
 @ToString
 public class MarketUserDTO {
 
-  private String auth0id;
   private String login;
 
 }

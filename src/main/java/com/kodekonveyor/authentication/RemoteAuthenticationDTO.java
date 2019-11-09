@@ -22,7 +22,7 @@ public class RemoteAuthenticationDTO implements Authentication {
 
   @Override
   public Object getCredentials() {
-    return user.getAuth0id();
+    return user.getLogin();
   }
 
   @Override

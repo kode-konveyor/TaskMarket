@@ -39,10 +39,10 @@ public class RemoteAuthenticationDTOTest {
     assertEquals(testData.EMPTY_LIST, auth.getAuthorities());
   }
 
-  @DisplayName("getCredentials returns the auth0 id")
+  @DisplayName("getCredentials returns the login name")
   @Test
   public void test1() {
-    assertEquals(testData.AUTH0ID, auth.getCredentials());
+    assertEquals(testData.LOGIN, auth.getCredentials());
   }
 
   @DisplayName("getDetails returns the user")

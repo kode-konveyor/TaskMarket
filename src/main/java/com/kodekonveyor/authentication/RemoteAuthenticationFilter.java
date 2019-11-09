@@ -30,6 +30,8 @@ import com.kodekonveyor.market.LoggerService;
 public class RemoteAuthenticationFilter extends GenericFilterBean
     implements Filter {
 
+  private static final String NICKNAME_HEADER = "OIDC_CLAIM_nickname";
+
   @Autowired
   private UserEntityRepository userEntityRepository;
 
@@ -50,24 +52,36 @@ public class RemoteAuthenticationFilter extends GenericFilterBean
           webApplicationContext.getBean(UserEntityRepository.class);
     }
     loggerService.call("authenticating ");
+    final HttpServletRequest httpRequest = (HttpServletRequest) req;
     final SecurityContext context = SecurityContextHolder.getContext();
     if (
       context.getAuthentication() == null ||
           !context.getAuthentication().isAuthenticated()
     ) {
-      final HttpServletRequest httpRequest = (HttpServletRequest) req;
-      final String auth0id = httpRequest.getRemoteUser();
-      loggerService.call("auth0id:" + auth0id);
+      final String login = httpRequest.getHeader(NICKNAME_HEADER);
+      loggerService.call("login:" + login);
       final List<UserEntity> users =
-          userEntityRepository.findByAuth0id(auth0id);
-      if (!users.isEmpty()) {
-        final Authentication auth = new RemoteAuthenticationDTO(users.get(0));
-        loggerService.call("authenticated " + auth.getPrincipal());
-        SecurityContextHolder.getContext().setAuthentication(auth);
-      }
+          userEntityRepository.findByLogin(login);
+      UserEntity user;
+      if (users.isEmpty()) {
+        user = createNewUserWithCredential(login);
+        userEntityRepository.save(user);
+      } else
+        user = users.get(0);
+      final Authentication auth = new RemoteAuthenticationDTO(user);
+      loggerService.call("authenticated " + auth.getPrincipal());
+      SecurityContextHolder.getContext().setAuthentication(auth);
     }
 
     filterChain.doFilter(req, res);
+
+  }
+
+  private UserEntity createNewUserWithCredential(final String login) {
+    final UserEntity newUser = new UserEntity();
+    newUser.setLogin(login);
+    userEntityRepository.save(newUser);
+    return newUser;
   }
 
 }

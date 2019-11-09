@@ -2,8 +2,8 @@ package com.kodekonveyor.market.github;
 
 import static org.mockito.Mockito.doReturn;
 
+import com.kodekonveyor.authentication.UserDTO;
 import com.kodekonveyor.market.login.RegisterTestData;
-import com.kodekonveyor.market.login.UserDTO;
 
 public class GithubGetStubs {
 

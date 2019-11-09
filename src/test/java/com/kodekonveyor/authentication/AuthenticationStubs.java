@@ -23,7 +23,8 @@ public class AuthenticationStubs {
     authentication = mock(Authentication.class);
     doReturn(true).when(authentication).isAuthenticated();
     doReturn(authentication).when(securityContext).getAuthentication();
-    doReturn(userTestData.AUTH0ID).when(authentication).getCredentials();
+    doReturn(userTestData.LOGIN).when(authentication).getCredentials();
+    doReturn(userTestData.LOGIN).when(authentication).getName();
     SecurityContextHolder.setContext(securityContext);
   }
 
@@ -32,7 +33,8 @@ public class AuthenticationStubs {
     authentication = mock(Authentication.class);
     doReturn(true).when(authentication).isAuthenticated();
     doReturn(authentication).when(securityContext).getAuthentication();
-    doReturn(userTestData.BAD_AUTH0ID).when(authentication).getCredentials();
+    doReturn(userTestData.BAD_LOGIN).when(authentication).getCredentials();
+    doReturn(userTestData.BAD_LOGIN).when(authentication).getName();
     SecurityContextHolder.setContext(securityContext);
   }
 

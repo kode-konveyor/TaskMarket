@@ -28,7 +28,5 @@ public class UserEntity {
   private long id;// NOPMD
   @Column(name = "username")
   private String login;
-  @Column(name = "auth0id")
-  private String auth0id;
 
 }

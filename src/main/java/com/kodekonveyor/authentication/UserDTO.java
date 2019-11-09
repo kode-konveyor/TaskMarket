@@ -1,4 +1,4 @@
-package com.kodekonveyor.market.login;
+package com.kodekonveyor.authentication;
 
 import com.kodekonveyor.annotations.ExcludeFromCodeCoverage;
 
@@ -14,6 +14,5 @@ public class UserDTO {
 
   private String login;
   private Long id; //NOPMD design verdict
-  private String email;
 
 }
