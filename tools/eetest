@@ -1,0 +1,6 @@
+#!/bin/bash
+set -x
+git add --all
+git commit -m test
+git push test $(git branch|awk '{print $2}')
+ssh root@test  "cd market.build; ./tools/deploy; grep --line-buffered -v kernel </dev/xconsole"
