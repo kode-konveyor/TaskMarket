@@ -18,6 +18,7 @@ public class WebappTestData {
   public final String NOT_LOGGED_IN = "not logged in";
   public final String LOGIN_URL = "/some/url";
   private final UserTestData userTestData; // NOPMD
+  public String UNAUTHORIZED = "unauthorized";
 
   public WebappTestData(final UserTestData userTestData) {
     this.userTestData = userTestData;

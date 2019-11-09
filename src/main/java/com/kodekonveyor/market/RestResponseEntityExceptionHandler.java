@@ -22,17 +22,23 @@ public class RestResponseEntityExceptionHandler
   @Autowired
   private LoggerService loggerService;
 
-  @ExceptionHandler(NotLoggedInException.class)
+  @ExceptionHandler({
+      NotLoggedInException.class,
+      UnauthorizedException.class
+  })
   public ResponseEntity<Object> handleNotLoggedInException(
-      final NotLoggedInException exception, final WebRequest request
+      final RuntimeException exception, final WebRequest request
   ) {
-    final String bodyOfResponse = exception.getMessage();
+    if (exception.getClass().equals(UnauthorizedException.class))
+      loggerService.call("unauthorized");
+    else
+      loggerService.call("not logged in");
 
-    loggerService.call("not logged in");
+    final String bodyOfResponse = exception.getMessage();
     final HttpHeaders headers = new HttpHeaders();
     return handleExceptionInternal(
         exception, bodyOfResponse,
-        headers, HttpStatus.FOUND, request
+        headers, HttpStatus.UNAUTHORIZED, request
     );
   }
 }

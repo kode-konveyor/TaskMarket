@@ -5,7 +5,7 @@
 
   <groupId>org.rulez.demokracia</groupId>
   <artifactId>TaskMarket</artifactId>
-  <version>0.0.1-feature_test.645a51a</version>
+  <version>0.0.1-feature_test.fc52c84</version>
   <packaging>war</packaging>
   <name>TaskMarket</name>
   <description>process support for the Kode Konveyor process</description>

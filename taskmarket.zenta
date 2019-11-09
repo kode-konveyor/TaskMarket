@@ -2296,6 +2296,10 @@ We intend to support all of them.
 ## kodekonveyor_projectmanager
 
 - Can create/delete/configure any aspect of any project
+
+## kodekonveyor_sales
+
+- Can list leads
 </documentation>
         </element>
         <element xsi:type="zenta:BasicObject" name="registration needed" id="91465fd4-e012-4890-b01d-ed60ca0f5f9c" ancestor="behaviour">
