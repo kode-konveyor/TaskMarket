@@ -1,4 +1,4 @@
-package com.kodekonveyor.market.login;
+package com.kodekonveyor.market.register;
 
 import static org.mockito.Mockito.mock;
 
@@ -8,7 +8,6 @@ import javax.servlet.http.HttpServletRequest;
 
 import com.kodekonveyor.authentication.UserDTO;
 import com.kodekonveyor.authentication.UserTestData;
-import com.kodekonveyor.market.register.MarketUserDTO;
 
 public class RegisterTestData {
 

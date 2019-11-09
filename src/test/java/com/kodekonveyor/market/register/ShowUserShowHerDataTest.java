@@ -18,7 +18,6 @@ import com.kodekonveyor.annotations.TestedBehaviour;
 import com.kodekonveyor.annotations.TestedService;
 import com.kodekonveyor.authentication.AuthenticatedUserService;
 import com.kodekonveyor.authentication.UserTestData;
-import com.kodekonveyor.market.login.RegisterTestData;
 
 @ExtendWith(MockitoExtension.class)
 @MockitoSettings(strictness = Strictness.LENIENT)

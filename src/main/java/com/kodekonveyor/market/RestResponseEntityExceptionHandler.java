@@ -11,6 +11,7 @@ import org.springframework.web.servlet.mvc.method.annotation.ResponseEntityExcep
 
 import com.kodekonveyor.annotations.ExcludeFromCodeCoverage;
 import com.kodekonveyor.annotations.InterfaceClass;
+import com.kodekonveyor.authentication.NotLoggedInException;
 
 @ControllerAdvice
 @InterfaceClass

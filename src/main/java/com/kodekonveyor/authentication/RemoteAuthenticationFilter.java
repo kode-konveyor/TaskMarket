@@ -68,7 +68,7 @@ public class RemoteAuthenticationFilter extends GenericFilterBean
         userEntityRepository.save(user);
       } else
         user = users.get(0);
-      final Authentication auth = new RemoteAuthenticationDTO(user);
+      final Authentication auth = new RemoteAuthentication(user);
       loggerService.call("authenticated " + auth.getPrincipal());
       SecurityContextHolder.getContext().setAuthentication(auth);
     }

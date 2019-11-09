@@ -2,7 +2,7 @@ package com.kodekonveyor.market.lead;
 
 import java.util.List;
 
-import com.kodekonveyor.market.login.RegisterTestData;
+import com.kodekonveyor.market.register.RegisterTestData;
 
 public class LeadTestData {
 

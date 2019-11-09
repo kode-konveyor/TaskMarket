@@ -19,7 +19,6 @@ import org.springframework.web.context.request.WebRequest;
 import com.kodekonveyor.annotations.TestedBehaviour;
 import com.kodekonveyor.annotations.TestedService;
 import com.kodekonveyor.market.LoggerService;
-import com.kodekonveyor.market.NotLoggedInException;
 import com.kodekonveyor.market.RestResponseEntityExceptionHandler;
 
 @ExtendWith(MockitoExtension.class)

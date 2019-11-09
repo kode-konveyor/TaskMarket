@@ -1,4 +1,4 @@
-package com.kodekonveyor.market;
+package com.kodekonveyor.authentication;
 
 import com.kodekonveyor.annotations.InterfaceClass;
 

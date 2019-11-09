@@ -3,7 +3,7 @@ package com.kodekonveyor.market.github;
 import static org.mockito.Mockito.doReturn;
 
 import com.kodekonveyor.authentication.UserDTO;
-import com.kodekonveyor.market.login.RegisterTestData;
+import com.kodekonveyor.market.register.RegisterTestData;
 
 public class GithubGetStubs {
 
