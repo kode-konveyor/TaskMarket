@@ -11,6 +11,7 @@ import com.kodekonveyor.authentication.UserTestData;
 
 public class RegisterTestData {
 
+  public final String NEXT_URL = "/foo.html";
   public final String GITHUB_EMAIL = "user@example.com";
   public final String GITHUB_USER = "userke";
   public final String GITHUB_SECRET = "s3cr3t";

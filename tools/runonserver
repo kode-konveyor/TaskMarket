@@ -1,2 +1,2 @@
 #!/bin/bash
-git add --all ;git commit -am "testing"; git push test ; ssh root@test  'cd market.build;git pull;mvn clean package;cp target/*.war /var/lib/tomcat9/webapps/market.war;grep -v kernel </dev/xconsole'
+git add --all ;git commit -am "testing"; git push test ; ssh root@test  'cd market.build;git pull;mvn clean package;cp target/*.war /var/lib/tomcat9/webapps/market.war;grep --line-buffered -v kernel </dev/xconsole'
