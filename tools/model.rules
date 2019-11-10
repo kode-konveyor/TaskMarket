@@ -1,0 +1,71 @@
+#include /usr/share/zenta-tools/model.rules
+
+.PRECIOUS: %.xml %.rich %.objlist %.richescape %.docbook %.html %.pics %.check %.consistencycheck %s.interfaces %s.testdata %s.stubs
+
+%.xml: %.yml
+	yml2xml $< >$@.xmltemp
+	zenta-xslt-runner -xsl:xslt/identity.xslt -s:$@.xmltemp >$@
+	rm $@.xmltemp
+	
+%.rich: %.zenta 
+	zenta-xslt-runner -xsl:xslt/enrich.xslt -s:$< -im:enrich -o:$@
+
+%.objlist: %.rich 
+	zenta-xslt-runner -xsl:xslt/objlist.xslt -s:$< -o:$@
+
+%.objlist.docbook: %.objlist
+	zenta-xslt-runner -xsl:xslt/objlist.docbook.xslt -s:$< -o:$@ 
+
+%.richescape: %.rich
+	zenta-xslt-runner -xsl:xslt/unescape.xslt -s:$< -o:$@
+
+%.docbook: %.richescape %.objlist %.consistencycheck inputs/issues.xml
+	zenta-xslt-runner -xsl:xslt/docbook.xslt -im:varlist -s:$< -o:$@ inconsistencyfile=$$(pwd)/$(basename $@).consistencycheck issuesfile=$$(pwd)/inputs/issues.xml
+
+%.html: %.docbook 
+	zenta-xslt-runner -xsl:xslt/docbook2html.xslt -s:$< -o:$@
+
+%.pics: %.zenta
+	rm -rf $@ pics
+	mkdir pics
+	zenta -data ~/.zenta -load $$(pwd)/$< -targetdir $$(pwd) -runstyle /usr/share/zenta-tools//diagrams.style -exit
+	mv pics $@
+
+%.check:
+	sed 's/MODELNAME/$(basename $@)/' <example.check >$@
+
+%.consistencycheck: %.rich %.check
+	zenta-xslt-runner -xsl:xslt/consistencycheck.xslt -s:$(basename $@).check -o:$@ >$(basename $@).consistency.stderr 2>&1 
+	sed 's/\//:/' <$(basename $@).consistency.stderr |sort --field-separator=':' --key=2
+
+%.zip: %/index.html
+	zip -ro $@ $$(basename $@ .zip)
+
+%.compiled: target/checklanguage.ok %.interfaces %.testdata %.stubs %.html %.objlist.html %.pics %.interfaces %.testdata %.stubs %.consistencycheck
+	mkdir -p $(basename $@)
+	cp /usr/share/zenta-tools//structured.css $(basename $@)
+	cp $(basename $@).html $(basename $@)/index.html
+	cp $(basename $@).objlist.html $(basename $@)/objlist.html
+	cp -r $(basename $@).pics $(basename $@)/pics
+	touch $@
+
+
+modelclean:
+	rm -rf *.rich *.objlist *.richescape *.docbook *.html *.pics *.zip *.compiled *.consistency.stderr
+
+target/checklanguage.ok:
+	if [ x = x$(LANGUAGE) ]; then echo "please define LANGUAGE in the Makefile!" ;exit 1; fi
+	mkdir -p target
+	touch target/checklanguage.ok
+
+%.interfaces: %.rich
+	zenta-xslt-runner -xsl:xslt/generate_interfaces.xslt -s:$(basename $@).rich -im:$(LANGUAGE)
+	touch $@
+
+%.testdata: %.rich
+	zenta-xslt-runner -xsl:xslt/generate_testdata.xslt -s:$(basename $@).rich -im:$(LANGUAGE)
+	touch $@
+
+%.stubs: %.rich
+	zenta-xslt-runner -xsl:xslt/generate_stubs.xslt -s:$(basename $@).rich -im:$(LANGUAGE)
+	touch $@

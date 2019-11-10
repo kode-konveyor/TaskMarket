@@ -152,8 +152,7 @@
 	        <id>production-javadoc</id>
 	        <configuration>
 	          <doclet>com.github.markusbernhardt.xmldoclet.XmlDoclet</doclet>
-	          <additionalparam>-d ${project.build.directory}/production -filename
-	            javadoc.xml</additionalparam>
+	          <additionalparam>-d ${project.build.directory}/production -filename javadoc.xml</additionalparam>
 	          <useStandardDocletOptions>false</useStandardDocletOptions>
 	          <docletArtifact>
 	            <groupId>com.github.markusbernhardt</groupId>
@@ -170,10 +169,7 @@
 	        <id>test-javadoc</id>
 	        <configuration>
 	          <doclet>com.github.markusbernhardt.xmldoclet.XmlDoclet</doclet>
-	          <additionalparam>
-	            -d ${project.build.directory}/test
-	            -filename javadoc.xml
-	          </additionalparam>
+	          <additionalparam> -d ${project.build.directory}/test -filename javadoc.xml </additionalparam>
 	          <useStandardDocletOptions>false</useStandardDocletOptions>
 	          <docletArtifact>
 	            <groupId>com.github.markusbernhardt</groupId>
