@@ -154,18 +154,32 @@
 		<xsl:apply-templates select="$errissues" mode="deviations"/>
 	</xsl:function>
 
-	<xsl:function name="zenta:errorIssue">
-		<xsl:param name="entry"/>
-		<xsl:param name="issues"/>
-		<xsl:variable name="errissues" select="$issues//link[@url=$entry/@errorURL]/.."/>
-		<xsl:choose>
-			<xsl:when test="$errissues">
-				<xsl:copy-of select="zenta:listIssues($errissues)"/>
-			</xsl:when>
-			<xsl:otherwise>
-				<para>no related issues in tracker</para>
-			</xsl:otherwise>
-		</xsl:choose>
+	<xsl:function name="zenta:unimplementedErrorId">
+		<xsl:param name="arg"/>
+		<xsl:value-of select="concat('unimplemented-',$arg//service/element/@id,$arg//behaviour/element/@id)"/>
 	</xsl:function>
+	<xsl:function name="zenta:unimplementedErrorTitle">
+		<xsl:param name="arg"/>
+		<xsl:value-of select="$arg//task/concat(@status,': ',@service,'/',@behaviour)"/>
+	</xsl:function>
+	<xsl:function name="zenta:unimplementedErrorDescription">
+		<xsl:param name="arg"/>
+		<xsl:param name="arg2"/>
+		<xsl:value-of select="$arg//task/@status"/>:
+		<link linkend="{$arg//service/element/@id}"> <xsl:value-of select="$arg//task/@service"/></link>/<link linkend="{$arg//behaviour/element/@id}"> <xsl:value-of select="$arg//task/@behaviour"/></link>
+	</xsl:function>
+       <xsl:function name="zenta:errorIssue">
+                <xsl:param name="entry"/>
+                <xsl:param name="issues"/>
+		<xsl:variable name="errissues" select="$issues//issue[summary=$entry/@name]"/>
+                <xsl:choose>
+                        <xsl:when test="$errissues">
+                                <xsl:copy-of select="zenta:listIssues($errissues)"/>
+                        </xsl:when>
+                        <xsl:otherwise>
+                                <para>no related issues in tracker</para>
+                        </xsl:otherwise>
+                </xsl:choose>
+        </xsl:function>
 
 </xsl:stylesheet>
