@@ -3,6 +3,4 @@ export REPO_NAME=TaskMarket
 export GITHUB_ORGANIZATION=kode-konveyor
 LANGUAGE=java
 
-#include /usr/local/toolchain/rules.java
-include tools/rules.java
-include tools/model.rules
+include /usr/local/toolchain/rules.java
