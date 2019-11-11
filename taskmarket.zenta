@@ -465,8 +465,8 @@ zenta:neighboursRun1($p1,$p2,'is based on/is base of,2;has an example as/is an e
             </element>
             <element xsi:type="zenta:BasicObject" name="is a/is the type of" id="6a695c67-0831-40a7-9efa-513c1524f3ca" ancestor="188f9954-0501-432b-8022-6a49fd1cc83c">
               <documentation>2|
-zenta:neighboursRun1($p1,$p2,'has an example as/is an example of,2;is of/is the type of,1') | 
-zenta:neighboursRun1($p1,$p2,'has an example as/is an example of,2')</documentation>
+zenta:neighboursRun1($p1,$p2,'has an example as/is an example of,2;is of/is the type of,1')[@xsi:type='DTO' or @xsi:type='Entity' or @xsi:type='Type' ]| 
+zenta:neighboursRun1($p1,$p2,'has an example as/is an example of,2')[@xsi:type='DTO' or @xsi:type='Entity' or @xsi:type='Type' ]</documentation>
               <property key="fillColor"/>
               <property key="elementShape"/>
               <property key="textAlignment" value="2"/>
