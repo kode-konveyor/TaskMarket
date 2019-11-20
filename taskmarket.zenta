@@ -173,7 +173,7 @@ $p2 = $p1//folder[@name='2. Metamodel Constants']//element</documentation>
               <documentation>design|
 (
 	count(zenta:neighbours($p1,$p2,'has an example as/is an example of,1')) +
-	count(zenta:neighbours($p1,$p2,'is of/is the type of,1;has an example as/is an example of,1'))
+	count(zenta:neighbours($p1,$p2,'is a/is the type of,1;has an example as/is an example of,1'))
 ) = 1</documentation>
             </element>
             <element xsi:type="zenta:BasicRelationship" id="44d26221-66ce-41d7-b2d7-1c26fb4b1a53" ancestor="306ff791-4afd-4ccf-b09f-b9ee0db6b1a2" source="cb25880d-bfa1-406f-b5c6-2cad8d9754bd" target="7a959e3d-31b1-491f-82dc-57838b15ce59"/>
@@ -3801,6 +3801,7 @@ details is a '/' separated string of the needed details. its content depends on 
           </child>
           <child xsi:type="zenta:DiagramObject" id="e41de3e9-49ec-4132-9f9a-688eead61c59" targetConnections="62e04665-b22e-4a5f-8d02-c8ef123f5169" zentaElement="0b88bb83-d09b-4808-89c2-040655feccc8">
             <bounds x="30" y="408" width="163"/>
+            <sourceConnection xsi:type="zenta:Connection" id="284ed91e-8be2-4ac2-b465-1e810d54d614" source="e41de3e9-49ec-4132-9f9a-688eead61c59" target="780532eb-6166-4990-9292-b0d16b3e959d" relationship="e00bd7bc-6c4a-45cf-8954-7f835ed50062"/>
           </child>
           <child xsi:type="zenta:DiagramObject" id="1b372a61-edbc-4b61-928c-9ab4c37bb1b2" targetConnections="c0dfb2b1-7808-4625-8813-278a114352b9" zentaElement="85e42d36-5e7e-4f51-8322-b08e048bb7d2">
             <bounds x="348" y="396" width="-1" height="-1"/>
@@ -3834,6 +3835,9 @@ details is a '/' separated string of the needed details. its content depends on 
           </child>
           <child xsi:type="zenta:DiagramObject" id="2789c31b-8e9b-4de0-9312-35584416e58f" targetConnections="01ebad6c-2319-4702-b486-7832e5381581" zentaElement="2bdeee10-0a7e-4608-9b64-9a7d0bcbd47e">
             <bounds x="303" y="602" width="165"/>
+          </child>
+          <child xsi:type="zenta:DiagramObject" id="780532eb-6166-4990-9292-b0d16b3e959d" targetConnections="284ed91e-8be2-4ac2-b465-1e810d54d614" zentaElement="706ce3b4-5589-4b03-92c0-07621e9b4e58">
+            <bounds x="0" y="342" width="241"/>
           </child>
         </element>
         <element xsi:type="zenta:BasicObject" name="@RequestBody registrationInfo" id="b5341c18-5906-4a6c-9ba6-8487c2d19b9d" ancestor="7a959e3d-31b1-491f-82dc-57838b15ce59"/>
