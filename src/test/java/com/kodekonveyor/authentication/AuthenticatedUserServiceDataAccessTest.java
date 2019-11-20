@@ -37,7 +37,9 @@ public class AuthenticatedUserServiceDataAccessTest
   @DisplayName("Gets the user by the authenticated name")
   public void test() {
     AuthenticationStubs.authenticated(userTestData);
-    assertEquals(userTestData.USER, authenticatedUserService.call());
+    assertEquals(
+        userTestData.TEST_USER_ENTITY, authenticatedUserService.call()
+    );
   }
 
   @Test

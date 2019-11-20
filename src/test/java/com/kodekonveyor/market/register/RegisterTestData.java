@@ -1,58 +1,80 @@
 package com.kodekonveyor.market.register;
 
-import static org.mockito.Mockito.mock;
-
-import java.io.StringWriter;
-
-import javax.servlet.http.HttpServletRequest;
-
-import com.kodekonveyor.authentication.UserDTO;
 import com.kodekonveyor.authentication.UserTestData;
 
 public class RegisterTestData {
 
-  public final String NEXT_URL = "/foo.html";
-  public final String GITHUB_EMAIL = "user@example.com";
-  public final String GITHUB_USER = "userke";
-  public final String GITHUB_SECRET = "s3cr3t";
-  public StringWriter RESPONSE_WRITER;
-  public UserDTO USER_DTO;
-  public MarketUserDTO MARKET_USER;
-  public HttpServletRequest AUTHENTICATED_REQUEST;
-  public HttpServletRequest UNAUTHENTICATED_REQUEST;
+  public final String ADDRESS = "Lectroid str. 25, 12345, Shelby, Alabama, US";
 
-  public final UserTestData userTestData;
+  public final String EMAIL = "john.bigboot@example.com";
+
+  public final String LEGALNAME = "John Bigbooté";
+
+  public final String REGIME_ROW = "restofworld";
+
+  public final String PAYMENT_DETAILS = "paypal:john.bigboot@example.com";
+
+  public final String COUNTRY = "es";
+
+  public final RegistrationInfoDTO TEST_REGISTRATION_INFO;
+
+  public final String PROJECTNAME = "kode-konveyor/example";
+
+  public final String PROJECTROLE = "coder";
+
+  public final UserLegalInfoEntity USER_LEGAL_INFO;
+
+  public final MarketUserEntity MARKET_USER;
+
+  public final MarketUserDTO MARKET_USER_DTO;
+
+  public final String NEXT_URL = "/foo.html";
+
+  private final UserTestData userTestData;
 
   public RegisterTestData(final UserTestData userTestData) {
     this.userTestData = userTestData;
-    USER_DTO = createUSER_DTO();
+    USER_LEGAL_INFO = createUSER_LEGAL_INFO();
     MARKET_USER = createMARKET_USER();
-    AUTHENTICATED_REQUEST =
-        createAUTHENTICATED_REQUEST();
-    UNAUTHENTICATED_REQUEST =
-        create_UNAUTHENTICATED_REQUEST();
+    TEST_REGISTRATION_INFO = createTEST_REGISTRATION_INFO();
+    MARKET_USER_DTO = createMARKET_USER_DTO();
+
   }
 
-  private HttpServletRequest
-      createAUTHENTICATED_REQUEST() {
-    return create_UNAUTHENTICATED_REQUEST();
-  }
-
-  private HttpServletRequest create_UNAUTHENTICATED_REQUEST() {
-    return mock(HttpServletRequest.class);
-  }
-
-  private UserDTO createUSER_DTO() {
-    final UserDTO userDTO = new UserDTO();
-    userDTO.setLogin(GITHUB_USER);
-    userDTO.setId(userTestData.USER_ID);
-    return userDTO;
-  }
-
-  private MarketUserDTO createMARKET_USER() {
+  private MarketUserDTO createMARKET_USER_DTO() {
     final MarketUserDTO marketUserDTO = new MarketUserDTO();
-    marketUserDTO.setLogin(userTestData.LOGIN);
+    marketUserDTO.setRegistrationInfo(TEST_REGISTRATION_INFO);
+    marketUserDTO.setLogin(userTestData.GITHUB_ID);
     return marketUserDTO;
   }
 
+  private MarketUserEntity createMARKET_USER() {
+    final MarketUserEntity marketUserEntity = new MarketUserEntity();
+    marketUserEntity.setLegal(USER_LEGAL_INFO);
+    marketUserEntity.setLogin(userTestData.TEST_USER_ENTITY);
+    return marketUserEntity;
+  }
+
+  private UserLegalInfoEntity createUSER_LEGAL_INFO() {
+    final UserLegalInfoEntity userLegalInfoEntity = new UserLegalInfoEntity();
+    userLegalInfoEntity.setLegalAddress(ADDRESS);
+    userLegalInfoEntity.setEmail(EMAIL);
+    userLegalInfoEntity.setLegalName(LEGALNAME);
+    userLegalInfoEntity.setPaymentRegime(REGIME_ROW);
+    userLegalInfoEntity.setPaymentDetails(PAYMENT_DETAILS);
+    userLegalInfoEntity.setCountry(COUNTRY);
+
+    return userLegalInfoEntity;
+  }
+
+  private RegistrationInfoDTO createTEST_REGISTRATION_INFO() {
+    final RegistrationInfoDTO registrationInfoDTO = new RegistrationInfoDTO();
+    registrationInfoDTO.setLegalAddress(ADDRESS);
+    registrationInfoDTO.setEmail(EMAIL);
+    registrationInfoDTO.setLegalName(LEGALNAME);
+    registrationInfoDTO.setPaymentRegime(REGIME_ROW);
+    registrationInfoDTO.setPaymentDetails(PAYMENT_DETAILS);
+    registrationInfoDTO.setCountry(COUNTRY);
+    return registrationInfoDTO;
+  }
 }

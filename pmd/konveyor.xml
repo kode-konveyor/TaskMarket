@@ -85,6 +85,8 @@ and should be marked with @Delegate or @InterfaceClass"
    matches(@Image,'[A-Z][a-z0-9]*Entity$') or
    matches(@Image,'[A-Z][a-z0-9]*DTO$') or
    matches(@Image,'[A-Z][a-z0-9]*Repository$') or
+   matches(@Image,'[A-Z][a-z0-9]*Constants$') or
+   matches(@Image,'[A-Z][a-z0-9]*Exception$') or
    matches(@Image,'[A-Z][a-z0-9]*Factory$') or
    matches(@Image,'[A-Z][a-z0-9]*Stubs$')
 ) and not(
@@ -146,6 +148,28 @@ see message
 ]|
 .[..//MarkerAnnotation[Name/@Image='Getter']]
 )
+]]>
+         </value>
+      </property>
+   </properties>
+</rule>
+<rule name="ShortVariables"
+      language="java"
+      message="No short variables, except id as field"
+      class="net.sourceforge.pmd.lang.rule.XPathRule">
+   <description>
+
+   </description>
+   <priority>3</priority>
+   <properties>
+      <property name="version" value="2.0"/>
+      <property name="xpath">
+         <value>
+<![CDATA[
+//VariableDeclaratorId[string-length(@Image) < 3 and not(
+   (@Image = 'id' and ../../local-name() = 'FieldDeclaration')
+)]
+
 ]]>
          </value>
       </property>

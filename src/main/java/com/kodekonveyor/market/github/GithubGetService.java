@@ -31,9 +31,9 @@ public class GithubGetService {
     URL url;
     try {
       url = new URL(uri);
-    } catch (final MalformedURLException e) {
+    } catch (final MalformedURLException exception) {
       throw new ResponseStatusException(
-          HttpStatus.INTERNAL_SERVER_ERROR, "internal error", e
+          HttpStatus.INTERNAL_SERVER_ERROR, "internal error", exception
       );
     }
 
@@ -42,9 +42,9 @@ public class GithubGetService {
     final ValueType value;
     try {
       value = objectMapperProxy.readValue(url, cls);
-    } catch (final IOException e) {
+    } catch (final IOException exception) {
       throw new ResponseStatusException(
-          HttpStatus.SERVICE_UNAVAILABLE, "cannot connect to github", e
+          HttpStatus.SERVICE_UNAVAILABLE, "cannot connect to github", exception
       );
     }
     return value;

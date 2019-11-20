@@ -2,69 +2,77 @@ package com.kodekonveyor.authentication;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Set;
 
 public class UserTestData {
 
-  public final String REGISTERED = "registered";
-  public final String KODEKONVEYOR_SALES = "kodekonveyor_sales";
-  public final String LOGIN = "gitlogin";
-  public final String BAD_LOGIN = "badgitlogin";
-  public final UserEntity USER = createUSER();
-  public final UserEntity BAD_USER_BEFORE_SAVE = createBAD_USER_BEFORE_SAVE();
-  public final UserEntity BAD_USER = createBAD_USER();
-  public final List<UserEntity> USER_LIST = createUSER_LIST();
-  public final long USER_ID = 4242;
-  public final long BAD_USER_ID = 4241;
-  public final List<Object> EMPTY_LIST = new ArrayList<>();
+  public final UserDTO USER_DTO;
+  public final String GITHUB_ID = "gituser";
+  public final UserEntity TEST_USER_ENTITY;
+  public final RoleEntity TEST_ROLE_ENTITY;
+  public final String TEST_ROLE = "test_testrole";
+  public final String BAD_LOGIN = "badlogin";
+  public final String LOGIN = "gituser";
+  public final List<UserEntity> USER_LIST;
+  public final List<UserEntity> EMPTY_LIST = new ArrayList<>();
+  public final long BAD_USER_ID = -42;
+  public final UserEntity BAD_USER_BEFORE_SAVE;
+  public final Long USER_ID = (long) 42;
   public final String NO_AUTHENTICATION = "No Authentication";
   public final String NO_CREDENTIAL = "No Credential";
-  public final String SHOULD_NOT_HAPPEN = "This should not happen";
-  public UserEntity SALES_USER = createSALES_USER();
+  public final UserEntity SALES_USER;
+  public String SHOULD_NOT_HAPPEN = "This should not happen";
+  public final String KODEKONVEYOR_SALES_ROLE = "kodekonveyor_sales";
+  public RoleEntity SALES_ROLE;
 
-  private List<UserEntity> createUSER_LIST() {
-    return List.of(USER);
-  }
+  public UserTestData() {
+    TEST_ROLE_ENTITY = createTEST_ROLE_ENTITY();
+    TEST_USER_ENTITY =
+        createTEST_USER_ENTITY();
+    SALES_ROLE = createSALES_ROLE();
+    SALES_USER = createSALES_USER();
+    USER_LIST = List.of(TEST_USER_ENTITY);
+    USER_DTO = createUSER_DTO();
+    BAD_USER_BEFORE_SAVE = createBAD_USER_BEFORE_SAVE();
 
-  private UserEntity createSALES_USER() {
-    final UserEntity user = createUSER();
-    final RoleEntity role = createSALES_ROLE();
-    user.getRoles().add(role);
-    role.getUsers().add(user);
-    return user;
   }
 
   private RoleEntity createSALES_ROLE() {
     final RoleEntity role = new RoleEntity();
-    role.setName(KODEKONVEYOR_SALES);
+    role.setName(KODEKONVEYOR_SALES_ROLE);
     return role;
   }
 
-  private RoleEntity createREGISTERED_ROLE() {
-    final RoleEntity role = new RoleEntity();
-    role.setName(REGISTERED);
-    return role;
-  }
-
-  private UserEntity createUSER() {
-    final UserEntity user = new UserEntity();
-    user.setLogin(LOGIN);
-    user.setId(USER_ID);
-    final RoleEntity role = createREGISTERED_ROLE();
-    user.getRoles().add(role);
-    role.getUsers().add(user);
-    return user;
-  }
-
-  private UserEntity createBAD_USER() {
-    final UserEntity userEntity = createBAD_USER_BEFORE_SAVE();
-    userEntity.setId(BAD_USER_ID);
+  private UserEntity createSALES_USER() {
+    final UserEntity userEntity = createTEST_USER_ENTITY();
+    userEntity.setRoles(Set.of(SALES_ROLE));
     return userEntity;
   }
 
   private UserEntity createBAD_USER_BEFORE_SAVE() {
     final UserEntity userEntity = new UserEntity();
-    userEntity.setLogin(BAD_LOGIN);
+    userEntity.setLogin(LOGIN);
     return userEntity;
   }
 
+  private UserDTO createUSER_DTO() {
+    final UserDTO user = new UserDTO();
+    user.setId(USER_ID);
+    user.setLogin(LOGIN);
+    return user;
+  }
+
+  private UserEntity createTEST_USER_ENTITY() {
+    final UserEntity user = new UserEntity();
+    user.setLogin(GITHUB_ID);
+    user.setRoles(Set.of(TEST_ROLE_ENTITY));
+    user.setId(USER_ID);
+    return user;
+  }
+
+  private RoleEntity createTEST_ROLE_ENTITY() {
+    final RoleEntity role = new RoleEntity();
+    role.setName(TEST_ROLE);
+    return role;
+  }
 }

@@ -17,6 +17,7 @@
 		<exclude name="ClassNamingConventions" />
 		<exclude name="CommentDefaultAccessModifier" />
 		<exclude name="LongVariable" />
+		<exclude name="ShortVariable" />		
 		<exclude name="ControlStatementBraces" />
 		<exclude name="MethodNamingConventions" />
 		<exclude name="AtLeastOneConstructor" />
@@ -32,6 +33,7 @@
 		<exclude name="LoosePackageCoupling" />
 		<exclude name="UseUtilityClass" />
 		<exclude name="DataClass" />
+		<exclude name="TooManyFields" />		
 	</rule>
 	<rule ref="category/java/design.xml/CyclomaticComplexity">
 		<properties>

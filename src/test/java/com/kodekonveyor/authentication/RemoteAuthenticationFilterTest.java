@@ -51,7 +51,7 @@ public class RemoteAuthenticationFilterTest {
   @Mock
   private FilterChain filterChain;
 
-  private WebappTestData testData;
+  private WebAppTestData testData;
 
   @Captor
   private ArgumentCaptor<Authentication> newAuthentication;
@@ -64,7 +64,7 @@ public class RemoteAuthenticationFilterTest {
   @BeforeEach
   public void setUp() {
     userTestData = new UserTestData();
-    testData = new WebappTestData(userTestData);
+    testData = new WebAppTestData(userTestData);
     UserEntityRepositoryStubs.behaviour(userRepository, userTestData);
   }
 

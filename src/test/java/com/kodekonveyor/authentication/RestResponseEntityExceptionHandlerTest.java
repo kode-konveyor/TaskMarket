@@ -36,12 +36,11 @@ public class RestResponseEntityExceptionHandlerTest {
   @Mock
   private LoggerService loggerService;
 
-  private WebappTestData testData;
+  private WebAppTestData testData;
 
   @BeforeEach
   public void setUp() {
-    final UserTestData userTestData = new UserTestData();
-    testData = new WebappTestData(userTestData);
+    testData = new WebAppTestData(new UserTestData());
   }
 
   @DisplayName("if a NotLoggedInException is thrown, logs 'not logged in'")

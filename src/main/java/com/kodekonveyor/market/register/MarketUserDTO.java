@@ -1,15 +1,11 @@
 package com.kodekonveyor.market.register;
 
-import lombok.EqualsAndHashCode;
-import lombok.Getter;
-import lombok.Setter;
-import lombok.ToString;
+import lombok.Data;
 
-@Getter
-@Setter
-@EqualsAndHashCode
-@ToString
+@Data
 public class MarketUserDTO {
+
+  private RegistrationInfoDTO registrationInfo;
 
   private String login;
 

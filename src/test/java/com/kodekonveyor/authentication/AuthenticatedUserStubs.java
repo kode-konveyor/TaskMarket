@@ -8,7 +8,8 @@ public class AuthenticatedUserStubs {
       final AuthenticatedUserService authenticatedUserService,
       final UserTestData userTestData
   ) {
-    doReturn(userTestData.USER).when(authenticatedUserService).call();
+    doReturn(userTestData.TEST_USER_ENTITY).when(authenticatedUserService)
+        .call();
   }
 
   public static void salesUser(

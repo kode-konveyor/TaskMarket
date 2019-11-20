@@ -30,5 +30,4 @@ public class RoleEntity {
   @ManyToMany(fetch = FetchType.LAZY, mappedBy = "roles")
   @EqualsAndHashCode.Exclude
   private Set<UserEntity> users = new HashSet<>();
-
 }

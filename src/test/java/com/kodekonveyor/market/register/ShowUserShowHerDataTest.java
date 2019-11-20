@@ -3,6 +3,8 @@ package com.kodekonveyor.market.register;
 import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.mockito.Mockito.doReturn;
 
+import java.util.List;
+
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.extension.ExtendWith;
@@ -32,13 +34,20 @@ public class ShowUserShowHerDataTest {
   @Mock
   private AuthenticatedUserService authenticatedUserService;
 
+  @Mock
+  private MarketUserEntityRepository marketUserEntityRepository;
+
   @Test
   @DisplayName("The data of the currently authenticated user is shown")
   public void test() {
     final UserTestData userTestData = new UserTestData();
     final RegisterTestData registerTestData =
         new RegisterTestData(userTestData);
-    doReturn(userTestData.USER).when(authenticatedUserService).call();
-    assertEquals(registerTestData.MARKET_USER, showUserController.call());
+    doReturn(userTestData.TEST_USER_ENTITY).when(authenticatedUserService)
+        .call();
+    doReturn(List.of(registerTestData.MARKET_USER))
+        .when(marketUserEntityRepository)
+        .findByLogin(userTestData.TEST_USER_ENTITY);
+    assertEquals(registerTestData.MARKET_USER_DTO, showUserController.call());
   }
 }

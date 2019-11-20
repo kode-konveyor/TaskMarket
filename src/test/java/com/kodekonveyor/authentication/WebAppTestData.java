@@ -10,7 +10,7 @@ import java.util.Vector;
 import javax.servlet.ServletRequest;
 import javax.servlet.http.HttpServletRequest;
 
-public class WebappTestData {
+class WebAppTestData {
 
   private final String NAME_HEADER = "OIDC_CLAIM_nickname";
   public final HttpServletRequest REQUEST;
@@ -20,7 +20,7 @@ public class WebappTestData {
   private final UserTestData userTestData; // NOPMD
   public String UNAUTHORIZED = "unauthorized";
 
-  public WebappTestData(final UserTestData userTestData) {
+  public WebAppTestData(final UserTestData userTestData) {
     this.userTestData = userTestData;
     REQUEST = createREQUEST();
     REQUEST_WITH_UNKNOWN_USER = createREQUEST_WITH_UNKNOWN_USER();

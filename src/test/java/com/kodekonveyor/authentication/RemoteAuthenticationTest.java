@@ -30,7 +30,7 @@ public class RemoteAuthenticationTest {
   @BeforeEach
   public void setUp() {
     testData = new UserTestData();
-    auth = new RemoteAuthentication(testData.USER);
+    auth = new RemoteAuthentication(testData.TEST_USER_ENTITY);
   }
 
   @DisplayName("getAuthorities returns an empty list")
@@ -48,13 +48,15 @@ public class RemoteAuthenticationTest {
   @DisplayName("getDetails returns the user")
   @Test
   public void test2() {
-    assertEquals(testData.USER, auth.getDetails());
+    assertEquals(testData.TEST_USER_ENTITY, auth.getDetails());
   }
 
   @DisplayName("the returned user has the correct id")
   @Test
   public void test21() {
-    assertEquals(testData.USER_ID, ((UserEntity) auth.getDetails()).getId());
+    assertEquals(
+        testData.USER_ID, (Long) ((UserEntity) auth.getDetails()).getId()
+    );
   }
 
   @DisplayName("getPrincipal returns the login name")

@@ -16,6 +16,8 @@ import com.kodekonveyor.market.UnauthorizedException;
 @RestController
 public class ListLeadController {
 
+  public static final String KODEKONVEYOR_SALES_ROLE = "kodekonveyor_sales";
+
   @Autowired
   LeadEntityRepository leadEntityRepository;
 
@@ -29,7 +31,7 @@ public class ListLeadController {
   public List<LeadDTO> call() {
     loggerService.call("member/lead");
     final UserEntity user = authenticatedUserService.call();
-    if (!hasRole(user, "kodekonveyor_sales"))
+    if (!hasRole(user, KODEKONVEYOR_SALES_ROLE))
       throw new UnauthorizedException("Unauthorized");
     final Iterable<LeadEntity> leads = leadEntityRepository.findAll();
     final List<LeadDTO> ret = new ArrayList<>();
@@ -44,9 +46,11 @@ public class ListLeadController {
   }
 
   private boolean hasRole(final UserEntity user, final String roleName) {
-    for (final RoleEntity role : user.getRoles())
-      if (role.getName().equals(roleName))
+    for (final RoleEntity role : user.getRoles()) {
+      final String name = role.getName();
+      if (name.equals(roleName))
         return true;
+    }
     return false;
   }
 }

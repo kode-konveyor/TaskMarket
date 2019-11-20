@@ -39,7 +39,7 @@ public class ListleadControllerStorageTest extends ListLeadControllerTestBase {
   @DisplayName("The data is listed")
   void test() {
     final List<LeadDTO> ret = listleadController.call();
-    assertEquals(leadTestData.LEAD_LIST, ret);
+    assertEquals(leadTestData.LEAD_DTO_LIST, ret);
   }
 
   @Test

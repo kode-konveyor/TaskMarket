@@ -1,57 +1,61 @@
 package com.kodekonveyor.market.lead;
 
 import java.util.List;
+import java.util.Set;
 
 import com.kodekonveyor.market.register.RegisterTestData;
 
-public class LeadTestData {
+class LeadTestData {
 
-  String INTEREST = "To work with Kodekonveyor";
-  String FIRST_NAME = "kumar";
   public final LeadEntity LEAD_ENTITY;
-  public long LEAD_ENTITY_ID = 42;
-  public LeadDTO LEAD;
-  public final RegisterTestData registerTestData;
-  public LeadEntity LEAD_ENTITY_NO_ID;
-  public List<LeadDTO> LEAD_LIST;
-  public List<LeadEntity> LEAD_ENTITY_LIST;
-  public final String LIST_LEAD_LOG = "member/lead";
-  public String REGISTER_LOG;
 
-  private String createREGISTER_LOG() {
-    return "received lead:" + LEAD;
-  }
+  public final String FIRST_NAME = "kumar";
+
+  public final String INTEREST = "To work with Kodekonveyor";
+
+  public final LeadDTO LEAD;
+
+  public final Set<LeadEntity> LEAD_ENTITY_LIST;
+
+  public final LeadEntity LEAD_ENTITY_NO_ID;
+
+  private final RegisterTestData registerTestData;
+
+  public final long LEAD_ID = 0x13d1d;
+
+  public final Set<LeadEntity> LEAD_LIST;
+
+  public final String LIST_LEAD_LOG = "member/lead";
+
+  public final String REGISTER_LOG =
+      "received lead:LeadDTO(firstName=kumar, email=john.bigboot@example.com, interest=To work with Kodekonveyor)";
+
+  public final List<LeadDTO> LEAD_DTO_LIST;
 
   public LeadTestData(final RegisterTestData registerTestData) {
     this.registerTestData = registerTestData;
-    LEAD = createLEAD();
-    LEAD_ENTITY_NO_ID = createLEAD_ENTITY_NO_ID();
-    LEAD_LIST = List.of(LEAD);
     LEAD_ENTITY = createLEAD_ENTITY();
-    LEAD_ENTITY_LIST = List.of(LEAD_ENTITY);
-    REGISTER_LOG = createREGISTER_LOG();
+    LEAD_LIST = Set.of(LEAD_ENTITY);
+    LEAD_ENTITY_NO_ID = createLEAD_ENTITY_NO_ID();
+    LEAD_ENTITY_LIST = Set.of(LEAD_ENTITY);
+    LEAD = new LeadDTO();
+    LEAD.setEmail(registerTestData.EMAIL);
+    LEAD.setFirstName(FIRST_NAME);
+    LEAD.setInterest(INTEREST);
+    LEAD_DTO_LIST = List.of(LEAD);
   }
 
   private LeadEntity createLEAD_ENTITY() {
-    final LeadEntity entity = createLEAD_ENTITY_NO_ID();
-    entity.setId(LEAD_ENTITY_ID);
-    return entity;
+    final LeadEntity leadEntity = createLEAD_ENTITY_NO_ID();
+    leadEntity.setId(LEAD_ID);
+    return leadEntity;
   }
 
   private LeadEntity createLEAD_ENTITY_NO_ID() {
     final LeadEntity leadEntity = new LeadEntity();
+    leadEntity.setEmail(registerTestData.EMAIL);
     leadEntity.setFirstName(FIRST_NAME);
-    leadEntity.setEmail(registerTestData.GITHUB_EMAIL);
     leadEntity.setInterest(INTEREST);
     return leadEntity;
   }
-
-  private LeadDTO createLEAD() {
-    final LeadDTO leadDTO = new LeadDTO();
-    leadDTO.setFirstName(FIRST_NAME);
-    leadDTO.setEmail(registerTestData.GITHUB_EMAIL);
-    leadDTO.setInterest(INTEREST);
-    return leadDTO;
-  }
-
 }

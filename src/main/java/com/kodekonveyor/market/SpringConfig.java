@@ -35,11 +35,9 @@ public class SpringConfig implements WebMvcConfigurer {
 
   @Value("${com.kodekonveyor.market.jdbcUri}")
   private String jdbcUri;
-  //"org.postgresql.Driver");
 
   @Value("${com.kodekonveyor.market.jdbcDriver}")
   private String jdbcDriver;
-  //"jdbc:postgresql://infra.kodekonveyor.com:5432/users?user=market&ssl=true&sslmode=verify-ca&sslpassword="
 
   @Bean
   public ModelMapper modelMapper() {
