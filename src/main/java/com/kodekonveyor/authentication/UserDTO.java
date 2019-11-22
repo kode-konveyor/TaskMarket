@@ -13,6 +13,6 @@ import lombok.ToString;
 public class UserDTO {
 
   private String login;
-  private Long id; //NOPMD design verdict
+  private Long id;
 
 }

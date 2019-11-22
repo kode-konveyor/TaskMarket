@@ -8,6 +8,7 @@ import org.springframework.web.bind.annotation.RestController;
 
 import com.kodekonveyor.authentication.AuthenticatedUserService;
 import com.kodekonveyor.authentication.UserEntity;
+import com.kodekonveyor.market.UrlMapConstants;
 
 @RestController
 public class ShowUserController {
@@ -18,12 +19,17 @@ public class ShowUserController {
   @Autowired
   private MarketUserEntityRepository marketUserEntityRepository;
 
-  @GetMapping("/member/user")
+  @GetMapping(UrlMapConstants.SHOW_USER_PATH)
   public MarketUserDTO call() {
     final UserEntity userEntity = authenticatedUserService.call();
     final List<MarketUserEntity> entities =
         marketUserEntityRepository.findByLogin(userEntity);
-    final MarketUserEntity entity = entities.get(0);
+    MarketUserEntity entity;
+    if (entities.isEmpty()) {
+      entity = new MarketUserEntity();
+      entity.setLegal(new UserLegalInfoEntity());
+    } else
+      entity = entities.get(0);
     final MarketUserDTO marketUserDTO = new MarketUserDTO();
     marketUserDTO.setLogin(userEntity.getLogin());
     final RegistrationInfoDTO registrationInfoDTO = new RegistrationInfoDTO();

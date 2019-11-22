@@ -29,10 +29,17 @@ public class RestResponseEntityExceptionHandler
   public ResponseEntity<Object> handleNotLoggedInException(
       final RuntimeException exception, final WebRequest request
   ) {
-    if (exception.getClass().equals(UnauthorizedException.class))
-      loggerService.call("unauthorized");
-    else
-      loggerService.call("not logged in");
+    final StackTraceElement location = exception.getStackTrace()[0];
+    final String message =
+        exception.getClass().getSimpleName() + ":" + exception.getMessage() +
+            " at " +
+            location.getFileName() + ":" +
+            location.getLineNumber();
+    loggerService
+        .call(
+            "exception", LogSeverityEnum.ERROR,
+            message
+        );
 
     final String bodyOfResponse = exception.getMessage();
     final HttpHeaders headers = new HttpHeaders();

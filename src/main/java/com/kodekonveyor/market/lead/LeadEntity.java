@@ -15,7 +15,7 @@ public class LeadEntity {
 
   @Id
   @GeneratedValue(strategy = GenerationType.IDENTITY)
-  private long id;// NOPMD
+  private long id;
   String firstName;
   String email;
   String interest;

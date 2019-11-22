@@ -1,7 +1,9 @@
 package com.kodekonveyor.authentication;
 
 import java.io.IOException;
+import java.util.Enumeration;
 import java.util.List;
+import java.util.UUID;
 
 import javax.servlet.Filter;
 import javax.servlet.FilterChain;
@@ -22,7 +24,9 @@ import org.springframework.web.filter.GenericFilterBean;
 
 import com.kodekonveyor.annotations.ExcludeFromCodeCoverage;
 import com.kodekonveyor.annotations.InterfaceClass;
+import com.kodekonveyor.market.LogSeverityEnum;
 import com.kodekonveyor.market.LoggerService;
+import com.kodekonveyor.market.SlfMDCWrapper;
 
 @InterfaceClass
 @ExcludeFromCodeCoverage("interface to underlying framework")
@@ -38,6 +42,9 @@ public class RemoteAuthenticationFilter extends GenericFilterBean
   @Autowired
   private LoggerService loggerService;
 
+  @Autowired
+  private SlfMDCWrapper mdc;
+
   @Override
   public void doFilter(
       final ServletRequest req, final ServletResponse res,
@@ -50,30 +57,42 @@ public class RemoteAuthenticationFilter extends GenericFilterBean
       loggerService = webApplicationContext.getBean(LoggerService.class);
       userEntityRepository =
           webApplicationContext.getBean(UserEntityRepository.class);
+      mdc =
+          webApplicationContext.getBean(SlfMDCWrapper.class);
     }
-    loggerService.call("authenticating ");
+    loggerService.call("authenticating", LogSeverityEnum.DEBUG, "");
     final HttpServletRequest httpRequest = (HttpServletRequest) req;
     final SecurityContext context = SecurityContextHolder.getContext();
-    if (
-      context.getAuthentication() == null ||
-          !context.getAuthentication().isAuthenticated()
-    ) {
-      final String login = httpRequest.getHeader(NICKNAME_HEADER);
-      loggerService.call("login:" + login);
-      final List<UserEntity> users =
-          userEntityRepository.findByLogin(login);
-      UserEntity user;
-      if (users.isEmpty()) {
-        user = createNewUserWithCredential(login);
-        userEntityRepository.save(user);
-      } else
-        user = users.get(0);
-      final Authentication auth = new RemoteAuthentication(user);
-      loggerService.call("authenticated " + auth.getPrincipal());
-      SecurityContextHolder.getContext().setAuthentication(auth);
+    final Enumeration<String> names = httpRequest.getHeaderNames();
+    loggerService
+        .call(
+            "headers", LogSeverityEnum.DEBUG,
+            ((Boolean) names.hasMoreElements()).toString()
+        );
+    while (names.hasMoreElements()) {
+      final String name = names.nextElement();
+      loggerService.call(
+          "header", LogSeverityEnum.DEBUG,
+          name + ":" + httpRequest.getHeader(name)
+      );
     }
-
+    final String login = httpRequest.getHeader(NICKNAME_HEADER);
+    mdc.put("auth.user", login);
+    mdc.put("auth.session", UUID.randomUUID().toString());
+    loggerService.call("login", LogSeverityEnum.INFO, login);
+    final List<UserEntity> users =
+        userEntityRepository.findByLogin(login);
+    UserEntity user;
+    if (users.isEmpty()) {
+      user = createNewUserWithCredential(login);
+      userEntityRepository.save(user);
+    } else
+      user = users.get(0);
+    final Authentication auth = new RemoteAuthentication(user);
+    SecurityContextHolder.getContext().setAuthentication(auth);
     filterChain.doFilter(req, res);
+    context.setAuthentication(null);
+    mdc.clear();
 
   }
 

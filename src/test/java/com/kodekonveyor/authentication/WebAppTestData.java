@@ -15,10 +15,13 @@ class WebAppTestData {
   private final String NAME_HEADER = "OIDC_CLAIM_nickname";
   public final HttpServletRequest REQUEST;
   public final ServletRequest REQUEST_WITH_UNKNOWN_USER;
-  public final String NOT_LOGGED_IN = "not logged in";
+  public final String NOT_LOGGED_IN =
+      "NotLoggedInException:not logged in at RestResponseEntityExceptionHandlerTest.java";
   public final String LOGIN_URL = "/some/url";
-  private final UserTestData userTestData; // NOPMD
-  public String UNAUTHORIZED = "unauthorized";
+  public String UNAUTHORIZED =
+      "UnauthorizedException:message at RestResponseEntityExceptionHandlerTest.java";
+
+  private final UserTestData userTestData;
 
   public WebAppTestData(final UserTestData userTestData) {
     this.userTestData = userTestData;

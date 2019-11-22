@@ -1,7 +1,6 @@
 package com.kodekonveyor.authentication;
 
-import static org.mockito.Mockito.doReturn;
-import static org.mockito.Mockito.when;
+import static org.mockito.Mockito.*;
 
 import org.mockito.invocation.InvocationOnMock;
 import org.mockito.stubbing.Answer;
@@ -11,6 +10,7 @@ public class UserEntityRepositoryStubs {
   public static void behaviour(
       final UserEntityRepository userRepository, final UserTestData userTestData
   ) {
+    reset(userRepository);
     doReturn(userTestData.USER_LIST).when(userRepository)
         .findByLogin(userTestData.LOGIN);
     doReturn(userTestData.EMPTY_LIST).when(userRepository)

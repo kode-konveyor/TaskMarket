@@ -4,7 +4,6 @@ import static org.assertj.core.api.Assertions.assertThat;
 import static org.junit.Assert.assertEquals;
 
 import org.junit.jupiter.api.Assertions;
-import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.extension.ExtendWith;
@@ -22,16 +21,7 @@ import com.kodekonveyor.annotations.TestedService;
 @RunWith(MockitoJUnitRunner.class)
 @TestedBehaviour("Uses the userEntity to return various data")
 @TestedService("RemoteAuthentication")
-public class RemoteAuthenticationTest {
-
-  private RemoteAuthentication auth;
-  private UserTestData testData;
-
-  @BeforeEach
-  public void setUp() {
-    testData = new UserTestData();
-    auth = new RemoteAuthentication(testData.TEST_USER_ENTITY);
-  }
+public class RemoteAuthenticationTest extends RemoteAuthenticationTestBase {
 
   @DisplayName("getAuthorities returns an empty list")
   @Test

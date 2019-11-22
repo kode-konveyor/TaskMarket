@@ -6,6 +6,7 @@ import org.mockito.Mock;
 
 import com.kodekonveyor.authentication.AuthenticatedUserService;
 import com.kodekonveyor.authentication.UserTestData;
+import com.kodekonveyor.market.LogTestData;
 import com.kodekonveyor.market.LoggerService;
 import com.kodekonveyor.market.register.RegisterTestData;
 
@@ -22,10 +23,12 @@ public class ListLeadControllerTestBase {
 
   LeadTestData leadTestData;
   UserTestData userTestData;
+  LogTestData logTestData;
 
   @BeforeEach
   void setUp() {
     userTestData = new UserTestData();
+    logTestData = new LogTestData();
     final RegisterTestData registerTestData =
         new RegisterTestData(userTestData);
     leadTestData = new LeadTestData(registerTestData);

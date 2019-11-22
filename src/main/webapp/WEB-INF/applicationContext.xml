@@ -22,13 +22,6 @@
 	    <property name="packagesToScan" value="com.kodekonveyor.market" />
 	    <property name="dataSource" ref="dataSource" />
 	
-	    <property name="jpaProperties">
-	        <props>
-	            <prop key="hibernate.show_sql">true</prop>
-	            <prop key="hibernate.dialect">org.hibernate.dialect.PostgreSQLDialect</prop>
-	        </props>
-	    </property>
-	
 	    <property name="persistenceProvider">
 	        <bean class="org.hibernate.jpa.HibernatePersistenceProvider"></bean>
 	    </property>
@@ -40,5 +33,6 @@
 	    id="transactionManager">
 	    <property name="dataSource" ref="dataSource" />
 	</bean>
+
 </beans>
 

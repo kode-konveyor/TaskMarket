@@ -7,6 +7,9 @@ import org.springframework.security.core.Authentication;
 import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.stereotype.Service;
 
+import com.kodekonveyor.market.LogSeverityEnum;
+import com.kodekonveyor.market.LoggerService;
+
 @Service
 public class AuthenticatedUserService {
 
@@ -16,8 +19,12 @@ public class AuthenticatedUserService {
   @Autowired
   private UserEntityRepository userEntityRepository;
 
+  @Autowired
+  private LoggerService loggerService;
+
   public UserEntity call() {
     final String login = getNameForUser();
+    loggerService.call("login", LogSeverityEnum.INFO, login);
     checkCredential(login);
     final List<UserEntity> userList =
         userEntityRepository.findByLogin(login);

@@ -19,4 +19,12 @@ public class AuthenticatedUserStubs {
     doReturn(userTestData.SALES_USER).when(authenticatedUserService).call();
   }
 
+  public static void noMarketuser(
+      final AuthenticatedUserService authenticatedUserService,
+      final UserTestData userTestData
+  ) {
+    doReturn(userTestData.TEST_USER_ENTITY_NO_MARKET_USER)
+        .when(authenticatedUserService)
+        .call();
+  }
 }

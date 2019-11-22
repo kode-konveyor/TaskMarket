@@ -11,6 +11,7 @@ import org.springframework.web.server.ResponseStatusException;
 
 import com.fasterxml.jackson.databind.DeserializationFeature;
 import com.kodekonveyor.annotations.ExcludeFromCodeCoverage;
+import com.kodekonveyor.market.LogSeverityEnum;
 import com.kodekonveyor.market.LoggerService;
 import com.kodekonveyor.market.proxies.ObjectMapperService;
 
@@ -27,7 +28,7 @@ public class GithubGetService {
   public <ValueType> ValueType
       call(final String command, final Class<ValueType> cls) {
     final String uri = "https://api.github.com" + command;
-    loggerService.call("uri:" + uri);
+    loggerService.call("githubCall", LogSeverityEnum.DEBUG, uri);
     URL url;
     try {
       url = new URL(uri);

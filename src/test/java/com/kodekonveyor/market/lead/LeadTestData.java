@@ -5,7 +5,7 @@ import java.util.Set;
 
 import com.kodekonveyor.market.register.RegisterTestData;
 
-class LeadTestData {
+public class LeadTestData {
 
   public final LeadEntity LEAD_ENTITY;
 
@@ -21,11 +21,11 @@ class LeadTestData {
 
   private final RegisterTestData registerTestData;
 
-  public final long LEAD_ID = 0x13d1d;
+  public final long LEAD_ID = 0x134d1d;
 
   public final Set<LeadEntity> LEAD_LIST;
 
-  public final String LIST_LEAD_LOG = "member/lead";
+  public final String LIST_LEAD_LOG = "/member/lead";
 
   public final String REGISTER_LOG =
       "received lead:LeadDTO(firstName=kumar, email=john.bigboot@example.com, interest=To work with Kodekonveyor)";
@@ -38,11 +38,16 @@ class LeadTestData {
     LEAD_LIST = Set.of(LEAD_ENTITY);
     LEAD_ENTITY_NO_ID = createLEAD_ENTITY_NO_ID();
     LEAD_ENTITY_LIST = Set.of(LEAD_ENTITY);
-    LEAD = new LeadDTO();
-    LEAD.setEmail(registerTestData.EMAIL);
-    LEAD.setFirstName(FIRST_NAME);
-    LEAD.setInterest(INTEREST);
+    LEAD = createLEAD();
     LEAD_DTO_LIST = List.of(LEAD);
+  }
+
+  private LeadDTO createLEAD() {
+    final LeadDTO leadDTO = new LeadDTO();
+    leadDTO.setEmail(registerTestData.EMAIL);
+    leadDTO.setFirstName(FIRST_NAME);
+    leadDTO.setInterest(INTEREST);
+    return leadDTO;
   }
 
   private LeadEntity createLEAD_ENTITY() {

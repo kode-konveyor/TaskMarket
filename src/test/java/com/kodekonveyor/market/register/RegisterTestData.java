@@ -32,18 +32,27 @@ public class RegisterTestData {
 
   private final UserTestData userTestData;
 
+  public final MarketUserDTO MARKET_USER_DTO_NEWLY_CREATED;
+
   public RegisterTestData(final UserTestData userTestData) {
     this.userTestData = userTestData;
     USER_LEGAL_INFO = createUSER_LEGAL_INFO();
     MARKET_USER = createMARKET_USER();
     TEST_REGISTRATION_INFO = createTEST_REGISTRATION_INFO();
     MARKET_USER_DTO = createMARKET_USER_DTO();
+    MARKET_USER_DTO_NEWLY_CREATED = createMARKET_USER_DTO_NEWLY_CREATED();
+  }
 
+  private MarketUserDTO createMARKET_USER_DTO_NEWLY_CREATED() {
+    final MarketUserDTO marketUserDTO = new MarketUserDTO();
+    marketUserDTO.setRegistrationInfo(new RegistrationInfoDTO());
+    marketUserDTO.setLogin(userTestData.USER_WITH_NO_MARKET_USER_ID_LOGIN);
+    return marketUserDTO;
   }
 
   private MarketUserDTO createMARKET_USER_DTO() {
     final MarketUserDTO marketUserDTO = new MarketUserDTO();
-    marketUserDTO.setRegistrationInfo(TEST_REGISTRATION_INFO);
+    marketUserDTO.setRegistrationInfo(createTEST_REGISTRATION_INFO());
     marketUserDTO.setLogin(userTestData.GITHUB_ID);
     return marketUserDTO;
   }

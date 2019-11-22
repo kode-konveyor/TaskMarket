@@ -8,6 +8,9 @@ public class UserTestData {
 
   public final UserDTO USER_DTO;
   public final String GITHUB_ID = "gituser";
+  public final Long USER_WITH_NO_MARKET_USER_ID = (long) 44;
+  public final String USER_WITH_NO_MARKET_USER_ID_LOGIN = "userNoMarketUser";
+
   public final UserEntity TEST_USER_ENTITY;
   public final RoleEntity TEST_ROLE_ENTITY;
   public final String TEST_ROLE = "test_testrole";
@@ -23,12 +26,14 @@ public class UserTestData {
   public final UserEntity SALES_USER;
   public String SHOULD_NOT_HAPPEN = "This should not happen";
   public final String KODEKONVEYOR_SALES_ROLE = "kodekonveyor_sales";
-  public RoleEntity SALES_ROLE;
+  public final RoleEntity SALES_ROLE;
+  public final UserEntity TEST_USER_ENTITY_NO_MARKET_USER;
 
   public UserTestData() {
     TEST_ROLE_ENTITY = createTEST_ROLE_ENTITY();
     TEST_USER_ENTITY =
         createTEST_USER_ENTITY();
+    TEST_USER_ENTITY_NO_MARKET_USER = createTEST_USER_ENTITY_NO_MARKET_USER();
     SALES_ROLE = createSALES_ROLE();
     SALES_USER = createSALES_USER();
     USER_LIST = List.of(TEST_USER_ENTITY);
@@ -59,6 +64,13 @@ public class UserTestData {
     final UserDTO user = new UserDTO();
     user.setId(USER_ID);
     user.setLogin(LOGIN);
+    return user;
+  }
+
+  private UserEntity createTEST_USER_ENTITY_NO_MARKET_USER() {
+    final UserEntity user = new UserEntity();
+    user.setId(USER_WITH_NO_MARKET_USER_ID);
+    user.setLogin(USER_WITH_NO_MARKET_USER_ID_LOGIN);
     return user;
   }
 

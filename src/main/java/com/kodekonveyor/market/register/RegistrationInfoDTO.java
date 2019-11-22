@@ -3,7 +3,7 @@ package com.kodekonveyor.market.register;
 import lombok.Data;
 
 @Data
-class RegistrationInfoDTO {
+public class RegistrationInfoDTO {
 
   private String country;
 
