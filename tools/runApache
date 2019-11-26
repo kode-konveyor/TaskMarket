@@ -1,11 +1,11 @@
 #!/bin/bash
 set -xe
-mkdir -p target
-cp etc/login.shtml target
-openssl req -x509 -newkey rsa:2048 -keyout target/key.withpass.pem -out target/server.pem -days 365 -subj "/C=EE/ST=Haarju/L=Pudisoo/O=Kode Konveyor/OU=Testing/CN=localhost" -passout pass:1234
-openssl rsa -in target/key.withpass.pem -out target/key.pem -passin pass:1234
+mkdir -p shippable
+cp etc/login.shtml shippable
+openssl req -x509 -newkey rsa:2048 -keyout shippable/key.withpass.pem -out shippable/server.pem -days 365 -subj "/C=EE/ST=Haarju/L=Pudisoo/O=Kode Konveyor/OU=Testing/CN=localhost" -passout pass:1234
+openssl rsa -in shippable/key.withpass.pem -out shippable/key.pem -passin pass:1234
 export APACHE_RUN_DIR=/var/lib/apache2
 export ETC_DIR=$(pwd)/etc
-export DOCUMENT_ROOT=$(pwd)/target
+export DOCUMENT_ROOT=$(pwd)/shippable
 export APACHE_PID_FILE=${DOCUMENT_ROOT}/apache.pid
 apache2 -f $(pwd)/etc/apache2.conf
