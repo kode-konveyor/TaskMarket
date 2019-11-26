@@ -2,6 +2,14 @@
 set -xe
 mkdir -p shippable
 cp etc/login.shtml shippable
+sofar="/"
+for i in $(pwd|sed 'sA/A Ag')
+do
+	sofar=$sofar/$i
+	echo $sofar
+	sudo chgrp www-data $sofar
+	sudo chmod g+rx $sofar
+done
 openssl req -x509 -newkey rsa:2048 -keyout shippable/key.withpass.pem -out shippable/server.pem -days 365 -subj "/C=EE/ST=Haarju/L=Pudisoo/O=Kode Konveyor/OU=Testing/CN=localhost" -passout pass:1234
 openssl rsa -in shippable/key.withpass.pem -out shippable/key.pem -passin pass:1234
 export APACHE_RUN_DIR=/var/lib/apache2
