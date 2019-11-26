@@ -5,8 +5,6 @@ cp etc/login.shtml target
 openssl req -x509 -newkey rsa:2048 -keyout target/key.withpass.pem -out target/server.pem -days 365 -subj "/C=EE/ST=Haarju/L=Pudisoo/O=Kode Konveyor/OU=Testing/CN=localhost" -passout pass:1234
 openssl rsa -in target/key.withpass.pem -out target/key.pem -passin pass:1234
 export APACHE_RUN_DIR=/var/lib/apache2
-export APACHE_RUN_USER=$(id -un)
-export APACHE_RUN_GROUP=$(id -gn)
 export ETC_DIR=$(pwd)/etc
 export DOCUMENT_ROOT=$(pwd)/target
 export APACHE_PID_FILE=${DOCUMENT_ROOT}/apache.pid
