@@ -26,7 +26,18 @@ class LogMarker implements Marker {
   }
 
   @Override
-  public boolean remove(final Marker reference) {
+  public boolean contains(final Marker other) {
+    return false;
+  }
+
+  @Override
+  public boolean contains(final String name) {
+    return false;
+  }
+
+  @Override
+  @SuppressWarnings("deprecation")
+  public boolean hasChildren() {
     return false;
   }
 
@@ -41,18 +52,7 @@ class LogMarker implements Marker {
   }
 
   @Override
-  public boolean contains(final Marker other) {
-    return false;
-  }
-
-  @Override
-  public boolean contains(final String name) {
-    return false;
-  }
-
-  @Override
-  @SuppressWarnings("deprecation")
-  public boolean hasChildren() {
+  public boolean remove(final Marker reference) {
     return false;
   }
 

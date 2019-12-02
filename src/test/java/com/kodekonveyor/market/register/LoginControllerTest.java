@@ -26,9 +26,9 @@ public class LoginControllerTest extends LoginControllerTestBase {
   @DisplayName("The next parameter is embedded in the return value")
   public void test() {
     final RedirectView redirectView =
-        loginController.call(registerTestData.NEXT_URL);
+        loginController.call(LoginControllerTestData.NEXT_URL);
     assertEquals(
-        registerTestData.NEXT_URL, redirectView.getUrl()
+        LoginControllerTestData.NEXT_URL, redirectView.getUrl()
     );
   }
 

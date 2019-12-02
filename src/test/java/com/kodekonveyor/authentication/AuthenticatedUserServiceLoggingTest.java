@@ -28,7 +28,7 @@ public class AuthenticatedUserServiceLoggingTest
   @Override
   public void setUp() {
     super.setUp();
-    AuthenticationStubs.authenticated(userTestData);
+    AuthenticationStubs.authenticated();
     authenticatedUserService.call();
   }
 
@@ -36,7 +36,10 @@ public class AuthenticatedUserServiceLoggingTest
   @DisplayName("Logs the username based on external authentication")
   public void test() {
     verify(loggerService)
-        .call(logTestData.LOGIN, LogSeverityEnum.INFO, userTestData.LOGIN);
+        .call(
+            RemoteAuthenticationFilterTestData.LOGIN, LogSeverityEnum.INFO,
+            UserEntityTestData.LOGIN
+        );
   }
 
 }

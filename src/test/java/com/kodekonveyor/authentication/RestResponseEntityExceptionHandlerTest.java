@@ -33,13 +33,15 @@ public class RestResponseEntityExceptionHandlerTest
   @Test
   public void test() {
     final NotLoggedInException exception =
-        new NotLoggedInException(logTestData.NOT_LOGGED_IN);
+        new NotLoggedInException(
+            RestResponseEntityExceptionHandlerTestData.NOT_LOGGED_IN
+        );
     final WebRequest request = mock(WebRequest.class);
     restResponseEntityExceptionHandler
         .handleNotLoggedInException(exception, request);
     verify(loggerService)
         .call(
-            eq(logTestData.EXCEPTION), eq(LogSeverityEnum.ERROR), ArgumentMatchers.contains(testData.NOT_LOGGED_IN)
+            eq(RestResponseEntityExceptionHandlerTestData.EXCEPTION), eq(LogSeverityEnum.ERROR), ArgumentMatchers.contains(RestResponseEntityExceptionHandlerTestData.NOT_LOGGED_IN)
         );
   }
 
@@ -49,13 +51,15 @@ public class RestResponseEntityExceptionHandlerTest
   @Test
   public void test1() {
     final UnauthorizedException exception =
-        new UnauthorizedException(logTestData.MESSAGE);
+        new UnauthorizedException(
+            RestResponseEntityExceptionHandlerTestData.MESSAGE
+        );
     final WebRequest request = mock(WebRequest.class);
     restResponseEntityExceptionHandler
         .handleNotLoggedInException(exception, request);
     verify(loggerService)
         .call(
-            eq(logTestData.EXCEPTION), eq(LogSeverityEnum.ERROR), ArgumentMatchers.contains(testData.UNAUTHORIZED)
+            eq(RestResponseEntityExceptionHandlerTestData.EXCEPTION), eq(LogSeverityEnum.ERROR), ArgumentMatchers.contains(RestResponseEntityExceptionHandlerTestData.UNAUTHORIZED)
         );
   }
 

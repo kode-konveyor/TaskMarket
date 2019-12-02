@@ -6,7 +6,7 @@ class MarketUserCompilerStubs {
 
   public void behaviour(
       final MarketUserCompilerService marketUserCompilerService,
-      final RegisterTestData registerTestData
+      final MarketUserDTOTestData registerTestData
   ) {
     reset(marketUserCompilerService);
 

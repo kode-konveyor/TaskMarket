@@ -123,7 +123,7 @@ MethodDeclarator[not(matches(@Image,'^[a-z][a-zA-Z0-9]*$'))]
 </rule>
 <rule name="TestDataRules"
       language="java"
-      message="TestData units should contain non-static SCREAMING_SNAKE_CASE and TestData fields, and corresponding private creators "
+      message="TestData units should contain static final SCREAMING_SNAKE_CASE, public static final getters and lists"
       class="net.sourceforge.pmd.lang.rule.XPathRule">
    <description>
 see message
@@ -140,11 +140,12 @@ see message
         matches(VariableDeclarator/VariableDeclaratorId/@Image,'^[A-Z0-9_]*$') or
         matches(VariableDeclarator/VariableDeclaratorId/@Image,'^[a-z0-9_]*TestData$')
     ) or
-    @Static = true()
+    @Static = false()
 ]|
 //MethodDeclaration[
-    not(matches(MethodDeclarator/@Image,'^create[A-Z0-9_]*$')) or
-    @Private = false()
+    not(matches(MethodDeclarator/@Image,'^get[a-zA-z]*$') or
+    	matches(MethodDeclarator/@Image,'^list[a-zA-z]*$')) or
+    @Public = false()
 ]|
 .[..//MarkerAnnotation[Name/@Image='Getter']]
 )
@@ -167,7 +168,8 @@ see message
          <value>
 <![CDATA[
 //VariableDeclaratorId[string-length(@Image) < 3 and not(
-   (@Image = 'id' and ../../local-name() = 'FieldDeclaration')
+   (@Image = 'id' and ../../local-name() = 'FieldDeclaration') or
+   (@Image = 'ID' and ../../local-name() = 'FieldDeclaration')
 )]
 
 ]]>

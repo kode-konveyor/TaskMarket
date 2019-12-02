@@ -36,9 +36,9 @@ public class AuthenticatedUserServiceDataAccessTest
   @Test
   @DisplayName("Gets the user by the authenticated name")
   public void test() {
-    AuthenticationStubs.authenticated(userTestData);
+    AuthenticationStubs.authenticated();
     assertEquals(
-        userTestData.TEST_USER_ENTITY, authenticatedUserService.call()
+        UserEntityTestData.get(), authenticatedUserService.call()
     );
   }
 
@@ -61,7 +61,7 @@ public class AuthenticatedUserServiceDataAccessTest
     AuthenticationStubs.nullAuthentication();
     final ThrowableTester tester = new ThrowableTester();
     tester.assertThrows(() -> authenticatedUserService.call())
-        .assertMessageIs(userTestData.NO_AUTHENTICATION);
+        .assertMessageIs(AuthenticatedUserServiceTestData.NO_AUTHENTICATION);
   }
 
   @Test
@@ -81,7 +81,7 @@ public class AuthenticatedUserServiceDataAccessTest
   public void test5() {
     AuthenticationStubs.nullCredential();
     tester.assertThrows(() -> authenticatedUserService.call())
-        .assertMessageIs(userTestData.NO_CREDENTIAL);
+        .assertMessageIs(AuthenticatedUserServiceTestData.NO_CREDENTIAL);
   }
 
   @Test
@@ -89,7 +89,7 @@ public class AuthenticatedUserServiceDataAccessTest
     "When there is no user for the authentication, we throw NotLoggedInException."
   )
   public void test7() {
-    AuthenticationStubs.badAuthenticated(userTestData);
+    AuthenticationStubs.badAuthenticated();
     tester.assertThrows(() -> authenticatedUserService.call())
         .assertException(NotLoggedInException.class);
   }
@@ -99,9 +99,9 @@ public class AuthenticatedUserServiceDataAccessTest
     "When there is no user for the authentication, the exception message is 'This should not happen'"
   )
   public void test8() {
-    AuthenticationStubs.badAuthenticated(userTestData);
+    AuthenticationStubs.badAuthenticated();
     tester.assertThrows(() -> authenticatedUserService.call())
-        .assertMessageIs(userTestData.SHOULD_NOT_HAPPEN);
+        .assertMessageIs(AuthenticatedUserServiceTestData.SHOULD_NOT_HAPPEN);
   }
 
 }

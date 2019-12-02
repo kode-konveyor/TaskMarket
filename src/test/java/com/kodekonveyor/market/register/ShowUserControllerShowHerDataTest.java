@@ -15,7 +15,6 @@ import org.mockito.quality.Strictness;
 import com.kodekonveyor.annotations.TestedBehaviour;
 import com.kodekonveyor.annotations.TestedService;
 import com.kodekonveyor.authentication.AuthenticatedUserStubs;
-import com.kodekonveyor.authentication.UserTestData;
 
 @ExtendWith(MockitoExtension.class)
 @MockitoSettings(strictness = Strictness.LENIENT)
@@ -25,31 +24,28 @@ import com.kodekonveyor.authentication.UserTestData;
 public class ShowUserControllerShowHerDataTest
     extends ShowUserControllerTestBase {
 
-  UserTestData userTestData;
-  RegisterTestData registerTestData;
+  MarketUserDTOTestData registerTestData;
 
   @BeforeEach
   void setUp() {
-    userTestData = new UserTestData();
-    registerTestData = new RegisterTestData(userTestData);
     MarketUserStubs
-        .behaviour(marketUserEntityRepository, userTestData, registerTestData);
+        .behaviour(marketUserEntityRepository, registerTestData);
   }
 
   @Test
   @DisplayName("The data of the currently authenticated user is shown")
   public void test() {
     AuthenticatedUserStubs
-        .authenticated(authenticatedUserService, userTestData);
-    assertEquals(registerTestData.MARKET_USER_DTO, showUserController.call());
+        .authenticated(authenticatedUserService);
+    assertEquals(MarketUserDTOTestData.get(), showUserController.call());
   }
 
   @Test
   @DisplayName("If there is no MarketUserEntity for the user, it is created")
   public void test1() {
-    AuthenticatedUserStubs.noMarketuser(authenticatedUserService, userTestData);
+    AuthenticatedUserStubs.noMarketuser(authenticatedUserService);
     assertEquals(
-        registerTestData.MARKET_USER_DTO_NEWLY_CREATED,
+        MarketUserDTOTestData.getLoginNoMarket(),
         showUserController.call()
     );
   }

@@ -24,7 +24,7 @@ public class NotLoggedInExceptionTest extends NotLoggedInExceptionTestBase {
   @DisplayName("the message is the exception message")
   @Test
   public void test() {
-    assertEquals(logTestData.MESSAGE, exception.getMessage());
+    assertEquals(NotLoggedInExceptionTestData.MESSAGE, exception.getMessage());
   }
 
 }

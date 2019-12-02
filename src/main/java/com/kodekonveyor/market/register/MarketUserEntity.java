@@ -13,6 +13,7 @@ import lombok.Data;
 
 @Data
 @Entity
+public
 class MarketUserEntity {
 
   @Id

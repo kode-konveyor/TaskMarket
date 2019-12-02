@@ -32,7 +32,7 @@ public class ListleadControllerStorageTest extends ListLeadControllerTestBase {
   void setUp() {
     super.setUp();
     AuthenticatedUserStubs
-        .salesUser(authenticatedUserService, userTestData);
+        .salesUser(authenticatedUserService);
 
   }
 
@@ -40,7 +40,7 @@ public class ListleadControllerStorageTest extends ListLeadControllerTestBase {
   @DisplayName("The data is listed")
   void test() {
     final List<LeadDTO> ret = listleadController.call();
-    assertEquals(leadTestData.LEAD_DTO_LIST, ret);
+    assertEquals(LeadDTOTestData.list(), ret);
   }
 
   @Test
@@ -49,7 +49,8 @@ public class ListleadControllerStorageTest extends ListLeadControllerTestBase {
     listleadController.call();
     verify(loggerService)
         .call(
-            logTestData.CALL, LogSeverityEnum.DEBUG, leadTestData.LIST_LEAD_LOG
+            ListLeadControllerTestData.CALL, LogSeverityEnum.DEBUG,
+            ListLeadControllerTestData.LIST_LEAD_LOG
         );
   }
 

@@ -15,6 +15,7 @@ import org.mockito.quality.Strictness;
 import com.kodekonveyor.annotations.TestedBehaviour;
 import com.kodekonveyor.annotations.TestedService;
 import com.kodekonveyor.market.LogSeverityEnum;
+import com.kodekonveyor.market.RegisterInterestControllerTestData;
 
 @ExtendWith(MockitoExtension.class)
 @MockitoSettings(strictness = Strictness.LENIENT)
@@ -27,8 +28,8 @@ public class RegisterInterestControllerStorageTest
   @Test
   @DisplayName("The data is stored for application/json requests")
   void test() {
-    registerInterestController.call(leadTestData.LEAD);
-    verify(leadEntityRepository).save(leadTestData.LEAD_ENTITY_NO_ID);
+    registerInterestController.call(LeadDTOTestData.get());
+    verify(leadEntityRepository).save(LeadEntityTestData.getIdUninitialized());
   }
 
   @Test
@@ -36,15 +37,15 @@ public class RegisterInterestControllerStorageTest
     "The data is stored when using application/x-www-form-urlencoded request"
   )
   void test1() {
-    registerInterestController.callForUrlencoded(leadTestData.LEAD);
-    verify(leadEntityRepository).save(leadTestData.LEAD_ENTITY_NO_ID);
+    registerInterestController.callForUrlencoded(LeadDTOTestData.get());
+    verify(leadEntityRepository).save(LeadEntityTestData.getIdUninitialized());
   }
 
   @Test
   @DisplayName("The stored data is returned for application/json requests")
   void test2() {
-    final LeadDTO ret = registerInterestController.call(leadTestData.LEAD);
-    assertEquals(leadTestData.LEAD, ret);
+    final LeadDTO ret = registerInterestController.call(LeadDTOTestData.get());
+    assertEquals(LeadDTOTestData.get(), ret);
   }
 
   @Test
@@ -53,18 +54,19 @@ public class RegisterInterestControllerStorageTest
   )
   void test21() {
     final LeadDTO ret =
-        registerInterestController.callForUrlencoded(leadTestData.LEAD);
-    assertEquals(leadTestData.LEAD, ret);
+        registerInterestController.callForUrlencoded(LeadDTOTestData.get());
+    assertEquals(LeadDTOTestData.get(), ret);
   }
 
   @Test
   @DisplayName("The call of the service is logged with the created entity")
   void test3() {
-    registerInterestController.call(leadTestData.LEAD);
+    registerInterestController.call(LeadDTOTestData.get());
     verify(loggerService)
         .call(
-            logTestData.LEAD_RECEIVED, LogSeverityEnum.INFO,
-            leadTestData.LEAD.toString()
+            RegisterInterestControllerTestData.LEAD_RECEIVED,
+            LogSeverityEnum.INFO,
+            LeadDTOTestData.get().toString()
         );
   }
 
