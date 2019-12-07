@@ -4138,8 +4138,7 @@ details is a '/' separated string of the needed details. its content depends on 
         <element xsi:type="zenta:BasicRelationship" id="1655912b-cde4-45fe-a3f9-3bf766678000" ancestor="7a26a9a0-0603-4f53-93d2-f09fd0519e2b" source="45a9c92b-2e86-458f-8281-a598f107af77" target="81320af1-db53-4357-98e8-b11c7248e2be"/>
         <element xsi:type="zenta:BasicRelationship" id="6f4337be-11d7-4d28-8449-b820921e468e" ancestor="7a26a9a0-0603-4f53-93d2-f09fd0519e2b" source="8db9bcea-f044-4468-b8aa-28ea710a403b" target="81320af1-db53-4357-98e8-b11c7248e2be"/>
       </folder>
-      <element xsi:type="zenta:BasicObject" name="register" id="9cbe82ab-fb63-4d28-b8e7-249a5398f30d" ancestor="d3d4e39d-09a6-4a0f-a985-be922245d850"/>
-      <element xsi:type="zenta:Folder" name="RegistrationController" id="0760483a-86e7-4c4c-94b8-4d27da2a2fb1">
+      <folder name="RegistrationController" id="0760483a-86e7-4c4c-94b8-4d27da2a2fb1">
         <element xsi:type="zenta:ZentaDiagramModel" name="RegistrationController" id="46a73191-6f59-4cfe-a39d-88527213da8c" connectionRouterType="1">
           <child xsi:type="zenta:DiagramObject" id="ce0f820b-e3ed-45b6-86f4-66acf0508c08" targetConnections="332be973-927d-4b12-b250-66c672667acb 4d81d358-3bff-43a8-b0eb-035cf40af782" zentaElement="f9e928c5-a7ca-4df9-9bc2-ffa6e79007e9">
             <bounds x="223" y="48" width="210"/>
@@ -4220,7 +4219,8 @@ details is a '/' separated string of the needed details. its content depends on 
         </element>
         <element xsi:type="zenta:BasicObject" name="@RequestBody registrationInfo" id="b5341c18-5906-4a6c-9ba6-8487c2d19b9d" ancestor="7a959e3d-31b1-491f-82dc-57838b15ce59"/>
         <element xsi:type="zenta:BasicObject" name="RegistrationController" id="7d3a7afe-b79f-4855-bb46-754c8370a376" ancestor="5491f72b-93ec-4ad5-b6a9-2653fe808a03"/>
-      </element>
+      </folder>
+      <element xsi:type="zenta:BasicObject" name="register" id="9cbe82ab-fb63-4d28-b8e7-249a5398f30d" ancestor="d3d4e39d-09a6-4a0f-a985-be922245d850"/>
       <element xsi:type="zenta:ZentaDiagramModel" name="register" id="c9292aab-6f1d-49bd-8103-defed8f801d3" connectionRouterType="1">
         <child xsi:type="zenta:DiagramObject" id="a25efbf0-de92-4185-8e0d-c15b8b4730bd" zentaElement="9cbe82ab-fb63-4d28-b8e7-249a5398f30d">
           <bounds x="507" y="68" width="-1" height="-1"/>
@@ -4458,7 +4458,7 @@ details is a '/' separated string of the needed details. its content depends on 
           <documentation>&quot;not logged in&quot;</documentation>
         </element>
       </folder>
-      <element xsi:type="zenta:Folder" name="RoleEntity" id="f8a9ba55-94ba-4447-8049-e5d45b40f222">
+      <folder name="RoleEntity" id="f8a9ba55-94ba-4447-8049-e5d45b40f222">
         <element xsi:type="zenta:ZentaDiagramModel" name="Role" id="fa636e80-9787-4bd5-8384-4c5dec96b25b" connectionRouterType="1">
           <child xsi:type="zenta:DiagramObject" id="9dd555ec-68fd-45af-b7d7-1e5edb3e127f" targetConnections="d7a89aa9-514f-4b62-828a-cae3660ed98a" zentaElement="b0b9e3d0-389f-4989-941a-e97aeb77bdbc">
             <bounds x="600" y="360" width="-1" height="-1"/>
@@ -4523,7 +4523,7 @@ details is a '/' separated string of the needed details. its content depends on 
         <element xsi:type="zenta:BasicObject" name="users" id="dc0d019b-fd19-42f2-9290-70af9ca17a39" ancestor="field"/>
         <element xsi:type="zenta:BasicRelationship" name="owner" id="45413bbb-3a20-404b-a616-dfbf7c8ba16a" ancestor="cf322057-2e5b-476b-b32e-207044fb130d" source="e748dd09-05ac-4b00-8c5c-d54b98b36b91" target="dc0d019b-fd19-42f2-9290-70af9ca17a39"/>
         <element xsi:type="zenta:BasicRelationship" id="964b4cea-8619-4be5-8f95-e0b0de6a82e8" ancestor="7fd30166-39a4-4c79-a6d5-dd45a9c1f329" source="dc0d019b-fd19-42f2-9290-70af9ca17a39" target="00c69986-80b4-4e31-ac8e-61a88ed7dc2c"/>
-      </element>
+      </folder>
       <element xsi:type="zenta:ZentaDiagramModel" name="authentication" id="01aa36b2-7087-4e0c-86d2-6fe43f627949" connectionRouterType="1">
         <child xsi:type="zenta:DiagramObject" id="57d548f4-c8f2-4516-9b02-a26c3acf1ccc" targetConnections="5f3d2111-3461-4384-b0ef-048e0da20ad9" zentaElement="91b617b2-32a4-4e77-9883-a54ebca63034">
           <bounds x="576" y="216" width="-1" height="-1"/>
