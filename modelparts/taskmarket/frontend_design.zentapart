@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?><folder xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:zenta="http://magwas.rulez.org/zenta" name="3. Frontend Design" id="c962cfdc-3ea1-48c4-9955-868c508435f4"><property key="source" value="taskmarket/frontend_design"/><element xsi:type="zenta:ZentaDiagramModel" name="frontend" id="d979ca59-4095-40c5-8520-5559c11a83b3">
+      <child xsi:type="zenta:DiagramObject" id="d3317414-323c-473f-8842-e14357a79346" zentaElement="1ad09c7e-a4db-41d2-8c5b-116a84adf4fb">
+        <bounds x="342" y="185" width="-1" height="-1"/>
+      </child>
+      <child xsi:type="zenta:DiagramObject" id="4c6d4655-c956-42af-9c75-1ae34f51fd55" zentaElement="0b3e5776-6b25-4a44-9f65-4c7328c2c3bb">
+        <bounds x="492" y="185" width="-1" height="-1"/>
+      </child>
+      <child xsi:type="zenta:DiagramObject" id="6cf34a10-0046-4b14-84cf-fb615b0c227f" zentaElement="62667342-1f93-44ea-b287-4774136d8cee">
+        <bounds x="642" y="185" width="-1" height="-1"/>
+      </child>
+      <child xsi:type="zenta:DiagramObject" id="38033c70-865f-4a10-b8fb-0c785b4bf8ba" zentaElement="c133aaff-c18d-45e8-8019-dfdb741dc985">
+        <bounds x="342" y="285" width="-1" height="-1"/>
+      </child>
+      <child xsi:type="zenta:DiagramObject" id="cc9b3639-97e1-4e75-bc2d-d81dcfd95dee" zentaElement="3c34c888-0aac-404f-bdf5-aa679ac8a82f">
+        <bounds x="492" y="285" width="-1" height="-1"/>
+      </child>
+      <child xsi:type="zenta:DiagramObject" id="3cf20809-8c24-4245-99dc-b48d1f62be7b" zentaElement="e3579d03-639c-4b64-b4d8-86e14207c343">
+        <bounds x="642" y="285" width="-1" height="-1"/>
+      </child>
+      <child xsi:type="zenta:DiagramObject" id="6d0787d6-8cba-4790-b8ba-706faadd7a8d" zentaElement="bd2b0b25-f937-41e3-a0bd-2adbcef9e66c">
+        <bounds x="342" y="385" width="-1" height="-1"/>
+      </child>
+    </element><element xsi:type="zenta:BasicObject" name="AddUserToProjectForm" id="1ad09c7e-a4db-41d2-8c5b-116a84adf4fb" ancestor="4753b1bb-fc45-4aa1-821d-f08baf8a1766"/><element xsi:type="zenta:BasicRelationship" id="bab65efe-1ebc-4b3c-ba0b-a8a33f5181d5" ancestor="3dd7b0b1-bd9f-4a13-b5d9-9db0200af5b8" source="f9e928c5-a7ca-4df9-9bc2-ffa6e79007e9" target="e3579d03-639c-4b64-b4d8-86e14207c343"/><element xsi:type="zenta:BasicRelationship" id="3daab091-5b07-4a3e-bf68-86b0642fc9fd" ancestor="3dd7b0b1-bd9f-4a13-b5d9-9db0200af5b8" source="6ce4abad-0733-44a4-8fdf-53ccd6aa7874" target="62667342-1f93-44ea-b287-4774136d8cee"/><element xsi:type="zenta:BasicRelationship" id="ea02272e-5de7-4451-b92f-1c3b7d656ba6" ancestor="3dd7b0b1-bd9f-4a13-b5d9-9db0200af5b8" source="3f339d77-39b1-42c1-beee-d56ae0bce552" target="c133aaff-c18d-45e8-8019-dfdb741dc985"/><element xsi:type="zenta:BasicRelationship" id="88ef84f7-e27c-44a5-aff9-11dc9a7854aa" ancestor="3dd7b0b1-bd9f-4a13-b5d9-9db0200af5b8" source="a0dbab86-51c7-43a3-b073-a91f7b7eec55" target="1ad09c7e-a4db-41d2-8c5b-116a84adf4fb"/><element xsi:type="zenta:BasicRelationship" id="4d028daf-598d-4de1-8729-4611dbdea7be" ancestor="3dd7b0b1-bd9f-4a13-b5d9-9db0200af5b8" source="5877a236-16bf-415c-aca7-747112c7e670" target="bd2b0b25-f937-41e3-a0bd-2adbcef9e66c"/><element xsi:type="zenta:BasicRelationship" id="4c4e7846-8ee9-4518-8d69-cfc30d41ac3a" ancestor="3dd7b0b1-bd9f-4a13-b5d9-9db0200af5b8" source="8a83f492-9aa2-4264-8515-e9548ee80c0e" target="bd2b0b25-f937-41e3-a0bd-2adbcef9e66c"/><element xsi:type="zenta:BasicRelationship" id="4404cd0e-a06c-484d-b975-b458869e8855" ancestor="3dd7b0b1-bd9f-4a13-b5d9-9db0200af5b8" source="12d40b3c-3e04-4ddf-97f9-ae965592a7f4" target="3c34c888-0aac-404f-bdf5-aa679ac8a82f"/><element xsi:type="zenta:BasicRelationship" id="e18e5d43-e9ab-424b-b103-268ec1ec018c" ancestor="3dd7b0b1-bd9f-4a13-b5d9-9db0200af5b8" source="01c05840-ea17-4fd7-bc4f-6ebc28e5da22" target="0b3e5776-6b25-4a44-9f65-4c7328c2c3bb"/><element xsi:type="zenta:BasicObject" name="CheckBillForm" id="0b3e5776-6b25-4a44-9f65-4c7328c2c3bb" ancestor="4753b1bb-fc45-4aa1-821d-f08baf8a1766"/><element xsi:type="zenta:BasicObject" name="EditUserForm" id="62667342-1f93-44ea-b287-4774136d8cee" ancestor="4753b1bb-fc45-4aa1-821d-f08baf8a1766"/><element xsi:type="zenta:BasicObject" name="meTab" id="c133aaff-c18d-45e8-8019-dfdb741dc985" ancestor="4753b1bb-fc45-4aa1-821d-f08baf8a1766"/><element xsi:type="zenta:BasicObject" name="MoneyView" id="3c34c888-0aac-404f-bdf5-aa679ac8a82f" ancestor="4753b1bb-fc45-4aa1-821d-f08baf8a1766"/><element xsi:type="zenta:BasicObject" name="RegisterForm" id="e3579d03-639c-4b64-b4d8-86e14207c343" ancestor="4753b1bb-fc45-4aa1-821d-f08baf8a1766"/><element xsi:type="zenta:BasicObject" name="TasksView" id="bd2b0b25-f937-41e3-a0bd-2adbcef9e66c" ancestor="4753b1bb-fc45-4aa1-821d-f08baf8a1766"/></folder>
