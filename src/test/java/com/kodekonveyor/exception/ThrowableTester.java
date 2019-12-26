@@ -10,6 +10,23 @@ public class ThrowableTester {// NOPMD
 
   public Throwable thrown;
 
+  public ThrowableTester
+      assertException(final Class<? extends Throwable> klass) {
+    final String message = String.format(
+        "expected %s but got %s", klass, ExceptionUtils.readStackTrace(thrown)
+    );
+    assertEquals(message, klass, thrown.getClass());
+    return this;
+  }
+
+  public ThrowableTester assertMessageContains(final String string) {
+    assertTrue(
+        "message does not contain: " + string + "\n got:" + thrown.getMessage(),
+        thrown.getMessage().contains(string)
+    );
+    return this;
+  }
+
   public ThrowableTester assertMessageIs(final String message) {
     assertEquals(message, thrown.getMessage());
     return this;
@@ -25,11 +42,10 @@ public class ThrowableTester {// NOPMD
     return this;
   }
 
-  public ThrowableTester assertMessageContains(final String string) {
-    assertTrue(
-        "message does not contain: " + string + "\n got:" + thrown.getMessage(),
-        thrown.getMessage().contains(string)
-    );
+  public ThrowableTester
+      assertStackClass(final int stackIndex, final String string) {
+    final StackTraceElement stackElement = getStackTraceElement(stackIndex);
+    assertEquals(string, stackElement.getClassName());
     return this;
   }
 
@@ -37,13 +53,6 @@ public class ThrowableTester {// NOPMD
       assertStackFileName(final int stackIndex, final String string) {
     final StackTraceElement stackElement = getStackTraceElement(stackIndex);
     assertEquals(string, stackElement.getFileName());
-    return this;
-  }
-
-  public ThrowableTester
-      assertStackClass(final int stackIndex, final String string) {
-    final StackTraceElement stackElement = getStackTraceElement(stackIndex);
-    assertEquals(string, stackElement.getClassName());
     return this;
   }
 
@@ -61,15 +70,6 @@ public class ThrowableTester {// NOPMD
     return this;
   }
 
-  private StackTraceElement getStackTraceElement(final int stackIndex) {
-    return thrown.getStackTrace()[stackIndex];
-  }
-
-  public ThrowableTester showStackTrace() {
-    thrown.printStackTrace(); // NOPMD AvoidPrintStackTrace
-    return this;
-  }
-
   public ThrowableTester assertThrows(final Thrower thrower) {
     try {
       thrower.throwException();
@@ -81,21 +81,21 @@ public class ThrowableTester {// NOPMD
     return this;
   }
 
+  public ThrowableTester assertUnimplemented(final Thrower thrower) {
+    assertThrows(thrower).assertException(UnsupportedOperationException.class);
+    return this;
+  }
+
   public Throwable getException() {
     return thrown;
   }
 
-  public ThrowableTester
-      assertException(final Class<? extends Throwable> klass) {
-    final String message = String.format(
-        "expected %s but got %s", klass, ExceptionUtils.readStackTrace(thrown)
-    );
-    assertEquals(message, klass, thrown.getClass());
-    return this;
+  private StackTraceElement getStackTraceElement(final int stackIndex) {
+    return thrown.getStackTrace()[stackIndex];
   }
 
-  public ThrowableTester assertUnimplemented(final Thrower thrower) {
-    assertThrows(thrower).assertException(UnsupportedOperationException.class);
+  public ThrowableTester showStackTrace() {
+    thrown.printStackTrace(); // NOPMD AvoidPrintStackTrace
     return this;
   }
 

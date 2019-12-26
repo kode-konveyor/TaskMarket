@@ -8,17 +8,19 @@ import com.kodekonveyor.market.LoggerService;
 
 public class RegisterInterestControllerTestBase {
 
+  LeadDTOTestData leadDTOTestData;
+
   @Mock
   LeadEntityRepository leadEntityRepository;
 
   @Mock
   LoggerService loggerService;
-
   @InjectMocks
   RegisterInterestController registerInterestController;
 
   @BeforeEach
   void setUp() {
+
     LeadEntityStubs.behaviour(leadEntityRepository);
   }
 

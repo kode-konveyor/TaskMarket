@@ -5,6 +5,7 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RestController;
 
+import com.kodekonveyor.authentication.ValidationException;
 import com.kodekonveyor.market.LogSeverityEnum;
 import com.kodekonveyor.market.LoggerService;
 import com.kodekonveyor.market.UrlMapConstants;
@@ -21,6 +22,10 @@ public class RegisterInterestController {
   @PostMapping(value = UrlMapConstants.LEAD_PATH, consumes = "application/json")
   public LeadDTO call(final @RequestBody LeadDTO lead) {
     doStore(lead);
+
+    EmailIdValidationUtil.validateEmail(lead);
+    FirstNameValidationUtil.validateFirstName(lead);
+    validateInterest(lead);
     return lead;
   }
 
@@ -30,6 +35,7 @@ public class RegisterInterestController {
   )
   public LeadDTO callForUrlencoded(final LeadDTO lead) {
     doStore(lead);
+
     return lead;
   }
 
@@ -40,6 +46,12 @@ public class RegisterInterestController {
     leadEntity.setFirstName(lead.getFirstName());
     leadEntity.setInterest(lead.getInterest());
     leadEntityRepository.save(leadEntity);
+  }
+
+  private void validateInterest(final LeadDTO lead) {
+    if (null == lead.getInterest())
+      throw new ValidationException(LeadConstants.INTEREST_NULL_EXCEPTION);
+
   }
 
 }
