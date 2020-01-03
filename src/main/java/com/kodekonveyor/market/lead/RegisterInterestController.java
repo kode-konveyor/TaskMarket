@@ -8,6 +8,7 @@ import org.springframework.web.bind.annotation.RestController;
 import com.kodekonveyor.authentication.ValidationException;
 import com.kodekonveyor.market.LogSeverityEnum;
 import com.kodekonveyor.market.LoggerService;
+import com.kodekonveyor.market.MarketConstants;
 import com.kodekonveyor.market.UrlMapConstants;
 
 @RestController
@@ -50,7 +51,7 @@ public class RegisterInterestController {
 
   private void validateInterest(final LeadDTO lead) {
     if (null == lead.getInterest())
-      throw new ValidationException(LeadConstants.INTEREST_NULL_EXCEPTION);
+      throw new ValidationException(MarketConstants.INTEREST_NULL_EXCEPTION);
 
   }
 

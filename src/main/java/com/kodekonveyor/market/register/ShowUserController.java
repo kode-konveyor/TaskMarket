@@ -34,6 +34,7 @@ public class ShowUserController {
     marketUserDTO.setLogin(userEntity.getLogin());
     final RegistrationInfoDTO registrationInfoDTO = new RegistrationInfoDTO();
     final UserLegalInfoEntity legal = entity.getLegal();
+
     registrationInfoDTO.setCountry(legal.getCountry());
     registrationInfoDTO.setEmail(legal.getEmail());
     registrationInfoDTO.setLegalAddress(legal.getLegalAddress());

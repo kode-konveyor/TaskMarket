@@ -19,6 +19,7 @@ public class MarketUserStubs {
         .findByLogin(UserEntityTestData.get());
     doReturn(new ArrayList<MarketUserEntity>()).when(marketUserEntityRepository)
         .findByLogin(UserEntityTestData.getLoginNoMarket());
+
   }
 
 }

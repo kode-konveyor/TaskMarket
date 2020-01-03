@@ -6,5 +6,4 @@ import com.kodekonveyor.annotations.ExcludeFromCodeCoverage;
   "Remove this marker when you implement anything in the service"
 )
 public class MarketUserCompilerService {
-
 }
