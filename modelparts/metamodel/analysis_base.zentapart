@@ -144,7 +144,7 @@ Policy, Threat, and Assumption of Common Criteria are modeled with a Policy.
           <folder name="constraints" id="914f42cc-47e0-47a3-b724-48586ddedda8">
             <property key="documentationMarkup" value="verbatim"/>
             <element xsi:type="zenta:BasicObject" name="contained in a Package" id="c9346e32-c89b-4eae-8fd5-549682b2df3e" ancestor="bb3cdf1a-0bc1-4772-8913-d0567ef7ab1f">
-              <documentation>analysis|
+              <documentation>design|
 count(zenta:neighbours($p1,$p2,'contains,2')[@xsi:type='Package']) = 1 </documentation>
               <property key="fillColor"/>
               <property key="elementShape"/>
