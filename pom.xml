@@ -254,7 +254,7 @@
 					<ignoreAnnotations>true</ignoreAnnotations>
 					<includeTests>true</includeTests>
 					<rulesets>
-						<ruleset>pmd/main.xml</ruleset>
+						<ruleset>pmd.xml</ruleset>
 					</rulesets>
 				</configuration>
 			</plugin>

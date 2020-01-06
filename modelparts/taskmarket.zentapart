@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?><zenta:model xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:zenta="http://magwas.rulez.org/zenta" name="Task Market" id="64e19627-dd23-4332-8493-4c1189473bef" version="2.2.1">
+  <folder name="0. Metamodel" id="metamodel">
+    <folder name="0. Analysis metamodel" id="ae406574-1c10-431c-bc45-2c58d8b90398"><property key="source" value="metamodel/analysis"/></folder>
+    <property key="version" value="0.2"/>
+    <property key="version" value="0.1"/>
+    <property key="minimum metamodel version" value="0.1"/>
+    <property key="minimum toolchain version" value="0.1"/>
+  </folder>
+  <folder name="2. Backend Design" id="bb872c67-5989-4392-9d4c-4a6d31c83c23"><property key="source" value="taskmarket/backend_design"/></folder>
+  <folder name="1. Analysis" id="60dc744c-b246-41c0-ba38-2b9299051190"><property key="source" value="taskmarket/analysis"/></folder>
+  <property key="documentationMarkup" value="MediaWiki"/>
+</zenta:model>
