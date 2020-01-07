@@ -981,10 +981,9 @@ details is a '/' separated string of the needed details. its content depends on 
       <element xsi:type="zenta:BasicObject" name="work reference" id="8ea0bb6f-4cde-44b7-b12e-05b590d63372" ancestor="267f4d47-e1e6-4af4-8677-3cf65fc8db86"/>
     </folder><folder name="4. milestones" id="375647e7-71d8-4384-a61d-9c3a14557825">
       <element xsi:type="zenta:ZentaDiagramModel" name="Milestones" id="9d676d45-67ca-4d22-9585-f3b23fc5c983" connectionRouterType="1">
-        <child xsi:type="zenta:DiagramObject" id="68dc61c4-6817-48a7-9f3b-adeeb9577d63" targetConnections="638559cd-d77d-45ab-a2c2-ad31d1534cd8" zentaElement="6bdcadcd-8098-4a7f-97a4-b49a5ae32619">
+        <child xsi:type="zenta:DiagramObject" id="68dc61c4-6817-48a7-9f3b-adeeb9577d63" zentaElement="6bdcadcd-8098-4a7f-97a4-b49a5ae32619">
           <bounds x="204" y="151" width="-1" height="-1"/>
           <sourceConnection xsi:type="zenta:Connection" id="b5b66050-76ed-4ecf-a7d9-7e564f6c6cdd" source="68dc61c4-6817-48a7-9f3b-adeeb9577d63" target="8a49d192-ff25-4869-9ddc-825d3edb8301" relationship="fbe15e94-9c7f-471c-bd79-4b336300aa00"/>
-          <sourceConnection xsi:type="zenta:Connection" id="ea933709-7728-4668-b4ff-757bbc3d9c97" source="68dc61c4-6817-48a7-9f3b-adeeb9577d63" target="95261f77-c993-42c6-9c18-dc2ddef10372" relationship="95ae7ff6-a946-4321-8b04-c42454e57967"/>
         </child>
         <child xsi:type="zenta:DiagramObject" id="f678918e-04fa-4cce-92b5-2c751044c64d" targetConnections="37650b96-e915-4d7a-a78b-2833ac0a3e39" zentaElement="d1754fb1-2177-4f76-9985-46678bbe0d7f">
           <bounds x="348" y="151" width="-1" height="-1"/>
@@ -1056,12 +1055,11 @@ details is a '/' separated string of the needed details. its content depends on 
           <sourceConnection xsi:type="zenta:Connection" id="530f25b2-4d40-4f68-a12b-4d7805c36a14" source="07cf9c03-0fa2-4f5c-8d42-8acf64edbbfe" target="7a46e397-5c39-40f7-a04f-de6b20a8caf4" relationship="9c84d7aa-a951-460a-9188-64ade09ea167"/>
           <sourceConnection xsi:type="zenta:Connection" id="a639edb4-9060-4655-bbf0-5b0f0ab5ae0a" source="07cf9c03-0fa2-4f5c-8d42-8acf64edbbfe" target="73f53cde-6cd8-40d3-9303-ae2882ff30e7" relationship="5b8a1385-8b43-43ac-a671-268d3d6022fd"/>
           <sourceConnection xsi:type="zenta:Connection" id="37650b96-e915-4d7a-a78b-2833ac0a3e39" source="07cf9c03-0fa2-4f5c-8d42-8acf64edbbfe" target="f678918e-04fa-4cce-92b5-2c751044c64d" relationship="ff8145c1-660b-450a-bcb0-48a6692b8784"/>
-          <sourceConnection xsi:type="zenta:Connection" id="638559cd-d77d-45ab-a2c2-ad31d1534cd8" source="07cf9c03-0fa2-4f5c-8d42-8acf64edbbfe" target="68dc61c4-6817-48a7-9f3b-adeeb9577d63" relationship="518f943f-d170-49b0-b990-de6b8feaaeff"/>
           <sourceConnection xsi:type="zenta:Connection" id="e44904be-b5e9-4a9b-9132-cbd436788ec1" source="07cf9c03-0fa2-4f5c-8d42-8acf64edbbfe" target="baa79535-f0d2-4b31-9681-7f4e85f95b7e" relationship="ade1e3d3-fbff-4992-b41e-853ef7444c92"/>
           <sourceConnection xsi:type="zenta:Connection" id="0abbdc47-de5f-45be-bf4c-54967cdebbe1" source="07cf9c03-0fa2-4f5c-8d42-8acf64edbbfe" target="c92baa4e-9017-4a86-9e8a-81b7df8b09f8" relationship="b22b9be2-4e5e-4fb6-ac2c-efc2c2c9652e"/>
         </child>
-        <child xsi:type="zenta:DiagramObject" id="95261f77-c993-42c6-9c18-dc2ddef10372" targetConnections="ea933709-7728-4668-b4ff-757bbc3d9c97" zentaElement="80ce62bc-a239-4d68-8fe9-a073956e81eb">
-          <bounds x="204" y="360" width="-1" height="-1"/>
+        <child xsi:type="zenta:DiagramObject" id="95261f77-c993-42c6-9c18-dc2ddef10372" targetConnections="1c57975b-0063-4692-807a-6f3159dc8b4d" zentaElement="80ce62bc-a239-4d68-8fe9-a073956e81eb">
+          <bounds x="1176" y="519" width="-1" height="-1"/>
         </child>
         <child xsi:type="zenta:DiagramObject" id="0cd540b8-4650-45f2-8e44-d9dce1deff0f" targetConnections="17a12571-6351-4ecb-86f0-c6d5d2ef2b04" zentaElement="bf1953fd-9e0e-4837-9900-6b70fece4978">
           <bounds x="986" y="252" width="-1" height="-1"/>
@@ -1086,6 +1084,7 @@ details is a '/' separated string of the needed details. its content depends on 
           <sourceConnection xsi:type="zenta:Connection" id="9bbcfa28-e7ba-432c-a48e-a47c5b05f66d" source="c92baa4e-9017-4a86-9e8a-81b7df8b09f8" target="b9f37077-89c1-41e0-a0e0-cd60a9bd570b" relationship="4a90a142-d6c1-484d-9f41-10abc927e554"/>
           <sourceConnection xsi:type="zenta:Connection" id="2c99a187-ce8b-441f-8dde-9babad1a2e12" source="c92baa4e-9017-4a86-9e8a-81b7df8b09f8" target="5a2f6f8a-6310-4e6c-9e0d-9848367da075" relationship="f96702bc-bc0c-4bc8-abcb-080453a7c850"/>
           <sourceConnection xsi:type="zenta:Connection" id="56587dce-4cf6-47cb-9d95-a677f2d9b2db" source="c92baa4e-9017-4a86-9e8a-81b7df8b09f8" target="e6f012f3-c54e-4aa6-8933-782cf2c7afdd" relationship="cc13b972-7a0e-4408-813f-fcfdb60ce6b5"/>
+          <sourceConnection xsi:type="zenta:Connection" id="1c57975b-0063-4692-807a-6f3159dc8b4d" source="c92baa4e-9017-4a86-9e8a-81b7df8b09f8" target="95261f77-c993-42c6-9c18-dc2ddef10372" relationship="96143352-abb9-4ca6-8b96-8065d5797f2f"/>
         </child>
         <child xsi:type="zenta:DiagramObject" id="e6f012f3-c54e-4aa6-8933-782cf2c7afdd" targetConnections="108bb1c6-c0d0-42e1-a606-0763ce8e3846 56587dce-4cf6-47cb-9d95-a677f2d9b2db" zentaElement="b03e5098-4559-4e3e-aecc-8d5b03153aaa">
           <bounds x="1164" y="427" width="-1" height="-1"/>
@@ -1108,8 +1107,6 @@ details is a '/' separated string of the needed details. its content depends on 
       <element xsi:type="zenta:BasicRelationship" id="9c84d7aa-a951-460a-9188-64ade09ea167" ancestor="f9bf6994-4d9c-4c50-b9ad-e2e11b94ff2e" source="3b808574-17a4-4bd8-89ab-b20b717a6422" target="454cd3d4-4bd7-457e-a08c-afe2afa7d68a"/>
       <element xsi:type="zenta:BasicRelationship" id="5b8a1385-8b43-43ac-a671-268d3d6022fd" ancestor="f9bf6994-4d9c-4c50-b9ad-e2e11b94ff2e" source="3b808574-17a4-4bd8-89ab-b20b717a6422" target="51da13b8-1bc3-4629-b29f-954f2a57f6e8"/>
       <element xsi:type="zenta:BasicRelationship" id="ff8145c1-660b-450a-bcb0-48a6692b8784" ancestor="f9bf6994-4d9c-4c50-b9ad-e2e11b94ff2e" source="3b808574-17a4-4bd8-89ab-b20b717a6422" target="d1754fb1-2177-4f76-9985-46678bbe0d7f"/>
-      <element xsi:type="zenta:BasicRelationship" id="518f943f-d170-49b0-b990-de6b8feaaeff" ancestor="f9bf6994-4d9c-4c50-b9ad-e2e11b94ff2e" source="3b808574-17a4-4bd8-89ab-b20b717a6422" target="6bdcadcd-8098-4a7f-97a4-b49a5ae32619"/>
-      <element xsi:type="zenta:BasicRelationship" id="95ae7ff6-a946-4321-8b04-c42454e57967" ancestor="f0d0d4a5-201b-41b4-a047-70308c99bdb7" source="6bdcadcd-8098-4a7f-97a4-b49a5ae32619" target="80ce62bc-a239-4d68-8fe9-a073956e81eb"/>
       <element xsi:type="zenta:BasicObject" name="payment order support" id="1828c8ac-d0ae-403f-b649-ecc5606be065" ancestor="36a15a23-a4a0-40b5-901b-310f3a1df0c7"/>
       <element xsi:type="zenta:BasicRelationship" id="ade1e3d3-fbff-4992-b41e-853ef7444c92" ancestor="f9bf6994-4d9c-4c50-b9ad-e2e11b94ff2e" source="3b808574-17a4-4bd8-89ab-b20b717a6422" target="1828c8ac-d0ae-403f-b649-ecc5606be065"/>
       <element xsi:type="zenta:BasicRelationship" id="50bb429a-ffae-4a21-b3c6-7d31a4864c30" ancestor="f0d0d4a5-201b-41b4-a047-70308c99bdb7" source="1828c8ac-d0ae-403f-b649-ecc5606be065" target="bf1953fd-9e0e-4837-9900-6b70fece4978"/>
@@ -1142,6 +1139,7 @@ details is a '/' separated string of the needed details. its content depends on 
       <element xsi:type="zenta:BasicRelationship" id="fe2a1fa2-193d-4691-840f-28cc4a7da217" ancestor="d9f4a80e-d07b-4767-ad0a-aa86988783f8" source="e72adcce-0d43-481e-a3fc-05f0f8489dde" target="5da051ec-c7b1-4ae4-8404-0bd3570336b0"/>
       <element xsi:type="zenta:BasicRelationship" id="f33e8a7a-dffe-412d-a9e2-d7c3dbd2e3c6" ancestor="d9f4a80e-d07b-4767-ad0a-aa86988783f8" source="e72adcce-0d43-481e-a3fc-05f0f8489dde" target="13355ebf-2a65-42fd-8bbf-46b36e90a64b"/>
       <element xsi:type="zenta:BasicRelationship" id="26f05386-a826-43f2-8468-8b397b386143" ancestor="f0d0d4a5-201b-41b4-a047-70308c99bdb7" source="1828c8ac-d0ae-403f-b649-ecc5606be065" target="43711cfd-a53a-43de-aa20-6daf57ea0a94"/>
+      <element xsi:type="zenta:BasicRelationship" id="96143352-abb9-4ca6-8b96-8065d5797f2f" ancestor="f0d0d4a5-201b-41b4-a047-70308c99bdb7" source="9b8ff260-b83a-4b24-8567-c57beeb83724" target="80ce62bc-a239-4d68-8fe9-a073956e81eb"/>
     </folder><folder name="0. Analysis relations" id="f0d3545d-9232-4a49-b554-c20256ce5fda">
       <property key="dispay" value="hidden"/>
       <element xsi:type="zenta:BasicRelationship" id="000f13fb-32c0-4cf8-ba25-f9204db67f65" ancestor="1a16ba6a-0441-4e7d-8f9c-f6394fcdd10b" source="ba828acd-664d-4168-8344-fd81fd7935b7" target="8529801e-d448-426a-aaa0-329ada6ba580"/>
