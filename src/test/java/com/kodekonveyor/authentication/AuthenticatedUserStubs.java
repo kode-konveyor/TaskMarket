@@ -10,6 +10,13 @@ public class AuthenticatedUserStubs {
         .call();
   }
 
+  public static void
+      canBePayed(final AuthenticatedUserService authenticatedUserService) {
+    doReturn(UserEntityTestData.getRoleCanbePayed())
+        .when(authenticatedUserService)
+        .call();
+  }
+
   public static void noMarketuser(
       final AuthenticatedUserService authenticatedUserService
   ) {
