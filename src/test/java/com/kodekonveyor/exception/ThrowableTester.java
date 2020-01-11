@@ -8,7 +8,52 @@ import org.springframework.stereotype.Service;
 @Service
 public class ThrowableTester {// NOPMD
 
-  public Throwable thrown;
+  public static void assertNoException(final Thrower thrower) {
+    try {
+      thrower.throwException();
+    } catch (final Throwable e) {//NOPMD
+      fail("exception thrown");
+    }
+  }
+
+  public static ThrowableTester assertThrows(final Thrower thrower) {
+    final ThrowableTester tester = new ThrowableTester();
+    return tester._assertThrows(thrower);
+  }
+
+  public Throwable thrown;//NOPMD
+
+  private ThrowableTester() {
+
+  }
+
+  private ThrowableTester _assertThrows(final Thrower thrower) {//NOPMD
+    try {
+      thrower.throwException();
+    } catch (final Throwable exception) { // NOPMD AvoidCatchingThrowable
+      thrown = exception;
+    }
+    if (thrown == null)
+      fail("no exception thrown");
+    return this;
+  }
+
+  public ThrowableTester
+      assertException(final Class<? extends Throwable> klass) {
+    final String message = String.format(
+        "expected %s but got %s", klass, ExceptionUtils.readStackTrace(thrown)
+    );
+    assertEquals(message, klass, thrown.getClass());
+    return this;
+  }
+
+  public ThrowableTester assertMessageContains(final String string) {
+    assertTrue(
+        "message does not contain: " + string + "\n got:" + thrown.getMessage(),
+        thrown.getMessage().contains(string)
+    );
+    return this;
+  }
 
   public ThrowableTester assertMessageIs(final String message) {
     assertEquals(message, thrown.getMessage());
@@ -25,11 +70,10 @@ public class ThrowableTester {// NOPMD
     return this;
   }
 
-  public ThrowableTester assertMessageContains(final String string) {
-    assertTrue(
-        "message does not contain: " + string + "\n got:" + thrown.getMessage(),
-        thrown.getMessage().contains(string)
-    );
+  public ThrowableTester
+      assertStackClass(final int stackIndex, final String string) {
+    final StackTraceElement stackElement = getStackTraceElement(stackIndex);
+    assertEquals(string, stackElement.getClassName());
     return this;
   }
 
@@ -37,13 +81,6 @@ public class ThrowableTester {// NOPMD
       assertStackFileName(final int stackIndex, final String string) {
     final StackTraceElement stackElement = getStackTraceElement(stackIndex);
     assertEquals(string, stackElement.getFileName());
-    return this;
-  }
-
-  public ThrowableTester
-      assertStackClass(final int stackIndex, final String string) {
-    final StackTraceElement stackElement = getStackTraceElement(stackIndex);
-    assertEquals(string, stackElement.getClassName());
     return this;
   }
 
@@ -61,23 +98,8 @@ public class ThrowableTester {// NOPMD
     return this;
   }
 
-  private StackTraceElement getStackTraceElement(final int stackIndex) {
-    return thrown.getStackTrace()[stackIndex];
-  }
-
-  public ThrowableTester showStackTrace() {
-    thrown.printStackTrace(); // NOPMD AvoidPrintStackTrace
-    return this;
-  }
-
-  public ThrowableTester assertThrows(final Thrower thrower) {
-    try {
-      thrower.throwException();
-    } catch (final Throwable exception) { // NOPMD AvoidCatchingThrowable
-      thrown = exception;
-    }
-    if (thrown == null)
-      fail("no exception thrown");
+  public ThrowableTester assertUnimplemented(final Thrower thrower) {
+    assertThrows(thrower).assertException(UnsupportedOperationException.class);
     return this;
   }
 
@@ -85,17 +107,12 @@ public class ThrowableTester {// NOPMD
     return thrown;
   }
 
-  public ThrowableTester
-      assertException(final Class<? extends Throwable> klass) {
-    final String message = String.format(
-        "expected %s but got %s", klass, ExceptionUtils.readStackTrace(thrown)
-    );
-    assertEquals(message, klass, thrown.getClass());
-    return this;
+  private StackTraceElement getStackTraceElement(final int stackIndex) {
+    return thrown.getStackTrace()[stackIndex];
   }
 
-  public ThrowableTester assertUnimplemented(final Thrower thrower) {
-    assertThrows(thrower).assertException(UnsupportedOperationException.class);
+  public ThrowableTester showStackTrace() {
+    thrown.printStackTrace(); // NOPMD AvoidPrintStackTrace
     return this;
   }
 

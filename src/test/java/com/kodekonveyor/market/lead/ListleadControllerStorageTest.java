@@ -1,7 +1,6 @@
 package com.kodekonveyor.market.lead;
 
 import static org.junit.Assert.assertEquals;
-import static org.mockito.Mockito.verify;
 
 import java.util.List;
 
@@ -18,7 +17,6 @@ import org.mockito.quality.Strictness;
 import com.kodekonveyor.annotations.TestedBehaviour;
 import com.kodekonveyor.annotations.TestedService;
 import com.kodekonveyor.authentication.AuthenticatedUserStubs;
-import com.kodekonveyor.market.LogSeverityEnum;
 
 @ExtendWith(MockitoExtension.class)
 @MockitoSettings(strictness = Strictness.LENIENT)
@@ -41,17 +39,6 @@ public class ListleadControllerStorageTest extends ListLeadControllerTestBase {
   void test() {
     final List<LeadDTO> ret = listleadController.call();
     assertEquals(LeadDTOTestData.list(), ret);
-  }
-
-  @Test
-  @DisplayName("The call of the service is logged")
-  void test2() {
-    listleadController.call();
-    verify(loggerService)
-        .call(
-            ListLeadControllerTestData.CALL, LogSeverityEnum.DEBUG,
-            ListLeadControllerTestData.LIST_LEAD_LOG
-        );
   }
 
 }

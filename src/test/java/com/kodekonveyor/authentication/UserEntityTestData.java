@@ -34,6 +34,12 @@ public class UserEntityTestData {
     return user;
   }
 
+  public static Object getRoleCanbePayed() {
+    final UserEntity userEntity = get();
+    userEntity.setRoles(Set.of(RoleEntityTestData.getNameCanBePayed()));
+    return userEntity;
+  }
+
   public static final UserEntity getRoleSales() {
     final UserEntity userEntity = get();
     userEntity.setRoles(Set.of(RoleEntityTestData.getNameSales()));
