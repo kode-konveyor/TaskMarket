@@ -5,13 +5,13 @@ import com.kodekonveyor.market.ValidationException;
 
 public class PaymentChannelUtil {
 
-  public static void validatePayment(final String paymentDetails) {
+  public static void validatePaymentDetails(final String paymentDetails) {
     validatePaypalMode(paymentDetails);
     validateSepaMode(paymentDetails);
     validateTransferwiseMode(paymentDetails);
   }
 
-  public static void validatePaypalMode(final String paymentDetails) {
+  private static void validatePaypalMode(final String paymentDetails) {
     final String[] parts = paymentDetails.split(":");
     final String paymentChannel = parts[0];
     final String userPaymentinfo = parts[1];
@@ -24,7 +24,7 @@ public class PaymentChannelUtil {
       throw new ValidationException(MarketConstants.INVALID_PAYMENT_DETAILS);
   }
 
-  public static void validateSepaMode(final String paymentDetails) {
+  private static void validateSepaMode(final String paymentDetails) {
     final String[] parts = paymentDetails.split(":");
 
     final String paymentChannel = parts[0];
@@ -39,7 +39,7 @@ public class PaymentChannelUtil {
       throw new ValidationException(MarketConstants.INVALID_PAYMENT_DETAILS);
   }
 
-  public static void validateTransferwiseMode(final String paymentDetails) {
+  private static void validateTransferwiseMode(final String paymentDetails) {
     final String[] parts = paymentDetails.split(":");
 
     final String paymentChannel = parts[0];
