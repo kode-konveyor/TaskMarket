@@ -8,4 +8,11 @@ public class MarketConstants {
       "Please enter valid payment details";
 
   public static final String KODEKONVEYOR_SALES_ROLE = "kodekonveyor_sales";
+
+  public static final String PAYPAL = "paypal";
+
+  public static final String SEPA = "sepa";
+
+  public static final String TRANSFERWISE = "transferwise";
+
 }
