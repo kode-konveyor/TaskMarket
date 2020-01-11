@@ -10,5 +10,8 @@ public class RegisterTestData {
       "transferwise:DE8937040044053201fjioe&3000";
   public static final String PAYMENT_DETAILS =
       "paypal:john.bigboot@example.com";
+  public final static String PAYMENT_DETAILS_SEPA = "sepa:AAAABBC230";
+  public final static String PAYMENT_DETAILS_TRANSFERWISE =
+      "transferwise:DE89370400440532013000";
 
 }

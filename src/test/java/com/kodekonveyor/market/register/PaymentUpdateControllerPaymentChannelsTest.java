@@ -11,6 +11,7 @@ import org.mockito.quality.Strictness;
 
 import com.kodekonveyor.annotations.TestedBehaviour;
 import com.kodekonveyor.annotations.TestedService;
+import com.kodekonveyor.authentication.AuthenticatedUserStubs;
 import com.kodekonveyor.exception.ThrowableTester;
 
 @ExtendWith(MockitoExtension.class)
@@ -62,5 +63,28 @@ public class PaymentUpdateControllerPaymentChannelsTest
         .assertMessageIs(
             PaymentUpdateControllerTestData.INVALID_PAYMENT_DETAILS_EXCEPTION
         );
+  }
+
+  @Test
+  @DisplayName(
+    "if sepa payment details are correct, no exception is thrown"
+  )
+  void test4() {
+    AuthenticatedUserStubs.canBePayed(authenticatedUserService);
+    ThrowableTester.assertNoException(
+        () -> paymentUpdateController.call(RegisterTestData.PAYMENT_DETAILS_SEPA)
+    );
+  }
+
+  @Test
+  @DisplayName(
+    "if transferwise payment details are correct, no exception is thrown"
+  )
+  void test5() {
+    AuthenticatedUserStubs.canBePayed(authenticatedUserService);
+    ThrowableTester.assertNoException(
+        () -> paymentUpdateController
+            .call(RegisterTestData.PAYMENT_DETAILS_TRANSFERWISE)
+    );
   }
 }
