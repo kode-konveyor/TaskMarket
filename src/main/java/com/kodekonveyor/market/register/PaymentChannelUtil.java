@@ -44,7 +44,7 @@ public class PaymentChannelUtil {
 
     final String paymentChannel = parts[0];
     final String userPaymentinfo = parts[1];
-    final String channelName = "tranferwise";
+    final String channelName = "transferwise";
 
     if (
       channelName.equalsIgnoreCase(paymentChannel) &&

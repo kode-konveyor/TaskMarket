@@ -24,12 +24,40 @@ public class PaymentUpdateControllerPaymentChannelsTest
   MarketUserDTOTestData registerTestData;
 
   @Test
-  @DisplayName("If payment details are incorrect, we throw exception")
+  @DisplayName("If paypal payment details are incorrect, we throw exception")
   public void test1() {
 
     ThrowableTester.assertThrows(
         () -> paymentUpdateController
-            .call(RegisterTestData.INVALID_PAYMENT_DETAILS)
+            .call(RegisterTestData.INVALID_PAYPAL_PAYMENT_DETAILS)
+    )
+        .assertMessageIs(
+            PaymentUpdateControllerTestData.INVALID_PAYMENT_DETAILS_EXCEPTION
+        );
+  }
+
+  @Test
+  @DisplayName("If sepa payment details are incorrect, we throw exception")
+  public void test2() {
+
+    ThrowableTester.assertThrows(
+        () -> paymentUpdateController
+            .call(RegisterTestData.INVALID_SEPA_PAYMENT_DETAILS)
+    )
+        .assertMessageIs(
+            PaymentUpdateControllerTestData.INVALID_PAYMENT_DETAILS_EXCEPTION
+        );
+  }
+
+  @Test
+  @DisplayName(
+    "If transferwise payment details are incorrect, we throw exception"
+  )
+  public void test3() {
+
+    ThrowableTester.assertThrows(
+        () -> paymentUpdateController
+            .call(RegisterTestData.INVALID_TRANSFERWISE_PAYMENT_DETAILS)
     )
         .assertMessageIs(
             PaymentUpdateControllerTestData.INVALID_PAYMENT_DETAILS_EXCEPTION
