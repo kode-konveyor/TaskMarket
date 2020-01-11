@@ -7,7 +7,9 @@ import org.springframework.web.bind.annotation.RestController;
 
 import com.kodekonveyor.market.LogSeverityEnum;
 import com.kodekonveyor.market.LoggerService;
+import com.kodekonveyor.market.MarketConstants;
 import com.kodekonveyor.market.UrlMapConstants;
+import com.kodekonveyor.market.ValidationException;
 
 @RestController
 public class RegisterInterestController {
@@ -21,6 +23,11 @@ public class RegisterInterestController {
   @PostMapping(value = UrlMapConstants.LEAD_PATH, consumes = "application/json")
   public LeadDTO call(final @RequestBody LeadDTO lead) {
     doStore(lead);
+
+    EmailIdValidationUtil.validateEmail(lead);
+    FirstNameValidationUtil.validateFirstName(lead);
+    validateInterest(lead);
+
     return lead;
   }
 
@@ -42,4 +49,10 @@ public class RegisterInterestController {
     leadEntityRepository.save(leadEntity);
   }
 
+  private void validateInterest(final LeadDTO lead) {
+    if (null == lead.getInterest())
+
+      throw new ValidationException(MarketConstants.INTEREST_NULL_EXCEPTION);
+
+  }
 }
