@@ -6,14 +6,20 @@ import com.kodekonveyor.market.register.UserLegalInfoEntityTestData;
 
 public class LeadDTOTestData {
 
-  public final static String INVALID_EMAIL_ID = "absxample.com";
-  public final static String INVALID_FIRST_NAME = "fss54s6";
+  public final static String EMAIL_INVALID = "absxample.com";
+  public final static String FIRST_NAME_INVALID = "fss54s6";
 
   public static final LeadDTO get() {
     final LeadDTO leadDTO = new LeadDTO();
     leadDTO.setEmail(UserLegalInfoEntityTestData.EMAIL);
     leadDTO.setFirstName(LeadEntityTestData.FIRST_NAME);
     leadDTO.setInterest(LeadEntityTestData.INTEREST);
+    return leadDTO;
+  }
+
+  public static LeadDTO getEmailInvalid() {
+    final LeadDTO leadDTO = get();
+    leadDTO.setEmail(EMAIL_INVALID);
     return leadDTO;
   }
 
@@ -25,19 +31,13 @@ public class LeadDTOTestData {
 
   public static LeadDTO getfirstNameInvaliidFormat() {
     final LeadDTO leadDTO = get();
-    leadDTO.setFirstName(INVALID_FIRST_NAME);
+    leadDTO.setFirstName(FIRST_NAME_INVALID);
     return leadDTO;
   }
 
   public static LeadDTO getInterestNull() {
     final LeadDTO leadDTO = get();
     leadDTO.setInterest(null);
-    return leadDTO;
-  }
-
-  public static LeadDTO getInvalidEmail() {
-    final LeadDTO leadDTO = get();
-    leadDTO.setEmail(INVALID_EMAIL_ID);
     return leadDTO;
   }
 

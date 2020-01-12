@@ -25,7 +25,7 @@ public class RegisterInterestControllerInputValidationTest
   @DisplayName("When email format is incorrect, we throw an exception")
   public void emailFormattest() {
     ThrowableTester.assertThrows(
-        () -> registerInterestController.call(LeadDTOTestData.getInvalidEmail())
+        () -> registerInterestController.call(LeadDTOTestData.getEmailInvalid())
     )
 
         .assertMessageIs(

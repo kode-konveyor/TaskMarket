@@ -5,6 +5,9 @@ import com.kodekonveyor.market.ValidationException;
 
 public class EmailIdValidationUtil {
 
+  private final static String emailValidationRegex =
+      "^[a-zA-Z0-9_!#$%&’*+/=?`{|}~^.-]+@[a-zA-Z0-9.-]+$";
+
   public static void validateEmail(final LeadDTO lead) {
     if (null == lead.getEmail())
 
@@ -12,7 +15,7 @@ public class EmailIdValidationUtil {
 
     if (
       !lead.getEmail()
-          .matches("^[a-zA-Z0-9_!#$%&’*+/=?`{|}~^.-]+@[a-zA-Z0-9.-]+$")
+          .matches(emailValidationRegex)
     )
       throw new ValidationException(
 
