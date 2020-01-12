@@ -2,6 +2,9 @@ package com.kodekonveyor.market.register;
 
 public class RegisterTestData {
 
+  public final static String INVALID_PAYMENT_CHANNEL =
+      "sedpa:AAAABBC230";
+
   public final static String INVALID_PAYPAL_PAYMENT_DETAILS =
       "paypal:john.bigbootexample.com";
   public final static String INVALID_SEPA_PAYMENT_DETAILS =

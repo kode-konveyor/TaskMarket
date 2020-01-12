@@ -5,37 +5,45 @@ import com.kodekonveyor.market.ValidationException;
 
 public class PaymentChannelUtil {
 
-  private final static String paypalRegex = "^[A-Za-z0-9+_.-]+@(.+)$";
-  private final static String sepaRegex =
-      "^[a-zA-Z]{4}[a-zA-Z]{2}[a-zA-Z0-9]{2}[XXX0-9]{0,3}";
-  private final static String seperator = ":";
-  private final static String transferwiseRegex =
-      "\\b[A-Z]{2}[0-9]{2}(?:[ ]?[0-9]{4}){4}(?!(?:[ ]?[0-9]){3})(?:[ ]?[0-9]{1,2})?\\b";
+  private static final String[][] checks = {
+      {
+          MarketConstants.CHANNEL_NAME_PAYPAL, MarketConstants.REGEX_PAYPAL
+      },
+      {
+          MarketConstants.CHANNEL_NAME_SEPA, MarketConstants.REGEX_SEPA
+      },
+      {
+          MarketConstants.CHANNEL_NAME_TRANSFERWISE,
+          MarketConstants.REGEX_TRANSFERWISE
+      }
+  };
 
-  public static void validatePaymentDetails(final String paymentDetails) { //NOPMD
-
-    final String[] parts = paymentDetails.split(seperator);
+  public static void validatePaymentDetails(final String paymentDetails) {
+    final String[] parts =
+        paymentDetails.split(MarketConstants.PAYMMENT_CHANNEL_SEPARATOR);
     final String paymentChannel = parts[0];
     final String userPaymentinfo = parts[1];
 
-    if (
-      MarketConstants.PAYPAL.equalsIgnoreCase(paymentChannel) &&
-          !userPaymentinfo.matches(paypalRegex)
-    )
-      throw new ValidationException(MarketConstants.INVALID_PAYMENT_DETAILS);
+    for (final String[] check : checks)
+      validateSingleChannel(check, paymentChannel, userPaymentinfo);
+  }
+
+  private static void validateSingleChannel(
+      final String[] check, final String paymentChannel,
+      final String userPaymentinfo
+  ) {
+    final String channelName = check[0];
+    final String regex = check[1];
 
     if (
-      MarketConstants.SEPA.equalsIgnoreCase(paymentChannel) &&
-          !userPaymentinfo
-              .matches(sepaRegex)
+      channelName.equals(paymentChannel) &&
+          !userPaymentinfo.matches(regex)
     )
+
       throw new ValidationException(MarketConstants.INVALID_PAYMENT_DETAILS);
 
-    if (
-      MarketConstants.TRANSFERWISE.equalsIgnoreCase(paymentChannel) &&
-          !userPaymentinfo
-              .matches(transferwiseRegex)
-    )
+    if (!channelName.equals(paymentChannel) && userPaymentinfo.matches(regex))
       throw new ValidationException(MarketConstants.INVALID_PAYMENT_DETAILS);
+
   }
 }

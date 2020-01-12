@@ -87,4 +87,29 @@ public class PaymentUpdateControllerPaymentChannelsTest
             .call(RegisterTestData.PAYMENT_DETAILS_TRANSFERWISE)
     );
   }
+
+  @Test
+  @DisplayName("If payment channel is incorrect, we throw exception")
+  public void test6() {
+
+    ThrowableTester.assertThrows(
+        () -> paymentUpdateController
+            .call(RegisterTestData.INVALID_PAYMENT_CHANNEL)
+    )
+        .assertMessageIs(
+            PaymentUpdateControllerTestData.INVALID_PAYMENT_DETAILS_EXCEPTION
+        );
+  }
+
+  @Test
+  @DisplayName(
+    "if paypal payment details are correct, no exception is thrown"
+  )
+  void test8() {
+    AuthenticatedUserStubs.canBePayed(authenticatedUserService);
+    ThrowableTester.assertNoException(
+        () -> paymentUpdateController.call(RegisterTestData.PAYMENT_DETAILS)
+    );
+  }
+
 }
