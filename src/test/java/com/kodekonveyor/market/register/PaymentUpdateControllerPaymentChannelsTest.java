@@ -72,8 +72,10 @@ public class PaymentUpdateControllerPaymentChannelsTest
   void test4() {
     AuthenticatedUserStubs.canBePayed(authenticatedUserService);
     ThrowableTester.assertNoException(
-        () -> paymentUpdateController.call(RegisterTestData.PAYMENT_DETAILS_SEPA)
+        () -> paymentUpdateController
+            .call(RegisterTestData.PAYMENT_DETAILS_SEPA)
     );
+
   }
 
   @Test
@@ -110,6 +112,21 @@ public class PaymentUpdateControllerPaymentChannelsTest
     ThrowableTester.assertNoException(
         () -> paymentUpdateController.call(RegisterTestData.PAYMENT_DETAILS)
     );
+  }
+
+  @Test
+  @DisplayName(
+    "if both details are incorrect, exception is thrown"
+  )
+  void test9() {
+
+    ThrowableTester.assertThrows(
+        () -> paymentUpdateController
+            .call(RegisterTestData.INVALID_PAYMENT_DETAILS1)
+    )
+        .assertMessageIs(
+            PaymentUpdateControllerTestData.INVALID_PAYMENT_DETAILS_EXCEPTION
+        );
   }
 
 }
