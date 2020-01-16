@@ -22,6 +22,7 @@ public class ShowUserController {
   @GetMapping(UrlMapConstants.SHOW_USER_PATH)
   public MarketUserDTO call() {
     final UserEntity userEntity = authenticatedUserService.call();
+
     final List<MarketUserEntity> entities =
         marketUserEntityRepository.findByLogin(userEntity);
     MarketUserEntity entity;
