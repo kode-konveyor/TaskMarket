@@ -35,6 +35,7 @@ public class MarketConstants {
 
   public static final String REGEX_SEPA =
       "^[a-zA-Z]{4}[a-zA-Z]{2}[a-zA-Z0-9]{2}[XXX0-9]{0,3}";
+
   public static final String REGEX_TRANSFERWISE =
       "\\b[A-Z]{2}[0-9]{2}(?:[ ]?[0-9]{4}){4}(?!(?:[ ]?[0-9]){3})(?:[ ]?[0-9]{1,2})?\\b";
 
