@@ -13,10 +13,10 @@ import com.kodekonveyor.annotations.ExcludeFromCodeCoverage;
 @ExcludeFromCodeCoverage("interface to underlaying framework")
 public class LoggerService {
 
-  private static final Logger logger =
+  private static final Logger logger = //NOPMD
       LoggerFactory.getLogger(LoggerService.class);
 
-  private static final Map<String, LogMarker> markers =
+  private static final Map<String, LogMarker> markers = //NOPMD
       new ConcurrentHashMap<>();
 
   public void

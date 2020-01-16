@@ -15,16 +15,16 @@ import com.kodekonveyor.annotations.ExcludeFromCodeCoverage;
 @ExcludeFromCodeCoverage("interface to underlying library")
 public class ObjectMapperService {
 
-  private static final ObjectMapper mapper = new ObjectMapper();
+  private static final ObjectMapper mapper = new ObjectMapper(); //NOPMD
+
+  static {
+    mapper.configure(DeserializationFeature.FAIL_ON_UNKNOWN_PROPERTIES, false);
+  }
 
   public <ValueType> ValueType
-      readValue(final URL url, final Class<ValueType> cls)
+      call(final URL url, final Class<ValueType> cls)
           throws JsonParseException, JsonMappingException, IOException {
     return mapper.readValue(url, cls);
   }
 
-  public void
-      configure(final DeserializationFeature feature, final boolean state) {
-    mapper.configure(feature, state);
-  }
 }

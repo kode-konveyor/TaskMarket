@@ -42,7 +42,9 @@ public class RegisterInterestController {
   }
 
   private void doStore(final LeadDTO lead) {
-    loggerService.call("lead.received", LogSeverityEnum.INFO, lead.toString());
+    loggerService.call(
+        LeadConstants.LEAD_RECEIVED, LogSeverityEnum.INFO, lead.toString()
+    );
     final LeadEntity leadEntity = new LeadEntity();
     leadEntity.setEmail(lead.getEmail());
     leadEntity.setFirstName(lead.getFirstName());

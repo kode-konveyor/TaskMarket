@@ -30,10 +30,13 @@ public class ListLeadController {
   @GetMapping(UrlMapConstants.LIST_LEAD_PATH)
   public List<LeadDTO> call() {
     loggerService
-        .call("call", LogSeverityEnum.DEBUG, UrlMapConstants.LIST_LEAD_PATH);
+        .call(
+            LeadConstants.CALL, LogSeverityEnum.DEBUG,
+            UrlMapConstants.LIST_LEAD_PATH
+        );
     final UserEntity user = authenticatedUserService.call();
     if (!CheckRoleUtil.hasRole(user, MarketConstants.KODEKONVEYOR_SALES_ROLE))
-      throw new UnauthorizedException("Unauthorized");
+      throw new UnauthorizedException(LeadConstants.UNAUTHORIZED);
     final Iterable<LeadEntity> leads = leadEntityRepository.findAll();
     final List<LeadDTO> ret = new ArrayList<>();
     for (final LeadEntity lead : leads) {
