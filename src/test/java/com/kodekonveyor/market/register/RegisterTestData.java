@@ -19,4 +19,7 @@ public class RegisterTestData {
   public final static String PAYMENT_DETAILS_TRANSFERWISE =
       "transferwise:DE89370400440532013000";
 
+  public final static String PROJECTNAME = "kode-konveyor/example";
+  public final static String PROJECTROLE = "coder";
+
 }
