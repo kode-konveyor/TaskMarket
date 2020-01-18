@@ -1,0 +1,15 @@
+2020/01/18 22:29:52,157 ERROR PMDPlugin                        Error executing command ReviewCode
+java.lang.IllegalArgumentException: Unexpected element <useProjectRuleSet> encountered as child of <ruleset> element.
+	at net.sourceforge.pmd.RuleSetFactory.parseRuleSetNode(RuleSetFactory.java:400)
+	at net.sourceforge.pmd.RuleSetFactory.createRuleSet(RuleSetFactory.java:220)
+	at net.sourceforge.pmd.RuleSetFactory.createRuleSet(RuleSetFactory.java:215)
+	at net.sourceforge.pmd.RuleSetFactory.createRuleSets(RuleSetFactory.java:176)
+	at net.sourceforge.pmd.RuleSetFactory.createRuleSets(RuleSetFactory.java:160)
+	at net.sourceforge.pmd.eclipse.runtime.properties.impl.ProjectPropertiesManagerImpl.loadRuleSetFromProject(ProjectPropertiesManagerImpl.java:145)
+	at net.sourceforge.pmd.eclipse.runtime.properties.impl.ProjectPropertiesManagerImpl.loadProjectProperties(ProjectPropertiesManagerImpl.java:91)
+	at net.sourceforge.pmd.eclipse.plugin.PMDPlugin.loadProjectProperties(PMDPlugin.java:522)
+	at net.sourceforge.pmd.eclipse.runtime.cmd.ReviewCodeCmd.getProjectProperties(ReviewCodeCmd.java:399)
+	at net.sourceforge.pmd.eclipse.runtime.cmd.ReviewCodeCmd.processResourceDelta(ReviewCodeCmd.java:594)
+	at net.sourceforge.pmd.eclipse.runtime.cmd.ReviewCodeCmd.execute(ReviewCodeCmd.java:182)
+	at net.sourceforge.pmd.eclipse.runtime.cmd.JobCommandProcessor$1.run(JobCommandProcessor.java:59)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:63)
