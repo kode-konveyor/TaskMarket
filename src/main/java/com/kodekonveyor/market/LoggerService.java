@@ -1,5 +1,10 @@
 package com.kodekonveyor.market;
 
+import java.util.Map;
+import java.util.concurrent.ConcurrentHashMap;
+
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.stereotype.Service;
 
 import com.kodekonveyor.annotations.ExcludeFromCodeCoverage;
@@ -8,6 +13,12 @@ import com.kodekonveyor.annotations.ExcludeFromCodeCoverage;
 @ExcludeFromCodeCoverage("interface to underlaying framework")
 public class LoggerService {
 
+  private static final Logger logger = //NOPMD
+      LoggerFactory.getLogger(LoggerService.class);
+
+  private static final Map<String, LogMarker> markers = //NOPMD
+      new ConcurrentHashMap<>();
+
   public void
       call(
           final String category,
@@ -15,11 +26,11 @@ public class LoggerService {
           final String message
       ) {
     LogMarker marker;
-    if (MarketConstants.markers.containsKey(category))
-      marker = MarketConstants.markers.get(category);
+    if (markers.containsKey(category))
+      marker = markers.get(category);
     else {
       marker = new LogMarker(category);
-      MarketConstants.markers.put(category, marker);
+      markers.put(category, marker);
     }
     doLog(severity, message, marker);
   }
@@ -30,20 +41,20 @@ public class LoggerService {
   ) {
     switch (severity) {//NOPMD no default is needed
       case DEBUG:
-        if (MarketConstants.logger.isDebugEnabled(marker))
-          MarketConstants.logger.debug(marker, message);
+        if (logger.isDebugEnabled(marker))
+          logger.debug(marker, message);
         break;
       case INFO:
-        if (MarketConstants.logger.isInfoEnabled(marker))
-          MarketConstants.logger.info(marker, message);
+        if (logger.isInfoEnabled(marker))
+          logger.info(marker, message);
         break;
       case WARNING:
-        if (MarketConstants.logger.isWarnEnabled(marker))
-          MarketConstants.logger.warn(marker, message);
+        if (logger.isWarnEnabled(marker))
+          logger.warn(marker, message);
         break;
       case ERROR:
-        if (MarketConstants.logger.isErrorEnabled(marker))
-          MarketConstants.logger.error(marker, message);
+        if (logger.isErrorEnabled(marker))
+          logger.error(marker, message);
         break;
     }
   }

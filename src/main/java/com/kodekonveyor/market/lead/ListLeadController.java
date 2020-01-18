@@ -31,12 +31,12 @@ public class ListLeadController {
   public List<LeadDTO> call() {
     loggerService
         .call(
-            MarketConstants.CALL, LogSeverityEnum.DEBUG,
+            LeadConstants.CALL, LogSeverityEnum.DEBUG,
             UrlMapConstants.LIST_LEAD_PATH
         );
     final UserEntity user = authenticatedUserService.call();
     if (!CheckRoleUtil.hasRole(user, MarketConstants.KODEKONVEYOR_SALES_ROLE))
-      throw new UnauthorizedException(MarketConstants.UNATHORIZED_EXCEPTION);
+      throw new UnauthorizedException(LeadConstants.UNAUTHORIZED);
     final Iterable<LeadEntity> leads = leadEntityRepository.findAll();
     final List<LeadDTO> ret = new ArrayList<>();
     for (final LeadEntity lead : leads) {

@@ -1,9 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<ruleset name="Kode Konveyor WAR"
-	xmlns="http://pmd.sourceforge.net/ruleset/2.0.0"
-	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-	xsi:schemaLocation="http://pmd.sourceforge.net/ruleset/2.0.0 https://pmd.sourceforge.io/ruleset_2_0_0.xsd">
-<description>WAR project PMD rules of Kode Konveyor</description>
-<rule ref="https://raw.githubusercontent.com/kode-konveyor/codingrules/v0.1/pmd/upstream.xml"/>
-<rule ref="https://raw.githubusercontent.com/kode-konveyor/codingrules/v0.1/pmd/konveyor.xml"/>
-</ruleset>
+<pmd>
+    <useProjectRuleSet>true</useProjectRuleSet>
+    <ruleSetFile>pmd.xml</ruleSetFile>
+    <includeDerivedFiles>false</includeDerivedFiles>
+    <violationsAsErrors>true</violationsAsErrors>
+    <fullBuildEnabled>true</fullBuildEnabled>
+</pmd>

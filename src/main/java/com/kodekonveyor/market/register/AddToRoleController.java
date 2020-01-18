@@ -21,7 +21,7 @@ public class AddToRoleController {
   public Object call(final String projectname, final String projectrole) {
     final UserEntity user = authenticatedUserService.call();
     if (!CheckRoleUtil.hasRole(user, MarketConstants.CAN_BE_PAID_ROLE))
-      throw new UnauthorizedException(MarketConstants.IN_ADD_TO_ROLE);
+      throw new UnauthorizedException(RegisterConstants.IN_ADD_TO_ROLE);
     return null;
   }
 

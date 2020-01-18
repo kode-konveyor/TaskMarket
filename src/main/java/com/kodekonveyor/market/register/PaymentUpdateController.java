@@ -1,7 +1,7 @@
 package com.kodekonveyor.market.register;
 
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.kodekonveyor.authentication.AuthenticatedUserService;
@@ -17,14 +17,13 @@ public class PaymentUpdateController {
   @Autowired
   AuthenticatedUserService authenticatedUserService;
 
-  @PostMapping(UrlMapConstants.PAYMENT_UPDATE_PATH)
+  @PutMapping(UrlMapConstants.PAYMENT_UPDATE_PATH)
   public Object call(final String paymentDetails) {
     PaymentChannelUtil.validatePaymentDetails(paymentDetails);
     final UserEntity user = authenticatedUserService.call();
 
     if (!CheckRoleUtil.hasRole(user, MarketConstants.CAN_BE_PAID_ROLE))
-      throw new UnauthorizedException(MarketConstants.IN_PAYMENT_UPDATE);
-
+      throw new UnauthorizedException(RegisterConstants.IN_PAYMENT_UPDATE);
     return null;
   }
 

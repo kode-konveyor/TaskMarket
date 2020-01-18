@@ -8,21 +8,23 @@ import org.springframework.stereotype.Service;
 import com.fasterxml.jackson.core.JsonParseException;
 import com.fasterxml.jackson.databind.DeserializationFeature;
 import com.fasterxml.jackson.databind.JsonMappingException;
+import com.fasterxml.jackson.databind.ObjectMapper;
 import com.kodekonveyor.annotations.ExcludeFromCodeCoverage;
-import com.kodekonveyor.market.MarketConstants;
 
 @Service
 @ExcludeFromCodeCoverage("interface to underlying library")
 public class ObjectMapperService {
 
-  public void //NOPMD
-      configure(final DeserializationFeature feature, final boolean state) {
-    MarketConstants.mapper.configure(feature, state);
+  private static final ObjectMapper mapper = new ObjectMapper(); //NOPMD
+
+  static {
+    mapper.configure(DeserializationFeature.FAIL_ON_UNKNOWN_PROPERTIES, false);
   }
 
-  public <ValueType> ValueType //NOPMD
-      readValue(final URL url, final Class<ValueType> cls)
+  public <ValueType> ValueType
+      call(final URL url, final Class<ValueType> cls)
           throws JsonParseException, JsonMappingException, IOException {
-    return MarketConstants.mapper.readValue(url, cls);
+    return mapper.readValue(url, cls);
   }
+
 }

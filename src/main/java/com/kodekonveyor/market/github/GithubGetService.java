@@ -9,11 +9,9 @@ import org.springframework.http.HttpStatus;
 import org.springframework.stereotype.Service;
 import org.springframework.web.server.ResponseStatusException;
 
-import com.fasterxml.jackson.databind.DeserializationFeature;
 import com.kodekonveyor.annotations.ExcludeFromCodeCoverage;
 import com.kodekonveyor.market.LogSeverityEnum;
 import com.kodekonveyor.market.LoggerService;
-import com.kodekonveyor.market.MarketConstants;
 import com.kodekonveyor.market.proxies.ObjectMapperService;
 
 @Service
@@ -28,27 +26,25 @@ public class GithubGetService {
 
   public <ValueType> ValueType
       call(final String command, final Class<ValueType> cls) {
-    final String uri = MarketConstants.URI + command;
-    loggerService.call(MarketConstants.GITHUB_CALL, LogSeverityEnum.DEBUG, uri);
+    final String uri = GithubConstants.GITHUB_API_URL_BASE + command;
+    loggerService.call(GithubConstants.GITHUB_CALL, LogSeverityEnum.DEBUG, uri);
     URL url;
     try {
       url = new URL(uri);
     } catch (final MalformedURLException exception) {
       throw new ResponseStatusException(
-          HttpStatus.INTERNAL_SERVER_ERROR, MarketConstants.INTERNAL_ERROR,
+          HttpStatus.INTERNAL_SERVER_ERROR, GithubConstants.INTERNAL_ERROR,
           exception
       );
     }
 
-    objectMapperProxy
-        .configure(DeserializationFeature.FAIL_ON_UNKNOWN_PROPERTIES, false);
     final ValueType value;
     try {
-      value = objectMapperProxy.readValue(url, cls);
+      value = objectMapperProxy.call(url, cls);
     } catch (final IOException exception) {
       throw new ResponseStatusException(
-          HttpStatus.SERVICE_UNAVAILABLE, MarketConstants.GITHUB_ERROR,
-          exception
+          HttpStatus.SERVICE_UNAVAILABLE,
+          GithubConstants.CANNOT_CONNECT_TO_GITHUB, exception
       );
     }
     return value;

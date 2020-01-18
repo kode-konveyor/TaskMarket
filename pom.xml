@@ -70,6 +70,17 @@
 					</dependency>
 				</dependencies>
 				<configuration>
+					<excludedClasses>
+					 <param>*DTO</param>
+					 <param>*Entity</param>
+					 <param>*Repository</param>
+					 <param>*Exception</param>
+					 <param>*Enum</param>
+					 <param>*Bean</param>
+					 <param>*.SpringConfig</param>
+					 <param>*.WebAppInitializer</param>
+					 <param>*.WebInitializer</param>
+					</excludedClasses>
 					<targetTests>
 						<param>*Test*</param>
 					</targetTests>
