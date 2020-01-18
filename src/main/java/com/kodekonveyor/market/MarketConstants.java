@@ -17,14 +17,16 @@ public class MarketConstants {
 
   public static final String IN_ADD_TO_ROLE = "in add to role";
 
+  public static final String IN_PAYMENT_UPDATE = "in payment update";
+
   public static final String INTEREST_NULL_EXCEPTION =
       "Interest cannot be null";
 
   public static final String INVALID_EMAIL_FORMAT_EXCEPTION =
       "Please enter valid email address (e.g. abc@def.com)";
-
   public static final String INVALID_FIRST_NAME_FORMAT_EXCEPTION =
       "Please enter valid first name";
+
   public final static String INVALID_PAYMENT_DETAILS =
       "Please enter valid payment details";
 
