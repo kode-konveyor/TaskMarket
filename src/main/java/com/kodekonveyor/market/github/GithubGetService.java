@@ -13,6 +13,7 @@ import com.fasterxml.jackson.databind.DeserializationFeature;
 import com.kodekonveyor.annotations.ExcludeFromCodeCoverage;
 import com.kodekonveyor.market.LogSeverityEnum;
 import com.kodekonveyor.market.LoggerService;
+import com.kodekonveyor.market.MarketConstants;
 import com.kodekonveyor.market.proxies.ObjectMapperService;
 
 @Service
@@ -27,14 +28,15 @@ public class GithubGetService {
 
   public <ValueType> ValueType
       call(final String command, final Class<ValueType> cls) {
-    final String uri = "https://api.github.com" + command;
-    loggerService.call("githubCall", LogSeverityEnum.DEBUG, uri);
+    final String uri = MarketConstants.URI + command;
+    loggerService.call(MarketConstants.GITHUB_CALL, LogSeverityEnum.DEBUG, uri);
     URL url;
     try {
       url = new URL(uri);
     } catch (final MalformedURLException exception) {
       throw new ResponseStatusException(
-          HttpStatus.INTERNAL_SERVER_ERROR, "internal error", exception
+          HttpStatus.INTERNAL_SERVER_ERROR, MarketConstants.INTERNAL_ERROR,
+          exception
       );
     }
 
@@ -45,7 +47,8 @@ public class GithubGetService {
       value = objectMapperProxy.readValue(url, cls);
     } catch (final IOException exception) {
       throw new ResponseStatusException(
-          HttpStatus.SERVICE_UNAVAILABLE, "cannot connect to github", exception
+          HttpStatus.SERVICE_UNAVAILABLE, MarketConstants.GITHUB_ERROR,
+          exception
       );
     }
     return value;

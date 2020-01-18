@@ -14,10 +14,10 @@ import com.kodekonveyor.market.UrlMapConstants;
 public class ShowUserController {
 
   @Autowired
-  private AuthenticatedUserService authenticatedUserService;
+  AuthenticatedUserService authenticatedUserService;
 
   @Autowired
-  private MarketUserEntityRepository marketUserEntityRepository;
+  MarketUserEntityRepository marketUserEntityRepository;
 
   @GetMapping(UrlMapConstants.SHOW_USER_PATH)
   public MarketUserDTO call() {
