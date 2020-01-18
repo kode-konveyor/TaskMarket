@@ -1,19 +1,24 @@
 package com.kodekonveyor.market.register;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
+import org.springframework.web.bind.annotation.RestController;
 
 import com.kodekonveyor.authentication.AuthenticatedUserService;
 import com.kodekonveyor.authentication.UserEntity;
+import com.kodekonveyor.market.UrlMapConstants;
 
+@RestController
 public class RegistrationController {
 
   @Autowired
-  private AuthenticatedUserService authenticatedUserService;
+  AuthenticatedUserService authenticatedUserService;
 
   @Autowired
-  private MarketUserEntityRepository marketUserEntityRepository;
+  MarketUserEntityRepository marketUserEntityRepository;
 
+  @PostMapping(UrlMapConstants.REGISTER_USER_PATH)
   public void
       call(final @RequestBody RegistrationInfoDTO registrationInfoDTO) {
     doStore(registrationInfoDTO);
