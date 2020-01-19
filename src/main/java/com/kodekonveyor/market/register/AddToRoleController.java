@@ -1,7 +1,7 @@
 package com.kodekonveyor.market.register;
 
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.kodekonveyor.authentication.AuthenticatedUserService;
@@ -17,7 +17,7 @@ public class AddToRoleController {
   @Autowired
   AuthenticatedUserService authenticatedUserService;
 
-  @PostMapping(UrlMapConstants.ADD_TO_ROLE_PATH)
+  @PutMapping(UrlMapConstants.ADD_TO_ROLE_PATH)
   public Object call(final String projectname, final String projectrole) {
     final UserEntity user = authenticatedUserService.call();
     if (!CheckRoleUtil.hasRole(user, MarketConstants.CAN_BE_PAID_ROLE))

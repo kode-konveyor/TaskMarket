@@ -25,7 +25,7 @@ public class AddToRoleControllerRegistrationNeededTest
 
   @Test
   @DisplayName(
-    "if the user does not have can-be_payed_role, an NotLoggedInException is thrown"
+    "if the user does not have can_be_payed role, a NotLoggedInException is thrown"
   )
   void test() {
     AuthenticatedUserStubs.authenticated(authenticatedUserService);
@@ -37,7 +37,7 @@ public class AddToRoleControllerRegistrationNeededTest
 
   @Test
   @DisplayName(
-    "if the user does not have can-be_payed_role, an NotLoggedInException is thrown"
+    "if the user does not have can_be_payed role, a NotLoggedInException is thrown"
   )
   void test1() {
     AuthenticatedUserStubs.authenticated(authenticatedUserService);
@@ -48,7 +48,7 @@ public class AddToRoleControllerRegistrationNeededTest
   }
 
   @Test
-  @DisplayName("if the user has can_be_played_role, no exception is thrown")
+  @DisplayName("if the user has can_be_played role, no exception is thrown")
   void test2() {
     AuthenticatedUserStubs.canBePayed(authenticatedUserService);
     ThrowableTester.assertNoException(
