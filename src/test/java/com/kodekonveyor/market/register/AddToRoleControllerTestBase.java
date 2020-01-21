@@ -4,6 +4,7 @@ import org.mockito.InjectMocks;
 import org.mockito.Mock;
 
 import com.kodekonveyor.authentication.AuthenticatedUserService;
+import com.kodekonveyor.authentication.UserEntity;
 
 public class AddToRoleControllerTestBase {
 
@@ -12,4 +13,8 @@ public class AddToRoleControllerTestBase {
 
   @Mock
   AuthenticatedUserService authenticatedUserService;
+
+  @Mock
+  UserEntity userEntity;
+
 }

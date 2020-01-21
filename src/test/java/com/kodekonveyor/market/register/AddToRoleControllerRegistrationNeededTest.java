@@ -29,6 +29,7 @@ public class AddToRoleControllerRegistrationNeededTest
   )
   void test() {
     AuthenticatedUserStubs.authenticated(authenticatedUserService);
+
     ThrowableTester.assertThrows(
         () -> addToRoleController
             .call(RegisterTestData.PROJECTNAME, RegisterTestData.PROJECTROLE)
@@ -41,6 +42,7 @@ public class AddToRoleControllerRegistrationNeededTest
   )
   void test1() {
     AuthenticatedUserStubs.authenticated(authenticatedUserService);
+
     ThrowableTester.assertThrows(
         () -> addToRoleController
             .call(RegisterTestData.PROJECTNAME, RegisterTestData.PROJECTROLE)
@@ -50,7 +52,9 @@ public class AddToRoleControllerRegistrationNeededTest
   @Test
   @DisplayName("if the user has can_be_played role, no exception is thrown")
   void test2() {
+
     AuthenticatedUserStubs.canBePayed(authenticatedUserService);
+
     ThrowableTester.assertNoException(
         () -> addToRoleController
             .call(RegisterTestData.PROJECTNAME, RegisterTestData.PROJECTROLE)

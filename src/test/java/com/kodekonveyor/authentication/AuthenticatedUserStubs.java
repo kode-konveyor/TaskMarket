@@ -17,10 +17,32 @@ public class AuthenticatedUserStubs {
         .call();
   }
 
+  public static void
+      manager(final AuthenticatedUserService authenticatedUserService) {
+    doReturn(UserEntityTestData.getRolemanager())
+        .when(authenticatedUserService)
+        .call();
+
+  }
+
   public static void noMarketuser(
       final AuthenticatedUserService authenticatedUserService
   ) {
     doReturn(UserEntityTestData.getLoginNoMarket())
+        .when(authenticatedUserService)
+        .call();
+  }
+
+  public static void
+      project(final AuthenticatedUserService authenticatedUserService) {
+    doReturn(UserEntityTestData.getRoleProject())
+        .when(authenticatedUserService)
+        .call();
+  }
+
+  public static void
+      registered(final AuthenticatedUserService authenticatedUserService) {
+    doReturn(UserEntityTestData.getRoleRegistered())
         .when(authenticatedUserService)
         .call();
   }

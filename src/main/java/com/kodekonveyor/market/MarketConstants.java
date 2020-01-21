@@ -30,9 +30,17 @@ public class MarketConstants {
   public final static String INVALID_PAYMENT_DETAILS =
       "Please enter valid payment details";
 
+  public static final String KODEKONVEYOR_CONTRACT = "kodekonveyor_contract";
+
   public static final String KODEKONVEYOR_SALES_ROLE = "kodekonveyor_sales";
 
+  public static final String KODEKONVEYOR_TECHNICAL = "kodekonveyor_technical";
+
+  public static final String MANAGER = "manager";
+
   public static final String PAYMMENT_CHANNEL_SEPARATOR = ":";
+
+  public static final String PRIVATE_PROJECT_TYPE = "private";
 
   public static final String REGEX_PAYPAL = "^[A-Za-z0-9+_.-]+@(.+)$";
 
@@ -41,5 +49,7 @@ public class MarketConstants {
 
   public static final String REGEX_TRANSFERWISE =
       "\\b[A-Z]{2}[0-9]{2}(?:[ ]?[0-9]{4}){4}(?!(?:[ ]?[0-9]){3})(?:[ ]?[0-9]{1,2})?\\b";
+
+  public static final String UNDERSCORE = "_";
 
 }
