@@ -9,10 +9,12 @@ public class UserLegalInfoEntityTestData {
 
   public static final String EMAIL = "john.bigboot@example.com";
 
-  public static final String LEGALNAME = "John Bigbooté";
+  public static final String INVALID_PAYMENT_REGIME = "hungary";
 
+  public static final String LEGALNAME = "John Bigbooté";
   public static final String PAYMENT_DETAILS =
       "paypal:john.bigboot@example.com";
+
   public static final String PAYMENT_REGIME = "restofworld";
 
   public static final UserLegalInfoEntity get() {
