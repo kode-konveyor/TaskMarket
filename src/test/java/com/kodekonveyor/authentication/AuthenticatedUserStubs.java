@@ -17,14 +17,6 @@ public class AuthenticatedUserStubs {
         .call();
   }
 
-  public static void
-      manager(final AuthenticatedUserService authenticatedUserService) {
-    doReturn(UserEntityTestData.getRolemanager())
-        .when(authenticatedUserService)
-        .call();
-
-  }
-
   public static void noMarketuser(
       final AuthenticatedUserService authenticatedUserService
   ) {
@@ -52,5 +44,13 @@ public class AuthenticatedUserStubs {
   ) {
     doReturn(UserEntityTestData.getRoleSales()).when(authenticatedUserService)
         .call();
+  }
+
+  public static void
+      unregistered(final AuthenticatedUserService authenticatedUserService) {
+    doReturn(UserEntityTestData.getRoleUnregistered())
+        .when(authenticatedUserService)
+        .call();
+
   }
 }

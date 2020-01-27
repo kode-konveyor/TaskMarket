@@ -5,8 +5,8 @@ import lombok.Data;
 @Data
 public class MarketUserDTO {
 
-  private RegistrationInfoDTO registrationInfo;
-
   private String login;
+
+  private RegistrationInfoDTO registrationInfo;
 
 }

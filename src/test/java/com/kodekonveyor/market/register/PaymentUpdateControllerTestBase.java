@@ -11,6 +11,9 @@ public class PaymentUpdateControllerTestBase {
   @Mock
   AuthenticatedUserService authenticatedUserService;
 
+  @Mock
+  MarketUserEntityRepository marketUserEntityRepository;
+
   @InjectMocks
   PaymentUpdateController paymentUpdateController;
 }

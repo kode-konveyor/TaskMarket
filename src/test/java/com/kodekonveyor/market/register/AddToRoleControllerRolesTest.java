@@ -1,6 +1,6 @@
 package com.kodekonveyor.market.register;
 
-import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.junit.Assert.assertEquals;
 
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
@@ -16,6 +16,7 @@ import com.kodekonveyor.annotations.TestedService;
 import com.kodekonveyor.authentication.AuthenticatedUserStubs;
 import com.kodekonveyor.authentication.RoleEntityTestData;
 import com.kodekonveyor.authentication.UserEntityTestData;
+import com.kodekonveyor.exception.ThrowableTester;
 
 @ExtendWith(MockitoExtension.class)
 @MockitoSettings(strictness = Strictness.LENIENT)
@@ -36,4 +37,42 @@ public class AddToRoleControllerRolesTest extends AddToRoleControllerTestBase {
     );
 
   }
+
+  //  @Test
+  //  @DisplayName(
+  //    "verify registered user is saved"
+  //  )
+  //  void test1() {
+  //    AuthenticatedUserStubs.registered(authenticatedUserService);
+  //    addToRoleController
+  //        .call(RegisterTestData.PROJECTNAME, RegisterTestData.PROJECTROLE);
+  //    verify(userEntityRepository).save(UserEntityTestData.getRoleRegistered());
+  //
+  //  }
+
+  @Test
+  @DisplayName(
+    "if the user is registerd role, no exception is thrown"
+  )
+  void test2() {
+    AuthenticatedUserStubs.canBePayed(authenticatedUserService);
+    ThrowableTester.assertNoException(
+        () -> addToRoleController
+            .call(RegisterTestData.PROJECTNAME, RegisterTestData.PROJECTROLE)
+    );
+  }
+
+  @Test
+  @DisplayName(
+    "if the login is null, we throw unregistered exception"
+  )
+  void test3() {
+    AuthenticatedUserStubs.unregistered(authenticatedUserService);
+
+    ThrowableTester.assertThrows(
+        () -> addToRoleController
+            .call(RegisterTestData.PROJECTNAME, RegisterTestData.PROJECTROLE)
+    ).assertMessageIs(AddToRoleControllerTestData.UNREGISERED);
+  }
+
 }

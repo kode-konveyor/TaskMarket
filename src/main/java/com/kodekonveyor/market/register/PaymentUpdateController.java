@@ -17,14 +17,18 @@ public class PaymentUpdateController {
   @Autowired
   AuthenticatedUserService authenticatedUserService;
 
+  @Autowired
+  MarketUserDTO marketUserDTO;
+
   @PutMapping(UrlMapConstants.PAYMENT_UPDATE_PATH)
   public Object call(final String paymentDetails) {
     PaymentChannelUtil.validatePaymentDetails(paymentDetails);
+
     final UserEntity user = authenticatedUserService.call();
 
     if (!CheckRoleUtil.hasRole(user, MarketConstants.CAN_BE_PAID_ROLE))
       throw new UnauthorizedException(RegisterConstants.IN_PAYMENT_UPDATE);
+
     return null;
   }
-
 }

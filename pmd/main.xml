@@ -1,0 +1,120 @@
+2020/01/26 16:59:32,777 ERROR BaseVisitor                      PMD exception visiting AddToRoleController.java
+net.sourceforge.pmd.PMDException: There were processing errors!
+G:\TaskMarket\src\main\java\com\kodekonveyor\market\register\AddToRoleController.java: PMDException: Error while parsing G:\TaskMarket\src\main\java\com\kodekonveyor\market\register\AddToRoleController.java net.sourceforge.pmd.PMDException: Error while parsing G:\TaskMarket\src\main\java\com\kodekonveyor\market\register\AddToRoleController.java
+	at net.sourceforge.pmd.SourceCodeProcessor.processSourceCodeWithoutCache(SourceCodeProcessor.java:110)
+	at net.sourceforge.pmd.SourceCodeProcessor.processSourceCode(SourceCodeProcessor.java:89)
+	at net.sourceforge.pmd.SourceCodeProcessor.processSourceCode(SourceCodeProcessor.java:51)
+	at net.sourceforge.pmd.processor.PmdRunnable.call(PmdRunnable.java:78)
+	at net.sourceforge.pmd.processor.MonoThreadProcessor.runAnalysis(MonoThreadProcessor.java:29)
+	at net.sourceforge.pmd.processor.AbstractPMDProcessor.processFiles(AbstractPMDProcessor.java:121)
+	at net.sourceforge.pmd.eclipse.runtime.cmd.BaseVisitor.reviewResource(BaseVisitor.java:382)
+	at net.sourceforge.pmd.eclipse.runtime.cmd.DeltaVisitor.visitChanged(DeltaVisitor.java:84)
+	at net.sourceforge.pmd.eclipse.runtime.cmd.DeltaVisitor.visit(DeltaVisitor.java:56)
+	at org.eclipse.core.internal.events.ResourceDelta.accept(ResourceDelta.java:67)
+	at org.eclipse.core.internal.events.ResourceDelta.accept(ResourceDelta.java:77)
+	at org.eclipse.core.internal.events.ResourceDelta.accept(ResourceDelta.java:77)
+	at org.eclipse.core.internal.events.ResourceDelta.accept(ResourceDelta.java:77)
+	at org.eclipse.core.internal.events.ResourceDelta.accept(ResourceDelta.java:77)
+	at org.eclipse.core.internal.events.ResourceDelta.accept(ResourceDelta.java:77)
+	at org.eclipse.core.internal.events.ResourceDelta.accept(ResourceDelta.java:77)
+	at org.eclipse.core.internal.events.ResourceDelta.accept(ResourceDelta.java:77)
+	at org.eclipse.core.internal.events.ResourceDelta.accept(ResourceDelta.java:77)
+	at org.eclipse.core.internal.events.ResourceDelta.accept(ResourceDelta.java:51)
+	at net.sourceforge.pmd.eclipse.runtime.cmd.ReviewCodeCmd.processResourceDelta(ReviewCodeCmd.java:616)
+	at net.sourceforge.pmd.eclipse.runtime.cmd.ReviewCodeCmd.execute(ReviewCodeCmd.java:182)
+	at net.sourceforge.pmd.eclipse.runtime.cmd.JobCommandProcessor$1.run(JobCommandProcessor.java:59)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:63)
+Caused by: net.sourceforge.pmd.lang.java.ast.ParseException: Encountered " "}" "} "" at line 53, column 1.
+Was expecting one of:
+    <EOF> 
+    ";" ...
+    "\u001a" ...
+    "~[]" ...
+    
+	at net.sourceforge.pmd.lang.java.ast.JavaParser.generateParseException(JavaParser.java:12229)
+	at net.sourceforge.pmd.lang.java.ast.JavaParser.jj_consume_token(JavaParser.java:12113)
+	at net.sourceforge.pmd.lang.java.ast.JavaParser.CompilationUnit(JavaParser.java:382)
+	at net.sourceforge.pmd.lang.java.AbstractJavaParser.parse(AbstractJavaParser.java:59)
+	at net.sourceforge.pmd.SourceCodeProcessor.parse(SourceCodeProcessor.java:121)
+	at net.sourceforge.pmd.SourceCodeProcessor.processSource(SourceCodeProcessor.java:185)
+	at net.sourceforge.pmd.SourceCodeProcessor.processSourceCodeWithoutCache(SourceCodeProcessor.java:107)
+	... 22 more
+
+
+	at net.sourceforge.pmd.eclipse.runtime.cmd.BaseVisitor.reviewResource(BaseVisitor.java:410)
+	at net.sourceforge.pmd.eclipse.runtime.cmd.DeltaVisitor.visitChanged(DeltaVisitor.java:84)
+	at net.sourceforge.pmd.eclipse.runtime.cmd.DeltaVisitor.visit(DeltaVisitor.java:56)
+	at org.eclipse.core.internal.events.ResourceDelta.accept(ResourceDelta.java:67)
+	at org.eclipse.core.internal.events.ResourceDelta.accept(ResourceDelta.java:77)
+	at org.eclipse.core.internal.events.ResourceDelta.accept(ResourceDelta.java:77)
+	at org.eclipse.core.internal.events.ResourceDelta.accept(ResourceDelta.java:77)
+	at org.eclipse.core.internal.events.ResourceDelta.accept(ResourceDelta.java:77)
+	at org.eclipse.core.internal.events.ResourceDelta.accept(ResourceDelta.java:77)
+	at org.eclipse.core.internal.events.ResourceDelta.accept(ResourceDelta.java:77)
+	at org.eclipse.core.internal.events.ResourceDelta.accept(ResourceDelta.java:77)
+	at org.eclipse.core.internal.events.ResourceDelta.accept(ResourceDelta.java:77)
+	at org.eclipse.core.internal.events.ResourceDelta.accept(ResourceDelta.java:51)
+	at net.sourceforge.pmd.eclipse.runtime.cmd.ReviewCodeCmd.processResourceDelta(ReviewCodeCmd.java:616)
+	at net.sourceforge.pmd.eclipse.runtime.cmd.ReviewCodeCmd.execute(ReviewCodeCmd.java:182)
+	at net.sourceforge.pmd.eclipse.runtime.cmd.JobCommandProcessor$1.run(JobCommandProcessor.java:59)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:63)
+2020/01/26 17:32:22,118 ERROR BaseVisitor                      PMD exception visiting AddToRoleControllerRolesTest.java
+net.sourceforge.pmd.PMDException: There were processing errors!
+G:\TaskMarket\src\test\java\com\kodekonveyor\market\register\AddToRoleControllerRolesTest.java: PMDException: Error while parsing G:\TaskMarket\src\test\java\com\kodekonveyor\market\register\AddToRoleControllerRolesTest.java net.sourceforge.pmd.PMDException: Error while parsing G:\TaskMarket\src\test\java\com\kodekonveyor\market\register\AddToRoleControllerRolesTest.java
+	at net.sourceforge.pmd.SourceCodeProcessor.processSourceCodeWithoutCache(SourceCodeProcessor.java:110)
+	at net.sourceforge.pmd.SourceCodeProcessor.processSourceCode(SourceCodeProcessor.java:89)
+	at net.sourceforge.pmd.SourceCodeProcessor.processSourceCode(SourceCodeProcessor.java:51)
+	at net.sourceforge.pmd.processor.PmdRunnable.call(PmdRunnable.java:78)
+	at net.sourceforge.pmd.processor.MonoThreadProcessor.runAnalysis(MonoThreadProcessor.java:29)
+	at net.sourceforge.pmd.processor.AbstractPMDProcessor.processFiles(AbstractPMDProcessor.java:121)
+	at net.sourceforge.pmd.eclipse.runtime.cmd.BaseVisitor.reviewResource(BaseVisitor.java:382)
+	at net.sourceforge.pmd.eclipse.runtime.cmd.DeltaVisitor.visitChanged(DeltaVisitor.java:84)
+	at net.sourceforge.pmd.eclipse.runtime.cmd.DeltaVisitor.visit(DeltaVisitor.java:56)
+	at org.eclipse.core.internal.events.ResourceDelta.accept(ResourceDelta.java:67)
+	at org.eclipse.core.internal.events.ResourceDelta.accept(ResourceDelta.java:77)
+	at org.eclipse.core.internal.events.ResourceDelta.accept(ResourceDelta.java:77)
+	at org.eclipse.core.internal.events.ResourceDelta.accept(ResourceDelta.java:77)
+	at org.eclipse.core.internal.events.ResourceDelta.accept(ResourceDelta.java:77)
+	at org.eclipse.core.internal.events.ResourceDelta.accept(ResourceDelta.java:77)
+	at org.eclipse.core.internal.events.ResourceDelta.accept(ResourceDelta.java:77)
+	at org.eclipse.core.internal.events.ResourceDelta.accept(ResourceDelta.java:77)
+	at org.eclipse.core.internal.events.ResourceDelta.accept(ResourceDelta.java:77)
+	at org.eclipse.core.internal.events.ResourceDelta.accept(ResourceDelta.java:51)
+	at net.sourceforge.pmd.eclipse.runtime.cmd.ReviewCodeCmd.processResourceDelta(ReviewCodeCmd.java:616)
+	at net.sourceforge.pmd.eclipse.runtime.cmd.ReviewCodeCmd.execute(ReviewCodeCmd.java:182)
+	at net.sourceforge.pmd.eclipse.runtime.cmd.JobCommandProcessor$1.run(JobCommandProcessor.java:59)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:63)
+Caused by: net.sourceforge.pmd.lang.java.ast.ParseException: Encountered " "}" "} "" at line 82, column 1.
+Was expecting one of:
+    <EOF> 
+    ";" ...
+    "\u001a" ...
+    "~[]" ...
+    
+	at net.sourceforge.pmd.lang.java.ast.JavaParser.generateParseException(JavaParser.java:12229)
+	at net.sourceforge.pmd.lang.java.ast.JavaParser.jj_consume_token(JavaParser.java:12113)
+	at net.sourceforge.pmd.lang.java.ast.JavaParser.CompilationUnit(JavaParser.java:382)
+	at net.sourceforge.pmd.lang.java.AbstractJavaParser.parse(AbstractJavaParser.java:59)
+	at net.sourceforge.pmd.SourceCodeProcessor.parse(SourceCodeProcessor.java:121)
+	at net.sourceforge.pmd.SourceCodeProcessor.processSource(SourceCodeProcessor.java:185)
+	at net.sourceforge.pmd.SourceCodeProcessor.processSourceCodeWithoutCache(SourceCodeProcessor.java:107)
+	... 22 more
+
+
+	at net.sourceforge.pmd.eclipse.runtime.cmd.BaseVisitor.reviewResource(BaseVisitor.java:410)
+	at net.sourceforge.pmd.eclipse.runtime.cmd.DeltaVisitor.visitChanged(DeltaVisitor.java:84)
+	at net.sourceforge.pmd.eclipse.runtime.cmd.DeltaVisitor.visit(DeltaVisitor.java:56)
+	at org.eclipse.core.internal.events.ResourceDelta.accept(ResourceDelta.java:67)
+	at org.eclipse.core.internal.events.ResourceDelta.accept(ResourceDelta.java:77)
+	at org.eclipse.core.internal.events.ResourceDelta.accept(ResourceDelta.java:77)
+	at org.eclipse.core.internal.events.ResourceDelta.accept(ResourceDelta.java:77)
+	at org.eclipse.core.internal.events.ResourceDelta.accept(ResourceDelta.java:77)
+	at org.eclipse.core.internal.events.ResourceDelta.accept(ResourceDelta.java:77)
+	at org.eclipse.core.internal.events.ResourceDelta.accept(ResourceDelta.java:77)
+	at org.eclipse.core.internal.events.ResourceDelta.accept(ResourceDelta.java:77)
+	at org.eclipse.core.internal.events.ResourceDelta.accept(ResourceDelta.java:77)
+	at org.eclipse.core.internal.events.ResourceDelta.accept(ResourceDelta.java:51)
+	at net.sourceforge.pmd.eclipse.runtime.cmd.ReviewCodeCmd.processResourceDelta(ReviewCodeCmd.java:616)
+	at net.sourceforge.pmd.eclipse.runtime.cmd.ReviewCodeCmd.execute(ReviewCodeCmd.java:182)
+	at net.sourceforge.pmd.eclipse.runtime.cmd.JobCommandProcessor$1.run(JobCommandProcessor.java:59)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:63)

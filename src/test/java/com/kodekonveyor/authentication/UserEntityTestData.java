@@ -40,12 +40,6 @@ public class UserEntityTestData {
     return userEntity;
   }
 
-  public static final UserEntity getRolemanager() {
-    final UserEntity userEntity = get();
-    userEntity.setRoles(Set.of(RoleEntityTestData.getNameManager()));
-    return userEntity;
-  }
-
   public static UserEntity getRoleProject() {
     final UserEntity userEntity = get();
     userEntity.setRoles(Set.of(RoleEntityTestData.getNameProject()));
@@ -61,6 +55,13 @@ public class UserEntityTestData {
   public static final UserEntity getRoleSales() {
     final UserEntity userEntity = get();
     userEntity.setRoles(Set.of(RoleEntityTestData.getNameSales()));
+    return userEntity;
+  }
+
+  public static final UserEntity getRoleUnregistered() {
+    final UserEntity userEntity = get();
+    userEntity.setLogin(null);
+    userEntity.setRoles(Set.of(RoleEntityTestData.getNameCanBePayed()));
     return userEntity;
   }
 
