@@ -7,7 +7,9 @@ import org.springframework.web.bind.annotation.RestController;
 
 import com.kodekonveyor.authentication.AuthenticatedUserService;
 import com.kodekonveyor.authentication.UserEntity;
+import com.kodekonveyor.market.MarketConstants;
 import com.kodekonveyor.market.UrlMapConstants;
+import com.kodekonveyor.market.ValidationException;
 
 @RestController
 public class RegistrationController {
@@ -21,8 +23,20 @@ public class RegistrationController {
   @PostMapping(UrlMapConstants.REGISTER_USER_PATH)
   public void
       call(final @RequestBody RegistrationInfoDTO registrationInfoDTO) {
+    checkRegimeValidity(registrationInfoDTO);
     doStore(registrationInfoDTO);
 
+  }
+
+  private void
+      checkRegimeValidity(final RegistrationInfoDTO registrationInfoDTO) {
+    if (
+      !registrationInfoDTO.getPaymentRegime()
+          .equals(MarketConstants.PAYMENT_REGIME)
+    )
+      throw new ValidationException(
+          MarketConstants.INVALID_PAYMENT_REGIME_EXCEPTION
+      );
   }
 
   private void doStore(final RegistrationInfoDTO registrationInfoDTO) {
