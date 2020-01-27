@@ -38,18 +38,6 @@ public class AddToRoleControllerRolesTest extends AddToRoleControllerTestBase {
 
   }
 
-  //  @Test
-  //  @DisplayName(
-  //    "verify registered user is saved"
-  //  )
-  //  void test1() {
-  //    AuthenticatedUserStubs.registered(authenticatedUserService);
-  //    addToRoleController
-  //        .call(RegisterTestData.PROJECTNAME, RegisterTestData.PROJECTROLE);
-  //    verify(userEntityRepository).save(UserEntityTestData.getRoleRegistered());
-  //
-  //  }
-
   @Test
   @DisplayName(
     "if the user is registerd role, no exception is thrown"
