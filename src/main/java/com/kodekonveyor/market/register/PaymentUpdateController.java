@@ -17,9 +17,6 @@ public class PaymentUpdateController {
   @Autowired
   AuthenticatedUserService authenticatedUserService;
 
-  @Autowired
-  MarketUserDTO marketUserDTO;
-
   @PutMapping(UrlMapConstants.PAYMENT_UPDATE_PATH)
   public Object call(final String paymentDetails) {
     PaymentChannelUtil.validatePaymentDetails(paymentDetails);
