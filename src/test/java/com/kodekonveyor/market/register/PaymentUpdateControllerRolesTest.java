@@ -42,6 +42,9 @@ public class PaymentUpdateControllerRolesTest
   )
   void test2() {
     AuthenticatedUserStubs.kodekonveyorContract(authenticatedUserService);
+    MarketUserStubs
+        .contractTermsAccepted(marketUserEntityRepository, registerTestData);
+
     ThrowableTester.assertNoException(
         () -> paymentUpdateController.call(RegisterTestData.PAYMENT_DETAILS)
     );

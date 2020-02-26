@@ -1,5 +1,7 @@
 package com.kodekonveyor.market.register;
 
+import java.util.List;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RestController;
@@ -17,6 +19,9 @@ public class PaymentUpdateController {
   @Autowired
   AuthenticatedUserService authenticatedUserService;
 
+  @Autowired
+  MarketUserEntityRepository marketUserEntityRepository;
+
   @PutMapping(UrlMapConstants.PAYMENT_UPDATE_PATH)
   public Object call(final String paymentDetails) {
     final UserEntity user = authenticatedUserService.call();
@@ -28,7 +33,16 @@ public class PaymentUpdateController {
       throw new UnauthorizedException(
           RegisterConstants.UNAUTHORIZED_NOT_ENOUGH_RIGHTS
       );
-    return null;
+
+    final List<MarketUserEntity> list =
+        marketUserEntityRepository.findByLogin(user);
+
+    if (list.get(0).getLegal().getContractTerms().getState())
+      return null;
+    throw new UnauthorizedException(
+        RegisterConstants.CONTRACT_TERMS_NOT_ACCEPTED
+    );
+
   }
 
   private void

@@ -1,5 +1,7 @@
 package com.kodekonveyor.market.register;
 
+import java.awt.Checkbox;
+
 public class UserLegalInfoEntityTestData {
 
   public static final String ADDRESS =
@@ -25,6 +27,22 @@ public class UserLegalInfoEntityTestData {
     userLegalInfoEntity.setPaymentRegime(PAYMENT_REGIME);
     userLegalInfoEntity.setPaymentDetails(PAYMENT_DETAILS);
     userLegalInfoEntity.setCountry(COUNTRY);
+
+    return userLegalInfoEntity;
+  }
+
+  public static UserLegalInfoEntity getAcceptedContractUser() {
+    final UserLegalInfoEntity userLegalInfoEntity = get();
+    final Checkbox terms = new Checkbox("Terms", true);
+    userLegalInfoEntity.setContractTerms(terms);
+
+    return userLegalInfoEntity;
+  }
+
+  public static final UserLegalInfoEntity getUnacceptedContractUser() {
+    final UserLegalInfoEntity userLegalInfoEntity = get();
+    final Checkbox terms = new Checkbox("Terms", false);
+    userLegalInfoEntity.setContractTerms(terms);
 
     return userLegalInfoEntity;
   }

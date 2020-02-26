@@ -1,6 +1,7 @@
 
 package com.kodekonveyor.market.register;
 
+import org.junit.jupiter.api.BeforeEach;
 import org.mockito.InjectMocks;
 import org.mockito.Mock;
 
@@ -16,4 +17,14 @@ public class PaymentUpdateControllerTestBase {
 
   @InjectMocks
   PaymentUpdateController paymentUpdateController;
+
+  MarketUserDTOTestData registerTestData;
+
+  @BeforeEach
+  void setUp() {
+    final MarketUserDTOTestData registerTestData = new MarketUserDTOTestData();
+
+    MarketUserStubs
+        .behaviour(marketUserEntityRepository, registerTestData);
+  }
 }

@@ -1,5 +1,7 @@
 package com.kodekonveyor.market.register;
 
+import java.awt.Checkbox;
+
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
@@ -11,13 +13,15 @@ import lombok.Data;
 @Entity
 class UserLegalInfoEntity {
 
-  @Id
-  @GeneratedValue(strategy = GenerationType.IDENTITY)
-  private long id;
+  private Checkbox contractTerms;
 
   private String country;
 
   private String email;
+
+  @Id
+  @GeneratedValue(strategy = GenerationType.IDENTITY)
+  private long id;
 
   private String legalAddress;
 
