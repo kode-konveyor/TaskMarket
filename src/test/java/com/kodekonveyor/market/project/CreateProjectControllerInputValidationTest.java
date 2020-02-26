@@ -22,11 +22,33 @@ public class CreateProjectControllerInputValidationTest
     extends CreateProjectControllerTestBase {
 
   @Test
-  @DisplayName("When project Id is non positive, we throw an exception")
+  @DisplayName("When project Id is just positive, we throw no exception")
+  public void projectId1test() {
+
+    ThrowableTester.assertNoException(
+        () -> createProjectController.call(ProjectDTOTestData.getPositiveId())
+    );
+  }
+
+  @Test
+  @DisplayName("When project Id is negative, we throw an exception")
   public void projectIdtest() {
 
     ThrowableTester.assertThrows(
         () -> createProjectController.call(ProjectDTOTestData.getNonPositiveId())
+    )
+
+        .assertMessageIs(
+            CreateProjectControllerTestData.PROJECT_ID_NON_POSITIVE_EXCEPTION
+        );
+  }
+
+  @Test
+  @DisplayName("When project Id is zero, we throw an exception")
+  public void projectIdZerotest() {
+
+    ThrowableTester.assertThrows(
+        () -> createProjectController.call(ProjectDTOTestData.getZeroId())
     )
 
         .assertMessageIs(
@@ -61,9 +83,9 @@ public class CreateProjectControllerInputValidationTest
   }
 
   @Test
-  @DisplayName("When project parameters are vaid no exception is thrown")
+  @DisplayName("When project parameters are valid no exception is thrown")
   public void validProjecttest() {
-    createProjectController.call(ProjectDTOTestData.get());
+
     ThrowableTester.assertNoException(
         () -> createProjectController.call(ProjectDTOTestData.get())
     );
