@@ -21,6 +21,12 @@ public class UserEntityTestData {
     return user;
   }
 
+  public static UserEntity getCanBePayedRemoved() {
+    final UserEntity userEntity = get();
+    userEntity.setRoles(Set.of());
+    return userEntity;
+  }
+
   public static final UserEntity getIdUninitialized() {
     final UserEntity userEntity = new UserEntity();
     userEntity.setLogin(LOGIN);

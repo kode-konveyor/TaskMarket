@@ -4,6 +4,7 @@ import static org.mockito.Mockito.doReturn;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Optional;
 
 import com.kodekonveyor.authentication.UserEntityTestData;
 
@@ -38,6 +39,27 @@ public class MarketUserStubs {
     doReturn(List.of(MarketUserEntityTestData.getUnacceptedContractuser()))
         .when(marketUserEntityRepository)
         .findByLogin(UserEntityTestData.getRoleKodekonveyorContract());
+  }
+
+  public static void outdatedUser(
+      final MarketUserEntityRepository marketUserEntityRepository,
+      final MarketUserDTOTestData registerTestData
+  ) {
+    doReturn(
+        Optional.of(MarketUserEntityTestData.getoutdatedUser())
+    ).when(marketUserEntityRepository)
+        .findById(UserEntityTestData.ID);
+  }
+
+  public static void upTodatedUser(
+      final MarketUserEntityRepository marketUserEntityRepository,
+      final MarketUserDTOTestData registerTestData
+  ) {
+    doReturn(
+        Optional.of(MarketUserEntityTestData.getNoCanBePayed())
+    ).when(marketUserEntityRepository)
+        .findById(UserEntityTestData.ID);
+
   }
 
 }
