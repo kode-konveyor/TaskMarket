@@ -38,22 +38,22 @@ public class MarketUserCompilerService {
       //            .hasRole(entity.getLogin(), MarketConstants.CAN_BE_PAID_ROLE)
       //      )
       //        return;
-      //    }
-
-      if (
-        entity.getLegal() == null
-      ) {
-        entity.getLogin().setRoles(Set.of());
-        marketUserEntityRepository.save(entity);
-
-        //      if (
-        //        !CheckRoleUtil
-        //            .hasRole(entity.getLogin(), MarketConstants.CAN_BE_PAID_ROLE)
-        //      )
-        //
-        //        return;
-      }
-
     }
+
+    if (
+      entity.getLegal() == null
+    ) {
+      entity.getLogin().setRoles(Set.of());
+      marketUserEntityRepository.save(entity);
+
+      //      if (
+      //        !CheckRoleUtil
+      //            .hasRole(entity.getLogin(), MarketConstants.CAN_BE_PAID_ROLE)
+      //      )
+      //
+      //        return;
+    }
+
   }
+
 }
