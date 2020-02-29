@@ -2,13 +2,9 @@ package com.kodekonveyor.market.project;
 
 import com.kodekonveyor.annotations.ExcludeFromCodeCoverage;
 
-import lombok.Getter;
-import lombok.Setter;
-import lombok.ToString;
+import lombok.Data;
 
-@Getter
-@Setter
-@ToString
+@Data
 @ExcludeFromCodeCoverage("no code")
 public class ProjectDTO {
 
