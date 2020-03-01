@@ -11,6 +11,7 @@ import org.mockito.quality.Strictness;
 
 import com.kodekonveyor.annotations.TestedBehaviour;
 import com.kodekonveyor.annotations.TestedService;
+import com.kodekonveyor.authentication.AuthenticatedUserStubs;
 import com.kodekonveyor.exception.ThrowableTester;
 
 @ExtendWith(MockitoExtension.class)
@@ -24,7 +25,7 @@ public class CreateProjectControllerInputValidationTest
   @Test
   @DisplayName("When project Id is just positive, we throw no exception")
   public void projectId1test() {
-
+    AuthenticatedUserStubs.projectManager(authenticatedUserService);
     ThrowableTester.assertNoException(
         () -> createProjectController.call(ProjectDTOTestData.getPositiveId())
     );
@@ -33,7 +34,7 @@ public class CreateProjectControllerInputValidationTest
   @Test
   @DisplayName("When project Id is negative, we throw an exception")
   public void projectIdtest() {
-
+    AuthenticatedUserStubs.projectManager(authenticatedUserService);
     ThrowableTester.assertThrows(
         () -> createProjectController.call(ProjectDTOTestData.getNonPositiveId())
     )
@@ -46,7 +47,7 @@ public class CreateProjectControllerInputValidationTest
   @Test
   @DisplayName("When project Id is zero, we throw an exception")
   public void projectIdZerotest() {
-
+    AuthenticatedUserStubs.projectManager(authenticatedUserService);
     ThrowableTester.assertThrows(
         () -> createProjectController.call(ProjectDTOTestData.getZeroId())
     )
@@ -59,7 +60,7 @@ public class CreateProjectControllerInputValidationTest
   @Test
   @DisplayName("When project name is invalid, we throw an exception")
   public void projectNameInvalidtest() {
-
+    AuthenticatedUserStubs.projectManager(authenticatedUserService);
     ThrowableTester.assertThrows(
         () -> createProjectController.call(ProjectDTOTestData.getInvalidName())
     )
@@ -72,7 +73,7 @@ public class CreateProjectControllerInputValidationTest
   @Test
   @DisplayName("When project name is null, we throw an exception")
   public void projectNameNulltest() {
-
+    AuthenticatedUserStubs.projectManager(authenticatedUserService);
     ThrowableTester.assertThrows(
         () -> createProjectController.call(ProjectDTOTestData.getNullName())
     )
@@ -85,7 +86,7 @@ public class CreateProjectControllerInputValidationTest
   @Test
   @DisplayName("When project parameters are valid no exception is thrown")
   public void validProjecttest() {
-
+    AuthenticatedUserStubs.projectManager(authenticatedUserService);
     ThrowableTester.assertNoException(
         () -> createProjectController.call(ProjectDTOTestData.get())
     );

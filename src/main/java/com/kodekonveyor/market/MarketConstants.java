@@ -54,6 +54,8 @@ public class MarketConstants {
   public static final String PROJECT_ID_NON_POSITIVE_EXCEPTION =
       "Project Id can only have positive values";
 
+  public static final String PROJECT_MANAGER = "kodekonveyor_projectmanager";
+
   public static final String PROJECT_NAME_INVALID_EXCEPTION =
       "Invalid project name format";
 

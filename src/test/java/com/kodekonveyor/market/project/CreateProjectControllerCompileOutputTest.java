@@ -13,6 +13,7 @@ import org.mockito.quality.Strictness;
 
 import com.kodekonveyor.annotations.TestedBehaviour;
 import com.kodekonveyor.annotations.TestedService;
+import com.kodekonveyor.authentication.AuthenticatedUserStubs;
 
 @ExtendWith(MockitoExtension.class)
 @MockitoSettings(strictness = Strictness.LENIENT)
@@ -25,7 +26,8 @@ public class CreateProjectControllerCompileOutputTest
   @Test
   @DisplayName("check project id is returned successfully")
   public void test() {
-    createProjectController.callForUrlencoded(ProjectDTOTestData.get());
+    AuthenticatedUserStubs.projectManager(authenticatedUserService);
+    createProjectController.call(ProjectDTOTestData.get());
     assertEquals(
         ProjectDTOTestData.ID, createProjectController
             .call(ProjectDTOTestData.get()).getId()
@@ -35,6 +37,8 @@ public class CreateProjectControllerCompileOutputTest
   @Test
   @DisplayName("check project name is returned successfully")
   public void test1() {
+    AuthenticatedUserStubs.projectManager(authenticatedUserService);
+    createProjectController.call(ProjectDTOTestData.get());
     assertEquals(
         ProjectEntityTestData.get().getName(), ProjectDTOTestData.NAME
     );
@@ -43,6 +47,7 @@ public class CreateProjectControllerCompileOutputTest
   @Test
   @DisplayName("The controller returns project successfully")
   void test3() {
+    AuthenticatedUserStubs.projectManager(authenticatedUserService);
     final ProjectDTO ret =
         createProjectController.call(ProjectDTOTestData.get());
     assertEquals(

@@ -5,14 +5,21 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RestController;
 
+import com.kodekonveyor.authentication.AuthenticatedUserService;
+import com.kodekonveyor.authentication.UserEntity;
 import com.kodekonveyor.market.LogSeverityEnum;
 import com.kodekonveyor.market.LoggerService;
 import com.kodekonveyor.market.MarketConstants;
+import com.kodekonveyor.market.UnauthorizedException;
 import com.kodekonveyor.market.UrlMapConstants;
 import com.kodekonveyor.market.ValidationException;
+import com.kodekonveyor.market.lead.CheckRoleUtil;
 
 @RestController
 public class CreateProjectController {
+
+  @Autowired
+  AuthenticatedUserService authenticatedUserService;
 
   @Autowired
   LoggerService loggerService;
@@ -24,6 +31,12 @@ public class CreateProjectController {
       value = UrlMapConstants.PROJECT_PATH, consumes = "application/json"
   )
   public ProjectDTO call(@RequestBody final ProjectDTO dto) {
+    final UserEntity user = authenticatedUserService.call();
+    if (
+      !CheckRoleUtil.hasRole(user, MarketConstants.PROJECT_MANAGER)
+
+    )
+      throw new UnauthorizedException(ProjectConstants.IN_CREATE_PROJECT);
 
     inputValidation(dto);
     storage(dto);

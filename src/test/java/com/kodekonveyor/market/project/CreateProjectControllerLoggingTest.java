@@ -13,6 +13,7 @@ import org.mockito.quality.Strictness;
 
 import com.kodekonveyor.annotations.TestedBehaviour;
 import com.kodekonveyor.annotations.TestedService;
+import com.kodekonveyor.authentication.AuthenticatedUserStubs;
 import com.kodekonveyor.market.LogSeverityEnum;
 
 @ExtendWith(MockitoExtension.class)
@@ -26,6 +27,7 @@ public class CreateProjectControllerLoggingTest
   @Test
   @DisplayName("The call of the service is logged with the created entity")
   void test3() {
+    AuthenticatedUserStubs.projectManager(authenticatedUserService);
     createProjectController.call(ProjectDTOTestData.get());
     verify(loggerService)
         .call(
