@@ -5,12 +5,17 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RestController;
 
+import com.kodekonveyor.market.LogSeverityEnum;
+import com.kodekonveyor.market.LoggerService;
 import com.kodekonveyor.market.MarketConstants;
 import com.kodekonveyor.market.UrlMapConstants;
 import com.kodekonveyor.market.ValidationException;
 
 @RestController
 public class CreateProjectController {
+
+  @Autowired
+  LoggerService loggerService;
 
   @Autowired
   ProjectEntityRepository projectEntityRepository;
@@ -55,7 +60,9 @@ public class CreateProjectController {
   }
 
   private void storage(final ProjectDTO dto) {
-
+    loggerService.call(
+        ProjectConstants.PROJECT_RECEIVED, LogSeverityEnum.INFO, dto.toString()
+    );
     final ProjectEntity entity = new ProjectEntity();
     entity.setId(dto.getId());
     entity.setName(dto.getName());

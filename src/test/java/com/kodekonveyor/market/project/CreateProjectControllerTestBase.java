@@ -4,10 +4,15 @@ import org.junit.jupiter.api.BeforeEach;
 import org.mockito.InjectMocks;
 import org.mockito.Mock;
 
+import com.kodekonveyor.market.LoggerService;
+
 public class CreateProjectControllerTestBase {
 
   @InjectMocks
   CreateProjectController createProjectController;
+
+  @Mock
+  LoggerService loggerService;
 
   @Mock
   ProjectEntityRepository projectEntityRepository;
