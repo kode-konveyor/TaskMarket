@@ -58,7 +58,9 @@ public class CreateProjectControllerInputValidationTest
   }
 
   @Test
-  @DisplayName("When project name is invalid, we throw an exception")
+  @DisplayName(
+    "When project name is invalid (Ecpected Format - '^kode-konveyor/\\\\b[A-Za-z0-9]*$'), we throw an exception"
+  )
   public void projectNameInvalidtest() {
     AuthenticatedUserStubs.projectManager(authenticatedUserService);
     ThrowableTester.assertThrows(

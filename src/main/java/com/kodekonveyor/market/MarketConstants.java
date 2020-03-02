@@ -60,7 +60,7 @@ public class MarketConstants {
       "Invalid project name format";
 
   public static final String PROJECT_NAME_NULL_EXCEPTION =
-      "Project name cannt be null";
+      "Project name cannot be null";
 
   public static final String PROJECT_NAME_REGEX =
       "^kode-konveyor/\\b[A-Za-z0-9]*$";

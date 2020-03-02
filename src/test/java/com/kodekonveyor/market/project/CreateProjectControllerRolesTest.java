@@ -46,7 +46,7 @@ public class CreateProjectControllerRolesTest
   }
 
   @Test
-  @DisplayName("if the user has can_be_played role, no exception is thrown")
+  @DisplayName("if the user has can_be_payed role, no exception is thrown")
   void test2() {
     AuthenticatedUserStubs.projectManager(authenticatedUserService);
 

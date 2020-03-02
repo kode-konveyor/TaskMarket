@@ -26,7 +26,7 @@ public class CreateProjectControllerStorageTest
 
   @Test
   @DisplayName(
-    "verify project entity is saved successfully for application/json requests"
+    "The project entity is saved successfully for application/json requests"
   )
   public void saveEntitytest() {
     AuthenticatedUserStubs.projectManager(authenticatedUserService);
@@ -35,7 +35,7 @@ public class CreateProjectControllerStorageTest
   }
 
   @Test
-  @DisplayName("check project id is saved successfully")
+  @DisplayName("The project id is saved successfully")
   public void test() {
     AuthenticatedUserStubs.projectManager(authenticatedUserService);
     createProjectController.call(ProjectDTOTestData.get());
@@ -46,7 +46,7 @@ public class CreateProjectControllerStorageTest
   }
 
   @Test
-  @DisplayName("check project name is saved successfully")
+  @DisplayName("The project name is saved successfully")
   public void test1() {
     AuthenticatedUserStubs.projectManager(authenticatedUserService);
     createProjectController.call(ProjectDTOTestData.get());

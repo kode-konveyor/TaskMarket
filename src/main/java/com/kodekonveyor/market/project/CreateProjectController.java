@@ -49,7 +49,7 @@ public class CreateProjectController {
       consumes = "application/x-www-form-urlencoded"
   )
   public ProjectDTO callForUrlencoded(final ProjectDTO projectDTO) {
-    storage(projectDTO);
+    call(projectDTO);
 
     return projectDTO;
 

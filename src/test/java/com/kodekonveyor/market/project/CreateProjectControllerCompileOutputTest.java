@@ -24,7 +24,7 @@ public class CreateProjectControllerCompileOutputTest
     extends CreateProjectControllerTestBase {
 
   @Test
-  @DisplayName("check project id is returned successfully")
+  @DisplayName("The project id is returned successfully")
   public void test() {
     AuthenticatedUserStubs.projectManager(authenticatedUserService);
     createProjectController.call(ProjectDTOTestData.get());
@@ -35,7 +35,7 @@ public class CreateProjectControllerCompileOutputTest
   }
 
   @Test
-  @DisplayName("check project name is returned successfully")
+  @DisplayName("The project name is returned successfully")
   public void test1() {
     AuthenticatedUserStubs.projectManager(authenticatedUserService);
     createProjectController.call(ProjectDTOTestData.get());

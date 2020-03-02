@@ -9,7 +9,7 @@ public class CreateProjectControllerTestData {
   public static final String PROJECT_NAME_INVALID_EXCEPTION =
       "Invalid project name format";
   public static final String PROJECT_NAME_NULL_EXCEPTION =
-      "Project name cannt be null";
+      "Project name cannot be null";
   public static final String PROJECT_RECEIVED = "project.received";
 
 }
