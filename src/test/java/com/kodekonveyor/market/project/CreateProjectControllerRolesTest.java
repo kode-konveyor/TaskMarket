@@ -25,7 +25,7 @@ public class CreateProjectControllerRolesTest
 
   @Test
   @DisplayName(
-    "if the user does not have Project manager role, a NotLoggedInException is thrown"
+    "if the user does not have Project manager role, a UnauthorizedException is thrown"
   )
   void test() {
     AuthenticatedUserStubs.authenticated(authenticatedUserService);
@@ -36,7 +36,7 @@ public class CreateProjectControllerRolesTest
 
   @Test
   @DisplayName(
-    "if the user does not have Project manager role, an Exception is thrown"
+    "if the user does not have Project manager role, a Message Exception is thrown"
   )
   void test1() {
     AuthenticatedUserStubs.authenticated(authenticatedUserService);
