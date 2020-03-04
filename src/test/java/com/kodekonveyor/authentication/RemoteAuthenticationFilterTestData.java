@@ -16,9 +16,11 @@ class RemoteAuthenticationFilterTestData {
   public static final String AUTH_USER = "auth.user";
   public static final String AUTHENTICATING = "authenticating";
   public static final String EMPTY_MESSAGE = "";
+  public static final String HEADER = "header";
+  public static final String HEADERS = "headers";
+
   public static final String LOGIN = "login";
   public static final String LOGIN_URL = "/some/url";
-
   public static final String NAME_HEADER = "OIDC_CLAIM_nickname";
 
   public static final HttpServletRequest getRequest() {
