@@ -45,21 +45,11 @@ public class RemoteAuthenticationFilterTest
     assertEquals(null, capturedValues.get(1));
   }
 
-  private void callFilter() throws IOException, ServletException {
-    remoteAuthenticationFilter
-        .doFilter(
-            RemoteAuthenticationFilterTestData.getRequestUser(),
-            servletResponse,
-            filterChain
-        );
-  }
-
   @DisplayName("if authenticated, calls the filter chain")
   @Test
   public void test01() throws IOException, ServletException {
     AuthenticationStubs.authenticated();
-    final HttpServletRequest request =
-        RemoteAuthenticationFilterTestData.getRequestUser();
+    HttpServletRequest request = RemoteAuthenticationFilterTestData.getRequestUser();
     remoteAuthenticationFilter
         .doFilter(
             request,
@@ -77,7 +67,12 @@ public class RemoteAuthenticationFilterTest
   @Test
   public void test02() throws IOException, ServletException {
     AuthenticationStubs.nullAuthentication();
-    callFilter();
+    remoteAuthenticationFilter
+        .doFilter(
+            RemoteAuthenticationFilterTestData.getRequestUser(),
+            servletResponse,
+            filterChain
+        );
     verify(loggerService)
         .call(
             RemoteAuthenticationFilterTestData.AUTHENTICATING,
@@ -90,39 +85,16 @@ public class RemoteAuthenticationFilterTest
   @Test
   public void test03() throws IOException, ServletException {
     AuthenticationStubs.nullAuthentication();
-    callFilter();
+    remoteAuthenticationFilter
+        .doFilter(
+            RemoteAuthenticationFilterTestData.getRequestUser(),
+            servletResponse,
+            filterChain
+        );
     verify(loggerService)
         .call(
             RemoteAuthenticationFilterTestData.LOGIN, LogSeverityEnum.INFO,
             UserEntityTestData.LOGIN
-        );
-  }
-
-  @DisplayName("logs the headers section")
-  @Test
-  public void test04() throws IOException, ServletException {
-    AuthenticationStubs.nullAuthentication();
-    callFilter();
-    verify(loggerService)
-        .call(
-            RemoteAuthenticationFilterTestData.HEADERS, LogSeverityEnum.DEBUG,
-            "true"
-        );
-  }
-
-  @DisplayName("logs the headers")
-  @Test
-  public void test05() throws IOException, ServletException {
-    AuthenticationStubs.nullAuthentication();
-    callFilter();
-    final HttpServletRequest requestUser =
-        RemoteAuthenticationFilterTestData.getRequestUser();
-    final String name = requestUser.getHeaderNames().nextElement();
-    final String value = requestUser.getHeader(name);
-    verify(loggerService)
-        .call(
-            RemoteAuthenticationFilterTestData.HEADER, LogSeverityEnum.DEBUG,
-            name + ':' + value
         );
   }
 
@@ -132,7 +104,12 @@ public class RemoteAuthenticationFilterTest
   @Test
   public void test1() throws IOException, ServletException {
     AuthenticationStubs.nullAuthentication();
-    callFilter();
+    remoteAuthenticationFilter
+        .doFilter(
+            RemoteAuthenticationFilterTestData.getRequestUser(),
+            servletResponse,
+            filterChain
+        );
     assertRemoteUserIsCorrectlySetAndCleared(UserEntityTestData.LOGIN);
   }
 
@@ -142,7 +119,12 @@ public class RemoteAuthenticationFilterTest
   @Test
   public void test2() throws IOException, ServletException {
     AuthenticationStubs.anonymous();
-    callFilter();
+    remoteAuthenticationFilter
+        .doFilter(
+            RemoteAuthenticationFilterTestData.getRequestUser(),
+            servletResponse,
+            filterChain
+        );
     assertRemoteUserIsCorrectlySetAndCleared(UserEntityTestData.LOGIN);
   }
 
@@ -152,7 +134,12 @@ public class RemoteAuthenticationFilterTest
   @Test
   public void test3() throws IOException, ServletException {
     AuthenticationStubs.nullAuthentication();
-    callFilter();
+    remoteAuthenticationFilter
+        .doFilter(
+            RemoteAuthenticationFilterTestData.getRequestUser(),
+            servletResponse,
+            filterChain
+        );
     assertRemoteUserIsCorrectlySetAndCleared(UserEntityTestData.LOGIN);
   }
 
@@ -173,7 +160,12 @@ public class RemoteAuthenticationFilterTest
   @Test
   public void testMdc1() throws IOException, ServletException {
     AuthenticationStubs.authenticated();
-    callFilter();
+    remoteAuthenticationFilter
+        .doFilter(
+            RemoteAuthenticationFilterTestData.getRequestUser(),
+            servletResponse,
+            filterChain
+        );
     verify(mdc).put(
         RemoteAuthenticationFilterTestData.AUTH_USER, UserEntityTestData.LOGIN
     );
@@ -183,17 +175,14 @@ public class RemoteAuthenticationFilterTest
   @Test
   public void testMdc2() throws IOException, ServletException {
     AuthenticationStubs.authenticated();
-    callFilter();
+    remoteAuthenticationFilter
+        .doFilter(
+            RemoteAuthenticationFilterTestData.getRequestUser(),
+            servletResponse,
+            filterChain
+        );
     verify(mdc)
         .put(eq(RemoteAuthenticationFilterTestData.AUTH_SESSION), anyString());
-  }
-
-  @DisplayName("clears Mapped Diagnostic Context for log")
-  @Test
-  public void testMdc3() throws IOException, ServletException {
-    AuthenticationStubs.authenticated();
-    callFilter();
-    verify(mdc).clear();
   }
 
 }
