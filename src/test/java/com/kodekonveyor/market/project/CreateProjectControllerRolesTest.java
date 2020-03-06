@@ -36,7 +36,7 @@ public class CreateProjectControllerRolesTest
 
   @Test
   @DisplayName(
-    "if the user does not have Project manager role, a Message Exception is thrown /the error message is 'in create project'/"
+    "if the user does not have Project manager role, the error message is 'in create project'"
   )
   void test1() {
     AuthenticatedUserStubs.authenticated(authenticatedUserService);
