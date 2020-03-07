@@ -9,5 +9,6 @@ public class UrlMapConstants {
   public static final String PAYMENT_UPDATE_PATH = "/update_payment";
   public static final String REGISTER_USER_PATH = "register";
   public static final String SHOW_USER_PATH = "/member/user";
+  public static final String TASK_UPDATE_PATH = "/update_task";
 
 }
