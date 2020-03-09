@@ -18,23 +18,13 @@ public class UpdateTasksController {
   @Autowired
   AuthenticatedUserService authenticatedUserService;
 
-  @PutMapping(UrlMapConstants.REGISTER_USER_PATH)
+  @PutMapping(UrlMapConstants.TASK_UPDATE_PATH)
   public Object call() {
     final UserEntity user = authenticatedUserService.call();
-
-    registrationNeeded(user);
-
     if (!CheckRoleUtil.hasRole(user, MarketConstants.KODEKONVEYOR_CONTRACT))
       throw new UnauthorizedException(
           RegisterConstants.UNAUTHORIZED_NOT_ENOUGH_RIGHTS
       );
     return null;
-  }
-
-  private void registrationNeeded(final UserEntity user) {
-
-    if (!CheckRoleUtil.hasRole(user, MarketConstants.CAN_BE_PAID_ROLE))
-      throw new UnauthorizedException(RegisterConstants.IN_ADD_TO_ROLE);
-
   }
 }
