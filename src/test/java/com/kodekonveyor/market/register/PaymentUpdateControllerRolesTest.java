@@ -22,6 +22,8 @@ import com.kodekonveyor.exception.ThrowableTester;
 public class PaymentUpdateControllerRolesTest
     extends PaymentUpdateControllerTestBase {
 
+  MarketUserDTOTestData registerTestData;
+
   @Test
   @DisplayName(
     "if the user does not have kodekonveyor_contract role, an Exception is thrown"
@@ -42,6 +44,8 @@ public class PaymentUpdateControllerRolesTest
   )
   void test2() {
     AuthenticatedUserStubs.kodekonveyorContract(authenticatedUserService);
+    MarketUserStubs
+        .contractTermsAccepted(marketUserEntityRepository, registerTestData);
     ThrowableTester.assertNoException(
         () -> paymentUpdateController.call(RegisterTestData.PAYMENT_DETAILS)
     );

@@ -11,13 +11,15 @@ import lombok.Data;
 @Entity
 class UserLegalInfoEntity {
 
-  @Id
-  @GeneratedValue(strategy = GenerationType.IDENTITY)
-  private long id;
+  private boolean contractTermsAccepted;
 
   private String country;
 
   private String email;
+
+  @Id
+  @GeneratedValue(strategy = GenerationType.IDENTITY)
+  private long id;
 
   private String legalAddress;
 
