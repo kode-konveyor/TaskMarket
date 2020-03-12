@@ -21,10 +21,14 @@ public class UpdateTasksController {
   @PutMapping(UrlMapConstants.TASK_UPDATE_PATH)
   public Object call() {
     final UserEntity user = authenticatedUserService.call();
+    checkRole(user);
+    return null;
+  }
+
+  private void checkRole(final UserEntity user) {
     if (!CheckRoleUtil.hasRole(user, MarketConstants.KODEKONVEYOR_CONTRACT))
       throw new UnauthorizedException(
           RegisterConstants.UNAUTHORIZED_NOT_ENOUGH_RIGHTS
       );
-    return null;
   }
 }
