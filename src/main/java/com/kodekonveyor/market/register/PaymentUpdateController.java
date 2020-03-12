@@ -34,15 +34,19 @@ public class PaymentUpdateController {
           RegisterConstants.UNAUTHORIZED_NOT_ENOUGH_RIGHTS
       );
 
-    final List<MarketUserEntity> list =
+    final List<MarketUserEntity> marketuserList =
         marketUserEntityRepository.findByLogin(user);
+    contractAcceptance(marketuserList);
 
-    if (list.get(0).getLegal().isContractTermsAccepted())
-      return null;
-    throw new UnauthorizedException(
-        RegisterConstants.CONTRACT_TERMS_NOT_ACCEPTED
-    );
+    return null;
 
+  }
+
+  private void contractAcceptance(final List<MarketUserEntity> marketuserList) {
+    if (!marketuserList.get(0).getLegal().isContractTermsAccepted())
+      throw new UnauthorizedException(
+          RegisterConstants.CONTRACT_TERMS_NOT_ACCEPTED
+      );
   }
 
   private void
@@ -54,4 +58,5 @@ public class PaymentUpdateController {
       throw new UnauthorizedException(RegisterConstants.IN_PAYMENT_UPDATE);
 
   }
+
 }
