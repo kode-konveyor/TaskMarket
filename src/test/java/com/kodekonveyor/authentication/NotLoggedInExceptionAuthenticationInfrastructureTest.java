@@ -17,9 +17,10 @@ import com.kodekonveyor.annotations.TestedService;
 @ExtendWith(MockitoExtension.class)
 @MockitoSettings(strictness = Strictness.LENIENT)
 @RunWith(MockitoJUnitRunner.class)
-@TestedBehaviour("Have a message")
+@TestedBehaviour("authentication infrastructure")
 @TestedService("NotLoggedInException")
-public class NotLoggedInExceptionTest extends NotLoggedInExceptionTestBase {
+public class NotLoggedInExceptionAuthenticationInfrastructureTest
+    extends NotLoggedInExceptionTestBase {
 
   @DisplayName("the message is the exception message")
   @Test
