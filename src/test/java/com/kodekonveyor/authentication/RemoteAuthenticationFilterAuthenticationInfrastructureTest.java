@@ -29,9 +29,9 @@ import com.kodekonveyor.market.LogSeverityEnum;
 @ExtendWith(MockitoExtension.class)
 @MockitoSettings(strictness = Strictness.LENIENT)
 @RunWith(MockitoJUnitRunner.class)
-@TestedBehaviour("Puts the remote user into the Authentication object")
+@TestedBehaviour("authentication infrastructure")
 @TestedService("RemoteAuthenticationFilter")
-public class RemoteAuthenticationFilterTest
+public class RemoteAuthenticationFilterAuthenticationInfrastructureTest
     extends RemoteAuthenticationFilterTestBase {
 
   private void assertRemoteUserIsCorrectlySetAndCleared(final String login) {
@@ -49,7 +49,8 @@ public class RemoteAuthenticationFilterTest
   @Test
   public void test01() throws IOException, ServletException {
     AuthenticationStubs.authenticated();
-    HttpServletRequest request = RemoteAuthenticationFilterTestData.getRequestUser();
+    final HttpServletRequest request =
+        RemoteAuthenticationFilterTestData.getRequestUser();
     remoteAuthenticationFilter
         .doFilter(
             request,
