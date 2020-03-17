@@ -19,20 +19,25 @@ import com.kodekonveyor.annotations.TestedService;
 @ExtendWith(MockitoExtension.class)
 @MockitoSettings(strictness = Strictness.LENIENT)
 @RunWith(MockitoJUnitRunner.class)
-@TestedBehaviour("Uses the userEntity to return various data")
+@TestedBehaviour("authentication infrastructure")
 @TestedService("RemoteAuthentication")
-public class RemoteAuthenticationTest extends RemoteAuthenticationTestBase {
+public class RemoteAuthenticationAuthenticationInfrastructureTest
+    extends RemoteAuthenticationTestBase {
 
   @DisplayName("getAuthorities returns an empty list")
   @Test
   public void test() {
-    assertEquals(UserEntityTestData.listEmpty(), remoteAuthentication.getAuthorities());
+    assertEquals(
+        UserEntityTestData.listEmpty(), remoteAuthentication.getAuthorities()
+    );
   }
 
   @DisplayName("getCredentials returns the login name")
   @Test
   public void test1() {
-    assertEquals(UserEntityTestData.LOGIN, remoteAuthentication.getCredentials());
+    assertEquals(
+        UserEntityTestData.LOGIN, remoteAuthentication.getCredentials()
+    );
   }
 
   @DisplayName("getDetails returns the user")
@@ -45,7 +50,8 @@ public class RemoteAuthenticationTest extends RemoteAuthenticationTestBase {
   @Test
   public void test21() {
     assertEquals(
-        UserEntityTestData.ID, (Long) ((UserEntity) remoteAuthentication.getDetails()).getId()
+        UserEntityTestData.ID,
+        (Long) ((UserEntity) remoteAuthentication.getDetails()).getId()
     );
   }
 
@@ -71,7 +77,8 @@ public class RemoteAuthenticationTest extends RemoteAuthenticationTestBase {
   @Test
   public void test5() {
     Assertions.assertThrows(
-        IllegalArgumentException.class, () -> remoteAuthentication.setAuthenticated(true)
+        IllegalArgumentException.class,
+        () -> remoteAuthentication.setAuthenticated(true)
     );
   }
 
