@@ -14,7 +14,7 @@ import org.mockito.quality.Strictness;
 import com.kodekonveyor.annotations.TestedBehaviour;
 import com.kodekonveyor.annotations.TestedService;
 import com.kodekonveyor.authentication.AuthenticatedUserStubs;
-import com.kodekonveyor.market.LogSeverityEnum;
+import com.kodekonveyor.logging.LoggingMarkers;
 
 @ExtendWith(MockitoExtension.class)
 @MockitoSettings(strictness = Strictness.LENIENT)
@@ -30,10 +30,10 @@ public class CreateProjectControllerLoggingTest
     AuthenticatedUserStubs.projectManager(authenticatedUserService);
     createProjectController.call(ProjectDTOTestData.get());
     verify(loggerService)
-        .call(
-            CreateProjectControllerTestData.PROJECT_RECEIVED,
-            LogSeverityEnum.INFO,
-            ProjectDTOTestData.get().toString()
+        .info(
+            LoggingMarkers.PROJECT,
+            CreateProjectControllerTestData.PROJECT_RECEIVED +
+                ProjectDTOTestData.get().toString()
         );
   }
 

@@ -3,15 +3,14 @@ package com.kodekonveyor.authentication;
 import org.junit.jupiter.api.BeforeEach;
 import org.mockito.InjectMocks;
 import org.mockito.Mock;
-
-import com.kodekonveyor.market.LoggerService;
+import org.slf4j.Logger;
 
 public class AuthenticatedUserServiceTestBase {
 
   @InjectMocks
   AuthenticatedUserService authenticatedUserService;
   @Mock
-  LoggerService loggerService;
+  Logger loggerService;
 
   @Mock
   UserEntityRepository userEntityRepository;

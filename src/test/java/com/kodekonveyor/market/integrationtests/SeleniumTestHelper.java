@@ -3,6 +3,7 @@ package com.kodekonveyor.market.integrationtests;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.firefox.FirefoxDriver;
+import org.openqa.selenium.firefox.FirefoxOptions;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
@@ -11,7 +12,9 @@ class SeleniumTestHelper {
   private static FirefoxDriver driver;
 
   static {
-    driver = new FirefoxDriver();
+    final FirefoxOptions firefoxOptions = new FirefoxOptions();
+    firefoxOptions.addArguments("--headless");
+    driver = new FirefoxDriver(firefoxOptions);
   }
 
   public static FirefoxDriver getDriver() {
