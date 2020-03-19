@@ -20,7 +20,7 @@ import com.kodekonveyor.annotations.TestedService;
 @RunWith(MockitoJUnitRunner.class)
 @TestedBehaviour("redirect for login")
 @TestedService("LoginController")
-public class LoginControllerTest extends LoginControllerTestBase {
+public class LoginControllerRedirectForLoginTest extends LoginControllerTestBase {
 
   @Test
   @DisplayName("The next parameter is embedded in the return value")

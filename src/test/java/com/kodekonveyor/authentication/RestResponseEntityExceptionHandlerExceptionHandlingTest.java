@@ -23,10 +23,10 @@ import com.kodekonveyor.market.UnauthorizedException;
 @ExtendWith(MockitoExtension.class)
 @MockitoSettings(strictness = Strictness.LENIENT)
 @RunWith(MockitoJUnitRunner.class)
-@TestedBehaviour("Handles NotLoggedInException")
+@TestedBehaviour("exception handling")
 @TestedService("RestResponseEntityExceptionHandler")
 
-public class RestResponseEntityExceptionHandlerTest
+public class RestResponseEntityExceptionHandlerExceptionHandlingTest
     extends RestResponseEntityExceptionHandlerTestBase {
 
   @DisplayName("if a NotLoggedInException is thrown, logs 'not logged in'")

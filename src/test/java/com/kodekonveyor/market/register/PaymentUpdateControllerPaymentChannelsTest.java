@@ -71,6 +71,8 @@ public class PaymentUpdateControllerPaymentChannelsTest
   )
   void test4() {
     AuthenticatedUserStubs.kodekonveyorContract(authenticatedUserService);
+    MarketUserStubs
+        .contractTermsAccepted(marketUserEntityRepository, registerTestData);
     ThrowableTester.assertNoException(
         () -> paymentUpdateController
             .call(RegisterTestData.PAYMENT_DETAILS_SEPA)
@@ -84,6 +86,8 @@ public class PaymentUpdateControllerPaymentChannelsTest
   )
   void test5() {
     AuthenticatedUserStubs.kodekonveyorContract(authenticatedUserService);
+    MarketUserStubs
+        .contractTermsAccepted(marketUserEntityRepository, registerTestData);
     ThrowableTester.assertNoException(
         () -> paymentUpdateController
             .call(RegisterTestData.PAYMENT_DETAILS_TRANSFERWISE)
@@ -109,6 +113,8 @@ public class PaymentUpdateControllerPaymentChannelsTest
   )
   void test8() {
     AuthenticatedUserStubs.kodekonveyorContract(authenticatedUserService);
+    MarketUserStubs
+        .contractTermsAccepted(marketUserEntityRepository, registerTestData);
     ThrowableTester.assertNoException(
         () -> paymentUpdateController.call(RegisterTestData.PAYMENT_DETAILS)
     );

@@ -21,4 +21,22 @@ public class MarketUserStubs {
         .findByLogin(UserEntityTestData.getLoginNoMarket());
   }
 
+  public static void contractTermsAccepted(
+      final MarketUserEntityRepository marketUserEntityRepository,
+      final MarketUserDTOTestData registerTestData
+  ) {
+    doReturn(List.of(MarketUserEntityTestData.getAcceptedContractuser()))
+        .when(marketUserEntityRepository)
+        .findByLogin(UserEntityTestData.getRoleKodekonveyorContract());
+  }
+
+  public static void
+      contractTermsNotAccepted(
+          final MarketUserEntityRepository marketUserEntityRepository,
+          final MarketUserDTOTestData registerTestData
+      ) {
+    doReturn(List.of(MarketUserEntityTestData.getUnacceptedContractuser()))
+        .when(marketUserEntityRepository)
+        .findByLogin(UserEntityTestData.getRoleKodekonveyorContract());
+  }
 }

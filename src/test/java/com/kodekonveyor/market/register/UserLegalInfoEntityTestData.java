@@ -29,4 +29,17 @@ public class UserLegalInfoEntityTestData {
     return userLegalInfoEntity;
   }
 
+  public static UserLegalInfoEntity getAcceptedContractUser() {
+    final UserLegalInfoEntity userLegalInfoEntity = get();
+    userLegalInfoEntity.setContractTermsAccepted(true);
+
+    return userLegalInfoEntity;
+  }
+
+  public static final UserLegalInfoEntity getUnacceptedContractUser() {
+    final UserLegalInfoEntity userLegalInfoEntity = get();
+    userLegalInfoEntity.setContractTermsAccepted(false);
+
+    return userLegalInfoEntity;
+  }
 }

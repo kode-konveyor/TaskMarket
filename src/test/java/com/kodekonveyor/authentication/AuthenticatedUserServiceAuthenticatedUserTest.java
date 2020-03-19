@@ -18,9 +18,9 @@ import com.kodekonveyor.exception.ThrowableTester;
 @ExtendWith(MockitoExtension.class)
 @MockitoSettings(strictness = Strictness.LENIENT)
 @RunWith(MockitoJUnitRunner.class)
-@TestedBehaviour("Data access")
+@TestedBehaviour("authenticated user")
 @TestedService("AuthenticatedUserService")
-public class AuthenticatedUserServiceDataAccessTest
+public class AuthenticatedUserServiceAuthenticatedUserTest
     extends AuthenticatedUserServiceTestBase {
 
   @Test
