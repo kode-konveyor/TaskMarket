@@ -6,6 +6,8 @@ import org.springframework.web.bind.annotation.RestController;
 
 import com.kodekonveyor.authentication.AuthenticatedUserService;
 import com.kodekonveyor.authentication.UserEntity;
+import com.kodekonveyor.market.LogSeverityEnum;
+import com.kodekonveyor.market.LoggerService;
 import com.kodekonveyor.market.MarketConstants;
 import com.kodekonveyor.market.UnauthorizedException;
 import com.kodekonveyor.market.UrlMapConstants;
@@ -18,8 +20,16 @@ public class UpdateTasksController {
   @Autowired
   AuthenticatedUserService authenticatedUserService;
 
+  @Autowired
+  LoggerService loggerService;
+
   @PutMapping(UrlMapConstants.TASK_UPDATE_PATH)
   public Object call() {
+    loggerService
+        .call(
+            TaskConstants.CALL, LogSeverityEnum.DEBUG,
+            UrlMapConstants.TASK_UPDATE_PATH
+        );
     final UserEntity user = authenticatedUserService.call();
     checkRole(user);
     return null;
