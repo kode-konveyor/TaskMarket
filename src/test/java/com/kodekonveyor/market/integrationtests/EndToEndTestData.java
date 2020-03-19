@@ -2,7 +2,7 @@ package com.kodekonveyor.market.integrationtests;
 
 public class EndToEndTestData {
 
-  public static final String QUOTES_TEMPLATE = "\"%s\"%s";
+  public static final String QUOTES_TEMPLATE = "\"%s\"";
   public static final String OBJECT_BOX_SELECTOR = ".objectBox-string";
   public static final String BUTTON_SELECTOR = ".btn";
   public static final String PASSWORD_SELECTOR = "#password";
