@@ -8,7 +8,7 @@ import org.springframework.web.bind.annotation.RestController;
 
 import com.kodekonveyor.authentication.AuthenticatedUserService;
 import com.kodekonveyor.authentication.UserEntity;
-import com.kodekonveyor.logging.LoggingMarkers;
+import com.kodekonveyor.logging.LoggingMarkerConstants;
 import com.kodekonveyor.market.MarketConstants;
 import com.kodekonveyor.market.UnauthorizedException;
 import com.kodekonveyor.market.UrlMapConstants;
@@ -74,7 +74,7 @@ public class CreateProjectController {
 
   private void storage(final ProjectDTO dto) {
     loggerService.info(
-        LoggingMarkers.PROJECT,
+        LoggingMarkerConstants.PROJECT,
         ProjectConstants.PROJECT_RECEIVED + dto.toString()
     );
     final ProjectEntity entity = new ProjectEntity();

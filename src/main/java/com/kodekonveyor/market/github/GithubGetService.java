@@ -11,7 +11,7 @@ import org.springframework.stereotype.Service;
 import org.springframework.web.server.ResponseStatusException;
 
 import com.kodekonveyor.annotations.ExcludeFromCodeCoverage;
-import com.kodekonveyor.logging.LoggingMarkers;
+import com.kodekonveyor.logging.LoggingMarkerConstants;
 import com.kodekonveyor.market.proxies.ObjectMapperService;
 
 @Service
@@ -27,7 +27,7 @@ public class GithubGetService {
   public <ValueType> ValueType
       call(final String command, final Class<ValueType> cls) {
     final String uri = GithubConstants.GITHUB_API_URL_BASE + command;
-    loggerService.debug(LoggingMarkers.GITHUB, uri);
+    loggerService.debug(LoggingMarkerConstants.GITHUB, uri);
     URL url;
     try {
       url = new URL(uri);

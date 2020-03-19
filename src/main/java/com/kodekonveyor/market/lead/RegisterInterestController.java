@@ -6,7 +6,7 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RestController;
 
-import com.kodekonveyor.logging.LoggingMarkers;
+import com.kodekonveyor.logging.LoggingMarkerConstants;
 import com.kodekonveyor.market.MarketConstants;
 import com.kodekonveyor.market.UrlMapConstants;
 import com.kodekonveyor.market.ValidationException;
@@ -43,7 +43,7 @@ public class RegisterInterestController {
 
   private void doStore(final LeadDTO lead) {
     loggerService.info(
-        LoggingMarkers.LEAD, LeadConstants.STORE_LEAD + lead.toString()
+        LoggingMarkerConstants.LEAD, LeadConstants.STORE_LEAD + lead.toString()
     );
     final LeadEntity leadEntity = new LeadEntity();
     leadEntity.setEmail(lead.getEmail());

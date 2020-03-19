@@ -21,6 +21,8 @@ class RemoteAuthenticationFilterTestData {
 
   public static final String NAME_HEADER = "OIDC_CLAIM_nickname";
 
+  public static final String SUCCESSFULLY_LOGGED_IN = " successfully logged in";
+
   public static final HttpServletRequest getRequest() {
     final HttpServletRequest request = mock(HttpServletRequest.class);
     final Enumeration<String> names =

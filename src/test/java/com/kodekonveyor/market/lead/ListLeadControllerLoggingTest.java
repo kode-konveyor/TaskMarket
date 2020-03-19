@@ -15,7 +15,7 @@ import org.mockito.quality.Strictness;
 import com.kodekonveyor.annotations.TestedBehaviour;
 import com.kodekonveyor.annotations.TestedService;
 import com.kodekonveyor.authentication.AuthenticatedUserStubs;
-import com.kodekonveyor.logging.LoggingMarkers;
+import com.kodekonveyor.logging.LoggingMarkerConstants;
 
 @ExtendWith(MockitoExtension.class)
 @MockitoSettings(strictness = Strictness.LENIENT)
@@ -23,8 +23,6 @@ import com.kodekonveyor.logging.LoggingMarkers;
 @TestedBehaviour("Logging")
 @TestedService("ListLeadController")
 public class ListLeadControllerLoggingTest extends ListLeadControllerTestBase {
-
-  private static final String LISTING_LEADS = "Listing leads.";
 
   @Test
   @DisplayName("The call of the service is logged")
@@ -34,8 +32,8 @@ public class ListLeadControllerLoggingTest extends ListLeadControllerTestBase {
 
     listleadController.call();
     verify(loggerService)
-        .info(Mockito.eq(LoggingMarkers.LEAD),
-            Mockito.eq(LISTING_LEADS)
+        .info(Mockito.eq(LoggingMarkerConstants.LEAD),
+            Mockito.eq(ListLeadControllerTestData.LISTING_LEADS)
         );
   }
 

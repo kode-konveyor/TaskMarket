@@ -14,7 +14,7 @@ import org.mockito.quality.Strictness;
 
 import com.kodekonveyor.annotations.TestedBehaviour;
 import com.kodekonveyor.annotations.TestedService;
-import com.kodekonveyor.logging.LoggingMarkers;
+import com.kodekonveyor.logging.LoggingMarkerConstants;
 import com.kodekonveyor.market.RegisterInterestControllerTestData;
 
 @ExtendWith(MockitoExtension.class)
@@ -64,7 +64,7 @@ public class RegisterInterestControllerStorageTest
     registerInterestController.call(LeadDTOTestData.get());
     verify(loggerService)
         .info(
-            LoggingMarkers.LEAD,
+            LoggingMarkerConstants.LEAD,
             RegisterInterestControllerTestData.LEAD_RECEIVED +
                 LeadDTOTestData.get().toString()
         );

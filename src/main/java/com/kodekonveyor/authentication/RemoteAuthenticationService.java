@@ -14,9 +14,11 @@ import org.springframework.security.core.Authentication;
 import org.springframework.security.core.context.SecurityContext;
 import org.springframework.security.core.context.SecurityContextHolder;
 
-import com.kodekonveyor.logging.LoggingMarkers;
+import com.kodekonveyor.annotations.InterfaceClass;
+import com.kodekonveyor.logging.LoggingMarkerConstants;
 
-public class RemoteAuthenticationService {
+@InterfaceClass
+public class RemoteAuthenticationService { //NOPMD This class should not be managed by Spring
 
   private static final String NICKNAME_HEADER = "OIDC_CLAIM_nickname";
 
@@ -43,7 +45,7 @@ public class RemoteAuthenticationService {
     final String login = httpRequest.getHeader(NICKNAME_HEADER);
 
     loggerService.info(
-        LoggingMarkers.AUTHENTICATION,
+        LoggingMarkerConstants.AUTHENTICATION,
         login + " " + AuthenticationConstants.SUCCESSFULLY_LOGGED_IN
     );
 

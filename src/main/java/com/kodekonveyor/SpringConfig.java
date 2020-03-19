@@ -29,6 +29,12 @@ import com.kodekonveyor.annotations.InterfaceClass;
 @InterfaceClass
 public class SpringConfig extends SpringBootServletInitializer {
 
+  @Value("${com.kodekonveyor.market.jdbcUri}")
+  private String jdbcUri;
+
+  @Value("${com.kodekonveyor.market.jdbcDriver}")
+  private String jdbcDriver;
+
   public static void main(final String[] args) {
     SpringApplication.run(SpringConfig.class, args);
   }
@@ -39,12 +45,6 @@ public class SpringConfig extends SpringBootServletInitializer {
   ) {
     return builder.sources(SpringConfig.class);
   }
-
-  @Value("${com.kodekonveyor.market.jdbcUri}")
-  private String jdbcUri;
-
-  @Value("${com.kodekonveyor.market.jdbcDriver}")
-  private String jdbcDriver;
 
   @Bean
   public DataSource dataSource() {
@@ -61,11 +61,11 @@ public class SpringConfig extends SpringBootServletInitializer {
 
   @Bean
   @Scope("prototype")
-  public Logger logger(final InjectionPoint ip) {
+  public Logger logger(final InjectionPoint injectionPoint) {
     return LoggerFactory.getLogger(
-        Optional.ofNullable(ip.getMethodParameter())
+        Optional.ofNullable(injectionPoint.getMethodParameter())
             .<Class<?>>map(MethodParameter::getContainingClass)
-            .orElseGet(() -> Optional.ofNullable(ip.getField())
+            .orElseGet(() -> Optional.ofNullable(injectionPoint.getField())
                 .map(Field::getDeclaringClass)
                 .orElseThrow(IllegalArgumentException::new)
             )

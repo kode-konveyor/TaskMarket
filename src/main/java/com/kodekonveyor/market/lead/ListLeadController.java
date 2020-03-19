@@ -10,7 +10,7 @@ import org.springframework.web.bind.annotation.RestController;
 
 import com.kodekonveyor.authentication.AuthenticatedUserService;
 import com.kodekonveyor.authentication.UserEntity;
-import com.kodekonveyor.logging.LoggingMarkers;
+import com.kodekonveyor.logging.LoggingMarkerConstants;
 import com.kodekonveyor.market.MarketConstants;
 import com.kodekonveyor.market.UnauthorizedException;
 import com.kodekonveyor.market.UrlMapConstants;
@@ -29,7 +29,7 @@ public class ListLeadController {
 
   @GetMapping(UrlMapConstants.LIST_LEAD_PATH)
   public List<LeadDTO> call() {
-    loggerService.info(LoggingMarkers.LEAD, LeadConstants.LISTING_LEADS);
+    loggerService.info(LoggingMarkerConstants.LEAD, LeadConstants.LISTING_LEADS);
     final UserEntity user = authenticatedUserService.call();
     if (!CheckRoleUtil.hasRole(user, MarketConstants.KODEKONVEYOR_SALES_ROLE))
       throw new UnauthorizedException(LeadConstants.UNAUTHORIZED);

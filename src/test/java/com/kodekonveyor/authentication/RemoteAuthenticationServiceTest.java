@@ -22,7 +22,7 @@ import org.springframework.security.core.Authentication;
 
 import com.kodekonveyor.annotations.TestedBehaviour;
 import com.kodekonveyor.annotations.TestedService;
-import com.kodekonveyor.logging.LoggingMarkers;
+import com.kodekonveyor.logging.LoggingMarkerConstants;
 
 @ExtendWith(MockitoExtension.class)
 @MockitoSettings(strictness = Strictness.LENIENT)
@@ -69,8 +69,9 @@ public class RemoteAuthenticationServiceTest
         );
     verify(loggerService)
         .info(
-            LoggingMarkers.AUTHENTICATION,
-            UserEntityTestData.LOGIN + " successfully logged in"
+            LoggingMarkerConstants.AUTHENTICATION,
+            UserEntityTestData.LOGIN +
+                RemoteAuthenticationFilterTestData.SUCCESSFULLY_LOGGED_IN
         );
   }
 

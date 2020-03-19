@@ -17,7 +17,7 @@ import org.springframework.web.context.request.WebRequest;
 
 import com.kodekonveyor.annotations.TestedBehaviour;
 import com.kodekonveyor.annotations.TestedService;
-import com.kodekonveyor.logging.LoggingMarkers;
+import com.kodekonveyor.logging.LoggingMarkerConstants;
 import com.kodekonveyor.market.UnauthorizedException;
 
 @ExtendWith(MockitoExtension.class)
@@ -41,7 +41,7 @@ public class RestResponseEntityExceptionHandlerExceptionHandlingTest
         .handleNotLoggedInException(exception, request);
     verify(loggerService)
         .warn(
-            eq(LoggingMarkers.AUTHENTICATION), ArgumentMatchers.contains(RestResponseEntityExceptionHandlerTestData.NOT_LOGGED_IN)
+            eq(LoggingMarkerConstants.AUTHENTICATION), ArgumentMatchers.contains(RestResponseEntityExceptionHandlerTestData.NOT_LOGGED_IN)
         );
   }
 
@@ -59,7 +59,7 @@ public class RestResponseEntityExceptionHandlerExceptionHandlingTest
         .handleNotLoggedInException(exception, request);
     verify(loggerService)
         .warn(
-            eq(LoggingMarkers.AUTHENTICATION), ArgumentMatchers.contains(RestResponseEntityExceptionHandlerTestData.UNAUTHORIZED)
+            eq(LoggingMarkerConstants.AUTHENTICATION), ArgumentMatchers.contains(RestResponseEntityExceptionHandlerTestData.UNAUTHORIZED)
         );
   }
 

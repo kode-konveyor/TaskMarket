@@ -14,7 +14,7 @@ import org.mockito.quality.Strictness;
 
 import com.kodekonveyor.annotations.TestedBehaviour;
 import com.kodekonveyor.annotations.TestedService;
-import com.kodekonveyor.logging.LoggingMarkers;
+import com.kodekonveyor.logging.LoggingMarkerConstants;
 
 @ExtendWith(MockitoExtension.class)
 @MockitoSettings(strictness = Strictness.LENIENT)
@@ -37,7 +37,7 @@ public class AuthenticatedUserServiceLoggingTest
   public void test() {
     verify(loggerService)
         .info(
-            LoggingMarkers.AUTHENTICATION,
+            LoggingMarkerConstants.AUTHENTICATION,
             AuthenticationConstants.SUCCESSFULLY_LOGGED_IN
         );
   }

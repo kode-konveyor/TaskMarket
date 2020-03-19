@@ -13,7 +13,7 @@ import org.springframework.web.servlet.mvc.method.annotation.ResponseEntityExcep
 import com.kodekonveyor.annotations.ExcludeFromCodeCoverage;
 import com.kodekonveyor.annotations.InterfaceClass;
 import com.kodekonveyor.authentication.NotLoggedInException;
-import com.kodekonveyor.logging.LoggingMarkers;
+import com.kodekonveyor.logging.LoggingMarkerConstants;
 
 @ControllerAdvice
 @InterfaceClass
@@ -41,7 +41,7 @@ public class RestResponseEntityExceptionHandler
             location.getLineNumber();
     loggerService
         .warn(
-            LoggingMarkers.AUTHENTICATION, message
+            LoggingMarkerConstants.AUTHENTICATION, message
         );
 
     final String bodyOfResponse = exception.getMessage();

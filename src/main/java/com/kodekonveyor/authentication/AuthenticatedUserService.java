@@ -8,7 +8,7 @@ import org.springframework.security.core.Authentication;
 import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.stereotype.Service;
 
-import com.kodekonveyor.logging.LoggingMarkers;
+import com.kodekonveyor.logging.LoggingMarkerConstants;
 
 @Service
 public class AuthenticatedUserService {
@@ -22,7 +22,7 @@ public class AuthenticatedUserService {
   public UserEntity call() {
     final String login = getNameForUser();
     loggerService.info(
-        LoggingMarkers.AUTHENTICATION,
+        LoggingMarkerConstants.AUTHENTICATION,
         AuthenticationConstants.SUCCESSFULLY_LOGGED_IN
     );
 
