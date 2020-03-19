@@ -1,6 +1,6 @@
 package com.kodekonveyor.exception;
 
-import static com.kodekonveyor.exception.ThrowableTesterConstants.*;
+import static com.kodekonveyor.exception.ThrowableTesterConstants.*; //NOPMD it's not unused import
 import static org.junit.Assert.*;
 
 import org.junit.platform.commons.util.ExceptionUtils;
@@ -65,7 +65,7 @@ public class ThrowableTester {// NOPMD
   }
 
   public ThrowableTester assertMessageMatches(final String string) {
-    assertNotNull("no message of the exception", thrown.getMessage());
+    assertNotNull(NO_MESSAGE_OF_THE_EXCEPTION, thrown.getMessage());
     assertTrue(
         String.format(
             MESSAGE_DOES_NOT_TEMPLATE, MATCH, string, thrown.getMessage()

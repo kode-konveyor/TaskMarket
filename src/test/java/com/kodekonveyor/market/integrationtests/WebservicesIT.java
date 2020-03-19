@@ -1,6 +1,6 @@
 package com.kodekonveyor.market.integrationtests;
 
-import static com.kodekonveyor.market.integrationtests.WebServicesTestData.*;
+import static com.kodekonveyor.market.integrationtests.WebServicesTestData.*; //NOPMD it's not unused import
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
 import java.io.IOException;

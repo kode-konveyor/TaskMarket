@@ -1,6 +1,6 @@
 package com.kodekonveyor.market.integrationtests;
 
-import static com.kodekonveyor.market.integrationtests.EndToEndTestData.*;
+import static com.kodekonveyor.market.integrationtests.EndToEndTestData.*; //NOPMD it's not unused import
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
 import org.junit.jupiter.api.Tag;

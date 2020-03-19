@@ -10,4 +10,6 @@ public class ThrowableTesterConstants {
   public static final String MESSAGE_DOES_NOT_TEMPLATE =
       "message does not %s: %s\n got:%s";
   public static final String CONTAIN = "contain";
+  public static final String NO_MESSAGE_OF_THE_EXCEPTION =
+      "no message of the exception";
 }
