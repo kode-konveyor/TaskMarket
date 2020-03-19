@@ -33,7 +33,12 @@ public class RemoteAuthenticationServiceTest
     extends RemoteAuthenticationServiceTestBase {
 
   private void assertRemoteUserIsCorrectlySetAndCleared(final String login) {
-    verify(AuthenticationStubs.securityContext, times(2))
+    verify(
+        AuthenticationStubs.securityContext,
+        times(
+            RemoteAuthenticationFilterTestData.EXPECTED_SET_AUTHENTICATION_CALLS
+        )
+    )
         .setAuthentication(newAuthentication.capture());
     final List<Authentication> capturedValues =
         newAuthentication.getAllValues();
@@ -70,8 +75,8 @@ public class RemoteAuthenticationServiceTest
     verify(loggerService)
         .info(
             LoggingMarkerConstants.AUTHENTICATION,
-            UserEntityTestData.LOGIN +
-                RemoteAuthenticationFilterTestData.SUCCESSFULLY_LOGGED_IN
+            RemoteAuthenticationFilterTestData.SUCCESSFULLY_LOGGED_IN,
+            UserEntityTestData.LOGIN
         );
   }
 

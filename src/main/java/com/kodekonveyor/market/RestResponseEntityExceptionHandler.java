@@ -34,11 +34,13 @@ public class RestResponseEntityExceptionHandler
       final RuntimeException exception, final WebRequest request
   ) {
     final StackTraceElement location = exception.getStackTrace()[0];
-    final String message =
-        exception.getClass().getSimpleName() + ":" + exception.getMessage() +
-            " at " +
-            location.getFileName() + ":" +
-            location.getLineNumber();
+    final String message = String.format(
+        MarketConstants.NOT_LOGGED_IN_MESSAGE_TEMPLATE,
+        exception.getClass().getSimpleName(),
+        exception.getMessage(),
+        location.getFileName(),
+        location.getLineNumber()
+    );
     loggerService
         .warn(
             LoggingMarkerConstants.AUTHENTICATION, message

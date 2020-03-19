@@ -9,11 +9,13 @@ import org.openqa.selenium.support.ui.WebDriverWait;
 
 class SeleniumTestHelper {
 
+  private static final int WAIT_INTERVAL = 20;
+  private static final String HEADLESS = "--headless";
   private static FirefoxDriver driver;
 
   static {
     final FirefoxOptions firefoxOptions = new FirefoxOptions();
-    firefoxOptions.addArguments("--headless");
+    firefoxOptions.addArguments(HEADLESS);
     driver = new FirefoxDriver(firefoxOptions);
   }
 
@@ -26,7 +28,7 @@ class SeleniumTestHelper {
   }
 
   public static WebElement waitFor(final String cssSelector) {
-    final WebDriverWait wait = new WebDriverWait(driver, 20);
+    final WebDriverWait wait = new WebDriverWait(driver, WAIT_INTERVAL);
     return wait.until(
         ExpectedConditions.elementToBeClickable(
             By.cssSelector(cssSelector)

@@ -20,8 +20,6 @@ import com.kodekonveyor.logging.LoggingMarkerConstants;
 @InterfaceClass
 public class RemoteAuthenticationService { //NOPMD This class should not be managed by Spring
 
-  private static final String NICKNAME_HEADER = "OIDC_CLAIM_nickname";
-
   private final UserEntityRepository userEntityRepository;
 
   private final Logger loggerService;
@@ -42,11 +40,12 @@ public class RemoteAuthenticationService { //NOPMD This class should not be mana
     final HttpServletRequest httpRequest = (HttpServletRequest) req;
     final SecurityContext context = SecurityContextHolder.getContext();
 
-    final String login = httpRequest.getHeader(NICKNAME_HEADER);
+    final String login =
+        httpRequest.getHeader(AuthenticationConstants.NICKNAME_HEADER);
 
     loggerService.info(
         LoggingMarkerConstants.AUTHENTICATION,
-        login + " " + AuthenticationConstants.SUCCESSFULLY_LOGGED_IN
+        AuthenticationConstants.SUCCESSFULLY_LOGGED_IN, login
     );
 
     final Optional<UserEntity> maybeUser =
