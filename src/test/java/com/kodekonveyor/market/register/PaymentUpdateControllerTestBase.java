@@ -16,4 +16,5 @@ public class PaymentUpdateControllerTestBase {
 
   @InjectMocks
   PaymentUpdateController paymentUpdateController;
+
 }

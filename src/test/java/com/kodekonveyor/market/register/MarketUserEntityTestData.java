@@ -12,4 +12,20 @@ public class MarketUserEntityTestData {
     return marketUserEntity;
   }
 
+  public static Object getAcceptedContractuser() {
+    final MarketUserEntity marketUserEntity = get();
+    marketUserEntity
+        .setLegal(UserLegalInfoEntityTestData.getAcceptedContractUser());
+    marketUserEntity.setLogin(UserEntityTestData.getRoleKodekonveyorContract());
+    return marketUserEntity;
+  }
+
+  public static final MarketUserEntity getUnacceptedContractuser() {
+
+    final MarketUserEntity marketUserEntity = get();
+    marketUserEntity
+        .setLegal(UserLegalInfoEntityTestData.getUnacceptedContractUser());
+    marketUserEntity.setLogin(UserEntityTestData.getRoleKodekonveyorContract());
+    return marketUserEntity;
+  }
 }

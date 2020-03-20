@@ -6,8 +6,8 @@ public class RestResponseEntityExceptionHandlerTestData {
   public static final String MESSAGE = "message";
   public static final String NOT_LOGGED_IN = "not logged in";
   public static final String NOT_LOGGED_IN_MESSAGE =
-      "NotLoggedInException:not logged in at RestResponseEntityExceptionHandlerTest.java";
+      "NotLoggedInException:not logged in at RestResponseEntityExceptionHandlerExceptionHandlingTest.java.java";
   public static String UNAUTHORIZED =
-      "UnauthorizedException:message at RestResponseEntityExceptionHandlerTest.java";
+      "UnauthorizedException:message at RestResponseEntityExceptionHandlerExceptionHandlingTest.java";
 
 }
