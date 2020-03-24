@@ -10,12 +10,13 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import com.kodekonveyor.market.github.GithubConstants;
+import com.kodekonveyor.technical.GithubGetService;
 
 @Service
 public class GetRepositoryTasksService {
 
   @Autowired
-  GithubRequestService githubRequest; //NOPMD
+  GithubGetService githubRequest; //NOPMD
 
   public List<TaskDTO> call(final String repoName) throws JSONException {
 

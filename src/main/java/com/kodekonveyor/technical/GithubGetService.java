@@ -1,4 +1,4 @@
-package com.kodekonveyor.market.tasks;
+package com.kodekonveyor.technical;
 
 import java.io.IOException;
 
@@ -8,6 +8,7 @@ import org.springframework.http.HttpStatus;
 import org.springframework.stereotype.Service;
 import org.springframework.web.server.ResponseStatusException;
 
+import com.kodekonveyor.annotations.ExcludeFromCodeCoverage;
 import com.kodekonveyor.market.github.GithubConstants;
 
 import okhttp3.OkHttpClient;
@@ -15,9 +16,10 @@ import okhttp3.Request;
 import okhttp3.Response;
 
 @Service
-public class GithubRequestService {
+@ExcludeFromCodeCoverage("Github request response impementation")
+public class GithubGetService {
 
-  JSONArray call(final String repoName) {
+  public JSONArray call(final String repoName) {
 
     final OkHttpClient client = new OkHttpClient().newBuilder()
         .build();

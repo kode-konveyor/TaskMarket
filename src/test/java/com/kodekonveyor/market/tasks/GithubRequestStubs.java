@@ -9,9 +9,11 @@ import org.json.JSONArray;
 import org.json.JSONException;
 import org.mockito.Mockito;
 
+import com.kodekonveyor.technical.GithubGetService;
+
 public class GithubRequestStubs {
 
-  public static void behaviour(final GithubRequestService githubRequest) {
+  public static void behaviour(final GithubGetService githubRequest) {
     JSONArray array = null;
     try (
         InputStream resourceAsStream = GithubRequestStubs.class
