@@ -8,7 +8,6 @@ import org.springframework.http.HttpStatus;
 import org.springframework.stereotype.Service;
 import org.springframework.web.server.ResponseStatusException;
 
-import com.kodekonveyor.annotations.ExcludeFromCodeCoverage;
 import com.kodekonveyor.market.github.GithubConstants;
 
 import okhttp3.OkHttpClient;
@@ -16,7 +15,6 @@ import okhttp3.Request;
 import okhttp3.Response;
 
 @Service
-@ExcludeFromCodeCoverage("Github call implementation")
 public class GithubRequestService {
 
   JSONArray call(final String repoName) {

@@ -15,7 +15,7 @@ import com.kodekonveyor.market.github.GithubConstants;
 public class GetRepositoryTasksService {
 
   @Autowired
-  GithubRequestService githubRequest; //NOPMD
+  GithubRequestService githubRequest;
 
   public List<TaskDTO> call(final String repoName) throws JSONException {
 
@@ -31,37 +31,31 @@ public class GetRepositoryTasksService {
     final List<TaskDTO> taskListDTO = new ArrayList<>();
 
     for (int count = 0; count < array.length(); count++) {
-      final TaskDTO dto = new TaskDTO(); //NOPMD
+      final TaskDTO dto = newDTO();
+
+      final JSONObject jsonObject = array.getJSONObject(count);
       dto.setGithubId(
-          array.getJSONObject(count).getString(GithubConstants.ID)
+          jsonObject.getString(GithubConstants.ID)
       );
       dto.setName(
-          array.getJSONObject(count).getString(GithubConstants.TITLE)
+          jsonObject.getString(GithubConstants.TITLE)
       );
       dto.setProject(repoName);
 
       final JSONObject user =
-          array.getJSONObject(count).getJSONObject(GithubConstants.USER);
+          jsonObject.getJSONObject(GithubConstants.USER);
       dto.setResponsible(user.getString(GithubConstants.LOGIN));
 
       final JSONArray label =
-          array.getJSONObject(count).getJSONArray(GithubConstants.LABELS);
+          jsonObject.getJSONArray(GithubConstants.LABELS);
       if (label.length() > 0) {
 
-        final JSONObject statusName = label.getJSONObject(0);
+        final String statusName =
+            label.getJSONObject(0).getString(GithubConstants.NAME);
 
-        if (
-          statusName.getString(GithubConstants.NAME)
-              .equals(GithubConstants.UP_FOR_GRAB)
-        )
-          dto.setStatus(TaskStatusEnum.UP_FOR_GRAB);
-
-        if (
-          statusName.getString(GithubConstants.NAME)
-              .equals(GithubConstants.IN_PROGRESS)
-        )
-          dto.setStatus(TaskStatusEnum.IN_PROGRESS);
-
+        for (final TaskStatusEnum status : TaskStatusEnum.values())
+          if (statusName.equals(status.getValue()))
+            dto.setStatus(status);
       } else
         dto.setStatus(TaskStatusEnum.OPEN);
       taskListDTO.add(dto);
@@ -69,6 +63,10 @@ public class GetRepositoryTasksService {
 
     return taskListDTO;
 
+  }
+
+  private TaskDTO newDTO() {
+    return new TaskDTO();
   }
 
 }
