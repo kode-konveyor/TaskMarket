@@ -27,7 +27,7 @@ public class UpdateTasksController {
   public Object call() {
     loggerService
         .call(
-            TaskConstants.CALL, LogSeverityEnum.DEBUG,
+            TaskConstants.CALL, LogSeverityEnum.INFO,
             UrlMapConstants.TASK_UPDATE_PATH
         );
     final UserEntity user = authenticatedUserService.call();

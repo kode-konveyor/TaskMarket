@@ -31,7 +31,7 @@ public class UpdateTasksControllerLoggingTest
     updateTasksController.call();
     verify(loggerService)
         .call(
-            UpdateTasksControllerTestData.CALL, LogSeverityEnum.DEBUG,
+            UpdateTasksControllerTestData.CALL, LogSeverityEnum.INFO,
             UpdateTasksControllerTestData.TASK_UPDATE_LOG
         );
   }
