@@ -4757,6 +4757,11 @@ RemoteAuthentication is an Authentication implementation
                                  source="bb21529b-340b-4bd4-9080-3949b62201fc"
                                  target="1aa60439-324d-434c-8ea3-a050467ff5ee"
                                  relationship="3d5bf53c-81af-421f-be41-bfbc86a9c5c3"/>
+               <sourceConnection xsi:type="zenta:Connection"
+                                 id="cb7e42c3-9d30-46cb-9706-79f393e80816"
+                                 source="bb21529b-340b-4bd4-9080-3949b62201fc"
+                                 target="90fcfaf5-4b1a-4d75-b858-612481cf3c82"
+                                 relationship="ddd3e1c1-efea-45ed-8eb1-466a700c9556"/>
             </child>
             <child xsi:type="zenta:DiagramObject"
                    id="468741b3-053e-44ee-a597-4ad50d280738"
@@ -4769,6 +4774,12 @@ RemoteAuthentication is an Authentication implementation
                    targetConnections="635b1c0f-6a3b-4877-88e6-5dc3b63be94a"
                    zentaElement="01bf803f-bd6a-43cb-991a-fd38555a72d2">
                <bounds x="-22" y="336" width="145"/>
+            </child>
+            <child xsi:type="zenta:DiagramObject"
+                   id="90fcfaf5-4b1a-4d75-b858-612481cf3c82"
+                   targetConnections="cb7e42c3-9d30-46cb-9706-79f393e80816"
+                   zentaElement="70ba3cca-c8c3-46ac-b2de-5439b7b0d6be">
+               <bounds x="348" y="192" width="205"/>
             </child>
          </element>
          <element xsi:type="zenta:BasicObject"
@@ -4855,6 +4866,17 @@ RemoteAuthentication is an Authentication implementation
                   ancestor="a99c1f63-c4f6-4d0a-b9e8-5bf3aa5284a2"
                   source="eabd00f6-b0e8-48f1-a368-9e4ae49b2212"
                   target="d134c54d-d391-4920-993b-8531e7f12825"/>
+         <element xsi:type="zenta:BasicObject"
+                  name="USER_NAME_AND_PROJECT_ID"
+                  id="70ba3cca-c8c3-46ac-b2de-5439b7b0d6be"
+                  ancestor="ffbe5058-5089-4c5a-965d-e996df089f8e">
+            <documentation>user.getName(), project.getId()</documentation>
+         </element>
+         <element xsi:type="zenta:BasicRelationship"
+                  id="ddd3e1c1-efea-45ed-8eb1-466a700c9556"
+                  ancestor="7bbba479-c1ed-445b-915d-25d3eb478b1f"
+                  source="6510547d-b1b5-4624-a270-e8433d6c424d"
+                  target="70ba3cca-c8c3-46ac-b2de-5439b7b0d6be"/>
       </folder>
       <folder name="UrlMap" id="db8ea202-78f6-43f8-8492-9268f0af392e">
          <element xsi:type="zenta:ZentaDiagramModel"
