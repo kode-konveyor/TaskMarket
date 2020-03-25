@@ -5133,6 +5133,11 @@ RemoteAuthentication is an Authentication implementation
                                  source="e8984148-5716-4810-ab13-1ec1edb755e1"
                                  target="74cd533c-f6ca-4683-9a82-d74dc5f4ac1d"
                                  relationship="67e93e6a-ce79-4625-9794-30938c88ecf4"/>
+               <sourceConnection xsi:type="zenta:Connection"
+                                 id="13ea7041-ab3b-4016-8c8c-4bf3c2054f6b"
+                                 source="e8984148-5716-4810-ab13-1ec1edb755e1"
+                                 target="d9c0d280-2463-4842-bc69-87598ca2aaba"
+                                 relationship="cd9572bf-411d-4942-8168-9819ba685068"/>
             </child>
             <child xsi:type="zenta:DiagramObject"
                    id="7d6601a3-7817-48c1-8251-fb1cb9ae0bad"
@@ -5149,6 +5154,12 @@ RemoteAuthentication is an Authentication implementation
                    targetConnections="cdfa9594-435b-4934-90d7-c34c929e93b1"
                    zentaElement="a3b100b5-c71a-4720-a854-df61b5e43b72">
                <bounds x="345" y="356" width="280"/>
+            </child>
+            <child xsi:type="zenta:DiagramObject"
+                   id="d9c0d280-2463-4842-bc69-87598ca2aaba"
+                   targetConnections="13ea7041-ab3b-4016-8c8c-4bf3c2054f6b"
+                   zentaElement="70ba3cca-c8c3-46ac-b2de-5439b7b0d6be">
+               <bounds x="859" y="376" width="222"/>
             </child>
          </element>
          <element xsi:type="zenta:BasicObject"
@@ -5171,6 +5182,11 @@ RemoteAuthentication is an Authentication implementation
                   ancestor="07abb5cc-2ae6-4184-82a9-1ea3a680187c"
                   source="61e15f0e-8ecc-4d07-af97-03efc857d763"
                   target="a3b100b5-c71a-4720-a854-df61b5e43b72"/>
+         <element xsi:type="zenta:BasicRelationship"
+                  id="cd9572bf-411d-4942-8168-9819ba685068"
+                  ancestor="07abb5cc-2ae6-4184-82a9-1ea3a680187c"
+                  source="61e15f0e-8ecc-4d07-af97-03efc857d763"
+                  target="70ba3cca-c8c3-46ac-b2de-5439b7b0d6be"/>
       </folder>
       <folder name="SpringConfig" id="677d3ef7-855c-4e79-a0d3-75b5e40843b3">
          <element xsi:type="zenta:ZentaDiagramModel"
