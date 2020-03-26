@@ -10,7 +10,6 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import com.kodekonveyor.market.github.GithubConstants;
-import com.kodekonveyor.technical.GithubGetService;
 
 @Service
 public class GetRepositoryTasksService {

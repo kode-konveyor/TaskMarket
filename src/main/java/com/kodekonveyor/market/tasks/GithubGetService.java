@@ -1,4 +1,4 @@
-package com.kodekonveyor.technical;
+package com.kodekonveyor.market.tasks;
 
 import java.io.IOException;
 
@@ -15,8 +15,8 @@ import okhttp3.OkHttpClient;
 import okhttp3.Request;
 import okhttp3.Response;
 
-@Service
 @ExcludeFromCodeCoverage("Github request response impementation")
+@Service
 public class GithubGetService {
 
   public JSONArray call(final String repoName) {
