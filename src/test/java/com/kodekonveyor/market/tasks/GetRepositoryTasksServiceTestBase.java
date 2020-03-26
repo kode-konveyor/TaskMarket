@@ -10,7 +10,7 @@ public class GetRepositoryTasksServiceTestBase {
   GetRepositoryTasksService getRepositoryTasksService;
 
   @Mock
-  GithubGetService githubRequest;
+  GithubCallService githubRequest;
 
   @BeforeEach
   void setUp() {

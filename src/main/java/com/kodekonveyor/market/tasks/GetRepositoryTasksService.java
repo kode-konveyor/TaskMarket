@@ -15,7 +15,7 @@ import com.kodekonveyor.market.github.GithubConstants;
 public class GetRepositoryTasksService {
 
   @Autowired
-  GithubGetService githubRequest; //NOPMD
+  GithubCallService githubRequest; //NOPMD
 
   public List<TaskDTO> call(final String repoName) throws JSONException {
 

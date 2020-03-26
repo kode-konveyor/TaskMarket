@@ -11,7 +11,7 @@ import org.mockito.Mockito;
 
 public class GithubRequestStubs {
 
-  public static void behaviour(final GithubGetService githubRequest) {
+  public static void behaviour(final GithubCallService githubRequest) {
     JSONArray array = null;
     try (
         InputStream resourceAsStream = GithubRequestStubs.class

@@ -17,7 +17,7 @@ import okhttp3.Response;
 
 @ExcludeFromCodeCoverage("Github request response impementation")
 @Service
-public class GithubGetService {
+public class GithubCallService {
 
   public JSONArray call(final String repoName) {
 
