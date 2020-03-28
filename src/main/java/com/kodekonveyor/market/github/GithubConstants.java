@@ -19,6 +19,7 @@ public class GithubConstants {
   public static final String LOGIN = "login";
   public static final String NAME = "name";
   public static final String OPEN = "open";
+  public static final String REPO_NAME = "kode-konveyor/TaskMarket";
   public static final String REPOS = "/repos/";
   public static final String TITLE = "title";
   public static final String UP_FOR_GRAB = "up for grab";

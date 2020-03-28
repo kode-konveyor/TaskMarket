@@ -1,5 +1,6 @@
 package com.kodekonveyor.market.tasks;
 
+import org.json.JSONException;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.extension.ExtendWith;
@@ -29,6 +30,7 @@ public class UpdateTasksControllerRolesTest
   )
   void test() {
     AuthenticatedUserStubs.canBePayed(authenticatedUserService);
+
     ThrowableTester.assertThrows(
         () -> updateTasksController.call()
     ).assertMessageIs(
@@ -40,8 +42,10 @@ public class UpdateTasksControllerRolesTest
   @DisplayName(
     "if the user havs kodekonveyor_contract role, no Exception is thrown"
   )
-  void test1() {
+  void test1() throws JSONException {
     AuthenticatedUserStubs.kodekonveyorContract(authenticatedUserService);
+    GetRepositoryTasksServiceStubs.behaviour(getRepositoryTasksService);
+    updateTasksController.call();
     ThrowableTester.assertNoException(
         () -> updateTasksController.call()
     );
