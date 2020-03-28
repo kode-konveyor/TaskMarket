@@ -2,7 +2,7 @@
 <xsl:stylesheet version="2.0"
 	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
 	xmlns:zenta="http://magwas.rulez.org/zenta"
-	xmlns:zentatools="java:org.rulez.magwas.zentatools.XPathFunctions"
+	xmlns:zentatools="http://magwas.rulez.org/zentatools"
 	xmlns:xsl="http://www.w3.org/1999/XSL/Transform">
 
 
@@ -28,10 +28,11 @@
         <xsl:param name="service"/>
 			<xsl:message select="'--'"/>
 			<xsl:message select="$service/@name"/>
-        <xsl:variable name="parent" select="zenta:neighbours($rich,$service,'contains,2')[@xsi:type='Package' or @xsi:type='Process Step']"/>
+        <xsl:variable name="parent" select="zenta:neighbours($rich,$service,'contains,2')[@xsi:type='Package' or @xsi:type='Process Step'][1]"/>
         <xsl:choose>
             <xsl:when test="$parent/@xsi:type='Package'">
-			<xsl:message select="$parent/@name"/>
+		    <xsl:message select="'AA'"/>
+		    <xsl:message select="$parent"/>
                 <xsl:copy-of select="zenta:fullpackageP($parent[@xsi:type='Package'])"/>
             </xsl:when>
             <xsl:when test="$parent/@xsi:type='Process Step'">
