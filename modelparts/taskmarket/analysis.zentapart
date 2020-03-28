@@ -521,6 +521,8 @@ store everything the "User legal info" Business Object contains</documentation>
 
 Logger usage:
 
+import org.slf4j.Logger;
+
 @Autowired
 private Logger logger
 
