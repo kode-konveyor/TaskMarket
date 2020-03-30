@@ -8,10 +8,12 @@ BEFORE_ALL=runapache
 include /usr/local/toolchain/rules.java
 
 runapache:
+	-tools/killApache
 	tools/runApache
 	touch runapache
 
 delink:
+	mkdir -p modelparts/metamodel
 	zenta-xslt-runner -xsl:xslt/delink.xslt -s:$(MODEL_BASENAME).zenta -o:modelparts/$(MODEL_BASENAME).zentapart -im:delink
 
 $(MODEL_BASENAME).zenta:
