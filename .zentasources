@@ -1,4 +1,4 @@
 <sources>
-	<source name="metamodel" type="uri" uri="https://raw.githubusercontent.com/kode-konveyor/metamodel/0.5/modelparts/metamodel/"/>
+	<source name="metamodel" type="uri" uri="https://raw.githubusercontent.com/kode-konveyor/metamodel/1.1/modelparts/metamodel/"/>
 	<source name="taskmarket" type="folder" uri="modelparts/taskmarket"/>
 </sources>

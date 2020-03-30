@@ -515,11 +515,23 @@ store everything the "User legal info" Business Object contains</documentation>
                   name="Logging"
                   id="f22cec46-800c-4635-9310-b1f697083812"
                   ancestor="behaviour">
-            <documentation>- All log entries should contain the identifier of the user and the (attempted) operation.
-- All activities should be logged at start of the operation.
+            <documentation>- All activities should be logged at start of the operation.
 - All failed operations should be logged with the reason of the failure
 - All successful operations should be logged with reference to the accessed data
-</documentation>
+
+Logger usage:
+
+import org.slf4j.Logger;
+
+@Autowired
+private Logger logger
+
+Call the proper method of logger according to the severity.
+logger.info(LoggingMarkers.AUTHENTICATION, "{} successfully authenticated", user.getLogin());
+
+* Choose marker from the LoggingMarkers or create one if not exists
+* Use format templates instead of string additions.
+* {} is the placeholder of the following parameters in order.</documentation>
          </element>
          <element xsi:type="zenta:BasicObject"
                   name="Log all activities"

@@ -14,7 +14,7 @@ import org.mockito.quality.Strictness;
 
 import com.kodekonveyor.annotations.TestedBehaviour;
 import com.kodekonveyor.annotations.TestedService;
-import com.kodekonveyor.market.LogSeverityEnum;
+import com.kodekonveyor.logging.LoggingMarkerConstants;
 
 @ExtendWith(MockitoExtension.class)
 @MockitoSettings(strictness = Strictness.LENIENT)
@@ -36,9 +36,9 @@ public class AuthenticatedUserServiceLoggingTest
   @DisplayName("Logs the username based on external authentication")
   public void test() {
     verify(loggerService)
-        .call(
-            RemoteAuthenticationFilterTestData.LOGIN, LogSeverityEnum.INFO,
-            UserEntityTestData.LOGIN
+        .info(
+            LoggingMarkerConstants.AUTHENTICATION,
+            AuthenticationConstants.SUCCESSFULLY_LOGGED_IN
         );
   }
 

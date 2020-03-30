@@ -1,5 +1,6 @@
 package com.kodekonveyor.market.integrationtests;
 
+import static com.kodekonveyor.market.integrationtests.WebServicesTestData.*; //NOPMD it's not unused import
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
 import java.io.IOException;
@@ -36,8 +37,6 @@ public class WebservicesIT {
 
   private ObjectMapper mapper;
 
-  private String urlBase;
-
   private HttpURLConnection
       openPostConnection(final String urlBase, final String path)
           throws MalformedURLException, IOException {
@@ -45,7 +44,7 @@ public class WebservicesIT {
         new URL(urlBase + path);
     final HttpURLConnection connection =
         (HttpURLConnection) url.openConnection();
-    connection.setRequestMethod("POST");
+    connection.setRequestMethod(POST);
     connection.setDoOutput(true);
     return connection;
   }
@@ -53,18 +52,17 @@ public class WebservicesIT {
   @BeforeEach
   public void setUp() {
     mapper = new ObjectMapper();
-    urlBase = "http://127.0.0.1:8080/market";
   }
 
   @Test
   @DisplayName("A user can get its data at member/user")
   public void test1() throws IOException, ParseException {
     final URL url =
-        new URL(urlBase + UrlMapConstants.SHOW_USER_PATH);
+        new URL(URL_BASE + UrlMapConstants.SHOW_USER_PATH);
     final HttpURLConnection connection =
         (HttpURLConnection) url.openConnection();
     connection
-        .setRequestProperty("OIDC_CLAIM_nickname", UserEntityTestData.LOGIN);
+        .setRequestProperty(OIDC_CLAIM_NICKNAME, UserEntityTestData.LOGIN);
     final MarketUserDTO marketUser = mapper
         .readValue((InputStream) connection.getContent(), MarketUserDTO.class);
     assertEquals(MarketUserDTOTestData.get(), marketUser);
@@ -74,9 +72,9 @@ public class WebservicesIT {
   @DisplayName("/lead accepts application/x-www-form-urlencoded")
   public void test2() throws IOException, ParseException {
     final HttpURLConnection connection =
-        openPostConnection(urlBase, UrlMapConstants.LEAD_PATH);
+        openPostConnection(URL_BASE, UrlMapConstants.LEAD_PATH);
     connection.setRequestProperty(
-        "Content-Type", "application/x-www-form-urlencoded"
+        CONTENT_TYPE, APPLICATION_X_WWW_FORM_URLENCODED
     );
     final String text =
         RegisterInterestControllerTestData.LEAD_DTO_AS_URLENCODED;
@@ -92,9 +90,9 @@ public class WebservicesIT {
   @DisplayName("/lead accepts application/json")
   public void test3() throws IOException, ParseException {
     final HttpURLConnection connection =
-        openPostConnection(urlBase, UrlMapConstants.LEAD_PATH);
+        openPostConnection(URL_BASE, UrlMapConstants.LEAD_PATH);
     connection
-        .setRequestProperty("Content-Type", "application/json; charset=utf-8");
+        .setRequestProperty(CONTENT_TYPE, APPLICATION_JSON_CHARSET_UTF_8);
     final LeadDTO lead = LeadDTOTestData.get();
     try (OutputStream outputStream = connection.getOutputStream()) {
       mapper.writeValue(outputStream, lead);

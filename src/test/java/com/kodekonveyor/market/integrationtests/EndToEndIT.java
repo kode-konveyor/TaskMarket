@@ -1,5 +1,6 @@
 package com.kodekonveyor.market.integrationtests;
 
+import static com.kodekonveyor.market.integrationtests.EndToEndTestData.*; //NOPMD it's not unused import
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
 import org.junit.jupiter.api.Tag;
@@ -19,24 +20,24 @@ public class EndToEndIT {
 
   @Test
   public void seleniumTest() {
-    final String user = "user1";
-    final String pass = "password1";
     final WebDriver driver = SeleniumTestHelper.getDriver();
     driver.get(
-        "https://localhost:1443/market/member/login?next=/market/member/user"
+        URL
     );
     final WebElement githubLoginButton =
-        SeleniumTestHelper.waitFor(".auth0-lock-social-button-text");
+        SeleniumTestHelper.waitFor(LOGIN_BUTTON_SELECTOR);
     githubLoginButton.click();
-    final WebElement loginField = SeleniumTestHelper.waitFor("#login_field");
-    loginField.sendKeys(user);
-    final WebElement passwordField = SeleniumTestHelper.waitFor("#password");
-    passwordField.sendKeys(pass);
-    final WebElement loginButton = SeleniumTestHelper.waitFor(".btn");
+    final WebElement loginField =
+        SeleniumTestHelper.waitFor(LOGIN_FIELD_SELECTOR);
+    loginField.sendKeys(USER);
+    final WebElement passwordField =
+        SeleniumTestHelper.waitFor(PASSWORD_SELECTOR);
+    passwordField.sendKeys(PASSWORD);
+    final WebElement loginButton = SeleniumTestHelper.waitFor(BUTTON_SELECTOR);
     loginButton.click();
-    final WebElement name = SeleniumTestHelper.waitFor(".objectBox-string");
+    final WebElement name = SeleniumTestHelper.waitFor(OBJECT_BOX_SELECTOR);
     final String myName = name.getText();
-    assertEquals("\"" + user + "\"", myName);
+    assertEquals(String.format(QUOTES_TEMPLATE, USER), myName);
   }
 
 }

@@ -20,6 +20,10 @@ class RemoteAuthenticationFilterTestData {
   public static final String LOGIN_URL = "/some/url";
 
   public static final String NAME_HEADER = "OIDC_CLAIM_nickname";
+  public static final int EXPECTED_SET_AUTHENTICATION_CALLS = 2;
+
+  public static final String SUCCESSFULLY_LOGGED_IN =
+      "{} successfully logged in";
 
   public static final HttpServletRequest getRequest() {
     final HttpServletRequest request = mock(HttpServletRequest.class);

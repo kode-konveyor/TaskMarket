@@ -1,5 +1,6 @@
 package com.kodekonveyor.market.project;
 
+import org.slf4j.Logger;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
@@ -7,8 +8,7 @@ import org.springframework.web.bind.annotation.RestController;
 
 import com.kodekonveyor.authentication.AuthenticatedUserService;
 import com.kodekonveyor.authentication.UserEntity;
-import com.kodekonveyor.market.LogSeverityEnum;
-import com.kodekonveyor.market.LoggerService;
+import com.kodekonveyor.logging.LoggingMarkerConstants;
 import com.kodekonveyor.market.MarketConstants;
 import com.kodekonveyor.market.UnauthorizedException;
 import com.kodekonveyor.market.UrlMapConstants;
@@ -22,7 +22,7 @@ public class CreateProjectController {
   AuthenticatedUserService authenticatedUserService;
 
   @Autowired
-  LoggerService loggerService;
+  Logger loggerService;
 
   @Autowired
   ProjectEntityRepository projectEntityRepository;
@@ -73,8 +73,9 @@ public class CreateProjectController {
   }
 
   private void storage(final ProjectDTO dto) {
-    loggerService.call(
-        ProjectConstants.PROJECT_RECEIVED, LogSeverityEnum.INFO, dto.toString()
+    loggerService.info(
+        LoggingMarkerConstants.PROJECT,
+        ProjectConstants.PROJECT_RECEIVED + dto.toString()
     );
     final ProjectEntity entity = new ProjectEntity();
     entity.setId(dto.getId());

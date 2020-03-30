@@ -3,9 +3,9 @@ package com.kodekonveyor.market.project;
 import org.junit.jupiter.api.BeforeEach;
 import org.mockito.InjectMocks;
 import org.mockito.Mock;
+import org.slf4j.Logger;
 
 import com.kodekonveyor.authentication.AuthenticatedUserService;
-import com.kodekonveyor.market.LoggerService;
 
 public class CreateProjectControllerTestBase {
 
@@ -16,7 +16,7 @@ public class CreateProjectControllerTestBase {
   CreateProjectController createProjectController;
 
   @Mock
-  LoggerService loggerService;
+  Logger loggerService;
 
   @Mock
   ProjectEntityRepository projectEntityRepository;

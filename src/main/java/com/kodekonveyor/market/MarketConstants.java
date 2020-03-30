@@ -79,4 +79,6 @@ public class MarketConstants {
 
   public static final String UNDERSCORE = "_";
 
+  public static final String NOT_LOGGED_IN_MESSAGE_TEMPLATE = "%s:%s at %s:%s";
+
 }

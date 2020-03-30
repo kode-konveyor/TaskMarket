@@ -2,27 +2,30 @@ package com.kodekonveyor.authentication;
 
 import java.util.List;
 
+import org.slf4j.Logger;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.core.Authentication;
 import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.stereotype.Service;
 
-import com.kodekonveyor.market.LogSeverityEnum;
-import com.kodekonveyor.market.LoggerService;
+import com.kodekonveyor.logging.LoggingMarkerConstants;
 
 @Service
 public class AuthenticatedUserService {
 
   @Autowired
-  private LoggerService loggerService;
+  private Logger loggerService;
 
   @Autowired
   private UserEntityRepository userEntityRepository;
 
   public UserEntity call() {
     final String login = getNameForUser();
-    loggerService
-        .call(AuthenticationConstants.LOGIN, LogSeverityEnum.INFO, login);
+    loggerService.info(
+        LoggingMarkerConstants.AUTHENTICATION,
+        AuthenticationConstants.SUCCESSFULLY_LOGGED_IN
+    );
+
     checkCredential(login);
     final List<UserEntity> userList =
         userEntityRepository.findByLogin(login);
