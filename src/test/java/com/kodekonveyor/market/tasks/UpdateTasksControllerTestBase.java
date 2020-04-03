@@ -2,9 +2,9 @@ package com.kodekonveyor.market.tasks;
 
 import org.mockito.InjectMocks;
 import org.mockito.Mock;
+import org.slf4j.Logger;
 
 import com.kodekonveyor.authentication.AuthenticatedUserService;
-import com.kodekonveyor.market.LoggerService;
 
 public class UpdateTasksControllerTestBase {
 
@@ -12,7 +12,7 @@ public class UpdateTasksControllerTestBase {
   AuthenticatedUserService authenticatedUserService;
 
   @Mock
-  LoggerService loggerService;
+  Logger loggerService;
 
   @InjectMocks
   UpdateTasksController updateTasksController;
