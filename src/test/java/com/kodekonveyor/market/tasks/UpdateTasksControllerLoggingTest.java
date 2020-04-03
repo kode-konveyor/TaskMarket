@@ -1,5 +1,7 @@
 package com.kodekonveyor.market.tasks;
 
+import static org.mockito.Mockito.verify;
+
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.extension.ExtendWith;
@@ -13,7 +15,6 @@ import com.kodekonveyor.annotations.TestedBehaviour;
 import com.kodekonveyor.annotations.TestedService;
 import com.kodekonveyor.authentication.AuthenticatedUserStubs;
 import com.kodekonveyor.logging.LoggingMarkerConstants;
-import com.kodekonveyor.market.UrlMapConstants;
 
 @ExtendWith(MockitoExtension.class)
 @MockitoSettings(strictness = Strictness.LENIENT)
@@ -28,7 +29,10 @@ public class UpdateTasksControllerLoggingTest
   void test() {
     AuthenticatedUserStubs.kodekonveyorContract(authenticatedUserService);
     updateTasksController.call();
-    loggerService
-        .info(LoggingMarkerConstants.TASK, UrlMapConstants.TASK_UPDATE_PATH);
+    verify(loggerService)
+        .info(
+            LoggingMarkerConstants.TASK,
+            UpdateTasksControllerTestData.TASK_UPDATE_LOG
+        );
   }
 }
