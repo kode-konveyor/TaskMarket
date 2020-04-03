@@ -4,14 +4,14 @@ import java.io.IOException;
 import java.net.MalformedURLException;
 import java.net.URL;
 
+import org.slf4j.Logger;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.stereotype.Service;
 import org.springframework.web.server.ResponseStatusException;
 
 import com.kodekonveyor.annotations.ExcludeFromCodeCoverage;
-import com.kodekonveyor.market.LogSeverityEnum;
-import com.kodekonveyor.market.LoggerService;
+import com.kodekonveyor.logging.LoggingMarkerConstants;
 import com.kodekonveyor.market.proxies.ObjectMapperService;
 
 @Service
@@ -19,7 +19,7 @@ import com.kodekonveyor.market.proxies.ObjectMapperService;
 public class GithubGetService {
 
   @Autowired
-  private LoggerService loggerService;
+  private Logger loggerService;
 
   @Autowired
   private ObjectMapperService objectMapperProxy;
@@ -27,7 +27,7 @@ public class GithubGetService {
   public <ValueType> ValueType
       call(final String command, final Class<ValueType> cls) {
     final String uri = GithubConstants.GITHUB_API_URL_BASE + command;
-    loggerService.call(GithubConstants.GITHUB_CALL, LogSeverityEnum.DEBUG, uri);
+    loggerService.debug(LoggingMarkerConstants.GITHUB, uri);
     URL url;
     try {
       url = new URL(uri);

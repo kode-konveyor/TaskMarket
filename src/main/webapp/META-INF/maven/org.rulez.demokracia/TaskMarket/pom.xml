@@ -12,6 +12,12 @@
 	<description>process support for the Kode Konveyor process</description>
 	<url>http://github.com/kode-konveyor/TaskMarket</url>
 
+	<parent>
+		<groupId>org.springframework.boot</groupId>
+		<artifactId>spring-boot-starter-parent</artifactId>
+		<version>2.2.5.RELEASE</version>
+	</parent>
+
 	<licenses>
 		<license>
 			<name>Proprietary</name>
@@ -35,6 +41,7 @@
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
 		<maven.compiler.source>11</maven.compiler.source>
 		<maven.compiler.target>11</maven.compiler.target>
+		<slf4j.api.version>1.7.30</slf4j.api.version>
 	</properties>
 	<build>
 		<plugins>
@@ -71,15 +78,15 @@
 				</dependencies>
 				<configuration>
 					<excludedClasses>
-					 <param>*DTO</param>
-					 <param>*Entity</param>
-					 <param>*Repository</param>
-					 <param>*Exception</param>
-					 <param>*Enum</param>
-					 <param>*Bean</param>
-					 <param>*.SpringConfig</param>
-					 <param>*.WebAppInitializer</param>
-					 <param>*.WebInitializer</param>
+						<param>*DTO</param>
+						<param>*Entity</param>
+						<param>*Repository</param>
+						<param>*Exception</param>
+						<param>*Enum</param>
+						<param>*Bean</param>
+						<param>*.SpringConfig</param>
+						<param>*.WebAppInitializer</param>
+						<param>*.WebInitializer</param>
 					</excludedClasses>
 					<targetTests>
 						<param>*Test*</param>
@@ -122,12 +129,12 @@
 					<stopPort>9999</stopPort>
 					<systemProperties>
 						<systemProperty>
-							<name>com.kodekonveyor.market.jdbcUri</name>
+							<name>spring.datasource.url</name>
 							<value>jdbc:hsqldb:mem:market</value>
 						</systemProperty>
 					</systemProperties>
 					<systemProperty>
-						<name>com.kodekonveyor.market.jdbcDriver</name>
+						<name>spring.datasource.driver-class-name</name>
 						<value>org.hsqldb.jdbcDriver</value>
 					</systemProperty>
 					<webApp>
@@ -204,11 +211,11 @@
 						<configuration>
 							<properties>
 								<property>
-									<name>com.kodekonveyor.market.jdbcUri</name>
+									<name>spring.datasource.url</name>
 									<value>jdbc:hsqldb:mem:market</value>
 								</property>
 								<property>
-									<name>com.kodekonveyor.market.jdbcDriver</name>
+									<name>spring.datasource.driver-class-name</name>
 									<value>org.hsqldb.jdbcDriver</value>
 								</property>
 							</properties>
@@ -250,6 +257,18 @@
 							</pluginExecutions>
 						</lifecycleMappingMetadata>
 					</configuration>
+				</plugin>
+				<plugin>
+					<groupId>org.springframework.boot</groupId>
+					<artifactId>spring-boot-maven-plugin</artifactId>
+					<executions>
+						<execution>
+							<configuration>
+								<mainClass>com.kodekonveyor.SpringConfig</mainClass>
+							</configuration>
+						</execution>
+					</executions>
+
 				</plugin>
 			</plugins>
 		</pluginManagement>
@@ -329,27 +348,26 @@
 		<dependency>
 			<groupId>org.springframework</groupId>
 			<artifactId>spring-web</artifactId>
-			<version>5.2.0.RELEASE</version>
 		</dependency>
 		<dependency>
 			<groupId>org.springframework</groupId>
 			<artifactId>spring-webmvc</artifactId>
-			<version>5.2.0.RELEASE</version>
 		</dependency>
 		<dependency>
 			<groupId>org.springframework.security</groupId>
 			<artifactId>spring-security-core</artifactId>
-			<version>5.2.0.RELEASE</version>
 		</dependency>
 		<dependency>
 			<groupId>org.springframework.boot</groupId>
 			<artifactId>spring-boot-starter-data-jpa</artifactId>
-			<version>2.2.0.RELEASE</version>
+		</dependency>
+		<dependency>
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-starter-web</artifactId>
 		</dependency>
 		<dependency>
 			<groupId>org.springframework.boot</groupId>
 			<artifactId>spring-boot-starter-test</artifactId>
-			<version>2.2.0.RELEASE</version>
 			<exclusions>
 				<exclusion>
 					<groupId>org.junit.vintage</groupId>
@@ -393,6 +411,12 @@
 			<scope>test</scope>
 		</dependency>
 		<dependency>
+			<groupId>org.hsqldb</groupId>
+			<artifactId>hsqldb</artifactId>
+			<scope>runtime</scope>
+		</dependency>
+		
+		<dependency>
 			<groupId>com.github.markusbernhardt</groupId>
 			<artifactId>xml-doclet</artifactId>
 			<version>1.0.6-SNAPSHOT</version>
@@ -408,6 +432,14 @@
 				<exclusion>
 					<groupId>javax.activation</groupId>
 					<artifactId>javax.activation-api</artifactId>
+				</exclusion>
+				<exclusion>
+					<groupId>org.slf4j</groupId>
+					<artifactId>slf4j-api</artifactId>
+				</exclusion>
+				<exclusion>
+					<groupId>org.slf4j</groupId>
+					<artifactId>slf4j-simple</artifactId>
 				</exclusion>
 			</exclusions>
 		</dependency>
@@ -473,6 +505,17 @@
 			<artifactId>selenium-java</artifactId>
 			<version>3.141.59</version>
 		</dependency>
+<dependency>
+			<groupId>org.slf4j</groupId>
+			<artifactId>slf4j-api</artifactId>
+			<version>1.7.30</version>
+		</dependency>
+		<dependency>
+			<groupId>org.slf4j</groupId>
+			<artifactId>slf4j-simple</artifactId>
+			<version>1.7.30</version>
+		</dependency>
 	</dependencies>
+	
 </project>
 

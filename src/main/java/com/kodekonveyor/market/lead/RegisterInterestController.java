@@ -1,12 +1,12 @@
 package com.kodekonveyor.market.lead;
 
+import org.slf4j.Logger;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RestController;
 
-import com.kodekonveyor.market.LogSeverityEnum;
-import com.kodekonveyor.market.LoggerService;
+import com.kodekonveyor.logging.LoggingMarkerConstants;
 import com.kodekonveyor.market.MarketConstants;
 import com.kodekonveyor.market.UrlMapConstants;
 import com.kodekonveyor.market.ValidationException;
@@ -18,7 +18,7 @@ public class RegisterInterestController {
   LeadEntityRepository leadEntityRepository;
 
   @Autowired
-  LoggerService loggerService;
+  Logger loggerService;
 
   @PostMapping(value = UrlMapConstants.LEAD_PATH, consumes = "application/json")
   public LeadDTO call(final @RequestBody LeadDTO lead) {
@@ -42,8 +42,8 @@ public class RegisterInterestController {
   }
 
   private void doStore(final LeadDTO lead) {
-    loggerService.call(
-        LeadConstants.LEAD_RECEIVED, LogSeverityEnum.INFO, lead.toString()
+    loggerService.info(
+        LoggingMarkerConstants.LEAD, LeadConstants.STORE_LEAD + lead.toString()
     );
     final LeadEntity leadEntity = new LeadEntity();
     leadEntity.setEmail(lead.getEmail());

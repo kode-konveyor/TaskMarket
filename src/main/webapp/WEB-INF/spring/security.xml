@@ -6,8 +6,11 @@
 						http://www.springframework.org/schema/security https://www.springframework.org/schema/security/spring-security.xsd">
 
 <http >
-   <custom-filter ref="authTokenFilter" after="BASIC_AUTH_FILTER" /> 
+	<custom-filter ref="authTokenFilter" after="BASIC_AUTH_FILTER" /> 
+	<custom-filter ref="loggerUsernameFilter" after="SECURITY_CONTEXT_FILTER" />
 </http>
+
+<b:bean id="loggerUsernameFilter" class="com.kodekonveyor.logging.LoggerUsernameFilter" />
 
 </b:beans>
 
