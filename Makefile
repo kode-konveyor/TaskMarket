@@ -14,6 +14,7 @@ runapache:
 
 delink:
 	mkdir -p modelparts/metamodel
+	zenta-xslt-runner -xsl:xslt/delink.xslt -s:$(MODEL_BASENAME).zenta -o:modelparts/$(MODEL_BASENAME).zentapart -im:delink
 
 $(MODEL_BASENAME).zenta:
 	zenta-xslt-runner -xsl:xslt/delink.xslt  -s:.zentasources -im:prepare|sed 's/<.*>//'|bash
