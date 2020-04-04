@@ -1,5 +1,6 @@
 package com.kodekonveyor.market;
 
+import org.slf4j.Logger;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpHeaders;
 import org.springframework.http.HttpStatus;
@@ -12,6 +13,7 @@ import org.springframework.web.servlet.mvc.method.annotation.ResponseEntityExcep
 import com.kodekonveyor.annotations.ExcludeFromCodeCoverage;
 import com.kodekonveyor.annotations.InterfaceClass;
 import com.kodekonveyor.authentication.NotLoggedInException;
+import com.kodekonveyor.logging.LoggingMarkerConstants;
 
 @ControllerAdvice
 @InterfaceClass
@@ -20,7 +22,7 @@ public class RestResponseEntityExceptionHandler
     extends ResponseEntityExceptionHandler {
 
   @Autowired
-  private LoggerService loggerService;
+  private Logger loggerService;
 
   @ExceptionHandler({
       NotLoggedInException.class,
@@ -32,15 +34,16 @@ public class RestResponseEntityExceptionHandler
       final RuntimeException exception, final WebRequest request
   ) {
     final StackTraceElement location = exception.getStackTrace()[0];
-    final String message =
-        exception.getClass().getSimpleName() + ":" + exception.getMessage() +
-            " at " +
-            location.getFileName() + ":" +
-            location.getLineNumber();
+    final String message = String.format(
+        MarketConstants.NOT_LOGGED_IN_MESSAGE_TEMPLATE,
+        exception.getClass().getSimpleName(),
+        exception.getMessage(),
+        location.getFileName(),
+        location.getLineNumber()
+    );
     loggerService
-        .call(
-            "exception", LogSeverityEnum.ERROR,
-            message
+        .warn(
+            LoggingMarkerConstants.AUTHENTICATION, message
         );
 
     final String bodyOfResponse = exception.getMessage();

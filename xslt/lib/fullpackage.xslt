@@ -12,9 +12,6 @@
             <xsl:variable name="parent" select="zenta:fullpackageP(zenta:neighbours($rich,$package,'contains,2')[@xsi:type='Package'])"/>
             <xsl:choose>
                 <xsl:when test="$parent">
-			<xsl:message select="'P'"/>
-			<xsl:message select="$parent"/>
-			<xsl:message select="$package/@name"/>
                     <xsl:value-of select="concat($parent, '.', $package/@name)"/>
                 </xsl:when>
                 <xsl:otherwise>
@@ -26,13 +23,13 @@
 
     <xsl:function name="zenta:fullpackage">
         <xsl:param name="service"/>
-			<xsl:message select="'--'"/>
-			<xsl:message select="$service/@name"/>
-        <xsl:variable name="parent" select="zenta:neighbours($rich,$service,'contains,2')[@xsi:type='Package' or @xsi:type='Process Step']"/>
+        <xsl:variable name="parents" select="zenta:neighbours($rich,$service,'contains,2')"/>
+	<xsl:variable name="parent" select="if($parents[@xsi:type='Package'])
+		then $parents[@xsi:type='Package']
+		else $parents[@xsi:type='Process Step']"/>
         <xsl:choose>
             <xsl:when test="$parent/@xsi:type='Package'">
-			<xsl:message select="$parent/@name"/>
-                <xsl:copy-of select="zenta:fullpackageP($parent[@xsi:type='Package'])"/>
+                <xsl:copy-of select="zenta:fullpackageP($parent)"/>
             </xsl:when>
             <xsl:when test="$parent/@xsi:type='Process Step'">
                 <xsl:copy-of select="zenta:fullpackage($parent)"/>

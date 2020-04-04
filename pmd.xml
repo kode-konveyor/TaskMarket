@@ -4,6 +4,6 @@
 	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
 	xsi:schemaLocation="http://pmd.sourceforge.net/ruleset/2.0.0 https://pmd.sourceforge.io/ruleset_2_0_0.xsd">
 <description>WAR project PMD rules of Kode Konveyor</description>
-<rule ref="https://raw.githubusercontent.com/kode-konveyor/codingrules/v0.1/pmd/upstream.xml"/>
-<rule ref="https://raw.githubusercontent.com/kode-konveyor/codingrules/v0.1/pmd/konveyor.xml"/>
+<rule ref="https://raw.githubusercontent.com/kode-konveyor/codingrules/v0.3/pmd/upstream.xml"/>
+<rule ref="https://raw.githubusercontent.com/kode-konveyor/codingrules/v0.3/pmd/konveyor.xml"/>
 </ruleset>

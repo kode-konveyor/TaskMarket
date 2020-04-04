@@ -9,10 +9,12 @@ import com.kodekonveyor.authentication.UserEntityTestData;
 
 public class GithubGetStubs {
 
+  private static final String USERS = "/users/";
+
   public static void behaviour(final GithubGetService githubGetService) {
     reset(githubGetService);
     doReturn(UserDTOTestData.get()).when(githubGetService)
-        .call("/users/" + UserEntityTestData.LOGIN, UserDTO.class);
+        .call(USERS + UserEntityTestData.LOGIN, UserDTO.class);
   }
 
 }

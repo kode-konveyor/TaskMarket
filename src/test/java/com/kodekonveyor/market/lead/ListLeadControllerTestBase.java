@@ -3,9 +3,9 @@ package com.kodekonveyor.market.lead;
 import org.junit.jupiter.api.BeforeEach;
 import org.mockito.InjectMocks;
 import org.mockito.Mock;
+import org.slf4j.Logger;
 
 import com.kodekonveyor.authentication.AuthenticatedUserService;
-import com.kodekonveyor.market.LoggerService;
 
 public class ListLeadControllerTestBase {
 
@@ -17,7 +17,7 @@ public class ListLeadControllerTestBase {
   ListLeadController listleadController;
 
   @Mock
-  LoggerService loggerService;
+  Logger loggerService;
 
   @BeforeEach
   void setUp() {

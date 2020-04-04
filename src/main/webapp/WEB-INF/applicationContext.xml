@@ -19,7 +19,7 @@
 	<bean id="authTokenFilter" class="com.kodekonveyor.authentication.RemoteAuthenticationFilter" scope="singleton" />
 	<bean id="entityManagerFactory"
 	    class="org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean">
-	    <property name="packagesToScan" value="com.kodekonveyor.market" />
+	    <property name="packagesToScan" value="com.kodekonveyor.*" />
 	    <property name="dataSource" ref="dataSource" />
 	
 	    <property name="persistenceProvider">
