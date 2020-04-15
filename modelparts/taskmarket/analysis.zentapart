@@ -1226,6 +1226,11 @@ All the relevant fields of the returned DTO are filled out properly.
                      name="Show user"
                      id="3f339d77-39b1-42c1-beee-d56ae0bce552"
                      ancestor="83af8497-bfef-451b-9bc6-f00d58c8df6a"/>
+            <element xsi:type="zenta:BasicRelationship"
+                     id="eb9d6d7a-616d-429a-9ffe-f162309a475a"
+                     ancestor="64fbbfdf-420d-4756-821b-54fab6e7a8d2"
+                     source="3f339d77-39b1-42c1-beee-d56ae0bce552"
+                     target="dd69f9d8-81fb-4ae0-af5f-1e1a623f4ef7"/>
          </folder>
          <element xsi:type="zenta:ZentaDiagramModel"
                   name="User management"
@@ -1462,6 +1467,11 @@ All the relevant fields of the returned DTO are filled out properly.
                                  source="e97d5346-ad9f-4f29-92db-b1ebb2b39efa"
                                  target="4f994caa-fe16-40a4-8536-f7b874f554a5"
                                  relationship="f1ca6a55-feaf-4b76-b0bc-f0a894628e88"/>
+               <sourceConnection xsi:type="zenta:Connection"
+                                 id="792dc846-0176-4215-93aa-0ee335d57141"
+                                 source="e97d5346-ad9f-4f29-92db-b1ebb2b39efa"
+                                 target="4f4758e5-ce91-4be3-ba70-9429d2c186d7"
+                                 relationship="8ba911ce-a70e-4f36-996d-b427b23cc4f4"/>
             </child>
             <child xsi:type="zenta:DiagramObject"
                    id="473fb74b-fe4d-4cee-ba7e-ebbc78ec4cd9"
@@ -1583,6 +1593,12 @@ All the relevant fields of the returned DTO are filled out properly.
                                  target="473fb74b-fe4d-4cee-ba7e-ebbc78ec4cd9"
                                  relationship="c18d68bb-a8eb-47d4-90c4-eac7ece313f3"/>
             </child>
+            <child xsi:type="zenta:DiagramObject"
+                   id="4f4758e5-ce91-4be3-ba70-9429d2c186d7"
+                   targetConnections="792dc846-0176-4215-93aa-0ee335d57141"
+                   zentaElement="def09845-52b2-4566-9860-9550a980b550">
+               <bounds x="1145" y="436" width="-1" height="-1"/>
+            </child>
          </element>
          <element xsi:type="zenta:BasicObject"
                   name="tasks"
@@ -1645,6 +1661,15 @@ All the relevant fields of the returned DTO are filled out properly.
                   ancestor="f72b01f0-7ff9-48ba-9cd8-b4453fa00c0a"
                   source="8a83f492-9aa2-4264-8515-e9548ee80c0e"
                   target="68f46fc3-feec-4ee0-a723-f27b3d6cc4fe"/>
+         <element xsi:type="zenta:BasicObject"
+                  name="unassign pull request"
+                  id="def09845-52b2-4566-9860-9550a980b550"
+                  ancestor="83af8497-bfef-451b-9bc6-f00d58c8df6a"/>
+         <element xsi:type="zenta:BasicRelationship"
+                  id="8ba911ce-a70e-4f36-996d-b427b23cc4f4"
+                  ancestor="f53d0fd7-db6a-4b40-886b-55c0b3e7a8dd"
+                  source="38183e57-4dbc-43e3-bc2a-68b13091db6e"
+                  target="def09845-52b2-4566-9860-9550a980b550"/>
       </folder>
       <folder name="Project management" id="0ae5eb13-b713-4bd5-977f-d0bd9998f444">
          <element xsi:type="zenta:ZentaDiagramModel"
