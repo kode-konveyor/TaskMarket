@@ -31,7 +31,8 @@ public class CreateProjectControllerStorageTest
   public void saveEntitytest() {
     AuthenticatedUserStubs.projectManager(authenticatedUserService);
     createProjectController.call(ProjectDTOTestData.get());
-    verify(projectEntityRepository).save(ProjectEntityTestData.get());
+    verify(projectEntityRepository)
+        .save(ProjectEntityTestData.getNullMilestone());
   }
 
   @Test
@@ -62,7 +63,8 @@ public class CreateProjectControllerStorageTest
   void test2() {
     AuthenticatedUserStubs.projectManager(authenticatedUserService);
     createProjectController.callForUrlencoded(ProjectDTOTestData.get());
-    verify(projectEntityRepository).save(ProjectEntityTestData.get());
+    verify(projectEntityRepository)
+        .save(ProjectEntityTestData.getNullMilestone());
   }
 
   @Test
