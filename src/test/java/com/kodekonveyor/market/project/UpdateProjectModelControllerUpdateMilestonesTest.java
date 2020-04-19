@@ -26,20 +26,18 @@ public class UpdateProjectModelControllerUpdateMilestonesTest
   @Test
   @DisplayName("The project with updated milestones is saved successfully")
   public void test() {
-    ProjectEntityStubs.behaviour(projectEntityRepository);
     updateProjectModelController.call(ModelExcerptDTOTestData.get());
-    Mockito.verify(projectEntityRepository).save(ProjectEntityTestData.get());
+    Mockito.verify(projectEntityRepository)
+        .save(ProjectEntityTestData.getMilestonesUpdated());
 
   }
 
   @Test
-  @DisplayName("The milestones of the project is updated successfully")
+  @DisplayName("The milestones of the project are updated successfully")
   public void test1() {
-    ProjectEntityStubs.behaviour(projectEntityRepository);
-    updateProjectModelController.call(ModelExcerptDTOTestData.get());
     assertEquals(
         ModelExcerptDTOTestData.get().getMilestones(),
-        ProjectEntityTestData.get().getMilestones()
+        ProjectEntityTestData.getMilestonesUpdated().getMilestones()
     );
 
   }

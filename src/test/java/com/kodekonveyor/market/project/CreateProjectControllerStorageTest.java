@@ -32,7 +32,7 @@ public class CreateProjectControllerStorageTest
     AuthenticatedUserStubs.projectManager(authenticatedUserService);
     createProjectController.call(ProjectDTOTestData.get());
     verify(projectEntityRepository)
-        .save(ProjectEntityTestData.getNullMilestone());
+        .save(ProjectEntityTestData.get());
   }
 
   @Test
@@ -41,7 +41,7 @@ public class CreateProjectControllerStorageTest
     AuthenticatedUserStubs.projectManager(authenticatedUserService);
     createProjectController.call(ProjectDTOTestData.get());
     assertEquals(
-        ProjectDTOTestData.ID, createProjectController
+        ProjectEntityTestData.ID, createProjectController
             .callForUrlencoded(ProjectDTOTestData.get()).getId()
     );
   }
@@ -52,7 +52,7 @@ public class CreateProjectControllerStorageTest
     AuthenticatedUserStubs.projectManager(authenticatedUserService);
     createProjectController.call(ProjectDTOTestData.get());
     assertEquals(
-        ProjectEntityTestData.get().getName(), ProjectDTOTestData.NAME
+        ProjectEntityTestData.get().getName(), ProjectEntityTestData.NAME
     );
   }
 
@@ -64,7 +64,7 @@ public class CreateProjectControllerStorageTest
     AuthenticatedUserStubs.projectManager(authenticatedUserService);
     createProjectController.callForUrlencoded(ProjectDTOTestData.get());
     verify(projectEntityRepository)
-        .save(ProjectEntityTestData.getNullMilestone());
+        .save(ProjectEntityTestData.get());
   }
 
   @Test

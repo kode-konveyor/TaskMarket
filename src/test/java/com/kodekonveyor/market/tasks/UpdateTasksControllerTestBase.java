@@ -1,5 +1,6 @@
 package com.kodekonveyor.market.tasks;
 
+import org.json.JSONException;
 import org.junit.jupiter.api.BeforeEach;
 import org.mockito.InjectMocks;
 import org.mockito.Mock;
@@ -42,11 +43,13 @@ public class UpdateTasksControllerTestBase {
   UserEntityRepository userRepository;
 
   @BeforeEach
-  void setUp() {
+  void setUp() throws JSONException {
     AuthenticatedUserStubs.kodekonveyorContract(authenticatedUserService);
     ProjectEntityStubs.behaviour(projectEntityRepository);
     UserEntityRepositoryStubs.behaviour(userRepository);
     MarketUserStubs.behaviour(marketRepository, registerTestData);
+    GetRepositoryTasksServiceStubs.behaviour(getRepositoryTasksService);
+
   }
 
 }

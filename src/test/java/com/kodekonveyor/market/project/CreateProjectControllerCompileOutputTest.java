@@ -29,7 +29,7 @@ public class CreateProjectControllerCompileOutputTest
     AuthenticatedUserStubs.projectManager(authenticatedUserService);
     createProjectController.call(ProjectDTOTestData.get());
     assertEquals(
-        ProjectDTOTestData.ID, createProjectController
+        ProjectEntityTestData.ID, createProjectController
             .call(ProjectDTOTestData.get()).getId()
     );
   }
@@ -40,7 +40,7 @@ public class CreateProjectControllerCompileOutputTest
     AuthenticatedUserStubs.projectManager(authenticatedUserService);
     createProjectController.call(ProjectDTOTestData.get());
     assertEquals(
-        ProjectEntityTestData.get().getName(), ProjectDTOTestData.NAME
+        ProjectEntityTestData.get().getName(), ProjectEntityTestData.NAME
     );
   }
 

@@ -31,7 +31,6 @@ public class UpdateTasksControllerGetTasksFromGithubTest
     "Task entity is saved successfully"
   )
   void test1() throws JSONException {
-    GetRepositoryTasksServiceStubs.behaviour(getRepositoryTasksService);
     updateTasksController.call();
 
     Mockito.verify(taskEntityRepository).save(TaskEntityTestData.get());
@@ -42,7 +41,6 @@ public class UpdateTasksControllerGetTasksFromGithubTest
     "Task Id is saved sucessfully"
   )
   void test2() throws JSONException {
-    GetRepositoryTasksServiceStubs.behaviour(getRepositoryTasksService);
     updateTasksController.call();
     assertEquals(
         TaskDToTestData.get().getGithubId(),
@@ -55,7 +53,6 @@ public class UpdateTasksControllerGetTasksFromGithubTest
     "Task name is saved sucessfully"
   )
   void test3() throws JSONException {
-    GetRepositoryTasksServiceStubs.behaviour(getRepositoryTasksService);
     updateTasksController.call();
     assertEquals(
         TaskDToTestData.get().getName(), TaskEntityTestData.get().getName()
@@ -67,7 +64,6 @@ public class UpdateTasksControllerGetTasksFromGithubTest
     "Project of the task is saved sucessfully"
   )
   void test4() throws JSONException {
-    GetRepositoryTasksServiceStubs.behaviour(getRepositoryTasksService);
     updateTasksController.call();
     assertEquals(
         ProjectEntityTestData.get(), TaskEntityTestData.get().getProject()
@@ -79,7 +75,6 @@ public class UpdateTasksControllerGetTasksFromGithubTest
     "Owner of the task is saved sucessfully"
   )
   void test5() throws JSONException {
-    GetRepositoryTasksServiceStubs.behaviour(getRepositoryTasksService);
     updateTasksController.call();
     assertEquals(
         MarketUserEntityTestData.get(),
@@ -92,7 +87,6 @@ public class UpdateTasksControllerGetTasksFromGithubTest
     "Status of the task is saved sucessfully"
   )
   void test6() throws JSONException {
-    GetRepositoryTasksServiceStubs.behaviour(getRepositoryTasksService);
     updateTasksController.call();
     assertEquals(
         TaskDToTestData.get().getStatus(), TaskEntityTestData.get().getStatus()
