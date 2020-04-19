@@ -371,7 +371,7 @@ We intend to support all of them.
                   id="27ffe0e5-ad20-424a-85ff-601bfa735a7a"
                   ancestor="e7c7a3b9-cc91-4d99-854a-d5eab68efd7c"/>
          <element xsi:type="zenta:BasicObject"
-                  name="Support project creation"
+                  name="Support project management"
                   id="2807128d-35f0-4c80-92e8-f844dc05cd93"
                   ancestor="e7c7a3b9-cc91-4d99-854a-d5eab68efd7c"/>
          <element xsi:type="zenta:BasicObject"
@@ -399,7 +399,7 @@ We intend to support all of them.
 
 - The role names starting with the project name and a '_' are considered to be the roles belonging to the project.
 - The resources of a private project can only be accessed by users in a role belonging to a project
-- The &lt;projectname&gt;_manager role is able to manage the given project
+- The &lt;projectname&gt;_manager role is able to manage the given project (manage its roles, update model, add users)
 
 ## can_be_payed
 
@@ -2971,6 +2971,11 @@ details is a '/' separated string of the needed details. its content depends on 
                               source="68dc61c4-6817-48a7-9f3b-adeeb9577d63"
                               target="8a49d192-ff25-4869-9ddc-825d3edb8301"
                               relationship="fbe15e94-9c7f-471c-bd79-4b336300aa00"/>
+            <sourceConnection xsi:type="zenta:Connection"
+                              id="4fb69745-5bf4-43ec-8f67-4edb7e9c2af2"
+                              source="68dc61c4-6817-48a7-9f3b-adeeb9577d63"
+                              target="d3076fb4-c272-4b2f-b2ac-c0e956fe5ac1"
+                              relationship="d2fe1a42-e87d-4dcd-a9e2-b4375e690c9f"/>
          </child>
          <child xsi:type="zenta:DiagramObject"
                 id="f678918e-04fa-4cce-92b5-2c751044c64d"
@@ -2981,6 +2986,11 @@ details is a '/' separated string of the needed details. its content depends on 
                               source="f678918e-04fa-4cce-92b5-2c751044c64d"
                               target="fd765aa4-62f7-418f-8ded-c64b429de479"
                               relationship="9870260a-567d-46c8-b4de-006c09156189"/>
+            <sourceConnection xsi:type="zenta:Connection"
+                              id="2d130ced-03a5-459f-9d8a-beaeed844048"
+                              source="f678918e-04fa-4cce-92b5-2c751044c64d"
+                              target="a24436ad-24c7-4e8b-8067-09cfbedf9099"
+                              relationship="7d8b2be5-4058-4caa-a9a1-2e5fce8d2efc"/>
          </child>
          <child xsi:type="zenta:DiagramObject"
                 id="7a46e397-5c39-40f7-a04f-de6b20a8caf4"
@@ -3013,11 +3023,6 @@ details is a '/' separated string of the needed details. its content depends on 
                               source="73f53cde-6cd8-40d3-9303-ae2882ff30e7"
                               target="c36bc183-8d4e-4631-a1a1-8889077088e3"
                               relationship="6aa7abca-186f-4eb9-8718-dfc675fdcfe1"/>
-            <sourceConnection xsi:type="zenta:Connection"
-                              id="b0527f2b-0af0-4fd8-9ffc-6c4023375683"
-                              source="73f53cde-6cd8-40d3-9303-ae2882ff30e7"
-                              target="a24436ad-24c7-4e8b-8067-09cfbedf9099"
-                              relationship="efabe28a-a74f-4bed-97bf-4625f097b8a5"/>
          </child>
          <child xsi:type="zenta:DiagramObject"
                 id="3e671eae-be5f-4e4f-af58-8ca36f77862f"
@@ -3097,7 +3102,7 @@ details is a '/' separated string of the needed details. its content depends on 
          </child>
          <child xsi:type="zenta:DiagramObject"
                 id="a24436ad-24c7-4e8b-8067-09cfbedf9099"
-                targetConnections="b0527f2b-0af0-4fd8-9ffc-6c4023375683"
+                targetConnections="2d130ced-03a5-459f-9d8a-beaeed844048"
                 zentaElement="c8ddeafc-def8-4a87-ba7d-bddda0cc2cf9">
             <bounds x="348" y="360" height="85"/>
          </child>
@@ -3261,6 +3266,12 @@ details is a '/' separated string of the needed details. its content depends on 
                 targetConnections="6adedfdf-4c6d-4d71-9d3c-3d0ecb073991"
                 zentaElement="43711cfd-a53a-43de-aa20-6daf57ea0a94">
             <bounds x="986" y="348" width="-1" height="-1"/>
+         </child>
+         <child xsi:type="zenta:DiagramObject"
+                id="d3076fb4-c272-4b2f-b2ac-c0e956fe5ac1"
+                targetConnections="4fb69745-5bf4-43ec-8f67-4edb7e9c2af2"
+                zentaElement="e4f036eb-ed47-4d89-b3a4-62a8232fe185">
+            <bounds x="204" y="360" width="-1" height="-1"/>
          </child>
       </element>
       <element xsi:type="zenta:BasicObject"
@@ -3468,10 +3479,19 @@ details is a '/' separated string of the needed details. its content depends on 
                source="9b8ff260-b83a-4b24-8567-c57beeb83724"
                target="80ce62bc-a239-4d68-8fe9-a073956e81eb"/>
       <element xsi:type="zenta:BasicRelationship"
-               id="efabe28a-a74f-4bed-97bf-4625f097b8a5"
+               id="7d8b2be5-4058-4caa-a9a1-2e5fce8d2efc"
                ancestor="f0d0d4a5-201b-41b4-a047-70308c99bdb7"
-               source="51da13b8-1bc3-4629-b29f-954f2a57f6e8"
+               source="d1754fb1-2177-4f76-9985-46678bbe0d7f"
                target="c8ddeafc-def8-4a87-ba7d-bddda0cc2cf9"/>
+      <element xsi:type="zenta:BasicObject"
+               name="Update project model"
+               id="e4f036eb-ed47-4d89-b3a4-62a8232fe185"
+               ancestor="83af8497-bfef-451b-9bc6-f00d58c8df6a"/>
+      <element xsi:type="zenta:BasicRelationship"
+               id="d2fe1a42-e87d-4dcd-a9e2-b4375e690c9f"
+               ancestor="f0d0d4a5-201b-41b4-a047-70308c99bdb7"
+               source="6bdcadcd-8098-4a7f-97a4-b49a5ae32619"
+               target="e4f036eb-ed47-4d89-b3a4-62a8232fe185"/>
    </folder>
    <folder name="0. Analysis relations" id="f0d3545d-9232-4a49-b554-c20256ce5fda">
       <property key="dispay" value="hidden"/>

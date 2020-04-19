@@ -14,7 +14,7 @@ public class ProjectEntity {
   @Id
   @GeneratedValue(strategy = GenerationType.IDENTITY)
   private long id;
-
+  private String milestones;
   private String name;
 
 }

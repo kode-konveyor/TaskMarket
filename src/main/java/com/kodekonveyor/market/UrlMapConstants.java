@@ -10,6 +10,7 @@ public class UrlMapConstants {
   public static final String PROJECT_PATH = "/member/project";
   public static final String REGISTER_USER_PATH = "register";
   public static final String SHOW_USER_PATH = "/member/user";
-  public static final String TASK_UPDATE_PATH = "/member/update_task";
-
+  public static final String TASK_UPDATE_PATH = " /member/update_task";
+  public static final String UPDATE_PROJECT_MODEL_PATH =
+      "/member/project/{projectName}/model";
 }
