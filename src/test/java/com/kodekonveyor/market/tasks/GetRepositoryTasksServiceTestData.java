@@ -9,7 +9,9 @@ import org.json.JSONArray;
 
 public class GetRepositoryTasksServiceTestData {
 
-  public static JSONArray ARRAY = new JSONArray();
+  public static final String ALL_ISSUES_JSON = "/all_issues.json";
+  public static final String UTF_8 = "UTF-8";
+  public static final JSONArray ARRAY = new JSONArray();
   public static final String ID = "id";
   public static final int INDEX = 0;
   public static final int INDEX2 = 2;
@@ -34,11 +36,11 @@ public class GetRepositoryTasksServiceTestData {
     String textJSON = null;
     try (
         InputStream resourceAsStream = GithubRequestStubs.class
-            .getResourceAsStream("/all_issues.json")
+            .getResourceAsStream(ALL_ISSUES_JSON)
     ) {
       textJSON = IOUtils.toString(
           resourceAsStream,
-          "UTF-8"
+          UTF_8
       );
     } catch (final IOException exception) {
       Assertions.fail(exception.getMessage());

@@ -15,12 +15,14 @@ public class GithubRequestStubs {
     JSONArray array = null;
     try (
         InputStream resourceAsStream = GithubRequestStubs.class
-            .getResourceAsStream("/all_issues.json")
+            .getResourceAsStream(
+                GetRepositoryTasksServiceTestData.ALL_ISSUES_JSON
+            )
     ) {
 
       final String textJSON = IOUtils.toString(
           resourceAsStream,
-          "UTF-8"
+          GetRepositoryTasksServiceTestData.UTF_8
       );
       array = new JSONArray(textJSON);
 

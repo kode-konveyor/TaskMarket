@@ -7,4 +7,13 @@ public enum TaskStatusEnum {
   OPEN("open"),
   UP_FOR_GRAB("up for grab");
 
+  public final String value;
+
+  TaskStatusEnum(final String label) {
+    value = label;
+  }
+
+  public String getValue() {
+    return value;
+  }
 }

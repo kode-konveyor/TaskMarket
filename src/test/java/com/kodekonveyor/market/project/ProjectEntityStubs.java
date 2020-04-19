@@ -15,7 +15,7 @@ public class ProjectEntityStubs {
         .findAll();
     doReturn(ProjectEntityTestData.list()).when(projectEntityRepository)
         .findByName(TaskDToTestData.get().getProject());
-    doReturn(ProjectEntityTestData.listNullMilestone())
+    doReturn(ProjectEntityTestData.list())
         .when(projectEntityRepository)
         .findByName(ProjectEntityTestData.get().getName());
   }
