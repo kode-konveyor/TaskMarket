@@ -19,9 +19,9 @@ import com.kodekonveyor.authentication.AuthenticatedUserStubs;
 @ExtendWith(MockitoExtension.class)
 @MockitoSettings(strictness = Strictness.LENIENT)
 @RunWith(MockitoJUnitRunner.class)
-@TestedBehaviour("store contract details")
+@TestedBehaviour("store username")
 @TestedService("RegistrationController")
-public class RegistrationControllerStoreContractDetailsTest
+public class RegistrationControllerStoreUsernameTest
     extends RegistrationControllerTestBase {
 
   @Test
