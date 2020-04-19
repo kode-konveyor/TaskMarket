@@ -1,5 +1,6 @@
 package com.kodekonveyor.market.tasks;
 
+<<<<<<< HEAD
 import com.kodekonveyor.market.project.ProjectEntityTestData;
 import com.kodekonveyor.market.register.MarketUserEntityTestData;
 

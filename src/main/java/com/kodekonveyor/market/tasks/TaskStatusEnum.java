@@ -7,14 +7,4 @@ public enum TaskStatusEnum {
   OPEN("open"),
   UP_FOR_GRAB("up for grab");
 
-  private String status;
-
-  TaskStatusEnum(final String status) {
-    this.status = status;
-  }
-
-  public String getValue() {
-    return status;
-  }
-
 }

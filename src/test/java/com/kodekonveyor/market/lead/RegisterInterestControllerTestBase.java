@@ -3,8 +3,7 @@ package com.kodekonveyor.market.lead;
 import org.junit.jupiter.api.BeforeEach;
 import org.mockito.InjectMocks;
 import org.mockito.Mock;
-
-import com.kodekonveyor.market.LoggerService;
+import org.slf4j.Logger;
 
 public class RegisterInterestControllerTestBase {
 
@@ -12,7 +11,7 @@ public class RegisterInterestControllerTestBase {
   LeadEntityRepository leadEntityRepository;
 
   @Mock
-  LoggerService loggerService;
+  Logger loggerService;
 
   @InjectMocks
   RegisterInterestController registerInterestController;

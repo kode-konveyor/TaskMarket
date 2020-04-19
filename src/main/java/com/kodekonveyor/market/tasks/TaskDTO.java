@@ -10,5 +10,4 @@ public class TaskDTO {
   private String project;
   private String responsible;
   private TaskStatusEnum status;
-
 }

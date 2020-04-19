@@ -14,7 +14,7 @@ import org.mockito.quality.Strictness;
 
 import com.kodekonveyor.annotations.TestedBehaviour;
 import com.kodekonveyor.annotations.TestedService;
-import com.kodekonveyor.market.LogSeverityEnum;
+import com.kodekonveyor.logging.LoggingMarkerConstants;
 import com.kodekonveyor.market.RegisterInterestControllerTestData;
 
 @ExtendWith(MockitoExtension.class)
@@ -63,10 +63,10 @@ public class RegisterInterestControllerStorageTest
   void test3() {
     registerInterestController.call(LeadDTOTestData.get());
     verify(loggerService)
-        .call(
-            RegisterInterestControllerTestData.LEAD_RECEIVED,
-            LogSeverityEnum.INFO,
-            LeadDTOTestData.get().toString()
+        .info(
+            LoggingMarkerConstants.LEAD,
+            RegisterInterestControllerTestData.LEAD_RECEIVED +
+                LeadDTOTestData.get().toString()
         );
   }
 
