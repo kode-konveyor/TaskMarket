@@ -1,4 +1,4 @@
-package com.kodekonveyor.logging;
+package com.kodekonveyor.log;
 
 import java.io.IOException;
 

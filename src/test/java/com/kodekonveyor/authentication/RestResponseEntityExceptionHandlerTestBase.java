@@ -5,7 +5,7 @@ import org.mockito.InjectMocks;
 import org.mockito.Mock;
 import org.slf4j.Logger;
 
-import com.kodekonveyor.market.RestResponseEntityExceptionHandler;
+import com.kodekonveyor.log.RestResponseEntityExceptionHandler;
 
 public class RestResponseEntityExceptionHandlerTestBase {
 

@@ -15,7 +15,7 @@ import org.springframework.security.core.context.SecurityContext;
 import org.springframework.security.core.context.SecurityContextHolder;
 
 import com.kodekonveyor.annotations.InterfaceClass;
-import com.kodekonveyor.logging.LoggingMarkerConstants;
+import com.kodekonveyor.log.LoggingMarkerConstants;
 
 @InterfaceClass
 public class RemoteAuthenticationService { //NOPMD This class should not be managed by Spring

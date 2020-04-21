@@ -1,4 +1,4 @@
-package com.kodekonveyor.market;
+package com.kodekonveyor.log;
 
 import org.slf4j.Logger;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -13,7 +13,9 @@ import org.springframework.web.servlet.mvc.method.annotation.ResponseEntityExcep
 import com.kodekonveyor.annotations.ExcludeFromCodeCoverage;
 import com.kodekonveyor.annotations.InterfaceClass;
 import com.kodekonveyor.authentication.NotLoggedInException;
-import com.kodekonveyor.logging.LoggingMarkerConstants;
+import com.kodekonveyor.market.MarketConstants;
+import com.kodekonveyor.market.UnauthorizedException;
+import com.kodekonveyor.market.ValidationException;
 
 @ControllerAdvice
 @InterfaceClass

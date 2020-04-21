@@ -17,7 +17,7 @@ import org.springframework.web.context.request.WebRequest;
 
 import com.kodekonveyor.annotations.TestedBehaviour;
 import com.kodekonveyor.annotations.TestedService;
-import com.kodekonveyor.logging.LoggingMarkerConstants;
+import com.kodekonveyor.log.LoggingMarkerConstants;
 import com.kodekonveyor.market.UnauthorizedException;
 
 @ExtendWith(MockitoExtension.class)

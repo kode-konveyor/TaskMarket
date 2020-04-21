@@ -11,7 +11,7 @@ import org.springframework.stereotype.Service;
 import org.springframework.web.server.ResponseStatusException;
 
 import com.kodekonveyor.annotations.ExcludeFromCodeCoverage;
-import com.kodekonveyor.logging.LoggingMarkerConstants;
+import com.kodekonveyor.log.LoggingMarkerConstants;
 import com.kodekonveyor.market.proxies.ObjectMapperService;
 
 @Service
