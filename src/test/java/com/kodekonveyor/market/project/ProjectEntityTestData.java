@@ -8,11 +8,23 @@ public class ProjectEntityTestData {
     final ProjectEntity entity = new ProjectEntity();
     entity.setId(ProjectDTOTestData.ID);
     entity.setName(ProjectDTOTestData.NAME);
+    entity.setMilestones(ModelExcerptDTOTestData.MILESTONE);
     return entity;
   }
 
   public static Object list() {
     return List.of(get());
+  }
+
+  public static ProjectEntity getNullMilestone() {
+    final ProjectEntity entity = get();
+    entity.setMilestones(null);
+    return entity;
+  }
+
+  public static Object listNullMilestone() {
+    return List.of(getNullMilestone());
+
   }
 
 }
