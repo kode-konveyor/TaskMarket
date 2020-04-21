@@ -2462,7 +2462,7 @@ https://www.baeldung.com/get-user-in-spring-security</documentation>
          </child>
          <child xsi:type="zenta:DiagramObject"
                 id="92e6c8a6-301a-4a0c-aae1-d8625c057ee6"
-                targetConnections="cde1f6e2-6746-4145-9f94-27bd386af0bf 197a2238-b367-4aca-b098-d026500ff54d 974240e1-919c-43fa-97d0-bf966e6eb424 f6ae52a0-9ee4-459d-bb03-aff6f6e88ffb df45eb5d-33e1-4ee6-aa46-07f1bac97431 8987c651-3f42-4263-a577-9712bf30bc4b"
+                targetConnections="197a2238-b367-4aca-b098-d026500ff54d 974240e1-919c-43fa-97d0-bf966e6eb424 f6ae52a0-9ee4-459d-bb03-aff6f6e88ffb df45eb5d-33e1-4ee6-aa46-07f1bac97431 8987c651-3f42-4263-a577-9712bf30bc4b"
                 zentaElement="7b3d615e-cff0-4fa3-87d8-c4c901516451">
             <bounds x="-444" y="1611" width="-1" height="-1"/>
          </child>
@@ -2677,7 +2677,7 @@ https://www.baeldung.com/get-user-in-spring-security</documentation>
          </child>
          <child xsi:type="zenta:DiagramObject"
                 id="b462cc30-4618-43ea-a3f0-d13bb8bc60ee"
-                targetConnections="3a58294c-b1af-4ff3-99ab-588f23483e96 b2870cea-8340-4378-a7dc-eabe34562e2c"
+                targetConnections="b2870cea-8340-4378-a7dc-eabe34562e2c"
                 zentaElement="ed77e57f-0e43-4dcb-9d15-6bcdab015350">
             <bounds x="-456" y="2198" width="247"/>
             <sourceConnection xsi:type="zenta:Connection"
@@ -2688,19 +2688,18 @@ https://www.baeldung.com/get-user-in-spring-security</documentation>
          </child>
          <child xsi:type="zenta:DiagramObject"
                 id="cd73abed-ae12-4a45-ba8b-8e1e17adf978"
-                targetConnections="e9066b43-7fb8-4678-bb31-0468c3e145d5"
                 zentaElement="1a974cd4-cf42-4311-ac12-fa526450a4b7">
             <bounds x="924" y="1974" width="-1" height="-1"/>
          </child>
          <child xsi:type="zenta:DiagramObject"
                 id="2bd5cd5b-d024-4411-b372-d204e142d4d1"
-                targetConnections="d7dae26e-f0fb-439a-9b67-6a8c7c8975fe 720f9792-29c7-4414-a268-2aa214710722"
+                targetConnections="720f9792-29c7-4414-a268-2aa214710722"
                 zentaElement="47dea8e0-8d9d-4391-bb1b-d70a6771e1f5">
             <bounds x="924" y="2049" width="-1" height="-1"/>
          </child>
          <child xsi:type="zenta:DiagramObject"
                 id="cd13ed79-5cb8-4fa2-a22a-92bef987ba53"
-                targetConnections="e6a54d6e-3d06-43fb-8554-e93b48fc6493 dfe759bf-8ffb-4d10-bfcb-3dce484c45f8 21dad803-f53f-446e-ac4a-a6837feac060"
+                targetConnections="e6a54d6e-3d06-43fb-8554-e93b48fc6493"
                 zentaElement="3ddfa75d-15f7-4f42-82ed-c3aa07b1d298">
             <bounds x="99" y="1920" width="-1" height="-1"/>
             <sourceConnection xsi:type="zenta:Connection"
@@ -2765,26 +2764,6 @@ https://www.baeldung.com/get-user-in-spring-security</documentation>
                    targetConnections="7845b289-ba2d-42cc-a61c-375301855fa1 0fb6c2dd-7d93-4aa3-a25e-11f53e7b2c44"
                    zentaElement="e4f036eb-ed47-4d89-b3a4-62a8232fe185">
                <bounds x="60" y="180" width="-1" height="-1"/>
-               <sourceConnection xsi:type="zenta:Connection"
-                                 id="cde1f6e2-6746-4145-9f94-27bd386af0bf"
-                                 source="31f7e3f6-1512-4e7c-8834-6b260650c139"
-                                 target="92e6c8a6-301a-4a0c-aae1-d8625c057ee6"
-                                 relationship="65f4dc5b-8a24-47a5-9054-841e33e7cc5a"/>
-               <sourceConnection xsi:type="zenta:Connection"
-                                 id="3a58294c-b1af-4ff3-99ab-588f23483e96"
-                                 source="31f7e3f6-1512-4e7c-8834-6b260650c139"
-                                 target="b462cc30-4618-43ea-a3f0-d13bb8bc60ee"
-                                 relationship="9e95a48a-8418-41b3-a66b-003fd39b4d36"/>
-               <sourceConnection xsi:type="zenta:Connection"
-                                 id="e9066b43-7fb8-4678-bb31-0468c3e145d5"
-                                 source="31f7e3f6-1512-4e7c-8834-6b260650c139"
-                                 target="cd73abed-ae12-4a45-ba8b-8e1e17adf978"
-                                 relationship="ce06263d-e177-4f93-9f08-b3c328d23af1"/>
-               <sourceConnection xsi:type="zenta:Connection"
-                                 id="d7dae26e-f0fb-439a-9b67-6a8c7c8975fe"
-                                 source="31f7e3f6-1512-4e7c-8834-6b260650c139"
-                                 target="2bd5cd5b-d024-4411-b372-d204e142d4d1"
-                                 relationship="0873995b-b851-49a9-9298-08170a21f63d"/>
                <sourceConnection xsi:type="zenta:Connection"
                                  id="e518e389-c197-4522-846e-c25f84405abb"
                                  source="31f7e3f6-1512-4e7c-8834-6b260650c139"
@@ -3730,16 +3709,6 @@ https://www.baeldung.com/get-user-in-spring-security</documentation>
                               target="b462cc30-4618-43ea-a3f0-d13bb8bc60ee"
                               relationship="898c2245-adfc-43a3-9659-8d40f6a05ec5"/>
             <sourceConnection xsi:type="zenta:Connection"
-                              id="dfe759bf-8ffb-4d10-bfcb-3dce484c45f8"
-                              source="e9802684-63c3-43ca-98c9-b56a794014f8"
-                              target="cd13ed79-5cb8-4fa2-a22a-92bef987ba53"
-                              relationship="1036532f-4488-42a2-9d0c-f434d1d4e3f4"/>
-            <sourceConnection xsi:type="zenta:Connection"
-                              id="21dad803-f53f-446e-ac4a-a6837feac060"
-                              source="e9802684-63c3-43ca-98c9-b56a794014f8"
-                              target="cd13ed79-5cb8-4fa2-a22a-92bef987ba53"
-                              relationship="23d13e55-cb70-49a9-993c-45e2149c410a"/>
-            <sourceConnection xsi:type="zenta:Connection"
                               id="1566465f-c7a3-4c78-af8b-632d3f93e3a9"
                               source="e9802684-63c3-43ca-98c9-b56a794014f8"
                               target="f6ba605e-8af4-4b3e-97e7-1e939dea728f"
@@ -3859,11 +3828,6 @@ https://www.baeldung.com/get-user-in-spring-security</documentation>
                               source="850630ba-ff34-480e-ad06-21a823cf976e"
                               target="b57d0970-05eb-4c67-bc73-93ac933d92e8"
                               relationship="635e6975-2283-40c0-97f6-33667ee5e269"/>
-            <sourceConnection xsi:type="zenta:Connection"
-                              id="24811b58-dcaf-4d13-beb4-19bafa44ad0d"
-                              source="850630ba-ff34-480e-ad06-21a823cf976e"
-                              target="3111bf5e-ea8c-4f39-9b3a-aa7d2090ba76"
-                              relationship="410b0d97-2d24-4c39-991f-bb648bf3b685"/>
          </child>
          <child xsi:type="zenta:DiagramObject"
                 id="5c6ba951-84c1-433d-828c-cfff361f3775"
@@ -3892,7 +3856,6 @@ https://www.baeldung.com/get-user-in-spring-security</documentation>
          </child>
          <child xsi:type="zenta:DiagramObject"
                 id="3111bf5e-ea8c-4f39-9b3a-aa7d2090ba76"
-                targetConnections="24811b58-dcaf-4d13-beb4-19bafa44ad0d"
                 zentaElement="da00a366-3bdb-4fa5-a29b-e84703ac09bd">
             <bounds x="-351" y="3743" width="-1" height="-1"/>
             <sourceConnection xsi:type="zenta:Connection"
@@ -4196,16 +4159,6 @@ https://www.baeldung.com/get-user-in-spring-security</documentation>
                ancestor="3dd7b0b1-bd9f-4a13-b5d9-9db0200af5b8"
                source="994fba20-1037-41c8-9db3-7c39bb49d2d8"
                target="ed77e57f-0e43-4dcb-9d15-6bcdab015350"/>
-      <element xsi:type="zenta:BasicRelationship"
-               id="1036532f-4488-42a2-9d0c-f434d1d4e3f4"
-               ancestor="d9f4a80e-d07b-4767-ad0a-aa86988783f8"
-               source="994fba20-1037-41c8-9db3-7c39bb49d2d8"
-               target="3ddfa75d-15f7-4f42-82ed-c3aa07b1d298"/>
-      <element xsi:type="zenta:BasicRelationship"
-               id="23d13e55-cb70-49a9-993c-45e2149c410a"
-               ancestor="64fbbfdf-420d-4756-821b-54fab6e7a8d2"
-               source="994fba20-1037-41c8-9db3-7c39bb49d2d8"
-               target="3ddfa75d-15f7-4f42-82ed-c3aa07b1d298"/>
       <element xsi:type="zenta:BasicRelationship"
                id="327f6725-33ee-4eb7-ab44-4f07fd1f14bf"
                ancestor="fcd1200e-2225-4b4f-914e-0846e429cf1a"
@@ -5508,15 +5461,25 @@ https://www.baeldung.com/get-user-in-spring-security</documentation>
                 zentaElement="6bdcadcd-8098-4a7f-97a4-b49a5ae32619">
             <bounds x="204" y="151" width="-1" height="-1"/>
             <sourceConnection xsi:type="zenta:Connection"
-                              id="b5b66050-76ed-4ecf-a7d9-7e564f6c6cdd"
+                              id="2a27d385-4a48-4417-9553-e6c3b57c6e93"
                               source="68dc61c4-6817-48a7-9f3b-adeeb9577d63"
-                              target="8a49d192-ff25-4869-9ddc-825d3edb8301"
-                              relationship="fbe15e94-9c7f-471c-bd79-4b336300aa00"/>
+                              target="9cfd76e3-b01a-40c4-a343-2b620c0b25b1"
+                              relationship="485081ad-d332-431a-809b-6ccd50a6568e"/>
             <sourceConnection xsi:type="zenta:Connection"
-                              id="4fb69745-5bf4-43ec-8f67-4edb7e9c2af2"
+                              id="35493d5e-66e7-4fe3-8de6-0d258a919926"
                               source="68dc61c4-6817-48a7-9f3b-adeeb9577d63"
-                              target="d3076fb4-c272-4b2f-b2ac-c0e956fe5ac1"
-                              relationship="d2fe1a42-e87d-4dcd-a9e2-b4375e690c9f"/>
+                              target="00af49d8-0ba1-4893-a522-e910edede56d"
+                              relationship="76262c62-d77c-44c5-acb8-f9695dd8a58b"/>
+            <sourceConnection xsi:type="zenta:Connection"
+                              id="5d3ba2be-74ad-4174-ac5e-c9cfc103902b"
+                              source="68dc61c4-6817-48a7-9f3b-adeeb9577d63"
+                              target="5709981f-3431-4757-aa1b-84ae9e3390f0"
+                              relationship="69c1c6ab-59a6-488c-bc9f-0fd87439bfdc"/>
+            <sourceConnection xsi:type="zenta:Connection"
+                              id="ad4e1fc5-2da8-476d-995f-4ca472bf2749"
+                              source="68dc61c4-6817-48a7-9f3b-adeeb9577d63"
+                              target="4a43ba25-2863-46a6-a998-dd76dbf07a4a"
+                              relationship="668e4b7b-9d33-43bf-95fe-d5be16c54f08"/>
          </child>
          <child xsi:type="zenta:DiagramObject"
                 id="f678918e-04fa-4cce-92b5-2c751044c64d"
@@ -5596,11 +5559,6 @@ https://www.baeldung.com/get-user-in-spring-security</documentation>
                 zentaElement="06008814-0727-4cf6-b810-e01d70c3b72c">
             <bounds x="55" y="151" width="-1" height="-1"/>
             <sourceConnection xsi:type="zenta:Connection"
-                              id="2ecacc9c-b8ed-41b0-8f8f-6d1b06f7a9c1"
-                              source="90d1bb4c-1e76-4043-b3d4-11d25c7b5c8e"
-                              target="c0748c19-341b-4db6-8ca8-14e73b3a94cb"
-                              relationship="511512b2-4e9d-4b68-9a7a-e12e62a639e5"/>
-            <sourceConnection xsi:type="zenta:Connection"
                               id="c01c4daf-1dea-4609-a71a-08e09c0e2d01"
                               source="90d1bb4c-1e76-4043-b3d4-11d25c7b5c8e"
                               target="d4e13a75-702f-4722-92b9-056f249801dd"
@@ -5630,9 +5588,9 @@ https://www.baeldung.com/get-user-in-spring-security</documentation>
          </child>
          <child xsi:type="zenta:DiagramObject"
                 id="c0748c19-341b-4db6-8ca8-14e73b3a94cb"
-                targetConnections="2ecacc9c-b8ed-41b0-8f8f-6d1b06f7a9c1"
+                targetConnections="c1740feb-478c-4fb4-aba4-abf7040575f1"
                 zentaElement="a0dbab86-51c7-43a3-b073-a91f7b7eec55">
-            <bounds x="55" y="504" height="85"/>
+            <bounds x="328" y="948" height="85"/>
          </child>
          <child xsi:type="zenta:DiagramObject"
                 id="d4e13a75-702f-4722-92b9-056f249801dd"
@@ -5642,9 +5600,9 @@ https://www.baeldung.com/get-user-in-spring-security</documentation>
          </child>
          <child xsi:type="zenta:DiagramObject"
                 id="8a49d192-ff25-4869-9ddc-825d3edb8301"
-                targetConnections="b5b66050-76ed-4ecf-a7d9-7e564f6c6cdd"
+                targetConnections="6d66e3c8-8ad3-4911-b88d-973ceb71f266"
                 zentaElement="e7741930-a840-4d00-a236-3d26d10d0fe8">
-            <bounds x="204" y="252" width="-1" height="-1"/>
+            <bounds x="328" y="780" width="-1" height="-1"/>
          </child>
          <child xsi:type="zenta:DiagramObject"
                 id="a24436ad-24c7-4e8b-8067-09cfbedf9099"
@@ -5737,6 +5695,16 @@ https://www.baeldung.com/get-user-in-spring-security</documentation>
                               source="07cf9c03-0fa2-4f5c-8d42-8acf64edbbfe"
                               target="fddbbe21-c3a2-4238-8e6b-2b47bd391a72"
                               relationship="6527ae8e-37a9-44d3-8a6c-47dea08de347"/>
+            <sourceConnection xsi:type="zenta:Connection"
+                              id="617d0578-8675-4a01-9140-96a762b312c0"
+                              source="07cf9c03-0fa2-4f5c-8d42-8acf64edbbfe"
+                              target="142c8484-5b92-4392-984a-10eeeb86e804"
+                              relationship="54188d64-eb00-424b-8a03-516d31cbb53f"/>
+            <sourceConnection xsi:type="zenta:Connection"
+                              id="7f514bee-de17-466c-b862-cc309e1f2076"
+                              source="07cf9c03-0fa2-4f5c-8d42-8acf64edbbfe"
+                              target="5be8d7fb-10ca-490d-904a-fbb76d568759"
+                              relationship="f0b7dfd9-ce15-4f2a-85a5-f988e4f62d8e"/>
          </child>
          <child xsi:type="zenta:DiagramObject"
                 id="0cd540b8-4650-45f2-8e44-d9dce1deff0f"
@@ -5824,9 +5792,9 @@ https://www.baeldung.com/get-user-in-spring-security</documentation>
          </child>
          <child xsi:type="zenta:DiagramObject"
                 id="d3076fb4-c272-4b2f-b2ac-c0e956fe5ac1"
-                targetConnections="4fb69745-5bf4-43ec-8f67-4edb7e9c2af2"
+                targetConnections="a2b6827f-a684-43aa-8620-a0180a0722ce"
                 zentaElement="e4f036eb-ed47-4d89-b3a4-62a8232fe185">
-            <bounds x="204" y="360" width="-1" height="-1"/>
+            <bounds x="312" y="864" width="-1" height="-1"/>
          </child>
          <child xsi:type="zenta:DiagramObject"
                 id="e99cc085-001a-43e8-a624-494040b10a07"
@@ -5844,7 +5812,7 @@ https://www.baeldung.com/get-user-in-spring-security</documentation>
                 id="2c07022e-c374-4d60-bc5e-493c92a1902f"
                 targetConnections="84c1e011-27fb-467b-b741-822ae9e1f72a"
                 zentaElement="6e110a6e-4572-43d6-b4d3-dba43ba5c489">
-            <bounds x="492" y="252" width="-1" height="-1"/>
+            <bounds x="492" y="780" width="-1" height="-1"/>
          </child>
          <child xsi:type="zenta:DiagramObject"
                 id="cde3018f-c5bf-4910-9dd8-844cad310870"
@@ -5877,7 +5845,7 @@ https://www.baeldung.com/get-user-in-spring-security</documentation>
                 id="3bec6b71-dc04-4bac-a5a3-c03d7aa48e66"
                 targetConnections="9343a2be-a3e3-4ee0-a311-44d0faf94159"
                 zentaElement="635be1e6-f9af-451f-b522-160bf55f1357">
-            <bounds x="492" y="151" width="-1" height="-1"/>
+            <bounds x="492" y="699" width="-1" height="-1"/>
             <sourceConnection xsi:type="zenta:Connection"
                               id="84c1e011-27fb-467b-b741-822ae9e1f72a"
                               source="3bec6b71-dc04-4bac-a5a3-c03d7aa48e66"
@@ -5945,6 +5913,79 @@ https://www.baeldung.com/get-user-in-spring-security</documentation>
                 targetConnections="eae70d42-9d8d-4a7b-8129-69ba000c5fc6"
                 zentaElement="23e8d67b-245e-4dc8-ae5e-0e8380b3450a">
             <bounds x="55" y="336" width="-1" height="-1"/>
+         </child>
+         <child xsi:type="zenta:DiagramObject"
+                id="142c8484-5b92-4392-984a-10eeeb86e804"
+                targetConnections="617d0578-8675-4a01-9140-96a762b312c0"
+                zentaElement="9d580595-f26d-405a-8169-14596def2211">
+            <bounds x="328" y="699" width="-1" height="-1"/>
+            <sourceConnection xsi:type="zenta:Connection"
+                              id="6d66e3c8-8ad3-4911-b88d-973ceb71f266"
+                              source="142c8484-5b92-4392-984a-10eeeb86e804"
+                              target="8a49d192-ff25-4869-9ddc-825d3edb8301"
+                              relationship="834ce34d-5f75-409d-ab70-51299389cf77"/>
+            <sourceConnection xsi:type="zenta:Connection"
+                              id="a2b6827f-a684-43aa-8620-a0180a0722ce"
+                              source="142c8484-5b92-4392-984a-10eeeb86e804"
+                              target="d3076fb4-c272-4b2f-b2ac-c0e956fe5ac1"
+                              relationship="a958f897-f00f-4cfa-bfca-b99d5ef0cf54"/>
+            <sourceConnection xsi:type="zenta:Connection"
+                              id="c1740feb-478c-4fb4-aba4-abf7040575f1"
+                              source="142c8484-5b92-4392-984a-10eeeb86e804"
+                              target="c0748c19-341b-4db6-8ca8-14e73b3a94cb"
+                              relationship="ca17254d-aa34-4805-ab90-5e7e33603e71"/>
+         </child>
+         <child xsi:type="zenta:DiagramObject"
+                id="9cfd76e3-b01a-40c4-a343-2b620c0b25b1"
+                targetConnections="2a27d385-4a48-4417-9553-e6c3b57c6e93"
+                zentaElement="fb44dc58-ccdc-4afa-ba41-44c0d59dbdc8">
+            <bounds x="204" y="252" width="-1" height="-1"/>
+         </child>
+         <child xsi:type="zenta:DiagramObject"
+                id="00af49d8-0ba1-4893-a522-e910edede56d"
+                targetConnections="35493d5e-66e7-4fe3-8de6-0d258a919926"
+                zentaElement="7d8fe2eb-fea8-47b3-a357-26b7f0d91c42">
+            <bounds x="193" y="348" width="-1" height="-1"/>
+         </child>
+         <child xsi:type="zenta:DiagramObject"
+                id="5709981f-3431-4757-aa1b-84ae9e3390f0"
+                targetConnections="5d3ba2be-74ad-4174-ac5e-c9cfc103902b"
+                zentaElement="6a69a163-a04c-4764-ab1a-c676f0bc2e82">
+            <bounds x="204" y="432" width="-1" height="-1"/>
+         </child>
+         <child xsi:type="zenta:DiagramObject"
+                id="4a43ba25-2863-46a6-a998-dd76dbf07a4a"
+                targetConnections="ad4e1fc5-2da8-476d-995f-4ca472bf2749"
+                zentaElement="994fba20-1037-41c8-9db3-7c39bb49d2d8">
+            <bounds x="204" y="516" width="-1" height="-1"/>
+         </child>
+         <child xsi:type="zenta:DiagramObject"
+                id="9875c2ff-8b28-48af-b734-96f3efffbaff"
+                targetConnections="cb5f858d-d4d9-42aa-9b63-e900f2bddcd6"
+                zentaElement="da00a366-3bdb-4fa5-a29b-e84703ac09bd">
+            <bounds x="741" y="744" width="-1" height="-1"/>
+         </child>
+         <child xsi:type="zenta:DiagramObject"
+                id="70fa6f7a-6b15-4358-bddc-28b2654fe496"
+                targetConnections="fc3a1aa9-1f60-4d51-8ea0-22284447d5da"
+                zentaElement="e3f3dfdf-1f47-49e7-8a4f-c7dd41a0750e">
+            <bounds x="741" y="834" width="-1" height="-1"/>
+         </child>
+         <child xsi:type="zenta:DiagramObject"
+                id="5be8d7fb-10ca-490d-904a-fbb76d568759"
+                targetConnections="7f514bee-de17-466c-b862-cc309e1f2076"
+                zentaElement="ecc434b5-5598-4e7a-86e5-fc807b082aac">
+            <bounds x="724" y="655" width="153"/>
+            <sourceConnection xsi:type="zenta:Connection"
+                              id="cb5f858d-d4d9-42aa-9b63-e900f2bddcd6"
+                              source="5be8d7fb-10ca-490d-904a-fbb76d568759"
+                              target="9875c2ff-8b28-48af-b734-96f3efffbaff"
+                              relationship="a7584331-f236-4c15-bf21-9b41158d9962"/>
+            <sourceConnection xsi:type="zenta:Connection"
+                              id="fc3a1aa9-1f60-4d51-8ea0-22284447d5da"
+                              source="5be8d7fb-10ca-490d-904a-fbb76d568759"
+                              target="70fa6f7a-6b15-4358-bddc-28b2654fe496"
+                              relationship="20f693d5-1d6a-4da4-b79d-7622df659a80"/>
          </child>
       </element>
       <element xsi:type="zenta:BasicObject"
@@ -6074,6 +6115,69 @@ https://www.baeldung.com/get-user-in-spring-security</documentation>
                ancestor="f0d0d4a5-201b-41b4-a047-70308c99bdb7"
                source="06008814-0727-4cf6-b810-e01d70c3b72c"
                target="23e8d67b-245e-4dc8-ae5e-0e8380b3450a"/>
+      <element xsi:type="zenta:BasicObject"
+               name="project management frontend"
+               id="9d580595-f26d-405a-8169-14596def2211"
+               ancestor="36a15a23-a4a0-40b5-901b-310f3a1df0c7"/>
+      <element xsi:type="zenta:BasicRelationship"
+               id="54188d64-eb00-424b-8a03-516d31cbb53f"
+               ancestor="f9bf6994-4d9c-4c50-b9ad-e2e11b94ff2e"
+               source="3b808574-17a4-4bd8-89ab-b20b717a6422"
+               target="9d580595-f26d-405a-8169-14596def2211"/>
+      <element xsi:type="zenta:BasicRelationship"
+               id="485081ad-d332-431a-809b-6ccd50a6568e"
+               ancestor="f0d0d4a5-201b-41b4-a047-70308c99bdb7"
+               source="6bdcadcd-8098-4a7f-97a4-b49a5ae32619"
+               target="fb44dc58-ccdc-4afa-ba41-44c0d59dbdc8"/>
+      <element xsi:type="zenta:BasicRelationship"
+               id="76262c62-d77c-44c5-acb8-f9695dd8a58b"
+               ancestor="f0d0d4a5-201b-41b4-a047-70308c99bdb7"
+               source="6bdcadcd-8098-4a7f-97a4-b49a5ae32619"
+               target="7d8fe2eb-fea8-47b3-a357-26b7f0d91c42"/>
+      <element xsi:type="zenta:BasicRelationship"
+               id="69c1c6ab-59a6-488c-bc9f-0fd87439bfdc"
+               ancestor="f0d0d4a5-201b-41b4-a047-70308c99bdb7"
+               source="6bdcadcd-8098-4a7f-97a4-b49a5ae32619"
+               target="6a69a163-a04c-4764-ab1a-c676f0bc2e82"/>
+      <element xsi:type="zenta:BasicRelationship"
+               id="668e4b7b-9d33-43bf-95fe-d5be16c54f08"
+               ancestor="f0d0d4a5-201b-41b4-a047-70308c99bdb7"
+               source="6bdcadcd-8098-4a7f-97a4-b49a5ae32619"
+               target="994fba20-1037-41c8-9db3-7c39bb49d2d8"/>
+      <element xsi:type="zenta:BasicRelationship"
+               id="834ce34d-5f75-409d-ab70-51299389cf77"
+               ancestor="f0d0d4a5-201b-41b4-a047-70308c99bdb7"
+               source="9d580595-f26d-405a-8169-14596def2211"
+               target="e7741930-a840-4d00-a236-3d26d10d0fe8"/>
+      <element xsi:type="zenta:BasicRelationship"
+               id="a958f897-f00f-4cfa-bfca-b99d5ef0cf54"
+               ancestor="f0d0d4a5-201b-41b4-a047-70308c99bdb7"
+               source="9d580595-f26d-405a-8169-14596def2211"
+               target="e4f036eb-ed47-4d89-b3a4-62a8232fe185"/>
+      <element xsi:type="zenta:BasicRelationship"
+               id="ca17254d-aa34-4805-ab90-5e7e33603e71"
+               ancestor="f0d0d4a5-201b-41b4-a047-70308c99bdb7"
+               source="9d580595-f26d-405a-8169-14596def2211"
+               target="a0dbab86-51c7-43a3-b073-a91f7b7eec55"/>
+      <element xsi:type="zenta:BasicObject"
+               name="lead management frontend"
+               id="ecc434b5-5598-4e7a-86e5-fc807b082aac"
+               ancestor="36a15a23-a4a0-40b5-901b-310f3a1df0c7"/>
+      <element xsi:type="zenta:BasicRelationship"
+               id="f0b7dfd9-ce15-4f2a-85a5-f988e4f62d8e"
+               ancestor="f9bf6994-4d9c-4c50-b9ad-e2e11b94ff2e"
+               source="3b808574-17a4-4bd8-89ab-b20b717a6422"
+               target="ecc434b5-5598-4e7a-86e5-fc807b082aac"/>
+      <element xsi:type="zenta:BasicRelationship"
+               id="a7584331-f236-4c15-bf21-9b41158d9962"
+               ancestor="f0d0d4a5-201b-41b4-a047-70308c99bdb7"
+               source="ecc434b5-5598-4e7a-86e5-fc807b082aac"
+               target="da00a366-3bdb-4fa5-a29b-e84703ac09bd"/>
+      <element xsi:type="zenta:BasicRelationship"
+               id="20f693d5-1d6a-4da4-b79d-7622df659a80"
+               ancestor="f0d0d4a5-201b-41b4-a047-70308c99bdb7"
+               source="ecc434b5-5598-4e7a-86e5-fc807b082aac"
+               target="e3f3dfdf-1f47-49e7-8a4f-c7dd41a0750e"/>
    </folder>
    <folder name="0. Analysis relations" id="f0d3545d-9232-4a49-b554-c20256ce5fda">
       <property key="dispay" value="hidden"/>
@@ -6322,11 +6426,6 @@ https://www.baeldung.com/get-user-in-spring-security</documentation>
                ancestor="04ce9a45-2873-4e6b-abea-6f04ce048123"
                source="474eba13-2a5b-4b83-8156-26015edffab9"
                target="f22cec46-800c-4635-9310-b1f697083812"/>
-      <element xsi:type="zenta:BasicRelationship"
-               id="410b0d97-2d24-4c39-991f-bb648bf3b685"
-               ancestor="f53d0fd7-db6a-4b40-886b-55c0b3e7a8dd"
-               source="e3f3dfdf-1f47-49e7-8a4f-c7dd41a0750e"
-               target="da00a366-3bdb-4fa5-a29b-e84703ac09bd"/>
       <element xsi:type="zenta:BasicRelationship"
                id="2770a5a6-a831-4586-8e03-9fe0a520f9cc"
                ancestor="d9f4a80e-d07b-4767-ad0a-aa86988783f8"
@@ -7521,11 +7620,6 @@ the value o
                ancestor="f0d0d4a5-201b-41b4-a047-70308c99bdb7"
                source="d1754fb1-2177-4f76-9985-46678bbe0d7f"
                target="c8ddeafc-def8-4a87-ba7d-bddda0cc2cf9"/>
-      <element xsi:type="zenta:BasicRelationship"
-               id="d2fe1a42-e87d-4dcd-a9e2-b4375e690c9f"
-               ancestor="f0d0d4a5-201b-41b4-a047-70308c99bdb7"
-               source="6bdcadcd-8098-4a7f-97a4-b49a5ae32619"
-               target="e4f036eb-ed47-4d89-b3a4-62a8232fe185"/>
       <element xsi:type="zenta:BasicRelationship"
                id="7d50a94d-743a-44eb-8b79-33064c8bc924"
                ancestor="1a16ba6a-0441-4e7d-8f9c-f6394fcdd10b"
@@ -9282,11 +9376,6 @@ the value o
                                  target="703fe763-a6d9-4f56-b102-7eb6f1d91842"
                                  relationship="1f9a6418-6233-475f-b7c1-f0532ac27581"/>
                <sourceConnection xsi:type="zenta:Connection"
-                                 id="a34386b2-270b-4617-8137-480f5391c8bd"
-                                 source="8ed2b37e-8c2d-4e37-8f43-0d3cc8c5b585"
-                                 target="d1c7d946-c881-4bc1-b6b5-9517e502d57c"
-                                 relationship="410b0d97-2d24-4c39-991f-bb648bf3b685"/>
-               <sourceConnection xsi:type="zenta:Connection"
                                  id="a9994b22-447f-4554-8669-61ec854a6f4e"
                                  source="8ed2b37e-8c2d-4e37-8f43-0d3cc8c5b585"
                                  target="6bf0db40-09fb-456b-80c0-db043a089e11"
@@ -9373,7 +9462,7 @@ the value o
             </child>
             <child xsi:type="zenta:DiagramObject"
                    id="d1c7d946-c881-4bc1-b6b5-9517e502d57c"
-                   targetConnections="a34386b2-270b-4617-8137-480f5391c8bd 95ffb2fe-e062-41d3-ae6e-0fe1e115862f"
+                   targetConnections="95ffb2fe-e062-41d3-ae6e-0fe1e115862f"
                    zentaElement="da00a366-3bdb-4fa5-a29b-e84703ac09bd">
                <bounds x="288" y="552" width="-1" height="-1"/>
                <sourceConnection xsi:type="zenta:Connection"
