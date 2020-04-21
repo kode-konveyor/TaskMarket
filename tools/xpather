@@ -1,0 +1,3 @@
+#!/bin/bash
+zenta-xslt-runner -xsl:xslt/xpather.xslt $2 xpath="$1"
+
