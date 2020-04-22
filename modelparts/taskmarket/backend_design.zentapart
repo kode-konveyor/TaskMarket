@@ -97,24 +97,6 @@
                   name="Retrieves authenticated user"
                   id="01c14638-ac63-4be4-a171-c1c09128ee45"
                   ancestor="83af8497-bfef-451b-9bc6-f00d58c8df6a"/>
-         <element xsi:type="zenta:BasicObject"
-                  name="authenticated user"
-                  id="3f9b5e51-b3b3-42a8-aa54-4ed3b1195618"
-                  ancestor="behaviour">
-            <documentation>The current authenticated user is returned by the service</documentation>
-         </element>
-         <element xsi:type="zenta:BasicObject"
-                  name="authentication infrastructure"
-                  id="ae41ab47-cbfb-4053-bf32-d1b3f74dcde1"
-                  ancestor="behaviour">
-            <documentation>RemoteAuthenticationFilter is a authentication filter implementation to retrieve the auth0 authenticated user from apache
-
-NotLoggedInException is an exception signalling unauthenticated condition
-
-RemoteAuthentication is an Authentication implementation
-
-</documentation>
-         </element>
          <element xsi:type="zenta:BasicRelationship"
                   id="5b571747-7e1e-4183-9c8f-2ceb794881f9"
                   ancestor="d9f4a80e-d07b-4767-ad0a-aa86988783f8"
@@ -4114,10 +4096,6 @@ If you have questions, see the [FAQ](https://kodekonveyor.com/coder-faq/), or as
                      name="RedirectView"
                      id="dba65f54-d85f-4852-bdef-caafb5c36c1e"
                      ancestor="36ff5aca-f5cf-4e04-8d74-39cbb035cc2d"/>
-            <element xsi:type="zenta:BasicObject"
-                     name="next"
-                     id="2998f816-38ec-4e13-a2f6-9cb33351f885"
-                     ancestor="267f4d47-e1e6-4af4-8677-3cf65fc8db86"/>
             <element xsi:type="zenta:BasicRelationship"
                      id="1ed47bb8-0f41-4d3c-a9b4-e33238793831"
                      ancestor="a4e8d76c-ea15-4af4-8450-fc29f8c43fc1"
@@ -4133,10 +4111,6 @@ If you have questions, see the [FAQ](https://kodekonveyor.com/coder-faq/), or as
                      ancestor="d422da0f-0a3c-4bee-a969-37260d27808d"
                      source="2998f816-38ec-4e13-a2f6-9cb33351f885"
                      target="c27e212f-b01b-40cc-ab54-e2752e1e3746"/>
-            <element xsi:type="zenta:BasicObject"
-                     name="redirect"
-                     id="146b0e89-c49a-4fd4-a6b1-d87d755d4383"
-                     ancestor="267f4d47-e1e6-4af4-8677-3cf65fc8db86"/>
             <element xsi:type="zenta:BasicRelationship"
                      id="1f6dbbba-4236-4c9e-b65f-07ffde9f69e5"
                      ancestor="fcd1200e-2225-4b4f-914e-0846e429cf1a"
@@ -6339,10 +6313,6 @@ If you have questions, see the [FAQ](https://kodekonveyor.com/coder-faq/), or as
                      ancestor="07abb5cc-2ae6-4184-82a9-1ea3a680187c"
                      source="803a8ae6-3363-4989-b75b-f5104de1e51d"
                      target="7cba7443-ab6f-4bae-9b94-9a8cc7552ca0"/>
-            <element xsi:type="zenta:BasicObject"
-                     name="deliverable price in cents"
-                     id="0493236b-7c94-45dd-85f7-80c4df4ebb98"
-                     ancestor="267f4d47-e1e6-4af4-8677-3cf65fc8db86"/>
             <element xsi:type="zenta:BasicRelationship"
                      id="fc2beb4c-ca5f-47ad-bcc5-c67790835f02"
                      ancestor="8aa62b50-ef2a-41ed-99b8-4d853a945d86"
@@ -7051,25 +7021,6 @@ If you have questions, see the [FAQ](https://kodekonveyor.com/coder-faq/), or as
             </child>
          </element>
          <element xsi:type="zenta:BasicObject"
-                  name="Get tasks from github"
-                  id="f3edba53-ca06-4a83-a6e4-19e5fe7d8cda"
-                  ancestor="behaviour">
-            <documentation>Issues for one repository are gathered with GetRepositoryTasksService
-
-Issues can be retrieved according to this documentation: https://developer.github.com/v3/issues/#list-repository-issues
-
-The newly obtained tasks are saved in the repository
-
-The status is set by the following rules:
-- open issues marked as "up for grab" are UP_FOR_GRAB
-- open issues marked as "in progress" are IN_PROGRESS
-- other open issues are OPEN
-- closed issues are CLOSED
-
-
-</documentation>
-         </element>
-         <element xsi:type="zenta:BasicObject"
                   name="ListTasksController"
                   id="04a64ca0-b7dc-438b-ad76-e966ba0bd84c"
                   ancestor="5491f72b-93ec-4ad5-b6a9-2653fe808a03"/>
@@ -7117,17 +7068,6 @@ The status is set by the following rules:
                   ancestor="b1ae238b-8c08-4eb1-b9a1-c6d13903300e"
                   source="04a64ca0-b7dc-438b-ad76-e966ba0bd84c"
                   target="3b92647b-c7c1-4569-8f09-89605bc16d1e"/>
-         <element xsi:type="zenta:BasicObject"
-                  name="List user's tasks"
-                  id="e6761cfe-3e0f-4340-bf9a-f9d48d3badb3"
-                  ancestor="behaviour">
-            <documentation>The tasks should be listed for a user in the following order:
-- IN_PROGRESS tasks where the user is responsible
-- UP_FOR_GRAB tasks for closed projects the user is a member of
-- UP_FOR_GRAB tasks for open projects
-- CLOSED tasks where the user is responsible
-</documentation>
-         </element>
          <element xsi:type="zenta:BasicRelationship"
                   id="b642dacc-d56c-4809-9819-c3af3b440ad9"
                   ancestor="04ce9a45-2873-4e6b-abea-6f04ce048123"
@@ -7480,32 +7420,6 @@ The status is set by the following rules:
                   ancestor="3dd7b0b1-bd9f-4a13-b5d9-9db0200af5b8"
                   source="c8ddeafc-def8-4a87-ba7d-bddda0cc2cf9"
                   target="2d74115e-68e9-49dd-81e5-2dc488feedd0"/>
-         <element xsi:type="zenta:BasicObject"
-                  name="update tasks"
-                  id="47dea8e0-8d9d-4391-bb1b-d70a6771e1f5"
-                  ancestor="behaviour">
-            <documentation>The tasks are updated by the project manager as part of updating the project model.
-
-This is called from UpdateProjectModelController, and implemented in UpdateTasksService.
-
-Current tasks are gathered using GetRepositoryTasksService
-
-Github issue descriptions have a beginning and ending delimiter line.
-* the beginning delimiter line is: "Task Description:"
-* the ending delimiter line is: "End of Task Description"
-
-For each tasks in the tasks parameter:
-The task name is &lt;serviceName&gt;/&lt;behaviourName&gt;.
-* If there is no github issue with the name, then it is created.
-* If there is already a github issue with the name
-  * if the documentationof the task is the same as the documentation of the github issue between the delimiter lines, then nothing is done
-  * in case of difference, then the documentation is put between delimiter lines, the diff of the whole issue description and the task documentation is put after the ending delimiter line, and the task is updated
-
-If a github issue has no corresponding task in the list, it is marked with the "not in model" label (if it does not already have it)
- 
-
-</documentation>
-         </element>
          <element xsi:type="zenta:BasicRelationship"
                   id="f103233a-014c-411e-ada0-c5adc06e42fb"
                   ancestor="f72b01f0-7ff9-48ba-9cd8-b4453fa00c0a"
@@ -7712,34 +7626,6 @@ If a github issue has no corresponding task in the list, it is marked with the "
                   ancestor="04ce9a45-2873-4e6b-abea-6f04ce048123"
                   source="ffe9debd-401a-4132-9450-b975f74c8e22"
                   target="cec810a4-2a91-4b4f-a7e7-1e3e325770f2"/>
-         <element xsi:type="zenta:BasicObject"
-                  name="use github api"
-                  id="9b5875a9-4845-4d7a-885c-883dea7c2485"
-                  ancestor="behaviour">
-            <documentation>use github api using token authentication
-
-You should set the "Authorization" header to "token my_access_token" as described in https://developer.github.com/changes/2020-02-14-deprecating-password-auth/
-
-See https://www.baeldung.com/httpclient-custom-http-header for setting the header.
-
-for access token you generate one at https://github.com/settings/tokens with "repo" scope, and put it to the "issuetoken" environment variable.
-
-In Linux you can use your .bashrc to set the environment variable. You can use the command line
-
-    curl -H "Authorization: token $issuetoken" https://api.github.com/repos/kode-konveyor/taskmarket/issues/74
-
-to check your environment.
-
-This service should be integration tested instead of unit testing:
-
-* put the tests under the src/integration-tests hierarchy
-* use the @ExcludeFromCodeCoverage annotation on the production service
-* no mocking, just calling the service and examining the result
-* read the value of the token from the issuetoken environment variable, and put it to the githubToken configuration field in the setUp method.
-
-
-</documentation>
-         </element>
          <element xsi:type="zenta:BasicRelationship"
                   id="381931dd-47f7-400c-9120-24979db8fe3e"
                   ancestor="04ce9a45-2873-4e6b-abea-6f04ce048123"
@@ -7897,18 +7783,6 @@ This service should be integration tested instead of unit testing:
                   name="GithubGetServiceTestData"
                   id="366281f0-7b65-4459-b9f8-3617850715ef"
                   ancestor="9ec42823-7056-4e73-b1f4-600a066c8d88"/>
-         <element xsi:type="zenta:BasicObject"
-                  name="URL"
-                  id="6fc17f7c-c45b-4263-91ba-abfeeffacfb7"
-                  ancestor="267f4d47-e1e6-4af4-8677-3cf65fc8db86"/>
-         <element xsi:type="zenta:BasicObject"
-                  name="expected type"
-                  id="639977dc-8337-41f9-b783-99c66ef9cfba"
-                  ancestor="267f4d47-e1e6-4af4-8677-3cf65fc8db86"/>
-         <element xsi:type="zenta:BasicObject"
-                  name="object"
-                  id="105a9a31-3adc-4338-944e-099976e157bf"
-                  ancestor="267f4d47-e1e6-4af4-8677-3cf65fc8db86"/>
          <element xsi:type="zenta:BasicObject"
                   name="EXPECTED_TYPE"
                   id="fb1d0159-4720-4969-9198-ccb683ae5b54"
@@ -8476,23 +8350,6 @@ This service should be integration tested instead of unit testing:
                   name="RestResponseEntityExceptionHandler"
                   id="0b7c97f6-08fd-4546-b80d-87ac07dbe1b3"
                   ancestor="callable"/>
-         <element xsi:type="zenta:BasicObject"
-                  name="exception handling"
-                  id="906f88cc-7dab-4e27-a2b0-92058eed3965"
-                  ancestor="behaviour">
-            <documentation>All exceptions explicitly thrown are converter to appropriate error messages.
-
-The exceptions are turned into error messages by RestResponseEntityExceptionHandler in the following way:
-
-NotLoggedInException : unauthorized
-UnauthorizedException: unauthorized
-ValidationException: bad request
-NotFoundException: not found
-other exceptions: 500
-
-The exception and message is logged by RestResponseEntityExceptionHandler
-</documentation>
-         </element>
          <element xsi:type="zenta:BasicRelationship"
                   id="9a62b222-7f37-4c1a-8b15-34f51a48e87b"
                   ancestor="04ce9a45-2873-4e6b-abea-6f04ce048123"
