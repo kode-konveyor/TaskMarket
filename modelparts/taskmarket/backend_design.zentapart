@@ -93,10 +93,6 @@
                <bounds x="600" y="324" width="-1" height="-1"/>
             </child>
          </element>
-         <element xsi:type="zenta:BasicObject"
-                  name="Retrieves authenticated user"
-                  id="01c14638-ac63-4be4-a171-c1c09128ee45"
-                  ancestor="83af8497-bfef-451b-9bc6-f00d58c8df6a"/>
          <element xsi:type="zenta:BasicRelationship"
                   id="5b571747-7e1e-4183-9c8f-2ceb794881f9"
                   ancestor="d9f4a80e-d07b-4767-ad0a-aa86988783f8"
@@ -502,25 +498,13 @@
                id="91b617b2-32a4-4e77-9883-a54ebca63034"
                ancestor="d3d4e39d-09a6-4a0f-a985-be922245d850"/>
       <element xsi:type="zenta:BasicObject"
-               name="Authenticate based on auth0"
-               id="081a0bca-81e5-407f-b557-b8ee88518638"
-               ancestor="83af8497-bfef-451b-9bc6-f00d58c8df6a"/>
-      <element xsi:type="zenta:BasicObject"
                name="RemoteAuthenticationFilter"
                id="94fd8369-4b9c-4f46-b1d6-baa4effb9a09"
                ancestor="callable"/>
       <element xsi:type="zenta:BasicObject"
-               name="Signals unauthenticated condition"
-               id="15101279-7200-4199-a2b5-59138691bb31"
-               ancestor="83af8497-bfef-451b-9bc6-f00d58c8df6a"/>
-      <element xsi:type="zenta:BasicObject"
                name="NotLoggedInException"
                id="5fa38dc0-12a1-4865-94ec-7d32d1761867"
                ancestor="callable"/>
-      <element xsi:type="zenta:BasicObject"
-               name="Conveys authentication information"
-               id="153d3e00-6b45-45e4-9c5a-f52aa938bc13"
-               ancestor="83af8497-bfef-451b-9bc6-f00d58c8df6a"/>
       <element xsi:type="zenta:BasicObject"
                name="RemoteAuthentication"
                id="ba2a43e8-5a13-4483-88c5-c62b459a621b"
@@ -4085,10 +4069,6 @@ If you have questions, see the [FAQ](https://kodekonveyor.com/coder-faq/), or as
                </child>
             </element>
             <element xsi:type="zenta:BasicObject"
-                     name="Log in"
-                     id="9993ad73-7a8f-4330-92cb-da11167aa552"
-                     ancestor="83af8497-bfef-451b-9bc6-f00d58c8df6a"/>
-            <element xsi:type="zenta:BasicObject"
                      name="LoginController"
                      id="4be6da96-cc23-4da1-8229-c3cae77db637"
                      ancestor="5491f72b-93ec-4ad5-b6a9-2653fe808a03"/>
@@ -4247,10 +4227,6 @@ If you have questions, see the [FAQ](https://kodekonveyor.com/coder-faq/), or as
                   <bounds x="35" y="649" width="-1" height="-1"/>
                </child>
             </element>
-            <element xsi:type="zenta:BasicObject"
-                     name="Compiles a market user dto according to the querying role"
-                     id="ce6ad605-d92c-406d-b1aa-55158a37233b"
-                     ancestor="83af8497-bfef-451b-9bc6-f00d58c8df6a"/>
             <element xsi:type="zenta:BasicObject"
                      name="MarketUserCompilerService"
                      id="fcb4dcf9-b716-4ae6-8473-b43407fd3366"
@@ -7986,10 +7962,6 @@ If you have questions, see the [FAQ](https://kodekonveyor.com/coder-faq/), or as
                                  relationship="aa17ec54-dcbc-4460-ab5b-64478a1c59dd"/>
             </child>
          </element>
-         <element xsi:type="zenta:BasicObject"
-                  name="logs events"
-                  id="9255b3fb-1ea3-400b-b184-bd3d2a8ec749"
-                  ancestor="83af8497-bfef-451b-9bc6-f00d58c8df6a"/>
          <element xsi:type="zenta:BasicRelationship"
                   id="017bbb4f-235e-41c5-a32a-983cab4e3f44"
                   ancestor="f72b01f0-7ff9-48ba-9cd8-b4453fa00c0a"
@@ -8343,10 +8315,6 @@ If you have questions, see the [FAQ](https://kodekonveyor.com/coder-faq/), or as
             </child>
          </element>
          <element xsi:type="zenta:BasicObject"
-                  name="Conveys the error message to the user"
-                  id="65a48c8b-046f-4ba8-8024-e34116a857d0"
-                  ancestor="83af8497-bfef-451b-9bc6-f00d58c8df6a"/>
-         <element xsi:type="zenta:BasicObject"
                   name="RestResponseEntityExceptionHandler"
                   id="0b7c97f6-08fd-4546-b80d-87ac07dbe1b3"
                   ancestor="callable"/>
@@ -8501,11 +8469,6 @@ If you have questions, see the [FAQ](https://kodekonveyor.com/coder-faq/), or as
              targetConnections="01c9c8d9-14e9-4e20-8438-ac1fa617c9ab"
              zentaElement="3f339d77-39b1-42c1-beee-d56ae0bce552">
          <bounds x="838" y="798" width="205"/>
-         <sourceConnection xsi:type="zenta:Connection"
-                           id="9b8372d9-615b-4174-8b8f-553e53231671"
-                           source="889e1df7-bc82-4af8-92e7-8222b302cca8"
-                           target="1cdec68c-8c03-4d17-bbe5-ec9cdb70a4be"
-                           relationship="7d3a0e78-fb64-473a-a427-7bce59df9c86"/>
       </child>
       <child xsi:type="zenta:DiagramObject"
              id="c329b4bf-d9aa-410c-9952-e35b9cffc800"
@@ -8670,7 +8633,7 @@ If you have questions, see the [FAQ](https://kodekonveyor.com/coder-faq/), or as
       </child>
       <child xsi:type="zenta:DiagramObject"
              id="1cdec68c-8c03-4d17-bbe5-ec9cdb70a4be"
-             targetConnections="9b8372d9-615b-4174-8b8f-553e53231671 6c215c8a-ead4-4fe3-a586-e78708c17507"
+             targetConnections="6c215c8a-ead4-4fe3-a586-e78708c17507"
              zentaElement="ce6ad605-d92c-406d-b1aa-55158a37233b">
          <bounds x="1152" y="852" width="-1" height="-1"/>
       </child>
@@ -8798,11 +8761,6 @@ If you have questions, see the [FAQ](https://kodekonveyor.com/coder-faq/), or as
             name="com.kodekonveyor"
             id="5a02237b-3396-40d6-b114-a956998c835b"
             ancestor="d3d4e39d-09a6-4a0f-a985-be922245d850"/>
-   <element xsi:type="zenta:BasicRelationship"
-            id="7d3a0e78-fb64-473a-a427-7bce59df9c86"
-            ancestor="f72b01f0-7ff9-48ba-9cd8-b4453fa00c0a"
-            source="3f339d77-39b1-42c1-beee-d56ae0bce552"
-            target="ce6ad605-d92c-406d-b1aa-55158a37233b"/>
    <element xsi:type="zenta:BasicRelationship"
             id="aa17ec54-dcbc-4460-ab5b-64478a1c59dd"
             ancestor="036814e0-4424-44e3-8e3b-da8b69e78423"
