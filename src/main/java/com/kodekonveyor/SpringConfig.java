@@ -25,7 +25,7 @@ import com.kodekonveyor.annotations.InterfaceClass;
 
 @SpringBootApplication
 @EntityScan("com.kodekonveyor")
-@ExcludeFromCodeCoverage("empty")
+@ExcludeFromCodeCoverage("glue")
 @InterfaceClass
 public class SpringConfig extends SpringBootServletInitializer {
 

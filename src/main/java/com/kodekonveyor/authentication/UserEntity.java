@@ -14,10 +14,11 @@ import lombok.Data;
 @Data
 @Entity
 public class UserEntity {
-	@Id
-  	@GeneratedValue(strategy = GenerationType.IDENTITY)
-	private Long id;
-	private String login;
-	private Set<RoleEntity> role;
+
+  @Id
+  @GeneratedValue(strategy = GenerationType.IDENTITY)
+  private Long id;
+  private String login;
+  private Set<RoleEntity> role;
 
 }
