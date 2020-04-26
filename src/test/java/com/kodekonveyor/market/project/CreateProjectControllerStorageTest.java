@@ -14,7 +14,7 @@ import org.mockito.quality.Strictness;
 
 import com.kodekonveyor.annotations.TestedBehaviour;
 import com.kodekonveyor.annotations.TestedService;
-import com.kodekonveyor.authentication.AuthenticatedUserStubs;
+import com.kodekonveyor.authentication.AuthenticatedUserServiceStubs;
 
 @ExtendWith(MockitoExtension.class)
 @MockitoSettings(strictness = Strictness.LENIENT)
@@ -29,19 +29,19 @@ public class CreateProjectControllerStorageTest
     "The project entity is saved successfully for application/json requests"
   )
   public void saveEntitytest() {
-    AuthenticatedUserStubs.projectManager(authenticatedUserService);
+    AuthenticatedUserServiceStubs.projectManager(authenticatedUserService);
     createProjectController.call(ProjectDTOTestData.get());
     verify(projectEntityRepository)
-        .save(ProjectEntityTestData.getNullMilestone());
+        .save(ProjectEntityTestData.getNullId());
   }
 
   @Test
   @DisplayName("The project id is saved successfully")
   public void test() {
-    AuthenticatedUserStubs.projectManager(authenticatedUserService);
+    AuthenticatedUserServiceStubs.projectManager(authenticatedUserService);
     createProjectController.call(ProjectDTOTestData.get());
     assertEquals(
-        ProjectDTOTestData.ID, createProjectController
+        ProjectTestData.ID, createProjectController
             .callForUrlencoded(ProjectDTOTestData.get()).getId()
     );
   }
@@ -49,10 +49,10 @@ public class CreateProjectControllerStorageTest
   @Test
   @DisplayName("The project name is saved successfully")
   public void test1() {
-    AuthenticatedUserStubs.projectManager(authenticatedUserService);
+    AuthenticatedUserServiceStubs.projectManager(authenticatedUserService);
     createProjectController.call(ProjectDTOTestData.get());
     assertEquals(
-        ProjectEntityTestData.get().getName(), ProjectDTOTestData.NAME
+        ProjectEntityTestData.get().getName(), ProjectTestData.NAME
     );
   }
 
@@ -61,10 +61,10 @@ public class CreateProjectControllerStorageTest
     "The project is stored when using application/x-www-form-urlencoded request"
   )
   void test2() {
-    AuthenticatedUserStubs.projectManager(authenticatedUserService);
+    AuthenticatedUserServiceStubs.projectManager(authenticatedUserService);
     createProjectController.callForUrlencoded(ProjectDTOTestData.get());
     verify(projectEntityRepository)
-        .save(ProjectEntityTestData.getNullMilestone());
+        .save(ProjectEntityTestData.getNullId());
   }
 
   @Test
@@ -72,7 +72,7 @@ public class CreateProjectControllerStorageTest
     "The stored project is returned for application/x-www-form-urlencoded requests"
   )
   void test21() {
-    AuthenticatedUserStubs.projectManager(authenticatedUserService);
+    AuthenticatedUserServiceStubs.projectManager(authenticatedUserService);
     final ProjectDTO ret =
         createProjectController.callForUrlencoded(ProjectDTOTestData.get());
     assertEquals(ProjectDTOTestData.get(), ret);
@@ -81,7 +81,7 @@ public class CreateProjectControllerStorageTest
   @Test
   @DisplayName("The stored project is returned for application/json requests")
   void test3() {
-    AuthenticatedUserStubs.projectManager(authenticatedUserService);
+    AuthenticatedUserServiceStubs.projectManager(authenticatedUserService);
     final ProjectDTO ret =
         createProjectController.call(ProjectDTOTestData.get());
     assertEquals(

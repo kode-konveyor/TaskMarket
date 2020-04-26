@@ -1,0 +1,21 @@
+package com.kodekonveyor.market.payment;
+
+import java.util.Set;
+
+import javax.annotation.Generated;
+
+@Generated("by zenta-tools")
+public class BillDTOTestData {
+
+  public final static BillDTO get() {
+    final BillDTO billDTO = new BillDTO();
+    billDTO.setId(BillTestData.ID);
+    billDTO.setBilledItem(Set.of(BilledItemTestData.ID));
+    billDTO.setBillPicture(BillTestData.BILL_PICTURE);
+    billDTO.setIsChecked(BillTestData.IS_CHECKED);
+    billDTO.setBillAmountInCents(BillTestData.BILL_AMOUNT_IN_CENTS);
+
+    return billDTO;
+  };
+
+}

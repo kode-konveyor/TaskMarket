@@ -14,21 +14,23 @@ import org.springframework.web.servlet.view.RedirectView;
 
 import com.kodekonveyor.annotations.TestedBehaviour;
 import com.kodekonveyor.annotations.TestedService;
+import com.kodekonveyor.authentication.LoginControllerTestData;
 
 @ExtendWith(MockitoExtension.class)
 @MockitoSettings(strictness = Strictness.LENIENT)
 @RunWith(MockitoJUnitRunner.class)
 @TestedBehaviour("redirect for login")
 @TestedService("LoginController")
-public class LoginControllerRedirectForLoginTest extends LoginControllerTestBase {
+public class LoginControllerRedirectForLoginTest
+    extends LoginControllerTestBase {
 
   @Test
   @DisplayName("The next parameter is embedded in the return value")
   public void test() {
     final RedirectView redirectView =
-        loginController.call(LoginControllerTestData.NEXT_URL);
+        loginController.call(LoginControllerTestData.NEXT);
     assertEquals(
-        LoginControllerTestData.NEXT_URL, redirectView.getUrl()
+        LoginControllerTestData.NEXT, redirectView.getUrl()
     );
   }
 

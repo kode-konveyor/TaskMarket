@@ -1,9 +1,10 @@
 package com.kodekonveyor.market.project;
 
-import java.util.List;
 import java.util.Optional;
 
 import org.springframework.data.repository.CrudRepository;
+
+import com.kodekonveyor.authentication.RoleEntity;
 
 public interface ProjectEntityRepository
     extends CrudRepository<ProjectEntity, Long> {
@@ -11,5 +12,8 @@ public interface ProjectEntityRepository
   @Override
   Optional<ProjectEntity> findById(Long projectId);
 
-  List<ProjectEntity> findByName(String name);
+  Optional<ProjectEntity> findByName(String projectName);
+
+  Optional<ProjectEntity> findByRole(RoleEntity role);
+
 }

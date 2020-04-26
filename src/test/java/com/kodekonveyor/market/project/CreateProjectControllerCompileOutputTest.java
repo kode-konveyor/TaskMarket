@@ -13,7 +13,7 @@ import org.mockito.quality.Strictness;
 
 import com.kodekonveyor.annotations.TestedBehaviour;
 import com.kodekonveyor.annotations.TestedService;
-import com.kodekonveyor.authentication.AuthenticatedUserStubs;
+import com.kodekonveyor.authentication.AuthenticatedUserServiceStubs;
 
 @ExtendWith(MockitoExtension.class)
 @MockitoSettings(strictness = Strictness.LENIENT)
@@ -26,10 +26,10 @@ public class CreateProjectControllerCompileOutputTest
   @Test
   @DisplayName("The project id is returned successfully")
   public void test() {
-    AuthenticatedUserStubs.projectManager(authenticatedUserService);
+    AuthenticatedUserServiceStubs.projectManager(authenticatedUserService);
     createProjectController.call(ProjectDTOTestData.get());
     assertEquals(
-        ProjectDTOTestData.ID, createProjectController
+        ProjectTestData.ID, createProjectController
             .call(ProjectDTOTestData.get()).getId()
     );
   }
@@ -37,17 +37,17 @@ public class CreateProjectControllerCompileOutputTest
   @Test
   @DisplayName("The project name is returned successfully")
   public void test1() {
-    AuthenticatedUserStubs.projectManager(authenticatedUserService);
+    AuthenticatedUserServiceStubs.projectManager(authenticatedUserService);
     createProjectController.call(ProjectDTOTestData.get());
     assertEquals(
-        ProjectEntityTestData.get().getName(), ProjectDTOTestData.NAME
+        ProjectEntityTestData.get().getName(), ProjectTestData.NAME
     );
   }
 
   @Test
   @DisplayName("The controller returns project successfully")
   void test3() {
-    AuthenticatedUserStubs.projectManager(authenticatedUserService);
+    AuthenticatedUserServiceStubs.projectManager(authenticatedUserService);
     final ProjectDTO ret =
         createProjectController.call(ProjectDTOTestData.get());
     assertEquals(

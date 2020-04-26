@@ -19,13 +19,13 @@ import org.junit.platform.commons.annotation.Testable;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.kodekonveyor.annotations.TestedBehaviour;
 import com.kodekonveyor.annotations.TestedService;
-import com.kodekonveyor.authentication.UserEntityTestData;
-import com.kodekonveyor.market.MarketUserDTOTestData;
+import com.kodekonveyor.authentication.UserTestData;
 import com.kodekonveyor.market.RegisterInterestControllerTestData;
 import com.kodekonveyor.market.UrlMapConstants;
 import com.kodekonveyor.market.lead.LeadDTO;
 import com.kodekonveyor.market.lead.LeadDTOTestData;
 import com.kodekonveyor.market.register.MarketUserDTO;
+import com.kodekonveyor.market.register.MarketUserDTOTestData;
 
 import net.minidev.json.parser.ParseException;
 
@@ -62,7 +62,7 @@ public class WebservicesIT {
     final HttpURLConnection connection =
         (HttpURLConnection) url.openConnection();
     connection
-        .setRequestProperty(OIDC_CLAIM_NICKNAME, UserEntityTestData.LOGIN);
+        .setRequestProperty(OIDC_CLAIM_NICKNAME, UserTestData.LOGIN);
     final MarketUserDTO marketUser = mapper
         .readValue((InputStream) connection.getContent(), MarketUserDTO.class);
     assertEquals(MarketUserDTOTestData.get(), marketUser);

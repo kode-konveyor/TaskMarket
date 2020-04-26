@@ -1,30 +1,30 @@
 package com.kodekonveyor.market.lead;
 
-import java.util.List;
+import java.util.Set;
 
-import com.kodekonveyor.market.register.UserLegalInfoEntityTestData;
+import javax.annotation.Generated;
 
+@Generated("by zenta-tools")
 public class LeadEntityTestData {
 
-  public static final String FIRST_NAME = "kumar";
-  public static final String INTEREST = "To work with Kodekonveyor";
-  public static final long LEAD_ID = 0x134d1d;
-
-  public static final LeadEntity get() {
-    final LeadEntity leadEntity = getIdUninitialized();
-    leadEntity.setId(LEAD_ID);
-    return leadEntity;
-  }
-
-  public static final LeadEntity getIdUninitialized() {
+  public final static LeadEntity get() {
     final LeadEntity leadEntity = new LeadEntity();
-    leadEntity.setEmail(UserLegalInfoEntityTestData.EMAIL);
-    leadEntity.setFirstName(FIRST_NAME);
-    leadEntity.setInterest(INTEREST);
+    leadEntity.setId(LeadTestData.ID);
+    leadEntity.setFirstName(LeadTestData.FIRST_NAME);
+    leadEntity.setEmail(LeadTestData.EMAIL);
+    leadEntity.setInterest(LeadTestData.INTEREST);
+
     return leadEntity;
+  };
+
+  public final static Set<LeadEntity> list() {
+    return Set.of(get());
   }
 
-  public static final List<LeadEntity> list() {
-    return List.of(get());
-  }
+  public static LeadEntity getIdUninitialized() {
+    final LeadEntity leadEntity = get();
+    leadEntity.setId(null);
+    return leadEntity;
+  };
+
 }

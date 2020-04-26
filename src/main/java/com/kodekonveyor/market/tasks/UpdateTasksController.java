@@ -10,6 +10,8 @@ import com.kodekonveyor.market.MarketConstants;
 import com.kodekonveyor.market.UnauthorizedException;
 import com.kodekonveyor.market.UrlMapConstants;
 import com.kodekonveyor.market.lead.CheckRoleUtil;
+import com.kodekonveyor.market.project.ProjectEntity;
+import com.kodekonveyor.market.project.ProjectEntityRepository;
 import com.kodekonveyor.market.register.RegisterConstants;
 
 @RestController
@@ -17,6 +19,8 @@ public class UpdateTasksController {
 
   @Autowired
   AuthenticatedUserService authenticatedUserService;
+  @Autowired
+  ProjectEntityRepository projectEntityRepository;
 
   @PutMapping(UrlMapConstants.TASK_UPDATE_PATH)
   public Object call() {
@@ -26,9 +30,16 @@ public class UpdateTasksController {
   }
 
   private void checkRole(final UserEntity user) {
-    if (!CheckRoleUtil.hasRole(user, MarketConstants.KODEKONVEYOR_CONTRACT))
+    final ProjectEntity project =
+        projectEntityRepository
+            .findByName(MarketConstants.KODE_KONVEYOR_PROJECT_NAME).get();
+
+    if (
+      !CheckRoleUtil
+          .hasRole(user, project, MarketConstants.KODEKONVEYOR_CONTRACT)
+    )
       throw new UnauthorizedException(
-          RegisterConstants.UNAUTHORIZED_NOT_ENOUGH_RIGHTS
+          RegisterConstants.NO_CAN_BE_PAID_ROLE
       );
   }
 }

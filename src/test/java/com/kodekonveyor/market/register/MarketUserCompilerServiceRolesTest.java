@@ -11,8 +11,7 @@ import org.mockito.quality.Strictness;
 
 import com.kodekonveyor.annotations.TestedBehaviour;
 import com.kodekonveyor.annotations.TestedService;
-import com.kodekonveyor.authentication.AuthenticatedUserStubs;
-import com.kodekonveyor.authentication.UserEntityTestData;
+import com.kodekonveyor.authentication.AuthenticatedUserServiceStubs;
 import com.kodekonveyor.exception.ThrowableTester;
 
 @ExtendWith(MockitoExtension.class)
@@ -25,25 +24,25 @@ public class MarketUserCompilerServiceRolesTest
 
   @Test
   @DisplayName(
-    "if the user does not have registered role, an Exception is thrown"
+    "if the user does not have contract role, an Exception is thrown"
   )
   void test() {
-    AuthenticatedUserStubs.canBePayed(authenticatedUserService);
+    AuthenticatedUserServiceStubs.registered(authenticatedUserService);
     ThrowableTester.assertThrows(
-        () -> marketUserCompilerService.call(UserEntityTestData.ID)
+        () -> marketUserCompilerService.call(MarketUserTestData.ID)
     ).assertMessageIs(
-        RegisterConstants.UNAUTHORIZED_NOT_ENOUGH_RIGHTS
+        RegisterConstants.NO_CAN_BE_PAID_ROLE
     );
   }
 
   @Test
   @DisplayName(
-    "if the user havs registered role, no Exception is thrown"
+    "if the user have contract role, no Exception is thrown"
   )
   void test1() {
-    AuthenticatedUserStubs.registered(authenticatedUserService);
+    AuthenticatedUserServiceStubs.kodekonveyorContract(authenticatedUserService);
     ThrowableTester.assertNoException(
-        () -> marketUserCompilerService.call(UserEntityTestData.ID)
+        () -> marketUserCompilerService.call(MarketUserTestData.ID)
     );
   }
 

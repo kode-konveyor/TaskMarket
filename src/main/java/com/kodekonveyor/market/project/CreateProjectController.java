@@ -1,5 +1,8 @@
 package com.kodekonveyor.market.project;
 
+import java.util.HashSet;
+import java.util.Set;
+
 import org.slf4j.Logger;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.PostMapping;
@@ -7,6 +10,8 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.kodekonveyor.authentication.AuthenticatedUserService;
+import com.kodekonveyor.authentication.RoleEntity;
+import com.kodekonveyor.authentication.RoleEntityRepository;
 import com.kodekonveyor.authentication.UserEntity;
 import com.kodekonveyor.logging.LoggingMarkerConstants;
 import com.kodekonveyor.market.MarketConstants;
@@ -27,13 +32,25 @@ public class CreateProjectController {
   @Autowired
   ProjectEntityRepository projectEntityRepository;
 
+  @Autowired
+  RoleEntityRepository roleEntityRepository;
+
+  @Autowired
+  MilestoneEntityRepository milestoneEntityRepository;
+
+  @Autowired
+  PullrequestEntityRepository pullrequestEntityRepository;
+
   @PostMapping(
       value = UrlMapConstants.PROJECT_PATH, consumes = "application/json"
   )
   public ProjectDTO call(@RequestBody final ProjectDTO dto) {
     final UserEntity user = authenticatedUserService.call();
+    final ProjectEntity project =
+        projectEntityRepository
+            .findByName(MarketConstants.KODE_KONVEYOR_PROJECT_NAME).get();
     if (
-      !CheckRoleUtil.hasRole(user, MarketConstants.PROJECT_MANAGER)
+      !CheckRoleUtil.hasRole(user, project, MarketConstants.MANAGER)
 
     )
       throw new UnauthorizedException(ProjectConstants.IN_CREATE_PROJECT);
@@ -49,9 +66,7 @@ public class CreateProjectController {
       consumes = "application/x-www-form-urlencoded"
   )
   public ProjectDTO callForUrlencoded(final ProjectDTO projectDTO) {
-    call(projectDTO);
-
-    return projectDTO;
+    return call(projectDTO);
 
   }
 
@@ -78,11 +93,48 @@ public class CreateProjectController {
         ProjectConstants.PROJECT_RECEIVED + dto.toString()
     );
     final ProjectEntity entity = new ProjectEntity();
-    entity.setId(dto.getId());
     entity.setName(dto.getName());
+    entity.setIsPublic(dto.getIsPublic());
+    entity.setBudgetInCents(0L);
+    copyMileStones(dto, entity);
+    copyPullrequests(dto, entity);
+    copyRoles(dto, entity);
 
     projectEntityRepository.save(entity);
 
+  }
+
+  private void
+      copyMileStones(final ProjectDTO dto, final ProjectEntity entity) {
+    final Set<MilestoneEntity> milestones = new HashSet<>();
+    for (final Long milestoneId : dto.getMilestone()) {
+      final MilestoneEntity milestone = milestoneEntityRepository
+          .findById(milestoneId).get();
+      milestones.add(milestone);
+    }
+    entity.setMilestone(milestones);
+  }
+
+  private void
+      copyPullrequests(final ProjectDTO dto, final ProjectEntity entity) {
+    final Set<PullrequestEntity> pullrequests = new HashSet<>();
+    for (final Long pullrequestId : dto.getPullRequest()) {
+      final PullrequestEntity milestone = pullrequestEntityRepository
+          .findById(pullrequestId).get();
+      pullrequests.add(milestone);
+    }
+    entity.setPullRequest(pullrequests);
+  }
+
+  private void
+      copyRoles(final ProjectDTO dto, final ProjectEntity entity) {
+    final Set<RoleEntity> roles = new HashSet<>();
+    for (final Long roleId : dto.getRole()) {
+      final RoleEntity role = roleEntityRepository
+          .findById(roleId).get();
+      roles.add(role);
+    }
+    entity.setRole(roles);
   }
 
 }

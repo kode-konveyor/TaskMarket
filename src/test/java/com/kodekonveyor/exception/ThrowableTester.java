@@ -14,6 +14,7 @@ public class ThrowableTester {// NOPMD
     try {
       thrower.throwException();
     } catch (final Throwable e) {//NOPMD
+      e.printStackTrace();//NOPMD
       fail(EXCEPTION_THROWN);
     }
   }

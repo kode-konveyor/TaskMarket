@@ -11,7 +11,7 @@ import org.mockito.quality.Strictness;
 
 import com.kodekonveyor.annotations.TestedBehaviour;
 import com.kodekonveyor.annotations.TestedService;
-import com.kodekonveyor.authentication.AuthenticatedUserStubs;
+import com.kodekonveyor.authentication.AuthenticatedUserServiceStubs;
 import com.kodekonveyor.exception.ThrowableTester;
 import com.kodekonveyor.market.UnauthorizedException;
 
@@ -28,7 +28,7 @@ public class CreateProjectControllerRolesTest
     "if the user does not have Project manager role, a UnauthorizedException is thrown"
   )
   void test() {
-    AuthenticatedUserStubs.authenticated(authenticatedUserService);
+    AuthenticatedUserServiceStubs.authenticated(authenticatedUserService);
     ThrowableTester.assertThrows(
         () -> createProjectController.call(ProjectDTOTestData.get())
     ).assertException(UnauthorizedException.class);
@@ -39,7 +39,7 @@ public class CreateProjectControllerRolesTest
     "if the user does not have Project manager role, the error message is 'in create project'"
   )
   void test1() {
-    AuthenticatedUserStubs.authenticated(authenticatedUserService);
+    AuthenticatedUserServiceStubs.authenticated(authenticatedUserService);
     ThrowableTester.assertThrows(
         () -> createProjectController.call(ProjectDTOTestData.get())
     ).assertMessageIs(CreateProjectControllerTestData.IN_CREATE_PROJECT);
@@ -48,7 +48,7 @@ public class CreateProjectControllerRolesTest
   @Test
   @DisplayName("if the user has can_be_payed role, no exception is thrown")
   void test2() {
-    AuthenticatedUserStubs.projectManager(authenticatedUserService);
+    AuthenticatedUserServiceStubs.projectManager(authenticatedUserService);
 
     ThrowableTester.assertNoException(
         () -> createProjectController.call(ProjectDTOTestData.get())

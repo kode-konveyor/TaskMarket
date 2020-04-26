@@ -1,12 +1,27 @@
+
 package com.kodekonveyor.market.register;
+
+import java.util.Set;
+
+import javax.annotation.Generated;
 
 import lombok.Data;
 
+@Generated("by zenta-tools")
 @Data
 public class MarketUserDTO {
-
-  private String login;
-
-  private RegistrationInfoDTO registrationInfo;
-
+	private Long id;
+	private Long balanceInCents;
+	private String email;
+	private Boolean isTermsAccepted;
+	private String legalAddress;
+	private String legalName;
+	private String personalName;
+	private Long legalForm;
+	private Long user;
+	private Set<Long> bill;
+	private Set<Long> paymentDetail;
+	private Set<Long> project;
+	private Set<Long> pullRequest;
+	
 }

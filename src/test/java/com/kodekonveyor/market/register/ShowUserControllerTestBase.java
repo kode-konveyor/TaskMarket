@@ -1,5 +1,6 @@
 package com.kodekonveyor.market.register;
 
+import org.junit.jupiter.api.BeforeEach;
 import org.mockito.InjectMocks;
 import org.mockito.Mock;
 
@@ -15,5 +16,11 @@ public class ShowUserControllerTestBase {
 
   @Mock
   MarketUserEntityRepository marketUserEntityRepository;
+
+  @BeforeEach
+  void setUp() {
+    MarketUserEntityRepositoryStubs
+        .behaviour(marketUserEntityRepository);
+  }
 
 }

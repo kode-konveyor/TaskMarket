@@ -1,23 +1,22 @@
 package com.kodekonveyor.market.lead;
 
+import javax.annotation.Generated;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
-import javax.persistence.Table;
 
 import lombok.Data;
 
+@Generated("by zenta-tools")
 @Data
 @Entity
-@Table(name = "leads")
 public class LeadEntity {
-
-  @Id
-  @GeneratedValue(strategy = GenerationType.IDENTITY)
-  private long id;
-  String firstName;
-  String email;
-  String interest;
+	@Id
+  	@GeneratedValue(strategy = GenerationType.IDENTITY)
+	private Long id;
+	private String firstName;
+	private String email;
+	private String interest;
 
 }

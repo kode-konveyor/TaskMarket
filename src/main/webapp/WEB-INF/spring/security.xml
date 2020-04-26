@@ -1,16 +1,19 @@
 <!DOCTYPE xml>
 <b:beans xmlns="http://www.springframework.org/schema/security"
-		 xmlns:b="http://www.springframework.org/schema/beans"
-		 xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-		 xsi:schemaLocation="http://www.springframework.org/schema/beans https://www.springframework.org/schema/beans/spring-beans.xsd
+	xmlns:b="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans https://www.springframework.org/schema/beans/spring-beans.xsd
 						http://www.springframework.org/schema/security https://www.springframework.org/schema/security/spring-security.xsd">
 
-<http >
-	<custom-filter ref="authTokenFilter" after="BASIC_AUTH_FILTER" /> 
-	<custom-filter ref="loggerUsernameFilter" after="SECURITY_CONTEXT_FILTER" />
-</http>
+	<http>
+		<custom-filter ref="authTokenFilter"
+			after="BASIC_AUTH_FILTER" />
+		<custom-filter ref="loggerUsernameFilter"
+			after="SECURITY_CONTEXT_FILTER" />
+	</http>
 
-<b:bean id="loggerUsernameFilter" class="com.kodekonveyor.logging.LoggerUsernameFilter" />
+	<b:bean id="loggerUsernameFilter"
+		class="com.kodekonveyor.logging.LoggerUsernameFilter" />
 
 </b:beans>
 

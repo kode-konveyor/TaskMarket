@@ -11,7 +11,7 @@ import org.mockito.quality.Strictness;
 
 import com.kodekonveyor.annotations.TestedBehaviour;
 import com.kodekonveyor.annotations.TestedService;
-import com.kodekonveyor.authentication.AuthenticatedUserStubs;
+import com.kodekonveyor.authentication.AuthenticatedUserServiceStubs;
 import com.kodekonveyor.exception.ThrowableTester;
 import com.kodekonveyor.market.register.RegisterConstants;
 
@@ -28,20 +28,22 @@ public class UpdateTasksControllerRolesTest
     "if the user does not have kodekonveyor_contract role, an Exception is thrown"
   )
   void test() {
-    AuthenticatedUserStubs.canBePayed(authenticatedUserService);
+    AuthenticatedUserServiceStubs.registered(authenticatedUserService);
     ThrowableTester.assertThrows(
         () -> updateTasksController.call()
     ).assertMessageIs(
-        RegisterConstants.UNAUTHORIZED_NOT_ENOUGH_RIGHTS
+        RegisterConstants.NO_CAN_BE_PAID_ROLE
     );
   }
 
   @Test
   @DisplayName(
-    "if the user havs kodekonveyor_contract role, no Exception is thrown"
+    "if the user have kodekonveyor_contract role, no Exception is thrown"
   )
   void test1() {
-    AuthenticatedUserStubs.kodekonveyorContract(authenticatedUserService);
+    AuthenticatedUserServiceStubs
+        .kodekonveyorContract(authenticatedUserService);
+    updateTasksController.call();
     ThrowableTester.assertNoException(
         () -> updateTasksController.call()
     );
