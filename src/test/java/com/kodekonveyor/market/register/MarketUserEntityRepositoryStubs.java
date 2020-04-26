@@ -20,25 +20,25 @@ public class MarketUserEntityRepositoryStubs {
       ) {
     doReturn(Optional.of(MarketUserEntityTestData.get()))
         .when(marketUserEntityRepository)
-        .findByLogin(UserEntityTestData.get());
+        .findByUser(UserEntityTestData.get());
     doReturn(Optional.of(MarketUserEntityTestData.get()))
         .when(marketUserEntityRepository).findById(MarketUserTestData.ID);
 
     doReturn(Optional.of(MarketUserEntityTestData.getRoleCanBePaid()))
         .when(marketUserEntityRepository)
-        .findByLogin(UserEntityTestData.getRoleCanbePaid());
+        .findByUser(UserEntityTestData.getRoleCanbePaid());
 
     doReturn(
         Optional.of(MarketUserEntityTestData.getIsTerrmsAcceptedFalse())
     )
         .when(marketUserEntityRepository)
-        .findByLogin(UserEntityTestData.getContractTermsNotAccepted());
+        .findByUser(UserEntityTestData.getContractTermsNotAccepted());
 
     doReturn(
         Optional.of(MarketUserEntityTestData.getRoleKodeKonveyorContract())
     )
         .when(marketUserEntityRepository)
-        .findByLogin(UserEntityTestData.getRoleKodekonveyorContract());
+        .findByUser(UserEntityTestData.getRoleKodekonveyorContract());
 
     doAnswer(new Answer<Void>() {
 
@@ -69,7 +69,7 @@ public class MarketUserEntityRepositoryStubs {
   ) {
     doReturn(Optional.of(MarketUserEntityTestData.getAcceptedContractuser()))
         .when(marketUserEntityRepository)
-        .findByLogin(UserEntityTestData.getRoleKodekonveyorContract());
+        .findByUser(UserEntityTestData.getRoleKodekonveyorContract());
   }
 
   public static void
@@ -79,6 +79,6 @@ public class MarketUserEntityRepositoryStubs {
       ) {
     doReturn(Optional.of(MarketUserEntityTestData.getUnacceptedContractuser()))
         .when(marketUserEntityRepository)
-        .findByLogin(UserEntityTestData.getRoleKodekonveyorContract());
+        .findByUser(UserEntityTestData.getRoleKodekonveyorContract());
   }
 }

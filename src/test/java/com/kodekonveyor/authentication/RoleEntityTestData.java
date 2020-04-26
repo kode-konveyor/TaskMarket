@@ -1,20 +1,11 @@
 package com.kodekonveyor.authentication;
 
-import java.util.Set;
-
 import javax.annotation.Generated;
 
 @Generated("by zenta-tools")
 public class RoleEntityTestData {
 
   public final static RoleEntity get() {
-    final RoleEntity roleEntity = new RoleEntity();
-    roleEntity.setId(RoleTestData.ID);
-    roleEntity.setName(RoleTestData.NAME);
-    return roleEntity;
-  }
-
-  public final static RoleEntity getWithUser(final Set<UserEntity> users) {
     final RoleEntity roleEntity = new RoleEntity();
     roleEntity.setId(RoleTestData.ID);
     roleEntity.setName(RoleTestData.NAME);

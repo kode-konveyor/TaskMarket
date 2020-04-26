@@ -9,6 +9,6 @@ import com.kodekonveyor.authentication.UserEntity;
 public interface MarketUserEntityRepository
     extends CrudRepository<MarketUserEntity, Long> {
 
-  Optional<MarketUserEntity> findByLogin(UserEntity userEntity);
+  Optional<MarketUserEntity> findByUser(UserEntity userEntity);
 
 }

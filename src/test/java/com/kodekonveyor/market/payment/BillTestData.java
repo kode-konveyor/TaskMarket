@@ -8,6 +8,6 @@ public class BillTestData {
   public final static Long ID = 1181L;
   public static final Boolean IS_CHECKED = true;
   public static final Long BILL_AMOUNT_IN_CENTS = 4242L;
-  public static final Object BILL_PICTURE = "foo";
+  public static final String BILL_PICTURE = "foo";
 
 }

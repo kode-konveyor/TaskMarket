@@ -5,6 +5,7 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.OneToOne;
 
 import com.kodekonveyor.market.project.MilestoneEntity;
 
@@ -18,6 +19,7 @@ public class TaskEntity {
   @Id
   @GeneratedValue(strategy = GenerationType.IDENTITY)
   private Long id;
+  @OneToOne
   private MilestoneEntity milestone;
   private String behaviour;
   private String description;

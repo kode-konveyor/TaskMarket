@@ -29,7 +29,7 @@ public class ShowUserController {
     final UserEntity userEntity = authenticatedUserService.call();
 
     final Optional<MarketUserEntity> entityP =
-        marketUserEntityRepository.findByLogin(userEntity);
+        marketUserEntityRepository.findByUser(userEntity);
     MarketUserEntity entity;
     final MarketUserDTO marketUserDTO = new MarketUserDTO();
     marketUserDTO.setUser(userEntity.getId());

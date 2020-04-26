@@ -5,6 +5,7 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.OneToOne;
 
 import com.kodekonveyor.market.tasks.TaskEntity;
 
@@ -20,6 +21,7 @@ public class PullrequestEntity {
   private Long id;
   private Boolean isAccepted;
   private Long reference;
+  @OneToOne
   private TaskEntity task;
 
 }

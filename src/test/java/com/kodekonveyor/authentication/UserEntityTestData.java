@@ -11,7 +11,7 @@ public class UserEntityTestData {
     final UserEntity userEntity = new UserEntity();
     userEntity.setId(UserTestData.ID);
     userEntity
-        .setRole(Set.of(RoleEntityTestData.getWithUser(Set.of(userEntity))));
+        .setRole(Set.of(RoleEntityTestData.get()));
     userEntity.setLogin(UserTestData.LOGIN);
 
     return userEntity;

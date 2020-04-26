@@ -50,7 +50,7 @@ public class PaymentUpdateController {
       );
 
     final MarketUserEntity marketuser =
-        marketUserEntityRepository.findByLogin(user).get();
+        marketUserEntityRepository.findByUser(user).get();
     contractAcceptance(marketuser);
 
     return null;

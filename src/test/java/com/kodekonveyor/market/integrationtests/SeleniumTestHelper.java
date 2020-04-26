@@ -15,7 +15,7 @@ class SeleniumTestHelper {
 
   static {
     final FirefoxOptions firefoxOptions = new FirefoxOptions();
-    firefoxOptions.addArguments(HEADLESS);
+    //firefoxOptions.addArguments(HEADLESS);
     driver = new FirefoxDriver(firefoxOptions);
   }
 
