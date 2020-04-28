@@ -43,6 +43,8 @@ public class MarketUserEntityTestData {
 
   public static MarketUserEntity getUnacceptedContractuser() {
     final MarketUserEntity marketUserEntity = get();
+    marketUserEntity.setId(MarketUserTestData.ID_CAN_BE_PAID);
+    marketUserEntity.setUser(UserEntityTestData.getContractTermsNotAccepted());
     marketUserEntity.setIsTermsAccepted(false);
     return marketUserEntity;
   }

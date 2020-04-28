@@ -23,8 +23,7 @@ public class CheckRoleUtil {
           final RoleEntity role, final ProjectEntity project,
           final String roleName
       ) {
-    return role.getName().equals(roleName) &&
-        project.getRole().contains(role);
+    return project.getRole().contains(role) && role.getName().equals(roleName);
   }
 
 }

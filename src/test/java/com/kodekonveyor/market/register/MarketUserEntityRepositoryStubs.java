@@ -20,6 +20,8 @@ public class MarketUserEntityRepositoryStubs {
     doReturn(Optional.of(MarketUserEntityTestData.get()))
         .when(marketUserEntityRepository)
         .findByUser(UserEntityTestData.get());
+    doReturn(Optional.of(MarketUserEntityTestData.getUnacceptedContractuser()))
+        .when(marketUserEntityRepository).findById(MarketUserTestData.ID_IS_TERMS_ACCEPTED_FALSE);
     doReturn(Optional.of(MarketUserEntityTestData.get()))
         .when(marketUserEntityRepository).findById(MarketUserTestData.ID);
 

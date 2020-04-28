@@ -51,20 +51,17 @@ public class RegistrationController {
 
   private MarketUserEntity createMarketUserEntity(
       final MarketUserDTO marketUserDTO,
-      final Optional<LegalFormEntity> legalform, final UserEntity userEntity
+      final Optional<LegalFormEntity> legalForm, final UserEntity userEntity
   ) {
     final MarketUserEntity entity = new MarketUserEntity();
     entity.setBalanceInCents(0L);
     entity.setIsTermsAccepted(marketUserDTO.getIsTermsAccepted());
     entity.setEmail(marketUserDTO.getEmail());
     entity.setLegalAddress(marketUserDTO.getLegalAddress());
-    entity.setLegalForm(legalform.get());
     entity.setLegalName(marketUserDTO.getLegalName());
     entity.setPersonalName(marketUserDTO.getLegalName());
     entity.setUser(userEntity);
-    entity.setLegalForm(
-        legalFormEntityRepository.findById(marketUserDTO.getLegalForm()).get()
-    );
+    entity.setLegalForm(legalForm.get());
     entity.setBill(new HashSet<>());
     entity.setPaymentDetail(new HashSet<>());
     entity.setProject(new HashSet<>());

@@ -17,7 +17,7 @@ public class ProjectEntityRepositoryStubs {
     reset(projectEntityRepository);
     doReturn(List.of(ProjectEntityTestData.get())).when(projectEntityRepository)
         .findAll();
-    doReturn(Optional.of(ProjectEntityTestData.getNullId()))
+    doReturn(Optional.of(ProjectEntityTestData.getNullIdWithoutMilestone()))
         .when(projectEntityRepository)
         .findByName(ProjectTestData.NAME);
     doReturn(Optional.of(ProjectEntityTestData.getNameKodeKonveyor()))

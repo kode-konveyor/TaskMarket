@@ -13,6 +13,7 @@ import com.kodekonveyor.annotations.TestedBehaviour;
 import com.kodekonveyor.annotations.TestedService;
 import com.kodekonveyor.authentication.AuthenticatedUserServiceStubs;
 import com.kodekonveyor.exception.ThrowableTester;
+import com.kodekonveyor.market.UnauthorizedException;
 
 @ExtendWith(MockitoExtension.class)
 @MockitoSettings(strictness = Strictness.LENIENT)
@@ -54,20 +55,33 @@ public class MarketUserCompilerServiceRolesTest
     AuthenticatedUserServiceStubs
         .kodekonveyorContract(authenticatedUserService);
     ThrowableTester.assertNoException(
-        () -> marketUserCompilerService.call(MarketUserTestData.ID)
+        () -> marketUserCompilerService
+            .call(MarketUserTestData.ID_IS_TERMS_ACCEPTED_FALSE)
     );
   }
 
   @Test
   @DisplayName(
-    "if the user is looking for another user and have no contract role, an Exception is thrown"
+    "if the user is looking for another user and have no contract role, an UnauthorizedException is thrown"
   )
   void test2() {
     AuthenticatedUserServiceStubs.registered(authenticatedUserService);
     ThrowableTester.assertThrows(
         () -> marketUserCompilerService
             .call(MarketUserTestData.ID_IS_TERMS_ACCEPTED_FALSE)
-    ).showStackTrace();
+    ).assertException(UnauthorizedException.class);
+  }
+
+  @Test
+  @DisplayName(
+    "if the user is looking for another user and have no contract role, the error message is 'foo'"
+  )
+  void test3() {
+    AuthenticatedUserServiceStubs.registered(authenticatedUserService);
+    ThrowableTester.assertThrows(
+        () -> marketUserCompilerService
+            .call(MarketUserTestData.ID_IS_TERMS_ACCEPTED_FALSE)
+    ).assertMessageContains(MarketUserTestData.NO_CONTRACT_ROLE);
   }
 
 }

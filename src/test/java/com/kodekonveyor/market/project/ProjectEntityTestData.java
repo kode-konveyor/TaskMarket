@@ -1,5 +1,6 @@
 package com.kodekonveyor.market.project;
 
+import java.util.HashSet;
 import java.util.Set;
 
 import javax.annotation.Generated;
@@ -22,14 +23,18 @@ public class ProjectEntityTestData {
     return projectEntity;
   }
 
-  public static Set<ProjectEntity> listNullId() {
-    return Set.of(getNullId());
-  }
-
   public static ProjectEntity getNullId() {
     final ProjectEntity projectEntity = get();
     projectEntity.setId(null);
     projectEntity.setBudgetInCents(0L);
+    return projectEntity;
+  }
+
+  public static ProjectEntity getNullIdWithoutMilestone() {
+    final ProjectEntity projectEntity = get();
+    projectEntity.setId(null);
+    projectEntity.setBudgetInCents(0L);
+    projectEntity.setMilestone(new HashSet<>());
     return projectEntity;
   }
 
@@ -38,6 +43,7 @@ public class ProjectEntityTestData {
     projectEntity.setId(ProjectTestData.ID_KODE_KONVEYOR);
     projectEntity.setName(ProjectTestData.NAME_KODE_KONVEYOR);
     projectEntity.setBudgetInCents(0L);
+    projectEntity.setMilestone(new HashSet<>());
     projectEntity.setRole(
         Set.of(
             RoleEntityTestData.getNameCanbepaid(),
