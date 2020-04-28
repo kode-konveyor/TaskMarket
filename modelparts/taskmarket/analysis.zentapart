@@ -1091,7 +1091,9 @@ RemoteAuthentication is an Authentication implementation
                   name="Work securely"
                   id="2965ee01-2400-4a44-b6c9-4e18b61150c1"
                   ancestor="107b9a83-1292-49ee-bf2f-542de02b2654">
-            <documentation>The system should work securely while directly on the internet</documentation>
+            <documentation>The system should work securely while directly on the internet
+- people should only do what they are entitled to do
+- log important events</documentation>
          </element>
          <element xsi:type="zenta:BasicObject"
                   name="Be compliant with laws and privacy expectations of people"
@@ -1333,6 +1335,120 @@ RemoteAuthentication is an Authentication implementation
                 zentaElement="ffe9debd-401a-4132-9450-b975f74c8e22">
             <bounds x="972" y="372" width="175"/>
          </child>
+      </element>
+      <element xsi:type="zenta:ZentaDiagramModel"
+               name="Policies 2"
+               id="1e8782ad-a1a6-424b-99a7-e7af94e810b7">
+         <child xsi:type="zenta:DiagramObject"
+                id="62bce80c-84cd-4e71-99a3-2384e5e61c4c"
+                zentaElement="c636fe0c-2674-4994-bbe7-0cf71a611b52">
+            <bounds x="-94" y="96" width="-1" height="-1"/>
+         </child>
+         <child xsi:type="zenta:DiagramObject"
+                id="60088fae-af5c-41a2-bbab-68bc32f7afe7"
+                zentaElement="a2e07b46-9388-4915-9ba9-ddd4083b78fc">
+            <bounds x="340" y="72" width="189"/>
+         </child>
+         <child xsi:type="zenta:DiagramObject"
+                id="7a72eb02-5642-4457-85e7-f52eb2b27678"
+                zentaElement="2d3525f3-d02f-4785-aa09-01b455653340">
+            <bounds x="48" y="96" width="201"/>
+         </child>
+         <child xsi:type="zenta:DiagramObject"
+                id="5eb430ac-5507-4035-bbb1-bd7deaa0ddbf"
+                zentaElement="645e47fc-6a34-44de-bf2c-7be13d233477">
+            <bounds x="687" y="141" width="-1" height="-1"/>
+         </child>
+         <child xsi:type="zenta:DiagramObject"
+                id="ceae00d9-b0f3-4121-8639-666b3bad4f71"
+                zentaElement="925b4c7d-3d1f-4c4b-8164-1b2ed82d94ef">
+            <bounds x="830" y="347" width="-1" height="-1"/>
+         </child>
+         <child xsi:type="zenta:DiagramObject"
+                id="968ccb50-8f86-4b9b-b2bf-82318820c18f"
+                zentaElement="e9b858d1-1022-412c-ae20-2403994ba3df">
+            <bounds x="938" y="205" width="191"/>
+         </child>
+         <child xsi:type="zenta:DiagramObject"
+                id="21052c3a-42d4-40ca-893f-5414e1442575"
+                zentaElement="e397c7a7-d749-4016-8d90-e6690573befe">
+            <bounds x="96" y="384" width="191"/>
+         </child>
+         <child xsi:type="zenta:DiagramObject"
+                id="ab435333-16ed-460a-81bb-1bf8c762f5c7"
+                zentaElement="de813116-d9af-49d7-9bbc-506086037c81">
+            <bounds x="444" y="168" width="191"/>
+         </child>
+         <child xsi:type="zenta:DiagramObject"
+                id="e7c19495-2875-48b6-9164-b6f1d90be4de"
+                zentaElement="22bf6202-0aa5-431c-8938-95d94818bce8">
+            <bounds x="422" y="421" width="191"/>
+         </child>
+         <child xsi:type="zenta:DiagramObject"
+                id="f51a16d2-7fc1-497b-94ec-e6fa6ba880eb"
+                zentaElement="718e0699-f765-478a-b706-8a2d0d2dac8e">
+            <bounds x="122" y="521" width="191"/>
+         </child>
+         <child xsi:type="zenta:DiagramObject"
+                id="4b8136a9-abf9-44bb-a9d6-b3ddc6cfe474"
+                zentaElement="ba828acd-664d-4168-8344-fd81fd7935b7">
+            <bounds x="-94" y="12" width="191"/>
+         </child>
+         <child xsi:type="zenta:DiagramObject"
+                id="9ec0475f-5749-43da-816a-cdd1acf8dc17"
+                zentaElement="2965ee01-2400-4a44-b6c9-4e18b61150c1">
+            <bounds x="422" y="521" width="191"/>
+         </child>
+      </element>
+      <element xsi:type="zenta:BasicObject"
+               name="payment process"
+               id="c636fe0c-2674-4994-bbe7-0cf71a611b52"
+               ancestor="107b9a83-1292-49ee-bf2f-542de02b2654">
+         <documentation>-should be easy
+- see immediately what to be paid
+- ability to check if the payment is done
+- get a signal that I have to pay
+</documentation>
+      </element>
+      <element xsi:type="zenta:BasicObject"
+               name="developer onboarding"
+               id="a2e07b46-9388-4915-9ba9-ddd4083b78fc"
+               ancestor="107b9a83-1292-49ee-bf2f-542de02b2654">
+         <documentation>gather the KPIs about developer onboarding
+</documentation>
+      </element>
+      <element xsi:type="zenta:BasicObject"
+               name="task administration"
+               id="2d3525f3-d02f-4785-aa09-01b455653340"
+               ancestor="107b9a83-1292-49ee-bf2f-542de02b2654">
+         <documentation>- put up the tasks
+- should support the administration of the process of the coder's work
+ - grabbing
+ - ungrabbing
+ - when a pull request merged, identify that the task is done
+ -give payment details for the next steps
+</documentation>
+      </element>
+      <element xsi:type="zenta:BasicObject"
+               name="support sales"
+               id="645e47fc-6a34-44de-bf2c-7be13d233477"
+               ancestor="107b9a83-1292-49ee-bf2f-542de02b2654">
+         <documentation>- administer the contacted companies and their response, show KPIs about it
+- same for VCs</documentation>
+      </element>
+      <element xsi:type="zenta:BasicObject"
+               name="payment security"
+               id="925b4c7d-3d1f-4c4b-8164-1b2ed82d94ef"
+               ancestor="107b9a83-1292-49ee-bf2f-542de02b2654">
+         <documentation>no way to insert a false payment record
+</documentation>
+      </element>
+      <element xsi:type="zenta:BasicObject"
+               name="performance"
+               id="e9b858d1-1022-412c-ae20-2403994ba3df"
+               ancestor="107b9a83-1292-49ee-bf2f-542de02b2654">
+         <documentation>should be fast even for many users
+</documentation>
       </element>
    </folder>
    <folder name="2. Business Objects" id="d75d7b96-d53e-4dd4-b34b-10ff3b640764">
@@ -5943,6 +6059,11 @@ RemoteAuthentication is an Authentication implementation
                   <bounds x="167" y="90" width="386" height="207"/>
                </child>
             </child>
+            <child xsi:type="zenta:DiagramObject"
+                   id="01150b2b-d5f0-452d-8248-8f4d05b3fcdc"
+                   zentaElement="6e5dce8e-5482-41d0-a817-20219b51dd42">
+               <bounds x="660" y="456" width="181" height="133"/>
+            </child>
          </element>
          <element xsi:type="zenta:BasicObject"
                   name="fill in dashboard"
@@ -5972,6 +6093,10 @@ RemoteAuthentication is an Authentication implementation
                   name="unhide controls"
                   id="a58614a4-c12f-4125-b545-d413fd021e5f"
                   ancestor="83af8497-bfef-451b-9bc6-f00d58c8df6a"/>
+         <element xsi:type="zenta:BasicObject"
+                  name="if we identify a role which needs a different dashboard, we create it"
+                  id="6e5dce8e-5482-41d0-a817-20219b51dd42"
+                  ancestor="35ade6d3-e52e-449c-bfc5-3a5a6f4e4f58"/>
       </folder>
       <folder name="Register the user with the most important details"
               id="ce7f2a77-d578-4417-b9a0-23c974bdde40">
@@ -6321,6 +6446,21 @@ RemoteAuthentication is an Authentication implementation
                   <bounds x="167" y="90" width="386" height="207"/>
                </child>
             </child>
+            <child xsi:type="zenta:DiagramObject"
+                   id="0c7aa707-19ea-49b2-beb6-5f5c37b56a69"
+                   zentaElement="c61e533a-5c6a-45b2-bc50-82678ac60088">
+               <bounds x="324" y="-240" width="204" height="99"/>
+            </child>
+            <child xsi:type="zenta:DiagramObject"
+                   id="4bbe0d2b-5c82-4b3d-9c47-f8d2e7f82ccf"
+                   zentaElement="3fe7ad13-8204-4908-86fa-c84691e77975">
+               <bounds x="264" y="-363" width="288" height="100"/>
+            </child>
+            <child xsi:type="zenta:DiagramObject"
+                   id="b25cac44-1ede-4e1f-96d2-e5eba6cb1f0a"
+                   zentaElement="1337fa8c-bd5f-426e-95bb-98e3f458c778">
+               <bounds x="204" y="-102" width="277"/>
+            </child>
          </element>
          <element xsi:type="zenta:BasicRelationship"
                   id="be5f65b6-0cfe-469d-ae9e-c132f81e7bb9"
@@ -6331,6 +6471,18 @@ RemoteAuthentication is an Authentication implementation
                   name="choose profile"
                   id="4f41cfc1-ec8d-4b26-b554-fa3d024eb5e3"
                   ancestor="83af8497-bfef-451b-9bc6-f00d58c8df6a"/>
+         <element xsi:type="zenta:BasicObject"
+                  name="registration area replaces the profile area for this story "
+                  id="c61e533a-5c6a-45b2-bc50-82678ac60088"
+                  ancestor="35ade6d3-e52e-449c-bfc5-3a5a6f4e4f58"/>
+         <element xsi:type="zenta:BasicObject"
+                  name="only the name and balance are shown in profile area in normal case, clicking on it shows in a new view"
+                  id="3fe7ad13-8204-4908-86fa-c84691e77975"
+                  ancestor="35ade6d3-e52e-449c-bfc5-3a5a6f4e4f58"/>
+         <element xsi:type="zenta:BasicObject"
+                  name="payment channels are part of the profile area"
+                  id="1337fa8c-bd5f-426e-95bb-98e3f458c778"
+                  ancestor="35ade6d3-e52e-449c-bfc5-3a5a6f4e4f58"/>
       </folder>
       <folder name="Register payout details"
               id="b6dce9d4-e051-417b-a6a2-e13dce6cf21e">
@@ -6664,11 +6816,29 @@ RemoteAuthentication is an Authentication implementation
                   <bounds x="167" y="90" width="386" height="207"/>
                </child>
             </child>
+            <child xsi:type="zenta:DiagramObject"
+                   id="ab1e2416-15c7-4a91-a37b-f7171a2a9603"
+                   zentaElement="8fc7c0b0-db19-4a41-ac91-f804f191055e">
+               <bounds x="1163" y="681" width="-1" height="-1"/>
+            </child>
+            <child xsi:type="zenta:DiagramObject"
+                   id="5c4e2d0c-589d-4b29-b34c-6af5190b413a"
+                   zentaElement="626ab49c-5d28-468c-b417-44f4d067eebc">
+               <bounds x="612" y="408" width="187" height="107"/>
+            </child>
          </element>
          <element xsi:type="zenta:BasicObject"
                   name="choose payment"
                   id="ed28f442-eca7-4b61-9bd6-9648bb3ab7dd"
                   ancestor="83af8497-bfef-451b-9bc6-f00d58c8df6a"/>
+         <element xsi:type="zenta:BasicObject"
+                  name="submit all, edit, remove one channel"
+                  id="8fc7c0b0-db19-4a41-ac91-f804f191055e"
+                  ancestor="35ade6d3-e52e-449c-bfc5-3a5a6f4e4f58"/>
+         <element xsi:type="zenta:BasicObject"
+                  name="payment channels should be part of profile area"
+                  id="626ab49c-5d28-468c-b417-44f4d067eebc"
+                  ancestor="35ade6d3-e52e-449c-bfc5-3a5a6f4e4f58"/>
       </folder>
       <folder name="Create a project" id="8423fefd-50ed-4c3f-99ea-7b6be527c959">
          <element xsi:type="zenta:ZentaDiagramModel"
@@ -11205,7 +11375,7 @@ RemoteAuthentication is an Authentication implementation
                 id="3fbd532a-3fb6-48aa-90f3-2b7f2d4c646d"
                 targetConnections="5da6b666-6a7b-4c67-b47d-19e2e5f253c2"
                 zentaElement="80ce62bc-a239-4d68-8fe9-a073956e81eb">
-            <bounds x="972" y="297" width="-1" height="-1"/>
+            <bounds x="972" y="297" height="88"/>
             <sourceConnection xsi:type="zenta:Connection"
                               id="0e3d8a8f-01ba-4aa3-9786-c016f941f255"
                               source="3fbd532a-3fb6-48aa-90f3-2b7f2d4c646d"
@@ -11573,11 +11743,11 @@ RemoteAuthentication is an Authentication implementation
                   id="7d4d9daa-7ab8-4bfd-9f5d-95ea1caa54e7"
                   ancestor="4753b1bb-fc45-4aa1-821d-f08baf8a1766"/>
          <element xsi:type="zenta:BasicObject"
-                  name="payout details"
+                  name="payment channels"
                   id="6e79ff64-4256-436e-b1fe-c8e3f9864b7e"
                   ancestor="4753b1bb-fc45-4aa1-821d-f08baf8a1766"/>
          <element xsi:type="zenta:BasicObject"
-                  name="payouts"
+                  name="channels"
                   id="1f70e4c7-c53f-484b-a3d4-b17f0537f127"
                   ancestor="4753b1bb-fc45-4aa1-821d-f08baf8a1766"/>
          <element xsi:type="zenta:BasicObject"
