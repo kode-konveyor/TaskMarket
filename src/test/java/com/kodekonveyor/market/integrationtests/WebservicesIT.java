@@ -62,10 +62,12 @@ public class WebservicesIT {
     final HttpURLConnection connection =
         (HttpURLConnection) url.openConnection();
     connection
-        .setRequestProperty(OIDC_CLAIM_NICKNAME, UserTestData.LOGIN);
+        .setRequestProperty(
+            OIDC_CLAIM_NICKNAME, UserTestData.LOGIN_NO_MARKET_USER
+        );
     final MarketUserDTO marketUser = mapper
         .readValue((InputStream) connection.getContent(), MarketUserDTO.class);
-    assertEquals(MarketUserDTOTestData.get(), marketUser);
+    assertEquals(MarketUserDTOTestData.getIdNotInDatabase(), marketUser);
   }
 
   @Test
@@ -83,7 +85,7 @@ public class WebservicesIT {
     }
     final LeadDTO returnLead =
         mapper.readValue((InputStream) connection.getContent(), LeadDTO.class);
-    assertEquals(LeadDTOTestData.get(), returnLead);
+    assertEquals(LeadDTOTestData.getIdUninitialized(), returnLead);
   }
 
   @Test

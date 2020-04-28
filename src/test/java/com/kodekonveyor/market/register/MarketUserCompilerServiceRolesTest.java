@@ -24,10 +24,10 @@ public class MarketUserCompilerServiceRolesTest
 
   @Test
   @DisplayName(
-    "if the user does not have contract role, an Exception is thrown"
+    "if the user does not have can_be_paid role and looking for its own data, an Exception is thrown"
   )
   void test() {
-    AuthenticatedUserServiceStubs.registered(authenticatedUserService);
+    AuthenticatedUserServiceStubs.authenticated(authenticatedUserService);
     ThrowableTester.assertThrows(
         () -> marketUserCompilerService.call(MarketUserTestData.ID)
     ).assertMessageIs(
@@ -37,13 +37,37 @@ public class MarketUserCompilerServiceRolesTest
 
   @Test
   @DisplayName(
-    "if the user have contract role, no Exception is thrown"
+    "if the user does have can_be_paid role and looking for its own data, no Exception is thrown"
   )
-  void test1() {
-    AuthenticatedUserServiceStubs.kodekonveyorContract(authenticatedUserService);
+  void test0() {
+    AuthenticatedUserServiceStubs.registered(authenticatedUserService);
     ThrowableTester.assertNoException(
         () -> marketUserCompilerService.call(MarketUserTestData.ID)
     );
+  }
+
+  @Test
+  @DisplayName(
+    "if the user have contract role, no Exception is thrown"
+  )
+  void test1() {
+    AuthenticatedUserServiceStubs
+        .kodekonveyorContract(authenticatedUserService);
+    ThrowableTester.assertNoException(
+        () -> marketUserCompilerService.call(MarketUserTestData.ID)
+    );
+  }
+
+  @Test
+  @DisplayName(
+    "if the user is looking for another user and have no contract role, an Exception is thrown"
+  )
+  void test2() {
+    AuthenticatedUserServiceStubs.registered(authenticatedUserService);
+    ThrowableTester.assertThrows(
+        () -> marketUserCompilerService
+            .call(MarketUserTestData.ID_IS_TERMS_ACCEPTED_FALSE)
+    ).showStackTrace();
   }
 
 }

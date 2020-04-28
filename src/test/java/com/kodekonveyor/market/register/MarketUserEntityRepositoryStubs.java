@@ -3,7 +3,6 @@ package com.kodekonveyor.market.register;
 import static org.mockito.Mockito.doAnswer;
 import static org.mockito.Mockito.doReturn;
 
-import java.util.HashSet;
 import java.util.Optional;
 
 import org.mockito.Mockito;
@@ -28,6 +27,10 @@ public class MarketUserEntityRepositoryStubs {
         .when(marketUserEntityRepository)
         .findByUser(UserEntityTestData.getRoleCanbePaid());
 
+    doReturn(Optional.of(MarketUserEntityTestData.getIdInNullDatabase()))
+        .when(marketUserEntityRepository)
+        .findByUser(UserEntityTestData.getIdInNullDatabase());
+
     doReturn(
         Optional.of(MarketUserEntityTestData.getIsTerrmsAcceptedFalse())
     )
@@ -48,11 +51,6 @@ public class MarketUserEntityRepositoryStubs {
         final MarketUserEntity user = (MarketUserEntity) arguments[0];
         if (user.getId() == null)
           user.setId(MarketUserTestData.ID_NOT_IN_DATABASE);
-        user.setBill(new HashSet<>());
-        user.setPaymentDetail(new HashSet<>());
-        user.setProject(new HashSet<>());
-        user.setPullRequest(new HashSet<>());
-
         return null;
       }
     }).

@@ -67,15 +67,12 @@ public class AddToRoleController {
       throw new UnauthorizedException(
           RegisterConstants.NO_CAN_BE_PAID_ROLE + userToAdd
       );
-    if (null != userToAdd.getLogin()) {
 
-      final Set<RoleEntity> roles = new HashSet<>();
-      roles.addAll(userToAdd.getRole());
-      roles.add(role);
-      userToAdd.setRole(roles);
-      userEntityRepository.save(userToAdd);
-
-    }
+    final Set<RoleEntity> roles = new HashSet<>();
+    roles.addAll(userToAdd.getRole());
+    roles.add(role);
+    userToAdd.setRole(roles);
+    userEntityRepository.save(userToAdd);
 
   }
 

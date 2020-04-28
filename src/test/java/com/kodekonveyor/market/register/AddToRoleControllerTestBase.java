@@ -6,9 +6,9 @@ import org.mockito.Mock;
 
 import com.kodekonveyor.authentication.AuthenticatedUserService;
 import com.kodekonveyor.authentication.RoleEntityRepository;
+import com.kodekonveyor.authentication.RoleEntityRepositoryStubs;
 import com.kodekonveyor.authentication.UserEntityRepository;
 import com.kodekonveyor.authentication.UserEntityRepositoryStubs;
-import com.kodekonveyor.market.authentication.RoleEntityRepositoryStubs;
 import com.kodekonveyor.market.project.ProjectEntityRepository;
 import com.kodekonveyor.market.project.ProjectEntityRepositoryStubs;
 

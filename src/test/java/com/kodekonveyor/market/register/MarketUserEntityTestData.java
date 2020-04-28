@@ -81,4 +81,27 @@ public class MarketUserEntityTestData {
     return marketUserEntity;
   };
 
+  public static MarketUserEntity getIdLoadedFromDB() {
+    final MarketUserEntity marketUserEntity = get();
+    marketUserEntity.setId(MarketUserTestData.ID_NOT_IN_DATABASE);
+    marketUserEntity.setBalanceInCents(0L);
+    marketUserEntity.setUser(UserEntityTestData.getIdNoMarketUser());
+    marketUserEntity.setBill(new HashSet<>());
+    marketUserEntity.setPaymentDetail(new HashSet<>());
+    marketUserEntity.setProject(new HashSet<>());
+    marketUserEntity.setPullRequest(new HashSet<>());
+    return marketUserEntity;
+  }
+
+  public static MarketUserEntity getIdInNullDatabase() {
+    final MarketUserEntity marketUserEntity = get();
+    marketUserEntity.setId(MarketUserTestData.ID_NOT_IN_DATABASE);
+    marketUserEntity.setUser(UserEntityTestData.getIdInNullDatabase());
+    marketUserEntity.setBill(null);
+    marketUserEntity.setPaymentDetail(null);
+    marketUserEntity.setProject(null);
+    marketUserEntity.setPullRequest(null);
+    return marketUserEntity;
+  };
+
 }

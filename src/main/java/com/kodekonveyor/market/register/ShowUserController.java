@@ -1,8 +1,10 @@
 package com.kodekonveyor.market.register;
 
+import java.util.HashSet;
 import java.util.Optional;
 import java.util.stream.Collectors;
 
+import org.slf4j.Logger;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RestController;
@@ -24,27 +26,28 @@ public class ShowUserController {
   @Autowired
   MarketUserEntityRepository marketUserEntityRepository;
 
+  @Autowired
+  Logger logger;
+
   @GetMapping(UrlMapConstants.SHOW_USER_PATH)
   public MarketUserDTO call() {
     final UserEntity userEntity = authenticatedUserService.call();
 
     final Optional<MarketUserEntity> entityP =
         marketUserEntityRepository.findByUser(userEntity);
-    MarketUserEntity entity;
     final MarketUserDTO marketUserDTO = new MarketUserDTO();
-    marketUserDTO.setUser(userEntity.getId());
+    MarketUserEntity entity;
     if (entityP.isEmpty()) {
       entity = new MarketUserEntity();
       entity.setUser(userEntity);
       marketUserEntityRepository.save(entity);
     } else
       entity = entityP.get();
-    copyEntityToDT(entity, marketUserDTO);
-
+    copyEntityToDTO(entity, marketUserDTO);
     return marketUserDTO;
   }
 
-  private void copyEntityToDT(
+  private void copyEntityToDTO(
       final MarketUserEntity entity, final MarketUserDTO marketUserDTO
   ) {
     marketUserDTO.setId(entity.getId());
@@ -57,24 +60,31 @@ public class ShowUserController {
     marketUserDTO.setUser(entity.getUser().getId());
     if (entity.getLegalForm() != null)
       marketUserDTO.setLegalForm(entity.getLegalForm().getId());
-    if (entity.getBill() != null)
+    if (entity.getBill() == null)
+      marketUserDTO.setBill(new HashSet<>());
+    else
       marketUserDTO.setBill(
           entity.getBill().stream().map(BillEntity::getId).collect(Collectors.toSet())
       );
-    if (entity.getProject() != null)
+    if (entity.getProject() == null)
+      marketUserDTO.setProject(new HashSet<>());
+    else
       marketUserDTO.setProject(
           entity.getProject().stream().map(ProjectEntity::getId).collect(Collectors.toSet())
       );
-    if (entity.getPullRequest() != null)
+    if (entity.getPullRequest() == null)
+      marketUserDTO.setPullRequest(new HashSet<>());
+    else
       marketUserDTO
           .setPullRequest(
               entity.getPullRequest().stream().map(PullrequestEntity::getId).collect(Collectors.toSet())
           );
-    if (entity.getPaymentDetail() != null)
+    if (entity.getPaymentDetail() == null)
+      marketUserDTO.setPaymentDetail(new HashSet<>());
+    else
       marketUserDTO
           .setPaymentDetail(
               entity.getPaymentDetail().stream().map(PaymentDetailEntity::getId).collect(Collectors.toSet())
           );
   }
-
 }

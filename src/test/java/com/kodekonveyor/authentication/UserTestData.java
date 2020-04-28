@@ -17,13 +17,16 @@ public class UserTestData {
   public final static Long ID_PROJECTMANAGER = 1212L;
   public final static String LOGIN_PROJECTMANAGER = "projectmanager";
 
-  public static final Long ID_NO_MARKET_USER = 1213L;
-  public final static String LOGIN_NO_MARKET_USER = "nomarket";
+  public static final Long ID_NO_MARKET_USER = 1L;
+  public final static String LOGIN_NO_MARKET_USER = "user1";
 
   public static final Long ID_CONTRACT = 1214L;
   public static final String LOGIN_CONTRACT = "contract";
+
   public static final Long ID_NO_CONTRACT_TERMS_ACCEPTED = 1215L;
   public static final String LOGIN_NO_CONTRACT_TERMS_ACCEPTED =
       "nocontractaccepted";
+  public static final Long ID_IN_NULL_DATABASE = 1216L;
+  public static final String LOGIN_IN_NULL_DATABASE = "innulldb";
 
 }

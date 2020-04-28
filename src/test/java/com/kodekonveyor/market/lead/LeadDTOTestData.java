@@ -50,6 +50,12 @@ public class LeadDTOTestData {
     final LeadDTO leadDTO = get();
     leadDTO.setInterest(null);
     return leadDTO;
+  }
+
+  public static LeadDTO getIdUninitialized() {
+    final LeadDTO leadDTO = get();
+    leadDTO.setId(null);
+    return leadDTO;
   };
 
 }

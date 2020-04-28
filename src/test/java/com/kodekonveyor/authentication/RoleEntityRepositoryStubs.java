@@ -1,12 +1,8 @@
-package com.kodekonveyor.market.authentication;
+package com.kodekonveyor.authentication;
 
 import static org.mockito.Mockito.doReturn;
 
 import java.util.Optional;
-
-import com.kodekonveyor.authentication.RoleEntityRepository;
-import com.kodekonveyor.authentication.RoleEntityTestData;
-import com.kodekonveyor.authentication.RoleTestData;
 
 public class RoleEntityRepositoryStubs {
 

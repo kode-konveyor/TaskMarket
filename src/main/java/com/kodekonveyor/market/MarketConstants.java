@@ -71,8 +71,6 @@ public class MarketConstants {
   public static final String REGEX_TRANSFERWISE =
       "\\b[A-Z]{2}[0-9]{2}(?:[ ]?[0-9]{4}){4}(?!(?:[ ]?[0-9]){3})(?:[ ]?[0-9]{1,2})?\\b";
 
-  public static final String REGISTERED_ROLE = "registered";
-
   public static final String TERMS_NOT_ACCEPTED = "Contract terms not accepted";
 
   public static final String UNDERSCORE = "_";

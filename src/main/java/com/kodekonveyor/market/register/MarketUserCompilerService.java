@@ -32,7 +32,7 @@ public class MarketUserCompilerService {
             .findByName(MarketConstants.KODE_KONVEYOR_PROJECT_NAME).get();
     if (returnedUser.getUser().getId() == user.getId()) {
       if (
-        !CheckRoleUtil.hasRole(user, project, MarketConstants.REGISTERED_ROLE)
+        !CheckRoleUtil.hasRole(user, project, MarketConstants.CAN_BE_PAID_ROLE)
       )
         throw new UnauthorizedException(
             RegisterConstants.NO_CAN_BE_PAID_ROLE

@@ -10,10 +10,9 @@ public class UserEntityTestData {
   public final static UserEntity get() {
     final UserEntity userEntity = new UserEntity();
     userEntity.setId(UserTestData.ID);
+    userEntity.setLogin(UserTestData.LOGIN);
     userEntity
         .setRole(Set.of(RoleEntityTestData.get()));
-    userEntity.setLogin(UserTestData.LOGIN);
-
     return userEntity;
   }
 
@@ -83,6 +82,13 @@ public class UserEntityTestData {
     userEntity.setId(UserTestData.ID_NO_CONTRACT_TERMS_ACCEPTED);
     userEntity.setLogin(UserTestData.LOGIN_NO_CONTRACT_TERMS_ACCEPTED);
     userEntity.setRole(Set.of(RoleEntityTestData.getNameCanbepaid()));
+    return userEntity;
+  }
+
+  public static UserEntity getIdInNullDatabase() {
+    final UserEntity userEntity = get();
+    userEntity.setId(UserTestData.ID_IN_NULL_DATABASE);
+    userEntity.setLogin(UserTestData.LOGIN_IN_NULL_DATABASE);
     return userEntity;
   };
 

@@ -1,6 +1,6 @@
 package com.kodekonveyor.authentication;
 
-import static org.mockito.Mockito.*;
+import static org.mockito.Mockito.*;//NOPMD
 
 import java.util.Optional;
 

@@ -15,6 +15,7 @@ import com.kodekonveyor.authentication.AuthenticatedUserServiceStubs;
 import com.kodekonveyor.authentication.RoleTestData;
 import com.kodekonveyor.authentication.UserTestData;
 import com.kodekonveyor.exception.ThrowableTester;
+import com.kodekonveyor.market.UnauthorizedException;
 import com.kodekonveyor.market.ValidationException;
 
 @ExtendWith(MockitoExtension.class)
@@ -44,13 +45,43 @@ public class AddToRoleControllerRolesTest extends AddToRoleControllerTestBase {
     "if the login is null, we throw ValidationException"
   )
   void test3() {
-    AuthenticatedUserServiceStubs.unregistered(authenticatedUserService);
+    AuthenticatedUserServiceStubs.projectManager(authenticatedUserService);
 
     ThrowableTester.assertThrows(
         () -> addToRoleController
             .call(UserTestData.LOGIN_BAD, RoleTestData.ID_PROJECT_MANAGER)
     ).assertException(ValidationException.class)
         .assertMessageIs(AddToRoleControllerTestData.UNREGISERED);
+  }
+
+  @Test
+  @DisplayName(
+    "If the calling user is not a project manager, a UnauthorizedException is thrown"
+  )
+  void test4() {
+    AuthenticatedUserServiceStubs.authenticated(authenticatedUserService);
+    ThrowableTester.assertThrows(
+        () -> addToRoleController
+            .call(
+                UserTestData.LOGIN_REGISTERED,
+                RoleTestData.ID_KODEKONVEYOR_CONTRACT
+            )
+    ).assertException(UnauthorizedException.class);
+  }
+
+  @Test
+  @DisplayName(
+    "If the calling user is not a project manager, the error message is 'No manager role for the project'"
+  )
+  void test() {
+    AuthenticatedUserServiceStubs.authenticated(authenticatedUserService);
+    ThrowableTester.assertThrows(
+        () -> addToRoleController
+            .call(
+                UserTestData.LOGIN_REGISTERED,
+                RoleTestData.ID_KODEKONVEYOR_CONTRACT
+            )
+    ).assertMessageContains(RegisterTestData.NO_MANAGER_ROLE_FOR_THE_PROJECT);
   }
 
 }

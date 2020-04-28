@@ -7,7 +7,7 @@ import org.slf4j.Logger;
 
 import com.kodekonveyor.authentication.AuthenticatedUserService;
 import com.kodekonveyor.authentication.RoleEntityRepository;
-import com.kodekonveyor.market.authentication.RoleEntityRepositoryStubs;
+import com.kodekonveyor.authentication.RoleEntityRepositoryStubs;
 
 public class CreateProjectControllerTestBase {
 

@@ -47,9 +47,29 @@ public class MarketUserDTOTestData {
   }
 
   public static MarketUserDTO getIdNotInDatabase() {
-    final MarketUserDTO marketUserDTO = new MarketUserDTO();
+    final MarketUserDTO marketUserDTO = get();
     marketUserDTO.setId(MarketUserTestData.ID_NOT_IN_DATABASE);
     marketUserDTO.setUser(UserTestData.ID_NO_MARKET_USER);
+    marketUserDTO.setIsTermsAccepted(null);
+    marketUserDTO.setEmail(null);
+    marketUserDTO.setLegalAddress(null);
+    marketUserDTO.setLegalName(null);
+    marketUserDTO.setPersonalName(null);
+    marketUserDTO.setBalanceInCents(null);
+    marketUserDTO.setLegalForm(null);
+
+    marketUserDTO.setBill(new HashSet<>());
+    marketUserDTO.setPaymentDetail(new HashSet<>());
+    marketUserDTO.setProject(new HashSet<>());
+    marketUserDTO.setPullRequest(new HashSet<>());
+
+    return marketUserDTO;
+  }
+
+  public static MarketUserDTO getIdNotInNullDatabase() {
+    final MarketUserDTO marketUserDTO = get();
+    marketUserDTO.setId(MarketUserTestData.ID_NOT_IN_DATABASE);
+    marketUserDTO.setUser(UserTestData.ID_IN_NULL_DATABASE);
     marketUserDTO.setBill(new HashSet<>());
     marketUserDTO.setPaymentDetail(new HashSet<>());
     marketUserDTO.setProject(new HashSet<>());

@@ -1,5 +1,6 @@
 package com.kodekonveyor.market.register;
 
+import java.util.HashSet;
 import java.util.Optional;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -41,6 +42,17 @@ public class RegistrationController {
       throw new ValidationException(RegisterConstants.NO_SUCH_LEGAL_FORM);
     final UserEntity userEntity = authenticatedUserService.call();
 
+    final MarketUserEntity entity =
+        createMarketUserEntity(marketUserDTO, legalform, userEntity);
+
+    marketUserEntityRepository.save(entity);
+
+  }
+
+  private MarketUserEntity createMarketUserEntity(
+      final MarketUserDTO marketUserDTO,
+      final Optional<LegalFormEntity> legalform, final UserEntity userEntity
+  ) {
     final MarketUserEntity entity = new MarketUserEntity();
     entity.setBalanceInCents(0L);
     entity.setIsTermsAccepted(marketUserDTO.getIsTermsAccepted());
@@ -53,9 +65,11 @@ public class RegistrationController {
     entity.setLegalForm(
         legalFormEntityRepository.findById(marketUserDTO.getLegalForm()).get()
     );
-
-    marketUserEntityRepository.save(entity);
-
+    entity.setBill(new HashSet<>());
+    entity.setPaymentDetail(new HashSet<>());
+    entity.setProject(new HashSet<>());
+    entity.setPullRequest(new HashSet<>());
+    return entity;
   }
 
 }

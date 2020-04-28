@@ -57,4 +57,12 @@ public class AuthenticatedUserServiceStubs {
         .call();
   }
 
+  public static void authenticatedInNullDatabase(
+      final AuthenticatedUserService authenticatedUserService
+  ) {
+    doReturn(UserEntityTestData.getIdInNullDatabase())
+        .when(authenticatedUserService)
+        .call();
+  }
+
 }

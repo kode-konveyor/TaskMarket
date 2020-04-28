@@ -1,7 +1,7 @@
 package com.kodekonveyor.exception;
 
 import static com.kodekonveyor.exception.ThrowableTesterConstants.*; //NOPMD it's not unused import
-import static org.junit.Assert.*;
+import static org.junit.Assert.*;//NOPMD
 
 import org.junit.platform.commons.util.ExceptionUtils;
 

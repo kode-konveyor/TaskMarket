@@ -25,7 +25,7 @@ public class MarketUserTestData {
 
   public static final Long ID_CAN_BE_PAID = 1822L;
 
-  public static final Long ID_NOT_IN_DATABASE = 1823L;
+  public static final Long ID_NOT_IN_DATABASE = 1L;
 
   public static final Long ID_KODEKONVEYOR_CONTRACT = 1824L;
 

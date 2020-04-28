@@ -32,12 +32,26 @@ public class ShowUserControllerShowHerDataTest
   }
 
   @Test
+  @DisplayName(
+    "The data of the currently authenticated user is shown with empty set even if the database returns nulls"
+  )
+  public void test2() {
+    AuthenticatedUserServiceStubs
+        .authenticatedInNullDatabase(authenticatedUserService);
+    assertEquals(
+        MarketUserDTOTestData.getIdNotInNullDatabase(),
+        showUserController.call()
+    );
+  }
+
+  @Test
   @DisplayName("If there is no MarketUserEntity for the user, it is created")
   public void test1() {
     AuthenticatedUserServiceStubs.unregistered(authenticatedUserService);
+    final MarketUserDTO result = showUserController.call();
     assertEquals(
         MarketUserDTOTestData.getIdNotInDatabase(),
-        showUserController.call()
+        result
     );
   }
 }
