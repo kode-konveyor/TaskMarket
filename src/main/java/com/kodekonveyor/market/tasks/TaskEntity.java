@@ -2,12 +2,15 @@ package com.kodekonveyor.market.tasks;
 
 import javax.annotation.Generated;
 import javax.persistence.Entity;
+import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.OneToOne;
 
 import com.kodekonveyor.market.project.MilestoneEntity;
+import com.kodekonveyor.market.project.ProjectEntity;
+import com.kodekonveyor.market.register.MarketUserEntity;
 
 import lombok.Data;
 
