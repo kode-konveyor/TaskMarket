@@ -1,6 +1,11 @@
 package com.kodekonveyor.market.tasks;
 
+<<<<<<< HEAD
 import javax.annotation.Generated;
+=======
+import com.kodekonveyor.authentication.UserEntityTestData;
+import com.kodekonveyor.market.project.ProjectEntityTestData;
+>>>>>>> origin/develop
 
 import com.kodekonveyor.market.project.MilestoneTestData;
 

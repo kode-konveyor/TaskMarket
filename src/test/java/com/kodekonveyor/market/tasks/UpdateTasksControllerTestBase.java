@@ -19,8 +19,32 @@ public class UpdateTasksControllerTestBase {
   @Mock
   ProjectEntityRepository projectEntityRepository;
 
+  @Mock
+  GetRepositoryTasksService getRepositoryTasksService;
+
+  @Mock
+  GithubCallService githubRequest;
+
+  @Mock
+  MarketUserEntityRepository marketRepository;
+
+  @Mock
+  TaskEntityRepository taskEntityRepository;
+
+  @InjectMocks
+  UpdateTasksController updateTasksController;
+
+  @Mock
+  UserEntityRepository userRepository;
+
   @BeforeEach
-  void setUp() {
+  void setUp() throws JSONException {
+    AuthenticatedUserStubs.kodekonveyorContract(authenticatedUserService);
     ProjectEntityRepositoryStubs.behaviour(projectEntityRepository);
+    UserEntityRepositoryStubs.behaviour(userRepository);
+    MarketUserStubs.behaviour(marketRepository, registerTestData);
+    GetRepositoryTasksServiceStubs.behaviour(getRepositoryTasksService);
+
   }
+
 }

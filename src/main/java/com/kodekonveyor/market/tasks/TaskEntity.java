@@ -25,5 +25,9 @@ public class TaskEntity {
   private String description;
   private Long githubId;
   private String service;
-
+  @OneToOne(fetch = FetchType.LAZY)
+  private ProjectEntity project;
+  @OneToOne(fetch = FetchType.LAZY)
+  private MarketUserEntity responsible;
+  private TaskStatusEnum status;
 }

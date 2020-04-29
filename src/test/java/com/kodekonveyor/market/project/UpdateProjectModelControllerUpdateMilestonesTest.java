@@ -35,7 +35,7 @@ public class UpdateProjectModelControllerUpdateMilestonesTest
   }
 
   @Test
-  @DisplayName("The milestones of the project is updated successfully")
+  @DisplayName("The milestones of the project are updated successfully")
   public void test1() {
     ProjectEntityRepositoryStubs.behaviour(projectEntityRepository);
     updateProjectModelController
