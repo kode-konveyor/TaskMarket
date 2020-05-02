@@ -17,7 +17,7 @@ public class TransferTypeEntity {
 	private Long id;
 	private String transferTypeName;
 	private String accountIdLabel;
-	private Boolean isBankidShown;
+	private Boolean isBankIdShown;
 	private String bankIdLabel;
 
 }

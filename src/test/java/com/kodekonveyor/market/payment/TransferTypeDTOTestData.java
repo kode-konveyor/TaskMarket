@@ -12,7 +12,7 @@ public class TransferTypeDTOTestData {
         .setTransferTypeName(TransferTypeTestData.TRANSFER_TYPE_NAME);
     transferTypeDTO.setBankIdLabel(TransferTypeTestData.BANK_ID_LABEL);
     transferTypeDTO.setAccountIdLabel(TransferTypeTestData.ACCOUNT_ID_LABEL);
-    transferTypeDTO.setIsBankidShown(TransferTypeTestData.IS_BANKID_SHOWN);
+    transferTypeDTO.setIsBankIdShown(TransferTypeTestData.IS_BANKID_SHOWN);
 
     return transferTypeDTO;
   };

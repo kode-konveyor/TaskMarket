@@ -12,7 +12,7 @@ public class TransferTypeEntityTestData {
         .setTransferTypeName(TransferTypeTestData.TRANSFER_TYPE_NAME);
     transferTypeEntity.setBankIdLabel(TransferTypeTestData.BANK_ID_LABEL);
     transferTypeEntity.setAccountIdLabel(TransferTypeTestData.ACCOUNT_ID_LABEL);
-    transferTypeEntity.setIsBankidShown(TransferTypeTestData.IS_BANKID_SHOWN);
+    transferTypeEntity.setIsBankIdShown(TransferTypeTestData.IS_BANKID_SHOWN);
 
     return transferTypeEntity;
   };

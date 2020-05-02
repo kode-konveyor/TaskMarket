@@ -2552,7 +2552,7 @@ It is external requirements, as it is against the design level metamodel
                   id="804481fa-2c2d-4360-83fb-2bcb9e1c808c"
                   ancestor="267f4d47-e1e6-4af4-8677-3cf65fc8db86"/>
          <element xsi:type="zenta:BasicObject"
-                  name="is bankid shown"
+                  name="is bank id shown"
                   id="1a53e024-5dab-4628-9ec3-8177ab0df4b8"
                   ancestor="267f4d47-e1e6-4af4-8677-3cf65fc8db86"/>
          <element xsi:type="zenta:BasicObject"
