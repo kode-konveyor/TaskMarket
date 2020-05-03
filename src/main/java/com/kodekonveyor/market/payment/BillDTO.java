@@ -1,4 +1,3 @@
-
 package com.kodekonveyor.market.payment;
 
 import java.util.Set;
@@ -11,6 +10,7 @@ import lombok.Data;
 @Data
 public class BillDTO {
 	private Long id;
+	private Long marketUser;
 	private Long billAmountInCents;
 	private Object billPicture;
 	private Boolean isChecked;

@@ -1,4 +1,3 @@
-
 package com.kodekonveyor.market.project;
 
 import java.util.Set;
@@ -14,6 +13,9 @@ public class ProjectDTO {
 	private Long budgetInCents;
 	private Boolean isPublic;
 	private String name;
+	private String description;
+	private String projectId;
+	private String url;
 	private Set<Long> pullRequest;
 	private Set<Long> role;
 	private Set<Long> milestone;

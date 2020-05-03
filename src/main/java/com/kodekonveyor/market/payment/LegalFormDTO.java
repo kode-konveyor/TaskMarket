@@ -1,4 +1,3 @@
-
 package com.kodekonveyor.market.payment;
 
 import javax.annotation.Generated;

@@ -2989,7 +2989,7 @@ It is external requirements, as it is against the design level metamodel
                   id="f343c8c6-adb8-4d49-802f-88c8f82fd394"
                   ancestor="267f4d47-e1e6-4af4-8677-3cf65fc8db86"/>
          <element xsi:type="zenta:BasicObject"
-                  name="order"
+                  name="priority"
                   id="f44a3ece-61d4-46a4-a438-91b1dc885d4d"
                   ancestor="267f4d47-e1e6-4af4-8677-3cf65fc8db86"/>
       </folder>
@@ -3212,7 +3212,6 @@ It is external requirements, as it is against the design level metamodel
          </child>
          <child xsi:type="zenta:DiagramObject"
                 id="f678918e-04fa-4cce-92b5-2c751044c64d"
-                targetConnections="54892c89-2317-4e1e-b14a-d1f526af489b"
                 zentaElement="d1754fb1-2177-4f76-9985-46678bbe0d7f">
             <bounds x="348" y="151" width="-1" height="-1"/>
             <sourceConnection xsi:type="zenta:Connection"
@@ -3485,9 +3484,9 @@ It is external requirements, as it is against the design level metamodel
          </child>
          <child xsi:type="zenta:DiagramObject"
                 id="5c1e774a-904e-44f4-ac1a-ecb5b1b4b87c"
-                targetConnections="c1fb99ee-83fe-4b5f-b171-69ab9eccfb03"
+                targetConnections="d57f2560-0f4b-4dd5-b892-94295a0cafa1"
                 zentaElement="13a1f527-d649-4c11-add3-9b491d865f0e">
-            <bounds x="636" y="306" width="-1" height="-1"/>
+            <bounds x="1308" y="588" width="-1" height="-1"/>
          </child>
          <child xsi:type="zenta:DiagramObject"
                 id="2c07022e-c374-4d60-bc5e-493c92a1902f"
@@ -3510,11 +3509,6 @@ It is external requirements, as it is against the design level metamodel
                               source="e79ad49e-88ac-41f6-9d18-7992d5ad03ea"
                               target="e99cc085-001a-43e8-a624-494040b10a07"
                               relationship="a180ef65-3fe1-42f5-b3bd-2d4cdf9234e8"/>
-            <sourceConnection xsi:type="zenta:Connection"
-                              id="c1fb99ee-83fe-4b5f-b171-69ab9eccfb03"
-                              source="e79ad49e-88ac-41f6-9d18-7992d5ad03ea"
-                              target="5c1e774a-904e-44f4-ac1a-ecb5b1b4b87c"
-                              relationship="b39b46a1-9bf7-453f-8ae3-a9186d672167"/>
          </child>
          <child xsi:type="zenta:DiagramObject"
                 id="3bec6b71-dc04-4bac-a5a3-c03d7aa48e66"
@@ -3677,11 +3671,6 @@ It is external requirements, as it is against the design level metamodel
                               source="e5f6b767-3440-4462-9cf0-c5a47d39a354"
                               target="68dc61c4-6817-48a7-9f3b-adeeb9577d63"
                               relationship="18080c89-2830-45a2-afd5-3b98ae6cb449"/>
-            <sourceConnection xsi:type="zenta:Connection"
-                              id="54892c89-2317-4e1e-b14a-d1f526af489b"
-                              source="e5f6b767-3440-4462-9cf0-c5a47d39a354"
-                              target="f678918e-04fa-4cce-92b5-2c751044c64d"
-                              relationship="c5c1d214-87b2-4a8f-a070-c19fb3be55c6"/>
          </child>
          <child xsi:type="zenta:DiagramObject"
                 id="e01a0e2a-d3b6-4df7-b237-37536fd61e76"
@@ -3791,6 +3780,11 @@ It is external requirements, as it is against the design level metamodel
                               source="9cdacc4d-0058-45ea-8c92-f9d0578f0fa3"
                               target="cde3018f-c5bf-4910-9dd8-844cad310870"
                               relationship="80f95099-a067-447c-bc66-e6fab974a18b"/>
+            <sourceConnection xsi:type="zenta:Connection"
+                              id="d57f2560-0f4b-4dd5-b892-94295a0cafa1"
+                              source="9cdacc4d-0058-45ea-8c92-f9d0578f0fa3"
+                              target="5c1e774a-904e-44f4-ac1a-ecb5b1b4b87c"
+                              relationship="90a22665-22c3-4931-8be1-148d758396a3"/>
          </child>
       </element>
       <element xsi:type="zenta:BasicObject"
@@ -3834,11 +3828,6 @@ It is external requirements, as it is against the design level metamodel
                ancestor="f0d0d4a5-201b-41b4-a047-70308c99bdb7"
                source="a7a9bc9f-6241-4273-8bd9-455b3bc8faf6"
                target="80ce62bc-a239-4d68-8fe9-a073956e81eb"/>
-      <element xsi:type="zenta:BasicRelationship"
-               id="b39b46a1-9bf7-453f-8ae3-a9186d672167"
-               ancestor="f0d0d4a5-201b-41b4-a047-70308c99bdb7"
-               source="a7a9bc9f-6241-4273-8bd9-455b3bc8faf6"
-               target="13a1f527-d649-4c11-add3-9b491d865f0e"/>
       <element xsi:type="zenta:BasicObject"
                name="dashboard"
                id="635be1e6-f9af-451f-b522-160bf55f1357"
@@ -3960,11 +3949,6 @@ It is external requirements, as it is against the design level metamodel
                source="bd341262-15ee-448c-99ed-8c91861db09d"
                target="6bdcadcd-8098-4a7f-97a4-b49a5ae32619"/>
       <element xsi:type="zenta:BasicRelationship"
-               id="c5c1d214-87b2-4a8f-a070-c19fb3be55c6"
-               ancestor="f062189d-e43e-4f83-98a8-9f013b94756c"
-               source="bd341262-15ee-448c-99ed-8c91861db09d"
-               target="d1754fb1-2177-4f76-9985-46678bbe0d7f"/>
-      <element xsi:type="zenta:BasicRelationship"
                id="1918854e-d224-4ba5-af88-3062b6ca2954"
                ancestor="f0d0d4a5-201b-41b4-a047-70308c99bdb7"
                source="d1754fb1-2177-4f76-9985-46678bbe0d7f"
@@ -4022,6 +4006,11 @@ It is external requirements, as it is against the design level metamodel
                ancestor="f0d0d4a5-201b-41b4-a047-70308c99bdb7"
                source="a96b4416-133c-4094-9bb2-9f0b3b766837"
                target="cac489e9-8bc1-4664-b71e-a38d67d16b8e"/>
+      <element xsi:type="zenta:BasicRelationship"
+               id="90a22665-22c3-4931-8be1-148d758396a3"
+               ancestor="f0d0d4a5-201b-41b4-a047-70308c99bdb7"
+               source="a96b4416-133c-4094-9bb2-9f0b3b766837"
+               target="13a1f527-d649-4c11-add3-9b491d865f0e"/>
    </folder>
    <folder name="0. Analysis relations" id="f0d3545d-9232-4a49-b554-c20256ce5fda">
       <folder name="1" id="513d028f-e21a-4ce6-8798-b2d716cd0be3">

@@ -1,4 +1,3 @@
-
 package com.kodekonveyor.market.tasks;
 
 import javax.annotation.Generated;
@@ -9,7 +8,7 @@ import lombok.Data;
 @Data
 public class TaskDTO {
 	private Long id;
-	private Long milestone;
+	private Long marketUser;
 	private String behaviour;
 	private String description;
 	private Long githubId;

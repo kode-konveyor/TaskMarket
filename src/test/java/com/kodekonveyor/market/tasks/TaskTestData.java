@@ -13,6 +13,6 @@ public class TaskTestData {
 
   public final static String DESCRIPTION = "description comes here";
 
-  public final static Long GITHUB_ID = 66L;
+  public final static Long GITHUB_ID = 66l;
 
 }

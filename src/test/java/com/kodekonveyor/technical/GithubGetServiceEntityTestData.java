@@ -4,5 +4,5 @@ import javax.annotation.Generated;
 
 @Generated("by zenta-tools")
 public class GithubGetServiceEntityTestData {
-	
+
 }

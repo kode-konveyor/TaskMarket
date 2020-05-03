@@ -3,19 +3,17 @@ package com.kodekonveyor.market.register;
 import java.util.Set;
 
 import javax.annotation.Generated;
-import javax.persistence.ElementCollection;
 import javax.persistence.Entity;
+import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.OneToMany;
 import javax.persistence.OneToOne;
 
 import com.kodekonveyor.authentication.UserEntity;
-import com.kodekonveyor.market.payment.BillEntity;
 import com.kodekonveyor.market.payment.LegalFormEntity;
 import com.kodekonveyor.market.payment.PaymentDetailEntity;
-import com.kodekonveyor.market.project.ProjectEntity;
-import com.kodekonveyor.market.project.PullrequestEntity;
 
 import lombok.Data;
 
@@ -27,23 +25,26 @@ public class MarketUserEntity {
   @Id
   @GeneratedValue(strategy = GenerationType.IDENTITY)
   private Long id;
+
   private Long balanceInCents;
+
   private String email;
+
   private Boolean isTermsAccepted;
+
   private String legalAddress;
+
   private String legalName;
+
   private String personalName;
-  @OneToOne
+
+  @OneToOne(fetch = FetchType.LAZY)
   private LegalFormEntity legalForm;
-  @OneToOne
+
+  @OneToOne(fetch = FetchType.LAZY)
   private UserEntity user;
-  @ElementCollection
-  private Set<BillEntity> bill;
-  @ElementCollection
+
+  @OneToMany(fetch = FetchType.LAZY)
   private Set<PaymentDetailEntity> paymentDetail;
-  @ElementCollection
-  private Set<ProjectEntity> project;
-  @ElementCollection
-  private Set<PullrequestEntity> pullRequest;
 
 }

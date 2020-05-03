@@ -15,7 +15,6 @@ public class ProjectEntityTestData {
     projectEntity.setId(ProjectTestData.ID);
     projectEntity.setRole(Set.of(RoleEntityTestData.get()));
     projectEntity.setMilestone(Set.of(MilestoneEntityTestData.get()));
-    projectEntity.setPullRequest(Set.of(PullrequestEntityTestData.get()));
     projectEntity.setName(ProjectTestData.NAME);
     projectEntity.setBudgetInCents(ProjectTestData.BUDGET_IN_CENTS);
     projectEntity.setIsPublic(ProjectTestData.IS_PUBLIC);

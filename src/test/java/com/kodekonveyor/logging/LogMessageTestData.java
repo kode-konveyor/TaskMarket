@@ -10,6 +10,8 @@ public class LogMessageTestData {
 
   public final static Long ID = 1793L;
 
+  public final static Object ARGUMENT = "log message argument";
+
   public final static Marker LOG_CATEGORY_AUTH_DENY =
       MarkerFactory.getMarker("auth.deny");
 

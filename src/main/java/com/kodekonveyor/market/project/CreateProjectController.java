@@ -97,7 +97,6 @@ public class CreateProjectController {
     entity.setIsPublic(dto.getIsPublic());
     entity.setBudgetInCents(0L);
     copyMileStones(dto, entity);
-    copyPullrequests(dto, entity);
     copyRoles(dto, entity);
 
     projectEntityRepository.save(entity);
@@ -113,17 +112,6 @@ public class CreateProjectController {
       milestones.add(milestone);
     }
     entity.setMilestone(milestones);
-  }
-
-  private void
-      copyPullrequests(final ProjectDTO dto, final ProjectEntity entity) {
-    final Set<PullrequestEntity> pullrequests = new HashSet<>();
-    for (final Long pullrequestId : dto.getPullRequest()) {
-      final PullrequestEntity milestone = pullrequestEntityRepository
-          .findById(pullrequestId).get();
-      pullrequests.add(milestone);
-    }
-    entity.setPullRequest(pullrequests);
   }
 
   private void

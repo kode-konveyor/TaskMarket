@@ -6,11 +6,8 @@ import java.util.Set;
 import javax.annotation.Generated;
 
 import com.kodekonveyor.authentication.UserTestData;
-import com.kodekonveyor.market.payment.BillTestData;
 import com.kodekonveyor.market.payment.LegalFormTestData;
 import com.kodekonveyor.market.payment.PaymentDetailTestData;
-import com.kodekonveyor.market.project.ProjectTestData;
-import com.kodekonveyor.market.project.PullrequestTestData;
 
 @Generated("by zenta-tools")
 public class MarketUserDTOTestData {
@@ -18,9 +15,6 @@ public class MarketUserDTOTestData {
   public final static MarketUserDTO get() {
     final MarketUserDTO marketUserDTO = new MarketUserDTO();
     marketUserDTO.setId(MarketUserTestData.ID);
-    marketUserDTO.setBill(Set.of(BillTestData.ID));
-    marketUserDTO.setProject(Set.of(ProjectTestData.ID));
-    marketUserDTO.setPullRequest(Set.of(PullrequestTestData.ID));
     marketUserDTO.setPaymentDetail(Set.of(PaymentDetailTestData.ID));
     marketUserDTO.setIsTermsAccepted(MarketUserTestData.IS_TERMS_ACCEPTED);
     marketUserDTO.setEmail(MarketUserTestData.EMAIL);
@@ -58,10 +52,7 @@ public class MarketUserDTOTestData {
     marketUserDTO.setBalanceInCents(null);
     marketUserDTO.setLegalForm(null);
 
-    marketUserDTO.setBill(new HashSet<>());
     marketUserDTO.setPaymentDetail(new HashSet<>());
-    marketUserDTO.setProject(new HashSet<>());
-    marketUserDTO.setPullRequest(new HashSet<>());
 
     return marketUserDTO;
   }
@@ -70,10 +61,7 @@ public class MarketUserDTOTestData {
     final MarketUserDTO marketUserDTO = get();
     marketUserDTO.setId(MarketUserTestData.ID_NOT_IN_DATABASE);
     marketUserDTO.setUser(UserTestData.ID_IN_NULL_DATABASE);
-    marketUserDTO.setBill(new HashSet<>());
     marketUserDTO.setPaymentDetail(new HashSet<>());
-    marketUserDTO.setProject(new HashSet<>());
-    marketUserDTO.setPullRequest(new HashSet<>());
 
     return marketUserDTO;
   }

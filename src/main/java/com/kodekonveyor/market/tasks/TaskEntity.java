@@ -8,8 +8,6 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.OneToOne;
 
-import com.kodekonveyor.market.project.MilestoneEntity;
-import com.kodekonveyor.market.project.ProjectEntity;
 import com.kodekonveyor.market.register.MarketUserEntity;
 
 import lombok.Data;
@@ -22,15 +20,16 @@ public class TaskEntity {
   @Id
   @GeneratedValue(strategy = GenerationType.IDENTITY)
   private Long id;
-  @OneToOne
-  private MilestoneEntity milestone;
+
+  @OneToOne(fetch = FetchType.LAZY)
+  private MarketUserEntity marketUser;
+
   private String behaviour;
+
   private String description;
+
   private Long githubId;
+
   private String service;
-  @OneToOne(fetch = FetchType.LAZY)
-  private ProjectEntity project;
-  @OneToOne(fetch = FetchType.LAZY)
-  private MarketUserEntity responsible;
-  private TaskStatusEnum status;
+
 }

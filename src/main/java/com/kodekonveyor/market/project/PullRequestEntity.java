@@ -1,13 +1,12 @@
 package com.kodekonveyor.market.project;
 
-import java.util.Set;
-
 import javax.annotation.Generated;
-import javax.persistence.ElementCollection;
 import javax.persistence.Entity;
+import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.OneToOne;
 
 import com.kodekonveyor.market.tasks.TaskEntity;
 
@@ -16,14 +15,17 @@ import lombok.Data;
 @Generated("by zenta-tools")
 @Data
 @Entity
-public class ProjectModelEntity {
+public class PullRequestEntity {
 
   @Id
   @GeneratedValue(strategy = GenerationType.IDENTITY)
   private Long id;
-  @ElementCollection
-  private Set<MilestoneEntity> milestone;
-  @ElementCollection
-  private Set<TaskEntity> task;
+
+  private Boolean isAccepted;
+
+  private Long reference;
+
+  @OneToOne(fetch = FetchType.LAZY)
+  private TaskEntity task;
 
 }

@@ -1,4 +1,3 @@
-
 package com.kodekonveyor.market.lead;
 
 import javax.annotation.Generated;

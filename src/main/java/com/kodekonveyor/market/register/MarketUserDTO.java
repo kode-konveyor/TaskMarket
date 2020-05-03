@@ -1,4 +1,3 @@
-
 package com.kodekonveyor.market.register;
 
 import java.util.Set;
@@ -19,9 +18,6 @@ public class MarketUserDTO {
 	private String personalName;
 	private Long legalForm;
 	private Long user;
-	private Set<Long> bill;
 	private Set<Long> paymentDetail;
-	private Set<Long> project;
-	private Set<Long> pullRequest;
 	
 }

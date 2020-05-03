@@ -6,8 +6,11 @@ import javax.annotation.Generated;
 public class BilledItemTestData {
 
   public final static Long ID = 1781L;
-  public static final Long DELIVERABLE_PRICE_IN_CENTS = 500L;
-  public static final Long DELIVERABLE_COUNT = 3L;
-  public static final Long ITEM_PRICE_IN_CENTS = 1500L;
+
+  public final static Long DELIVERABLE_COUNT = 3l;
+
+  public final static Long ITEM_PRICE_IN_CENTS = 1500l;
+
+  public final static Long DELIVERABLE_PRICE_IN_CENTS = 500l;
 
 }

@@ -62,10 +62,7 @@ public class RegistrationController {
     entity.setPersonalName(marketUserDTO.getLegalName());
     entity.setUser(userEntity);
     entity.setLegalForm(legalForm.get());
-    entity.setBill(new HashSet<>());
     entity.setPaymentDetail(new HashSet<>());
-    entity.setProject(new HashSet<>());
-    entity.setPullRequest(new HashSet<>());
     return entity;
   }
 

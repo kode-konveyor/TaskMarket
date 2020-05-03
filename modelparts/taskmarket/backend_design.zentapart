@@ -2568,7 +2568,7 @@
                       id="0f6844fb-e70d-4ff3-9eb4-8bd582e39286"
                       targetConnections="35cc5ef0-adbd-46fd-8e6e-9919b3f2ffdb 66d0e60f-1d6e-43ae-9eeb-67573ceff9bf"
                       zentaElement="80d45df0-5c9e-4806-89e5-077d47e9e82f">
-                  <bounds x="756" y="516" width="-1" height="-1"/>
+                  <bounds x="756" y="516" width="193"/>
                </child>
                <child xsi:type="zenta:DiagramObject"
                       id="a7a62e47-7657-4523-b0d9-a3e541b02167"
@@ -2683,9 +2683,11 @@
                      source="04976fef-5ffb-4742-b111-3eb0e8b1048b"
                      target="004cc9ba-1885-4865-bdee-b102d7a95c6a"/>
             <element xsi:type="zenta:BasicObject"
-                     name="BUDGET"
+                     name="BUDGET_IN_CENTS"
                      id="80d45df0-5c9e-4806-89e5-077d47e9e82f"
-                     ancestor="ffbe5058-5089-4c5a-965d-e996df089f8e"/>
+                     ancestor="ffbe5058-5089-4c5a-965d-e996df089f8e">
+               <documentation>0</documentation>
+            </element>
             <element xsi:type="zenta:BasicRelationship"
                      id="bd785e76-fb2f-42cb-976b-57cacb3bacdb"
                      ancestor="07abb5cc-2ae6-4184-82a9-1ea3a680187c"
@@ -2971,7 +2973,7 @@
                      name="REFERENCE"
                      id="c0b62385-90a1-453d-83b4-f6591671119d"
                      ancestor="ffbe5058-5089-4c5a-965d-e996df089f8e">
-               <documentation>88</documentation>
+               <documentation>88L</documentation>
             </element>
             <element xsi:type="zenta:BasicRelationship"
                      id="f11dffd0-b315-4a10-9fa2-d7e6a6d98441"
@@ -3185,16 +3187,20 @@
             <element xsi:type="zenta:BasicObject"
                      name="NAME"
                      id="7f06ff95-c1eb-44c6-bd09-e9eb5916d6a2"
-                     ancestor="ffbe5058-5089-4c5a-965d-e996df089f8e"/>
+                     ancestor="ffbe5058-5089-4c5a-965d-e996df089f8e">
+               <documentation>"project management"</documentation>
+            </element>
             <element xsi:type="zenta:BasicRelationship"
                      id="34dcdc24-6d61-4517-8479-4e74670b1ab0"
                      ancestor="07abb5cc-2ae6-4184-82a9-1ea3a680187c"
                      source="6c3c6f24-1b34-44a7-903a-68078c76b86c"
                      target="7f06ff95-c1eb-44c6-bd09-e9eb5916d6a2"/>
             <element xsi:type="zenta:BasicObject"
-                     name="ORDER"
+                     name="PRIORITY"
                      id="07f8939b-b455-4f94-9037-7bfca598b10a"
-                     ancestor="ffbe5058-5089-4c5a-965d-e996df089f8e"/>
+                     ancestor="ffbe5058-5089-4c5a-965d-e996df089f8e">
+               <documentation>1L</documentation>
+            </element>
             <element xsi:type="zenta:BasicRelationship"
                      id="ddb182da-0ef3-4968-8eae-0e2947ace4bd"
                      ancestor="07abb5cc-2ae6-4184-82a9-1ea3a680187c"
@@ -3203,7 +3209,9 @@
             <element xsi:type="zenta:BasicObject"
                      name="IS_ACTIVE"
                      id="3155b816-4b28-4a27-bbde-c088ce932a4c"
-                     ancestor="ffbe5058-5089-4c5a-965d-e996df089f8e"/>
+                     ancestor="ffbe5058-5089-4c5a-965d-e996df089f8e">
+               <documentation>true</documentation>
+            </element>
             <element xsi:type="zenta:BasicRelationship"
                      id="970ad67a-0a19-47ab-be92-e1c5b7d1ec4e"
                      ancestor="07abb5cc-2ae6-4184-82a9-1ea3a680187c"
@@ -4937,7 +4945,7 @@
                      name="BALANCE_IN_CENTS"
                      id="040cf096-e4e2-435e-8b3f-4800403499c2"
                      ancestor="ffbe5058-5089-4c5a-965d-e996df089f8e">
-               <documentation>42.42L</documentation>
+               <documentation>4242L</documentation>
             </element>
             <element xsi:type="zenta:BasicRelationship"
                      id="be16f537-7aa2-4027-8adb-e1c9272e29ee"
@@ -5029,13 +5037,13 @@
                      source="f508a90d-3f2d-4151-bd52-610febb36643"
                      target="dd69f9d8-81fb-4ae0-af5f-1e1a623f4ef7"/>
             <element xsi:type="zenta:BasicObject"
-                     name="ADDRESS"
+                     name="LEGAL_ADDRESS"
                      id="4cc2a89f-366c-4f20-8cf8-0a18eb1316ea"
                      ancestor="ffbe5058-5089-4c5a-965d-e996df089f8e">
                <documentation>"Lectroid str. 25, 12345, Shelby, Alabama, US"</documentation>
             </element>
             <element xsi:type="zenta:BasicObject"
-                     name="LEGALNAME"
+                     name="LEGAL_NAME"
                      id="19af984a-374c-4ba1-be72-3e714bff73c2"
                      ancestor="ffbe5058-5089-4c5a-965d-e996df089f8e">
                <documentation>"John Bigbooté"</documentation>
@@ -5188,10 +5196,10 @@
                                     target="a7b44187-2050-4a88-ab5a-be17c57c0917"
                                     relationship="6f972aac-3ea7-4575-be72-922d291ccae0"/>
                   <sourceConnection xsi:type="zenta:Connection"
-                                    id="5cad7ddd-0523-4b30-bf08-c68eb3d437e6"
+                                    id="4670a70a-0465-478a-8fd7-cf96579f25dc"
                                     source="ad1e94bb-12ff-47c9-b165-5563876ecb9d"
-                                    target="e439674b-cbd8-43fc-9cbe-f9844494059b"
-                                    relationship="64aec9fa-38cd-42e8-96b4-e840bbf3eacb"/>
+                                    target="41f13b7a-f188-41d5-8d7b-9b888d97f501"
+                                    relationship="be0399fd-8fb2-442c-a687-468d509a3436"/>
                </child>
                <child xsi:type="zenta:DiagramObject"
                       id="1401283c-8876-4314-b8c9-0aac19031e45"
@@ -5304,9 +5312,9 @@
                   <bounds x="37" y="256" width="-1" height="-1"/>
                </child>
                <child xsi:type="zenta:DiagramObject"
-                      id="e439674b-cbd8-43fc-9cbe-f9844494059b"
-                      targetConnections="5cad7ddd-0523-4b30-bf08-c68eb3d437e6"
-                      zentaElement="fb9d813f-9900-455a-bfa5-5448fd383251">
+                      id="41f13b7a-f188-41d5-8d7b-9b888d97f501"
+                      targetConnections="4670a70a-0465-478a-8fd7-cf96579f25dc"
+                      zentaElement="b0b9e3d0-389f-4989-941a-e97aeb77bdbc">
                   <bounds x="37" y="340" width="-1" height="-1"/>
                </child>
             </element>
@@ -5331,7 +5339,9 @@
             <element xsi:type="zenta:BasicObject"
                      name="BILL_AMOUNT_IN_CENTS"
                      id="02b2ccd2-3408-4449-92f3-b72fa8d110ed"
-                     ancestor="ffbe5058-5089-4c5a-965d-e996df089f8e"/>
+                     ancestor="ffbe5058-5089-4c5a-965d-e996df089f8e">
+               <documentation>4200L</documentation>
+            </element>
             <element xsi:type="zenta:BasicRelationship"
                      id="8c83cc5e-59b2-49bb-97f3-35e230b92878"
                      ancestor="07abb5cc-2ae6-4184-82a9-1ea3a680187c"
@@ -5340,7 +5350,9 @@
             <element xsi:type="zenta:BasicObject"
                      name="IS_CHECKED"
                      id="edff5bef-2061-4115-b964-b53096dd1d53"
-                     ancestor="ffbe5058-5089-4c5a-965d-e996df089f8e"/>
+                     ancestor="ffbe5058-5089-4c5a-965d-e996df089f8e">
+               <documentation>true</documentation>
+            </element>
             <element xsi:type="zenta:BasicRelationship"
                      id="d07770d5-c866-4fef-8d75-c8b69a3fe781"
                      ancestor="07abb5cc-2ae6-4184-82a9-1ea3a680187c"
@@ -5349,7 +5361,9 @@
             <element xsi:type="zenta:BasicObject"
                      name="BILL_PICTURE"
                      id="45fe6743-aab3-452a-92d3-720cae0f8e08"
-                     ancestor="ffbe5058-5089-4c5a-965d-e996df089f8e"/>
+                     ancestor="ffbe5058-5089-4c5a-965d-e996df089f8e">
+               <documentation>"akjdhskdhaskdh.png"</documentation>
+            </element>
             <element xsi:type="zenta:BasicRelationship"
                      id="3514b8ce-4b69-4720-a6e8-f69477fd7e36"
                      ancestor="07abb5cc-2ae6-4184-82a9-1ea3a680187c"
@@ -5386,10 +5400,10 @@
                      source="6791f9a9-56e9-4b96-b64e-004fbbd88f81"
                      target="faa5e1b5-f0f6-4930-a0f9-cb17ff08ce4d"/>
             <element xsi:type="zenta:BasicRelationship"
-                     id="64aec9fa-38cd-42e8-96b4-e840bbf3eacb"
+                     id="be0399fd-8fb2-442c-a687-468d509a3436"
                      ancestor="4b948721-228b-4152-8e7d-f01be2c7bbc8"
                      source="e3735df5-2164-40de-b0b1-b9b7a6398e45"
-                     target="fb9d813f-9900-455a-bfa5-5448fd383251"/>
+                     target="b0b9e3d0-389f-4989-941a-e97aeb77bdbc"/>
          </folder>
          <folder name="Payment Detail" id="984ffd74-3c89-49e7-87ee-4e4b83166523">
             <element xsi:type="zenta:ZentaDiagramModel"
@@ -5619,7 +5633,9 @@
             <element xsi:type="zenta:BasicObject"
                      name="NAME"
                      id="97d14d06-b898-4107-af2b-461f4b1a60ed"
-                     ancestor="ffbe5058-5089-4c5a-965d-e996df089f8e"/>
+                     ancestor="ffbe5058-5089-4c5a-965d-e996df089f8e">
+               <documentation>"primary"</documentation>
+            </element>
             <element xsi:type="zenta:BasicRelationship"
                      id="64ad2652-1ebc-47e5-9140-271991a7ea15"
                      ancestor="07abb5cc-2ae6-4184-82a9-1ea3a680187c"
@@ -5628,7 +5644,9 @@
             <element xsi:type="zenta:BasicObject"
                      name="PERCENTAGE"
                      id="c5dddbb9-1383-4fe6-afa5-9190de403603"
-                     ancestor="ffbe5058-5089-4c5a-965d-e996df089f8e"/>
+                     ancestor="ffbe5058-5089-4c5a-965d-e996df089f8e">
+               <documentation>100L</documentation>
+            </element>
             <element xsi:type="zenta:BasicRelationship"
                      id="765f8dc4-95fa-4096-97bc-6e8abce6ada4"
                      ancestor="07abb5cc-2ae6-4184-82a9-1ea3a680187c"
@@ -5651,7 +5669,9 @@
             <element xsi:type="zenta:BasicObject"
                      name="ACCOUNT_ID"
                      id="eca96435-7ebf-44ae-a59c-75720f96fe4a"
-                     ancestor="ffbe5058-5089-4c5a-965d-e996df089f8e"/>
+                     ancestor="ffbe5058-5089-4c5a-965d-e996df089f8e">
+               <documentation>"EE12345678"</documentation>
+            </element>
             <element xsi:type="zenta:BasicRelationship"
                      id="6458587c-58cf-4d7b-a484-8558eb4d2c5f"
                      ancestor="07abb5cc-2ae6-4184-82a9-1ea3a680187c"
@@ -5660,7 +5680,9 @@
             <element xsi:type="zenta:BasicObject"
                      name="BANK_ID"
                      id="ec9c4f90-753a-4d84-b735-0338eaa6633c"
-                     ancestor="ffbe5058-5089-4c5a-965d-e996df089f8e"/>
+                     ancestor="ffbe5058-5089-4c5a-965d-e996df089f8e">
+               <documentation>"EEBANKXXX"</documentation>
+            </element>
             <element xsi:type="zenta:BasicRelationship"
                      id="0a9e45dc-0565-44c1-9fed-aeca5f38d11e"
                      ancestor="07abb5cc-2ae6-4184-82a9-1ea3a680187c"
@@ -5935,7 +5957,9 @@
             <element xsi:type="zenta:BasicObject"
                      name="TRANSFER_TYPE_NAME"
                      id="4afeddeb-5124-42ee-9387-2ce5df2704ae"
-                     ancestor="ffbe5058-5089-4c5a-965d-e996df089f8e"/>
+                     ancestor="ffbe5058-5089-4c5a-965d-e996df089f8e">
+               <documentation>"sepa"</documentation>
+            </element>
             <element xsi:type="zenta:BasicRelationship"
                      id="30346ed4-2443-4ed5-9a53-d0ec44ccf978"
                      ancestor="07abb5cc-2ae6-4184-82a9-1ea3a680187c"
@@ -5944,7 +5968,9 @@
             <element xsi:type="zenta:BasicObject"
                      name="BANK_ID_LABEL"
                      id="da5e1083-e299-431f-bdf0-8da23d91bef7"
-                     ancestor="ffbe5058-5089-4c5a-965d-e996df089f8e"/>
+                     ancestor="ffbe5058-5089-4c5a-965d-e996df089f8e">
+               <documentation>"SWIFT"</documentation>
+            </element>
             <element xsi:type="zenta:BasicRelationship"
                      id="342b65f8-37e4-4611-b23b-4711393cd017"
                      ancestor="07abb5cc-2ae6-4184-82a9-1ea3a680187c"
@@ -5953,16 +5979,20 @@
             <element xsi:type="zenta:BasicObject"
                      name="ACCOUNT_ID_LABEL"
                      id="d8588bc3-12ca-4919-b3f3-ed75765cfb19"
-                     ancestor="ffbe5058-5089-4c5a-965d-e996df089f8e"/>
+                     ancestor="ffbe5058-5089-4c5a-965d-e996df089f8e">
+               <documentation>"BIC"</documentation>
+            </element>
             <element xsi:type="zenta:BasicRelationship"
                      id="5934e7bf-da8b-422a-b0df-c289fc2af7ff"
                      ancestor="07abb5cc-2ae6-4184-82a9-1ea3a680187c"
                      source="b68dd1c1-acad-4a41-8c9a-961547eba1cc"
                      target="d8588bc3-12ca-4919-b3f3-ed75765cfb19"/>
             <element xsi:type="zenta:BasicObject"
-                     name="IS_BANKID_SHOWN"
+                     name="IS_BANK_ID_SHOWN"
                      id="929c9e92-27fb-4a20-8995-0ef6383f519e"
-                     ancestor="ffbe5058-5089-4c5a-965d-e996df089f8e"/>
+                     ancestor="ffbe5058-5089-4c5a-965d-e996df089f8e">
+               <documentation>true</documentation>
+            </element>
             <element xsi:type="zenta:BasicRelationship"
                      id="ddfccbb1-4213-425a-bdf0-0fbd2b74401c"
                      ancestor="07abb5cc-2ae6-4184-82a9-1ea3a680187c"
@@ -6144,7 +6174,9 @@
             <element xsi:type="zenta:BasicObject"
                      name="COUNTRY"
                      id="491df362-3a26-4e09-80b5-f8c27ac54b3f"
-                     ancestor="ffbe5058-5089-4c5a-965d-e996df089f8e"/>
+                     ancestor="ffbe5058-5089-4c5a-965d-e996df089f8e">
+               <documentation>"ee"</documentation>
+            </element>
             <element xsi:type="zenta:BasicRelationship"
                      id="9636e937-a688-48a8-bb19-e99523f437a9"
                      ancestor="07abb5cc-2ae6-4184-82a9-1ea3a680187c"
@@ -6153,7 +6185,9 @@
             <element xsi:type="zenta:BasicObject"
                      name="LEGAL_FORM_NAME"
                      id="5f2fa951-dabd-4bcd-9f2e-d2648e2e48ef"
-                     ancestor="ffbe5058-5089-4c5a-965d-e996df089f8e"/>
+                     ancestor="ffbe5058-5089-4c5a-965d-e996df089f8e">
+               <documentation>"OÜ"</documentation>
+            </element>
             <element xsi:type="zenta:BasicRelationship"
                      id="1b8b8a8e-6f96-4532-94f5-eb0a2998e650"
                      ancestor="07abb5cc-2ae6-4184-82a9-1ea3a680187c"
@@ -6390,7 +6424,9 @@
             <element xsi:type="zenta:BasicObject"
                      name="DELIVERABLE_COUNT"
                      id="17d91fef-24b0-464a-8371-2548fa2a3ffb"
-                     ancestor="ffbe5058-5089-4c5a-965d-e996df089f8e"/>
+                     ancestor="ffbe5058-5089-4c5a-965d-e996df089f8e">
+               <documentation>3l</documentation>
+            </element>
             <element xsi:type="zenta:BasicRelationship"
                      id="5a42d460-3fa5-4203-b724-b1f5a9f42b9b"
                      ancestor="07abb5cc-2ae6-4184-82a9-1ea3a680187c"
@@ -6399,7 +6435,9 @@
             <element xsi:type="zenta:BasicObject"
                      name="ITEM_PRICE_IN_CENTS"
                      id="7cba7443-ab6f-4bae-9b94-9a8cc7552ca0"
-                     ancestor="ffbe5058-5089-4c5a-965d-e996df089f8e"/>
+                     ancestor="ffbe5058-5089-4c5a-965d-e996df089f8e">
+               <documentation>1500l</documentation>
+            </element>
             <element xsi:type="zenta:BasicRelationship"
                      id="08fb3503-c24d-4e27-8a58-22de07f20276"
                      ancestor="07abb5cc-2ae6-4184-82a9-1ea3a680187c"
@@ -6413,7 +6451,9 @@
             <element xsi:type="zenta:BasicObject"
                      name="DELIVERABLE_PRICE_IN_CENTS"
                      id="a1eb0281-4b9a-4c05-9d0f-9362a0107464"
-                     ancestor="ffbe5058-5089-4c5a-965d-e996df089f8e"/>
+                     ancestor="ffbe5058-5089-4c5a-965d-e996df089f8e">
+               <documentation>500l</documentation>
+            </element>
             <element xsi:type="zenta:BasicRelationship"
                      id="61487fa1-2564-493e-bf24-3b49d00699c8"
                      ancestor="07abb5cc-2ae6-4184-82a9-1ea3a680187c"
@@ -7391,7 +7431,7 @@ If you have questions, see the [FAQ](https://kodekonveyor.com/coder-faq/), or as
                      name="GITHUB_ID"
                      id="05d134d9-4430-4aa0-b28a-7732f7442c98"
                      ancestor="ffbe5058-5089-4c5a-965d-e996df089f8e">
-               <documentation>66</documentation>
+               <documentation>66l</documentation>
             </element>
             <element xsi:type="zenta:BasicRelationship"
                      id="174736be-86b0-4c21-b15d-7908bcc1b969"
@@ -8536,15 +8576,15 @@ If you have questions, see the [FAQ](https://kodekonveyor.com/coder-faq/), or as
                    zentaElement="30a34daf-1a5a-429c-b3fc-069f723315c3">
                <bounds x="324" y="420" width="-1" height="-1"/>
                <sourceConnection xsi:type="zenta:Connection"
-                                 id="76882ffc-23de-49cf-80b4-0f4d29c7a9ed"
-                                 source="7c2eb140-c814-45c4-a7ce-e54ac24bff34"
-                                 target="d87d2299-0afc-4f54-a02b-9fd86cb86e93"
-                                 relationship="371556dc-b479-458d-9e19-47225e0e5aab"/>
-               <sourceConnection xsi:type="zenta:Connection"
                                  id="797a86ac-a57b-4064-9b02-bf95028d0f9f"
                                  source="7c2eb140-c814-45c4-a7ce-e54ac24bff34"
                                  target="90fcfaf5-4b1a-4d75-b858-612481cf3c82"
                                  relationship="4ab4fd21-3cec-4b50-a38d-e930d6214d46"/>
+               <sourceConnection xsi:type="zenta:Connection"
+                                 id="76882ffc-23de-49cf-80b4-0f4d29c7a9ed"
+                                 source="7c2eb140-c814-45c4-a7ce-e54ac24bff34"
+                                 target="d87d2299-0afc-4f54-a02b-9fd86cb86e93"
+                                 relationship="371556dc-b479-458d-9e19-47225e0e5aab"/>
             </child>
             <child xsi:type="zenta:DiagramObject"
                    id="d87d2299-0afc-4f54-a02b-9fd86cb86e93"
@@ -8717,15 +8757,15 @@ If you have questions, see the [FAQ](https://kodekonveyor.com/coder-faq/), or as
                    zentaElement="30a34daf-1a5a-429c-b3fc-069f723315c3">
                <bounds x="346" y="396" width="-1" height="-1"/>
                <sourceConnection xsi:type="zenta:Connection"
-                                 id="8db4cd4b-9d52-4396-9735-6f640b54c718"
-                                 source="385f05c7-e25b-4610-8de7-84ab4b1e9c57"
-                                 target="b74836b7-124c-4fc8-951f-e4c4c4eac3e0"
-                                 relationship="371556dc-b479-458d-9e19-47225e0e5aab"/>
-               <sourceConnection xsi:type="zenta:Connection"
                                  id="e6668791-dab7-4c9e-a100-63410a877bec"
                                  source="385f05c7-e25b-4610-8de7-84ab4b1e9c57"
                                  target="c7d94d3e-75c6-454d-ba20-b713b4c145bc"
                                  relationship="4ab4fd21-3cec-4b50-a38d-e930d6214d46"/>
+               <sourceConnection xsi:type="zenta:Connection"
+                                 id="8db4cd4b-9d52-4396-9735-6f640b54c718"
+                                 source="385f05c7-e25b-4610-8de7-84ab4b1e9c57"
+                                 target="b74836b7-124c-4fc8-951f-e4c4c4eac3e0"
+                                 relationship="371556dc-b479-458d-9e19-47225e0e5aab"/>
             </child>
             <child xsi:type="zenta:DiagramObject"
                    id="03f5415b-11ac-4752-9ee9-03357dea81a0"
@@ -8812,10 +8852,10 @@ If you have questions, see the [FAQ](https://kodekonveyor.com/coder-faq/), or as
                   source="61e15f0e-8ecc-4d07-af97-03efc857d763"
                   target="c6940779-32dd-424c-a4b9-afd68e5559bd"/>
          <element xsi:type="zenta:BasicObject"
-                  name="USER_NAME_AND_PROJECT_ID"
+                  name="ARGUMENT"
                   id="70ba3cca-c8c3-46ac-b2de-5439b7b0d6be"
                   ancestor="ffbe5058-5089-4c5a-965d-e996df089f8e">
-            <documentation>user.getName(), project.getId()</documentation>
+            <documentation>"log message argument"</documentation>
          </element>
          <element xsi:type="zenta:BasicObject"
                   name="LOG_CATEGORY_AUTH_DENY"

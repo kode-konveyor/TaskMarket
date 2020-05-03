@@ -6,8 +6,11 @@ import javax.annotation.Generated;
 public class MilestoneTestData {
 
   public final static Long ID = 1738L;
-  public static final String NAME = "first milestone";
-  public static final Long ORDER = 1L;
-  public static final Boolean IS_ACTIVE = true;
+
+  public final static String NAME = "project management";
+
+  public final static Long PRIORITY = 1L;
+
+  public final static Boolean IS_ACTIVE = true;
 
 }

@@ -6,11 +6,8 @@ import java.util.Set;
 import javax.annotation.Generated;
 
 import com.kodekonveyor.authentication.UserEntityTestData;
-import com.kodekonveyor.market.payment.BillEntityTestData;
 import com.kodekonveyor.market.payment.LegalFormEntityTestData;
 import com.kodekonveyor.market.payment.PaymentDetailEntityTestData;
-import com.kodekonveyor.market.project.ProjectEntityTestData;
-import com.kodekonveyor.market.project.PullrequestEntityTestData;
 
 @Generated("by zenta-tools")
 public class MarketUserEntityTestData {
@@ -18,9 +15,6 @@ public class MarketUserEntityTestData {
   public final static MarketUserEntity get() {
     final MarketUserEntity marketUserEntity = new MarketUserEntity();
     marketUserEntity.setId(MarketUserTestData.ID);
-    marketUserEntity.setBill(Set.of(BillEntityTestData.get()));
-    marketUserEntity.setProject(Set.of(ProjectEntityTestData.get()));
-    marketUserEntity.setPullRequest(Set.of(PullrequestEntityTestData.get()));
     marketUserEntity
         .setPaymentDetail(Set.of(PaymentDetailEntityTestData.get()));
     marketUserEntity.setIsTermsAccepted(MarketUserTestData.IS_TERMS_ACCEPTED);
@@ -76,10 +70,7 @@ public class MarketUserEntityTestData {
     marketUserEntity.setId(MarketUserTestData.ID_NOT_IN_DATABASE);
     marketUserEntity.setBalanceInCents(0L);
     marketUserEntity.setUser(UserEntityTestData.getIdNoMarketUser());
-    marketUserEntity.setBill(new HashSet<>());
     marketUserEntity.setPaymentDetail(new HashSet<>());
-    marketUserEntity.setProject(new HashSet<>());
-    marketUserEntity.setPullRequest(new HashSet<>());
     return marketUserEntity;
   };
 
@@ -88,10 +79,7 @@ public class MarketUserEntityTestData {
     marketUserEntity.setId(MarketUserTestData.ID_NOT_IN_DATABASE);
     marketUserEntity.setBalanceInCents(0L);
     marketUserEntity.setUser(UserEntityTestData.getIdNoMarketUser());
-    marketUserEntity.setBill(new HashSet<>());
     marketUserEntity.setPaymentDetail(new HashSet<>());
-    marketUserEntity.setProject(new HashSet<>());
-    marketUserEntity.setPullRequest(new HashSet<>());
     return marketUserEntity;
   }
 
@@ -99,10 +87,7 @@ public class MarketUserEntityTestData {
     final MarketUserEntity marketUserEntity = get();
     marketUserEntity.setId(MarketUserTestData.ID_NOT_IN_DATABASE);
     marketUserEntity.setUser(UserEntityTestData.getIdInNullDatabase());
-    marketUserEntity.setBill(null);
     marketUserEntity.setPaymentDetail(null);
-    marketUserEntity.setProject(null);
-    marketUserEntity.setPullRequest(null);
     return marketUserEntity;
   };
 

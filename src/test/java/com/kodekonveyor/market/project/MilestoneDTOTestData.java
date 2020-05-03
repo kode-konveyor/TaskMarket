@@ -14,7 +14,7 @@ public class MilestoneDTOTestData {
     milestoneDTO.setId(MilestoneTestData.ID);
     milestoneDTO.setTask(Set.of(TaskTestData.ID));
     milestoneDTO.setName(MilestoneTestData.NAME);
-    milestoneDTO.setOrder(MilestoneTestData.ORDER);
+    milestoneDTO.setOrder(MilestoneTestData.PRIORITY);
     milestoneDTO.setIsActive(MilestoneTestData.IS_ACTIVE);
 
     return milestoneDTO;

@@ -12,10 +12,7 @@ import org.springframework.web.bind.annotation.RestController;
 import com.kodekonveyor.authentication.AuthenticatedUserService;
 import com.kodekonveyor.authentication.UserEntity;
 import com.kodekonveyor.market.UrlMapConstants;
-import com.kodekonveyor.market.payment.BillEntity;
 import com.kodekonveyor.market.payment.PaymentDetailEntity;
-import com.kodekonveyor.market.project.ProjectEntity;
-import com.kodekonveyor.market.project.PullrequestEntity;
 
 @RestController
 public class ShowUserController {
@@ -60,25 +57,6 @@ public class ShowUserController {
     marketUserDTO.setUser(entity.getUser().getId());
     if (entity.getLegalForm() != null)
       marketUserDTO.setLegalForm(entity.getLegalForm().getId());
-    if (entity.getBill() == null)
-      marketUserDTO.setBill(new HashSet<>());
-    else
-      marketUserDTO.setBill(
-          entity.getBill().stream().map(BillEntity::getId).collect(Collectors.toSet())
-      );
-    if (entity.getProject() == null)
-      marketUserDTO.setProject(new HashSet<>());
-    else
-      marketUserDTO.setProject(
-          entity.getProject().stream().map(ProjectEntity::getId).collect(Collectors.toSet())
-      );
-    if (entity.getPullRequest() == null)
-      marketUserDTO.setPullRequest(new HashSet<>());
-    else
-      marketUserDTO
-          .setPullRequest(
-              entity.getPullRequest().stream().map(PullrequestEntity::getId).collect(Collectors.toSet())
-          );
     if (entity.getPaymentDetail() == null)
       marketUserDTO.setPaymentDetail(new HashSet<>());
     else

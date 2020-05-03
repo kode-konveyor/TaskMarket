@@ -116,7 +116,7 @@
 		<xsl:text>.ID);
 		</xsl:text>
 		<xsl:for-each
-			select="$a/element/value[@ancestorName='has' or @ancestorName='aggregates']">
+			select="$a/element/value[@direction=1 and (@ancestorName='has' or @ancestorName='aggregates')]">
 			<xsl:value-of select="$tdName" />
 			<xsl:text>.set</xsl:text>
 			<xsl:value-of select="zenta:makeTypeName(@name)" />
@@ -161,7 +161,7 @@
 		<xsl:text>.ID);
 		</xsl:text>
 		<xsl:for-each
-			select="$a/element/value[@ancestorName='has' or @ancestorName='aggregates']">
+			select="$a/element/value[@direction=1 and (@ancestorName='has' or @ancestorName='aggregates')]">
 			<xsl:value-of select="$tdName" />
 			<xsl:text>.set</xsl:text>
 			<xsl:value-of select="zenta:makeTypeName(@name)" />
@@ -172,8 +172,8 @@
 				select="
 				if ($descendants)
 					then if(@ancestorName='aggregates')
-						then concat(zenta:makeTypeName(@name),'TestData.ID)')
-						else concat(zenta:makeTypeName(@name),'EntityTestData.get()')
+						then concat('Set.of(',zenta:makeTypeName(@name),'TestData.ID)')
+						else concat(zenta:makeTypeName(@name),'TestData.ID')
 					else concat($baseName,'TestData.',zenta:makeSnakeCase(@name))" />
 			<xsl:text>);
 		</xsl:text>
@@ -197,8 +197,10 @@
 	                substring(., 2))}" />
 				</xsl:for-each>
 			</xsl:variable>
+			<xsl:variable name="testdataName" select="concat('target/generated/test/java/',string-join(tokenize(@package,'\.'),'/'),'/',@name,'.java')"/>
+			<xsl:message select="$testdataName"/>
 <xsl:result-document
-	href="target/generated/test/java/{string-join(tokenize(@package,'\.'),'/')}/{@name}.java">package <xsl:value-of select="@package" />;
+	href="{$testdataName}">package <xsl:value-of select="@package" />;
 
 import java.util.Set;
 
@@ -219,8 +221,10 @@ public class <xsl:value-of select="@name" /> {
 </xsl:result-document>
 			<xsl:variable name="baseName"
 				select="substring-before(@name,'TestData')" />
+			<xsl:variable name="entityTestdataName" select="concat('target/generated/test/java/',string-join(tokenize(@package,'\.'),'/'),'/',$baseName,'EntityTestData.java')"/>
+			<xsl:message select="$entityTestdataName"/>
 <xsl:result-document
-	href="target/generated/test/java/{string-join(tokenize(@package,'\.'),'/')}/{$baseName}EntityTestData.java">package <xsl:value-of select="@package" />;
+	href="{$entityTestdataName}">package <xsl:value-of select="@package" />;
 
 import java.util.Set;
 
@@ -237,8 +241,10 @@ public class <xsl:value-of select="$baseName" />EntityTestData {
 	</xsl:for-each>
 }
 </xsl:result-document>
+			<xsl:variable name="dtoTestdataName" select="concat('target/generated/test/java/',string-join(tokenize(@package,'\.'),'/'),'/',$baseName,'DTOTestData.java')"/>
+			<xsl:message select="$dtoTestdataName"/>
 <xsl:result-document
-	href="target/generated/test/java/{string-join(tokenize(@package,'\.'),'/')}/{$baseName}DTOTestData.java">package <xsl:value-of select="@package" />;
+	href="{$dtoTestdataName}">package <xsl:value-of select="@package" />;
 
 import java.util.Set;
 
@@ -258,9 +264,10 @@ public class <xsl:value-of select="$baseName" />DTOTestData {
 }
 </xsl:result-document>
 
+			<xsl:variable name="dtoName" select="concat('target/generated/main/java/',string-join(tokenize(@package,'\.'),'/'),'/',$baseName,'DTO.java')"/>
+			<xsl:message select="$dtoName"/>
 <xsl:result-document
-	href="target/generated/main/java/{string-join(tokenize(@package,'\.'),'/')}/{$baseName}DTO.java">
-package <xsl:value-of select="@package" />;
+	href="{$dtoName}">package <xsl:value-of select="@package" />;
 
 import java.util.Set;
 
@@ -302,8 +309,10 @@ public class <xsl:value-of select="$baseName" />DTO {
 }
 </xsl:result-document>
 
-			<xsl:result-document
-				href="target/generated/main/java/{string-join(tokenize(@package,'\.'),'/')}/{$baseName}Entity.java">package <xsl:value-of select="@package" />;
+			<xsl:variable name="entityName" select="concat('target/generated/main/java/',string-join(tokenize(@package,'\.'),'/'),'/',$baseName,'Entity.java')"/>
+			<xsl:message select="$entityName"/>
+<xsl:result-document
+	href="{$entityName}">package <xsl:value-of select="@package" />;
 
 import java.util.Set;
 
@@ -312,7 +321,10 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
-
+import javax.persistence.FetchType;
+import javax.persistence.OneToMany;
+import javax.persistence.OneToOne;
+import javax.persistence.ElementCollection;
 import lombok.Data;
 
 @Generated("by zenta-tools")
@@ -329,10 +341,11 @@ public class <xsl:value-of select="$baseName" />Entity {
 				select="value[zenta:makeTypeName(@name)=$baseName and @direction=2 and @ancestorName='aggregates']" />
 			<xsl:variable name="types"
 				select="zenta:neighbours($doc,., 'has an example as/is an example of,1;is a/is the type of,1')" />
+			<xsl:variable name="external" select="$types[@xsi:type='External type']"/>
 			<xsl:variable name="type"
 				select="
-      	if($types[@xsi:type='External type'])
-      	 then $types[@xsi:type='External type']/@name
+      	if($external)
+      	 then $external/@name
       	 else concat(@name,'Entity')
       	" />
 			<xsl:variable name="typeName"
@@ -341,7 +354,19 @@ public class <xsl:value-of select="$baseName" />Entity {
       	then concat('Set&lt;',zenta:makeTypeName($type),'>')
       	else zenta:makeTypeName($type)
       " />
-			<xsl:text>	private </xsl:text>
+			<xsl:variable name="annotation" select="
+				if($external)
+				then if($aggregate)
+					then '@ElementCollection(fetch = FetchType.LAZY)'
+					else ()
+				else if($aggregate)
+					then '@OneToMany(fetch = FetchType.LAZY)'
+					else '@OneToOne(fetch = FetchType.LAZY)'"/>
+			<xsl:text>
+			</xsl:text>
+			<xsl:value-of select="$annotation"/>
+			<xsl:text>
+			private </xsl:text>
 			<xsl:value-of disable-output-escaping="yes"
 				select="$typeName" />
 			<xsl:text> </xsl:text>
@@ -352,6 +377,24 @@ public class <xsl:value-of select="$baseName" />Entity {
 }
 </xsl:result-document>
 
+			<xsl:variable name="repoName" select="concat('target/generated/main/java/',string-join(tokenize(@package,'\.'),'/'),'/',$baseName,'EntityRepository.java')"/>
+			<xsl:message select="$repoName"/>
+<xsl:result-document
+	href="{$repoName}">package <xsl:value-of select="@package" />;
+
+import java.util.Optional;
+import javax.annotation.Generated;
+
+import org.springframework.data.repository.CrudRepository;
+
+import com.kodekonveyor.authentication.RoleEntity;
+
+@Generated("by zenta-tools")
+public interface <xsl:value-of select="$baseName"/>EntityRepository
+	extends CrudRepository<xsl:value-of disable-output-escaping="yes" select="concat('&lt;', $baseName, 'Entity, Long&gt;')"/> {
+
+}
+</xsl:result-document>
 		</xsl:for-each>
 	</xsl:template>
 
