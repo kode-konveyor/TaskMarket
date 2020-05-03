@@ -1236,6 +1236,11 @@ analyst
                    zentaElement="2ac87ed9-1bc3-4e35-ac22-256f42aba08d">
                <bounds x="714" y="312" width="-1" height="-1"/>
             </child>
+            <child xsi:type="zenta:DiagramObject"
+                   id="b7f0fe52-63da-4542-a218-7fc42d444900"
+                   zentaElement="4ac73f99-8ccc-4882-a89b-523aa6627682">
+               <bounds x="564" y="384" width="-1" height="-1"/>
+            </child>
          </element>
          <element xsi:type="zenta:BasicObject"
                   name="check Legal form"
@@ -8428,6 +8433,11 @@ It is external requirements, as it is against the design level metamodel
                                     source="3625acbb-e3ea-41c0-9dd4-c9e5d24f7222"
                                     target="92d7440d-91cb-4bd2-8e1f-ece9f09fd327"
                                     relationship="29560a25-3694-4648-9b4e-bda5bebae67c"/>
+                  <sourceConnection xsi:type="zenta:Connection"
+                                    id="7036812c-9b9d-451c-b60f-3c3074d68ea5"
+                                    source="3625acbb-e3ea-41c0-9dd4-c9e5d24f7222"
+                                    target="c62dfa1c-1ac1-46b8-8191-902b3d8b29cd"
+                                    relationship="a68cda61-f8bd-4c7b-be3b-9f24f5f1c933"/>
                </child>
                <child xsi:type="zenta:DiagramObject"
                       id="553bf985-2482-4ba3-8533-bfce79d2ff0b"
@@ -10889,6 +10899,12 @@ It is external requirements, as it is against the design level metamodel
                    zentaElement="2d74115e-68e9-49dd-81e5-2dc488feedd0">
                <bounds x="-415" y="2694" width="175"/>
             </child>
+            <child xsi:type="zenta:DiagramObject"
+                   id="c62dfa1c-1ac1-46b8-8191-902b3d8b29cd"
+                   targetConnections="7036812c-9b9d-451c-b60f-3c3074d68ea5"
+                   zentaElement="4ac73f99-8ccc-4882-a89b-523aa6627682">
+               <bounds x="329" y="258" width="-1" height="-1"/>
+            </child>
          </element>
          <element xsi:type="zenta:BasicObject"
                   name="Create/update/close tasks"
@@ -11195,6 +11211,11 @@ It is external requirements, as it is against the design level metamodel
                   ancestor="f72b01f0-7ff9-48ba-9cd8-b4453fa00c0a"
                   source="7dd298c4-e575-46a5-aa17-666774c14f62"
                   target="7578bcf7-e0ef-4461-8809-4b742c1b7808"/>
+         <element xsi:type="zenta:BasicRelationship"
+                  id="a68cda61-f8bd-4c7b-be3b-9f24f5f1c933"
+                  ancestor="efd0c5af-cdd1-4db0-b91e-e1ce0b8ec5d2"
+                  source="769c49b3-4507-4d4f-a47e-8bdc68781d78"
+                  target="4ac73f99-8ccc-4882-a89b-523aa6627682"/>
       </folder>
       <folder name="backend" id="3cea161e-002a-4bf1-bf92-f8eb3c419fe5">
          <folder name="project management" id="50a37874-fb98-496b-80f7-a2624109a5f3">
@@ -11337,6 +11358,10 @@ It is external requirements, as it is against the design level metamodel
             <element xsi:type="zenta:BasicObject"
                      name="add user to role"
                      id="fb44dc58-ccdc-4afa-ba41-44c0d59dbdc8"
+                     ancestor="83af8497-bfef-451b-9bc6-f00d58c8df6a"/>
+            <element xsi:type="zenta:BasicObject"
+                     name="list legal forms"
+                     id="4ac73f99-8ccc-4882-a89b-523aa6627682"
                      ancestor="83af8497-bfef-451b-9bc6-f00d58c8df6a"/>
          </folder>
          <folder name="authentication framework"
