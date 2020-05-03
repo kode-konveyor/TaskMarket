@@ -9157,11 +9157,6 @@ If you have questions, see the [FAQ](https://kodekonveyor.com/coder-faq/), or as
                            source="8a48baf7-a071-41ff-bb37-cae606a0ba31"
                            target="c329b4bf-d9aa-410c-9952-e35b9cffc800"
                            relationship="74dddb99-bc19-4e0b-8a0c-6680ffbd4480"/>
-         <sourceConnection xsi:type="zenta:Connection"
-                           id="0f57a9da-e5f1-4012-8787-31e438326324"
-                           source="8a48baf7-a071-41ff-bb37-cae606a0ba31"
-                           target="420a4ba2-2763-47a1-a3d2-399c772b7275"
-                           relationship="73379602-0445-40be-a292-b465545b20bb"/>
       </child>
       <child xsi:type="zenta:DiagramObject"
              id="6439a0b6-90cc-4404-8d8d-3236b7b89e9f"
@@ -9444,7 +9439,7 @@ If you have questions, see the [FAQ](https://kodekonveyor.com/coder-faq/), or as
       </child>
       <child xsi:type="zenta:DiagramObject"
              id="420a4ba2-2763-47a1-a3d2-399c772b7275"
-             targetConnections="c84826d6-2c11-4ce7-adc5-424cf80b1935 0f57a9da-e5f1-4012-8787-31e438326324 0c624b81-a8c5-4657-9c14-45b18c105145"
+             targetConnections="c84826d6-2c11-4ce7-adc5-424cf80b1935 0c624b81-a8c5-4657-9c14-45b18c105145"
              zentaElement="68f46fc3-feec-4ee0-a723-f27b3d6cc4fe">
          <bounds x="526" y="947" width="-1" height="-1"/>
       </child>
