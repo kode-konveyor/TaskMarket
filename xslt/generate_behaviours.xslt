@@ -86,31 +86,24 @@
 		<xsl:for-each select="$behaviours//task">
 ----------------------------------------------------------------------------
 Behaviour: <xsl:value-of select="concat(@service, '/', @behaviour)" />
+Milestone: <xsl:value-of select="milestone/@name"/>
 
 Behaviour description:
 
-<xsl:copy-of select="$zenta//element[@id=current()/behaviour/element/@id]/documentation/(*|text())"/>
+<xsl:copy-of select="behaviour/documentation/text()"/>
 Annotations for the test cases:
 
     @TestedBehaviour("<xsl:value-of select="@behaviour" />")
     @TestedService("<xsl:value-of select="@service" />")
 
 The production code is at <xsl:value-of select="concat(@package, '.', @service)" />.java
-The testcase base should be at <xsl:value-of select="concat(@package, '.', @service)" />TestBase.java
-The testcase should probably be at <xsl:value-of select="concat(@package, '.', @service)" /><xsl:value-of select="zenta:camelCase(@behaviour)"/>Test.java
+The testbase is at <xsl:value-of select="concat(@package, '.', @service)" />TestBase.java
+The testcase is at <xsl:value-of select="concat(@package, '.', @service)" /><xsl:value-of select="zenta:camelCase(@behaviour)"/>Test.java
+<xsl:variable name="service" select="service"/>
 
-
-  <xsl:variable name="serviceview" select="$zenta//element[@id=current()/service/element/@id]/../*[.//child[@zentaElement=current()/service/element/@id]]"/>
-  <xsl:variable name="dataobjects" select="$rich//element[@id=$serviceview//@zentaElement and (@xsi:type='DTO' or @xsi:type='Entity')]"/>
+<xsl:variable name="serviceview" select="$zenta//element[@id=$service/@id]/../*[child]/@id"/>
 The service:
-	<xsl:for-each select="$serviceview/@id">
-                <xsl:copy-of select="zenta:drawpic(.)"/>
-        </xsl:for-each>
-DTOs and Entities:
-	<xsl:for-each select="$dataobjects">
-        <xsl:variable name="view" select="../*[.//@zentaElement=current()/@id]"/>
-                <xsl:copy-of select="zenta:drawpic($view/@id)"/>
-        </xsl:for-each>
+                <xsl:copy-of select="zenta:drawpic($serviceview)"/>
 
 How to work:
 * identify what of the above is relevant to your service
@@ -134,40 +127,50 @@ If you have questions, see the [FAQ](https://kodekonveyor.com/coder-faq/), or as
 
 	<xsl:template name="behaviours">
 		<xsl:variable name="root" select="/" />
-		<xsl:for-each
-			select="//element[@template='false' and (@xsi:type='Behaviour')]">
-            <xsl:variable name="behaviour" select="."/>
-            <xsl:for-each select="zenta:neighbours(/,.,'is implemented by/implements,1')">
-                <task>
-                    <xsl:attribute name="service" select="@name"/>
-                    <xsl:attribute name="behaviour" select="$behaviour/@name"/>
-                    <xsl:attribute name="package" select="zenta:fullpackage(.)"/>
-                    <xsl:variable name="implementedBehaviour" select="$implemented//behaviour[@name = $behaviour/@name and ../@service=current()/@name]"/>
-                    <xsl:variable name="issue" select="$issues//issue[summary=concat(current()/@name,'/',$behaviour/@name)]"/>
-                    <xsl:attribute name="issueUrl" select="$issue/@url"/>
-                    <xsl:attribute name="status" select="
-                        if($issue/@status = 'open')
-                        then
-                            if(not($implementedBehaviour/testcase))
-                            then
-                                'open'
-                            else
-                                'should-be-closed'
-                        else
-                            if(not($implementedBehaviour/testcase))
-                            then
-                                'should-make-issue'
-                            else
-                                'ready'
-                    "/>
-                    <implemented>
-                        <xsl:copy-of select="$implementedBehaviour/testcase"/>
-                    </implemented>
-                    <xsl:copy-of select="$issue"/>
-                    <service><xsl:copy-of select="."/></service>
-                    <behaviour><xsl:copy-of select="$behaviour"/></behaviour>
-                </task>
-            </xsl:for-each>
+		<xsl:for-each select="//element[@template='false' and @xsi:type='Process Step']">
+	            <xsl:variable name="step" select="."/>
+	            <xsl:variable name="immediatePackage" select="zenta:neighbours($root,$step,'contains,2')[@xsi:type='Package']"/>
+		    <xsl:variable name="service" select="zenta:neighbours(/,$step,'is implemented by/implements,1')"/>
+		    <xsl:if test="$immediatePackage and $service">
+		            <xsl:for-each select="zenta:neighbours(/,.,'contains,1')">
+		            	<xsl:variable name="behaviour" select="."/>
+		                <task>
+				    <xsl:attribute name="service" select="$service/@name"/>
+				    <xsl:attribute name="step" select="$step/@name"/>
+		                    <xsl:attribute name="behaviour" select="$behaviour/@name"/>
+		                    <xsl:attribute name="package" select="zenta:fullpackage($step)"/>
+		                    <xsl:variable name="implementedBehaviour" select="$implemented//behaviour[@name = $behaviour/@name and ../@service=$service/@name]"/>
+		                    <xsl:variable name="issue" select="$issues//issue[summary=concat($service/@name,'/',$behaviour/@name)]"/>
+		                    <xsl:attribute name="issueUrl" select="$issue/@url"/>
+		                    <xsl:attribute name="status" select="
+		                        if($issue/@status = 'open')
+		                        then
+		                            if(not($implementedBehaviour/testcase))
+		                            then
+		                                'open'
+		                            else
+		                                'should-be-closed'
+		                        else
+		                            if(not($implementedBehaviour/testcase))
+		                            then
+		                                'should-make-issue'
+		                            else
+		                                'ready'
+	                    "/>
+		    		    <xsl:for-each select="zenta:neighbours($root,$step,'implements,2')">
+					    <milestone>
+						    <xsl:copy-of select="@name"/>
+					    </milestone>
+				    </xsl:for-each>
+		                    <implemented>
+		                        <xsl:copy-of select="$implementedBehaviour/testcase"/>
+		                    </implemented>
+		                    <xsl:copy-of select="$issue"/>
+				    <service><xsl:copy-of select="$service/(@name|@id|documentation)"/></service>
+				    <behaviour><xsl:copy-of select="$behaviour/(@name|@id|documentation)"/></behaviour>
+		                </task>
+		            </xsl:for-each>
+		    </xsl:if>
 		</xsl:for-each>
 	</xsl:template>
 
