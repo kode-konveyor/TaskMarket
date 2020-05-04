@@ -7,8 +7,8 @@ import com.kodekonveyor.market.tasks.TaskEntityTestData;
 @Generated("by zenta-tools")
 public class PullrequestEntityTestData {
 
-  public final static PullrequestEntity get() {
-    final PullrequestEntity pullrequestEntity = new PullrequestEntity();
+  public final static PullRequestEntity get() {
+    final PullRequestEntity pullrequestEntity = new PullRequestEntity();
     pullrequestEntity.setId(PullrequestTestData.ID);
     pullrequestEntity.setTask(TaskEntityTestData.get());
     pullrequestEntity.setIsAccepted(PullrequestTestData.IS_ACCEPTED);

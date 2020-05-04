@@ -33,4 +33,6 @@ public class MarketUserTestData {
 
   public static final String NO_CONTRACT_ROLE = "no contract role";
 
+  public static final Long ZERO_BALANCE = 0L;
+
 }
