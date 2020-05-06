@@ -1,6 +1,7 @@
 package com.kodekonveyor.market.project;
 
 import java.util.HashSet;
+import java.util.List;
 import java.util.Set;
 
 import javax.annotation.Generated;
@@ -20,6 +21,22 @@ public class ProjectEntityTestData {
     projectEntity.setIsPublic(ProjectTestData.IS_PUBLIC);
 
     return projectEntity;
+  }
+
+  public static final ProjectEntity getIspublicFalse() {
+    final ProjectEntity entity = get();
+    entity.setIsPublic(false);
+    return entity;
+  }
+
+  public static final ProjectEntity getIsPublicTrue() {
+    final ProjectEntity entity = get();
+    entity.setIsPublic(true);
+    return entity;
+  }
+
+  public static List<ProjectEntity> list() {
+    return List.of(get());
   }
 
   public static ProjectEntity getNullId() {

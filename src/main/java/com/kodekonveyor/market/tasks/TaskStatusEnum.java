@@ -1,7 +1,7 @@
 package com.kodekonveyor.market.tasks;
 
 public enum TaskStatusEnum {
-
+  
   DONE("done"),
   IN_PROGRESS("in progress"),
   OPEN("open"),
