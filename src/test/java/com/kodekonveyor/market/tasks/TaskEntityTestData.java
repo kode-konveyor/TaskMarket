@@ -45,6 +45,7 @@ public class TaskEntityTestData {
     final TaskEntity taskEntity = get();
     taskEntity.setMarketUser(MarketUserEntityTestData.getRoleProjectManager());
     return taskEntity;
+  }
 
   public static final List<TaskEntity> listStatusDone() {
     final TaskEntity taskEntity = get();

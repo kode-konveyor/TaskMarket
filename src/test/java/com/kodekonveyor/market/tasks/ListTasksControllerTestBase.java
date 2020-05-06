@@ -23,6 +23,6 @@ public class ListTasksControllerTestBase {
 
   @BeforeEach
   void setUp() {
-    TaskEntityStubs.behaviour(taskRepository);
+    TaskEntityStubs.behaviour(taskRepository, marketUserEntityRepository);
   }
 }
