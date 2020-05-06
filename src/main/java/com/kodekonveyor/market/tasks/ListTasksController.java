@@ -1,7 +1,6 @@
 package com.kodekonveyor.market.tasks;
 
 import java.util.List;
-import java.util.Optional;
 import java.util.stream.Collectors;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -29,11 +28,8 @@ public class ListTasksController {
   @GetMapping(UrlMapConstants.LIST_TASK_PATH)
   public List<TaskDTO> call() {
     final UserEntity user = authenticatedUserService.call();
-    final Optional<MarketUserEntity> marketUserEntities =
-        marketUserEntityRepository.findByUser(user);
-    MarketUserEntity marketUserEntity = new MarketUserEntity();
-    if (marketUserEntities.isPresent())
-      marketUserEntity = marketUserEntities.get();
+    final MarketUserEntity marketUserEntity =
+        marketUserEntityRepository.findByUser(user).get();
     return List
         .of(
             getInProgressOrClosedTask(
