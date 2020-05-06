@@ -65,15 +65,15 @@ public class UpdateProjectModelControllerUpdateTasksTest
 
   @Test
   @DisplayName(
-    "if the documentationof the task is the same as the documentation of the github ,Then nothing is done "
+    "if the documentation of the task is the same as the documentation of the github ,Then nothing is done "
   )
   public void test3() {
     updateTasksService
-        .call(ModelExcerptDTOTestData.getNewDescription().getTasks());
+        .call(ModelExcerptDTOTestData.get().getTasks());
     assertEquals(
-        ModelExcerptDTOTestData.get().getTasks().getDescription(),
+        ModelExcerptDTOTestData.get().getTasks()
+            .getDescription(),
         TaskEntityTestData.get().getDescription()
     );
   }
-
 }

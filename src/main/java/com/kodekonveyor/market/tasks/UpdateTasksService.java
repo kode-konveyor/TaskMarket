@@ -49,10 +49,7 @@ public class UpdateTasksService {
 
     if (taskEntityDB.isPresent()) {
       final TaskEntity taskEntity = taskEntityDB.get();
-      if (
-        taskDTO.getService().equals(taskEntity.getService()) &&
-            taskDTO.getBehaviour().equals(taskEntity.getBehaviour())
-      ) {
+      if (!taskDTO.getDescription().equals(taskEntity.getDescription())) {
         final String replacement = StringUtils.substringBetween(
             taskDTO.getDescription(), TaskConstants.START_DELIMETER,
             TaskConstants.END_DELIMETER
