@@ -7,7 +7,7 @@ import java.util.Optional;
 public class PullrequestEntityStubs {
 
   public static void
-      behaviour(final PullrequestEntityRepository pullrequestEntityRepository) {
+      behaviour(final PullRequestEntityRepository pullrequestEntityRepository) {
     doReturn(Optional.of(PullRequestEntityTestData.get()))
         .when(pullrequestEntityRepository).findById(PullrequestTestData.ID);
   }

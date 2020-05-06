@@ -30,7 +30,7 @@ public class CreateProjectControllerTestBase {
   MilestoneEntityRepository milestoneEntityRepository;
 
   @Mock
-  PullrequestEntityRepository pullrequestEntityRepository;
+  PullRequestEntityRepository pullrequestEntityRepository;
 
   @BeforeEach
   void setUp() {
