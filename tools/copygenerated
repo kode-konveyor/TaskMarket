@@ -1,0 +1,5 @@
+#!/bin/bash
+for i in $(find target/generated -type f)
+do
+	cp $i $(echo $(dirname $i)|sed 'sAtarget/generated/Asrc/A')
+done

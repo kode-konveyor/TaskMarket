@@ -1,18 +1,16 @@
 package com.kodekonveyor.authentication;
 
-import com.kodekonveyor.annotations.ExcludeFromCodeCoverage;
+import java.util.Set;
 
-import lombok.Getter;
-import lombok.Setter;
-import lombok.ToString;
+import javax.annotation.Generated;
 
-@Getter
-@Setter
-@ToString
-@ExcludeFromCodeCoverage("no code")
+import lombok.Data;
+
+@Generated("by zenta-tools")
+@Data
 public class UserDTO {
-
-  private String login;
-  private Long id;
-
+	private Long id;
+	private String login;
+	private Set<Long> role;
+	
 }

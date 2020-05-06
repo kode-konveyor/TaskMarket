@@ -1,13 +1,15 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE xml>
 <configuration>
-    <appender name="STDOUT" class="ch.qos.logback.core.ConsoleAppender">
-        <encoder>
-			<pattern>%d{HH:mm:ss.SSS} [%t] %5p %c{1} %marker auth.user=%X{auth.user} auth.session=%X{auth.session} msg=%m%n</pattern>
-        </encoder>
-    </appender>
+	<appender name="STDOUT"
+		class="ch.qos.logback.core.ConsoleAppender">
+		<encoder>
+			<pattern>%d{HH:mm:ss.SSS} [%t] %5p %c{1} %marker
+				auth.user=%X{auth.user} auth.session=%X{auth.session} msg=%m%n</pattern>
+		</encoder>
+	</appender>
 
-    <root level="DEBUG">
-        <appender-ref ref="STDOUT" />
-    </root>
+	<root level="DEBUG">
+		<appender-ref ref="STDOUT" />
+	</root>
 </configuration>

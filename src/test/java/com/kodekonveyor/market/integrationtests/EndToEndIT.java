@@ -11,6 +11,7 @@ import org.openqa.selenium.WebElement;
 
 import com.kodekonveyor.annotations.TestedBehaviour;
 import com.kodekonveyor.annotations.TestedService;
+import com.kodekonveyor.authentication.UserTestData;
 
 @TestedBehaviour("roles")
 @TestedService("ListLeadController")
@@ -29,15 +30,15 @@ public class EndToEndIT {
     githubLoginButton.click();
     final WebElement loginField =
         SeleniumTestHelper.waitFor(LOGIN_FIELD_SELECTOR);
-    loginField.sendKeys(USER);
+    loginField.sendKeys(UserTestData.LOGIN_NO_MARKET_USER);
     final WebElement passwordField =
         SeleniumTestHelper.waitFor(PASSWORD_SELECTOR);
     passwordField.sendKeys(PASSWORD);
     final WebElement loginButton = SeleniumTestHelper.waitFor(BUTTON_SELECTOR);
     loginButton.click();
     final WebElement name = SeleniumTestHelper.waitFor(OBJECT_BOX_SELECTOR);
-    final String myName = name.getText();
-    assertEquals(String.format(QUOTES_TEMPLATE, USER), myName);
+    final String myId = name.getText();
+    assertEquals(UserTestData.ID_NO_MARKET_USER.toString(), myId);
   }
 
 }

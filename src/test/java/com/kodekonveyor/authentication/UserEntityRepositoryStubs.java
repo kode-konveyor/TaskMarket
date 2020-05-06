@@ -1,6 +1,8 @@
 package com.kodekonveyor.authentication;
 
-import static org.mockito.Mockito.*;
+import static org.mockito.Mockito.*;//NOPMD
+
+import java.util.Optional;
 
 import org.mockito.invocation.InvocationOnMock;
 import org.mockito.stubbing.Answer;
@@ -8,13 +10,22 @@ import org.mockito.stubbing.Answer;
 public class UserEntityRepositoryStubs {
 
   public static void behaviour(
-      final UserEntityRepository userRepository
+      final UserEntityRepository userEntityRepository
   ) {
-    reset(userRepository);
-    doReturn(UserEntityTestData.list()).when(userRepository)
-        .findByLogin(UserEntityTestData.LOGIN);
-    doReturn(UserEntityTestData.listEmpty()).when(userRepository)
-        .findByLogin(UserEntityTestData.LOGIN_BAD);
+    reset(userEntityRepository);
+    doReturn(Optional.of(UserEntityTestData.get())).when(userEntityRepository)
+        .findByLogin(UserTestData.LOGIN);
+    doReturn(Optional.of(UserEntityTestData.getRoleCanbePaid()))
+        .when(userEntityRepository)
+        .findByLogin(UserTestData.LOGIN_REGISTERED);
+    doReturn(Optional.of(UserEntityTestData.getRoleKodekonveyorContract()))
+        .when(userEntityRepository)
+        .findByLogin(UserTestData.LOGIN_CONTRACT);
+    doReturn(Optional.of(UserEntityTestData.getRoleProjectManager()))
+        .when(userEntityRepository)
+        .findByLogin(UserTestData.LOGIN_PROJECTMANAGER);
+    doReturn(Optional.empty()).when(userEntityRepository)
+        .findByLogin(UserTestData.LOGIN_BAD);
 
     final Answer<UserEntity> answer = new Answer<>() {
 
@@ -22,11 +33,11 @@ public class UserEntityRepositoryStubs {
       public UserEntity answer(final InvocationOnMock invocation) {
         final Object[] args = invocation.getArguments();
         final UserEntity user = (UserEntity) args[0];
-        user.setId(UserEntityTestData.ID_BAD);
+        user.setId(UserTestData.ID_BAD);
         return null;
       }
     };
-    when(userRepository.save(UserEntityTestData.getIdUninitialized()))
+    when(userEntityRepository.save(UserEntityTestData.getIdUninitialized()))
         .then(answer);
 
   }

@@ -3,9 +3,11 @@
   
   
   
+  
   <property key="modelDependency" value="metamodel/analysis"/>
   <property key="modelDependency" value="metamodel/design"/>
   <property key="modelDependency" value="taskmarket/backend_design"/>
   <property key="modelDependency" value="taskmarket/analysis"/>
+  <property key="modelDependency" value="metamodel/ui"/>
   <property key="documentationMarkup" value="MediaWiki"/>
 </zenta:model>

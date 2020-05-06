@@ -6,6 +6,8 @@ import org.mockito.Mock;
 import org.slf4j.Logger;
 
 import com.kodekonveyor.authentication.AuthenticatedUserService;
+import com.kodekonveyor.authentication.RoleEntityRepository;
+import com.kodekonveyor.authentication.RoleEntityRepositoryStubs;
 
 public class CreateProjectControllerTestBase {
 
@@ -21,9 +23,21 @@ public class CreateProjectControllerTestBase {
   @Mock
   ProjectEntityRepository projectEntityRepository;
 
+  @Mock
+  RoleEntityRepository roleEntityRepository;
+
+  @Mock
+  MilestoneEntityRepository milestoneEntityRepository;
+
+  @Mock
+  PullrequestEntityRepository pullrequestEntityRepository;
+
   @BeforeEach
   void setUp() {
-    ProjectEntityStubs.behaviour(projectEntityRepository);
+    ProjectEntityRepositoryStubs.behaviour(projectEntityRepository);
+    MilestoneEntityRepositoryStubs.behaviour(milestoneEntityRepository);
+    PullrequestEntityStubs.behaviour(pullrequestEntityRepository);
+    RoleEntityRepositoryStubs.behaviour(roleEntityRepository);
   }
 
 }

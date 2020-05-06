@@ -36,9 +36,8 @@ public class RegisterInterestController {
       consumes = "application/x-www-form-urlencoded"
   )
   public LeadDTO callForUrlencoded(final LeadDTO lead) {
-    doStore(lead);
+    return call(lead);
 
-    return lead;
   }
 
   private void doStore(final LeadDTO lead) {

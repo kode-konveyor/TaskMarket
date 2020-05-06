@@ -11,8 +11,10 @@ import org.mockito.quality.Strictness;
 
 import com.kodekonveyor.annotations.TestedBehaviour;
 import com.kodekonveyor.annotations.TestedService;
-import com.kodekonveyor.authentication.AuthenticatedUserStubs;
+import com.kodekonveyor.authentication.AuthenticatedUserServiceStubs;
 import com.kodekonveyor.exception.ThrowableTester;
+import com.kodekonveyor.market.UnauthorizedException;
+import com.kodekonveyor.market.payment.PaymentDetailsDTOTestData;
 
 @ExtendWith(MockitoExtension.class)
 @MockitoSettings(strictness = Strictness.LENIENT)
@@ -22,32 +24,43 @@ import com.kodekonveyor.exception.ThrowableTester;
 public class PaymentUpdateControllerRolesTest
     extends PaymentUpdateControllerTestBase {
 
-  MarketUserDTOTestData registerTestData;
+  @Test
+  @DisplayName(
+    "if the user does not have can_be_paid role while looking for its own data, an UnauthorizedException is thrown"
+  )
+  void test() {
+    AuthenticatedUserServiceStubs.authenticated(authenticatedUserService);
+    ThrowableTester.assertThrows(
+        () -> paymentUpdateController.call(PaymentDetailsDTOTestData.get())
+
+    ).assertException(UnauthorizedException.class);
+
+  }
 
   @Test
   @DisplayName(
-    "if the user does not have kodekonveyor_contract role, an Exception is thrown"
+    "if the user does not have can_be_paid role while looking for its own data, the message contains 'no can be paid role for user'"
   )
-  void test() {
-    AuthenticatedUserStubs.canBePayed(authenticatedUserService);
+  void test11() {
+    AuthenticatedUserServiceStubs.authenticated(authenticatedUserService);
     ThrowableTester.assertThrows(
-        () -> paymentUpdateController.call(RegisterTestData.PAYMENT_DETAILS)
-    ).assertMessageIs(
-        PaymentUpdateControllerTestData.UNAUTHORIZED_NOT_ENOUGH_RIGHTS
+        () -> paymentUpdateController.call(PaymentDetailsDTOTestData.get())
+
+    ).assertMessageContains(
+        RegisterConstants.NO_CAN_BE_PAID_ROLE
     );
 
   }
 
   @Test
   @DisplayName(
-    "if the user havs kodekonveyor_contract role, no Exception is thrown"
+    "if the user have can_be_paid role, no Exception is thrown"
   )
   void test2() {
-    AuthenticatedUserStubs.kodekonveyorContract(authenticatedUserService);
-    MarketUserStubs
-        .contractTermsAccepted(marketUserEntityRepository, registerTestData);
+    AuthenticatedUserServiceStubs.registered(authenticatedUserService);
     ThrowableTester.assertNoException(
-        () -> paymentUpdateController.call(RegisterTestData.PAYMENT_DETAILS)
+        () -> paymentUpdateController.call(PaymentDetailsDTOTestData.get())
+
     );
 
   }

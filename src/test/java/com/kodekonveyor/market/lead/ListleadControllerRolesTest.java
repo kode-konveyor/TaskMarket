@@ -11,7 +11,7 @@ import org.mockito.quality.Strictness;
 
 import com.kodekonveyor.annotations.TestedBehaviour;
 import com.kodekonveyor.annotations.TestedService;
-import com.kodekonveyor.authentication.AuthenticatedUserStubs;
+import com.kodekonveyor.authentication.AuthenticatedUserServiceStubs;
 import com.kodekonveyor.exception.ThrowableTester;
 import com.kodekonveyor.market.UnauthorizedException;
 
@@ -27,7 +27,7 @@ public class ListleadControllerRolesTest extends ListLeadControllerTestBase {
     "A user without kodekonveyor_sales role receives an Unauthorized status"
   )
   void test() {
-    AuthenticatedUserStubs
+    AuthenticatedUserServiceStubs
         .authenticated(authenticatedUserService);
 
     ThrowableTester.assertThrows(() -> listleadController.call())

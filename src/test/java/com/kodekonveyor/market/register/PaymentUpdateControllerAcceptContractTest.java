@@ -11,8 +11,10 @@ import org.mockito.quality.Strictness;
 
 import com.kodekonveyor.annotations.TestedBehaviour;
 import com.kodekonveyor.annotations.TestedService;
-import com.kodekonveyor.authentication.AuthenticatedUserStubs;
+import com.kodekonveyor.authentication.AuthenticatedUserServiceStubs;
 import com.kodekonveyor.exception.ThrowableTester;
+import com.kodekonveyor.market.UnauthorizedException;
+import com.kodekonveyor.market.payment.PaymentDetailsDTOTestData;
 
 @ExtendWith(MockitoExtension.class)
 @MockitoSettings(strictness = Strictness.LENIENT)
@@ -22,35 +24,25 @@ import com.kodekonveyor.exception.ThrowableTester;
 public class PaymentUpdateControllerAcceptContractTest
     extends PaymentUpdateControllerTestBase {
 
-  MarketUserDTOTestData registerTestData;
-
   @Test
   @DisplayName("If contract terms are  accepted, no exception is thrown")
   public void test() {
-
-    AuthenticatedUserStubs.kodekonveyorContract(authenticatedUserService);
-    MarketUserStubs
-        .contractTermsAccepted(marketUserEntityRepository, registerTestData);
+    AuthenticatedUserServiceStubs.registered(authenticatedUserService);
     ThrowableTester.assertNoException(
-        () -> paymentUpdateController
-            .call(RegisterTestData.PAYMENT_DETAILS)
+        () -> paymentUpdateController.call(PaymentDetailsDTOTestData.get())
     );
-
   }
 
   @Test
-  @DisplayName("If contract terms are not accepted, we throw an exception")
+  @DisplayName(
+    "If contract terms are not accepted, we throw an UnauthorizedException"
+  )
   public void test10() {
-
-    AuthenticatedUserStubs.kodekonveyorContract(authenticatedUserService);
-    MarketUserStubs
-        .contractTermsNotAccepted(marketUserEntityRepository, registerTestData);
+    AuthenticatedUserServiceStubs
+        .contractTermsNotAccepted(authenticatedUserService);
     ThrowableTester.assertThrows(
-        () -> paymentUpdateController
-            .call(RegisterTestData.PAYMENT_DETAILS)
-    )
-        .assertMessageIs(
-            PaymentUpdateControllerTestData.CONTRACT_TERMS_NOT_ACCEPTED
-        );
+        () -> paymentUpdateController.call(PaymentDetailsDTOTestData.get())
+    ).assertException(UnauthorizedException.class)
+        .assertMessageContains(RegisterTestData.CONTRACT_TERMS_ARE_NOT_ACCEPTED);
   }
 }

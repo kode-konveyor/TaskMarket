@@ -1,7 +1,5 @@
 package com.kodekonveyor.market.register;
 
-import static org.junit.Assert.assertEquals;
-
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.extension.ExtendWith;
@@ -13,10 +11,12 @@ import org.mockito.quality.Strictness;
 
 import com.kodekonveyor.annotations.TestedBehaviour;
 import com.kodekonveyor.annotations.TestedService;
-import com.kodekonveyor.authentication.AuthenticatedUserStubs;
-import com.kodekonveyor.authentication.RoleEntityTestData;
-import com.kodekonveyor.authentication.UserEntityTestData;
+import com.kodekonveyor.authentication.AuthenticatedUserServiceStubs;
+import com.kodekonveyor.authentication.RoleTestData;
+import com.kodekonveyor.authentication.UserTestData;
 import com.kodekonveyor.exception.ThrowableTester;
+import com.kodekonveyor.market.UnauthorizedException;
+import com.kodekonveyor.market.ValidationException;
 
 @ExtendWith(MockitoExtension.class)
 @MockitoSettings(strictness = Strictness.LENIENT)
@@ -27,40 +27,61 @@ public class AddToRoleControllerRolesTest extends AddToRoleControllerTestBase {
 
   @Test
   @DisplayName(
-    "When the user registers itself with the github login name, it is added to the 'registered' role"
-  )
-  void test() {
-    AuthenticatedUserStubs.canBePayed(authenticatedUserService);
-    assertEquals(
-        RoleEntityTestData.getNameRegistered(),
-        UserEntityTestData.getRoleRegistered().getRoles().iterator().next()
-    );
-
-  }
-
-  @Test
-  @DisplayName(
-    "if the user is registerd role, no exception is thrown"
+    "if the calling user have manager role for the project, no exception is thrown"
   )
   void test2() {
-    AuthenticatedUserStubs.canBePayed(authenticatedUserService);
+    AuthenticatedUserServiceStubs.projectManager(authenticatedUserService);
     ThrowableTester.assertNoException(
         () -> addToRoleController
-            .call(RegisterTestData.PROJECTNAME, RegisterTestData.PROJECTROLE)
+            .call(
+                UserTestData.LOGIN_REGISTERED,
+                RoleTestData.ID_KODEKONVEYOR_CONTRACT
+            )
     );
   }
 
   @Test
   @DisplayName(
-    "if the login is null, we throw unregistered exception"
+    "if the login is null, we throw ValidationException"
   )
   void test3() {
-    AuthenticatedUserStubs.unregistered(authenticatedUserService);
+    AuthenticatedUserServiceStubs.projectManager(authenticatedUserService);
 
     ThrowableTester.assertThrows(
         () -> addToRoleController
-            .call(RegisterTestData.PROJECTNAME, RegisterTestData.PROJECTROLE)
-    ).assertMessageIs(AddToRoleControllerTestData.UNREGISERED);
+            .call(UserTestData.LOGIN_BAD, RoleTestData.ID_PROJECT_MANAGER)
+    ).assertException(ValidationException.class)
+        .assertMessageIs(AddToRoleControllerTestData.UNREGISERED);
+  }
+
+  @Test
+  @DisplayName(
+    "If the calling user is not a project manager, a UnauthorizedException is thrown"
+  )
+  void test4() {
+    AuthenticatedUserServiceStubs.authenticated(authenticatedUserService);
+    ThrowableTester.assertThrows(
+        () -> addToRoleController
+            .call(
+                UserTestData.LOGIN_REGISTERED,
+                RoleTestData.ID_KODEKONVEYOR_CONTRACT
+            )
+    ).assertException(UnauthorizedException.class);
+  }
+
+  @Test
+  @DisplayName(
+    "If the calling user is not a project manager, the error message is 'No manager role for the project'"
+  )
+  void test() {
+    AuthenticatedUserServiceStubs.authenticated(authenticatedUserService);
+    ThrowableTester.assertThrows(
+        () -> addToRoleController
+            .call(
+                UserTestData.LOGIN_REGISTERED,
+                RoleTestData.ID_KODEKONVEYOR_CONTRACT
+            )
+    ).assertMessageContains(RegisterTestData.NO_MANAGER_ROLE_FOR_THE_PROJECT);
   }
 
 }

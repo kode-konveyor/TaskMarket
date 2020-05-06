@@ -1,25 +1,30 @@
 package com.kodekonveyor.market.lead;
 
-import java.util.List;
+import java.util.Set;
 
-import com.kodekonveyor.market.register.UserLegalInfoEntityTestData;
+import javax.annotation.Generated;
 
+@Generated("by zenta-tools")
 public class LeadDTOTestData {
 
-  public final static String EMAIL_INVALID = "absxample.com";
-  public final static String FIRST_NAME_INVALID = "fss54s6";
-
-  public static final LeadDTO get() {
+  public final static LeadDTO get() {
     final LeadDTO leadDTO = new LeadDTO();
-    leadDTO.setEmail(UserLegalInfoEntityTestData.EMAIL);
-    leadDTO.setFirstName(LeadEntityTestData.FIRST_NAME);
-    leadDTO.setInterest(LeadEntityTestData.INTEREST);
+    leadDTO.setId(LeadTestData.ID);
+    leadDTO.setFirstName(LeadTestData.FIRST_NAME);
+    leadDTO.setEmail(LeadTestData.EMAIL);
+    leadDTO.setInterest(LeadTestData.INTEREST);
+
     return leadDTO;
+  };
+
+  public final static Set<LeadDTO> list() {
+    final LeadDTO leadDTO = get();
+    return Set.of(leadDTO);
   }
 
   public static LeadDTO getEmailInvalid() {
     final LeadDTO leadDTO = get();
-    leadDTO.setEmail(EMAIL_INVALID);
+    leadDTO.setEmail(LeadTestData.EMAIL_INVALID);
     return leadDTO;
   }
 
@@ -29,15 +34,9 @@ public class LeadDTOTestData {
     return leadDTO;
   }
 
-  public static LeadDTO getfirstNameInvaliidFormat() {
+  public static LeadDTO getfirstNameInvalidFormat() {
     final LeadDTO leadDTO = get();
-    leadDTO.setFirstName(FIRST_NAME_INVALID);
-    return leadDTO;
-  }
-
-  public static LeadDTO getInterestNull() {
-    final LeadDTO leadDTO = get();
-    leadDTO.setInterest(null);
+    leadDTO.setFirstName(LeadTestData.FIRST_NAME_INVALID);
     return leadDTO;
   }
 
@@ -47,8 +46,16 @@ public class LeadDTOTestData {
     return leadDTO;
   }
 
-  public static List<LeadDTO> list() {
-    return List.of(get());
+  public static LeadDTO getInterestNull() {
+    final LeadDTO leadDTO = get();
+    leadDTO.setInterest(null);
+    return leadDTO;
   }
+
+  public static LeadDTO getIdUninitialized() {
+    final LeadDTO leadDTO = get();
+    leadDTO.setId(null);
+    return leadDTO;
+  };
 
 }

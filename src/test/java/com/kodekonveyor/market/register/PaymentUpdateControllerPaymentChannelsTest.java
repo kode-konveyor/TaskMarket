@@ -11,8 +11,10 @@ import org.mockito.quality.Strictness;
 
 import com.kodekonveyor.annotations.TestedBehaviour;
 import com.kodekonveyor.annotations.TestedService;
-import com.kodekonveyor.authentication.AuthenticatedUserStubs;
+import com.kodekonveyor.authentication.AuthenticatedUserServiceStubs;
 import com.kodekonveyor.exception.ThrowableTester;
+import com.kodekonveyor.market.ValidationException;
+import com.kodekonveyor.market.payment.PaymentDetailsDTOTestData;
 
 @ExtendWith(MockitoExtension.class)
 @MockitoSettings(strictness = Strictness.LENIENT)
@@ -22,117 +24,100 @@ import com.kodekonveyor.exception.ThrowableTester;
 public class PaymentUpdateControllerPaymentChannelsTest
     extends PaymentUpdateControllerTestBase {
 
-  MarketUserDTOTestData registerTestData;
-
   @Test
-  @DisplayName("If paypal payment details are incorrect, we throw exception")
+  @DisplayName(
+    "If there is one channel with less than 100%, a ValidationException is thrown"
+  )
   public void test1() {
-
+    AuthenticatedUserServiceStubs.registered(authenticatedUserService);
     ThrowableTester.assertThrows(
         () -> paymentUpdateController
-            .call(RegisterTestData.INVALID_PAYPAL_PAYMENT_DETAILS)
-    )
-        .assertMessageIs(
-            PaymentUpdateControllerTestData.INVALID_PAYMENT_DETAILS_EXCEPTION
-        );
-  }
-
-  @Test
-  @DisplayName("If sepa payment details are incorrect, we throw exception")
-  public void test2() {
-
-    ThrowableTester.assertThrows(
-        () -> paymentUpdateController
-            .call(RegisterTestData.INVALID_SEPA_PAYMENT_DETAILS)
-    )
-        .assertMessageIs(
-            PaymentUpdateControllerTestData.INVALID_PAYMENT_DETAILS_EXCEPTION
-        );
+            .call(PaymentDetailsDTOTestData.getSumLessThanHundredPercent())
+    ).assertException(ValidationException.class);
   }
 
   @Test
   @DisplayName(
-    "If transferwise payment details are incorrect, we throw exception"
+    "If there is one channel with less than 100%, a ValidationException is thrown"
+  )
+  public void test2() {
+    AuthenticatedUserServiceStubs.registered(authenticatedUserService);
+    ThrowableTester.assertThrows(
+        () -> paymentUpdateController
+            .call(PaymentDetailsDTOTestData.getSumLessThanHundredPercent())
+    ).assertMessageContains(RegisterTestData.THE_SUM_OF_PAYMENTS_IS_NOT_100);
+  }
+
+  @Test
+  @DisplayName(
+    "If there are more channels with sum of 100%, it is accepted"
   )
   public void test3() {
+    AuthenticatedUserServiceStubs.registered(authenticatedUserService);
+    ThrowableTester.assertNoException(
+        () -> paymentUpdateController
+            .call(PaymentDetailsDTOTestData.getSumHundredPercentInTwoChannels())
+    );
+  }
 
+  @Test
+  @DisplayName(
+    "If there are more channels with sum > than 100%, a ValidationException is thrown"
+  )
+  public void test4() {
+    AuthenticatedUserServiceStubs.registered(authenticatedUserService);
     ThrowableTester.assertThrows(
         () -> paymentUpdateController
-            .call(RegisterTestData.INVALID_TRANSFERWISE_PAYMENT_DETAILS)
-    )
-        .assertMessageIs(
-            PaymentUpdateControllerTestData.INVALID_PAYMENT_DETAILS_EXCEPTION
-        );
+            .call(
+                PaymentDetailsDTOTestData
+                    .getSumMoreThanHundredPercentInTwoChannels()
+            )
+    ).assertException(ValidationException.class);
   }
 
   @Test
   @DisplayName(
-    "if sepa payment details are correct, no exception is thrown"
+    "If there are more channels with sum < than 100%, a ValidationException is thrown"
   )
-  void test4() {
-    AuthenticatedUserStubs.kodekonveyorContract(authenticatedUserService);
-    MarketUserStubs
-        .contractTermsAccepted(marketUserEntityRepository, registerTestData);
-    ThrowableTester.assertNoException(
+  public void test5() {
+    AuthenticatedUserServiceStubs.registered(authenticatedUserService);
+    ThrowableTester.assertThrows(
         () -> paymentUpdateController
-            .call(RegisterTestData.PAYMENT_DETAILS_SEPA)
-    );
-
+            .call(
+                PaymentDetailsDTOTestData
+                    .getSumLessThanHundredPercentInTwoChannels()
+            )
+    ).assertException(ValidationException.class);
   }
 
   @Test
   @DisplayName(
-    "if transferwise payment details are correct, no exception is thrown"
+    "If there is a channel with invalid payment channel, a ValidationException is thrown"
   )
-  void test5() {
-    AuthenticatedUserStubs.kodekonveyorContract(authenticatedUserService);
-    MarketUserStubs
-        .contractTermsAccepted(marketUserEntityRepository, registerTestData);
-    ThrowableTester.assertNoException(
-        () -> paymentUpdateController
-            .call(RegisterTestData.PAYMENT_DETAILS_TRANSFERWISE)
-    );
-  }
-
-  @Test
-  @DisplayName("If payment channel is incorrect, we throw exception")
   public void test6() {
-
+    AuthenticatedUserServiceStubs.registered(authenticatedUserService);
     ThrowableTester.assertThrows(
         () -> paymentUpdateController
-            .call(RegisterTestData.INVALID_PAYMENT_CHANNEL)
-    )
-        .assertMessageIs(
-            PaymentUpdateControllerTestData.INVALID_PAYMENT_DETAILS_EXCEPTION
-        );
+            .call(
+                PaymentDetailsDTOTestData
+                    .getWithInvalidChannel()
+            )
+    ).assertException(ValidationException.class);
   }
 
   @Test
   @DisplayName(
-    "if paypal payment details are correct, no exception is thrown"
+    "If there is a channel with invalid payment channel, the error message contains 'invalid transfer type'"
   )
-  void test8() {
-    AuthenticatedUserStubs.kodekonveyorContract(authenticatedUserService);
-    MarketUserStubs
-        .contractTermsAccepted(marketUserEntityRepository, registerTestData);
-    ThrowableTester.assertNoException(
-        () -> paymentUpdateController.call(RegisterTestData.PAYMENT_DETAILS)
-    );
-  }
-
-  @Test
-  @DisplayName(
-    "if both details are incorrect, exception is thrown"
-  )
-  void test9() {
-
+  public void test7() {
+    AuthenticatedUserServiceStubs.registered(authenticatedUserService);
     ThrowableTester.assertThrows(
         () -> paymentUpdateController
-            .call(RegisterTestData.INVALID_PAYMENT_DETAILS1)
-    )
-        .assertMessageIs(
-            PaymentUpdateControllerTestData.INVALID_PAYMENT_DETAILS_EXCEPTION
-        );
+            .call(
+                PaymentDetailsDTOTestData
+                    .getWithInvalidChannel()
+            )
+    ).assertMessageContains(RegisterTestData.INVALID_TRANSFER_TYPE);
   }
 
 }

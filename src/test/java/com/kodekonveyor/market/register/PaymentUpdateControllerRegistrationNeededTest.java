@@ -11,9 +11,10 @@ import org.mockito.quality.Strictness;
 
 import com.kodekonveyor.annotations.TestedBehaviour;
 import com.kodekonveyor.annotations.TestedService;
-import com.kodekonveyor.authentication.AuthenticatedUserStubs;
+import com.kodekonveyor.authentication.AuthenticatedUserServiceStubs;
 import com.kodekonveyor.exception.ThrowableTester;
 import com.kodekonveyor.market.UnauthorizedException;
+import com.kodekonveyor.market.payment.PaymentDetailsDTOTestData;
 
 @ExtendWith(MockitoExtension.class)
 @MockitoSettings(strictness = Strictness.LENIENT)
@@ -30,9 +31,10 @@ public class PaymentUpdateControllerRegistrationNeededTest
     "if the user does not have can_be_payed role, a NotLoggedInException is thrown"
   )
   void test() {
-    AuthenticatedUserStubs.authenticated(authenticatedUserService);
+    AuthenticatedUserServiceStubs.authenticated(authenticatedUserService);
     ThrowableTester.assertThrows(
-        () -> paymentUpdateController.call(RegisterTestData.PAYMENT_DETAILS)
+        () -> paymentUpdateController
+            .call(PaymentDetailsDTOTestData.get())
     ).assertException(UnauthorizedException.class);
   }
 
@@ -41,20 +43,20 @@ public class PaymentUpdateControllerRegistrationNeededTest
     "if the user does not have can_be_payed role, a NotLoggedInException is thrown"
   )
   void test1() {
-    AuthenticatedUserStubs.authenticated(authenticatedUserService);
+    AuthenticatedUserServiceStubs.authenticated(authenticatedUserService);
     ThrowableTester.assertThrows(
-        () -> paymentUpdateController.call(RegisterTestData.PAYMENT_DETAILS)
-    ).assertMessageIs(PaymentUpdateControllerTestData.IN_PAYMENT_UPDATE);
+        () -> paymentUpdateController.call(PaymentDetailsDTOTestData.get())
+
+    ).assertMessageContains(RegisterConstants.NO_CAN_BE_PAID_ROLE);
   }
 
   @Test
-  @DisplayName("if the user has can_be_played role, no exception is thrown")
+  @DisplayName("if the user has can_be_paid role, no exception is thrown")
   void test2() {
-    AuthenticatedUserStubs.kodekonveyorContract(authenticatedUserService);
-    MarketUserStubs
-        .contractTermsAccepted(marketUserEntityRepository, registerTestData);
+    AuthenticatedUserServiceStubs.registered(authenticatedUserService);
     ThrowableTester.assertNoException(
-        () -> paymentUpdateController.call(RegisterTestData.PAYMENT_DETAILS)
+        () -> paymentUpdateController.call(PaymentDetailsDTOTestData.get())
+
     );
   }
 

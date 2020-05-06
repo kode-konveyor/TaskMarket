@@ -2,7 +2,7 @@ package com.kodekonveyor.market.lead;
 
 import static org.junit.Assert.assertEquals;
 
-import java.util.List;
+import java.util.Set;
 
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.DisplayName;
@@ -16,7 +16,7 @@ import org.mockito.quality.Strictness;
 
 import com.kodekonveyor.annotations.TestedBehaviour;
 import com.kodekonveyor.annotations.TestedService;
-import com.kodekonveyor.authentication.AuthenticatedUserStubs;
+import com.kodekonveyor.authentication.AuthenticatedUserServiceStubs;
 
 @ExtendWith(MockitoExtension.class)
 @MockitoSettings(strictness = Strictness.LENIENT)
@@ -29,7 +29,7 @@ public class ListleadControllerStorageTest extends ListLeadControllerTestBase {
   @BeforeEach
   void setUp() {
     super.setUp();
-    AuthenticatedUserStubs
+    AuthenticatedUserServiceStubs
         .salesUser(authenticatedUserService);
 
   }
@@ -37,7 +37,7 @@ public class ListleadControllerStorageTest extends ListLeadControllerTestBase {
   @Test
   @DisplayName("The data is listed")
   void test() {
-    final List<LeadDTO> ret = listleadController.call();
+    final Set<LeadDTO> ret = listleadController.call();
     assertEquals(LeadDTOTestData.list(), ret);
   }
 

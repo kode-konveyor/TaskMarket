@@ -1,121 +1,95 @@
 package com.kodekonveyor.authentication;
 
-import java.util.ArrayList;
-import java.util.List;
 import java.util.Set;
 
+import javax.annotation.Generated;
+
+@Generated("by zenta-tools")
 public class UserEntityTestData {
 
-  public static final Long ID = (long) 42;
-  public static final long ID_BAD = -42;
-  public static final Long ID_NO_MARKET = (long) 44;
-  public static final String LOGIN = "gituser";
-  public static final String LOGIN_BAD = "badlogin";
-  public static final String LOGIN_NO_MARKET = "userNoMarketUser";
-
-  public static final UserEntity get() {
-    final UserEntity user = new UserEntity();
-    user.setLogin(LOGIN);
-    user.setRoles(Set.of(RoleEntityTestData.get()));
-    user.setId(ID);
-    return user;
-  }
-
-  public static final UserEntity getIdUninitialized() {
+  public final static UserEntity get() {
     final UserEntity userEntity = new UserEntity();
-    userEntity.setLogin(LOGIN);
+    userEntity.setId(UserTestData.ID);
+    userEntity.setLogin(UserTestData.LOGIN);
+    userEntity
+        .setRole(Set.of(RoleEntityTestData.get()));
     return userEntity;
   }
 
-  public static final UserEntity getLoginNoMarket() {
-    final UserEntity user = new UserEntity();
-    user.setId(ID_NO_MARKET);
-    user.setLogin(LOGIN_NO_MARKET);
-    return user;
-  }
+  public final static UserEntity getWithRoles(final Set<RoleEntity> roles) {
+    final UserEntity userEntity = new UserEntity();
+    userEntity.setId(UserTestData.ID);
+    userEntity.setRole(Set.of(RoleEntityTestData.get()));
+    userEntity.setLogin(UserTestData.LOGIN);
 
-  public static final UserEntity getRoleCanbePayed() {
-    final UserEntity userEntity = get();
-    userEntity.setRoles(Set.of(RoleEntityTestData.getNameCanBePayed()));
     return userEntity;
   }
 
-  public static final UserEntity getRoleExist() {
+  public static UserEntity getRoleCanbePaid() {
     final UserEntity userEntity = get();
-    userEntity.setRoles(
+    userEntity.setRole(Set.of(RoleEntityTestData.getNameCanbepaid()));
+    return userEntity;
+  }
+
+  public static UserEntity getRoleKodekonveyorContract() {
+    final UserEntity userEntity = get();
+    userEntity.setId(UserTestData.ID_CONTRACT);
+    userEntity.setLogin(UserTestData.LOGIN_CONTRACT);
+    userEntity
+        .setRole(
+            Set.of(
+                RoleEntityTestData.getRoleKodekonveyorContract(),
+                RoleEntityTestData.getNameCanbepaid()
+            )
+        );
+    return userEntity;
+  }
+
+  public static UserEntity getRoleProjectManager() {
+    final UserEntity userEntity = get();
+    userEntity.setId(UserTestData.ID_PROJECTMANAGER);
+    userEntity.setLogin(UserTestData.LOGIN_PROJECTMANAGER);
+    userEntity.setRole(
         Set.of(
-            RoleEntityTestData.getNameRoleExist(),
-            RoleEntityTestData.getNameCanBePayed(),
-            RoleEntityTestData.getNameRegistered()
-        )
-    );
-
-    return userEntity;
-  }
-
-  public static final UserEntity getRoleKodekonveyorContract() {
-    final UserEntity userEntity = get();
-    userEntity.setLogin(null);
-    userEntity.setRoles(
-        Set.of(
-            RoleEntityTestData.getNameCanBePayed(),
-            RoleEntityTestData.getNameKodekonveyorContract()
-        )
-    );
-    return userEntity;
-  }
-
-  public static UserEntity getRoleProject() {
-    final UserEntity userEntity = get();
-    userEntity.setRoles(Set.of(RoleEntityTestData.getNameProject()));
-    return userEntity;
-  }
-
-  public static final UserEntity getRoleProjectManager() {
-    final UserEntity userEntity = get();
-    userEntity.setLogin(null);
-    userEntity.setRoles(Set.of(RoleEntityTestData.getNameProjectManager()));
-    return userEntity;
-  }
-
-  public static final UserEntity getRoleProjectName() {
-    final UserEntity userEntity = get();
-    userEntity.setRoles(
-        Set.of(
-            RoleEntityTestData.getNameProjectRole(),
-            RoleEntityTestData.getNameCanBePayed(),
-            RoleEntityTestData.getNameRegistered()
-
+            RoleEntityTestData.getNameProjectManager(),
+            RoleEntityTestData.getNameCanbepaid()
         )
     );
     return userEntity;
   }
 
-  public static UserEntity getRoleRegistered() {
+  public static UserEntity getRoleSales() {
     final UserEntity userEntity = get();
-    userEntity.setRoles(Set.of(RoleEntityTestData.getNameRegistered()));
+    userEntity.setRole(Set.of(RoleEntityTestData.getRoleSales()));
     return userEntity;
   }
 
-  public static final UserEntity getRoleSales() {
+  public static UserEntity getIdUninitialized() {
     final UserEntity userEntity = get();
-    userEntity.setRoles(Set.of(RoleEntityTestData.getNameSales()));
+    userEntity.setId(null);
     return userEntity;
   }
 
-  public static final UserEntity getRoleUnregistered() {
+  public static UserEntity getIdNoMarketUser() {
     final UserEntity userEntity = get();
-    userEntity.setLogin(null);
-    userEntity.setRoles(Set.of(RoleEntityTestData.getNameCanBePayed()));
+    userEntity.setId(UserTestData.ID_NO_MARKET_USER);
+    userEntity.setLogin(UserTestData.LOGIN_NO_MARKET_USER);
     return userEntity;
   }
 
-  public static final List<UserEntity> list() {
-    return List.of(get());
+  public static UserEntity getContractTermsNotAccepted() {
+    final UserEntity userEntity = get();
+    userEntity.setId(UserTestData.ID_NO_CONTRACT_TERMS_ACCEPTED);
+    userEntity.setLogin(UserTestData.LOGIN_NO_CONTRACT_TERMS_ACCEPTED);
+    userEntity.setRole(Set.of(RoleEntityTestData.getNameCanbepaid()));
+    return userEntity;
   }
 
-  public static final List<UserEntity> listEmpty() {
-    return new ArrayList<>();
-  }
+  public static UserEntity getIdInNullDatabase() {
+    final UserEntity userEntity = get();
+    userEntity.setId(UserTestData.ID_IN_NULL_DATABASE);
+    userEntity.setLogin(UserTestData.LOGIN_IN_NULL_DATABASE);
+    return userEntity;
+  };
 
 }

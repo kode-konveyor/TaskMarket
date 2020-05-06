@@ -2,7 +2,7 @@ package com.kodekonveyor.market;
 
 public class MarketConstants {
 
-  public static final String CAN_BE_PAID_ROLE = "can_be_payed";
+  public static final String CAN_BE_PAID_ROLE = "can_be_paid";
 
   public static final String CHANNEL_NAME_PAYPAL = "paypal";
 
@@ -35,11 +35,11 @@ public class MarketConstants {
   public static final String INVALID_PAYMENT_REGIME_EXCEPTION =
       "Invalid payment regime";
 
-  public static final String KODEKONVEYOR_CONTRACT = "kodekonveyor_contract";
+  public static final String KODEKONVEYOR_CONTRACT = "contract";
 
-  public static final String KODEKONVEYOR_SALES_ROLE = "kodekonveyor_sales";
+  public static final String KODEKONVEYOR_SALES_ROLE = "sales";
 
-  public static final String KODEKONVEYOR_TECHNICAL = "kodekonveyor_technical";
+  public static final String KODEKONVEYOR_TECHNICAL = "technical";
 
   public static final String MANAGER = "manager";
 
@@ -53,8 +53,6 @@ public class MarketConstants {
 
   public static final String PROJECT_ID_NON_POSITIVE_EXCEPTION =
       "Project Id can only have positive values";
-
-  public static final String PROJECT_MANAGER = "kodekonveyor_projectmanager";
 
   public static final String PROJECT_NAME_INVALID_EXCEPTION =
       "Invalid project name format";
@@ -73,12 +71,12 @@ public class MarketConstants {
   public static final String REGEX_TRANSFERWISE =
       "\\b[A-Z]{2}[0-9]{2}(?:[ ]?[0-9]{4}){4}(?!(?:[ ]?[0-9]){3})(?:[ ]?[0-9]{1,2})?\\b";
 
-  public static final String REGISTERED_ROLE = "registered";
-
   public static final String TERMS_NOT_ACCEPTED = "Contract terms not accepted";
 
   public static final String UNDERSCORE = "_";
 
   public static final String NOT_LOGGED_IN_MESSAGE_TEMPLATE = "%s:%s at %s:%s";
+
+  public static final String KODE_KONVEYOR_PROJECT_NAME = "Kode Konveyor";
 
 }

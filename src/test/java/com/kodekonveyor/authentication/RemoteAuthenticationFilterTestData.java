@@ -35,13 +35,13 @@ class RemoteAuthenticationFilterTestData {
 
   public static final HttpServletRequest getRequestUser() {
     final HttpServletRequest request = getRequest();
-    doReturn(UserEntityTestData.LOGIN).when(request).getHeader(NAME_HEADER);
+    doReturn(UserTestData.LOGIN).when(request).getHeader(NAME_HEADER);
     return request;
   }
 
   public static final ServletRequest getRequestUserUnknown() {
     final HttpServletRequest request = getRequest();
-    doReturn(UserEntityTestData.LOGIN_BAD).when(request).getHeader(NAME_HEADER);
+    doReturn(UserTestData.LOGIN_BAD).when(request).getHeader(NAME_HEADER);
     return request;
   }
 

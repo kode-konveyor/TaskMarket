@@ -1,12 +1,21 @@
 package com.kodekonveyor.authentication;
 
+import java.util.Set;
+
+import javax.annotation.Generated;
+
+@Generated("by zenta-tools")
 public class UserDTOTestData {
 
-  public static final UserDTO get() {
-    final UserDTO user = new UserDTO();
-    user.setId(UserEntityTestData.ID);
-    user.setLogin(UserEntityTestData.LOGIN);
-    return user;
-  }
+	
+	public final static UserDTO get() {
+		UserDTO userDTO = new UserDTO();
+		userDTO.setId(UserTestData.ID);
+		userDTO.setRole(Set.of(RoleTestData.ID));
+		userDTO.setLogin(UserTestData.LOGIN);
+		
+		return userDTO;
+	};
+	
 
 }

@@ -1,7 +1,10 @@
 package com.kodekonveyor.exception;
 
 import static com.kodekonveyor.exception.ThrowableTesterConstants.*; //NOPMD it's not unused import
-import static org.junit.Assert.*;
+import static org.junit.Assert.*;//NOPMD
+
+import java.io.PrintWriter;
+import java.io.StringWriter;
 
 import org.junit.platform.commons.util.ExceptionUtils;
 
@@ -14,7 +17,10 @@ public class ThrowableTester {// NOPMD
     try {
       thrower.throwException();
     } catch (final Throwable e) {//NOPMD
-      fail(EXCEPTION_THROWN);
+      final StringWriter out = new StringWriter();
+      final PrintWriter writer = new PrintWriter(out);
+      e.printStackTrace(writer);
+      fail(EXCEPTION_THROWN + writer);
     }
   }
 

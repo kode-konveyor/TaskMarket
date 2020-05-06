@@ -3,6 +3,8 @@ package com.kodekonveyor.authentication;
 import static org.assertj.core.api.Assertions.assertThat;
 import static org.junit.Assert.assertEquals;
 
+import java.util.List;
+
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
@@ -28,7 +30,7 @@ public class RemoteAuthenticationAuthenticationInfrastructureTest
   @Test
   public void test() {
     assertEquals(
-        UserEntityTestData.listEmpty(), remoteAuthentication.getAuthorities()
+        List.of(), remoteAuthentication.getAuthorities()
     );
   }
 
@@ -36,7 +38,7 @@ public class RemoteAuthenticationAuthenticationInfrastructureTest
   @Test
   public void test1() {
     assertEquals(
-        UserEntityTestData.LOGIN, remoteAuthentication.getCredentials()
+        UserTestData.LOGIN, remoteAuthentication.getCredentials()
     );
   }
 
@@ -50,21 +52,21 @@ public class RemoteAuthenticationAuthenticationInfrastructureTest
   @Test
   public void test21() {
     assertEquals(
-        UserEntityTestData.ID,
-        (Long) ((UserEntity) remoteAuthentication.getDetails()).getId()
+        UserTestData.ID,
+        ((UserEntity) remoteAuthentication.getDetails()).getId()
     );
   }
 
   @DisplayName("getPrincipal returns the login name")
   @Test
   public void test3() {
-    assertEquals(UserEntityTestData.LOGIN, remoteAuthentication.getPrincipal());
+    assertEquals(UserTestData.LOGIN, remoteAuthentication.getPrincipal());
   }
 
   @DisplayName("getName returns the login name")
   @Test
   public void test31() {
-    assertEquals(UserEntityTestData.LOGIN, remoteAuthentication.getName());
+    assertEquals(UserTestData.LOGIN, remoteAuthentication.getName());
   }
 
   @DisplayName("isAuthenticated returns true")

@@ -76,7 +76,7 @@ public class RemoteAuthenticationServiceTest
         .info(
             LoggingMarkerConstants.AUTHENTICATION,
             RemoteAuthenticationFilterTestData.SUCCESSFULLY_LOGGED_IN,
-            UserEntityTestData.LOGIN
+            UserTestData.LOGIN
         );
   }
 
@@ -91,7 +91,7 @@ public class RemoteAuthenticationServiceTest
             RemoteAuthenticationFilterTestData.getRequestUser(), res,
             filterChain
         );
-    assertRemoteUserIsCorrectlySetAndCleared(UserEntityTestData.LOGIN);
+    assertRemoteUserIsCorrectlySetAndCleared(UserTestData.LOGIN);
   }
 
   @DisplayName(
@@ -105,7 +105,7 @@ public class RemoteAuthenticationServiceTest
             RemoteAuthenticationFilterTestData.getRequestUser(), res,
             filterChain
         );
-    assertRemoteUserIsCorrectlySetAndCleared(UserEntityTestData.LOGIN);
+    assertRemoteUserIsCorrectlySetAndCleared(UserTestData.LOGIN);
   }
 
   @DisplayName(
@@ -119,7 +119,7 @@ public class RemoteAuthenticationServiceTest
             RemoteAuthenticationFilterTestData.getRequestUser(), res,
             filterChain
         );
-    assertRemoteUserIsCorrectlySetAndCleared(UserEntityTestData.LOGIN);
+    assertRemoteUserIsCorrectlySetAndCleared(UserTestData.LOGIN);
   }
 
   @DisplayName(
@@ -132,7 +132,7 @@ public class RemoteAuthenticationServiceTest
         RemoteAuthenticationFilterTestData.getRequestUserUnknown(), res,
         filterChain
     );
-    assertRemoteUserIsCorrectlySetAndCleared(UserEntityTestData.LOGIN_BAD);
+    assertRemoteUserIsCorrectlySetAndCleared(UserTestData.LOGIN_BAD);
   }
 
 }

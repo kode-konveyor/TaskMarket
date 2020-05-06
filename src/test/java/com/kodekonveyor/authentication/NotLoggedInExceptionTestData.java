@@ -2,5 +2,6 @@ package com.kodekonveyor.authentication;
 
 public class NotLoggedInExceptionTestData {
 
-  public final static String MESSAGE = "this is a message";
+  public static final String MESSAGE = "message";
+
 }

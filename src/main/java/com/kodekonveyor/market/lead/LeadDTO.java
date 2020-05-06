@@ -1,12 +1,15 @@
 package com.kodekonveyor.market.lead;
 
+import javax.annotation.Generated;
+
 import lombok.Data;
 
+@Generated("by zenta-tools")
 @Data
 public class LeadDTO {
-
-  String firstName;
-  String email;
-  String interest;
-
+	private Long id;
+	private String firstName;
+	private String email;
+	private String interest;
+	
 }

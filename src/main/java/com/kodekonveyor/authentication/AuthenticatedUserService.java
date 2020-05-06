@@ -1,6 +1,6 @@
 package com.kodekonveyor.authentication;
 
-import java.util.List;
+import java.util.Optional;
 
 import org.slf4j.Logger;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -27,13 +27,13 @@ public class AuthenticatedUserService {
     );
 
     checkCredential(login);
-    final List<UserEntity> userList =
+    final Optional<UserEntity> userList =
         userEntityRepository.findByLogin(login);
     if (userList.isEmpty())
       throw new NotLoggedInException(
           AuthenticationConstants.THIS_SHOULD_NOT_HAPPEN
       );
-    return userList.get(0);
+    return userList.get();
   }
 
   private void checkAuthentication(final Authentication authentication) {

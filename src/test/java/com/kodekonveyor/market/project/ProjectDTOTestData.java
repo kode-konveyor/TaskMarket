@@ -1,50 +1,55 @@
 package com.kodekonveyor.market.project;
 
+import java.util.Set;
+
+import javax.annotation.Generated;
+
+import com.kodekonveyor.authentication.RoleTestData;
+
+@Generated("by zenta-tools")
 public class ProjectDTOTestData {
 
-  public final static Long ID = (long) 442;
-  public final static String INVALID_PROJECT_NAME =
-      "kode-konveyor/Tas%$#@kMarket";
-  public final static String NAME = "kode-konveyor/TaskMarket";
-  private static final Long NON_POSITIVE_ID = (long) -442;
-  private static final Long ONE_ID = (long) 1;
-  private static final Long ZERO_ID = (long) 0;
+  public final static ProjectDTO get() {
+    final ProjectDTO projectDTO = new ProjectDTO();
+    projectDTO.setId(ProjectTestData.ID);
+    projectDTO.setRole(Set.of(RoleTestData.ID));
+    projectDTO.setMilestone(Set.of(MilestoneTestData.ID));
+    projectDTO.setPullRequest(Set.of(PullrequestTestData.ID));
+    projectDTO.setName(ProjectTestData.NAME);
+    projectDTO.setBudgetInCents(ProjectTestData.BUDGET_IN_CENTS);
+    projectDTO.setIsPublic(ProjectTestData.IS_PUBLIC);
 
-  public static final ProjectDTO get() {
-    final ProjectDTO dto = new ProjectDTO();
-    dto.setId(ID);
-    dto.setName(NAME);
-    return dto;
-  }
-
-  public static ProjectDTO getInvalidName() {
-    final ProjectDTO dto = get();
-    dto.setName(INVALID_PROJECT_NAME);
-    return dto;
-  }
-
-  public static final ProjectDTO getNonPositiveId() {
-    final ProjectDTO dto = get();
-    dto.setId(NON_POSITIVE_ID);
-    return dto;
-  }
-
-  public static final ProjectDTO getNullName() {
-    final ProjectDTO dto = get();
-    dto.setName(null);
-    return dto;
+    return projectDTO;
   }
 
   public static ProjectDTO getPositiveId() {
-    final ProjectDTO dto = get();
-    dto.setId(ONE_ID);
-    return dto;
+    final ProjectDTO projectDTO = get();
+    projectDTO.setId(ProjectTestData.ID_POSITIVE);
+    return projectDTO;
+  }
+
+  public static ProjectDTO getNonPositiveId() {
+    final ProjectDTO projectDTO = get();
+    projectDTO.setId(0L);
+    return projectDTO;
   }
 
   public static ProjectDTO getZeroId() {
-    final ProjectDTO dto = get();
-    dto.setId(ZERO_ID);
-    return dto;
+    final ProjectDTO projectDTO = get();
+    projectDTO.setId(ProjectTestData.ID_ZERO);
+    return projectDTO;
   }
+
+  public static ProjectDTO getInvalidName() {
+    final ProjectDTO projectDTO = get();
+    projectDTO.setName(ProjectTestData.INVALID_NAME);
+    return projectDTO;
+  }
+
+  public static ProjectDTO getNullName() {
+    final ProjectDTO projectDTO = get();
+    projectDTO.setName(null);
+    return projectDTO;
+  };
 
 }

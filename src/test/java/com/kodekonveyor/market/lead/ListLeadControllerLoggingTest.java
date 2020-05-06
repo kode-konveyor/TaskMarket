@@ -14,7 +14,7 @@ import org.mockito.quality.Strictness;
 
 import com.kodekonveyor.annotations.TestedBehaviour;
 import com.kodekonveyor.annotations.TestedService;
-import com.kodekonveyor.authentication.AuthenticatedUserStubs;
+import com.kodekonveyor.authentication.AuthenticatedUserServiceStubs;
 import com.kodekonveyor.logging.LoggingMarkerConstants;
 
 @ExtendWith(MockitoExtension.class)
@@ -27,7 +27,7 @@ public class ListLeadControllerLoggingTest extends ListLeadControllerTestBase {
   @Test
   @DisplayName("The call of the service is logged")
   void test2() {
-    AuthenticatedUserStubs
+    AuthenticatedUserServiceStubs
         .salesUser(authenticatedUserService);
 
     listleadController.call();

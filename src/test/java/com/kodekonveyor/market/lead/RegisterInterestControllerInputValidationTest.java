@@ -26,11 +26,9 @@ public class RegisterInterestControllerInputValidationTest
   public void emailFormattest() {
     ThrowableTester.assertThrows(
         () -> registerInterestController.call(LeadDTOTestData.getEmailInvalid())
-    )
-
-        .assertMessageIs(
-            LeadDTOValidationUtilTestData.INVALID_EMAIL_FORMAT_EXCEPTION
-        );
+    ).assertMessageIs(
+        LeadDTOValidationUtilTestData.INVALID_EMAIL_FORMAT_EXCEPTION
+    );
 
   }
 
@@ -52,7 +50,7 @@ public class RegisterInterestControllerInputValidationTest
 
     ThrowableTester.assertThrows(
         () -> registerInterestController
-            .call(LeadDTOTestData.getfirstNameInvaliidFormat())
+            .call(LeadDTOTestData.getfirstNameInvalidFormat())
     )
 
         .assertMessageIs(

@@ -12,7 +12,6 @@ import org.springframework.beans.factory.InjectionPoint;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
-import org.springframework.boot.autoconfigure.domain.EntityScan;
 import org.springframework.boot.builder.SpringApplicationBuilder;
 import org.springframework.boot.jdbc.DataSourceBuilder;
 import org.springframework.boot.web.servlet.support.SpringBootServletInitializer;
@@ -24,8 +23,7 @@ import com.kodekonveyor.annotations.ExcludeFromCodeCoverage;
 import com.kodekonveyor.annotations.InterfaceClass;
 
 @SpringBootApplication
-@EntityScan("com.kodekonveyor")
-@ExcludeFromCodeCoverage("empty")
+@ExcludeFromCodeCoverage("glue")
 @InterfaceClass
 public class SpringConfig extends SpringBootServletInitializer {
 

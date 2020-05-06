@@ -12,7 +12,6 @@ public class EmailIdValidationUtil {
     if (null == lead.getEmail())
 
       throw new ValidationException(MarketConstants.EMAIL_NULL_EXCEPTION);
-
     if (
       !lead.getEmail()
           .matches(emailValidationRegex)
