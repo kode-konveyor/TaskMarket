@@ -2,7 +2,7 @@ package com.kodekonveyor.market.payment;
 
 import javax.annotation.Generated;
 
-import com.kodekonveyor.market.project.PullrequestEntityTestData;
+import com.kodekonveyor.market.project.PullRequestEntityTestData;
 
 @Generated("by zenta-tools")
 public class BilledItemEntityTestData {
@@ -14,7 +14,7 @@ public class BilledItemEntityTestData {
         BilledItemTestData.DELIVERABLE_PRICE_IN_CENTS
     );
     billedItemEntity.setDeliverableCount(BilledItemTestData.DELIVERABLE_COUNT);
-    billedItemEntity.setPullRequest(PullrequestEntityTestData.get());
+    billedItemEntity.setPullRequest(PullRequestEntityTestData.get());
     billedItemEntity
         .setItemPriceInCents(BilledItemTestData.ITEM_PRICE_IN_CENTS);
 

@@ -33,6 +33,10 @@ public class MarketUserEntityRepositoryStubs {
         .when(marketUserEntityRepository)
         .findByUser(UserEntityTestData.getIdInNullDatabase());
 
+    doReturn(Optional.of(MarketUserEntityTestData.getRoleTechnical()))
+        .when(marketUserEntityRepository)
+        .findByUser(UserEntityTestData.getTechnicalUser());
+
     doReturn(
         Optional.of(MarketUserEntityTestData.getIsTerrmsAcceptedFalse())
     )

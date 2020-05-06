@@ -40,4 +40,31 @@ public class RoleEntityTestData {
     return roleEntity;
   }
 
+  public static RoleEntity getProjectRole() {
+    final RoleEntity roleEntity = new RoleEntity();
+    roleEntity.setId(RoleTestData.ID_PROJECT_ROLE);
+    roleEntity.setName(RoleTestData.PROJECT_ROLE);
+    return roleEntity;
+  }
+
+  public static RoleEntity getContractRole() {
+    final RoleEntity roleEntity = new RoleEntity();
+    roleEntity.setId(RoleTestData.ID_CONTRACT_ROLE);
+    roleEntity.setName(RoleTestData.CONTRACT_ROLE);
+    return roleEntity;
+  }
+
+  public static RoleEntity getTechnicalRole() {
+    final RoleEntity roleEntity = new RoleEntity();
+    roleEntity.setId(RoleTestData.ID_TECHNICAL_ROLE);
+    roleEntity.setName(RoleTestData.TECHNICAL_ROLE);
+    return roleEntity;
+  }
+
+  public static RoleEntity getFinanceRole() {
+    final RoleEntity roleEntity = new RoleEntity();
+    roleEntity.setId(RoleTestData.ID_FINANCE_ROLE);
+    roleEntity.setName(RoleTestData.FINANCE_ROLE);
+    return roleEntity;
+  }
 }

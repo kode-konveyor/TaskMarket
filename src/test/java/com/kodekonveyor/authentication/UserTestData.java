@@ -28,5 +28,7 @@ public class UserTestData {
       "nocontractaccepted";
   public static final Long ID_IN_NULL_DATABASE = 1216L;
   public static final String LOGIN_IN_NULL_DATABASE = "innulldb";
+  public static final String LOGIN_TECHNICAL = "login technical";
+  public static final Long ID_TECHNICAL = 1217L;
 
 }

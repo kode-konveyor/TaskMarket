@@ -66,4 +66,16 @@ public class MarketUserDTOTestData {
     return marketUserDTO;
   }
 
+  public static MarketUserDTO getRoleTechnical() {
+    final MarketUserDTO marketUserDTO = new MarketUserDTO();
+    marketUserDTO.setId(MarketUserTestData.ID);
+    marketUserDTO.setEmail(MarketUserTestData.EMAIL);
+    marketUserDTO.setLegalName(MarketUserTestData.LEGAL_NAME);
+    marketUserDTO.setIsTermsAccepted(MarketUserTestData.IS_TERMS_ACCEPTED);
+    marketUserDTO.setPersonalName(MarketUserTestData.PERSONAL_NAME);
+    marketUserDTO.setUser(UserTestData.ID_TECHNICAL);
+    marketUserDTO.setPaymentDetail(new HashSet<>());
+    return marketUserDTO;
+  }
+
 }

@@ -91,4 +91,15 @@ public class MarketUserEntityTestData {
     return marketUserEntity;
   };
 
+  public static MarketUserEntity getRoleTechnical() {
+    final MarketUserEntity marketUserEntity = new MarketUserEntity();
+    marketUserEntity.setId(MarketUserTestData.ID);
+    marketUserEntity.setEmail(MarketUserTestData.EMAIL);
+    marketUserEntity.setLegalName(MarketUserTestData.LEGAL_NAME);
+    marketUserEntity.setIsTermsAccepted(MarketUserTestData.IS_TERMS_ACCEPTED);
+    marketUserEntity.setPersonalName(MarketUserTestData.PERSONAL_NAME);
+    marketUserEntity.setUser(UserEntityTestData.getTechnicalUser());
+    marketUserEntity.setPaymentDetail(null);
+    return marketUserEntity;
+  }
 }
