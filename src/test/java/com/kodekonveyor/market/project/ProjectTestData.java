@@ -23,4 +23,8 @@ public class ProjectTestData {
 
   public static final String NAME_KODE_KONVEYOR = "Kode Konveyor";
 
+  public static final String URL = "project url goes here";
+
+  public static final String PROJECT_NAME = "project name";
+
 }

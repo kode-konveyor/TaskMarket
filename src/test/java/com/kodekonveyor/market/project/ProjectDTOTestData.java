@@ -22,6 +22,12 @@ public class ProjectDTOTestData {
     return projectDTO;
   }
 
+  public final static ProjectDTO getUrl() {
+    final ProjectDTO projectDTO = get();
+    projectDTO.setUrl(ProjectTestData.URL);
+    return projectDTO;
+  }
+
   public static ProjectDTO getPositiveId() {
     final ProjectDTO projectDTO = get();
     projectDTO.setId(ProjectTestData.ID_POSITIVE);

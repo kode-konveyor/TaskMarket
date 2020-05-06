@@ -22,6 +22,20 @@ public class ProjectEntityTestData {
     return projectEntity;
   }
 
+  public static ProjectEntity getUrlAndPullRequest() {
+    final ProjectEntity projectEntity = get();
+    projectEntity.setUrl(ProjectTestData.URL);
+    projectEntity.setPullRequest(Set.of(PullRequestEntityTestData.get()));
+    return projectEntity;
+  }
+
+  public static ProjectEntity getNullIdWithUrlAndPullRequest() {
+    final ProjectEntity projectEntity = getUrlAndPullRequest();
+    projectEntity.setId(null);
+    projectEntity.setBudgetInCents(0L);
+    return projectEntity;
+  }
+
   public static ProjectEntity getNullId() {
     final ProjectEntity projectEntity = get();
     projectEntity.setId(null);
@@ -30,7 +44,7 @@ public class ProjectEntityTestData {
   }
 
   public static ProjectEntity getNullIdWithoutMilestone() {
-    final ProjectEntity projectEntity = get();
+    final ProjectEntity projectEntity = getUrlAndPullRequest();
     projectEntity.setId(null);
     projectEntity.setBudgetInCents(0L);
     projectEntity.setMilestone(new HashSet<>());

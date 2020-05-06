@@ -23,6 +23,9 @@ public class ProjectEntityRepositoryStubs {
     doReturn(Optional.of(ProjectEntityTestData.getNameKodeKonveyor()))
         .when(projectEntityRepository)
         .findByName(ProjectTestData.NAME_KODE_KONVEYOR);
+    doReturn(Optional.of(ProjectEntityTestData.getUrlAndPullRequest()))
+        .when(projectEntityRepository)
+        .findByName(ProjectTestData.PROJECT_NAME);
     doReturn(Optional.of(ProjectEntityTestData.getNameKodeKonveyor()))
         .when(projectEntityRepository).findByRole(RoleEntityTestData.getRoleKodekonveyorContract());
   }
