@@ -51,6 +51,7 @@ public class TaskEntityTestData {
     final TaskEntity taskEntity = get();
     final List<TaskEntity> taskEntities = new ArrayList<>();
     taskEntity.setGithubId(ISSUE_ID_CLOSED);
+    taskEntity.setStatus(TaskStatusEnum.DONE);
     taskEntities.add(taskEntity);
     return taskEntities;
   }
@@ -59,6 +60,7 @@ public class TaskEntityTestData {
     final TaskEntity taskEntity = get();
     final List<TaskEntity> taskEntities = new ArrayList<>();
     taskEntity.setGithubId(ISSUE_ID_INPROGRESS);
+    taskEntity.setStatus(TaskStatusEnum.IN_PROGRESS);
     taskEntities.add(taskEntity);
     return taskEntities;
   }
@@ -67,6 +69,7 @@ public class TaskEntityTestData {
     final TaskEntity taskEntity = get();
     final List<TaskEntity> taskEntities = new ArrayList<>();
     taskEntity.setGithubId(ISSUE_ID_UPFORGRAB_OPEN);
+    taskEntity.setStatus(TaskStatusEnum.UP_FOR_GRAB);
     taskEntities.add(taskEntity);
     return taskEntities;
   }
@@ -75,6 +78,7 @@ public class TaskEntityTestData {
     final TaskEntity taskEntity = get();
     final List<TaskEntity> taskEntities = new ArrayList<>();
     taskEntity.setGithubId(ISSUE_ID_UPFORGRAB_CLOSED);
+    taskEntity.setStatus(TaskStatusEnum.UP_FOR_GRAB);
     taskEntities.add(taskEntity);
     return taskEntities;
   }
