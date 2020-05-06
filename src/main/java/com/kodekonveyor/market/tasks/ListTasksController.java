@@ -56,7 +56,7 @@ public class ListTasksController {
   private List<TaskEntity> getClosedUpForGrabTask(
       final MarketUserEntity marketUserEntity
   ) {
-    return taskRepository.findByStatusAndResponsibleAndProjectIsPublic(
+    return taskRepository.findByStatusAndMarketUserAndProjectIsPublic(
         TaskStatusEnum.UP_FOR_GRAB, marketUserEntity, false
     );
   }
@@ -64,7 +64,7 @@ public class ListTasksController {
   private List<TaskEntity> getInProgressOrClosedTask(
       final MarketUserEntity marketUserEntity, final TaskStatusEnum status
   ) {
-    return taskRepository.findByStatusAndResponsible(
+    return taskRepository.findByStatusAndMarketUser(
         status, marketUserEntity
     );
   }
