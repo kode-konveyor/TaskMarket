@@ -23,7 +23,7 @@ import com.kodekonveyor.authentication.AuthenticatedUserServiceStubs;
 public class ShowUserControllerRolesTest extends ShowUserControllerTestBase {
 
   @Test
-  @DisplayName("Technical user show roles test for DTO")
+  @DisplayName("User details to Technical role returned successfully")
   public void test1() {
     AuthenticatedUserServiceStubs
         .technicalUser(authenticatedUserService);
@@ -33,7 +33,9 @@ public class ShowUserControllerRolesTest extends ShowUserControllerTestBase {
   }
 
   @Test
-  @DisplayName("Technical user show roles payment details not visible test")
+  @DisplayName(
+    "User details returned successfully to Technical role without payment details"
+  )
   public void test2() {
     AuthenticatedUserServiceStubs
         .technicalUser(authenticatedUserService);
@@ -44,7 +46,9 @@ public class ShowUserControllerRolesTest extends ShowUserControllerTestBase {
   }
 
   @Test
-  @DisplayName("Technical user show roles legal name visible test")
+  @DisplayName(
+    "User details returned successfully, with legal name, to Technical role"
+  )
   public void test3() {
     AuthenticatedUserServiceStubs
         .technicalUser(authenticatedUserService);
@@ -55,7 +59,9 @@ public class ShowUserControllerRolesTest extends ShowUserControllerTestBase {
   }
 
   @Test
-  @DisplayName("Technical user show roles ID visible test")
+  @DisplayName(
+    "User details  returned successfully, with user id shown, to Technical role"
+  )
   public void test4() {
     AuthenticatedUserServiceStubs
         .technicalUser(authenticatedUserService);
@@ -66,7 +72,9 @@ public class ShowUserControllerRolesTest extends ShowUserControllerTestBase {
   }
 
   @Test
-  @DisplayName("Technical user show roles balance null test")
+  @DisplayName(
+    "User details returned successfully, without balance data, to Technical role "
+  )
   public void test5() {
     AuthenticatedUserServiceStubs
         .technicalUser(authenticatedUserService);
