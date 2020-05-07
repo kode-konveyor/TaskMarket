@@ -33,8 +33,7 @@ public class UpdateProjectModelController {
     );
     projectEntityRepository.save(project);
 
-    final ProjectDTO projectDTO = getProjectDTO(project);
-    return projectDTO;
+    return getProjectDTO(project);
 
   }
 
