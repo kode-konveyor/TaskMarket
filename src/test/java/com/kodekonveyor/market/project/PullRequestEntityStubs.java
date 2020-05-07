@@ -8,7 +8,7 @@ public class PullRequestEntityStubs {
 
   public static void
       behaviour(final PullrequestEntityRepository pullrequestEntityRepository) {
-    doReturn(Optional.of(PullRequestEntityTestData.get()))
+    doReturn(Optional.of(PullrequestEntityTestData.get()))
         .when(pullrequestEntityRepository).findById(PullRequestTestData.ID);
   }
 
