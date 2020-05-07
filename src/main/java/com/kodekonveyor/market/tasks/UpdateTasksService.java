@@ -43,29 +43,21 @@ public class UpdateTasksService {
             taskDTO.getService(), taskDTO.getBehaviour()
         );
 
-    final Optional<MarketUserEntity> marketUser =
-        marketUserEntityRepository.findByUser(user);
-    final MarketUserEntity marketUserEntity = marketUser.get();
+    final MarketUserEntity marketUserEntity =
+        marketUserEntityRepository.findByUser(user).get();
 
     if (taskEntityDB.isPresent()) {
       final TaskEntity taskEntity = taskEntityDB.get();
-      if (!taskDTO.getDescription().equals(taskEntity.getDescription())) {
-        final String replacement = StringUtils.substringBetween(
-            taskDTO.getDescription(), TaskConstants.START_DELIMETER,
-            TaskConstants.END_DELIMETER
-        );
-        final String target = StringUtils.substringBetween(
-            taskEntity.getDescription(), TaskConstants.START_DELIMETER,
-            TaskConstants.END_DELIMETER
-        );
 
-        taskEntity.setDescription(
-            taskEntity.getDescription().replace(target, replacement)
-        );
+      final String description = getUpdatedDescription(
+          taskEntity.getDescription(), taskDTO.getDescription()
+      );
+      if (description != null) {
+        taskEntity.setDescription(description);
         taskEntityRepository.save(taskEntity);
-
       }
     } else
+
       storage(taskDTO, marketUserEntity);
   }
 
@@ -81,4 +73,21 @@ public class UpdateTasksService {
     taskEntityRepository.save(taskEntity);
   }
 
+  private String getUpdatedDescription(
+      final String oldDescription, final String newDescription
+  ) {
+    if (!oldDescription.equals(newDescription)) {
+      final String replacement = substringBetween(newDescription);
+      final String target = substringBetween(oldDescription);
+      return oldDescription.replace(target, replacement);
+    }
+    return null;
+  }
+
+  private String substringBetween(final String description) {
+    return StringUtils.substringBetween(
+        description, TaskConstants.START_DELIMETER,
+        TaskConstants.END_DELIMETER
+    );
+  }
 }

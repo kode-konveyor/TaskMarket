@@ -21,7 +21,7 @@ import com.kodekonveyor.market.UnauthorizedException;
 @TestedBehaviour("roles")
 @TestedService("UpdateProjectModelController")
 public class UpdateProjectModelControllerRolesTest
-    extends UpdateProjectModelControllerTestBase {
+    extends UpdateTaskServiceTestBase {
 
   @Test
   @DisplayName(

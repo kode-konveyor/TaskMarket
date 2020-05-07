@@ -24,7 +24,7 @@ import com.kodekonveyor.market.tasks.TaskEntityTestData;
 @TestedBehaviour("update tasks")
 @TestedService("UpdateProjectModelController")
 public class UpdateProjectModelControllerUpdateTasksTest
-    extends UpdateProjectModelControllerTestBase {
+    extends UpdateTaskServiceTestBase {
 
   @Override
   @BeforeEach
