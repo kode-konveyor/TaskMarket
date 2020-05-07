@@ -32,19 +32,19 @@ public class UpdateProjectModelControllerCompileOutput2Test
   }
 
   @Test
-  @DisplayName("The projectDTO role returned successfully")
+  @DisplayName("The project details with role returned successfully")
   public void test7() {
     assertEquals(projectDTO.getRole(), ProjectDTOTestData.getUrl().getRole());
   }
 
   @Test
-  @DisplayName("The projectDTO name returned successfully")
+  @DisplayName("The project details with name returned successfully")
   public void test8() {
     assertEquals(projectDTO.getName(), ProjectDTOTestData.getUrl().getName());
   }
 
   @Test
-  @DisplayName("The projectDTO description returned successfully")
+  @DisplayName("The project details with description returned successfully")
   public void test9() {
     assertEquals(
         projectDTO.getDescription(),
@@ -53,7 +53,7 @@ public class UpdateProjectModelControllerCompileOutput2Test
   }
 
   @Test
-  @DisplayName("The projectDTO isPublic returned successfully")
+  @DisplayName("The project details with isPublic returned successfully")
   public void test10() {
     assertEquals(
         projectDTO.getIsPublic(), ProjectDTOTestData.getUrl().getIsPublic()
@@ -61,7 +61,7 @@ public class UpdateProjectModelControllerCompileOutput2Test
   }
 
   @Test
-  @DisplayName("The projectDTO budget returned successfully")
+  @DisplayName("The project details with budget returned successfully")
   public void test11() {
     assertEquals(
         projectDTO.getBudgetInCents(),

@@ -32,19 +32,19 @@ public class UpdateProjectModelControllerCompileOutputTest
   }
 
   @Test
-  @DisplayName("The projectDTO returned successfully")
+  @DisplayName("The project details returned successfully")
   public void test1() {
     assertEquals(projectDTO, ProjectDTOTestData.getUrl());
   }
 
   @Test
-  @DisplayName("The projectDTO id returned successfully")
+  @DisplayName("The project details with id returned successfully")
   public void test2() {
     assertEquals(projectDTO.getId(), ProjectDTOTestData.getUrl().getId());
   }
 
   @Test
-  @DisplayName("The projectDTO projectId returned successfully")
+  @DisplayName("The project details with projectId returned successfully")
   public void test3() {
     assertEquals(
         projectDTO.getProjectId(), ProjectDTOTestData.getUrl().getProjectId()
@@ -52,7 +52,7 @@ public class UpdateProjectModelControllerCompileOutputTest
   }
 
   @Test
-  @DisplayName("The projectDTO pull request returned successfully")
+  @DisplayName("The project details with pull request returned successfully")
   public void test4() {
     assertEquals(
         projectDTO.getPullRequest(),
@@ -61,13 +61,13 @@ public class UpdateProjectModelControllerCompileOutputTest
   }
 
   @Test
-  @DisplayName("The projectDTO url returned successfully")
+  @DisplayName("The project details with url returned successfully")
   public void test5() {
     assertEquals(projectDTO.getUrl(), ProjectDTOTestData.getUrl().getUrl());
   }
 
   @Test
-  @DisplayName("The projectDTO milestone returned successfully")
+  @DisplayName("The project details with milestone returned successfully")
   public void test6() {
     assertEquals(
         projectDTO.getMilestone(), ProjectDTOTestData.getUrl().getMilestone()

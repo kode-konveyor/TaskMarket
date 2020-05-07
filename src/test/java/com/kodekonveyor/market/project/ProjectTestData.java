@@ -27,4 +27,8 @@ public class ProjectTestData {
 
   public static final String PROJECT_NAME = "project name";
 
+  public static final String PROJECT_ID = "project ID";
+
+  public static final String DESCRIPTION = "description";
+
 }
