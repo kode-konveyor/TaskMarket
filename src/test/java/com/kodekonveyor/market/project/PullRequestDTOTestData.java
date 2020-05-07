@@ -5,14 +5,14 @@ import javax.annotation.Generated;
 import com.kodekonveyor.market.tasks.TaskTestData;
 
 @Generated("by zenta-tools")
-public class PullrequestDTOTestData {
+public class PullRequestDTOTestData {
 
   public final static PullRequestDTO get() {
     final PullRequestDTO pullrequestDTO = new PullRequestDTO();
-    pullrequestDTO.setId(PullrequestTestData.ID);
+    pullrequestDTO.setId(PullRequestTestData.ID);
     pullrequestDTO.setTask(TaskTestData.ID);
-    pullrequestDTO.setIsAccepted(PullrequestTestData.IS_ACCEPTED);
-    pullrequestDTO.setReference(PullrequestTestData.REFERENCE);
+    pullrequestDTO.setIsAccepted(PullRequestTestData.IS_ACCEPTED);
+    pullrequestDTO.setReference(PullRequestTestData.REFERENCE);
 
     return pullrequestDTO;
   };

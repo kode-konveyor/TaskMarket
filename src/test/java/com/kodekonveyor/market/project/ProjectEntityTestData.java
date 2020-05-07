@@ -25,7 +25,7 @@ public class ProjectEntityTestData {
   public static ProjectEntity getUrlAndPullRequest() {
     final ProjectEntity projectEntity = get();
     projectEntity.setUrl(ProjectTestData.URL);
-    projectEntity.setPullRequest(Set.of(PullRequestEntityTestData.get()));
+    projectEntity.setPullRequest(Set.of(PullrequestEntityTestData.get()));
     return projectEntity;
   }
 

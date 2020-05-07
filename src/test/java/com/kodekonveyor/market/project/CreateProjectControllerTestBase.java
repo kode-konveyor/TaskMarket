@@ -30,13 +30,13 @@ public class CreateProjectControllerTestBase {
   MilestoneEntityRepository milestoneEntityRepository;
 
   @Mock
-  PullRequestEntityRepository pullrequestEntityRepository;
+  PullrequestEntityRepository pullrequestEntityRepository;
 
   @BeforeEach
   void setUp() {
     ProjectEntityRepositoryStubs.behaviour(projectEntityRepository);
     MilestoneEntityRepositoryStubs.behaviour(milestoneEntityRepository);
-    PullrequestEntityStubs.behaviour(pullrequestEntityRepository);
+    PullRequestEntityStubs.behaviour(pullrequestEntityRepository);
     RoleEntityRepositoryStubs.behaviour(roleEntityRepository);
   }
 

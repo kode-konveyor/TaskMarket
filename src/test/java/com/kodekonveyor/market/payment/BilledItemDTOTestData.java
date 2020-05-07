@@ -2,7 +2,7 @@ package com.kodekonveyor.market.payment;
 
 import javax.annotation.Generated;
 
-import com.kodekonveyor.market.project.PullrequestTestData;
+import com.kodekonveyor.market.project.PullRequestTestData;
 
 @Generated("by zenta-tools")
 public class BilledItemDTOTestData {
@@ -14,7 +14,7 @@ public class BilledItemDTOTestData {
         BilledItemTestData.DELIVERABLE_PRICE_IN_CENTS
     );
     billedItemDTO.setDeliverableCount(BilledItemTestData.DELIVERABLE_COUNT);
-    billedItemDTO.setPullRequest(PullrequestTestData.ID);
+    billedItemDTO.setPullRequest(PullRequestTestData.ID);
     billedItemDTO.setItemPriceInCents(BilledItemTestData.ITEM_PRICE_IN_CENTS);
 
     return billedItemDTO;

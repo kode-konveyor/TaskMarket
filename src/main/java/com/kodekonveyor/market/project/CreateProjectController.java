@@ -39,7 +39,7 @@ public class CreateProjectController {
   MilestoneEntityRepository milestoneEntityRepository;
 
   @Autowired
-  PullRequestEntityRepository pullrequestEntityRepository;
+  PullrequestEntityRepository pullrequestEntityRepository;
 
   @PostMapping(
       value = UrlMapConstants.PROJECT_PATH, consumes = "application/json"
