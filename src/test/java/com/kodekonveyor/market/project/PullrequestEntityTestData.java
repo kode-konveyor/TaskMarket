@@ -5,7 +5,7 @@ import javax.annotation.Generated;
 import com.kodekonveyor.market.tasks.TaskEntityTestData;
 
 @Generated("by zenta-tools")
-public class PullRequestEntityTestData {
+public class PullrequestEntityTestData {
 
   public final static PullRequestEntity get() {
     final PullRequestEntity pullrequestEntity = new PullRequestEntity();
