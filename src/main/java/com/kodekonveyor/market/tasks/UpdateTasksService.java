@@ -52,7 +52,7 @@ public class UpdateTasksService {
       final String description = getUpdatedDescription(
           taskEntity.getDescription(), taskDTO.getDescription()
       );
-      if (description != null) {
+      if (!description.isEmpty()) {
         taskEntity.setDescription(description);
         taskEntityRepository.save(taskEntity);
       }
@@ -81,7 +81,7 @@ public class UpdateTasksService {
       final String target = substringBetween(oldDescription);
       return oldDescription.replace(target, replacement);
     }
-    return null;
+    return "";
   }
 
   private String substringBetween(final String description) {
