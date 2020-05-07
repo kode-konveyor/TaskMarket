@@ -26,7 +26,7 @@ public class UpdateProjectModelControllerCompileOutputTest
   private ProjectDTO projectDTO;
 
   @BeforeEach
-  public void testSetUp() {
+  public void setUpTest() {
     projectDTO = updateProjectModelController
         .call(ProjectModelDTOTestData.get(), ProjectTestData.PROJECT_NAME);
   }
