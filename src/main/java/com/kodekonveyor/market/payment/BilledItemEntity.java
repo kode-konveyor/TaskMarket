@@ -8,7 +8,7 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.OneToOne;
 
-import com.kodekonveyor.market.project.PullrequestEntity;
+import com.kodekonveyor.market.project.PullRequestEntity;
 
 import lombok.Data;
 
@@ -22,7 +22,7 @@ public class BilledItemEntity {
   private Long id;
 
   @OneToOne(fetch = FetchType.LAZY)
-  private PullrequestEntity pullRequest;
+  private PullRequestEntity pullRequest;
 
   private Long deliverableCount;
 
