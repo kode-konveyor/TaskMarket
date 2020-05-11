@@ -21,7 +21,7 @@ import com.kodekonveyor.annotations.TestedService;
 @MockitoSettings(strictness = Strictness.LENIENT)
 @RunWith(MockitoJUnitRunner.class)
 @TestedBehaviour("compile output")
-@TestedService("ListLegalFormsController")
+@TestedService("ListTransferTypesController")
 public class ListTransferTypesControllerCompileOutputTest
     extends ListTransferTypesControllerTestBase {
 
