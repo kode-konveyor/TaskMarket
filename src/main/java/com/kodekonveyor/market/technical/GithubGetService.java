@@ -1,4 +1,4 @@
-package com.kodekonveyor.market.github;
+package com.kodekonveyor.market.technical;
 
 import java.io.IOException;
 import java.net.MalformedURLException;
@@ -26,17 +26,7 @@ public class GithubGetService {
 
   public <ValueType> ValueType
       call(final String command, final Class<ValueType> cls) {
-    final String uri = GithubConstants.GITHUB_API_URL_BASE + command;
-    loggerService.debug(LoggingMarkerConstants.GITHUB, uri);
-    URL url;
-    try {
-      url = new URL(uri);
-    } catch (final MalformedURLException exception) {
-      throw new ResponseStatusException(
-          HttpStatus.INTERNAL_SERVER_ERROR, GithubConstants.INTERNAL_ERROR,
-          exception
-      );
-    }
+    final URL url = createGithubUrl(command);
 
     final ValueType value;
     try {
@@ -48,6 +38,21 @@ public class GithubGetService {
       );
     }
     return value;
+  }
+
+  private URL createGithubUrl(final String command) {
+    final String uri = GithubConstants.GITHUB_API_URL_BASE + command;
+    loggerService.debug(LoggingMarkerConstants.GITHUB, uri);
+    URL url;
+    try {
+      url = new URL(uri);
+    } catch (final MalformedURLException exception) {
+      throw new ResponseStatusException(
+          HttpStatus.INTERNAL_SERVER_ERROR, GithubConstants.INTERNAL_ERROR,
+          exception
+      );
+    }
+    return url;
   }
 
 }
