@@ -27,4 +27,9 @@ public class ProjectEntityRepositoryStubs {
         .when(projectEntityRepository).findByRole(RoleEntityTestData.getRoleKodekonveyorContract());
   }
 
+  public static void
+      behaviour2(final ProjectEntityRepository projectEntityRepository) {
+    doReturn(Optional.of(ProjectEntityTestData.getUrlAndPullRequest()))
+        .when(projectEntityRepository).findById(ProjectTestData.ID_ADD_FUNDS);
+  }
 }
