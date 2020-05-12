@@ -18,6 +18,7 @@ import org.springframework.boot.web.servlet.support.SpringBootServletInitializer
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Scope;
 import org.springframework.core.MethodParameter;
+import org.springframework.stereotype.Component;
 
 import com.kodekonveyor.annotations.ExcludeFromCodeCoverage;
 import com.kodekonveyor.annotations.InterfaceClass;
@@ -25,6 +26,7 @@ import com.kodekonveyor.annotations.InterfaceClass;
 @SpringBootApplication
 @ExcludeFromCodeCoverage("glue")
 @InterfaceClass
+@Component
 public class SpringConfig extends SpringBootServletInitializer {
 
   @Value("${com.kodekonveyor.market.jdbcUri}")
@@ -32,6 +34,9 @@ public class SpringConfig extends SpringBootServletInitializer {
 
   @Value("${com.kodekonveyor.market.jdbcDriver}")
   private String jdbcDriver;
+
+  @Value("${com.kodekonveyor.market.issueToken}")
+  private String issueToken;
 
   public static void main(final String[] args) {
     SpringApplication.run(SpringConfig.class, args);
@@ -69,4 +74,9 @@ public class SpringConfig extends SpringBootServletInitializer {
             )
     );
   }
+
+  public String getIssueToken() {
+    return issueToken;
+  }
+
 }
