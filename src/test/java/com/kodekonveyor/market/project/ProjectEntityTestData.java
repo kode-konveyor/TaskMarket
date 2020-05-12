@@ -18,7 +18,7 @@ public class ProjectEntityTestData {
     projectEntity.setMilestone(Set.of(MilestoneEntityTestData.get()));
     projectEntity.setName(ProjectTestData.NAME);
     projectEntity.setBudgetInCents(ProjectTestData.BUDGET_IN_CENTS);
-    projectEntity.setIsPublic(ProjectTestData.IS_PUBLIC);
+    projectEntity.setIsPublic(ProjectTestData.IS_PUBLIC_TRUE);
 
     return projectEntity;
   }
@@ -26,12 +26,13 @@ public class ProjectEntityTestData {
   public static final ProjectEntity getIspublicFalse() {
     final ProjectEntity entity = get();
     entity.setIsPublic(false);
+    entity.setMilestone(Set.of(MilestoneEntityTestData.getTaskIsPublicFalse()));
     return entity;
   }
 
   public static final ProjectEntity getIsPublicTrue() {
     final ProjectEntity entity = get();
-    entity.setIsPublic(true);
+    entity.setMilestone(Set.of(MilestoneEntityTestData.getTaskIsPublicTrue()));
     return entity;
   }
 

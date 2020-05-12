@@ -17,7 +17,7 @@ public class ProjectDTOTestData {
     projectDTO.setPullRequest(Set.of(PullrequestTestData.ID));
     projectDTO.setName(ProjectTestData.NAME);
     projectDTO.setBudgetInCents(ProjectTestData.BUDGET_IN_CENTS);
-    projectDTO.setIsPublic(ProjectTestData.IS_PUBLIC);
+    projectDTO.setIsPublic(ProjectTestData.IS_PUBLIC_TRUE);
 
     return projectDTO;
   }

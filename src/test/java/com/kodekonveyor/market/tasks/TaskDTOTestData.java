@@ -18,6 +18,7 @@ public class TaskDTOTestData {
     taskDTO.setBehaviour(TaskTestData.BEHAVIOUR);
     taskDTO.setGithubId(TaskTestData.GITHUB_ID);
     taskDTO.setDescription(TaskTestData.DESCRIPTION);
+    taskDTO.setStatus(TaskStatusEnum.UP_FOR_GRAB);
     return taskDTO;
   }
 

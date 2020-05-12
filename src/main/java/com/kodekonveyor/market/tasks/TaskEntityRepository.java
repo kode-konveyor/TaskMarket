@@ -12,15 +12,8 @@ public interface TaskEntityRepository extends CrudRepository<TaskEntity, Long> {
   Optional<TaskEntity>
       findByServiceAndBehaviour(String service, String behaviour);
 
-  List<TaskEntity>
-      findByStatusAndProjectIsPublic(TaskStatusEnum status, boolean isPublic);
-
   List<TaskEntity> findByStatusAndMarketUser(
       TaskStatusEnum status, MarketUserEntity marketUserEntity
   );
 
-  List<TaskEntity> findByStatusAndMarketUserAndProjectIsPublic(
-      TaskStatusEnum status,
-      MarketUserEntity marketUserEntity, boolean isPublic
-  );
 }

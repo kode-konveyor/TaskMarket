@@ -5,6 +5,8 @@ import org.mockito.InjectMocks;
 import org.mockito.Mock;
 
 import com.kodekonveyor.authentication.AuthenticatedUserService;
+import com.kodekonveyor.market.project.ProjectEntityRepository;
+import com.kodekonveyor.market.project.ProjectEntityRepositoryStubs;
 import com.kodekonveyor.market.register.MarketUserEntityRepository;
 
 public class ListTasksControllerTestBase {
@@ -21,8 +23,12 @@ public class ListTasksControllerTestBase {
   @Mock
   TaskEntityRepository taskRepository;
 
+  @Mock
+  ProjectEntityRepository projectEntityRepository;
+
   @BeforeEach
   void setUp() {
     TaskEntityStubs.behaviour(taskRepository, marketUserEntityRepository);
+    ProjectEntityRepositoryStubs.behaviour(projectEntityRepository);
   }
 }

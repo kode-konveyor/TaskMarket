@@ -20,4 +20,16 @@ public class MilestoneEntityTestData {
     return milestoneEntity;
   };
 
+  public final static MilestoneEntity getTaskIsPublicFalse() {
+    final MilestoneEntity milestoneEntity = get();
+    milestoneEntity.setTask(Set.of(TaskEntityTestData.getIsPublicFalse()));
+    return milestoneEntity;
+  }
+
+  public final static MilestoneEntity getTaskIsPublicTrue() {
+    final MilestoneEntity milestoneEntity = get();
+    milestoneEntity.setTask(Set.of(TaskEntityTestData.getIsPublicTrue()));
+    return milestoneEntity;
+  }
+
 }

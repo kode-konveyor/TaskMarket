@@ -25,6 +25,10 @@ public class ProjectEntityRepositoryStubs {
         .findByName(ProjectTestData.NAME_KODE_KONVEYOR);
     doReturn(Optional.of(ProjectEntityTestData.getNameKodeKonveyor()))
         .when(projectEntityRepository).findByRole(RoleEntityTestData.getRoleKodekonveyorContract());
+    doReturn(Optional.of(ProjectEntityTestData.getIsPublicTrue()))
+        .when(projectEntityRepository).findByIsPublic(ProjectTestData.IS_PUBLIC_TRUE);
+    doReturn(Optional.of(ProjectEntityTestData.getIspublicFalse()))
+        .when(projectEntityRepository).findByIsPublic(ProjectTestData.IS_PUBLIC_FALSE);
   }
 
 }

@@ -24,7 +24,7 @@ public class TaskEntityTestData {
     taskEntity.setBehaviour(TaskTestData.BEHAVIOUR);
     taskEntity.setGithubId(TaskTestData.GITHUB_ID);
     taskEntity.setDescription(TaskTestData.DESCRIPTION);
-
+    taskEntity.setStatus(TaskStatusEnum.UP_FOR_GRAB);
     return taskEntity;
   };
 
@@ -51,7 +51,6 @@ public class TaskEntityTestData {
     final TaskEntity taskEntity = get();
     final List<TaskEntity> taskEntities = new ArrayList<>();
     taskEntity.setGithubId(ISSUE_ID_CLOSED);
-    taskEntity.setStatus(TaskStatusEnum.DONE);
     taskEntities.add(taskEntity);
     return taskEntities;
   }
@@ -60,26 +59,19 @@ public class TaskEntityTestData {
     final TaskEntity taskEntity = get();
     final List<TaskEntity> taskEntities = new ArrayList<>();
     taskEntity.setGithubId(ISSUE_ID_INPROGRESS);
-    taskEntity.setStatus(TaskStatusEnum.IN_PROGRESS);
     taskEntities.add(taskEntity);
     return taskEntities;
   }
 
-  public static final List<TaskEntity> listIsPublicTrue() {
+  public static final TaskEntity getIsPublicTrue() {
     final TaskEntity taskEntity = get();
-    final List<TaskEntity> taskEntities = new ArrayList<>();
     taskEntity.setGithubId(ISSUE_ID_UPFORGRAB_OPEN);
-    taskEntity.setStatus(TaskStatusEnum.UP_FOR_GRAB);
-    taskEntities.add(taskEntity);
-    return taskEntities;
+    return taskEntity;
   }
 
-  public static final List<TaskEntity> listIsPublicFalse() {
+  public static final TaskEntity getIsPublicFalse() {
     final TaskEntity taskEntity = get();
-    final List<TaskEntity> taskEntities = new ArrayList<>();
     taskEntity.setGithubId(ISSUE_ID_UPFORGRAB_CLOSED);
-    taskEntity.setStatus(TaskStatusEnum.UP_FOR_GRAB);
-    taskEntities.add(taskEntity);
-    return taskEntities;
+    return taskEntity;
   }
 }

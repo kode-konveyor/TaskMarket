@@ -7,7 +7,9 @@ public class ProjectTestData {
 
   public final static Long ID = 1521L;
 
-  public final static Boolean IS_PUBLIC = true;
+  public final static Boolean IS_PUBLIC_TRUE = true;
+
+  public final static Boolean IS_PUBLIC_FALSE = false;
 
   public final static String NAME = "kode-konveyor/TaskMarket";
 

@@ -24,13 +24,6 @@ public class TaskEntityStubs {
         .findByStatusAndMarketUser(
             TaskStatusEnum.DONE, MarketUserEntityTestData.get()
         );
-    doReturn(TaskEntityTestData.listIsPublicFalse()).when(taskRepository)
-        .findByStatusAndMarketUserAndProjectIsPublic(
-            TaskStatusEnum.UP_FOR_GRAB,
-            MarketUserEntityTestData.get(), false
-        );
-    doReturn(TaskEntityTestData.listIsPublicTrue()).when(taskRepository)
-        .findByStatusAndProjectIsPublic(TaskStatusEnum.UP_FOR_GRAB, true);
     doReturn(Optional.of(TaskEntityTestData.get())).when(taskRepository)
         .findByServiceAndBehaviour(
             TaskEntityTestData.get().getService(),
