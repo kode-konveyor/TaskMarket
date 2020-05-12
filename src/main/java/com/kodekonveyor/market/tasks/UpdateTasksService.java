@@ -78,6 +78,7 @@ public class UpdateTasksService {
     taskEntity.setDescription(taskDTO.getDescription());
     taskEntity.setGithubId(taskDTO.getGithubId());
     taskEntity.setMarketUser(marketUserEntity);
+    taskEntity.setStatus(TaskStatusEnum.UP_FOR_GRAB);
     taskEntityRepository.save(taskEntity);
   }
 
