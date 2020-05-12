@@ -36,8 +36,10 @@ public class RegisterInterestController {
       consumes = "application/x-www-form-urlencoded"
   )
   public LeadDTO callForUrlencoded(final LeadDTO lead) {
+    loggerService.info(
+        LoggingMarkerConstants.LEAD, LeadConstants.URL_ENCODED + lead.toString()
+    );
     return call(lead);
-
   }
 
   private void doStore(final LeadDTO lead) {
@@ -52,10 +54,13 @@ public class RegisterInterestController {
   }
 
   private void validateInterest(final LeadDTO lead) {
-    if (null == lead.getInterest())
-
+    if (null == lead.getInterest()) {
+      loggerService.error(
+          LoggingMarkerConstants.LEAD,
+          MarketConstants.INTEREST_NULL_EXCEPTION + lead.toString()
+      );
       throw new ValidationException(MarketConstants.INTEREST_NULL_EXCEPTION);
-
+    }
   }
 
 }
