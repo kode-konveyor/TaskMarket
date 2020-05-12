@@ -63,13 +63,7 @@ public class ListTasksController {
   private List<TaskEntity> getClosedUpForGrabTask(
       final MarketUserEntity marketUserEntity
   ) {
-    final List<TaskEntity> taskEntities =
-        getTaskByStatusAndProjectIsPublic(TaskStatusEnum.UP_FOR_GRAB, false);
-    return taskEntities.stream()
-        .filter(
-            taskEntity -> taskEntity.getMarketUser().getUser().getLogin()
-                .equals(marketUserEntity.getUser().getLogin())
-        ).collect(Collectors.toList());
+    return getTaskByProjectIsPublic(false);
   }
 
   private List<TaskEntity> getInProgressOrClosedTask(
@@ -81,19 +75,17 @@ public class ListTasksController {
   }
 
   private List<TaskEntity> getOpenUpForGrabTask() {
-    return getTaskByStatusAndProjectIsPublic(TaskStatusEnum.UP_FOR_GRAB, true);
+    return getTaskByProjectIsPublic(true);
   }
 
-  private List<TaskEntity> getTaskByStatusAndProjectIsPublic(
-      final TaskStatusEnum status, final boolean isPublic
+  private List<TaskEntity> getTaskByProjectIsPublic(
+      final boolean isPublic
   ) {
     final Set<MilestoneEntity> milestoneEntities =
         ProjectEntityRepository.findByIsPublic(isPublic).get().getMilestone();
     final List<TaskEntity> taskEntities = new ArrayList<>();
     milestoneEntities.stream().map(
-        milestone -> milestone.getTask().stream().filter(
-            taskEntity -> taskEntity.getStatus().equals(status)
-        ).collect(Collectors.toSet())
+        milestone -> milestone.getTask()
     ).forEach(taskEntities::addAll);
     return taskEntities;
   }
