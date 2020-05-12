@@ -81,7 +81,7 @@ public class UpdateTasksService {
       final String target = substringBetween(oldDescription);
       return oldDescription.replace(target, replacement);
     }
-    return "";
+    return TaskConstants.EMPTY_MESSAGE;
   }
 
   private String substringBetween(final String description) {
