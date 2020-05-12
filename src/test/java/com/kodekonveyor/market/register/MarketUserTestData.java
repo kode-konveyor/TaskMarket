@@ -35,4 +35,6 @@ public class MarketUserTestData {
 
   public static final Long ZERO_BALANCE = 0L;
 
+  public static final Long ID_PROJECT_MANAGER = 1826L;
+
 }

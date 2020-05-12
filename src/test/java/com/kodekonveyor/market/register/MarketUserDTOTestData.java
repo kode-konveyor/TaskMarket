@@ -78,4 +78,18 @@ public class MarketUserDTOTestData {
     return marketUserDTO;
   }
 
+  public static MarketUserDTO getRoleKodeKonveyorContract() {
+    final MarketUserDTO marketUserDTO = get();
+    marketUserDTO.setUser(UserTestData.ID_CONTRACT);
+    marketUserDTO.setId(MarketUserTestData.ID_KODEKONVEYOR_CONTRACT);
+    return marketUserDTO;
+  }
+
+  public static MarketUserDTO getRoleProjectManager() {
+    final MarketUserDTO marketUserDTO = get();
+    marketUserDTO.setUser(UserTestData.ID_PROJECTMANAGER);
+    marketUserDTO.setId(MarketUserTestData.ID_PROJECT_MANAGER);
+    return marketUserDTO;
+  }
+
 }

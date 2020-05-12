@@ -83,4 +83,56 @@ public class ShowUserControllerRolesTest extends ShowUserControllerTestBase {
         showUserController.call().getBalanceInCents()
     );
   }
+
+  @Test
+  @DisplayName(
+    "User details returned to Contract role user"
+  )
+  public void test6() {
+    AuthenticatedUserServiceStubs
+        .kodekonveyorContract(authenticatedUserService);
+    assertEquals(
+        MarketUserDTOTestData.getRoleKodeKonveyorContract(),
+        showUserController.call()
+    );
+  }
+
+  @Test
+  @DisplayName(
+    "User details, with payment details, returned to Contract role user"
+  )
+  public void test7() {
+    AuthenticatedUserServiceStubs
+        .kodekonveyorContract(authenticatedUserService);
+    assertEquals(
+        MarketUserDTOTestData.getRoleKodeKonveyorContract().getPaymentDetail(),
+        showUserController.call().getPaymentDetail()
+    );
+  }
+
+  @Test
+  @DisplayName(
+    "User details, with balance , returned to Contract role user"
+  )
+  public void test8() {
+    AuthenticatedUserServiceStubs
+        .kodekonveyorContract(authenticatedUserService);
+    assertEquals(
+        MarketUserDTOTestData.getRoleKodeKonveyorContract().getBalanceInCents(),
+        showUserController.call().getBalanceInCents()
+    );
+  }
+
+  @Test
+  @DisplayName(
+    "User details, with contract role ID , returned to Contract role user"
+  )
+  public void test9() {
+    AuthenticatedUserServiceStubs
+        .kodekonveyorContract(authenticatedUserService);
+    assertEquals(
+        MarketUserDTOTestData.getRoleKodeKonveyorContract().getId(),
+        showUserController.call().getId()
+    );
+  }
 }

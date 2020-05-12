@@ -102,4 +102,11 @@ public class MarketUserEntityTestData {
     marketUserEntity.setPaymentDetail(null);
     return marketUserEntity;
   }
+
+  public static MarketUserEntity getRoleProjectManager() {
+    final MarketUserEntity marketUserEntity = get();
+    marketUserEntity.setUser(UserEntityTestData.getRoleProjectManager());
+    marketUserEntity.setId(MarketUserTestData.ID_PROJECT_MANAGER);
+    return marketUserEntity;
+  }
 }

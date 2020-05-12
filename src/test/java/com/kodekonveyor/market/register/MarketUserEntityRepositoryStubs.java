@@ -36,18 +36,19 @@ public class MarketUserEntityRepositoryStubs {
     doReturn(Optional.of(MarketUserEntityTestData.getRoleTechnical()))
         .when(marketUserEntityRepository)
         .findByUser(UserEntityTestData.getTechnicalUser());
-
-    doReturn(
-        Optional.of(MarketUserEntityTestData.getIsTerrmsAcceptedFalse())
-    )
+    doReturn(Optional.of(MarketUserEntityTestData.getRoleProjectManager()))
         .when(marketUserEntityRepository)
-        .findByUser(UserEntityTestData.getContractTermsNotAccepted());
-
+        .findByUser(UserEntityTestData.getRoleProjectManager());
     doReturn(
         Optional.of(MarketUserEntityTestData.getRoleKodeKonveyorContract())
     )
         .when(marketUserEntityRepository)
         .findByUser(UserEntityTestData.getRoleKodekonveyorContract());
+    doReturn(
+        Optional.of(MarketUserEntityTestData.getIsTerrmsAcceptedFalse())
+    )
+        .when(marketUserEntityRepository)
+        .findByUser(UserEntityTestData.getContractTermsNotAccepted());
 
     doAnswer(new Answer<Void>() {
 
