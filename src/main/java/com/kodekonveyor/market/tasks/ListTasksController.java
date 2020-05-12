@@ -67,7 +67,7 @@ public class ListTasksController {
         getTaskByStatusAndProjectIsPublic(TaskStatusEnum.UP_FOR_GRAB, false);
     return taskEntities.stream()
         .filter(
-            p -> p.getMarketUser().getUser().getLogin()
+            taskEntity -> taskEntity.getMarketUser().getUser().getLogin()
                 .equals(marketUserEntity.getUser().getLogin())
         ).collect(Collectors.toList());
   }
@@ -91,7 +91,9 @@ public class ListTasksController {
         ProjectEntityRepository.findByIsPublic(isPublic).get().getMilestone();
     final List<TaskEntity> taskEntities = new ArrayList<>();
     milestoneEntities.stream().map(
-        p -> p.getTask().stream().filter(t -> t.getStatus().equals(status)).collect(Collectors.toSet())
+        milestone -> milestone.getTask().stream().filter(
+            taskEntity -> taskEntity.getStatus().equals(status)
+        ).collect(Collectors.toSet())
     ).forEach(taskEntities::addAll);
     return taskEntities;
   }
