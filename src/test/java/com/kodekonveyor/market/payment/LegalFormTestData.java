@@ -9,5 +9,6 @@ public class LegalFormTestData {
   public static final String LEGAL_FORM_NAME = "OÜ";
   public static final String COUNTRY = "ee";
   public static final Long ID_INVALID = 10L;
+  public static final String LEGAL_FORMS = "Legal forms: ";
 
 }

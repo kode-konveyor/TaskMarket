@@ -34,7 +34,7 @@ public class ListLegalFormsControllerLoggingTest
     listLegalFormsController.call();
     verify(logger)
         .info(
-            LoggingMarkerConstants.PAYMENT, PaymentConstants.LEGAL_FORMS,
+            LoggingMarkerConstants.PAYMENT, LegalFormTestData.LEGAL_FORMS,
             List.of(LegalFormDTOTestData.get()).toString()
         );
   }
