@@ -1,4 +1,4 @@
-package com.kodekonveyor.market.github;
+package com.kodekonveyor.technical;
 
 import static org.mockito.Mockito.doReturn;
 import static org.mockito.Mockito.reset;
@@ -6,6 +6,7 @@ import static org.mockito.Mockito.reset;
 import com.kodekonveyor.authentication.UserDTO;
 import com.kodekonveyor.authentication.UserDTOTestData;
 import com.kodekonveyor.authentication.UserTestData;
+import com.kodekonveyor.market.technical.GithubGetService;
 
 public class GithubGetStubs {
 
