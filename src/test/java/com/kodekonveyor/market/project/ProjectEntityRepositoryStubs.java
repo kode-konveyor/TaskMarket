@@ -31,4 +31,9 @@ public class ProjectEntityRepositoryStubs {
         .when(projectEntityRepository).findByIsPublic(ProjectTestData.IS_PUBLIC_FALSE);
   }
 
+  public static void
+      behaviour2(final ProjectEntityRepository projectEntityRepository) {
+    doReturn(Optional.of(ProjectEntityTestData.getUrlAndPullRequest()))
+        .when(projectEntityRepository).findById(ProjectTestData.ID_ADD_FUNDS);
+  }
 }
