@@ -63,7 +63,13 @@ public class ListTasksController {
   private List<TaskEntity> getClosedUpForGrabTask(
       final MarketUserEntity marketUserEntity
   ) {
-    return getTaskByProjectIsPublic(false);
+    final List<TaskEntity> taskEntities =
+        getTaskByProjectIsPublic(false);
+    return taskEntities.stream()
+        .filter(
+            taskEntity -> taskEntity.getMarketUser().getId()
+                .equals(marketUserEntity.getId())
+        ).collect(Collectors.toList());
   }
 
   private List<TaskEntity> getInProgressOrClosedTask(
