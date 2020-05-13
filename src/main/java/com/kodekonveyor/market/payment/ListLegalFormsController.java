@@ -19,7 +19,7 @@ public class ListLegalFormsController {
   LegalFormEntityRepository legalFormEntityRepository;
 
   @Autowired
-  private Logger logger;
+  Logger logger;
 
   @GetMapping(UrlMapConstants.LIST_LEGAL_FORMS_PATH)
   public List<LegalFormDTO> call() {
