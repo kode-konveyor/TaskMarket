@@ -17,4 +17,6 @@ public class LeadTestData {
 
   public static final String FIRST_NAME_INVALID = "Árpi";
 
+  public static final String URL_ENCODED = "Url encoded call: ";
+
 }

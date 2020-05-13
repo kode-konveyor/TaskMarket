@@ -15,7 +15,7 @@ import com.kodekonveyor.annotations.TestedBehaviour;
 import com.kodekonveyor.annotations.TestedService;
 import com.kodekonveyor.exception.ThrowableTester;
 import com.kodekonveyor.logging.LoggingMarkerConstants;
-import com.kodekonveyor.market.MarketConstants;
+import com.kodekonveyor.market.MarketTestData;
 import com.kodekonveyor.market.RegisterInterestControllerTestData;
 
 @ExtendWith(MockitoExtension.class)
@@ -49,7 +49,7 @@ public class RegisterInterestControllerLoggingTest
     verify(loggerService)
         .error(
             LoggingMarkerConstants.LEAD,
-            MarketConstants.INTEREST_NULL_EXCEPTION +
+            MarketTestData.INTEREST_NULL_EXCEPTION +
                 LeadDTOTestData.getInterestNull().toString()
         );
   }
@@ -62,7 +62,7 @@ public class RegisterInterestControllerLoggingTest
     registerInterestController.callForUrlencoded(LeadDTOTestData.get());
     verify(loggerService).info(
         LoggingMarkerConstants.LEAD,
-        LeadConstants.URL_ENCODED + LeadDTOTestData.get()
+        LeadTestData.URL_ENCODED + LeadDTOTestData.get()
     );
   }
 }
