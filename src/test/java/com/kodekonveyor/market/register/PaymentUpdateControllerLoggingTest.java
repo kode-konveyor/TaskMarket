@@ -52,7 +52,7 @@ public class PaymentUpdateControllerLoggingTest
     );
     verify(loggerService).error(
         LoggingMarkerConstants.REGISTER,
-        RegisterConstants.CONTRACT_TERMS_NOT_ACCEPTED
+        RegisterTestData.CONTRACT_TERMS_ARE_NOT_ACCEPTED
     );
   }
 
@@ -69,7 +69,7 @@ public class PaymentUpdateControllerLoggingTest
 
     verify(loggerService).error(
         LoggingMarkerConstants.REGISTER,
-        RegisterConstants.NO_CAN_BE_PAID_ROLE +
+        RegisterTestData.NO_CAN_BE_PAID_ROLE +
             UserEntityTestData.get()
     );
   }
