@@ -24,7 +24,7 @@ import com.kodekonveyor.market.register.MarketUserTestData;
 @RunWith(MockitoJUnitRunner.class)
 @TestedBehaviour("budget")
 @TestedService("AddFundsToProjectController")
-public class AddFundsToProjectControllerBudgetTest2
+public class AddFundsToProjectControllerBudget2Test
     extends AddFundsToProjectControllerTestBase {
 
   @BeforeEach
