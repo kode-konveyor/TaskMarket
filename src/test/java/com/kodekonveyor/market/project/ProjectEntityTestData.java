@@ -54,4 +54,13 @@ public class ProjectEntityTestData {
     return projectEntity;
   };
 
+  public static ProjectEntity getUrlAndPullRequest() {
+    final ProjectEntity projectEntity = get();
+    projectEntity.setUrl(ProjectTestData.URL);
+    projectEntity.setDescription(ProjectTestData.DESCRIPTION);
+    projectEntity.setProjectId(ProjectTestData.PROJECT_ID);
+    projectEntity.setPullRequest(Set.of(PullrequestEntityTestData.get()));
+    return projectEntity;
+  }
+
 }
