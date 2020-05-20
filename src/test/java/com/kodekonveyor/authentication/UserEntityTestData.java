@@ -92,4 +92,15 @@ public class UserEntityTestData {
     return userEntity;
   };
 
+  public static UserEntity getIdForNegativeBalance() {
+    final UserEntity userEntity = get();
+    userEntity.setId(UserTestData.ID_FOR_NEGATIVE);
+    return userEntity;
+  };
+
+  public static UserEntity getIdForZeroBalance() {
+    final UserEntity userEntity = get();
+    userEntity.setId(UserTestData.ID_FOR_ZERO_BALANCE);
+    return userEntity;
+  };
 }

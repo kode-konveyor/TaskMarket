@@ -81,4 +81,23 @@ public class MarketUserEntityRepositoryStubs {
         .when(marketUserEntityRepository)
         .findByUser(UserEntityTestData.getRoleKodekonveyorContract());
   }
+
+  public static void
+      behaviour2(
+          final MarketUserEntityRepository marketUserEntityRepository
+      ) {
+    doReturn(Optional.of(MarketUserEntityTestData.getRoleManager()))
+        .when(marketUserEntityRepository)
+        .findByUser(UserEntityTestData.getRoleProjectManager());
+    doReturn(Optional.of(MarketUserEntityTestData.getNegativeBalance()))
+        .when(marketUserEntityRepository)
+        .findByUser(UserEntityTestData.getIdForNegativeBalance());
+    doReturn(Optional.of(MarketUserEntityTestData.getLessBalance()))
+        .when(marketUserEntityRepository)
+        .findByUser(UserEntityTestData.get());
+    doReturn(Optional.of(MarketUserEntityTestData.getZeroBalance()))
+        .when(marketUserEntityRepository)
+        .findByUser(UserEntityTestData.getIdForZeroBalance());
+  }
+
 }

@@ -63,4 +63,13 @@ public class ProjectEntityTestData {
     return projectEntity;
   }
 
+  public final static ProjectEntity getManagerRole() {
+    final ProjectEntity projectEntity = get();
+    projectEntity.setId(ProjectTestData.ID_BUDGET);
+    projectEntity.setRole(Set.of(RoleEntityTestData.getNameProjectManager()));
+    projectEntity.setBudgetInCents(ProjectTestData.BUDGET_IN_LESSER_AMOUNT);
+    projectEntity.setPullRequest(Set.of(PullrequestEntityTestData.get()));
+    return projectEntity;
+  }
+
 }

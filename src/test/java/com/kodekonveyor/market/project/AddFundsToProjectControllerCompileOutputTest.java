@@ -14,6 +14,7 @@ import org.mockito.quality.Strictness;
 
 import com.kodekonveyor.annotations.TestedBehaviour;
 import com.kodekonveyor.annotations.TestedService;
+import com.kodekonveyor.market.register.MarketUserTestData;
 
 @ExtendWith(MockitoExtension.class)
 @MockitoSettings(strictness = Strictness.LENIENT)
@@ -28,13 +29,7 @@ public class AddFundsToProjectControllerCompileOutputTest
   @BeforeEach
   public void setUpTest() {
     projectDTO = addFundsToProjectController
-        .call(ProjectTestData.ID_ADD_FUNDS);
-  }
-
-  @Test
-  @DisplayName("The project details returned successfully")
-  public void test1() {
-    assertEquals(projectDTO, ProjectDTOTestData.getUrl());
+        .call(ProjectTestData.ID_ADD_FUNDS, MarketUserTestData.BALANCE_IN_CENTS);
   }
 
   @Test
