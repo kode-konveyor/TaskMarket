@@ -36,7 +36,8 @@ public class AddFundsToProjectController {
             .findById(projectId).get();
     final UserEntity user = authenticatedUserService.call();
     final ProjectDTO projectDTO = getProjectDTO(project);
-    processAddFundsToProject(user, project, budgetInCents, projectDTO);
+    validateUserBalance(user, project, budgetInCents);
+    addFundsToProject(user, project, budgetInCents, projectDTO);
     return projectDTO;
   }
 
@@ -62,19 +63,21 @@ public class AddFundsToProjectController {
   }
 
   private void
-      processAddFundsToProject(
+      validateUserBalance(
           final UserEntity user, final ProjectEntity project,
-          final long budgetInCents, final ProjectDTO projectDTO
+          final long budgetInCents
       ) {
     final Optional<MarketUserEntity> marketUserEntity =
         marketUserEntityRepository.findByUser(user);
     final long userBalance = marketUserEntity.get().getBalanceInCents();
-    if (userBalance <= 0)
-      if (!CheckRoleUtil.hasRole(user, project, MarketConstants.MANAGER))
-        throw new ValidationException(
-            ProjectConstants.BALANCE_IS_NEGATIVE + ProjectConstants.COMMA +
-                ProjectConstants.USER_NOT_MANAGER
-        );
+    if (
+      userBalance <= 0 &&
+          !CheckRoleUtil.hasRole(user, project, MarketConstants.MANAGER)
+    )
+      throw new ValidationException(
+          ProjectConstants.BALANCE_IS_NEGATIVE + ProjectConstants.COMMA +
+              ProjectConstants.USER_NOT_MANAGER
+      );
     if (
       userBalance < budgetInCents &&
           !CheckRoleUtil.hasRole(user, project, MarketConstants.MANAGER)
@@ -83,6 +86,16 @@ public class AddFundsToProjectController {
           ProjectConstants.USER_BALANCE_IS_LESS_THAN_THE_BUDGET
       );
 
+  }
+
+  private void addFundsToProject(
+      final UserEntity user,
+      final ProjectEntity project, final long budgetInCents,
+      final ProjectDTO projectDTO
+  ) {
+    final Optional<MarketUserEntity> marketUserEntity =
+        marketUserEntityRepository.findByUser(user);
+    final long userBalance = marketUserEntity.get().getBalanceInCents();
     long updatedUserBalance = userBalance - budgetInCents;
     long updatedProjectBudget;
     if (updatedUserBalance >= 0) {
