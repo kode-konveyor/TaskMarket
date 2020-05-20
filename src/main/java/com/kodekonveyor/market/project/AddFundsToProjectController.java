@@ -98,18 +98,19 @@ public class AddFundsToProjectController {
     final long userBalance = marketUserEntity.get().getBalanceInCents();
     long updatedUserBalance = userBalance - budgetInCents;
     long updatedProjectBudget;
-    if (updatedUserBalance >= 0)
+    if (updatedUserBalance >= 0) {
       updatedProjectBudget =
           project.getBudgetInCents() + budgetInCents;
-    else {
+      if (updatedProjectBudget < 0)
+        throw new ValidationException(
+            ProjectConstants.INVALID_PROJECT_BUDGET_AMOUNT
+        );
+    } else {
       updatedProjectBudget =
           project.getBudgetInCents() - budgetInCents;
       updatedUserBalance = Math.abs(userBalance) + budgetInCents;
     }
-    if (updatedProjectBudget < 0)
-      throw new ValidationException(
-          ProjectConstants.INVALID_PROJECT_BUDGET_AMOUNT
-      );
+
     marketUserEntity.get()
         .setBalanceInCents(updatedUserBalance);
     marketUserEntityRepository.save(marketUserEntity.get());
