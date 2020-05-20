@@ -60,4 +60,10 @@ public class ProjectDTOTestData {
     return projectDTO;
   };
 
+  public static ProjectDTO getAddFunds() {
+    final ProjectDTO projectDTO = getUrl();
+    projectDTO.setId(ProjectTestData.ID_ADD_FUNDS);
+    return projectDTO;
+  };
+
 }

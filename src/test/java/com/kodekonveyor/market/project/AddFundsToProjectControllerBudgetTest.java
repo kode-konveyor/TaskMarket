@@ -32,16 +32,13 @@ public class AddFundsToProjectControllerBudgetTest
   )
   public void test() {
 
-    addFundsToProjectController.call(
-        ProjectTestData.ID_ADD_FUNDS,
-        MarketUserTestData.LESS_BALANCE
+    assertTrue(
+        addFundsToProjectController.call(
+            ProjectDTOTestData.getAddFunds().getId(),
+            MarketUserTestData.LESS_BALANCE
+        ).getBudgetInCents() > MarketUserTestData.LESS_BALANCE
     );
 
-    assertTrue(
-        ProjectDTOTestData
-            .getUrl()
-            .getBudgetInCents() > MarketUserTestData.LESS_BALANCE
-    );
   }
 
   @Test
@@ -49,14 +46,14 @@ public class AddFundsToProjectControllerBudgetTest
     "User's balance and budget in cents is same. "
   )
   public void testEqualUserBalanceAndBudget() {
-    addFundsToProjectController.call(
-        ProjectTestData.ID_ADD_FUNDS,
-        MarketUserTestData.EQUAL_BALANCE
-    );
 
+    addFundsToProjectController.call(
+        ProjectDTOTestData.getAddFunds().getId(),
+        MarketUserDTOTestData.get().getBalanceInCents()
+    );
     assertEquals(
         MarketUserDTOTestData.get().getBalanceInCents(),
-        MarketUserTestData.EQUAL_BALANCE
+        MarketUserTestData.BALANCE_IN_CENTS
     );
   }
 

@@ -57,7 +57,7 @@ public class AddFundsToProjectControllerBudget2Test
 
     ThrowableTester.assertThrows(
         () -> addFundsToProjectController.call(
-            ProjectTestData.ID_ADD_FUNDS,
+            ProjectDTOTestData.getAddFunds().getId(),
             MarketUserTestData.BALANCE_IN_CENTS
         )
     ).assertMessageIs(
@@ -76,7 +76,7 @@ public class AddFundsToProjectControllerBudget2Test
 
     ThrowableTester.assertThrows(
         () -> addFundsToProjectController.call(
-            ProjectTestData.ID_ADD_FUNDS,
+            ProjectDTOTestData.getAddFunds().getId(),
             MarketUserTestData.BALANCE_IN_CENTS
         )
     ).assertMessageIs(
@@ -93,7 +93,7 @@ public class AddFundsToProjectControllerBudget2Test
 
     ThrowableTester.assertThrows(
         () -> addFundsToProjectController.call(
-            ProjectTestData.ID_ADD_FUNDS,
+            ProjectDTOTestData.getAddFunds().getId(),
             MarketUserTestData.BALANCE_IN_CENTS
         )
     ).assertMessageIs(
