@@ -10,7 +10,6 @@ import org.slf4j.Logger;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import com.kodekonveyor.logging.LoggingMarkerConstants;
 import com.kodekonveyor.market.register.MarketUserEntity;
 import com.kodekonveyor.market.register.MarketUserEntityRepository;
 import com.kodekonveyor.market.technical.GithubConstants;
@@ -30,29 +29,25 @@ public class GetRepositoryTasksService {
   @Autowired
   private Logger loggerService;
 
-  public void call(final String repoName) throws JSONException {
+  public List<TaskEntity> call(final String repoName) throws JSONException {
 
     final JSONArray array = githubRequest.call(repoName);
-    loggerService.info(
-        LoggingMarkerConstants.TASK,
-        TaskConstants.TASK_RECEIVED +
-            repoName
-    );
 
     final List<TaskDTO> dtoList = convertJsonToDTO(array);
 
-    storeEntity(dtoList);
+    return storeEntity(dtoList);
 
   }
 
-  private void storeEntity(final List<TaskDTO> dtoList) {
-
+  private List<TaskEntity> storeEntity(final List<TaskDTO> dtoList) {
+    final List<TaskEntity> entityList = new ArrayList<>();
     for (final TaskDTO taskDTO : dtoList)
-      dtoToEntity(taskDTO);
+      entityList.add(dtoToEntity(taskDTO));
+    return entityList;
 
   }
 
-  private void dtoToEntity(final TaskDTO taskDTO) {
+  private TaskEntity dtoToEntity(final TaskDTO taskDTO) {
     final TaskEntity entity = new TaskEntity();
     final MarketUserEntity responsible =
         marketUserEntityRepository.findById(taskDTO.getMarketUser()).get();
@@ -65,10 +60,8 @@ public class GetRepositoryTasksService {
     entity.setMarketUser(responsible);
 
     taskEntityRepository.save(entity);
-    loggerService.debug(
-        LoggingMarkerConstants.TASK,
-        TaskConstants.ENTITY_SAVED + entity.getId()
-    );
+
+    return entity;
   }
 
   private
@@ -77,16 +70,15 @@ public class GetRepositoryTasksService {
     final List<TaskDTO> dtoList = new ArrayList<>();
 
     for (int count = 0; count < array.length(); count++)
-      jsonToDTO(array, dtoList, count);
+      dtoList.add(jsonToDTO(array.getJSONObject(count)));
 
     return dtoList;
   }
 
-  private void jsonToDTO(
-      final JSONArray array, final List<TaskDTO> dtoList, final int count
+  private TaskDTO jsonToDTO(
+      final JSONObject jsonObject
   ) throws JSONException {
     String[] title;
-    final JSONObject jsonObject = array.getJSONObject(count);
     final TaskDTO dto = new TaskDTO();
     dto.setId(
         Long.parseLong(jsonObject.getString(GithubConstants.ID))
@@ -107,7 +99,8 @@ public class GetRepositoryTasksService {
     dto.setMarketUser(
         Long.parseLong(jsonObject.getJSONObject(GithubConstants.USER).getString(GithubConstants.ID))
     );
-    dtoList.add(dto);
+    return dto;
+
   }
 
 }

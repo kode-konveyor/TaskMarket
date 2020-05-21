@@ -2,6 +2,8 @@ package com.kodekonveyor.market.tasks;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
+import java.util.List;
+
 import org.json.JSONException;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
@@ -15,7 +17,6 @@ import org.mockito.quality.Strictness;
 import com.kodekonveyor.annotations.TestedBehaviour;
 import com.kodekonveyor.annotations.TestedService;
 import com.kodekonveyor.market.register.MarketUserEntityRepositoryStubs;
-import com.kodekonveyor.market.register.MarketUserEntityTestData;
 
 @ExtendWith(MockitoExtension.class)
 @MockitoSettings(strictness = Strictness.LENIENT)
@@ -27,90 +28,92 @@ public class GetRepositoryTasksServiceCompileOutputTest
 
   @Test
   @DisplayName(
-    "Task's Github issue Id is saved successfuly"
+    "TaskEntites are returned successfully"
+  )
+  void test1() throws JSONException {
+    MarketUserEntityRepositoryStubs.behaviour(marketUserEntityRepository);
+    assertEquals(
+        List.of(TaskEntityTestData.get()),
+        getRepositoryTasksService
+            .call(GetRepositoryTasksServiceTestData.REPO_NAME)
+    );
+  }
+
+  @Test
+  @DisplayName(
+    "Id of TaskEntity are returned successfully"
+  )
+  void test2() throws JSONException {
+    MarketUserEntityRepositoryStubs.behaviour(marketUserEntityRepository);
+    assertEquals(
+        TaskEntityTestData.get().getId(),
+        getRepositoryTasksService
+            .call(GetRepositoryTasksServiceTestData.REPO_NAME).get(0).getId()
+    );
+  }
+
+  @Test
+  @DisplayName(
+    "Market user of TaskEntity are returned successfully"
+  )
+  void test3() throws JSONException {
+    MarketUserEntityRepositoryStubs.behaviour(marketUserEntityRepository);
+    assertEquals(
+        TaskEntityTestData.get().getMarketUser(),
+        getRepositoryTasksService
+            .call(GetRepositoryTasksServiceTestData.REPO_NAME).get(0).getMarketUser()
+    );
+  }
+
+  @Test
+  @DisplayName(
+    "Behaviour of TaskEntity are returned successfully"
+  )
+  void test4() throws JSONException {
+    MarketUserEntityRepositoryStubs.behaviour(marketUserEntityRepository);
+    assertEquals(
+        TaskEntityTestData.get().getBehaviour(),
+        getRepositoryTasksService
+            .call(GetRepositoryTasksServiceTestData.REPO_NAME).get(0).getBehaviour()
+    );
+  }
+
+  @Test
+  @DisplayName(
+    "Description of TaskEntity are returned successfully"
+  )
+  void test5() throws JSONException {
+    MarketUserEntityRepositoryStubs.behaviour(marketUserEntityRepository);
+    assertEquals(
+        TaskEntityTestData.get().getDescription(),
+        getRepositoryTasksService
+            .call(GetRepositoryTasksServiceTestData.REPO_NAME).get(0).getDescription()
+    );
+  }
+
+  @Test
+  @DisplayName(
+    "Github Id of TaskEntity are returned successfully"
+  )
+  void test6() throws JSONException {
+    MarketUserEntityRepositoryStubs.behaviour(marketUserEntityRepository);
+    assertEquals(
+        TaskEntityTestData.get().getGithubId(),
+        getRepositoryTasksService
+            .call(GetRepositoryTasksServiceTestData.REPO_NAME).get(0).getGithubId()
+    );
+  }
+
+  @Test
+  @DisplayName(
+    "Service of TaskEntity are returned successfully"
   )
   void test7() throws JSONException {
-
     MarketUserEntityRepositoryStubs.behaviour(marketUserEntityRepository);
-    getRepositoryTasksService.call(GetRepositoryTasksServiceTestData.REPO_NAME);
     assertEquals(
-        Long.parseLong(GetRepositoryTasksServiceTestData.GITHUB_ID),
-        TaskEntityTestData.get().getGithubId()
+        TaskEntityTestData.get().getService(),
+        getRepositoryTasksService
+            .call(GetRepositoryTasksServiceTestData.REPO_NAME).get(0).getService()
     );
-
-  }
-
-  @Test
-  @DisplayName(
-    "Task's Market user is saved successfuly"
-  )
-  void test8() throws JSONException {
-
-    MarketUserEntityRepositoryStubs.behaviour(marketUserEntityRepository);
-    getRepositoryTasksService.call(GetRepositoryTasksServiceTestData.REPO_NAME);
-    assertEquals(
-        MarketUserEntityTestData.get(), TaskEntityTestData.get().getMarketUser()
-    );
-
-  }
-
-  @Test
-  @DisplayName(
-    "Task's behaviour is saved successfuly"
-  )
-  void test9() throws JSONException {
-
-    MarketUserEntityRepositoryStubs.behaviour(marketUserEntityRepository);
-    getRepositoryTasksService.call(GetRepositoryTasksServiceTestData.REPO_NAME);
-    assertEquals(
-        GetRepositoryTasksServiceTestData.BEHAVIOUR,
-        TaskEntityTestData.get().getBehaviour()
-    );
-
-  }
-
-  @Test
-  @DisplayName(
-    "Task's service is saved successfuly"
-  )
-  void test10() throws JSONException {
-
-    MarketUserEntityRepositoryStubs.behaviour(marketUserEntityRepository);
-    getRepositoryTasksService.call(GetRepositoryTasksServiceTestData.REPO_NAME);
-    assertEquals(
-        GetRepositoryTasksServiceTestData.SERVICE,
-        TaskEntityTestData.get().getService()
-    );
-
-  }
-
-  @Test
-  @DisplayName(
-    "Task's Description is saved successfuly"
-  )
-  void test11() throws JSONException {
-
-    MarketUserEntityRepositoryStubs.behaviour(marketUserEntityRepository);
-    getRepositoryTasksService.call(GetRepositoryTasksServiceTestData.REPO_NAME);
-    assertEquals(
-        GetRepositoryTasksServiceTestData.DESCRIPTION,
-        TaskEntityTestData.get().getDescription()
-    );
-
-  }
-
-  @Test
-  @DisplayName(
-    "Task's Id is saved successfuly"
-  )
-  void test12() throws JSONException {
-
-    MarketUserEntityRepositoryStubs.behaviour(marketUserEntityRepository);
-    getRepositoryTasksService.call(GetRepositoryTasksServiceTestData.REPO_NAME);
-    assertEquals(
-        Long.parseLong(GetRepositoryTasksServiceTestData.TASK_ID),
-        TaskEntityTestData.get().getId()
-    );
-
   }
 }
