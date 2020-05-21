@@ -6,7 +6,6 @@ import java.util.List;
 import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
-import org.slf4j.Logger;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -26,28 +25,23 @@ public class GetRepositoryTasksService {
   @Autowired
   private TaskEntityRepository taskEntityRepository;
 
-  @Autowired
-  private Logger loggerService;
-
-  public List<TaskEntity> call(final String repoName) throws JSONException {
+  public void call(final String repoName) throws JSONException {
 
     final JSONArray array = githubRequest.call(repoName);
 
     final List<TaskDTO> dtoList = convertJsonToDTO(array);
 
-    return storeEntity(dtoList);
+    storeEntity(dtoList);
 
   }
 
-  private List<TaskEntity> storeEntity(final List<TaskDTO> dtoList) {
-    final List<TaskEntity> entityList = new ArrayList<>();
+  private void storeEntity(final List<TaskDTO> dtoList) {
     for (final TaskDTO taskDTO : dtoList)
-      entityList.add(dtoToEntity(taskDTO));
-    return entityList;
+      dtoToEntity(taskDTO);
 
   }
 
-  private TaskEntity dtoToEntity(final TaskDTO taskDTO) {
+  private void dtoToEntity(final TaskDTO taskDTO) {
     final TaskEntity entity = new TaskEntity();
     final MarketUserEntity responsible =
         marketUserEntityRepository.findById(taskDTO.getMarketUser()).get();
@@ -61,7 +55,6 @@ public class GetRepositoryTasksService {
 
     taskEntityRepository.save(entity);
 
-    return entity;
   }
 
   private
