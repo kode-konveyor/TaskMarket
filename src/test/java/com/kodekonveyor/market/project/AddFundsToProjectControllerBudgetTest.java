@@ -2,6 +2,7 @@ package com.kodekonveyor.market.project;
 
 import static org.junit.Assert.assertTrue;
 import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.mockito.Mockito.verify;
 
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
@@ -14,8 +15,11 @@ import org.mockito.quality.Strictness;
 
 import com.kodekonveyor.annotations.TestedBehaviour;
 import com.kodekonveyor.annotations.TestedService;
+import com.kodekonveyor.authentication.AuthenticatedUserServiceStubs;
 import com.kodekonveyor.exception.ThrowableTester;
 import com.kodekonveyor.market.register.MarketUserDTOTestData;
+import com.kodekonveyor.market.register.MarketUserEntityRepositoryStubs;
+import com.kodekonveyor.market.register.MarketUserEntityTestData;
 import com.kodekonveyor.market.register.MarketUserTestData;
 
 @ExtendWith(MockitoExtension.class)
@@ -59,9 +63,9 @@ public class AddFundsToProjectControllerBudgetTest
 
   @Test
   @DisplayName(
-    "After budget in cents added to the project budget and if that amount is negative, an exception is thrown. "
+    "If budget in cents is negative, an exception is thrown. "
   )
-  public void testUpdatedNegativeBalance() {
+  public void testNegativeBudgetInput() {
 
     ThrowableTester.assertThrows(
         () -> addFundsToProjectController.call(
@@ -69,8 +73,54 @@ public class AddFundsToProjectControllerBudgetTest
             MarketUserTestData.NEGATIVE_BALANCE2
         )
     ).assertMessageIs(
-        ProjectTestData.INVALID_PROJECT_BUDGET_AMOUNT
+        ProjectTestData.INVALID_BUDGET_AMOUNT
     );
 
   }
+
+  @Test
+  @DisplayName(
+    "If budget in cents is negative, an exception is thrown. "
+  )
+  public void testZeroBudgetInput() {
+
+    ThrowableTester.assertThrows(
+        () -> addFundsToProjectController.call(
+            ProjectTestData.ID_BUDGET,
+            MarketUserTestData.ZERO_BALANCE
+        )
+    ).assertMessageIs(
+        ProjectTestData.INVALID_BUDGET_AMOUNT
+    );
+
+  }
+
+  @Test
+  @DisplayName(
+    "Updated market user is saved successfully"
+  )
+  public void testSaveMarketUserEntity() {
+    AuthenticatedUserServiceStubs.projectManager(authenticatedUserService);
+    MarketUserEntityRepositoryStubs.behaviour2(marketUserEntityRepository);
+    addFundsToProjectController.call(
+        ProjectEntityTestData.getAddFunds().getId(),
+        MarketUserTestData.LESS_BALANCE
+    );
+    verify(marketUserEntityRepository)
+        .save(MarketUserEntityTestData.getUpdatedUserBalance());
+  }
+
+  @Test
+  @DisplayName(
+    "Updated Project Entity is saved successfully"
+  )
+  public void testSaveProjectEntity() {
+    addFundsToProjectController.call(
+        ProjectEntityTestData.getAddFunds().getId(),
+        MarketUserTestData.LESS_BALANCE
+    );
+    verify(projectEntityRepository)
+        .save(ProjectEntityTestData.getUpdatedAddFunds());
+  }
+
 }

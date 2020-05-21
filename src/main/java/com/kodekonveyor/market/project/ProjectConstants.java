@@ -8,7 +8,7 @@ public class ProjectConstants {
       "User balance is less than the budget";
   public static final String BALANCE_IS_NEGATIVE = "Balance is negative";
   public static final String USER_NOT_MANAGER = "User is not manager";
-  public static final String INVALID_PROJECT_BUDGET_AMOUNT =
-      "Invalid project budget amount";
+  public static final String INVALID_BUDGET_AMOUNT =
+      "Invalid budget amount";
   public static final String COMMA = ",";
 }

@@ -36,14 +36,13 @@ public class AddFundsToProjectController {
             .findById(projectId).get();
     final UserEntity user = authenticatedUserService.call();
     final ProjectDTO projectDTO = getProjectDTO(project);
-    validateUserBalance(user, project, budgetInCents);
+    validateBalance(user, project, budgetInCents);
     addFundsToProject(user, project, budgetInCents, projectDTO);
     return projectDTO;
   }
 
   private ProjectDTO getProjectDTO(final ProjectEntity project) {
     final ProjectDTO projectDTO = new ProjectDTO();
-    projectDTO.setBudgetInCents(project.getBudgetInCents());
     projectDTO.setDescription(project.getDescription());
     projectDTO.setId(project.getId());
     projectDTO.setIsPublic(project.getIsPublic());
@@ -63,7 +62,7 @@ public class AddFundsToProjectController {
   }
 
   private void
-      validateUserBalance(
+      validateBalance(
           final UserEntity user, final ProjectEntity project,
           final long budgetInCents
       ) {
@@ -85,7 +84,10 @@ public class AddFundsToProjectController {
       throw new ValidationException(
           ProjectConstants.USER_BALANCE_IS_LESS_THAN_THE_BUDGET
       );
-
+    if (budgetInCents <= 0)
+      throw new ValidationException(
+          ProjectConstants.INVALID_BUDGET_AMOUNT
+      );
   }
 
   private void addFundsToProject(
@@ -96,20 +98,10 @@ public class AddFundsToProjectController {
     final Optional<MarketUserEntity> marketUserEntity =
         marketUserEntityRepository.findByUser(user);
     final long userBalance = marketUserEntity.get().getBalanceInCents();
-    long updatedUserBalance = userBalance - budgetInCents;
-    long updatedProjectBudget;
-    if (updatedUserBalance >= 0) {
-      updatedProjectBudget =
-          project.getBudgetInCents() + budgetInCents;
-      if (updatedProjectBudget < 0)
-        throw new ValidationException(
-            ProjectConstants.INVALID_PROJECT_BUDGET_AMOUNT
-        );
-    } else {
-      updatedProjectBudget =
-          project.getBudgetInCents() - budgetInCents;
-      updatedUserBalance = Math.abs(userBalance) + budgetInCents;
-    }
+    final long updatedUserBalance = userBalance - budgetInCents;
+    long updatedProjectBudget = 0l;
+    updatedProjectBudget =
+        project.getBudgetInCents() + budgetInCents;
 
     marketUserEntity.get()
         .setBalanceInCents(updatedUserBalance);

@@ -47,5 +47,4 @@ public class MarketUserTestData {
 
   public static final Long NEGATIVE_BALANCE2 = -5252L;
 
-  public static final Long EQUAL_BALANCE = 4242L;
 }

@@ -43,7 +43,7 @@ public class AddFundsToProjectControllerBudget2Test
         addFundsToProjectController.call(
             ProjectTestData.ID_BUDGET,
             MarketUserTestData.BALANCE_FOR_NEGATIVE_OUTCOME
-        ).getBudgetInCents() < 0
+        ).getBudgetInCents() > 0
     );
   }
 

@@ -6,6 +6,7 @@ import java.util.Set;
 import javax.annotation.Generated;
 
 import com.kodekonveyor.authentication.RoleEntityTestData;
+import com.kodekonveyor.market.register.MarketUserTestData;
 
 @Generated("by zenta-tools")
 public class ProjectEntityTestData {
@@ -72,4 +73,17 @@ public class ProjectEntityTestData {
     return projectEntity;
   }
 
+  public static ProjectEntity getAddFunds() {
+    final ProjectEntity projectEntity = getUrlAndPullRequest();
+    projectEntity.setId(ProjectTestData.ID_ADD_FUNDS);
+    return projectEntity;
+  };
+
+  public static ProjectEntity getUpdatedAddFunds() {
+    final ProjectEntity projectEntity = getAddFunds();
+    projectEntity.setBudgetInCents(
+        projectEntity.getBudgetInCents() + MarketUserTestData.LESS_BALANCE
+    );
+    return projectEntity;
+  };
 }

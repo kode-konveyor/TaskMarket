@@ -35,7 +35,7 @@ public class AddFundsToProjectControllerCompileOutputTest
   @Test
   @DisplayName("The project details with id returned successfully")
   public void test2() {
-    assertEquals(projectDTO.getId(), ProjectDTOTestData.getUrl().getId());
+    assertEquals(projectDTO.getId(), ProjectDTOTestData.getAddFunds().getId());
   }
 
   @Test

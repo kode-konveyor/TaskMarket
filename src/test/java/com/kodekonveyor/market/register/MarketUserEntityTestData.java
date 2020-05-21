@@ -117,4 +117,12 @@ public class MarketUserEntityTestData {
     marketUserEntity.setBalanceInCents(MarketUserTestData.ZERO_BALANCE);
     return marketUserEntity;
   }
+
+  public static MarketUserEntity getUpdatedUserBalance() {
+    final MarketUserEntity marketUserEntity = getRoleManager();
+    marketUserEntity.setBalanceInCents(
+        marketUserEntity.getBalanceInCents() - MarketUserTestData.LESS_BALANCE
+    );
+    return marketUserEntity;
+  }
 }
