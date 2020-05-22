@@ -28,10 +28,10 @@ public class RegistrationController {
   LegalFormEntityRepository legalFormEntityRepository;
 
   @PostMapping(UrlMapConstants.REGISTER_USER_PATH)
-  public void
+  public MarketUserDTO
       call(final @RequestBody MarketUserDTO marketUserDTO) {
     doStore(marketUserDTO);
-
+    return marketUserDTO;
   }
 
   private void doStore(final MarketUserDTO marketUserDTO) {
@@ -59,7 +59,7 @@ public class RegistrationController {
     entity.setEmail(marketUserDTO.getEmail());
     entity.setLegalAddress(marketUserDTO.getLegalAddress());
     entity.setLegalName(marketUserDTO.getLegalName());
-    entity.setPersonalName(marketUserDTO.getLegalName());
+    entity.setPersonalName(marketUserDTO.getPersonalName());
     entity.setUser(userEntity);
     entity.setLegalForm(legalForm.get());
     entity.setPaymentDetail(new HashSet<>());
