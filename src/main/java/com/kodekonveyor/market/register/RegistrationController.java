@@ -28,10 +28,10 @@ public class RegistrationController {
   LegalFormEntityRepository legalFormEntityRepository;
 
   @PostMapping(UrlMapConstants.REGISTER_USER_PATH)
-  public void
+  public MarketUserDTO
       call(final @RequestBody MarketUserDTO marketUserDTO) {
     doStore(marketUserDTO);
-
+    return marketUserDTO;
   }
 
   private void doStore(final MarketUserDTO marketUserDTO) {
