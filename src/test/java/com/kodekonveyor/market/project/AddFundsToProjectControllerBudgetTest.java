@@ -80,7 +80,7 @@ public class AddFundsToProjectControllerBudgetTest
 
   @Test
   @DisplayName(
-    "If budget in cents is negative, an exception is thrown. "
+    "If budget in cents is zero, an exception is thrown. "
   )
   public void testZeroBudgetInput() {
 

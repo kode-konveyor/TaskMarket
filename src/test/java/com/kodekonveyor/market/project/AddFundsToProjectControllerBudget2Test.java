@@ -49,6 +49,22 @@ public class AddFundsToProjectControllerBudget2Test
 
   @Test
   @DisplayName(
+    "User is Project manager with the updated balance Amount as zero balance."
+  )
+  public void testForProjectManager() {
+    AuthenticatedUserServiceStubs
+        .forProjectManagerForZeroBalance(authenticatedUserService);
+    assertTrue(
+        addFundsToProjectController.call(
+            ProjectTestData.ID_BUDGET,
+            MarketUserTestData.BALANCE_IN_CENTS
+        ).getBudgetInCents() > 0
+    );
+
+  }
+
+  @Test
+  @DisplayName(
     "When the user's balance is zero, an exception is thrown"
   )
   public void testZeroUserBalance() {

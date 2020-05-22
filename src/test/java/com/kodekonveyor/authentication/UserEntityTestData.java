@@ -103,4 +103,10 @@ public class UserEntityTestData {
     userEntity.setId(UserTestData.ID_FOR_ZERO_BALANCE);
     return userEntity;
   };
+
+  public static UserEntity getIdForZeroBalanceForProjectManager() {
+    final UserEntity userEntity = getRoleProjectManager();
+    userEntity.setId(UserTestData.ID_FOR_ZERO_BALANCE);
+    return userEntity;
+  };
 }

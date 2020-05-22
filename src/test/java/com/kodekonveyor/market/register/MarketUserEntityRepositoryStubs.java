@@ -98,6 +98,9 @@ public class MarketUserEntityRepositoryStubs {
     doReturn(Optional.of(MarketUserEntityTestData.getZeroBalance()))
         .when(marketUserEntityRepository)
         .findByUser(UserEntityTestData.getIdForZeroBalance());
+    doReturn(Optional.of(MarketUserEntityTestData.getZeroBalance()))
+        .when(marketUserEntityRepository)
+        .findByUser(UserEntityTestData.getIdForZeroBalanceForProjectManager());
   }
 
 }

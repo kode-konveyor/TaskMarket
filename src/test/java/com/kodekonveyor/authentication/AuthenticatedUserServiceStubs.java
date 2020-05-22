@@ -81,4 +81,12 @@ public class AuthenticatedUserServiceStubs {
         .call();
   }
 
+  public static void forProjectManagerForZeroBalance(
+      final AuthenticatedUserService authenticatedUserService
+  ) {
+    doReturn(UserEntityTestData.getIdForZeroBalanceForProjectManager())
+        .when(authenticatedUserService)
+        .call();
+  }
+
 }
