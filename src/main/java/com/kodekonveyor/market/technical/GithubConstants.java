@@ -32,6 +32,11 @@ public class GithubConstants {
   public static final String POST = "POST";
   public static final String QUERY = "query";
 
+  public static final String BODY = "body";
+  public static final String NUMBER = "number";
+  public static final String MILESTONE = "milestone";
+  public static final String FRONSTSLASH = "/";
+
   public static final String PULL_REQUEST_QUERY = " {\n" +
       "  repository(owner: \"%s\", name: \"%s\") {" +
       "    pullRequest(number: %s) {" +
