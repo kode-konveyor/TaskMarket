@@ -33,7 +33,7 @@ public class RegisterInterestControllerLoggingTest
     verify(loggerService)
         .info(
             LoggingMarkerConstants.LEAD,
-            RegisterInterestControllerTestData.LEAD_RECEIVED +
+            RegisterInterestControllerTestData.CALL +
                 LeadDTOTestData.get().toString()
         );
   }
@@ -60,9 +60,11 @@ public class RegisterInterestControllerLoggingTest
   )
   public void testUrlEncodedLogging() {
     registerInterestController.callForUrlencoded(LeadDTOTestData.get());
-    verify(loggerService).info(
-        LoggingMarkerConstants.LEAD,
-        LeadTestData.URL_ENCODED + LeadDTOTestData.get()
-    );
+    verify(loggerService)
+        .info(
+            LoggingMarkerConstants.LEAD,
+            RegisterInterestControllerTestData.CALL +
+                LeadDTOTestData.get().toString()
+        );
   }
 }

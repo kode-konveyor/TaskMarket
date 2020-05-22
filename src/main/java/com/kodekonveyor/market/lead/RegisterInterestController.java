@@ -22,6 +22,9 @@ public class RegisterInterestController {
 
   @PostMapping(value = UrlMapConstants.LEAD_PATH, consumes = "application/json")
   public LeadDTO call(final @RequestBody LeadDTO lead) {
+    loggerService.info(
+        LoggingMarkerConstants.LEAD, LeadConstants.CALL + lead.toString()
+    );
     doStore(lead);
 
     EmailIdValidationUtil.validateEmail(lead);
@@ -36,16 +39,12 @@ public class RegisterInterestController {
       consumes = "application/x-www-form-urlencoded"
   )
   public LeadDTO callForUrlencoded(final LeadDTO lead) {
-    loggerService.info(
-        LoggingMarkerConstants.LEAD, LeadConstants.URL_ENCODED + lead.toString()
-    );
+
     return call(lead);
   }
 
   private void doStore(final LeadDTO lead) {
-    loggerService.info(
-        LoggingMarkerConstants.LEAD, LeadConstants.STORE_LEAD + lead.toString()
-    );
+
     final LeadEntity leadEntity = new LeadEntity();
     leadEntity.setEmail(lead.getEmail());
     leadEntity.setFirstName(lead.getFirstName());
