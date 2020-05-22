@@ -34,7 +34,7 @@ public class AddFundsToProjectControllerBudget2Test
 
   @Test
   @DisplayName(
-    "User is Project manager with the negative balance Amount. "
+    "User is Project manager with the updated balance Amount as negative. "
   )
   public void testNegativeBalance() {
     AuthenticatedUserServiceStubs.projectManager(authenticatedUserService);
