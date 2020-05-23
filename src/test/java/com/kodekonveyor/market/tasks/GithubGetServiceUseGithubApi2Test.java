@@ -123,10 +123,25 @@ public class GithubGetServiceUseGithubApi2Test
 
     MarketUserEntityRepositoryStubs.behaviour(marketUserEntityRepository);
     assertEquals(
-        List.of(TaskEntityTestData.get()),
+        List.of(TaskEntityTestData.get(), TaskEntityTestData.getOtherTask()),
         getRepositoryTasksService
             .call(GetRepositoryTasksServiceTestData.REPO_NAME)
     );
+  }
+
+  @Test
+  @DisplayName(
+    "Task's status is saved successfuly"
+  )
+  void test15() throws JSONException {
+
+    MarketUserEntityRepositoryStubs.behaviour(marketUserEntityRepository);
+    getRepositoryTasksService.call(GetRepositoryTasksServiceTestData.REPO_NAME);
+    assertEquals(
+        GetRepositoryTasksServiceTestData.UP_FOR_GRAB,
+        TaskEntityTestData.get().getStatus().getValue()
+    );
+
   }
 
 }

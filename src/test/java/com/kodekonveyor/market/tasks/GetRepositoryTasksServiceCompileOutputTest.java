@@ -33,7 +33,7 @@ public class GetRepositoryTasksServiceCompileOutputTest
   void test1() throws JSONException {
     MarketUserEntityRepositoryStubs.behaviour(marketUserEntityRepository);
     assertEquals(
-        List.of(TaskEntityTestData.get()),
+        List.of(TaskEntityTestData.get(), TaskEntityTestData.getOtherTask()),
         getRepositoryTasksService
             .call(GetRepositoryTasksServiceTestData.REPO_NAME)
     );
@@ -114,6 +114,19 @@ public class GetRepositoryTasksServiceCompileOutputTest
         TaskEntityTestData.get().getService(),
         getRepositoryTasksService
             .call(GetRepositoryTasksServiceTestData.REPO_NAME).get(0).getService()
+    );
+  }
+
+  @Test
+  @DisplayName(
+    "Status of TaskEntity are returned successfully"
+  )
+  void test8() throws JSONException {
+    MarketUserEntityRepositoryStubs.behaviour(marketUserEntityRepository);
+    assertEquals(
+        TaskEntityTestData.get().getStatus(),
+        getRepositoryTasksService
+            .call(GetRepositoryTasksServiceTestData.REPO_NAME).get(0).getStatus()
     );
   }
 }

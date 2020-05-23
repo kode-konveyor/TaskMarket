@@ -64,7 +64,7 @@ public class GetRepositoryTasksService {
     entity.setId(taskDTO.getId());
     entity.setService(taskDTO.getService());
     entity.setMarketUser(responsible);
-
+    entity.setStatus(taskDTO.getStatus());
     taskEntityRepository.save(entity);
     loggerService.debug(
         LoggingMarkerConstants.TASK,
@@ -108,6 +108,19 @@ public class GetRepositoryTasksService {
     dto.setMarketUser(
         Long.parseLong(jsonObject.getJSONObject(GithubConstants.USER).getString(GithubConstants.ID))
     );
+    final JSONArray label =
+        jsonObject.getJSONArray(GithubConstants.LABELS);
+    if (!label.isNull(0)) {
+
+      final String statusName =
+          label.getJSONObject(0).getString(GithubConstants.NAME);
+
+      for (final TaskStatusEnum status : TaskStatusEnum.values())
+        if (statusName.equals(status.getValue()))
+          dto.setStatus(status);
+    } else
+      dto.setStatus(TaskStatusEnum.OPEN);
+
     return dto;
 
   }
