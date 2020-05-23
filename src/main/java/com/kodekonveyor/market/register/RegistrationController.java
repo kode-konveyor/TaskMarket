@@ -59,7 +59,7 @@ public class RegistrationController {
     entity.setEmail(marketUserDTO.getEmail());
     entity.setLegalAddress(marketUserDTO.getLegalAddress());
     entity.setLegalName(marketUserDTO.getLegalName());
-    entity.setPersonalName(marketUserDTO.getLegalName());
+    entity.setPersonalName(marketUserDTO.getPersonalName());
     entity.setUser(userEntity);
     entity.setLegalForm(legalForm.get());
     entity.setPaymentDetail(new HashSet<>());
