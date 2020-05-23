@@ -110,16 +110,16 @@ public class GetRepositoryTasksService {
     );
     final JSONArray label =
         jsonObject.getJSONArray(GithubConstants.LABELS);
-    if (!label.isNull(0)) {
-
+    if (label.isNull(0))
+      dto.setStatus(TaskStatusEnum.OPEN);
+    else {
       final String statusName =
           label.getJSONObject(0).getString(GithubConstants.NAME);
 
       for (final TaskStatusEnum status : TaskStatusEnum.values())
         if (statusName.equals(status.getValue()))
           dto.setStatus(status);
-    } else
-      dto.setStatus(TaskStatusEnum.OPEN);
+    }
 
     return dto;
 
