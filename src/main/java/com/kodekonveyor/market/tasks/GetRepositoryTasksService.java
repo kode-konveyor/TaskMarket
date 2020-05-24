@@ -6,11 +6,9 @@ import java.util.List;
 import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
-import org.slf4j.Logger;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import com.kodekonveyor.logging.LoggingMarkerConstants;
 import com.kodekonveyor.market.register.MarketUserEntity;
 import com.kodekonveyor.market.register.MarketUserEntityRepository;
 import com.kodekonveyor.market.technical.GithubConstants;
@@ -27,17 +25,9 @@ public class GetRepositoryTasksService {
   @Autowired
   private TaskEntityRepository taskEntityRepository;
 
-  @Autowired
-  private Logger loggerService;
-
   public List<TaskEntity> call(final String repoName) throws JSONException {
 
     final JSONArray array = githubRequest.call(repoName);
-    loggerService.info(
-        LoggingMarkerConstants.TASK,
-        TaskConstants.TASK_RECEIVED +
-            repoName
-    );
 
     final List<TaskDTO> dtoList = convertJsonToDTO(array);
 
@@ -67,10 +57,6 @@ public class GetRepositoryTasksService {
     entity.setMarketUser(responsible);
     entity.setStatus(taskDTO.getStatus());
 
-    loggerService.debug(
-        LoggingMarkerConstants.TASK,
-        TaskConstants.ENTITY_CREATED + entity.getId()
-    );
     return entity;
   }
 
