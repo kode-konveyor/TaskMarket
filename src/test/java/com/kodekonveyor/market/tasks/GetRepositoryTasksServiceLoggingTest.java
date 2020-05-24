@@ -45,7 +45,7 @@ public class GetRepositoryTasksServiceLoggingTest
     getRepositoryTasksService.call(GetRepositoryTasksServiceTestData.REPO_NAME);
     Mockito.verify(loggerService).debug(
         GetRepositoryTasksServiceTestData.TASK,
-        GetRepositoryTasksServiceTestData.ENTITY_SAVED +
+        GetRepositoryTasksServiceTestData.ENTITY_CREATED +
             GetRepositoryTasksServiceTestData.TASK_ID
     );
   }

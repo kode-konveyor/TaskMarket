@@ -49,6 +49,7 @@ public class GetRepositoryTasksService {
     final List<TaskEntity> entityList = new ArrayList<>();
     for (final TaskDTO taskDTO : dtoList)
       entityList.add(dtoToEntity(taskDTO));
+    taskEntityRepository.saveAll(entityList);
     return entityList;
 
   }
@@ -65,10 +66,10 @@ public class GetRepositoryTasksService {
     entity.setService(taskDTO.getService());
     entity.setMarketUser(responsible);
     entity.setStatus(taskDTO.getStatus());
-    taskEntityRepository.save(entity);
+
     loggerService.debug(
         LoggingMarkerConstants.TASK,
-        TaskConstants.ENTITY_SAVED + entity.getId()
+        TaskConstants.ENTITY_CREATED + entity.getId()
     );
     return entity;
   }

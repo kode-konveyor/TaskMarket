@@ -44,7 +44,7 @@ public class GetRepositoryTasksServiceTestData {
   public static final int INDEX1 = 1;
 
   public static final Marker TASK = MarkerFactory.getMarker("task");
-  public static final String ENTITY_SAVED = "Task entity saved Id : ";
+  public static final String ENTITY_CREATED = "Task entity created Id : ";
 
   public static String get() {
 
