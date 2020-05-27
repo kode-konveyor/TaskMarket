@@ -89,15 +89,10 @@ public class MarketUserEntityRepositoryStubs {
     doReturn(Optional.of(MarketUserEntityTestData.getRoleManager()))
         .when(marketUserEntityRepository)
         .findByUser(UserEntityTestData.getRoleProjectManager());
-    doReturn(Optional.of(MarketUserEntityTestData.getNegativeBalance()))
-        .when(marketUserEntityRepository)
-        .findByUser(UserEntityTestData.getIdForNegativeBalance());
     doReturn(Optional.of(MarketUserEntityTestData.getLessBalance()))
         .when(marketUserEntityRepository)
         .findByUser(UserEntityTestData.get());
-    doReturn(Optional.of(MarketUserEntityTestData.getZeroBalance()))
-        .when(marketUserEntityRepository)
-        .findByUser(UserEntityTestData.getIdForZeroBalance());
+
     doReturn(Optional.of(MarketUserEntityTestData.getZeroBalance()))
         .when(marketUserEntityRepository)
         .findByUser(UserEntityTestData.getIdForZeroBalanceForProjectManager());

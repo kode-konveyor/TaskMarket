@@ -98,13 +98,7 @@ public class MarketUserEntityTestData {
     return marketUserEntity;
   }
 
-  public static MarketUserEntity getNegativeBalance() {
-    final MarketUserEntity marketUserEntity = get();
-    marketUserEntity.setId(MarketUserTestData.ID_NEGATIVE_BALANCE);
-    marketUserEntity.setBalanceInCents(MarketUserTestData.NEGATIVE_BALANCE);
-    marketUserEntity.setUser(UserEntityTestData.getIdForNegativeBalance());
-    return marketUserEntity;
-  }
+
 
   public static MarketUserEntity getLessBalance() {
     final MarketUserEntity marketUserEntity = get();

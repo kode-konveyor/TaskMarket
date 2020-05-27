@@ -10,10 +10,8 @@ import org.springframework.web.bind.annotation.RestController;
 import com.kodekonveyor.authentication.AuthenticatedUserService;
 import com.kodekonveyor.authentication.RoleEntity;
 import com.kodekonveyor.authentication.UserEntity;
-import com.kodekonveyor.market.MarketConstants;
 import com.kodekonveyor.market.UrlMapConstants;
 import com.kodekonveyor.market.ValidationException;
-import com.kodekonveyor.market.lead.CheckRoleUtil;
 import com.kodekonveyor.market.register.MarketUserEntity;
 import com.kodekonveyor.market.register.MarketUserEntityRepository;
 
@@ -70,23 +68,16 @@ public class AddFundsToProjectController {
         marketUserEntityRepository.findByUser(user);
     final long userBalance = marketUserEntity.get().getBalanceInCents();
     if (
-      userBalance <= 0 &&
-          !CheckRoleUtil.hasRole(user, project, MarketConstants.MANAGER)
-    )
-      throw new ValidationException(
-          ProjectConstants.BALANCE_IS_NEGATIVE + ProjectConstants.COMMA +
-              ProjectConstants.USER_NOT_MANAGER
-      );
-    if (
-      userBalance < budgetInCents &&
-          !CheckRoleUtil.hasRole(user, project, MarketConstants.MANAGER)
+      userBalance - budgetInCents < 0
     )
       throw new ValidationException(
           ProjectConstants.USER_BALANCE_IS_LESS_THAN_THE_BUDGET
       );
-    if (budgetInCents <= 0)
+    if (
+      project.getBudgetInCents() + budgetInCents < 0
+    )
       throw new ValidationException(
-          ProjectConstants.INVALID_BUDGET_AMOUNT
+          ProjectConstants.BALANCE_IS_NEGATIVE
       );
   }
 
@@ -98,8 +89,10 @@ public class AddFundsToProjectController {
     final Optional<MarketUserEntity> marketUserEntity =
         marketUserEntityRepository.findByUser(user);
     final long userBalance = marketUserEntity.get().getBalanceInCents();
-    final long updatedUserBalance = userBalance - budgetInCents;
-    long updatedProjectBudget = 0l;
+    long updatedUserBalance;
+    long updatedProjectBudget;
+
+    updatedUserBalance = userBalance - budgetInCents;
     updatedProjectBudget =
         project.getBudgetInCents() + budgetInCents;
 

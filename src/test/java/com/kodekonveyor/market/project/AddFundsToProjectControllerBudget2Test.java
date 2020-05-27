@@ -1,6 +1,7 @@
 package com.kodekonveyor.market.project;
 
 import static org.junit.Assert.assertTrue;
+import static org.junit.jupiter.api.Assertions.assertEquals;
 
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.DisplayName;
@@ -42,79 +43,58 @@ public class AddFundsToProjectControllerBudget2Test
     assertTrue(
         addFundsToProjectController.call(
             ProjectTestData.ID_BUDGET,
-            MarketUserTestData.BALANCE_FOR_NEGATIVE_OUTCOME
+            MarketUserTestData.NEGATIVE_BALANCE
         ).getBudgetInCents() > 0
     );
   }
 
   @Test
   @DisplayName(
-    "User is Project manager with the updated balance Amount as zero balance."
+    "When input budget in cents is zero, project budget and user balance remains unchanged. "
+  )
+  public void testForZeroBudgetIncents() {
+    AuthenticatedUserServiceStubs.projectManager(authenticatedUserService);
+
+    assertTrue(
+        addFundsToProjectController.call(
+            ProjectTestData.ID_BUDGET,
+            MarketUserTestData.ZERO_BALANCE
+        ).getBudgetInCents() > 0
+    );
+  }
+
+  @Test
+  @DisplayName(
+    "When User is Project manager with the balance amount as zero, an exception is thrown ."
   )
   public void testForProjectManager() {
     AuthenticatedUserServiceStubs
         .forProjectManagerForZeroBalance(authenticatedUserService);
-    assertTrue(
-        addFundsToProjectController.call(
+    ThrowableTester.assertThrows(
+        () -> addFundsToProjectController.call(
             ProjectTestData.ID_BUDGET,
             MarketUserTestData.BALANCE_IN_CENTS
-        ).getBudgetInCents() > 0
-    );
+        )
+    ).assertMessageIs(ProjectTestData.USER_BALANCE_IS_LESS_THAN_THE_BUDGET);
 
   }
 
   @Test
   @DisplayName(
-    "When the user's balance is zero, an exception is thrown"
+    "When the user's balance is equal to budget in cents, project budget is updated correctly"
   )
-  public void testZeroUserBalance() {
+  public void testEqualUserBalance() {
     AuthenticatedUserServiceStubs
-        .authenticatedIdForZeroBalance(authenticatedUserService);
-
-    ThrowableTester.assertThrows(
-        () -> addFundsToProjectController.call(
+        .projectManager(authenticatedUserService);
+    assertEquals(
+        addFundsToProjectController.call(
             ProjectDTOTestData.getAddFunds().getId(),
             MarketUserTestData.BALANCE_IN_CENTS
-        )
-    ).assertMessageIs(
-        ProjectTestData.BALANCE_IS_NEGATIVE + ProjectTestData.COMMA +
-            ProjectTestData.USER_NOT_MANAGER
-    );
-  }
-
-  @Test
-  @DisplayName(
-    "When the user's balance is negative, exception is thrown"
-  )
-  public void testNegativeUserBalance() {
-    AuthenticatedUserServiceStubs
-        .authenticatedIdForNegativeBalance(authenticatedUserService);
-
-    ThrowableTester.assertThrows(
-        () -> addFundsToProjectController.call(
-            ProjectDTOTestData.getAddFunds().getId(),
+        ).getBudgetInCents(),
+        ProjectDTOTestData.getAddFunds().getBudgetInCents() +
             MarketUserTestData.BALANCE_IN_CENTS
-        )
-    ).assertMessageIs(
-        ProjectTestData.BALANCE_IS_NEGATIVE + ProjectTestData.COMMA +
-            ProjectTestData.USER_NOT_MANAGER
     );
-  }
 
-  @Test
-  @DisplayName(
-    "When the user's balance is less than the budget in cents, exception is thrown"
-  )
-  public void testLessUserBalance() {
-
-    ThrowableTester.assertThrows(
-        () -> addFundsToProjectController.call(
-            ProjectDTOTestData.getAddFunds().getId(),
-            MarketUserTestData.BALANCE_IN_CENTS
-        )
-    ).assertMessageIs(
-        ProjectTestData.USER_BALANCE_IS_LESS_THAN_THE_BUDGET
-    );
   }
 
 }

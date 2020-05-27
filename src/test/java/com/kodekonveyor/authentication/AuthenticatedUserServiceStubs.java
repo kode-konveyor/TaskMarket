@@ -65,22 +65,6 @@ public class AuthenticatedUserServiceStubs {
         .call();
   }
 
-  public static void authenticatedIdForNegativeBalance(
-      final AuthenticatedUserService authenticatedUserService
-  ) {
-    doReturn(UserEntityTestData.getIdForNegativeBalance())
-        .when(authenticatedUserService)
-        .call();
-  }
-
-  public static void authenticatedIdForZeroBalance(
-      final AuthenticatedUserService authenticatedUserService
-  ) {
-    doReturn(UserEntityTestData.getIdForZeroBalance())
-        .when(authenticatedUserService)
-        .call();
-  }
-
   public static void forProjectManagerForZeroBalance(
       final AuthenticatedUserService authenticatedUserService
   ) {

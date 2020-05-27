@@ -63,34 +63,30 @@ public class AddFundsToProjectControllerBudgetTest
 
   @Test
   @DisplayName(
-    "If budget in cents is negative, an exception is thrown. "
+    "If budget in cents is negative and more than the project's balance, an exception is thrown. "
   )
   public void testNegativeBudgetInput() {
-
     ThrowableTester.assertThrows(
         () -> addFundsToProjectController.call(
             ProjectTestData.ID_BUDGET,
             MarketUserTestData.NEGATIVE_BALANCE2
         )
     ).assertMessageIs(
-        ProjectTestData.INVALID_BUDGET_AMOUNT
+        ProjectTestData.BALANCE_IS_NEGATIVE
     );
-
   }
 
   @Test
   @DisplayName(
-    "If budget in cents is zero, an exception is thrown. "
+    "If project balance and input budget is equal but opposite amount, project balance becomes zero. "
   )
-  public void testZeroBudgetInput() {
+  public void testEqualBudget() {
 
-    ThrowableTester.assertThrows(
-        () -> addFundsToProjectController.call(
+    assertEquals(
+        addFundsToProjectController.call(
             ProjectTestData.ID_BUDGET,
-            MarketUserTestData.ZERO_BALANCE
-        )
-    ).assertMessageIs(
-        ProjectTestData.INVALID_BUDGET_AMOUNT
+            MarketUserTestData.NEGATIVE_BALANCE3
+        ).getBudgetInCents(), 0
     );
 
   }
