@@ -35,4 +35,16 @@ public class MarketUserTestData {
 
   public static final Long ZERO_BALANCE = 0L;
 
+  public static final Long ID_MANAGER = 1826L;
+
+  public static final Long NEGATIVE_BALANCE = -512L;
+
+  public static final Long LESS_BALANCE = 50L;
+
+  public static final Long NEGATIVE_BALANCE2 = -5252L;
+
+  public static final Long BUDGET_IN_CENTS = 1_000_000_000L;
+
+  public static final Long NEGATIVE_BALANCE3 = -1000L;
+
 }

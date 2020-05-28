@@ -58,6 +58,20 @@ public class ProjectDTOTestData {
     final ProjectDTO projectDTO = get();
     projectDTO.setName(null);
     return projectDTO;
+  }
+
+  public static ProjectDTO getUrl() {
+    final ProjectDTO projectDTO = get();
+    projectDTO.setUrl(ProjectTestData.URL);
+    projectDTO.setDescription(ProjectTestData.DESCRIPTION);
+    projectDTO.setProjectId(ProjectTestData.PROJECT_ID);
+    return projectDTO;
+  };
+
+  public static ProjectDTO getAddFunds() {
+    final ProjectDTO projectDTO = getUrl();
+    projectDTO.setId(ProjectTestData.ID_ADD_FUNDS);
+    return projectDTO;
   };
 
 }

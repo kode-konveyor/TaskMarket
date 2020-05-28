@@ -30,4 +30,12 @@ public class ProjectEntityRepositoryStubs {
         .when(projectEntityRepository).findByRole(RoleEntityTestData.getRoleKodekonveyorContract());
   }
 
+  public static void
+      behaviour2(final ProjectEntityRepository projectEntityRepository) {
+    doReturn(Optional.of(ProjectEntityTestData.getAddFunds()))
+        .when(projectEntityRepository).findById(ProjectTestData.ID_ADD_FUNDS);
+    doReturn(Optional.of(ProjectEntityTestData.getManagerRole()))
+        .when(projectEntityRepository).findById(ProjectTestData.ID_BUDGET);
+  }
+
 }
