@@ -92,4 +92,9 @@ public class UserEntityTestData {
     return userEntity;
   };
 
+  public static UserEntity getIdForZeroBalanceForProjectManager() {
+    final UserEntity userEntity = getRoleProjectManager();
+    userEntity.setId(UserTestData.ID_FOR_ZERO_BALANCE);
+    return userEntity;
+  };
 }
