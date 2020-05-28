@@ -29,7 +29,10 @@ public class ProjectEntityRepositoryStubs {
 
   public static void
       behaviour2(final ProjectEntityRepository projectEntityRepository) {
-    doReturn(Optional.of(ProjectEntityTestData.getUrlAndPullRequest()))
+    doReturn(Optional.of(ProjectEntityTestData.getAddFunds()))
         .when(projectEntityRepository).findById(ProjectTestData.ID_ADD_FUNDS);
+    doReturn(Optional.of(ProjectEntityTestData.getManagerRole()))
+        .when(projectEntityRepository).findById(ProjectTestData.ID_BUDGET);
   }
+
 }

@@ -31,4 +31,15 @@ public class ProjectTestData {
 
   public static final String URL = "url";
 
+  public static final Long ID_BUDGET = 1525L;
+
+  public static final Long BUDGET_IN_LESSER_AMOUNT = 1_000L;
+
+  public static final String USER_BALANCE_IS_LESS_THAN_THE_BUDGET =
+      "User balance is less than the budget";
+  public static final String BALANCE_IS_NEGATIVE = "Balance is negative";
+  public static final String USER_NOT_MANAGER = "User is not manager";
+  public static final String INVALID_BUDGET_AMOUNT =
+      "Invalid budget amount";
+  public static final String COMMA = ",";
 }

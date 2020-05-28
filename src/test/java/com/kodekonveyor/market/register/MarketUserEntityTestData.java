@@ -91,4 +91,32 @@ public class MarketUserEntityTestData {
     return marketUserEntity;
   };
 
+  public static MarketUserEntity getRoleManager() {
+    final MarketUserEntity marketUserEntity = get();
+    marketUserEntity.setId(MarketUserTestData.ID_MANAGER);
+    marketUserEntity.setUser(UserEntityTestData.getRoleProjectManager());
+    return marketUserEntity;
+  }
+
+
+
+  public static MarketUserEntity getLessBalance() {
+    final MarketUserEntity marketUserEntity = get();
+    marketUserEntity.setBalanceInCents(MarketUserTestData.LESS_BALANCE);
+    return marketUserEntity;
+  }
+
+  public static MarketUserEntity getZeroBalance() {
+    final MarketUserEntity marketUserEntity = get();
+    marketUserEntity.setBalanceInCents(MarketUserTestData.ZERO_BALANCE);
+    return marketUserEntity;
+  }
+
+  public static MarketUserEntity getUpdatedUserBalance() {
+    final MarketUserEntity marketUserEntity = getRoleManager();
+    marketUserEntity.setBalanceInCents(
+        marketUserEntity.getBalanceInCents() - MarketUserTestData.LESS_BALANCE
+    );
+    return marketUserEntity;
+  }
 }
