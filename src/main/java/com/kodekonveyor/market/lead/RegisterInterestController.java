@@ -30,6 +30,9 @@ public class RegisterInterestController {
     EmailIdValidationUtil.validateEmail(lead);
     FirstNameValidationUtil.validateFirstName(lead);
     validateInterest(lead);
+    loggerService.info(
+        LoggingMarkerConstants.LEAD, LeadConstants.SAVED + lead.toString()
+    );
 
     return lead;
   }

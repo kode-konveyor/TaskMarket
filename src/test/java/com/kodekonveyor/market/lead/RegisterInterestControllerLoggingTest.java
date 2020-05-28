@@ -40,6 +40,20 @@ public class RegisterInterestControllerLoggingTest
 
   @Test
   @DisplayName(
+    "The call of the service is logged for the successfully saved entity"
+  )
+  public void testLoggingAfterCompletion() {
+    registerInterestController.call(LeadDTOTestData.get());
+    verify(loggerService)
+        .info(
+            LoggingMarkerConstants.LEAD,
+            RegisterInterestControllerTestData.SAVED +
+                LeadDTOTestData.get().toString()
+        );
+  }
+
+  @Test
+  @DisplayName(
     "The call of the service is logged when error of null Interest"
   )
   void testLoggingError() {
