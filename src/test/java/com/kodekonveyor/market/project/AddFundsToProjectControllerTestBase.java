@@ -4,6 +4,11 @@ import org.junit.jupiter.api.BeforeEach;
 import org.mockito.InjectMocks;
 import org.mockito.Mock;
 
+import com.kodekonveyor.authentication.AuthenticatedUserService;
+import com.kodekonveyor.authentication.AuthenticatedUserServiceStubs;
+import com.kodekonveyor.market.register.MarketUserEntityRepository;
+import com.kodekonveyor.market.register.MarketUserEntityRepositoryStubs;
+
 public class AddFundsToProjectControllerTestBase {
 
   @InjectMocks
@@ -12,8 +17,16 @@ public class AddFundsToProjectControllerTestBase {
   @Mock
   ProjectEntityRepository projectEntityRepository;
 
+  @Mock
+  MarketUserEntityRepository marketUserEntityRepository;
+
+  @Mock
+  AuthenticatedUserService authenticatedUserService;
+
   @BeforeEach
   void setUp() {
+    AuthenticatedUserServiceStubs.authenticated(authenticatedUserService);
     ProjectEntityRepositoryStubs.behaviour2(projectEntityRepository);
+    MarketUserEntityRepositoryStubs.behaviour(marketUserEntityRepository);
   }
 }
