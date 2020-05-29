@@ -15,7 +15,19 @@ public class TaskEntityTestData {
     taskEntity.setBehaviour(TaskTestData.BEHAVIOUR);
     taskEntity.setGithubId(TaskTestData.GITHUB_ID);
     taskEntity.setDescription(TaskTestData.DESCRIPTION);
+    taskEntity.setStatus(TaskStatusEnum.UP_FOR_GRAB);
+    return taskEntity;
+  }
 
+  public static TaskEntity getOtherTask() {
+    final TaskEntity taskEntity = new TaskEntity();
+    taskEntity.setId(TaskTestData.ID_1198);
+    taskEntity.setMarketUser(MarketUserEntityTestData.get());
+    taskEntity.setService(TaskTestData.SERVICE);
+    taskEntity.setBehaviour(TaskTestData.BEHAVIOUR);
+    taskEntity.setGithubId(TaskTestData.GITHUB_ID_67);
+    taskEntity.setDescription(TaskTestData.DESCRIPTION);
+    taskEntity.setStatus(TaskStatusEnum.OPEN);
     return taskEntity;
   };
 
