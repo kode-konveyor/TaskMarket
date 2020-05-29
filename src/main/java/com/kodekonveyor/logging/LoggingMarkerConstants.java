@@ -14,6 +14,9 @@ public class LoggingMarkerConstants {
   public static final Marker LEAD =
       MarkerFactory.getMarker("lead");
   public static final Marker TASK = MarkerFactory.getMarker("task");
+  public static final Marker PAYMENT =
+      MarkerFactory.getMarker("payment");
   public static final Marker REGISTER =
       MarkerFactory.getMarker("register");
+
 }
