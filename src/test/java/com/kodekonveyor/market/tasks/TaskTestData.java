@@ -15,4 +15,8 @@ public class TaskTestData {
 
   public final static Long GITHUB_ID = 66l;
 
+  public static final Long ID_1198 = 1198L;
+
+  public static final Long GITHUB_ID_67 = 67L;
+
 }
