@@ -14,6 +14,7 @@ import org.mockito.quality.Strictness;
 
 import com.kodekonveyor.annotations.TestedBehaviour;
 import com.kodekonveyor.annotations.TestedService;
+import com.kodekonveyor.market.register.MarketUserTestData;
 
 @ExtendWith(MockitoExtension.class)
 @MockitoSettings(strictness = Strictness.LENIENT)
@@ -28,7 +29,7 @@ public class AddFundsToProjectControllerCompileOutput2Test
   @BeforeEach
   public void setUpTest() {
     projectDTO = addFundsToProjectController
-        .call(ProjectTestData.ID_ADD_FUNDS);
+        .call(ProjectTestData.ID_ADD_FUNDS, MarketUserTestData.BALANCE_IN_CENTS);
   }
 
   @Test
@@ -60,12 +61,4 @@ public class AddFundsToProjectControllerCompileOutput2Test
     );
   }
 
-  @Test
-  @DisplayName("The project details with budget returned successfully")
-  public void test11() {
-    assertEquals(
-        projectDTO.getBudgetInCents(),
-        ProjectDTOTestData.getUrl().getBudgetInCents()
-    );
-  }
 }
