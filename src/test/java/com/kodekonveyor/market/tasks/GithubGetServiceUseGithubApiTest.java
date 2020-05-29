@@ -2,6 +2,8 @@ package com.kodekonveyor.market.tasks;
 
 import static org.junit.Assert.assertEquals;
 
+import java.util.List;
+
 import org.json.JSONException;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
@@ -123,8 +125,10 @@ public class GithubGetServiceUseGithubApiTest
     MarketUserEntityRepositoryStubs.behaviour(marketUserEntityRepository);
     getRepositoryTasksService.call(GetRepositoryTasksServiceTestData.REPO_NAME);
 
-    Mockito.verify(taskEntityRepository, Mockito.times(1))
-        .save(TaskEntityTestData.get());
+    Mockito.verify(taskEntityRepository)
+        .saveAll(
+            List.of(TaskEntityTestData.get(), TaskEntityTestData.getOtherTask())
+        );
 
   }
 }

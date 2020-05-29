@@ -2,6 +2,8 @@ package com.kodekonveyor.market.tasks;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
+import java.util.List;
+
 import org.json.JSONException;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
@@ -110,6 +112,20 @@ public class GithubGetServiceUseGithubApi2Test
     assertEquals(
         Long.parseLong(GetRepositoryTasksServiceTestData.TASK_ID),
         TaskEntityTestData.get().getId()
+    );
+  }
+
+  @Test
+  @DisplayName(
+    "Task entities are returned successfully"
+  )
+  void test13() throws JSONException {
+
+    MarketUserEntityRepositoryStubs.behaviour(marketUserEntityRepository);
+    assertEquals(
+        List.of(TaskEntityTestData.get(), TaskEntityTestData.getOtherTask()),
+        getRepositoryTasksService
+            .call(GetRepositoryTasksServiceTestData.REPO_NAME)
     );
   }
 

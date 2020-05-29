@@ -3,7 +3,6 @@ package com.kodekonveyor.market.tasks;
 import org.junit.jupiter.api.BeforeEach;
 import org.mockito.InjectMocks;
 import org.mockito.Mock;
-import org.slf4j.Logger;
 
 import com.kodekonveyor.authentication.UserEntityRepository;
 import com.kodekonveyor.market.project.MilestoneEntityRepository;
@@ -32,9 +31,6 @@ public class GetRepositoryTasksServiceTestBase {
 
   @Mock
   MilestoneEntityRepository milestoneEntityRepository;
-
-  @Mock
-  Logger loggerService;
 
   @BeforeEach
   void setUp() {
