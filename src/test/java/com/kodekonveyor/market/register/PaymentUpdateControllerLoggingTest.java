@@ -58,6 +58,21 @@ public class PaymentUpdateControllerLoggingTest
 
   @Test
   @DisplayName(
+    "The successful completion of call to the service is logged. "
+  )
+  public void testLoggingAtCompletion() {
+    AuthenticatedUserServiceStubs.registered(authenticatedUserService);
+    paymentUpdateController
+        .call(PaymentDetailsDTOTestData.get());
+
+    verify(loggerService).info(
+        LoggingMarkerConstants.REGISTER,
+        RegisterTestData.PAYMENT_UPDATED_SUCCESSFULLY
+    );
+  }
+
+  @Test
+  @DisplayName(
     "The call to the service is logged when user does not have can_be_paid role while looking for its own data"
   )
   public void testRoleError() {

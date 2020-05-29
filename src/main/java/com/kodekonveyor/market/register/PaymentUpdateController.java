@@ -66,7 +66,10 @@ public class PaymentUpdateController {
     final MarketUserEntity marketuser =
         marketUserEntityRepository.findByUser(user).get();
     contractAcceptance(marketuser);
-
+    logger.info(
+        LoggingMarkerConstants.REGISTER,
+        RegisterConstants.PAYMENT_UPDATED_SUCCESSFULLY
+    );
     return null;
 
   }

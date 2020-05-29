@@ -11,4 +11,6 @@ public class RegisterTestData {
       "No manager role for the project";
   public static final String NO_CAN_BE_PAID_ROLE =
       "no can_be_paid role for user: ";
+  public static final String PAYMENT_UPDATED_SUCCESSFULLY =
+      "Payment updated successfully";
 }
