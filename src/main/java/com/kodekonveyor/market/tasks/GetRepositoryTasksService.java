@@ -25,23 +25,26 @@ public class GetRepositoryTasksService {
   @Autowired
   private TaskEntityRepository taskEntityRepository;
 
-  public void call(final String repoName) throws JSONException {
+  public List<TaskEntity> call(final String repoName) throws JSONException {
 
     final JSONArray array = githubRequest.call(repoName);
 
     final List<TaskDTO> dtoList = convertJsonToDTO(array);
 
-    storeEntity(dtoList);
+    return storeEntity(dtoList);
 
   }
 
-  private void storeEntity(final List<TaskDTO> dtoList) {
+  private List<TaskEntity> storeEntity(final List<TaskDTO> dtoList) {
+    final List<TaskEntity> entityList = new ArrayList<>();
     for (final TaskDTO taskDTO : dtoList)
-      dtoToEntity(taskDTO);
+      entityList.add(dtoToEntity(taskDTO));
+    taskEntityRepository.saveAll(entityList);
+    return entityList;
 
   }
 
-  private void dtoToEntity(final TaskDTO taskDTO) {
+  private TaskEntity dtoToEntity(final TaskDTO taskDTO) {
     final TaskEntity entity = new TaskEntity();
     final MarketUserEntity responsible =
         marketUserEntityRepository.findById(taskDTO.getMarketUser()).get();
@@ -52,9 +55,9 @@ public class GetRepositoryTasksService {
     entity.setId(taskDTO.getId());
     entity.setService(taskDTO.getService());
     entity.setMarketUser(responsible);
+    entity.setStatus(taskDTO.getStatus());
 
-    taskEntityRepository.save(entity);
-
+    return entity;
   }
 
   private
@@ -92,6 +95,19 @@ public class GetRepositoryTasksService {
     dto.setMarketUser(
         Long.parseLong(jsonObject.getJSONObject(GithubConstants.USER).getString(GithubConstants.ID))
     );
+    final JSONArray label =
+        jsonObject.getJSONArray(GithubConstants.LABELS);
+    if (label.isNull(0))
+      dto.setStatus(TaskStatusEnum.OPEN);
+    else {
+      final String statusName =
+          label.getJSONObject(0).getString(GithubConstants.NAME);
+
+      for (final TaskStatusEnum status : TaskStatusEnum.values())
+        if (statusName.equals(status.getValue()))
+          dto.setStatus(status);
+    }
+
     return dto;
 
   }
