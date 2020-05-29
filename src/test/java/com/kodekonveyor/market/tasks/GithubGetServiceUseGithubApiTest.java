@@ -119,21 +119,6 @@ public class GithubGetServiceUseGithubApiTest
 
   @Test
   @DisplayName(
-    "Task's status 'up for grab' extracted successfully"
-  )
-  void test9() throws JSONException {
-
-    final String status = githubRequest
-        .call(GetRepositoryTasksServiceTestData.REPO_NAME).getJSONObject(GetRepositoryTasksServiceTestData.INDEX)
-        .getJSONArray(GetRepositoryTasksServiceTestData.LABELS).getJSONObject(GetRepositoryTasksServiceTestData.INDEX).getString(GetRepositoryTasksServiceTestData.NAME);
-    assertEquals(
-        GetRepositoryTasksServiceTestData.UP_FOR_GRAB, status
-
-    );
-  }
-
-  @Test
-  @DisplayName(
     "Tasks are saved successfuly"
   )
   void test8() throws JSONException {
