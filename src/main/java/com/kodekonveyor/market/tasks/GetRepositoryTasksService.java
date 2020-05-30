@@ -46,6 +46,7 @@ public class GetRepositoryTasksService {
 
   private List<TaskEntity> storeEntity(final List<TaskDTO> dtoList) {
     final List<TaskEntity> entityList = new ArrayList<>();
+
     final List<Long> taskIds = new ArrayList<>();
     for (final TaskDTO taskDTO : dtoList) {
       entityList.add(dtoToEntity(taskDTO));
@@ -57,6 +58,7 @@ public class GetRepositoryTasksService {
         LoggingMarkerConstants.TASK,
         TaskConstants.ENTITIES_SAVED_SUCCESSFULLY + taskIds
     );
+
     return entityList;
 
   }
