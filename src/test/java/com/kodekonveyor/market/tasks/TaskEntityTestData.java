@@ -31,4 +31,17 @@ public class TaskEntityTestData {
     return taskEntity;
   };
 
+  public static TaskEntity getTaskWithStatusUpdated() {
+    final TaskEntity taskEntity = get();
+    taskEntity.setStatus(TaskStatusEnum.IN_PROGRESS);
+    return taskEntity;
+  }
+
+  public static TaskEntity getInProgressTask() {
+    final TaskEntity taskEntity = get();
+    taskEntity.setId(TaskTestData.ID_IN_PROGRESS);
+    taskEntity.setStatus(TaskStatusEnum.IN_PROGRESS);
+    return taskEntity;
+  }
+
 }

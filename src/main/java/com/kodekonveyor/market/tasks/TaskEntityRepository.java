@@ -4,4 +4,6 @@ import org.springframework.data.repository.CrudRepository;
 
 public interface TaskEntityRepository extends CrudRepository<TaskEntity, Long> {
 
+  TaskEntity findbyId(Long Id);
+
 }
