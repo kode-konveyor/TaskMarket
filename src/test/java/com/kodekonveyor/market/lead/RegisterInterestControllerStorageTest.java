@@ -14,8 +14,6 @@ import org.mockito.quality.Strictness;
 
 import com.kodekonveyor.annotations.TestedBehaviour;
 import com.kodekonveyor.annotations.TestedService;
-import com.kodekonveyor.logging.LoggingMarkerConstants;
-import com.kodekonveyor.market.RegisterInterestControllerTestData;
 
 @ExtendWith(MockitoExtension.class)
 @MockitoSettings(strictness = Strictness.LENIENT)
@@ -56,18 +54,6 @@ public class RegisterInterestControllerStorageTest
     final LeadDTO ret =
         registerInterestController.callForUrlencoded(LeadDTOTestData.get());
     assertEquals(LeadDTOTestData.get(), ret);
-  }
-
-  @Test
-  @DisplayName("The call of the service is logged with the created entity")
-  void test3() {
-    registerInterestController.call(LeadDTOTestData.get());
-    verify(loggerService)
-        .info(
-            LoggingMarkerConstants.LEAD,
-            RegisterInterestControllerTestData.LEAD_RECEIVED +
-                LeadDTOTestData.get().toString()
-        );
   }
 
 }
