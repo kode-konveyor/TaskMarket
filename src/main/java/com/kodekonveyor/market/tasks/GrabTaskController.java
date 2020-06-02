@@ -29,7 +29,7 @@ public class GrabTaskController {
   @PutMapping(UrlMapConstants.GRAB_TASK_PATH)
   public void call(final long taskId) {
     final TaskEntity taskEntity =
-        taskEntityRepository.findbyId(taskId);
+        taskEntityRepository.findById(taskId).get();
     final UserEntity userEntity = authenticatedUserService.call();
     final MarketUserEntity marketUserEntity =
         marketUserEntityRepository.findByUser(userEntity).get();
