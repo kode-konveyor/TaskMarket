@@ -32,4 +32,6 @@ public class TaskEntity {
 
   private String service;
 
+  private TaskStatusEnum status;
+
 }

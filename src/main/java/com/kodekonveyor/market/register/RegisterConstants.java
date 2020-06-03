@@ -13,5 +13,7 @@ public class RegisterConstants {
   public static final String NO_CONTRACT_ROLE = "no contract role";
   public static final String NO_MANAGER_ROLE =
       "No manager role for the project";
+  public static final String PAYMENT_UPDATED_SUCCESSFULLY =
+      "Payment updated successfully";
 
 }

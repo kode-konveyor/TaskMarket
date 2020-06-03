@@ -1,6 +1,6 @@
 package com.kodekonveyor.market.project;
 
-import static org.junit.Assert.assertEquals;
+import static org.junit.jupiter.api.Assertions.assertEquals;
 
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.DisplayName;
@@ -14,28 +14,33 @@ import org.mockito.quality.Strictness;
 
 import com.kodekonveyor.annotations.TestedBehaviour;
 import com.kodekonveyor.annotations.TestedService;
-import com.kodekonveyor.market.register.MarketUserTestData;
 
 @ExtendWith(MockitoExtension.class)
 @MockitoSettings(strictness = Strictness.LENIENT)
 @RunWith(MockitoJUnitRunner.class)
 @TestedBehaviour("compile output")
-@TestedService("AddFundsToProjectController")
-public class AddFundsToProjectControllerCompileOutputTest
-    extends AddFundsToProjectControllerTestBase {
+@TestedService("UpdateProjectModelController")
+public class UpdateProjectModelControllerCompileOutputTest
+    extends UpdateProjectModelControllerTestBase {
 
   private ProjectDTO projectDTO;
 
   @BeforeEach
   public void setUpTest() {
-    projectDTO = addFundsToProjectController
-        .call(ProjectTestData.ID_ADD_FUNDS, MarketUserTestData.BALANCE_IN_CENTS);
+    projectDTO = updateProjectModelController
+        .call(ProjectModelDTOTestData.get(), ProjectTestData.PROJECT_NAME);
+  }
+
+  @Test
+  @DisplayName("The project details returned successfully")
+  public void test1() {
+    assertEquals(projectDTO, ProjectDTOTestData.getUrl());
   }
 
   @Test
   @DisplayName("The project details with id returned successfully")
   public void test2() {
-    assertEquals(projectDTO.getId(), ProjectDTOTestData.getAddFunds().getId());
+    assertEquals(projectDTO.getId(), ProjectDTOTestData.getUrl().getId());
   }
 
   @Test
@@ -68,5 +73,4 @@ public class AddFundsToProjectControllerCompileOutputTest
         projectDTO.getMilestone(), ProjectDTOTestData.getUrl().getMilestone()
     );
   }
-
 }
