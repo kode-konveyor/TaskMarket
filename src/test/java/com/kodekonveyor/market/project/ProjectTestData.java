@@ -33,8 +33,6 @@ public class ProjectTestData {
 
   public static final Long ID_ADD_FUNDS = 1523L;
 
-  public static final String URL = "url";
-
   public static final Long ID_BUDGET = 1525L;
 
   public static final Long BUDGET_IN_LESSER_AMOUNT = 1_000L;
