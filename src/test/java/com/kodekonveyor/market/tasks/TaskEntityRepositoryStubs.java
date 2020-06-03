@@ -14,6 +14,9 @@ public class TaskEntityRepositoryStubs {
     doReturn(Optional.of(TaskEntityTestData.getInProgressTask()))
         .when(taskEntityRepository)
         .findById(TaskTestData.ID_IN_PROGRESS);
+    doReturn(Optional.of(TaskEntityTestData.getUnassignedTask()))
+        .when(taskEntityRepository)
+        .findById(TaskTestData.ID_2);
   }
 
 }

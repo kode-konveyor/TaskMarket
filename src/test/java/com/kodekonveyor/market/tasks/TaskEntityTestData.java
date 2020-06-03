@@ -44,4 +44,11 @@ public class TaskEntityTestData {
     return taskEntity;
   }
 
+  public static TaskEntity getUnassignedTask() {
+    final TaskEntity taskEntity = get();
+    taskEntity.setId(TaskTestData.ID_2);
+    taskEntity.setMarketUser(null);
+    return taskEntity;
+  }
+
 }

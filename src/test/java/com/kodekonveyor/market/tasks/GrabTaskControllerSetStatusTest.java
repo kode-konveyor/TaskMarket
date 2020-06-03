@@ -47,7 +47,7 @@ public class GrabTaskControllerSetStatusTest
     "if the Task status is up for grab, the user is assigned for the task"
   )
   public void testUserAssigned() {
-    grabTaskController.call(TaskTestData.ID);
+    grabTaskController.call(TaskTestData.ID_2);
     final ArgumentCaptor<TaskEntity> entity1 =
         ArgumentCaptor.forClass(TaskEntity.class);
     verify(taskEntityRepository).save(entity1.capture());
