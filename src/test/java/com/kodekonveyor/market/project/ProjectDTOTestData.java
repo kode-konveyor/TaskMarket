@@ -1,10 +1,9 @@
 package com.kodekonveyor.market.project;
 
-import java.util.Set;
+import com.kodekonveyor.authentication.RoleTestData;
 
 import javax.annotation.Generated;
-
-import com.kodekonveyor.authentication.RoleTestData;
+import java.util.Set;
 
 @Generated("by zenta-tools")
 public class ProjectDTOTestData {
@@ -12,7 +11,12 @@ public class ProjectDTOTestData {
   public final static ProjectDTO get() {
     final ProjectDTO projectDTO = new ProjectDTO();
     projectDTO.setId(ProjectTestData.ID);
-    projectDTO.setRole(Set.of(RoleTestData.ID));
+    projectDTO.setRole(
+            Set.of(
+                    RoleTestData.ID,
+                    RoleTestData.ID_PROJECT_MANAGER
+            )
+    );
     projectDTO.setMilestone(Set.of(MilestoneTestData.ID));
     projectDTO.setPullRequest(Set.of(PullRequestTestData.ID));
     projectDTO.setName(ProjectTestData.NAME);

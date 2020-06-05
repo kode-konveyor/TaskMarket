@@ -1,12 +1,11 @@
 package com.kodekonveyor.market.project;
 
-import java.util.HashSet;
-import java.util.Set;
-
-import javax.annotation.Generated;
-
 import com.kodekonveyor.authentication.RoleEntityTestData;
 import com.kodekonveyor.market.register.MarketUserTestData;
+
+import javax.annotation.Generated;
+import java.util.HashSet;
+import java.util.Set;
 
 @Generated("by zenta-tools")
 public class ProjectEntityTestData {
@@ -14,7 +13,12 @@ public class ProjectEntityTestData {
   public final static ProjectEntity get() {
     final ProjectEntity projectEntity = new ProjectEntity();
     projectEntity.setId(ProjectTestData.ID);
-    projectEntity.setRole(Set.of(RoleEntityTestData.get()));
+    projectEntity.setRole(
+            Set.of(
+                    RoleEntityTestData.get(),
+                    RoleEntityTestData.getNameProjectManager()
+            )
+    );
     projectEntity.setMilestone(Set.of(MilestoneEntityTestData.get()));
     projectEntity.setName(ProjectTestData.NAME);
     projectEntity.setBudgetInCents(ProjectTestData.BUDGET_IN_CENTS);
