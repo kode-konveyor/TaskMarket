@@ -1,6 +1,5 @@
 package com.kodekonveyor.market.register;
 
-import java.util.HashSet;
 import java.util.Optional;
 import java.util.stream.Collectors;
 
@@ -32,21 +31,22 @@ public class ShowUserController {
 
     final Optional<MarketUserEntity> entityP =
         marketUserEntityRepository.findByUser(userEntity);
+
+    return entityP.map(this::copyEntityToDTO)
+        .orElse(createDTOFromUserEntity(userEntity));
+  }
+
+  private MarketUserDTO createDTOFromUserEntity(final UserEntity userEntity) {
     final MarketUserDTO marketUserDTO = new MarketUserDTO();
-    MarketUserEntity entity;
-    if (entityP.isEmpty()) {
-      entity = new MarketUserEntity();
-      entity.setUser(userEntity);
-      marketUserEntityRepository.save(entity);
-    } else
-      entity = entityP.get();
-    copyEntityToDTO(entity, marketUserDTO);
+    marketUserDTO.setUser(userEntity.getId());
+    marketUserDTO.setLogin(userEntity.getLogin());
     return marketUserDTO;
   }
 
-  private void copyEntityToDTO(
-      final MarketUserEntity entity, final MarketUserDTO marketUserDTO
+  private MarketUserDTO copyEntityToDTO(
+      final MarketUserEntity entity
   ) {
+    final MarketUserDTO marketUserDTO = new MarketUserDTO();
     marketUserDTO.setId(entity.getId());
     marketUserDTO.setPersonalName(entity.getPersonalName());
     marketUserDTO.setLegalName(entity.getLegalName());
@@ -55,14 +55,12 @@ public class ShowUserController {
     marketUserDTO.setIsTermsAccepted(entity.getIsTermsAccepted());
     marketUserDTO.setLegalAddress(entity.getLegalAddress());
     marketUserDTO.setUser(entity.getUser().getId());
-    if (entity.getLegalForm() != null)
-      marketUserDTO.setLegalForm(entity.getLegalForm().getId());
-    if (entity.getPaymentDetail() == null)
-      marketUserDTO.setPaymentDetail(new HashSet<>());
-    else
-      marketUserDTO
-          .setPaymentDetail(
-              entity.getPaymentDetail().stream().map(PaymentDetailEntity::getId).collect(Collectors.toSet())
-          );
+    marketUserDTO.setLogin(entity.getUser().getLogin());
+    marketUserDTO.setLegalForm(entity.getLegalForm().getId());
+    marketUserDTO
+        .setPaymentDetail(
+            entity.getPaymentDetail().stream().map(PaymentDetailEntity::getId).collect(Collectors.toSet())
+        );
+    return marketUserDTO;
   }
 }
