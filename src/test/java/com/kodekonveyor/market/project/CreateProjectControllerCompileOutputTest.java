@@ -15,6 +15,8 @@ import com.kodekonveyor.annotations.TestedBehaviour;
 import com.kodekonveyor.annotations.TestedService;
 import com.kodekonveyor.authentication.AuthenticatedUserServiceStubs;
 import com.kodekonveyor.market.register.MarketUserEntityRepositoryStubs;
+import com.kodekonveyor.market.register.MarketUserEntityTestData;
+import com.kodekonveyor.market.register.MarketUserTestData;
 
 @ExtendWith(MockitoExtension.class)
 @MockitoSettings(strictness = Strictness.LENIENT)
@@ -30,6 +32,7 @@ public class CreateProjectControllerCompileOutputTest
     AuthenticatedUserServiceStubs.projectManager(authenticatedUserService);
     MarketUserEntityRepositoryStubs
         .userBalanceMoreThanBudget(marketUserEntityRepository);
+    createProjectController.call(ProjectDTOTestData.get());
     assertEquals(
         ProjectTestData.ID, createProjectController
             .call(ProjectDTOTestData.get()).getId()
@@ -42,9 +45,9 @@ public class CreateProjectControllerCompileOutputTest
     AuthenticatedUserServiceStubs.projectManager(authenticatedUserService);
     MarketUserEntityRepositoryStubs
         .userBalanceMoreThanBudget(marketUserEntityRepository);
-    createProjectController.call(ProjectDTOTestData.get());
     assertEquals(
-        ProjectEntityTestData.get().getName(), ProjectTestData.NAME
+        ProjectTestData.NAME,
+        createProjectController.call(ProjectDTOTestData.get()).getName()
     );
   }
 
@@ -52,13 +55,28 @@ public class CreateProjectControllerCompileOutputTest
   @DisplayName("The controller returns project successfully")
   void test3() {
     AuthenticatedUserServiceStubs.projectManager(authenticatedUserService);
-    MarketUserEntityRepositoryStubs
-        .userBalanceMoreThanBudget(marketUserEntityRepository);
     final ProjectDTO ret =
         createProjectController.call(ProjectDTOTestData.get());
     assertEquals(
 
         ret, ProjectDTOTestData.get()
+    );
+  }
+
+  @Test
+  @DisplayName(
+    "After budget manipulations, Market users updated balance is saved successfully"
+  )
+  public void test5() {
+    AuthenticatedUserServiceStubs.projectManager(authenticatedUserService);
+    MarketUserEntityRepositoryStubs
+        .userBalanceMoreThanBudget(marketUserEntityRepository);
+    createProjectController
+        .call(ProjectDTOTestData.get());
+    assertEquals(
+        MarketUserTestData.USER_BALANCE_AFTER_DEDUCTION,
+        MarketUserEntityTestData.getBalanceUpdatedMarketUser()
+            .getBalanceInCents()
     );
   }
 }

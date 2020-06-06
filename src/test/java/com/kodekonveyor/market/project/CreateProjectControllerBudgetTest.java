@@ -1,7 +1,5 @@
 package com.kodekonveyor.market.project;
 
-import static org.junit.jupiter.api.Assertions.assertEquals;
-
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.extension.ExtendWith;
@@ -18,7 +16,6 @@ import com.kodekonveyor.authentication.AuthenticatedUserServiceStubs;
 import com.kodekonveyor.exception.ThrowableTester;
 import com.kodekonveyor.market.register.MarketUserEntityRepositoryStubs;
 import com.kodekonveyor.market.register.MarketUserEntityTestData;
-import com.kodekonveyor.market.register.MarketUserTestData;
 
 @ExtendWith(MockitoExtension.class)
 @MockitoSettings(strictness = Strictness.LENIENT)
@@ -85,23 +82,6 @@ public class CreateProjectControllerBudgetTest
     createProjectController.call(ProjectDTOTestData.get());
     Mockito.verify(marketUserEntityRepository)
         .save(MarketUserEntityTestData.getBalanceUpdatedMarketUser());
-  }
-
-  @Test
-  @DisplayName(
-    "After budget manipulations, Market users updated balance is saved successfully"
-  )
-  public void test5() {
-    AuthenticatedUserServiceStubs.projectManager(authenticatedUserService);
-    MarketUserEntityRepositoryStubs
-        .userBalanceMoreThanBudget(marketUserEntityRepository);
-    createProjectController
-        .call(ProjectDTOTestData.get());
-    assertEquals(
-        MarketUserTestData.USER_BALANCE_AFTER_DEDUCTION,
-        MarketUserEntityTestData.getBalanceUpdatedMarketUser()
-            .getBalanceInCents()
-    );
   }
 
 }
