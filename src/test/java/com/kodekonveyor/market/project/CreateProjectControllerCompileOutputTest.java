@@ -32,10 +32,10 @@ public class CreateProjectControllerCompileOutputTest
     AuthenticatedUserServiceStubs.projectManager(authenticatedUserService);
     MarketUserEntityRepositoryStubs
         .userBalanceMoreThanBudget(marketUserEntityRepository);
-    createProjectController.call(ProjectDTOTestData.get());
+    final ProjectDTO ret =
+        createProjectController.call(ProjectDTOTestData.get());
     assertEquals(
-        ProjectTestData.ID, createProjectController
-            .call(ProjectDTOTestData.get()).getId()
+        ProjectTestData.ID, ret.getId()
     );
   }
 
@@ -45,6 +45,7 @@ public class CreateProjectControllerCompileOutputTest
     AuthenticatedUserServiceStubs.projectManager(authenticatedUserService);
     MarketUserEntityRepositoryStubs
         .userBalanceMoreThanBudget(marketUserEntityRepository);
+
     assertEquals(
         ProjectTestData.NAME,
         createProjectController.call(ProjectDTOTestData.get()).getName()
@@ -55,6 +56,8 @@ public class CreateProjectControllerCompileOutputTest
   @DisplayName("The controller returns project successfully")
   void test3() {
     AuthenticatedUserServiceStubs.projectManager(authenticatedUserService);
+    MarketUserEntityRepositoryStubs
+        .userBalanceMoreThanBudget(marketUserEntityRepository);
     final ProjectDTO ret =
         createProjectController.call(ProjectDTOTestData.get());
     assertEquals(
