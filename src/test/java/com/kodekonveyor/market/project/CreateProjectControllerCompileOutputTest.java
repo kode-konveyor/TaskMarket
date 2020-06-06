@@ -14,6 +14,7 @@ import org.mockito.quality.Strictness;
 import com.kodekonveyor.annotations.TestedBehaviour;
 import com.kodekonveyor.annotations.TestedService;
 import com.kodekonveyor.authentication.AuthenticatedUserServiceStubs;
+import com.kodekonveyor.market.register.MarketUserEntityRepositoryStubs;
 
 @ExtendWith(MockitoExtension.class)
 @MockitoSettings(strictness = Strictness.LENIENT)
@@ -27,7 +28,8 @@ public class CreateProjectControllerCompileOutputTest
   @DisplayName("The project id is returned successfully")
   public void test() {
     AuthenticatedUserServiceStubs.projectManager(authenticatedUserService);
-    createProjectController.call(ProjectDTOTestData.get());
+    MarketUserEntityRepositoryStubs
+        .userBalanceMoreThanBudget(marketUserEntityRepository);
     assertEquals(
         ProjectTestData.ID, createProjectController
             .call(ProjectDTOTestData.get()).getId()
@@ -38,6 +40,8 @@ public class CreateProjectControllerCompileOutputTest
   @DisplayName("The project name is returned successfully")
   public void test1() {
     AuthenticatedUserServiceStubs.projectManager(authenticatedUserService);
+    MarketUserEntityRepositoryStubs
+        .userBalanceMoreThanBudget(marketUserEntityRepository);
     createProjectController.call(ProjectDTOTestData.get());
     assertEquals(
         ProjectEntityTestData.get().getName(), ProjectTestData.NAME
@@ -48,6 +52,8 @@ public class CreateProjectControllerCompileOutputTest
   @DisplayName("The controller returns project successfully")
   void test3() {
     AuthenticatedUserServiceStubs.projectManager(authenticatedUserService);
+    MarketUserEntityRepositoryStubs
+        .userBalanceMoreThanBudget(marketUserEntityRepository);
     final ProjectDTO ret =
         createProjectController.call(ProjectDTOTestData.get());
     assertEquals(
