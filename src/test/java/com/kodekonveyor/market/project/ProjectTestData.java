@@ -49,4 +49,11 @@ public class ProjectTestData {
 
   public static final String PROJECT_ID_NON_POSITIVE_EXCEPTION =
       "Project Id can only have positive values";
+
+  public static final String SUCCESSFUL_PROJECT_ID_VALIDATION =
+      "Project Id is validated successfully Id : ";
+
+  public static final String PROJECT_DTO_RETURNED_SUCCESSFULLY =
+      "Project DTO returned successfully Id : ";
+
 }

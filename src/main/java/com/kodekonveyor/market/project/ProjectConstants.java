@@ -11,4 +11,8 @@ public class ProjectConstants {
   public static final String INVALID_BUDGET_AMOUNT =
       "Invalid budget amount";
   public static final String COMMA = ",";
+  public static final String SUCCESSFUL_PROJECT_ID_VALIDATION =
+      "Project Id is validated successfully Id : ";
+  public static final String PROJECT_DTO_RETURNED_SUCCESSFULLY =
+      "Project DTO returned successfully Id : ";
 }
