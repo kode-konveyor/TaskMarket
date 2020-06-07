@@ -44,7 +44,7 @@ public class AddFundsToProjectController {
     logger.debug(
         LoggingMarkerConstants.PROJECT,
         ProjectConstants.SUCCESSFUL_PROJECT_ID_VALIDATION +
-            String.valueOf(projectId)
+            projectId
     );
 
     final ProjectEntity project =
