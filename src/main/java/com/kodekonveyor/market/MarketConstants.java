@@ -81,4 +81,8 @@ public class MarketConstants {
 
   public static final long ZERO = 0;
 
+  public static final long DAYS_UNTIL_UNGRAB = 4;
+
+  public static final long DAYS_UNTIL_UNGRAB_PULL_REQUEST = 3;
+
 }
