@@ -37,21 +37,11 @@ public class ShowUserControllerShowHerDataTest
   )
   public void test2() {
     AuthenticatedUserServiceStubs
-        .authenticatedInNullDatabase(authenticatedUserService);
+        .unregistered(authenticatedUserService);
     assertEquals(
-        MarketUserDTOTestData.getIdNotInNullDatabase(),
+        MarketUserDTOTestData.getIdNotInDatabase(),
         showUserController.call()
     );
   }
 
-  @Test
-  @DisplayName("If there is no MarketUserEntity for the user, it is created")
-  public void test1() {
-    AuthenticatedUserServiceStubs.unregistered(authenticatedUserService);
-    final MarketUserDTO result = showUserController.call();
-    assertEquals(
-        MarketUserDTOTestData.getIdNotInDatabase(),
-        result
-    );
-  }
 }

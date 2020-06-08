@@ -79,5 +79,7 @@ public class MarketConstants {
 
   public static final String KODE_KONVEYOR_PROJECT_NAME = "Kode Konveyor";
 
+  public static final long ZERO = 0;
+
   public static final String UNAUTHORIZED_PROJECT_MODIFICATION = "Project model can only be modified by project manager.";
 }

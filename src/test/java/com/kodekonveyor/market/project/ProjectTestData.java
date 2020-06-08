@@ -37,6 +37,8 @@ public class ProjectTestData {
 
   public static final Long BUDGET_IN_LESSER_AMOUNT = 1_000L;
 
+  public static final long NEGATIVE_ID = -1521L;
+
   public static final String USER_BALANCE_IS_LESS_THAN_THE_BUDGET =
       "User balance is less than the budget";
   public static final String BALANCE_IS_NEGATIVE = "Balance is negative";
@@ -44,4 +46,7 @@ public class ProjectTestData {
   public static final String INVALID_BUDGET_AMOUNT =
       "Invalid budget amount";
   public static final String COMMA = ",";
+
+  public static final String PROJECT_ID_NON_POSITIVE_EXCEPTION =
+      "Project Id can only have positive values";
 }
