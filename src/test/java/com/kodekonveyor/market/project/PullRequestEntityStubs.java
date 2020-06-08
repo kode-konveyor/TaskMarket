@@ -15,6 +15,10 @@ public class PullRequestEntityStubs {
       behaviour(final PullrequestEntityRepository pullrequestEntityRepository) {
     doReturn(Optional.of(PullrequestEntityTestData.get()))
         .when(pullrequestEntityRepository).findById(PullRequestTestData.ID);
+    Mockito.doReturn(
+        List.of(PullrequestEntityTestData.getPullRequestTask())
+    ).when(pullrequestEntityRepository).findAll();
+
   }
 
   public static void
@@ -29,7 +33,7 @@ public class PullRequestEntityStubs {
         .when(pullrequestEntityRepository).findByTask(TaskEntityTestData.getGrabbedForFourDays());
   }
 
-  public static void PullrequestIssued(
+  public static void PullRequestIssued(
       final PullrequestEntityRepository pullrequestEntityRepository
   ) {
     doReturn(List.of(PullrequestEntityTestData.getGrabbedOverThreeDays()))
@@ -38,16 +42,6 @@ public class PullRequestEntityStubs {
         .when(pullrequestEntityRepository).findByTask(TaskEntityTestData.getGrabbedExactlyThreeDays());
     doReturn(List.of(PullrequestEntityTestData.getGrabbedForFourDays()))
         .when(pullrequestEntityRepository).findByTask(TaskEntityTestData.getGrabbedForFourDays());
-
-  }
-
-  public static void
-      allPullRequests(
-          final PullrequestEntityRepository pullrequestEntityRepository
-      ) {
-    Mockito.doReturn(
-        List.of(PullrequestEntityTestData.getPullRequestTask())
-    ).when(pullrequestEntityRepository).findAll();
 
   }
 

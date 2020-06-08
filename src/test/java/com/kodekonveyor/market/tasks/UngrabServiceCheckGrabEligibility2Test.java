@@ -29,7 +29,7 @@ public class UngrabServiceCheckGrabEligibility2Test
   )
   void test() {
     PullRequestEntityStubs
-        .allPullRequests(pullrequestEntityRepository);
+        .behaviour(pullrequestEntityRepository);
     GithubGraphqlServiceStubs
         .successfullReviewAndCommitUnderThreeDays(githubGraphqlService);
     TaskEntityRepositoryStubs.behaviour(taskEntityRepository);
@@ -44,7 +44,7 @@ public class UngrabServiceCheckGrabEligibility2Test
   )
   void test1() {
     PullRequestEntityStubs
-        .allPullRequests(pullrequestEntityRepository);
+        .behaviour(pullrequestEntityRepository);
     GithubGraphqlServiceStubs
         .successfullReviewAndCommitEqualToFourDays(githubGraphqlService);
     TaskEntityRepositoryStubs.behaviour(taskEntityRepository);
@@ -59,7 +59,7 @@ public class UngrabServiceCheckGrabEligibility2Test
   )
   void test2() {
     PullRequestEntityStubs
-        .allPullRequests(pullrequestEntityRepository);
+        .behaviour(pullrequestEntityRepository);
     GithubGraphqlServiceStubs
         .successfullReviewAndCommitMoreThanDays(githubGraphqlService);
     TaskEntityRepositoryStubs.behaviour(taskEntityRepository);
@@ -74,7 +74,7 @@ public class UngrabServiceCheckGrabEligibility2Test
   )
   void test3() {
     PullRequestEntityStubs
-        .allPullRequests(pullrequestEntityRepository);
+        .behaviour(pullrequestEntityRepository);
     GithubGraphqlServiceStubs
         .failureCommitMoreThanThreeDays(githubGraphqlService);
     TaskEntityRepositoryStubs.behaviour(taskEntityRepository);
@@ -89,7 +89,7 @@ public class UngrabServiceCheckGrabEligibility2Test
   )
   void test4() {
     PullRequestEntityStubs
-        .allPullRequests(pullrequestEntityRepository);
+        .behaviour(pullrequestEntityRepository);
     GithubGraphqlServiceStubs
         .failureCommitEqualToFourDays(githubGraphqlService);
     TaskEntityRepositoryStubs.behaviour(taskEntityRepository);
@@ -104,7 +104,7 @@ public class UngrabServiceCheckGrabEligibility2Test
   )
   void test5() {
     PullRequestEntityStubs
-        .allPullRequests(pullrequestEntityRepository);
+        .behaviour(pullrequestEntityRepository);
     GithubGraphqlServiceStubs
         .failureCommitEqualLessThanThreeDays(githubGraphqlService);
     TaskEntityRepositoryStubs.behaviour(taskEntityRepository);
@@ -113,86 +113,4 @@ public class UngrabServiceCheckGrabEligibility2Test
         .save(TaskEntityTestData.getUngrabPullRequestIssuedtask());
   }
 
-  //  @Test
-  //  @DisplayName(
-  //    "task is ungrabbed, if the latest commit is in FAILURE state"
-  //  )
-  //  void test1() {
-  //    PullRequestEntityStubs
-  //        .allPullRequestsExactlyThreeDays(pullrequestEntityRepository);
-  //    GithubGraphqlServiceStubs
-  //        .failurePullRequestExactlyThreeDays(githubGraphqlService);
-  //    TaskEntityRepositoryStubs.grabbedExactlyThreeDaysTask(taskEntityRepository);
-  //    ungrabService.call();
-  //    Mockito.verify(taskEntityRepository)
-  //        .save(TaskEntityTestData.getUngrabExactlyThreeDaysTask());
-  //  }
-  //
-  //  @Test
-  //  @DisplayName(
-  //    "Task is ungrabed, if the latest SUCCESS commit was pushed 4 days ago and reviewed 4 days ago"
-  //  )
-  //  void test2() {
-  //    PullRequestEntityStubs
-  //        .allPullRequestsFourDaysAgo(pullrequestEntityRepository);
-  //    GithubGraphqlServiceStubs
-  //        .successfullPullRequestAndReviewFourDaysAgo(
-  //            githubGraphqlService
-  //        );
-  //    TaskEntityRepositoryStubs.getGrabbedFourDaysTask(taskEntityRepository);
-  //    ungrabService.call();
-  //    Mockito.verify(taskEntityRepository)
-  //        .save(TaskEntityTestData.getUngrabbedFourDaysTask());
-  //  }
-  //
-  //  @Test
-  //  @DisplayName(
-  //    "task is ungrabbed, if the latest commit was pushed over 3 days and the status of pull request is SUCCESS and reviewed 3 over days ago"
-  //  )
-  //  void test3() {
-  //    PullRequestEntityStubs
-  //        .allPullRequestsOverThreeDays(pullrequestEntityRepository);
-  //    GithubGraphqlServiceStubs
-  //        .successfullPullRequestAndReviewOverThreeDays(
-  //            githubGraphqlService
-  //        );
-  //    TaskEntityRepositoryStubs.getGrabbedOverThreeDays(taskEntityRepository);
-  //    ungrabService.call();
-  //    Mockito.verify(taskEntityRepository)
-  //        .save(TaskEntityTestData.getUngrabbedTask());
-  //  }
-  //
-  //  @Test
-  //  @DisplayName(
-  //    "task is ungrabbed, if there is no commit in 3 days since review"
-  //  )
-  //  void test4() {
-  //    PullRequestEntityStubs
-  //        .allPullRequestsExactlyThreeDays(pullrequestEntityRepository);
-  //    GithubGraphqlServiceStubs
-  //        .successfullCommitOverThreeeDaysAndReviewUnderThreeDays(
-  //            githubGraphqlService
-  //        );
-  //    TaskEntityRepositoryStubs.grabbedExactlyThreeDaysTask(taskEntityRepository);
-  //    ungrabService.call();
-  //    Mockito.verify(taskEntityRepository)
-  //        .save(TaskEntityTestData.getUngrabExactlyThreeDaysTask());
-  //  }
-
-  //  @Test
-  //  @DisplayName(
-  //    "task is ungrabbed, if the latest SUCCESS commit was pushed 5 days ago and reviewed 3 days ago"
-  //  )
-  //  void test5() {
-  //    PullRequestEntityStubs
-  //        .allPullRequestsOverThreeDays(pullrequestEntityRepository);
-  //    GithubGraphqlServiceStubs
-  //        .successfullPullRequestOverThreeDaysReviewUnderThreeDays(
-  //            githubGraphqlService
-  //        );
-  //    TaskEntityRepositoryStubs.behaviour(taskEntityRepository);
-  //    ungrabService.call();
-  //    Mockito.verify(taskEntityRepository, Mockito.times(0))
-  //        .save(TaskEntityTestData.getUngrabExactlyThreeDaysTask());
-  //  }
 }

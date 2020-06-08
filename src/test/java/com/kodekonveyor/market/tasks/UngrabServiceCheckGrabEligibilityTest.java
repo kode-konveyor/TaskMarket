@@ -40,7 +40,7 @@ public class UngrabServiceCheckGrabEligibilityTest
   )
   void test1() {
     TaskEntityRepositoryStubs.grabbedOverThreeDays(taskEntityRepository);
-    PullRequestEntityStubs.PullrequestIssued(pullrequestEntityRepository);
+    PullRequestEntityStubs.PullRequestIssued(pullrequestEntityRepository);
     ungrabService.call();
     Mockito.verify(taskEntityRepository, Mockito.times(0))
         .save(TaskEntityTestData.getUngrabbedTask());
@@ -64,7 +64,7 @@ public class UngrabServiceCheckGrabEligibilityTest
   )
   void test3() {
     TaskEntityRepositoryStubs.grabbedExactlyThreeDays(taskEntityRepository);
-    PullRequestEntityStubs.PullrequestIssued(pullrequestEntityRepository);
+    PullRequestEntityStubs.PullRequestIssued(pullrequestEntityRepository);
     ungrabService.call();
     Mockito.verify(taskEntityRepository, Mockito.times(0))
         .save(TaskEntityTestData.getUngrabbedTask());
@@ -88,7 +88,7 @@ public class UngrabServiceCheckGrabEligibilityTest
   )
   void test5() {
     TaskEntityRepositoryStubs.grabbedForFourDays(taskEntityRepository);
-    PullRequestEntityStubs.PullrequestIssued(pullrequestEntityRepository);
+    PullRequestEntityStubs.PullRequestIssued(pullrequestEntityRepository);
     ungrabService.call();
     Mockito.verify(taskEntityRepository, Mockito.times(0))
         .save(TaskEntityTestData.getUngrabbedFourDaysTask());
