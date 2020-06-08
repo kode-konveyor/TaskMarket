@@ -5,8 +5,6 @@ import static org.mockito.Mockito.doReturn;
 import java.util.List;
 import java.util.Optional;
 
-import org.mockito.Mockito;
-
 import com.kodekonveyor.market.tasks.TaskEntityTestData;
 
 public class PullRequestEntityStubs {
@@ -15,7 +13,7 @@ public class PullRequestEntityStubs {
       behaviour(final PullrequestEntityRepository pullrequestEntityRepository) {
     doReturn(Optional.of(PullrequestEntityTestData.get()))
         .when(pullrequestEntityRepository).findById(PullRequestTestData.ID);
-    Mockito.doReturn(
+    doReturn(
         List.of(PullrequestEntityTestData.getPullRequestTask())
     ).when(pullrequestEntityRepository).findAll();
 
@@ -33,7 +31,7 @@ public class PullRequestEntityStubs {
         .when(pullrequestEntityRepository).findByTask(TaskEntityTestData.getGrabbedForFourDays());
   }
 
-  public static void PullRequestIssued(
+  public static void pullRequestIssued(
       final PullrequestEntityRepository pullrequestEntityRepository
   ) {
     doReturn(List.of(PullrequestEntityTestData.getGrabbedOverThreeDays()))
