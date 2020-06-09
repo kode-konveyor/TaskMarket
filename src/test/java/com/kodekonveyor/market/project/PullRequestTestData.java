@@ -3,7 +3,7 @@ package com.kodekonveyor.market.project;
 import javax.annotation.Generated;
 
 @Generated("by zenta-tools")
-public class PullrequestTestData {
+public class PullRequestTestData {
 
   public final static Long ID = 1984L;
 

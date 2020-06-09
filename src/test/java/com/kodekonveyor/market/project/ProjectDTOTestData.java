@@ -14,7 +14,7 @@ public class ProjectDTOTestData {
     projectDTO.setId(ProjectTestData.ID);
     projectDTO.setRole(Set.of(RoleTestData.ID));
     projectDTO.setMilestone(Set.of(MilestoneTestData.ID));
-    projectDTO.setPullRequest(Set.of(PullrequestTestData.ID));
+    projectDTO.setPullRequest(Set.of(PullRequestTestData.ID));
     projectDTO.setName(ProjectTestData.NAME);
     projectDTO.setBudgetInCents(ProjectTestData.BUDGET_IN_CENTS);
     projectDTO.setIsPublic(ProjectTestData.IS_PUBLIC);

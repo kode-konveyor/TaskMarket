@@ -6,7 +6,7 @@ import lombok.Data;
 
 @Generated("by zenta-tools")
 @Data
-public class PullrequestDTO {
+public class PullRequestDTO {
 
   private Long id;
   private Boolean isAccepted;

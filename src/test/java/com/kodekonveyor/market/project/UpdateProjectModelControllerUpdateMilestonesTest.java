@@ -31,7 +31,7 @@ public class UpdateProjectModelControllerUpdateMilestonesTest
     updateProjectModelController
         .call(ProjectModelDTOTestData.get(), ProjectTestData.NAME);
     Mockito.verify(projectEntityRepository)
-        .save(ProjectEntityTestData.getNullId());
+        .save(ProjectEntityTestData.getNullIdWithUrlAndPullRequest());
   }
 
   @Test

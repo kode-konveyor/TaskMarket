@@ -10,6 +10,7 @@ import org.springframework.web.bind.annotation.RestController;
 import com.kodekonveyor.authentication.AuthenticatedUserService;
 import com.kodekonveyor.authentication.RoleEntity;
 import com.kodekonveyor.authentication.UserEntity;
+import com.kodekonveyor.market.MarketConstants;
 import com.kodekonveyor.market.UrlMapConstants;
 import com.kodekonveyor.market.ValidationException;
 import com.kodekonveyor.market.register.MarketUserEntity;
@@ -29,6 +30,7 @@ public class AddFundsToProjectController {
 
   @PutMapping(UrlMapConstants.PROJECT_BUDGET_PATH)
   public ProjectDTO call(final long projectId, final long budgetInCents) {
+    inputValidation(projectId);
     final ProjectEntity project =
         projectEntityRepository
             .findById(projectId).get();
@@ -57,6 +59,14 @@ public class AddFundsToProjectController {
         project.getRole().stream().map(RoleEntity::getId).collect(Collectors.toSet())
     );
     return projectDTO;
+  }
+
+  private void inputValidation(final Long projectId) {
+    if (projectId <= MarketConstants.ZERO)
+      throw new ValidationException(
+          MarketConstants.PROJECT_ID_NON_POSITIVE_EXCEPTION
+      );
+
   }
 
   private void

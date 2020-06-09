@@ -36,7 +36,7 @@ public class CreateProjectControllerTestBase {
   void setUp() {
     ProjectEntityRepositoryStubs.behaviour(projectEntityRepository);
     MilestoneEntityRepositoryStubs.behaviour(milestoneEntityRepository);
-    PullrequestEntityStubs.behaviour(pullrequestEntityRepository);
+    PullRequestEntityStubs.behaviour(pullrequestEntityRepository);
     RoleEntityRepositoryStubs.behaviour(roleEntityRepository);
   }
 

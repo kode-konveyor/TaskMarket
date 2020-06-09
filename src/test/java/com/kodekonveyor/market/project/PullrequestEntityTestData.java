@@ -9,10 +9,10 @@ public class PullrequestEntityTestData {
 
   public final static PullRequestEntity get() {
     final PullRequestEntity pullrequestEntity = new PullRequestEntity();
-    pullrequestEntity.setId(PullrequestTestData.ID);
+    pullrequestEntity.setId(PullRequestTestData.ID);
     pullrequestEntity.setTask(TaskEntityTestData.get());
-    pullrequestEntity.setIsAccepted(PullrequestTestData.IS_ACCEPTED);
-    pullrequestEntity.setReference(PullrequestTestData.REFERENCE);
+    pullrequestEntity.setIsAccepted(PullRequestTestData.IS_ACCEPTED);
+    pullrequestEntity.setReference(PullRequestTestData.REFERENCE);
 
     return pullrequestEntity;
   };
