@@ -71,7 +71,7 @@ public class ProjectDTOTestData {
     dto.setUrl(ProjectTestData.URL);
     dto.setDescription(ProjectTestData.DESCRIPTION);
     dto.setProjectId(ProjectTestData.PROJECT_ID);
-    dto.setPullRequest(Set.of(PullrequestDTOTestData.get().getId()));
+    dto.setPullRequest(Set.of(PullRequestDTOTestData.get().getId()));
     return dto;
   }
 
