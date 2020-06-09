@@ -75,7 +75,7 @@ public class GrabTaskController {
   private void callUpForGrabService(final TaskEntity taskEntity) {
 
     final MilestoneEntity milestoneEntity =
-        milestoneEntityRepository.findByTaskEntity(taskEntity).get();
+        milestoneEntityRepository.findByTask(taskEntity).get();
     final ProjectEntity projectEntity =
         projectEntityRepository.findByMilestone(milestoneEntity).get();
     final ProjectDTO projectDTO = convertToDTO(projectEntity);

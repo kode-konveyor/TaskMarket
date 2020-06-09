@@ -18,11 +18,11 @@ public class MilestoneEntityRepositoryStubs {
     ).findAllById(Set.of(MilestoneTestData.ID));
     doReturn(Optional.of(MilestoneEntityTestData.get())).when(
         milestoneEntityRepository
-    ).findByTaskEntity(TaskEntityTestData.getTaskWithStatusUpdated());
+    ).findByTask(TaskEntityTestData.getTaskWithStatusUpdated());
 
     doReturn(Optional.of(MilestoneEntityTestData.getOtherMilestone())).when(
         milestoneEntityRepository
-    ).findByTaskEntity(TaskEntityTestData.getAssignedTask());
+    ).findByTask(TaskEntityTestData.getAssignedTask());
   }
 
 }
