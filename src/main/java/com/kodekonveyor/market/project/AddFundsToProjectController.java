@@ -41,12 +41,6 @@ public class AddFundsToProjectController {
 
     inputValidation(projectId);
 
-    logger.debug(
-        LoggingMarkerConstants.PROJECT,
-        ProjectConstants.SUCCESSFUL_PROJECT_ID_VALIDATION +
-            projectId
-    );
-
     final ProjectEntity project =
         projectEntityRepository
             .findById(projectId).get();

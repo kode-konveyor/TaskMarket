@@ -34,18 +34,6 @@ public class AddFundsToProjectControllerLoggingTest
   }
 
   @Test
-  @DisplayName("successful validation of project Id is logged")
-  void test1() {
-    addFundsToProjectController
-        .call(ProjectTestData.ID_ADD_FUNDS, MarketUserTestData.BALANCE_IN_CENTS);
-    Mockito.verify(logger).debug(
-        LoggingMarkerConstants.PROJECT,
-        ProjectTestData.SUCCESSFUL_PROJECT_ID_VALIDATION +
-            ProjectTestData.ID_ADD_FUNDS.toString()
-    );
-  }
-
-  @Test
   @DisplayName("return of DTO is logged")
   void test2() {
     addFundsToProjectController
