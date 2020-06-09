@@ -25,7 +25,7 @@ public class UngrabServiceCheckGrabEligibility2Test
 
   @Test
   @DisplayName(
-    "Nothing is done, if the difference between latest SUCCESSFULL commit snd review is less than 3 days"
+    "Nothing is done, if the difference between latest SUCCESSFULL commit and review is less than 3 days"
   )
   void test() {
     PullRequestEntityStubs
@@ -40,7 +40,7 @@ public class UngrabServiceCheckGrabEligibility2Test
 
   @Test
   @DisplayName(
-    "Task is ungrabbed, if the difference between latest SUCCESSFULL commit snd review is equal to 4 days"
+    "Task is ungrabbed, if the difference between latest SUCCESSFULL commit and review is equal to 4 days"
   )
   void test1() {
     PullRequestEntityStubs
@@ -55,7 +55,7 @@ public class UngrabServiceCheckGrabEligibility2Test
 
   @Test
   @DisplayName(
-    "Task is ungrabbed, if the difference between latest SUCCESSFULL commit snd review is more than 3 days"
+    "Task is ungrabbed, if the difference between latest SUCCESSFULL commit and review is more than 3 days"
   )
   void test2() {
     PullRequestEntityStubs
@@ -71,21 +71,6 @@ public class UngrabServiceCheckGrabEligibility2Test
   @Test
   @DisplayName(
     "Task is ungrabbed, if commit is in FAiLURE state for more than 3 days"
-  )
-  void test3() {
-    PullRequestEntityStubs
-        .behaviour(pullrequestEntityRepository);
-    GithubGraphqlServiceStubs
-        .failureCommitMoreThanThreeDays(githubGraphqlService);
-    TaskEntityRepositoryStubs.behaviour(taskEntityRepository);
-    ungrabService.call();
-    Mockito.verify(taskEntityRepository)
-        .save(TaskEntityTestData.getUngrabPullRequestIssuedtask());
-  }
-
-  @Test
-  @DisplayName(
-    "Task is ungrabbed, if commit is in FAiLURE state for 4 days"
   )
   void test4() {
     PullRequestEntityStubs

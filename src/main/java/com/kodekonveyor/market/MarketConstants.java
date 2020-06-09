@@ -85,4 +85,7 @@ public class MarketConstants {
 
   public static final long DAYS_UNTIL_UNGRAB_PULL_REQUEST = 3;
 
+  public static final String MARKET_USER_RETURNED_SUCCESSFULLY =
+      "Market user returned succssfully. Entity Id : ";
+
 }
