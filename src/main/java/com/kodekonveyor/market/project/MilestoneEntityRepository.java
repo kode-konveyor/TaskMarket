@@ -9,6 +9,6 @@ import com.kodekonveyor.market.tasks.TaskEntity;
 public interface MilestoneEntityRepository
     extends CrudRepository<MilestoneEntity, Long> {
 
-  Optional<MilestoneEntity> findByTaskEntity(TaskEntity entity);
+  Optional<MilestoneEntity> findByTask(TaskEntity entity);
 
 }
