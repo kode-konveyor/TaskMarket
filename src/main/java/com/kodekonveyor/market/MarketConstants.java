@@ -81,4 +81,7 @@ public class MarketConstants {
 
   public static final long ZERO = 0;
 
+  public static final String MARKET_USER_RETURNED_SUCCESSFULLY =
+      "Market user returned succssfully. Entity Id : ";
+
 }
