@@ -51,4 +51,11 @@ public class TaskEntityTestData {
     return taskEntity;
   }
 
+  public static TaskEntity getAssignedTask() {
+    final TaskEntity taskEntity = get();
+    taskEntity.setId(TaskTestData.ID_2);
+    taskEntity.setMarketUser(MarketUserEntityTestData.get());
+    taskEntity.setStatus(TaskStatusEnum.IN_PROGRESS);
+    return taskEntity;
+  }
 }

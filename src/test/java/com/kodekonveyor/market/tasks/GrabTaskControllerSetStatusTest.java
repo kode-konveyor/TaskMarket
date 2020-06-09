@@ -16,6 +16,7 @@ import org.mockito.quality.Strictness;
 import com.kodekonveyor.annotations.TestedBehaviour;
 import com.kodekonveyor.annotations.TestedService;
 import com.kodekonveyor.exception.ThrowableTester;
+import com.kodekonveyor.market.project.ProjectDTOTestData;
 import com.kodekonveyor.market.register.MarketUserEntityTestData;
 
 @ExtendWith(MockitoExtension.class)
@@ -85,6 +86,16 @@ public class GrabTaskControllerSetStatusTest
     ThrowableTester.assertThrows(
         () -> grabTaskController.call(TaskTestData.ID_IN_PROGRESS)
     ).assertMessageIs(TaskTestData.TASK_NOT_UP_FOR_GRAB);
+  }
+
+  @Test
+  @DisplayName(
+    "Check number of up for grab tasks in the project"
+  )
+  public void testUpForGrabServiceCall() {
+    grabTaskController.call(TaskTestData.ID);
+    verify(checkUpforgrabTasksService)
+        .call(ProjectDTOTestData.getUrlAndPullRequest());
   }
 
 }

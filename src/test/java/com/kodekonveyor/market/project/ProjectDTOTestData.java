@@ -66,4 +66,13 @@ public class ProjectDTOTestData {
     return projectDTO;
   };
 
+  public static ProjectDTO getUrlAndPullRequest() {
+    final ProjectDTO dto = get();
+    dto.setUrl(ProjectTestData.URL);
+    dto.setDescription(ProjectTestData.DESCRIPTION);
+    dto.setProjectId(ProjectTestData.PROJECT_ID);
+    dto.setPullRequest(Set.of(PullrequestDTOTestData.get().getId()));
+    return dto;
+  }
+
 }
