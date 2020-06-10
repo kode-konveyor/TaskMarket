@@ -5,7 +5,7 @@ import org.springframework.stereotype.Service;
 import com.kodekonveyor.annotations.ExcludeFromCodeCoverage;
 import com.kodekonveyor.market.project.ProjectDTO;
 
-@ExcludeFromCodeCoverage(value = "Implementation is TBD")
+@ExcludeFromCodeCoverage("Implementation is TBD")
 @Service
 public class CheckUpforgrabTasksService {
 

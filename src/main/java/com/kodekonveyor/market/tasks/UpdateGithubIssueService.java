@@ -4,7 +4,7 @@ import org.springframework.stereotype.Service;
 
 import com.kodekonveyor.annotations.ExcludeFromCodeCoverage;
 
-@ExcludeFromCodeCoverage(value = "Implementation of this part is TBD")
+@ExcludeFromCodeCoverage("Implementation of this part is TBD")
 @Service
 public class UpdateGithubIssueService {
 
