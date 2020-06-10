@@ -100,7 +100,7 @@ public class GrabTaskController {
   private void copyPullRequests(
       final ProjectEntity projectEntity, final ProjectDTO dto
   ) {
-    final Set<Long> pullRequestIds = new HashSet<Long>();
+    final Set<Long> pullRequestIds = new HashSet<>();
     if (projectEntity.getPullRequest() != null) {
       for (final PullRequestEntity entity : projectEntity.getPullRequest())
         pullRequestIds.add(entity.getId());
@@ -111,7 +111,7 @@ public class GrabTaskController {
   private void copyRoles(
       final ProjectEntity projectEntity, final ProjectDTO projectDTO
   ) {
-    final Set<Long> roleIds = new HashSet<Long>();
+    final Set<Long> roleIds = new HashSet<>();
     for (final RoleEntity role : projectEntity.getRole())
       roleIds.add(role.getId());
 
@@ -121,7 +121,7 @@ public class GrabTaskController {
   private void copyMilestones(
       final ProjectEntity projectEntity, final ProjectDTO projectDTO
   ) {
-    final Set<Long> milestoneIds = new HashSet<Long>();
+    final Set<Long> milestoneIds = new HashSet<>();
     for (final MilestoneEntity milestone : projectEntity.getMilestone())
       milestoneIds.add(milestone.getId());
 
