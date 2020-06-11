@@ -98,8 +98,6 @@ public class MarketUserEntityTestData {
     return marketUserEntity;
   }
 
-
-
   public static MarketUserEntity getLessBalance() {
     final MarketUserEntity marketUserEntity = get();
     marketUserEntity.setBalanceInCents(MarketUserTestData.LESS_BALANCE);
@@ -119,4 +117,31 @@ public class MarketUserEntityTestData {
     );
     return marketUserEntity;
   }
+
+  public static MarketUserEntity getRoleProjectManager() {
+    final MarketUserEntity marketUserEntity = get();
+    marketUserEntity.setUser(UserEntityTestData.getRoleProjectManager());
+    return marketUserEntity;
+  }
+
+  public static MarketUserEntity getBalanceUpdatedMarketUser() {
+    final MarketUserEntity marketUserEntity = getRoleProjectManager();
+    marketUserEntity
+        .setBalanceInCents(MarketUserTestData.USER_BALANCE_AFTER_DEDUCTION);
+    return marketUserEntity;
+  }
+
+  public static Object getRoleProjectManagerEqualBudget() {
+    final MarketUserEntity marketUserEntity = getRoleProjectManager();
+    marketUserEntity.setBalanceInCents(MarketUserTestData.BUDGET_IN_CENTS);
+    return marketUserEntity;
+  }
+
+  public static Object getRoleProjectManagerMoreThanBudget() {
+    final MarketUserEntity marketUserEntity = getRoleProjectManager();
+    marketUserEntity
+        .setBalanceInCents(MarketUserTestData.BALANCE_MORE_THAN_BUDGET);
+    return marketUserEntity;
+  }
+
 }

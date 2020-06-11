@@ -19,6 +19,8 @@ import com.kodekonveyor.market.UnauthorizedException;
 import com.kodekonveyor.market.UrlMapConstants;
 import com.kodekonveyor.market.ValidationException;
 import com.kodekonveyor.market.lead.CheckRoleUtil;
+import com.kodekonveyor.market.register.MarketUserEntity;
+import com.kodekonveyor.market.register.MarketUserEntityRepository;
 
 @RestController
 public class CreateProjectController {
@@ -41,6 +43,9 @@ public class CreateProjectController {
   @Autowired
   PullrequestEntityRepository pullrequestEntityRepository;
 
+  @Autowired
+  MarketUserEntityRepository marketEntityRepositrory;
+
   @PostMapping(
       value = UrlMapConstants.PROJECT_PATH, consumes = "application/json"
   )
@@ -57,8 +62,25 @@ public class CreateProjectController {
 
     inputValidation(dto);
     storage(dto);
-
+    budget(user, dto);
     return dto;
+  }
+
+  private void budget(final UserEntity user, final ProjectDTO dto) {
+
+    final MarketUserEntity marketuser =
+        marketEntityRepositrory.findByUser(user).get();
+    if (marketuser.getBalanceInCents() < dto.getBudgetInCents())
+      throw new ValidationException(
+          ProjectConstants.BALANCE_LESS_THAN_USER_BUDGET
+      );
+
+    final long amount =
+        marketuser.getBalanceInCents() - dto.getBudgetInCents();
+
+    marketuser.setBalanceInCents(amount);
+    marketEntityRepositrory.save(marketuser);
+
   }
 
   @PostMapping(

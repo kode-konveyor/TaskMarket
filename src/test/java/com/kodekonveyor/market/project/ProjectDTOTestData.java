@@ -66,4 +66,22 @@ public class ProjectDTOTestData {
     return projectDTO;
   };
 
+  public static ProjectDTO getBudgetEqualToUserBalance() {
+    final ProjectDTO projectDTO = get();
+    projectDTO.setBudgetInCents(ProjectTestData.BUDGET_EQUAL_TO_USER_BALANCE);
+    return projectDTO;
+  }
+
+  public static ProjectDTO getBudgetLessThanUserBalance() {
+    final ProjectDTO projectDTO = get();
+    projectDTO.setBudgetInCents(ProjectTestData.BUDGET_LESS_THAN_USER_BALANCE);
+    return projectDTO;
+  }
+
+  public static ProjectDTO getUpdatedBudget() {
+    final ProjectDTO projectDTO = get();
+    projectDTO.setBudgetInCents(ProjectTestData.UPDATED_BUDGET);
+    return projectDTO;
+  }
+
 }
