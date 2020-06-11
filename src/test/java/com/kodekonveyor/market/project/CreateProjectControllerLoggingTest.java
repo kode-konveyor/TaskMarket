@@ -15,6 +15,7 @@ import com.kodekonveyor.annotations.TestedBehaviour;
 import com.kodekonveyor.annotations.TestedService;
 import com.kodekonveyor.authentication.AuthenticatedUserServiceStubs;
 import com.kodekonveyor.logging.LoggingMarkerConstants;
+import com.kodekonveyor.market.register.MarketUserEntityRepositoryStubs;
 
 @ExtendWith(MockitoExtension.class)
 @MockitoSettings(strictness = Strictness.LENIENT)
@@ -28,6 +29,8 @@ public class CreateProjectControllerLoggingTest
   @DisplayName("The call of the service is logged with the created entity")
   void test3() {
     AuthenticatedUserServiceStubs.projectManager(authenticatedUserService);
+    MarketUserEntityRepositoryStubs
+        .userBalanceMoreThanBudget(marketUserEntityRepository);
     createProjectController.call(ProjectDTOTestData.get());
     verify(loggerService)
         .info(

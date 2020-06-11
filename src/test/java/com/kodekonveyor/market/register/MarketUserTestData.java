@@ -47,4 +47,10 @@ public class MarketUserTestData {
 
   public static final Long NEGATIVE_BALANCE3 = -1000L;
 
+  public static final Long UPDATED_BALANCE = -999_995_758L;
+
+  public static final Long BALANCE_MORE_THAN_BUDGET = 1_000_546_000L;
+
+  public static final Long USER_BALANCE_AFTER_DEDUCTION = 546_000L;
+
 }
