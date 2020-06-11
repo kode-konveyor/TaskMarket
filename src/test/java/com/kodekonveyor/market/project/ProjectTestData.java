@@ -56,4 +56,6 @@ public class ProjectTestData {
   public static final String PROJECT_ID_NON_POSITIVE_EXCEPTION =
       "Project Id can only have positive values";
 
+  public static final String EXPECTED_AUTH_ERROR_FOR_UPDATE_PROJECT ="Project model can only be modified by project manager.";
+
 }

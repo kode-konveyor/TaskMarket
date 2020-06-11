@@ -4,7 +4,6 @@ import com.kodekonveyor.annotations.TestedBehaviour;
 import com.kodekonveyor.annotations.TestedService;
 import com.kodekonveyor.authentication.AuthenticatedUserServiceStubs;
 import com.kodekonveyor.exception.ThrowableTester;
-import com.kodekonveyor.market.MarketConstants;
 import com.kodekonveyor.market.UnauthorizedException;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
@@ -14,6 +13,8 @@ import org.mockito.junit.MockitoJUnitRunner;
 import org.mockito.junit.jupiter.MockitoExtension;
 import org.mockito.junit.jupiter.MockitoSettings;
 import org.mockito.quality.Strictness;
+
+import static com.kodekonveyor.market.project.ProjectTestData.EXPECTED_AUTH_ERROR_FOR_UPDATE_PROJECT;
 
 @ExtendWith(MockitoExtension.class)
 @MockitoSettings(strictness = Strictness.LENIENT)
@@ -47,7 +48,7 @@ public class UpdateProjectModelControllerRolesTest extends UpdateProjectModelCon
                         ProjectModelDTOTestData.get(), ProjectTestData.NAME_KODE_KONVEYOR
                 )
         )
-                .assertMessageIs(MarketConstants.UNAUTHORIZED_PROJECT_MODIFICATION);
+                .assertMessageIs(EXPECTED_AUTH_ERROR_FOR_UPDATE_PROJECT);
     }
 
     @Test
