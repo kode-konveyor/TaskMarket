@@ -14,6 +14,7 @@ import com.kodekonveyor.annotations.TestedService;
 import com.kodekonveyor.authentication.AuthenticatedUserServiceStubs;
 import com.kodekonveyor.exception.ThrowableTester;
 import com.kodekonveyor.market.UnauthorizedException;
+import com.kodekonveyor.market.register.MarketUserEntityRepositoryStubs;
 
 @ExtendWith(MockitoExtension.class)
 @MockitoSettings(strictness = Strictness.LENIENT)
@@ -49,7 +50,8 @@ public class CreateProjectControllerRolesTest
   @DisplayName("if the user has can_be_payed role, no exception is thrown")
   void test2() {
     AuthenticatedUserServiceStubs.projectManager(authenticatedUserService);
-
+    MarketUserEntityRepositoryStubs
+        .userBalanceMoreThanBudget(marketUserEntityRepository);
     ThrowableTester.assertNoException(
         () -> createProjectController.call(ProjectDTOTestData.get())
     );

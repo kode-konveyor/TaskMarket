@@ -47,6 +47,13 @@ public class ProjectTestData {
       "Invalid budget amount";
   public static final String COMMA = ",";
 
+  public static final Long BUDGET_EQUAL_TO_USER_BALANCE = 4242L;
+
+  public static final Long BUDGET_LESS_THAN_USER_BALANCE = 1000L;
+
+  public static final Long UPDATED_BUDGET = 4242L;
+
   public static final String PROJECT_ID_NON_POSITIVE_EXCEPTION =
       "Project Id can only have positive values";
+
 }

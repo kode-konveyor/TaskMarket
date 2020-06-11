@@ -13,6 +13,7 @@ import com.kodekonveyor.annotations.TestedBehaviour;
 import com.kodekonveyor.annotations.TestedService;
 import com.kodekonveyor.authentication.AuthenticatedUserServiceStubs;
 import com.kodekonveyor.exception.ThrowableTester;
+import com.kodekonveyor.market.register.MarketUserEntityRepositoryStubs;
 
 @ExtendWith(MockitoExtension.class)
 @MockitoSettings(strictness = Strictness.LENIENT)
@@ -26,6 +27,8 @@ public class CreateProjectControllerInputValidationTest
   @DisplayName("When project Id is just positive, we throw no exception")
   public void projectId1test() {
     AuthenticatedUserServiceStubs.projectManager(authenticatedUserService);
+    MarketUserEntityRepositoryStubs
+        .userBalanceMoreThanBudget(marketUserEntityRepository);
     ThrowableTester.assertNoException(
         () -> createProjectController.call(ProjectDTOTestData.getPositiveId())
     );
@@ -87,6 +90,8 @@ public class CreateProjectControllerInputValidationTest
   @DisplayName("When project parameters are valid no exception is thrown")
   public void validProjecttest() {
     AuthenticatedUserServiceStubs.projectManager(authenticatedUserService);
+    MarketUserEntityRepositoryStubs
+        .userBalanceMoreThanBudget(marketUserEntityRepository);
     ThrowableTester.assertNoException(
         () -> createProjectController.call(ProjectDTOTestData.get())
     );
