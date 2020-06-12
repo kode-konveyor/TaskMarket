@@ -15,6 +15,30 @@ public class PullrequestEntityTestData {
     pullrequestEntity.setReference(PullRequestTestData.REFERENCE);
 
     return pullrequestEntity;
-  };
+  }
+
+  public static PullRequestEntity getGrabbedOverThreeDays() {
+    final PullRequestEntity pullrequestEntity = get();
+    pullrequestEntity.setTask(TaskEntityTestData.getGrabbedOverThreeDays());
+    return pullrequestEntity;
+  }
+
+  public static PullRequestEntity getGrabbedExactlyThreeDays() {
+    final PullRequestEntity pullrequestEntity = get();
+    pullrequestEntity.setTask(TaskEntityTestData.getGrabbedExactlyThreeDays());
+    return pullrequestEntity;
+  }
+
+  public static PullRequestEntity getGrabbedForFourDays() {
+    final PullRequestEntity pullrequestEntity = get();
+    pullrequestEntity.setTask(TaskEntityTestData.getGrabbedForFourDays());
+    return pullrequestEntity;
+  }
+
+  public static PullRequestEntity getPullRequestTask() {
+    final PullRequestEntity pullrequestEntity = get();
+    pullrequestEntity.setTask(TaskEntityTestData.getPullRequestIssuedTask());
+    return pullrequestEntity;
+  }
 
 }
