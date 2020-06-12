@@ -11,5 +11,7 @@ public class TransferTypeTestData {
   public static final String ACCOUNT_ID_LABEL = "iban";
   public static final Boolean IS_BANKID_SHOWN = true;
   public static final Long ID_NONEXISTENT = 2050L;
+  public static final String TRANSFER_TYPE_DTO_RETURNED =
+      "Tranfer Type DTO retured successfully, ID : ";
 
 }
