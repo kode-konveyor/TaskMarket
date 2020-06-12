@@ -61,8 +61,9 @@ public class CheckUpforgrabTasksServiceCountTheTasksTest
 
     checkUpforgrabTasksService
         .call(ProjectDTOTestData.getMinimumForGab());
-    Mockito.verify(messageUserOnDiscordService, Mockito.times(1)).call(
-        TechnicalTestData.MESSAGE, MarketUserEntityTestData.getRoleManager()
+    Mockito.verify(messageUserOnDiscordService).call(
+        TechnicalTestData.TASKS_EQUAL_MESSAGE,
+        MarketUserEntityTestData.getRoleManager()
     );
 
   }
