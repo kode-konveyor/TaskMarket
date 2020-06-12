@@ -41,7 +41,7 @@ public class MarketConstants {
 
   public static final String KODEKONVEYOR_TECHNICAL = "technical";
 
-  public static final String MANAGER = "manager";
+  public static final String MANAGER = "kode-konveyor/TaskMarket/manager";
 
   public static final Long MINIMUM_PROJECT_ID = (long) 1;
 
@@ -87,5 +87,13 @@ public class MarketConstants {
 
   public static final String MARKET_USER_RETURNED_SUCCESSFULLY =
       "Market user returned succssfully. Entity Id : ";
+
+  public static final String UP_FOR_GRAB_TASKS_BELOW_MINIMUM_FOR_GRAB =
+      "Up for grab tasks below minimum for grab";
+
+  public static final Object PROJECT_MANAGER_ROLE =
+      "manager";
+
+  public static final String FRONT_SLASH = "/";
 
 }

@@ -2,6 +2,7 @@ package com.kodekonveyor.authentication;
 
 import static org.mockito.Mockito.doReturn;
 
+import java.util.List;
 import java.util.Optional;
 
 public class RoleEntityRepositoryStubs {
@@ -19,7 +20,9 @@ public class RoleEntityRepositoryStubs {
     doReturn(Optional.of(RoleEntityTestData.getRoleKodekonveyorContract()))
         .when(roleEntityRepository)
         .findById(RoleTestData.ID_KODEKONVEYOR_CONTRACT);
-
+    doReturn(List.of(RoleEntityTestData.getNameProjectManager()))
+        .when(roleEntityRepository)
+        .findByName(RoleTestData.NAME_PROJECT_MANAGER);
   }
 
 }

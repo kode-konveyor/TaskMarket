@@ -84,4 +84,9 @@ public class ProjectDTOTestData {
     return projectDTO;
   }
 
+  public static ProjectDTO getMinimumForGab() {
+    final ProjectDTO projectDTO = get();
+    projectDTO.setMinimumForGrab(ProjectTestData.MINIMUM_FOR_GRAB);
+    return projectDTO;
+  }
 }

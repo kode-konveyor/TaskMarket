@@ -88,4 +88,21 @@ public class TaskEntityTestData {
     return taskEntity;
   }
 
+  public static TaskEntity getTaskOne() {
+    final TaskEntity taskEntity = get();
+    taskEntity.setId(TaskTestData.ID_ONE);
+    return taskEntity;
+  }
+
+  public static TaskEntity getTaskTwo() {
+    final TaskEntity taskEntity = get();
+    taskEntity.setId(TaskTestData.ID_TWO);
+    return taskEntity;
+  }
+
+  public static TaskEntity getInProgress() {
+    final TaskEntity taskEntity = get();
+    taskEntity.setStatus(TaskStatusEnum.IN_PROGRESS);
+    return taskEntity;
+  }
 }

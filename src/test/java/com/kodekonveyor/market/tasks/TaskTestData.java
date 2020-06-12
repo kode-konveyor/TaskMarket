@@ -31,4 +31,8 @@ public class TaskTestData {
   public static final Instant DATE_FOUR_DAYS_SINCE_GRABBED =
       Instant.now().minus(4, ChronoUnit.DAYS);
 
+  public static final Long ID_ONE = 1196L;
+
+  public static final Long ID_TWO = 1999L;
+
 }
