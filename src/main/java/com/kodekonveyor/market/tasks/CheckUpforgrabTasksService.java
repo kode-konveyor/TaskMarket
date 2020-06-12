@@ -36,8 +36,6 @@ public class CheckUpforgrabTasksService {
   private RoleEntityRepository roleEntityRepository;
 
   public void call(final ProjectDTO projectDTO) {
-    final String message =
-        MarketConstants.UP_FOR_GRAB_TASKS_BELOW_MINIMUM_FOR_GRAB;
 
     final RoleEntity roleEntity =
         roleEntityRepository.findByName(
@@ -51,8 +49,14 @@ public class CheckUpforgrabTasksService {
     final MarketUserEntity marketUser =
         marketUserEntityRepository.findByUser(user).get();
 
-    if (countTheTasks(projectDTO) <= projectDTO.getMinimumForGrab())
+    if (countTheTasks(projectDTO) <= projectDTO.getMinimumForGrab()) {
+      final String message = String.format(
+          MarketConstants.UP_FOR_GRAB_TASKS_BELOW_MINIMUM_FOR_GRAB, projectDTO
+              .getName(),
+          countTheTasks(projectDTO), projectDTO.getMinimumForGrab()
+      );
       messageUserOnDiscordService.call(message, marketUser);
+    }
   }
 
   private long countTheTasks(final ProjectDTO projectDTO) {

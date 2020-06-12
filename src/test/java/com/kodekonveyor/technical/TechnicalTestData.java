@@ -20,7 +20,7 @@ public class TechnicalTestData {
   public static final String TASK_MARKET = "TaskMarket";
   public static final String KODE_KONVEYOR = "kode-konveyor";
   public static final String MESSAGE =
-      "Up for grab tasks below minimum for grab";
+      "Too low 'up for grab' tasks for project : kode-konveyor/TaskMarket . Currently 'up for grab' tasks count : 1 , the minimum count of 'up for grab' tasks required : 2";
 
   public static final String PULL_REQUEST_ANSWER =
       "{\"data\":{\"repository\":{\"pullRequest\":{\"comments\":{\"nodes\":[{\"updatedAt\":\"2020-05-09T06:20:19Z\"}]},\"reviews\":{\"nodes\":[{\"updatedAt\":\"2020-05-09T06:19:25Z\"}]},\"commits\":{\"nodes\":[{\"commit\":{\"pushedDate\":\"2020-05-09T06:13:51Z\",\"status\":{\"state\":\"SUCCESS\"}}}]}}}}}";
