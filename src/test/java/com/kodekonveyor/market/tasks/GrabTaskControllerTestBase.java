@@ -43,7 +43,7 @@ public class GrabTaskControllerTestBase {
   void setUp() {
     AuthenticatedUserServiceStubs.authenticated(authenticatedUserService);
     MarketUserEntityRepositoryStubs.behaviour(marketUserEntityRepository);
-    TaskEntityRepositoryStubs.behaviour(taskEntityRepository);
+    TaskEntityRepositoryStubs.behaviour2(taskEntityRepository);
     MilestoneEntityRepositoryStubs.behaviour(milestoneEntityRepository);
     ProjectEntityRepositoryStubs.behaviour(projectEntityRepository);
   }
