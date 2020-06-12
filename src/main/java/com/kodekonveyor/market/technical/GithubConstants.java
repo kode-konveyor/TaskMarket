@@ -71,5 +71,11 @@ public class GithubConstants {
       "$['data']['repository']['pullRequest']['reviews']['nodes'][0]['updatedAt']";
   public static final String LAST_COMMENT_DATE_QUERY =
       "$['data']['repository']['pullRequest']['comments']['nodes'][0]['updatedAt']";
+  public static final long DAILY = 246_060 * 1000;
+
+  public static final String TASK_MARKET = "TaskMarket";
+  public static final String KODE_KONVEYOR = "kode-konveyor";
+  public static final Object FAILURE = "FAILURE";
+  public static final Object SUCCESS = "SUCCESS";
 
 }

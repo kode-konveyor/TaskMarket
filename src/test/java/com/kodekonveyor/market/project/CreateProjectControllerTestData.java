@@ -11,5 +11,7 @@ public class CreateProjectControllerTestData {
   public static final String PROJECT_NAME_NULL_EXCEPTION =
       "Project name cannot be null";
   public static final String PROJECT_RECEIVED = "Project received: ";
+  public static final String BALANCE_LESS_THAN_USER_BUDGET =
+      "The user balance is less than project budget";
 
 }
