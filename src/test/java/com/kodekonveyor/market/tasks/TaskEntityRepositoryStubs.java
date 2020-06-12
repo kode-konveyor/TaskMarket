@@ -22,7 +22,7 @@ public class TaskEntityRepositoryStubs {
 
   public static void
       grabbedForFourDays(final TaskEntityRepository taskEntityRepository) {
-    Mockito.doReturn(List.of(TaskEntityTestData.getGrabbedForFourDays()))
+    doReturn(List.of(TaskEntityTestData.getGrabbedForFourDays()))
         .when(taskEntityRepository).findByStatus(TaskStatusEnum.IN_PROGRESS);
 
   }
