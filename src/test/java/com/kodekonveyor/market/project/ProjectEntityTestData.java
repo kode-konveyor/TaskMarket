@@ -14,12 +14,7 @@ public class ProjectEntityTestData {
   public final static ProjectEntity get() {
     final ProjectEntity projectEntity = new ProjectEntity();
     projectEntity.setId(ProjectTestData.ID);
-    projectEntity.setRole(
-            Set.of(
-                    RoleEntityTestData.get(),
-                    RoleEntityTestData.getNameProjectManager()
-            )
-    );
+    projectEntity.setRole(Set.of(RoleEntityTestData.get()));
     projectEntity.setMilestone(Set.of(MilestoneEntityTestData.get()));
     projectEntity.setName(ProjectTestData.NAME);
     projectEntity.setBudgetInCents(ProjectTestData.BUDGET_IN_CENTS);
