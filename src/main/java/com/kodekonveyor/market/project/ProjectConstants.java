@@ -14,4 +14,7 @@ public class ProjectConstants {
 
   public static final String BALANCE_LESS_THAN_USER_BUDGET =
       "The user balance is less than project budget";
+
+  public static final String PROJECT_DTO_RETURNED_SUCCESSFULLY =
+      "Project DTO returned successfully Id : ";
 }
