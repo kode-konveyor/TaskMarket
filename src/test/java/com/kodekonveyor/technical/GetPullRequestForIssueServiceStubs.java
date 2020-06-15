@@ -36,7 +36,7 @@ public class GetPullRequestForIssueServiceStubs {
             String.format(
                     GET_PR_GQL_RESPONSE_FORMAT,
                     " [" +
-                            " [           {" +
+                            "        {" +
                             "              \"__typename\": \"ConnectedEvent\"," +
                             "              \"subject\": {" +
                             "                \"__typename\": \"PullRequest\"," +
