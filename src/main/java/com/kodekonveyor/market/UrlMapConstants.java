@@ -15,5 +15,7 @@ public class UrlMapConstants {
       "/member/project/{projectName}/model";
   public static final String LIST_LEGAL_FORMS_PATH = "/legalform";
   public static final String PROJECT_BUDGET_PATH = "/project/budget";
+  public static final String GRAB_TASK_PATH =
+      "/member/task/{taskId}/grab";
 
 }

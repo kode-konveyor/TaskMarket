@@ -1,9 +1,13 @@
 package com.kodekonveyor.market.tasks;
 
+import static org.junit.Assert.assertNotNull;
+import static org.mockito.Mockito.verify;
+
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.extension.ExtendWith;
 import org.junit.runner.RunWith;
+import org.mockito.ArgumentCaptor;
 import org.mockito.junit.MockitoJUnitRunner;
 import org.mockito.junit.jupiter.MockitoExtension;
 import org.mockito.junit.jupiter.MockitoSettings;
@@ -23,6 +27,15 @@ public class GrabTaskControllerSetStatusTest
   @Test
   @DisplayName("record grab date for tasks")
   public void testGrabDate() {
+
+    grabTaskController.call(TaskTestData.ID);
+
+    final ArgumentCaptor<TaskEntity> entity =
+        ArgumentCaptor.forClass(TaskEntity.class);
+    verify(taskEntityRepository).save(entity.capture());
+    assertNotNull(
+        entity.getValue().getGrabDate()
+    );
 
   }
 

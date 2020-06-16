@@ -3,10 +3,12 @@ package com.kodekonveyor.market.tasks;
 import java.time.LocalDateTime;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.kodekonveyor.authentication.AuthenticatedUserService;
 import com.kodekonveyor.authentication.UserEntity;
+import com.kodekonveyor.market.UrlMapConstants;
 import com.kodekonveyor.market.register.MarketUserEntity;
 import com.kodekonveyor.market.register.MarketUserEntityRepository;
 
@@ -25,7 +27,7 @@ public class GrabTaskController {
   @Autowired
   UngrabService ungrabService;
 
-  //@PutMapping(UrlMapConstants.GRAB_TASK_PATH)
+  @PutMapping(UrlMapConstants.GRAB_TASK_PATH)
   public void call(final long taskId) {
     final TaskEntity taskEntity =
         taskEntityRepository.findById(taskId).get();
