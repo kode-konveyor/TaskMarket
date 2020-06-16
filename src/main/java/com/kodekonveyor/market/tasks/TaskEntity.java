@@ -1,5 +1,7 @@
 package com.kodekonveyor.market.tasks;
 
+import java.time.LocalDateTime;
+
 import javax.annotation.Generated;
 import javax.persistence.Entity;
 import javax.persistence.FetchType;
@@ -31,5 +33,7 @@ public class TaskEntity {
   private Long githubId;
 
   private String service;
+
+  private LocalDateTime grabDate;
 
 }
