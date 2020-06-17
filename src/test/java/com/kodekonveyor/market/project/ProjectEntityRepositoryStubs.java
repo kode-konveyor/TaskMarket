@@ -28,6 +28,10 @@ public class ProjectEntityRepositoryStubs {
         .findByName(ProjectTestData.PROJECT_NAME);
     doReturn(Optional.of(ProjectEntityTestData.getNameKodeKonveyor()))
         .when(projectEntityRepository).findByRole(RoleEntityTestData.getRoleKodekonveyorContract());
+    doReturn(Optional.of(ProjectEntityTestData.getUrlAndPullRequest()))
+        .when(projectEntityRepository).findByMilestone(MilestoneEntityTestData.get());
+    doReturn(Optional.of(ProjectEntityTestData.get()))
+        .when(projectEntityRepository).findByMilestone(MilestoneEntityTestData.getOtherMilestone());
   }
 
   public static void

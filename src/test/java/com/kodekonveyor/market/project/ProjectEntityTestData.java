@@ -93,4 +93,10 @@ public class ProjectEntityTestData {
     );
     return projectEntity;
   };
+
+  public static ProjectEntity getPullRequest() {
+    final ProjectEntity projectEntity = get();
+    projectEntity.setPullRequest(Set.of(PullrequestEntityTestData.get()));
+    return projectEntity;
+  }
 }
