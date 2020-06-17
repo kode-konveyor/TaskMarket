@@ -24,7 +24,7 @@ import static com.kodekonveyor.market.project.ProjectTestData.EXPECTED_AUTH_ERRO
 public class UpdateProjectModelControllerRolesTest extends UpdateProjectModelControllerTestBase {
 
     @Test
-    @DisplayName("If the user does not has manager role for the project, the access is denied and exception is thrown.")
+    @DisplayName("If the user does not have manager role for the project, the access is denied and exception is thrown.")
     public void test1() {
         AuthenticatedUserServiceStubs.salesUser(authenticatedUserService);
 
@@ -38,7 +38,7 @@ public class UpdateProjectModelControllerRolesTest extends UpdateProjectModelCon
 
     @Test
     @DisplayName(
-            "If the user does not has manager role for the project, error message is : Project model can only be modified by project manager."
+            "If the user does not have manager role for the project, error message is : Project model can only be modified by project manager."
     )
     public void test2() {
         AuthenticatedUserServiceStubs.salesUser(authenticatedUserService);
