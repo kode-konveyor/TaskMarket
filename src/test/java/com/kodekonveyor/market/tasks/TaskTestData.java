@@ -30,5 +30,10 @@ public class TaskTestData {
 
   public static final Instant DATE_FOUR_DAYS_SINCE_GRABBED =
       Instant.now().minus(4, ChronoUnit.DAYS);
+ public static final Long ID_IN_PROGRESS = 1199L;
 
+  public static final Long ID_2 = 1201L;
+
+  public static final String TASK_NOT_UP_FOR_GRAB =
+      "Task is not in the up for grab status";
 }
