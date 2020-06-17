@@ -1,6 +1,5 @@
 package com.kodekonveyor.market.register;
 
-import java.util.HashSet;
 import java.util.Set;
 
 import javax.annotation.Generated;
@@ -22,6 +21,7 @@ public class MarketUserDTOTestData {
     marketUserDTO.setLegalName(MarketUserTestData.LEGAL_NAME);
     marketUserDTO.setPersonalName(MarketUserTestData.PERSONAL_NAME);
     marketUserDTO.setUser(UserTestData.ID);
+    marketUserDTO.setLogin(UserTestData.LOGIN);
     marketUserDTO.setBalanceInCents(MarketUserTestData.BALANCE_IN_CENTS);
     marketUserDTO.setLegalForm(LegalFormTestData.ID);
 
@@ -42,7 +42,7 @@ public class MarketUserDTOTestData {
 
   public static MarketUserDTO getIdNotInDatabase() {
     final MarketUserDTO marketUserDTO = get();
-    marketUserDTO.setId(MarketUserTestData.ID_NOT_IN_DATABASE);
+    marketUserDTO.setId(null);
     marketUserDTO.setUser(UserTestData.ID_NO_MARKET_USER);
     marketUserDTO.setIsTermsAccepted(null);
     marketUserDTO.setEmail(null);
@@ -51,17 +51,8 @@ public class MarketUserDTOTestData {
     marketUserDTO.setPersonalName(null);
     marketUserDTO.setBalanceInCents(null);
     marketUserDTO.setLegalForm(null);
-
-    marketUserDTO.setPaymentDetail(new HashSet<>());
-
-    return marketUserDTO;
-  }
-
-  public static MarketUserDTO getIdNotInNullDatabase() {
-    final MarketUserDTO marketUserDTO = get();
-    marketUserDTO.setId(MarketUserTestData.ID_NOT_IN_DATABASE);
-    marketUserDTO.setUser(UserTestData.ID_IN_NULL_DATABASE);
-    marketUserDTO.setPaymentDetail(new HashSet<>());
+    marketUserDTO.setLogin(UserTestData.LOGIN_NO_MARKET_USER);
+    marketUserDTO.setPaymentDetail(null);
 
     return marketUserDTO;
   }

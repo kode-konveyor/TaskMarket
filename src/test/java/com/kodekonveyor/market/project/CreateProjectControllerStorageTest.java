@@ -15,6 +15,7 @@ import org.mockito.quality.Strictness;
 import com.kodekonveyor.annotations.TestedBehaviour;
 import com.kodekonveyor.annotations.TestedService;
 import com.kodekonveyor.authentication.AuthenticatedUserServiceStubs;
+import com.kodekonveyor.market.register.MarketUserEntityRepositoryStubs;
 
 @ExtendWith(MockitoExtension.class)
 @MockitoSettings(strictness = Strictness.LENIENT)
@@ -30,6 +31,8 @@ public class CreateProjectControllerStorageTest
   )
   public void saveEntitytest() {
     AuthenticatedUserServiceStubs.projectManager(authenticatedUserService);
+    MarketUserEntityRepositoryStubs
+        .userBalanceMoreThanBudget(marketUserEntityRepository);
     createProjectController.call(ProjectDTOTestData.get());
     verify(projectEntityRepository)
         .save(ProjectEntityTestData.getNullId());
@@ -39,7 +42,8 @@ public class CreateProjectControllerStorageTest
   @DisplayName("The project id is saved successfully")
   public void test() {
     AuthenticatedUserServiceStubs.projectManager(authenticatedUserService);
-    createProjectController.call(ProjectDTOTestData.get());
+    MarketUserEntityRepositoryStubs
+        .userBalanceMoreThanBudget(marketUserEntityRepository);
     assertEquals(
         ProjectTestData.ID, createProjectController
             .callForUrlencoded(ProjectDTOTestData.get()).getId()
@@ -50,6 +54,8 @@ public class CreateProjectControllerStorageTest
   @DisplayName("The project name is saved successfully")
   public void test1() {
     AuthenticatedUserServiceStubs.projectManager(authenticatedUserService);
+    MarketUserEntityRepositoryStubs
+        .userBalanceMoreThanBudget(marketUserEntityRepository);
     createProjectController.call(ProjectDTOTestData.get());
     assertEquals(
         ProjectEntityTestData.get().getName(), ProjectTestData.NAME
@@ -62,6 +68,8 @@ public class CreateProjectControllerStorageTest
   )
   void test2() {
     AuthenticatedUserServiceStubs.projectManager(authenticatedUserService);
+    MarketUserEntityRepositoryStubs
+        .userBalanceMoreThanBudget(marketUserEntityRepository);
     createProjectController.callForUrlencoded(ProjectDTOTestData.get());
     verify(projectEntityRepository)
         .save(ProjectEntityTestData.getNullId());
@@ -73,6 +81,8 @@ public class CreateProjectControllerStorageTest
   )
   void test21() {
     AuthenticatedUserServiceStubs.projectManager(authenticatedUserService);
+    MarketUserEntityRepositoryStubs
+        .userBalanceMoreThanBudget(marketUserEntityRepository);
     final ProjectDTO ret =
         createProjectController.callForUrlencoded(ProjectDTOTestData.get());
     assertEquals(ProjectDTOTestData.get(), ret);
@@ -82,8 +92,10 @@ public class CreateProjectControllerStorageTest
   @DisplayName("The stored project is returned for application/json requests")
   void test3() {
     AuthenticatedUserServiceStubs.projectManager(authenticatedUserService);
+    MarketUserEntityRepositoryStubs
+        .userBalanceMoreThanBudget(marketUserEntityRepository);
     final ProjectDTO ret =
-        createProjectController.call(ProjectDTOTestData.get());
+        createProjectController.callForUrlencoded(ProjectDTOTestData.get());
     assertEquals(
 
         ret, ProjectDTOTestData.get()

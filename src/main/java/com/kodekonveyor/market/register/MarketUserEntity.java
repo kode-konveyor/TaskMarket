@@ -8,6 +8,7 @@ import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
 import javax.persistence.OneToMany;
 import javax.persistence.OneToOne;
 
@@ -42,6 +43,7 @@ public class MarketUserEntity {
   private LegalFormEntity legalForm;
 
   @OneToOne(fetch = FetchType.LAZY)
+  @JoinColumn(unique = true)
   private UserEntity user;
 
   @OneToMany(fetch = FetchType.LAZY)
