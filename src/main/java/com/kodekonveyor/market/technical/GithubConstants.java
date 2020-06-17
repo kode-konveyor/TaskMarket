@@ -5,6 +5,10 @@ public class GithubConstants {
   public static final String AUTHORIZATION = "Authorization";
   public static final String CANNOT_CONNECT_TO_GITHUB =
       "cannot connect to github";
+  public static final String GITHUB_GET_CALL_FAILURE =
+          "Failure with status %s, while making get call to github.";
+  public static final String CANNOT_CONVERT_TO_REQUIED_VALUE_TYPE =
+          "Unable to convert response to the given value type.";
   public static final String CLOSE = "close";
   public static final String GET = "GET";
   public static final String GITHUB_API_URL_BASE = "https://api.github.com";
