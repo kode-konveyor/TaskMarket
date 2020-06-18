@@ -47,49 +47,35 @@ public class UpdateTasksService {
     ) {
       final String actaulDescription =
           taskfromRepository.getDescription().substring(
-              taskfromRepository.getDescription().lastIndexOf(
-                  ProjectConstants.TASK_DESCRIPTION_START
-              ) + ProjectConstants.INDEX,
+              ProjectConstants.TASK_DESCRIPTION_START.length(),
               taskfromRepository.getDescription()
                   .indexOf(ProjectConstants.TASK_DESCRIPTION_END)
           );
 
       if (actaulDescription.equals(task.getDescription()))
         return taskfromRepository;
-      else {
-        final String differenceInDescription = StringUtils
-            .difference(
-                actaulDescription, task.getDescription()
-            );
 
-        taskfromRepository.setDescription(
-
-            taskfromRepository.getDescription() + ProjectConstants.DIFF +
-                differenceInDescription
-        );
-        return taskfromRepository;
-      }
-
-    }
-
-    if (!taskfromRepository.getDescription().equals(task.getDescription())) {
       final String differenceInDescription = StringUtils
           .difference(
-              taskfromRepository.getDescription(), task.getDescription()
+              actaulDescription, task.getDescription()
           );
-
       taskfromRepository.setDescription(
-          ProjectConstants.TASK_DESCRIPTION_START +
-              taskfromRepository.getDescription() +
-              ProjectConstants.TASK_DESCRIPTION_END + ProjectConstants.DIFF +
+
+          taskfromRepository.getDescription() + ProjectConstants.DIFF +
               differenceInDescription
       );
       return taskfromRepository;
     }
+
+    final String differenceInDescription = StringUtils
+        .difference(
+            taskfromRepository.getDescription(), task.getDescription()
+        );
     taskfromRepository.setDescription(
         ProjectConstants.TASK_DESCRIPTION_START +
             taskfromRepository.getDescription() +
-            ProjectConstants.TASK_DESCRIPTION_END
+            ProjectConstants.TASK_DESCRIPTION_END + ProjectConstants.DIFF +
+            differenceInDescription
     );
     return taskfromRepository;
   }

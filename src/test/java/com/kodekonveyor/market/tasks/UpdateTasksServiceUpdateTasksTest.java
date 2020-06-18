@@ -37,18 +37,6 @@ public class UpdateTasksServiceUpdateTasksTest
 
   @Test
   @DisplayName(
-    "Only description tag are updated if, the task has same service, behaviour and documentation"
-  )
-  void test1() throws JSONException {
-    TaskEntityRepositoryStubs.behaviour(taskEntityRepository);
-    assertEquals(
-        TaskEntityTestData.getTaskUpdatedDescrition(),
-        updateTasksService.call(TaskEntityTestData.get())
-    );
-  }
-
-  @Test
-  @DisplayName(
     "if the description of repository task is different from the task description,it is updated"
   )
   void test7() throws JSONException {
