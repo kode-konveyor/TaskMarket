@@ -28,4 +28,26 @@ public class MilestoneEntityTestData {
 
   }
 
+  public static MilestoneEntity getTasksMoreThanMinimumForGrab() {
+    final MilestoneEntity milestoneEntity = get();
+    milestoneEntity.setTask(
+        Set.of(
+            TaskEntityTestData.get(), TaskEntityTestData.getTaskOne(),
+            TaskEntityTestData.getTaskTwo()
+        )
+    );
+    return milestoneEntity;
+  }
+
+  public static MilestoneEntity getTasksEqualToMinimumForGrab() {
+    final MilestoneEntity milestoneEntity = get();
+    milestoneEntity.setTask(
+        Set.of(
+            TaskEntityTestData.get(), TaskEntityTestData.getTaskOne(),
+            TaskEntityTestData.getInProgress()
+        )
+    );
+    return milestoneEntity;
+  }
+
 }

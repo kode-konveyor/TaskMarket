@@ -2,6 +2,7 @@ package com.kodekonveyor.market.project;
 
 import static org.mockito.Mockito.doReturn;
 
+import java.util.List;
 import java.util.Optional;
 import java.util.Set;
 
@@ -23,6 +24,25 @@ public class MilestoneEntityRepositoryStubs {
     doReturn(Optional.of(MilestoneEntityTestData.getOtherMilestone())).when(
         milestoneEntityRepository
     ).findByTask(TaskEntityTestData.getAssignedTask());
+  }
+
+  public static void tasksMoreThanMinimumForGrab(
+      final MilestoneEntityRepository milestoneEntityRepository
+  ) {
+    doReturn(
+        List.of(MilestoneEntityTestData.getTasksMoreThanMinimumForGrab())
+    )
+        .when(milestoneEntityRepository).findAllById(ProjectDTOTestData.getMinimumForGab().getMilestone());
+  }
+
+  public static void tasksEqualToMinimumForGrab(
+      final MilestoneEntityRepository milestoneEntityRepository
+  ) {
+    doReturn(
+        List.of(MilestoneEntityTestData.getTasksEqualToMinimumForGrab())
+    )
+        .when(milestoneEntityRepository).findAllById(ProjectDTOTestData.getMinimumForGab().getMilestone());
+
   }
 
 }

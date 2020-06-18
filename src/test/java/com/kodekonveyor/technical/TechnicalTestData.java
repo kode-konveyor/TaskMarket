@@ -55,4 +55,7 @@ public class TechnicalTestData {
       PULL_REQUEST_COMMENT +
           '"' + Instant.now().minus(8, ChronoUnit.DAYS) + '"' + COMMITS_NODES_COMMIT_PUSHED_DATE + '"' + Instant.now().minus(2, ChronoUnit.DAYS) + '"' + STATUS_STATE_FAILURE;
 
+  public static final String MESSAGE =
+      "Up for grab tasks below minimum for grab";
+
 }

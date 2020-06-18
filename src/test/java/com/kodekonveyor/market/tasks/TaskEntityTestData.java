@@ -66,14 +66,6 @@ public class TaskEntityTestData {
     return taskEntity;
   }
 
-  public static TaskEntity getUngrabExactlyThreeDaysTask() {
-    final TaskEntity taskEntity = getGrabbedExactlyThreeDays();
-    taskEntity.setMarketUser(null);
-    taskEntity.setStatus(TaskStatusEnum.UP_FOR_GRAB);
-
-    return taskEntity;
-  }
-
   public static TaskEntity getPullRequestIssuedTask() {
     final TaskEntity taskEntity = get();
     taskEntity.setStatus(TaskStatusEnum.IN_PROGRESS);
@@ -112,6 +104,24 @@ public class TaskEntityTestData {
     final TaskEntity taskEntity = get();
     taskEntity.setId(TaskTestData.ID_2);
     taskEntity.setMarketUser(MarketUserEntityTestData.get());
+    taskEntity.setStatus(TaskStatusEnum.IN_PROGRESS);
+    return taskEntity;
+  }
+
+  public static TaskEntity getTaskOne() {
+    final TaskEntity taskEntity = get();
+    taskEntity.setId(TaskTestData.ID_ONE);
+    return taskEntity;
+  }
+
+  public static TaskEntity getTaskTwo() {
+    final TaskEntity taskEntity = get();
+    taskEntity.setId(TaskTestData.ID_TWO);
+    return taskEntity;
+  }
+
+  public static TaskEntity getInProgress() {
+    final TaskEntity taskEntity = get();
     taskEntity.setStatus(TaskStatusEnum.IN_PROGRESS);
     return taskEntity;
   }
