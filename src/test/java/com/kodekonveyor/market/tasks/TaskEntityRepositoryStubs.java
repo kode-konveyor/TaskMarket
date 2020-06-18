@@ -5,8 +5,6 @@ import static org.mockito.Mockito.doReturn;
 import java.util.List;
 import java.util.Optional;
 
-import org.mockito.Mockito;
-
 import com.kodekonveyor.market.register.MarketUserEntityTestData;
 
 public class TaskEntityRepositoryStubs {
@@ -37,14 +35,14 @@ public class TaskEntityRepositoryStubs {
     doReturn(Optional.of(TaskEntityTestData.getPullRequestIssuedTask()))
         .when(taskEntityRepository).findById(TaskTestData.ID);
 
-    Mockito.doReturn(List.of(TaskEntityTestData.getInProgress())).when(
+    doReturn(List.of(TaskEntityTestData.getInProgress())).when(
         taskEntityRepository
     ).findByStatusAndMarketUser(
         TaskStatusEnum.IN_PROGRESS,
         MarketUserEntityTestData.getPrivateProjectCoder()
     );
 
-    Mockito.doReturn(List.of(TaskEntityTestData.getInProgressPublicProject()))
+    doReturn(List.of(TaskEntityTestData.getInProgressPublicProject()))
         .when(
             taskEntityRepository
         ).findByStatusAndMarketUser(
@@ -52,17 +50,17 @@ public class TaskEntityRepositoryStubs {
             MarketUserEntityTestData.get()
         );
 
-    Mockito.doReturn(List.of(TaskEntityTestData.getUpForGrab())).when(
+    doReturn(List.of(TaskEntityTestData.getUpForGrab())).when(
         taskEntityRepository
     ).findByStatus(TaskStatusEnum.UP_FOR_GRAB);
 
-    Mockito.doReturn(List.of(TaskEntityTestData.getClosedTask())).when(
+    doReturn(List.of(TaskEntityTestData.getClosedTask())).when(
         taskEntityRepository
     ).findByStatusAndMarketUser(
         TaskStatusEnum.DONE, MarketUserEntityTestData.getPrivateProjectCoder()
     );
 
-    Mockito.doReturn(List.of(TaskEntityTestData.getClosedTaskPublicProject()))
+    doReturn(List.of(TaskEntityTestData.getClosedTaskPublicProject()))
         .when(
             taskEntityRepository
         ).findByStatusAndMarketUser(
