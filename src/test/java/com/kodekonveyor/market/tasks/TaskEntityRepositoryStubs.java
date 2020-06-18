@@ -5,8 +5,6 @@ import static org.mockito.Mockito.doReturn;
 import java.util.List;
 import java.util.Optional;
 
-import org.mockito.Mockito;
-
 public class TaskEntityRepositoryStubs {
 
   public static void
@@ -52,18 +50,18 @@ public class TaskEntityRepositoryStubs {
 
   public static void
       delimiterDescription(final TaskEntityRepository taskEntityRepository) {
-    Mockito.doReturn(List.of(TaskEntityTestData.getTaskUpdatedDescrition()))
+    doReturn(List.of(TaskEntityTestData.getTaskUpdatedDescrition()))
         .when(taskEntityRepository).findByServiceAndBehaviour(TaskTestData.SERVICE, TaskTestData.BEHAVIOUR);
 
   }
 
   public static void
       taskNotinRepository(final TaskEntityRepository taskEntityRepository) {
-    Mockito.doReturn(List.of())
+    doReturn(List.of())
         .when(taskEntityRepository).findByServiceAndBehaviour(TaskTestData.SERVICE, TaskTestData.BEHAVIOUR);
-    Mockito.doReturn(List.of())
+    doReturn(List.of())
         .when(taskEntityRepository).findByServiceAndBehaviour(TaskTestData.OTHER_SERVICE, TaskTestData.BEHAVIOUR);
-    Mockito.doReturn(List.of())
+    doReturn(List.of())
         .when(taskEntityRepository).findByServiceAndBehaviour(TaskTestData.SERVICE, TaskTestData.OTHER_BEHAVIOUR);
 
   }

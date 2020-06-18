@@ -5,7 +5,7 @@ import javax.annotation.Generated;
 import com.kodekonveyor.market.register.MarketUserEntityTestData;
 
 @Generated("by zenta-tools")
-public class TaskEntityTestData {
+public class TaskEntityTestData { //NOPMD
 
   public final static TaskEntity get() {
     final TaskEntity taskEntity = new TaskEntity();
@@ -66,13 +66,13 @@ public class TaskEntityTestData {
     return taskEntity;
   }
 
-  public static TaskEntity getUngrabExactlyThreeDaysTask() {
-    final TaskEntity taskEntity = getGrabbedExactlyThreeDays();
-    taskEntity.setMarketUser(null);
-    taskEntity.setStatus(TaskStatusEnum.UP_FOR_GRAB);
-
-    return taskEntity;
-  }
+  //  public static TaskEntity getUngrabExactlyThreeDaysTask() {
+  //    final TaskEntity taskEntity = getGrabbedExactlyThreeDays();
+  //    taskEntity.setMarketUser(null);
+  //    taskEntity.setStatus(TaskStatusEnum.UP_FOR_GRAB);
+  //
+  //    return taskEntity;
+  //  }
 
   public static TaskEntity getPullRequestIssuedTask() {
     final TaskEntity taskEntity = get();
