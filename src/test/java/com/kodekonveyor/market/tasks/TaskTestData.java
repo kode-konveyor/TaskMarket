@@ -30,10 +30,23 @@ public class TaskTestData {
 
   public static final Instant DATE_FOUR_DAYS_SINCE_GRABBED =
       Instant.now().minus(4, ChronoUnit.DAYS);
- public static final Long ID_IN_PROGRESS = 1199L;
+  public static final Long ID_IN_PROGRESS = 1199L;
 
   public static final Long ID_2 = 1201L;
 
   public static final String TASK_NOT_UP_FOR_GRAB =
       "Task is not in the up for grab status";
+
+  public static final String OTHER_SERVICE = "SomeServie";
+
+  public static final String OTHER_BEHAVIOUR = "Other behaviour";
+
+  public static final String TASK_DESCRIPTION_START = "Task Description:\n";
+  public static final String TASK_DESCRIPTION_END =
+      "\nEnd of Task Description";
+
+  public static final String DIFFERENT_DESCRIPTION =
+      " and difference in documentation comes here";
+
+  public static final String DIFF = "\nDiff:\n";
 }

@@ -115,4 +115,69 @@ public class TaskEntityTestData {
     taskEntity.setStatus(TaskStatusEnum.IN_PROGRESS);
     return taskEntity;
   }
+
+  public static TaskEntity getTaskUpdatedDescrition() {
+    final TaskEntity taskEntity = get();
+    taskEntity.setDescription(
+        TaskTestData.TASK_DESCRIPTION_START + TaskTestData.DESCRIPTION +
+            TaskTestData.TASK_DESCRIPTION_END
+    );
+    return taskEntity;
+  }
+
+  public static TaskEntity getDifferentDescriptionUpdated() {
+    final TaskEntity taskEntity = get();
+    taskEntity.setDescription(
+        TaskTestData.TASK_DESCRIPTION_START + TaskTestData.DESCRIPTION +
+            TaskTestData.TASK_DESCRIPTION_END + TaskTestData.DIFF +
+            TaskTestData.DIFFERENT_DESCRIPTION
+    );
+    return taskEntity;
+  }
+
+  public static TaskEntity getDifferentDescription() {
+    final TaskEntity taskEntity = get();
+    taskEntity.setDescription(
+        TaskTestData.DESCRIPTION + TaskTestData.DIFFERENT_DESCRIPTION
+    );
+    return taskEntity;
+  }
+
+  public static TaskEntity getDifferentServiceTaskUpdatedDescrition() {
+    final TaskEntity taskEntity = getDifferentServiceTask();
+    taskEntity.setDescription(
+        TaskTestData.TASK_DESCRIPTION_START + TaskTestData.DESCRIPTION +
+            TaskTestData.TASK_DESCRIPTION_END
+    );
+    taskEntity.setStatus(TaskStatusEnum.NOT_IN_MODEL);
+    return taskEntity;
+  }
+
+  public static TaskEntity getDifferentServiceTask() {
+    final TaskEntity taskEntity = get();
+    taskEntity.setService(TaskTestData.OTHER_SERVICE);
+    return taskEntity;
+  }
+
+  public static TaskEntity getDifferentBehaviourTask() {
+    final TaskEntity taskEntity = get();
+    taskEntity.setBehaviour(TaskTestData.OTHER_BEHAVIOUR);
+    return taskEntity;
+  }
+
+  public static TaskEntity getDifferentBehaviourTaskUpdatedDescrition() {
+    final TaskEntity taskEntity = getDifferentBehaviourTask();
+    taskEntity.setDescription(
+        TaskTestData.TASK_DESCRIPTION_START + TaskTestData.DESCRIPTION +
+            TaskTestData.TASK_DESCRIPTION_END
+    );
+    taskEntity.setStatus(TaskStatusEnum.NOT_IN_MODEL);
+    return taskEntity;
+  }
+
+  public static TaskEntity getNotInModelTaskUpdatedDescrition() {
+    final TaskEntity taskEntity = getTaskUpdatedDescrition();
+    taskEntity.setStatus(TaskStatusEnum.NOT_IN_MODEL);
+    return taskEntity;
+  }
 }
