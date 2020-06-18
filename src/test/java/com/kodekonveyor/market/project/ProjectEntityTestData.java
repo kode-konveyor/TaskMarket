@@ -99,4 +99,17 @@ public class ProjectEntityTestData {
     projectEntity.setPullRequest(Set.of(PullrequestEntityTestData.get()));
     return projectEntity;
   }
+
+  public static ProjectEntity getPrivateProject() {
+    final ProjectEntity projectEntity = get();
+    projectEntity.setIsPublic(ProjectTestData.NOT_PUBLIC);
+    projectEntity.setMilestone(Set.of(MilestoneEntityTestData.getUpForGrab()));
+    return projectEntity;
+  }
+
+  public static ProjectEntity getPublicProject() {
+    final ProjectEntity projectEntity = get();
+    projectEntity.setMilestone(Set.of(MilestoneEntityTestData.getUpForGrab()));
+    return projectEntity;
+  }
 }

@@ -96,5 +96,16 @@ public class UserEntityTestData {
     final UserEntity userEntity = getRoleProjectManager();
     userEntity.setId(UserTestData.ID_FOR_ZERO_BALANCE);
     return userEntity;
-  };
+  }
+
+  public static UserEntity getPrivateProjectCoder() {
+    final UserEntity userEntity = get();
+    userEntity.setRole(
+        Set.of(
+            RoleEntityTestData.getNameCanbepaid(),
+            RoleEntityTestData.getNamePrivateProjectCoder()
+        )
+    );
+    return userEntity;
+  }
 }

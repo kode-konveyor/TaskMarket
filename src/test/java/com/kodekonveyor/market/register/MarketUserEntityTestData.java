@@ -144,4 +144,10 @@ public class MarketUserEntityTestData {
     return marketUserEntity;
   }
 
+  public static MarketUserEntity getPrivateProjectCoder() {
+    final MarketUserEntity marketUserEntity = get();
+    marketUserEntity.setUser(UserEntityTestData.getPrivateProjectCoder());
+    return marketUserEntity;
+  }
+
 }

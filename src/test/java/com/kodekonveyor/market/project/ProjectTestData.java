@@ -56,4 +56,6 @@ public class ProjectTestData {
   public static final String PROJECT_ID_NON_POSITIVE_EXCEPTION =
       "Project Id can only have positive values";
 
+  public static final Boolean NOT_PUBLIC = false;
+
 }

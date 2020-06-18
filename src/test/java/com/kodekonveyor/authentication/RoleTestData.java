@@ -25,4 +25,7 @@ public class RoleTestData {
   public static final String NO_CAN_BE_PAID_ROLE_FOR_USER =
       "no can_be_paid role for user:";
 
+  public static final Long ID_CODER = 1121L;
+  public static final String NAME_PRIVATE_PROJECT_CODER =
+      "kode-konveyor/TaskMarket/coder";
 }

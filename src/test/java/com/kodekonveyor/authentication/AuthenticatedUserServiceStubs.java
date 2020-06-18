@@ -73,4 +73,13 @@ public class AuthenticatedUserServiceStubs {
         .call();
   }
 
+  public static void
+      privateProjectCoder(
+          final AuthenticatedUserService authenticatedUserService
+      ) {
+    doReturn(UserEntityTestData.getPrivateProjectCoder())
+        .when(authenticatedUserService)
+        .call();
+  }
+
 }

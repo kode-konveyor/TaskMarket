@@ -28,4 +28,15 @@ public class MilestoneEntityTestData {
 
   }
 
+  public static MilestoneEntity getUpForGrab() {
+    final MilestoneEntity milestoneEntity = get();
+    milestoneEntity.setTask(
+        Set.of(
+            TaskEntityTestData.getUpForGrab(),
+            TaskEntityTestData.getInProgress()
+        )
+    );
+    return milestoneEntity;
+  }
+
 }

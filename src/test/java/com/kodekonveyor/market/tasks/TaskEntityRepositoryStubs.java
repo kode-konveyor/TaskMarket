@@ -1,8 +1,13 @@
 package com.kodekonveyor.market.tasks;
 
 import static org.mockito.Mockito.doReturn;
+
 import java.util.List;
 import java.util.Optional;
+
+import org.mockito.Mockito;
+
+import com.kodekonveyor.market.register.MarketUserEntityTestData;
 
 public class TaskEntityRepositoryStubs {
 
@@ -31,10 +36,43 @@ public class TaskEntityRepositoryStubs {
       behaviour(final TaskEntityRepository taskEntityRepository) {
     doReturn(Optional.of(TaskEntityTestData.getPullRequestIssuedTask()))
         .when(taskEntityRepository).findById(TaskTestData.ID);
+
+    Mockito.doReturn(List.of(TaskEntityTestData.getInProgress())).when(
+        taskEntityRepository
+    ).findByStatusAndMarketUser(
+        TaskStatusEnum.IN_PROGRESS,
+        MarketUserEntityTestData.getPrivateProjectCoder()
+    );
+
+    Mockito.doReturn(List.of(TaskEntityTestData.getInProgressPublicProject()))
+        .when(
+            taskEntityRepository
+        ).findByStatusAndMarketUser(
+            TaskStatusEnum.IN_PROGRESS,
+            MarketUserEntityTestData.get()
+        );
+
+    Mockito.doReturn(List.of(TaskEntityTestData.getUpForGrab())).when(
+        taskEntityRepository
+    ).findByStatus(TaskStatusEnum.UP_FOR_GRAB);
+
+    Mockito.doReturn(List.of(TaskEntityTestData.getClosedTask())).when(
+        taskEntityRepository
+    ).findByStatusAndMarketUser(
+        TaskStatusEnum.DONE, MarketUserEntityTestData.getPrivateProjectCoder()
+    );
+
+    Mockito.doReturn(List.of(TaskEntityTestData.getClosedTaskPublicProject()))
+        .when(
+            taskEntityRepository
+        ).findByStatusAndMarketUser(
+            TaskStatusEnum.DONE, MarketUserEntityTestData.get()
+        );
   }
-   public static void
+
+  public static void
       behaviour2(final TaskEntityRepository taskEntityRepository) {
-   doReturn(Optional.of(TaskEntityTestData.get())).when(taskEntityRepository)
+    doReturn(Optional.of(TaskEntityTestData.get())).when(taskEntityRepository)
         .findById(TaskTestData.ID);
     doReturn(Optional.of(TaskEntityTestData.getInProgressTask()))
         .when(taskEntityRepository)
@@ -42,6 +80,6 @@ public class TaskEntityRepositoryStubs {
     doReturn(Optional.of(TaskEntityTestData.getUnassignedTask()))
         .when(taskEntityRepository)
         .findById(TaskTestData.ID_2);
-   }
+  }
 
 }

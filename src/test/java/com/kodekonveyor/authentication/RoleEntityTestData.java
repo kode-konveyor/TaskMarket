@@ -40,4 +40,11 @@ public class RoleEntityTestData {
     return roleEntity;
   }
 
+  public static RoleEntity getNamePrivateProjectCoder() {
+    final RoleEntity roleEntity = new RoleEntity();
+    roleEntity.setId(RoleTestData.ID_CODER);
+    roleEntity.setName(RoleTestData.NAME_PRIVATE_PROJECT_CODER);
+    return roleEntity;
+  }
+
 }

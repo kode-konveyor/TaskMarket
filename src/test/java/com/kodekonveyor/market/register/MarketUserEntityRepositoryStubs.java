@@ -125,4 +125,12 @@ public class MarketUserEntityRepositoryStubs {
 
   }
 
+  public static void memberOfPrivateProject(
+      final MarketUserEntityRepository marketUserEntityRepository
+  ) {
+    doReturn(Optional.of(MarketUserEntityTestData.getPrivateProjectCoder()))
+        .when(marketUserEntityRepository)
+        .findByUser(UserEntityTestData.getPrivateProjectCoder());
+  }
+
 }
