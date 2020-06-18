@@ -1,5 +1,7 @@
 package com.kodekonveyor.market.tasks;
 
+import java.util.ArrayList;
+import java.util.List;
 import java.util.stream.StreamSupport;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -36,23 +38,30 @@ public class CheckUpforgrabTasksService {
   private RoleEntityRepository roleEntityRepository;
 
   public void call(final ProjectDTO projectDTO) {
-    final String message =
-        MarketConstants.UP_FOR_GRAB_TASKS_BELOW_MINIMUM_FOR_GRAB;
 
     final RoleEntity roleEntity =
         roleEntityRepository.findByName(
             projectDTO.getName() + MarketConstants.FRONT_SLASH +
                 MarketConstants.PROJECT_MANAGER_ROLE
-        ).get(0);
+        ).get();
 
-    final UserEntity user =
-        userEntityRepository.findByRole(roleEntity).get(0);
+    final List<UserEntity> users =
+        userEntityRepository.findByRole(roleEntity);
 
-    final MarketUserEntity marketUser =
-        marketUserEntityRepository.findByUser(user).get();
+    final List<MarketUserEntity> marketUsers = new ArrayList<>();
+
+    for (final UserEntity user : users) {
+      final MarketUserEntity marketUser =
+          marketUserEntityRepository.findByUser(user).get();
+      marketUsers.add(marketUser);
+    }
 
     if (countTheTasks(projectDTO) <= projectDTO.getMinimumForGrab())
-      messageUserOnDiscordService.call(message, marketUser);
+      for (final MarketUserEntity marketUser : marketUsers)
+        messageUserOnDiscordService.call(
+            MarketConstants.UP_FOR_GRAB_TASKS_BELOW_MINIMUM_FOR_GRAB, marketUser
+        );
+
   }
 
   private long countTheTasks(final ProjectDTO projectDTO) {

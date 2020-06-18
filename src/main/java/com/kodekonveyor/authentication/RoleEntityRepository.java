@@ -1,11 +1,11 @@
 package com.kodekonveyor.authentication;
 
-import java.util.List;
+import java.util.Optional;
 
 import org.springframework.data.repository.CrudRepository;
 
 public interface RoleEntityRepository extends CrudRepository<RoleEntity, Long> {
 
-  List<RoleEntity> findByName(String string);
+  Optional<RoleEntity> findByName(String string);
 
 }
