@@ -58,5 +58,6 @@ public class ProjectTestData {
 
   public static final String PROJECT_DTO_RETURNED_SUCCESSFULLY =
       "Project DTO returned successfully Id : ";
+  public static final String EXPECTED_AUTH_ERROR_FOR_UPDATE_PROJECT ="Project model can only be modified by project manager.";
 
 }
