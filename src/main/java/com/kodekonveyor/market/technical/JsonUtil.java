@@ -1,14 +1,11 @@
 package com.kodekonveyor.market.technical;
 
-import com.fasterxml.jackson.databind.type.TypeFactory;
 import com.jayway.jsonpath.Configuration;
 import com.jayway.jsonpath.DocumentContext;
 import com.jayway.jsonpath.JsonPath;
 import com.jayway.jsonpath.Option;
-import com.jayway.jsonpath.TypeRef;
 import com.jayway.jsonpath.spi.mapper.JacksonMappingProvider;
 
-import java.lang.reflect.Type;
 import java.util.List;
 
 public class JsonUtil {
@@ -31,15 +28,6 @@ public class JsonUtil {
                 gqlResponse.jsonString(),
                 jaywayConfig
         )
-                .read(path, constructListType(clazz));
-    }
-
-    public static <T> TypeRef<List<T>> constructListType(final Class<T> clazz) {
-        return new TypeRef<>() {
-            @Override
-            public Type getType() {
-                return TypeFactory.defaultInstance().constructCollectionType(List.class, clazz);
-            }
-        };
+                .read(path, TypeReferenceFactory.constructListType(clazz));
     }
 }
