@@ -1,5 +1,6 @@
 package com.kodekonveyor.technical;
 
+import com.google.common.collect.Lists;
 import com.kodekonveyor.annotations.TestedBehaviour;
 import com.kodekonveyor.annotations.TestedService;
 import com.kodekonveyor.exception.ThrowableTester;
@@ -15,7 +16,8 @@ import org.mockito.junit.jupiter.MockitoExtension;
 import org.mockito.junit.jupiter.MockitoSettings;
 import org.mockito.quality.Strictness;
 
-import static com.kodekonveyor.technical.TechnicalTestData.EXPECTED_MSG_WHN_MORE_THAN_ONE_PR_FOR_ISSUE;
+import java.util.List;
+
 import static com.kodekonveyor.technical.TechnicalTestData.EXPECTED_MSG_WHN_PR_NOT_FOUND_FOR_ISSUE;
 
 @ExtendWith(MockitoExtension.class)
@@ -26,12 +28,12 @@ import static com.kodekonveyor.technical.TechnicalTestData.EXPECTED_MSG_WHN_PR_N
 public class GetPullRequestForIssueServiceGetPullRequestTest extends GetPullRequestForIssueServiceTestBase {
 
     @Test
-    @DisplayName("Pull request number is successfully returned, when linked pr is found for an issue.")
+    @DisplayName("Pull request number is successfully returned, when single linked pr is found for an issue.")
     public void test1() {
         GetPullRequestForIssueServiceStubs.mockSuccessResponse(githubGraphqlService);
-        Long prReturned = getPullRequestForIssueService.call(TaskEntityTestData.getPullRequestIssuedTask());
+        List<Long> prReturned = getPullRequestForIssueService.call(TaskEntityTestData.getPullRequestIssuedTask());
 
-        Assert.assertEquals(prReturned, TechnicalTestData.TEST_PR_ID);
+        Assert.assertEquals(prReturned, TechnicalTestData.TEST_SINGLE_PR_ID);
     }
 
     @Test
@@ -71,20 +73,11 @@ public class GetPullRequestForIssueServiceGetPullRequestTest extends GetPullRequ
     }
 
     @Test
-    @DisplayName("Validation Error is thrown, when more than one pull request is found in github")
+    @DisplayName("List of pull request number is successfully returned, when multiple linked pr is found for an issue.")
     public void test6() {
         GetPullRequestForIssueServiceStubs.mockWhenMultipleIssuesFound(githubGraphqlService);
-        ThrowableTester.assertThrows(() -> getPullRequestForIssueService.call(TaskEntityTestData.getPullRequestIssuedTask()))
-                .assertException(ValidationException.class);
-
+        List<Long> prReturned = getPullRequestForIssueService.call(TaskEntityTestData.getPullRequestIssuedTask());
+        Assert.assertEquals(prReturned, Lists.newArrayList(TechnicalTestData.TEST_MULTIPLE_PR_ID));
     }
 
-    @Test
-    @DisplayName("When more than one pull request is found, error message is : More than one pull request found.")
-    public void test7() {
-        GetPullRequestForIssueServiceStubs.mockWhenMultipleIssuesFound(githubGraphqlService);
-        ThrowableTester.assertThrows(() -> getPullRequestForIssueService.call(TaskEntityTestData.getPullRequestIssuedTask()))
-                .assertMessageIs(EXPECTED_MSG_WHN_MORE_THAN_ONE_PR_FOR_ISSUE);
-
-    }
 }

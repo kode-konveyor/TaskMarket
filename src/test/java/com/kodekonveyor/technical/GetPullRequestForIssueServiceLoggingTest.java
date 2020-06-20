@@ -14,7 +14,6 @@ import org.mockito.junit.jupiter.MockitoExtension;
 import org.mockito.junit.jupiter.MockitoSettings;
 import org.mockito.quality.Strictness;
 
-import static com.kodekonveyor.technical.TechnicalTestData.EXPECTED_MSG_WHN_MORE_THAN_ONE_PR_FOR_ISSUE;
 import static com.kodekonveyor.technical.TechnicalTestData.EXPECTED_MSG_WHN_PR_NOT_FOUND_FOR_ISSUE;
 import static com.kodekonveyor.technical.TechnicalTestData.EXP_GITHUB_MARKER;
 import static com.kodekonveyor.technical.TechnicalTestData.EXP_LOG_GET_PR_FOR_ISSUE_CALL;
@@ -76,21 +75,6 @@ public class GetPullRequestForIssueServiceLoggingTest extends GetPullRequestForI
                 .warn(
                         EXP_GITHUB_MARKER, EXP_LOG_GET_PR_FOR_ISSUE_FAILURE,
                         TEST_ISSUE_ID, EXPECTED_MSG_WHN_PR_NOT_FOUND_FOR_ISSUE
-                );
-    }
-
-    @Test
-    @DisplayName("Error is logged when multiple PR is not found for an issue.")
-    public void test5() {
-        GetPullRequestForIssueServiceStubs.mockWhenMultipleIssuesFound(githubGraphqlService);
-        ThrowableTester.assertThrows(
-                () -> getPullRequestForIssueService.call(TaskEntityTestData.getPullRequestIssuedTask())
-        );
-
-        Mockito.verify(loggerService)
-                .warn(
-                        EXP_GITHUB_MARKER, EXP_LOG_GET_PR_FOR_ISSUE_FAILURE,
-                        TEST_ISSUE_ID, EXPECTED_MSG_WHN_MORE_THAN_ONE_PR_FOR_ISSUE
                 );
     }
 }

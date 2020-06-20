@@ -17,7 +17,6 @@ import static com.kodekonveyor.market.technical.GithubConstants.PR_FOR_ISSUE_QUE
 import static com.kodekonveyor.market.technical.GithubConstants.PR_FOR_ISSUE_QUERY_PAGE_COUNT_PATH;
 import static com.kodekonveyor.market.technical.GithubConstants.PR_FOR_ISSUE_QUERY_PATH;
 import static com.kodekonveyor.market.technical.TechnicalConstants.LOG_GET_PR_FOR_ISSUE_FAILURE;
-import static com.kodekonveyor.market.technical.TechnicalConstants.MORE_THAN_ONE_PR_FOR_ISSUE;
 import static com.kodekonveyor.market.technical.TechnicalConstants.PR_NOT_FOUND_FOR_ISSUE;
 import static org.apache.commons.lang3.BooleanUtils.isTrue;
 
@@ -30,7 +29,7 @@ public class GetPullRequestForIssueService {
     @Autowired
     private Logger loggerService;
 
-    public Long call(final TaskEntity task) {
+    public List<Long> call(final TaskEntity task) {
         loggerService.info(GITHUB, TechnicalConstants.LOG_GET_PR_FOR_ISSUE_CALL);
 
         List<Long> prForIssueFound = fetchPRForIssue(task.getGithubId());
@@ -39,15 +38,8 @@ public class GetPullRequestForIssueService {
             loggerService.warn(GITHUB, LOG_GET_PR_FOR_ISSUE_FAILURE, task.getGithubId(), PR_NOT_FOUND_FOR_ISSUE);
             throw new ValidationException(PR_NOT_FOUND_FOR_ISSUE);
         }
-
-        if (prForIssueFound.size() > 1) {
-            loggerService.warn(GITHUB, LOG_GET_PR_FOR_ISSUE_FAILURE, task.getGithubId(), MORE_THAN_ONE_PR_FOR_ISSUE);
-            throw new ValidationException(MORE_THAN_ONE_PR_FOR_ISSUE);
-        }
-
-        Long pullRequestFound = prForIssueFound.get(0);
         loggerService.debug(GITHUB, TechnicalConstants.LOG_GET_PR_FOR_ISSUE_SUCCESS, task.getGithubId());
-        return pullRequestFound;
+        return prForIssueFound;
     }
 
     private List<Long> fetchPRForIssue(Long taskId) {
