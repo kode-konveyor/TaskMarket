@@ -12,6 +12,10 @@ public class ProjectConstants {
       "Invalid budget amount";
   public static final String COMMA = ",";
 
+  public static final String PROJECT_DTO_RETURNED_SUCCESSFULLY =
+      "Project DTO returned successfully Id : ";
+
   public static final String BALANCE_LESS_THAN_USER_BUDGET =
       "The user balance is less than project budget";
+
 }
