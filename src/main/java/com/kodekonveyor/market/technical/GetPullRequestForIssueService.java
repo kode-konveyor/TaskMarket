@@ -1,6 +1,7 @@
 package com.kodekonveyor.market.technical;
 
 import com.jayway.jsonpath.DocumentContext;
+import com.jayway.jsonpath.TypeRef;
 import com.kodekonveyor.market.ValidationException;
 import com.kodekonveyor.market.tasks.TaskEntity;
 import org.slf4j.Logger;
@@ -41,7 +42,7 @@ public class GetPullRequestForIssueService {
         return prForIssueFound;
     }
 
-    private List<Long> fetchPRForIssue(final Long taskId) {
+    private List<Long> fetchPRForIssue(Long taskId) {
         String query = GithubGraphqlQueryUtil.getGetPrForIssueQuery(
                 GithubConstants.KODE_KONVEYOR,
                 GithubConstants.TASK_MARKET,
@@ -49,23 +50,23 @@ public class GetPullRequestForIssueService {
         );
         DocumentContext gqlResponse = githubGraphqlService.call(query);
         Long totalCount = JsonUtil.readPath(
-                gqlResponse, PR_FOR_ISSUE_QUERY_PAGE_COUNT_PATH, Long.class
+                gqlResponse, PR_FOR_ISSUE_QUERY_PAGE_COUNT_PATH, new TypeRef<>() {}
         );
 
         if (totalCount == null || totalCount == 0) {
             return Collections.emptyList();
         }
 
-        final List<Long> allPRFound = JsonUtil.readPathAsLongList(
-                gqlResponse, PR_FOR_ISSUE_QUERY_PATH
+        final List<Long> allPRFound = JsonUtil.readPath(
+                gqlResponse, PR_FOR_ISSUE_QUERY_PATH, new TypeRef<>() {}
         );
 
         Boolean hasNextPage = JsonUtil.readPath(
-                gqlResponse, PR_FOR_ISSUE_QUERY_HAS_NXT_PAGE_PATH, Boolean.class
+                gqlResponse, PR_FOR_ISSUE_QUERY_HAS_NXT_PAGE_PATH, new TypeRef<>() {}
         );
         while (isTrue(hasNextPage)) {
             String endCursor = JsonUtil.readPath(
-                    gqlResponse, GithubConstants.PR_FOR_ISSUE_QUERY_END_CURSOR_PATH, String.class
+                    gqlResponse, GithubConstants.PR_FOR_ISSUE_QUERY_END_CURSOR_PATH, new TypeRef<>() {}
             );
             query = GithubGraphqlQueryUtil.getGetPrForIssueQuery(
                     GithubConstants.KODE_KONVEYOR,
@@ -76,10 +77,10 @@ public class GetPullRequestForIssueService {
 
             gqlResponse = githubGraphqlService.call(query);
             allPRFound.addAll(
-                    JsonUtil.readPathAsLongList(gqlResponse, PR_FOR_ISSUE_QUERY_PATH)
+                    JsonUtil.readPath(gqlResponse, PR_FOR_ISSUE_QUERY_PATH, new TypeRef<>() {})
             );
             hasNextPage = JsonUtil.readPath(
-                    gqlResponse, PR_FOR_ISSUE_QUERY_HAS_NXT_PAGE_PATH, Boolean.class
+                    gqlResponse, PR_FOR_ISSUE_QUERY_HAS_NXT_PAGE_PATH, new TypeRef<>() {}
             );
         }
         return allPRFound;
