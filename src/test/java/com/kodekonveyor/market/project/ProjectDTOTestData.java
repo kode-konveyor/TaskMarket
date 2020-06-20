@@ -12,7 +12,12 @@ public class ProjectDTOTestData {
   public final static ProjectDTO get() {
     final ProjectDTO projectDTO = new ProjectDTO();
     projectDTO.setId(ProjectTestData.ID);
-    projectDTO.setRole(Set.of(RoleTestData.ID));
+    projectDTO.setRole(
+            Set.of(
+                    RoleTestData.ID,
+                    RoleTestData.ID_PROJECT_MANAGER
+            )
+    );
     projectDTO.setMilestone(Set.of(MilestoneTestData.ID));
     projectDTO.setPullRequest(Set.of(PullRequestTestData.ID));
     projectDTO.setName(ProjectTestData.NAME);
