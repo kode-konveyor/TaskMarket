@@ -34,7 +34,7 @@ public class JsonUtil {
                 .read(path, constructListType(clazz));
     }
 
-    public static <T> TypeRef<List<T>> constructListType(Class<T> clazz) {
+    public static <T> TypeRef<List<T>> constructListType(final Class<T> clazz) {
         return new TypeRef<>() {
             @Override
             public Type getType() {
