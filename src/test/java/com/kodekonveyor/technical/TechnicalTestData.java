@@ -61,6 +61,7 @@ public class TechnicalTestData {
   public static final Long TEST_ISSUE_ID = 66L;
   public static final Long TEST_PR_ID = 56L;
   public static final String EXPECTED_MSG_WHN_PR_NOT_FOUND_FOR_ISSUE ="Pull request not found for issue.";
+  public static final String EXPECTED_MSG_WHN_MORE_THAN_ONE_PR_FOR_ISSUE="More than one pull request found.";
   public static final String EXP_LOG_GET_PR_FOR_ISSUE_CALL = "Execution to fetch pull request starts.";
   public static final String EXP_LOG_GET_PR_FOR_ISSUE_SUCCESS = "Successfully fetched linked pull request for issue : {}";
   public static final String EXP_LOG_GET_PR_FOR_ISSUE_FAILURE = "Failed to fetched pull request for issue {}, error : {}";
