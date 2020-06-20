@@ -5,6 +5,7 @@ import com.jayway.jsonpath.DocumentContext;
 import com.jayway.jsonpath.JsonPath;
 import com.jayway.jsonpath.Option;
 import com.jayway.jsonpath.spi.mapper.JacksonMappingProvider;
+import com.kodekonveyor.market.proxies.TypeReferenceFactory;
 
 import java.util.List;
 
