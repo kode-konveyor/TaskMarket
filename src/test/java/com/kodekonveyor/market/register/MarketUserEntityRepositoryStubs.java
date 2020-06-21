@@ -133,4 +133,12 @@ public class MarketUserEntityRepositoryStubs {
         .findByUser(UserEntityTestData.getPrivateProjectCoder());
   }
 
+  public static void
+      nonMarketUser(final MarketUserEntityRepository marketUserEntityRepository) {
+    doReturn(Optional.empty())
+        .when(marketUserEntityRepository)
+        .findByUser(UserEntityTestData.get());
+
+  }
+
 }

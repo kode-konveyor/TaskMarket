@@ -1,9 +1,11 @@
 package com.kodekonveyor.market.tasks;
 
 import java.util.ArrayList;
-import java.util.HashSet;
 import java.util.List;
+import java.util.Optional;
 import java.util.Set;
+import java.util.stream.Collectors;
+import java.util.stream.StreamSupport;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -13,7 +15,6 @@ import com.kodekonveyor.authentication.AuthenticatedUserService;
 import com.kodekonveyor.authentication.RoleEntity;
 import com.kodekonveyor.authentication.UserEntity;
 import com.kodekonveyor.market.UrlMapConstants;
-import com.kodekonveyor.market.project.MilestoneEntity;
 import com.kodekonveyor.market.project.ProjectEntity;
 import com.kodekonveyor.market.project.ProjectEntityRepository;
 import com.kodekonveyor.market.register.MarketUserEntity;
@@ -38,77 +39,58 @@ public class ListTasksController {
   public List<TaskEntity> call() {
 
     final UserEntity user = authenticatedUserService.call();
-    final MarketUserEntity marketUser =
-        marketUserEntityRepository.findByUser(user).get();
+    final Optional<MarketUserEntity> marketUser =
+        marketUserEntityRepository.findByUser(user);
+
+    if (marketUser.isEmpty())
+      return upForGrabTasks(marketUser);
 
     final List<TaskEntity> usersInProgressTasks = taskEntityRepository
-        .findByStatusAndMarketUser(TaskStatusEnum.IN_PROGRESS, marketUser);
+        .findByStatusAndMarketUser(TaskStatusEnum.IN_PROGRESS, marketUser.get());
 
     final List<TaskEntity> usersClosedTasks = taskEntityRepository
-        .findByStatusAndMarketUser(TaskStatusEnum.DONE, marketUser);
+        .findByStatusAndMarketUser(TaskStatusEnum.DONE, marketUser.get());
 
     final List<TaskEntity> userTasksList = new ArrayList<>();
 
     userTasksList.addAll(usersInProgressTasks);
-    userTasksList.addAll(upForGrabTasksFromPrivateProjects(marketUser));
-    userTasksList.addAll(upForGrabtasksFromPublicProjects());
+    userTasksList.addAll(upForGrabTasks(marketUser));
     userTasksList.addAll(usersClosedTasks);
 
     return userTasksList;
 
   }
 
-  private List<TaskEntity> upForGrabtasksFromPublicProjects() {
+  private List<TaskEntity>
+      upForGrabTasks(final Optional<MarketUserEntity> marketUser) {
+
+    final List<ProjectEntity> userAccessableprojects = new ArrayList<>();
+
+    if (!marketUser.isEmpty()) {
+
+      final List<ProjectEntity> privateProjects =
+          projectEntityRepository.findByIsPublic(false);
+
+      final Set<RoleEntity> userRoles = marketUser.get().getUser().getRole();
+
+      for (final ProjectEntity projectEntity : privateProjects)
+        for (final RoleEntity roleEntity : userRoles)
+          if (roleEntity.getName().contains(projectEntity.getName()))
+            userAccessableprojects.add(projectEntity);
+    }
+
     final List<ProjectEntity> publicProjects =
         projectEntityRepository.findByIsPublic(true);
 
-    final Set<MilestoneEntity> publicprojectMilestones = new HashSet<>();
-    final Set<TaskEntity> setOfTasksInpublicProject = new HashSet<>();
+    userAccessableprojects.addAll(publicProjects);
 
-    for (final ProjectEntity projectEntity : publicProjects)
-      publicprojectMilestones.addAll(projectEntity.getMilestone());
+    return StreamSupport.stream(
+        userAccessableprojects.spliterator(), true
+    ).flatMap(project -> project.getMilestone().stream()).flatMap(
+        milestone -> milestone.getTask().stream()
+    ).filter(task -> TaskStatusEnum.UP_FOR_GRAB.equals(task.getStatus()))
+        .collect(Collectors.toList());
 
-    for (final MilestoneEntity milestoneEntity : publicprojectMilestones)
-      setOfTasksInpublicProject.addAll(milestoneEntity.getTask());
-
-    final List<TaskEntity> upforGrabTasksInPublicProject = new ArrayList<>();
-
-    for (final TaskEntity taskEntity : setOfTasksInpublicProject)
-      if (taskEntity.getStatus().equals(TaskStatusEnum.UP_FOR_GRAB))
-        upforGrabTasksInPublicProject.add(taskEntity);
-    return upforGrabTasksInPublicProject;
-  }
-
-  private List<TaskEntity>
-      upForGrabTasksFromPrivateProjects(final MarketUserEntity marketUser) {
-    final List<ProjectEntity> privateProjects =
-        projectEntityRepository.findByIsPublic(false);
-
-    final Set<RoleEntity> userRoles = marketUser.getUser().getRole();
-
-    final List<ProjectEntity> privateProjectsUserMember = new ArrayList<>();
-
-    for (final ProjectEntity projectEntity : privateProjects)
-      for (final RoleEntity roleEntity : userRoles)
-        if (roleEntity.getName().contains(projectEntity.getName()))
-          privateProjectsUserMember.add(projectEntity);
-
-    final Set<MilestoneEntity> privateprojectMilestones = new HashSet<>();
-    final Set<TaskEntity> setOfTasksInPrivateProject = new HashSet<>();
-
-    for (final ProjectEntity projectEntity : privateProjectsUserMember)
-      privateprojectMilestones.addAll(projectEntity.getMilestone());
-
-    for (final MilestoneEntity milestoneEntity : privateprojectMilestones)
-      setOfTasksInPrivateProject.addAll(milestoneEntity.getTask());
-
-    final List<TaskEntity> upforGrabTasksInPrivateProject = new ArrayList<>();
-
-    for (final TaskEntity taskEntity : setOfTasksInPrivateProject)
-      if (taskEntity.getStatus().equals(TaskStatusEnum.UP_FOR_GRAB))
-        upforGrabTasksInPrivateProject.add(taskEntity);
-
-    return upforGrabTasksInPrivateProject;
   }
 
 }

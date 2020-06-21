@@ -67,4 +67,21 @@ public class ListTasksControllerListUsersTasksTest
         ), listTasksController.call()
     );
   }
+
+  @Test
+  @DisplayName(
+    "if user is not a market user,only up for grab tasks of public projects listed"
+  )
+  void test2() {
+    AuthenticatedUserServiceStubs.authenticated(authenticatedUserService);
+    MarketUserEntityRepositoryStubs
+        .nonMarketUser(marketUserEntityRepository);
+    ProjectEntityRepositoryStubs.behaviour(projectEntityRepository);
+
+    assertEquals(
+        List.of(
+            TaskEntityTestData.getUpForGrab()
+        ), listTasksController.call()
+    );
+  }
 }
