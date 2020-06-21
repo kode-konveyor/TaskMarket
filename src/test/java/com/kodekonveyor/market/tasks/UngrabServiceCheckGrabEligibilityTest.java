@@ -79,7 +79,7 @@ public class UngrabServiceCheckGrabEligibilityTest
     PullRequestEntityStubs.pullRequestNotIssued(pullrequestEntityRepository);
     ungrabService.call();
     Mockito.verify(taskEntityRepository)
-        .save(TaskEntityTestData.getUngrabbedFourDaysTask());
+        .save(TaskEntityTestData.getUngrabbedTask());
   }
 
   @Test
@@ -91,6 +91,6 @@ public class UngrabServiceCheckGrabEligibilityTest
     PullRequestEntityStubs.pullRequestIssued(pullrequestEntityRepository);
     ungrabService.call();
     Mockito.verify(taskEntityRepository, Mockito.times(0))
-        .save(TaskEntityTestData.getUngrabbedFourDaysTask());
+        .save(TaskEntityTestData.getUngrabbedTask());
   }
 }
