@@ -65,4 +65,40 @@ public class TaskEntityTestData {
     taskEntity.setGrabDate(TaskTestData.DATE_OLDER_THAN_THREE_DAYS);
     return taskEntity;
   }
+
+  public static TaskEntity getUngrabPullRequestIssuedtask() {
+    final TaskEntity taskEntity = getPullRequestIssuedTask();
+    taskEntity.setMarketUser(null);
+    taskEntity.setStatus(TaskStatusEnum.UP_FOR_GRAB);
+    return taskEntity;
+  }
+
+  public static TaskEntity getTaskWithStatusUpdated() {
+    final TaskEntity taskEntity = get();
+    taskEntity.setStatus(TaskStatusEnum.IN_PROGRESS);
+    return taskEntity;
+  }
+
+  public static TaskEntity getInProgressTask() {
+    final TaskEntity taskEntity = get();
+    taskEntity.setId(TaskTestData.ID_IN_PROGRESS);
+    taskEntity.setStatus(TaskStatusEnum.IN_PROGRESS);
+    return taskEntity;
+  }
+
+  public static TaskEntity getUnassignedTask() {
+    final TaskEntity taskEntity = get();
+    taskEntity.setId(TaskTestData.ID_2);
+    taskEntity.setMarketUser(null);
+    return taskEntity;
+  }
+
+  public static TaskEntity getAssignedTask() {
+    final TaskEntity taskEntity = get();
+    taskEntity.setId(TaskTestData.ID_2);
+    taskEntity.setMarketUser(MarketUserEntityTestData.get());
+    taskEntity.setStatus(TaskStatusEnum.IN_PROGRESS);
+    return taskEntity;
+  }
+
 }

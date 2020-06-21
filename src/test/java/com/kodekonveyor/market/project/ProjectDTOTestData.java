@@ -12,7 +12,12 @@ public class ProjectDTOTestData {
   public final static ProjectDTO get() {
     final ProjectDTO projectDTO = new ProjectDTO();
     projectDTO.setId(ProjectTestData.ID);
-    projectDTO.setRole(Set.of(RoleTestData.ID));
+    projectDTO.setRole(
+            Set.of(
+                    RoleTestData.ID,
+                    RoleTestData.ID_PROJECT_MANAGER
+            )
+    );
     projectDTO.setMilestone(Set.of(MilestoneTestData.ID));
     projectDTO.setPullRequest(Set.of(PullRequestTestData.ID));
     projectDTO.setName(ProjectTestData.NAME);
@@ -82,6 +87,14 @@ public class ProjectDTOTestData {
     final ProjectDTO projectDTO = get();
     projectDTO.setBudgetInCents(ProjectTestData.UPDATED_BUDGET);
     return projectDTO;
-  }
 
+  }
+  public static ProjectDTO getUrlAndPullRequest() {
+    final ProjectDTO dto = get();
+    dto.setUrl(ProjectTestData.URL);
+    dto.setDescription(ProjectTestData.DESCRIPTION);
+    dto.setProjectId(ProjectTestData.PROJECT_ID);
+    dto.setPullRequest(Set.of(PullRequestDTOTestData.get().getId()));
+    return dto;
+  }
 }
