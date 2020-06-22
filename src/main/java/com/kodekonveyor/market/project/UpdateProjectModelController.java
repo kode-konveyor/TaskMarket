@@ -1,15 +1,21 @@
 package com.kodekonveyor.market.project;
 
-import java.util.Set;
-import java.util.stream.Collectors;
-
+import com.google.common.collect.Sets;
+import com.kodekonveyor.authentication.AuthenticatedUserService;
+import com.kodekonveyor.authentication.RoleEntity;
+import com.kodekonveyor.authentication.UserEntity;
+import com.kodekonveyor.market.UnauthorizedException;
+import com.kodekonveyor.market.UrlMapConstants;
+import com.kodekonveyor.market.lead.CheckRoleUtil;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RestController;
 
-import com.google.common.collect.Sets;
-import com.kodekonveyor.authentication.RoleEntity;
-import com.kodekonveyor.market.UrlMapConstants;
+import java.util.Set;
+import java.util.stream.Collectors;
+
+import static com.kodekonveyor.market.MarketConstants.MANAGER;
+import static com.kodekonveyor.market.MarketConstants.UNAUTHORIZED_PROJECT_MODIFICATION;
 
 @RestController
 public class UpdateProjectModelController {
@@ -18,12 +24,17 @@ public class UpdateProjectModelController {
   ProjectEntityRepository projectEntityRepository;
   @Autowired
   MilestoneEntityRepository milestoneEntityRepository;
+  @Autowired
+  AuthenticatedUserService authenticatedUserService;
 
   @PutMapping(UrlMapConstants.UPDATE_PROJECT_MODEL_PATH)
   public ProjectDTO
       call(final ProjectModelDTO projectModelDTO, final String projectName) {
     final ProjectEntity project = projectEntityRepository
         .findByName(projectName).get();
+
+    validateAuthoization(project);
+
     final Set<Long> milestoneIds = projectModelDTO.getMilestone();
     project.setMilestone(
         Sets.newHashSet(
@@ -34,6 +45,15 @@ public class UpdateProjectModelController {
     projectEntityRepository.save(project);
 
     return getProjectDTO(project);
+
+  }
+
+  private void validateAuthoization(final ProjectEntity projectEntity) {
+    UserEntity sessionUser = authenticatedUserService.call();
+
+    if (!CheckRoleUtil.hasRole(sessionUser, projectEntity, MANAGER)) {
+      throw new UnauthorizedException(UNAUTHORIZED_PROJECT_MODIFICATION);
+    }
 
   }
 

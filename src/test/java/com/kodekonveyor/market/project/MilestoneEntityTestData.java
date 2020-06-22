@@ -20,4 +20,12 @@ public class MilestoneEntityTestData {
     return milestoneEntity;
   };
 
+  public final static MilestoneEntity getOtherMilestone() {
+
+    final MilestoneEntity milestoneEntity = get();
+    milestoneEntity.setTask(Set.of(TaskEntityTestData.getAssignedTask()));
+    return milestoneEntity;
+
+  }
+
 }

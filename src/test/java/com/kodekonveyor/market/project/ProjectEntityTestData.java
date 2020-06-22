@@ -14,7 +14,12 @@ public class ProjectEntityTestData {
   public final static ProjectEntity get() {
     final ProjectEntity projectEntity = new ProjectEntity();
     projectEntity.setId(ProjectTestData.ID);
-    projectEntity.setRole(Set.of(RoleEntityTestData.get()));
+    projectEntity.setRole(
+            Set.of(
+                    RoleEntityTestData.get(),
+                    RoleEntityTestData.getNameProjectManager()
+            )
+    );
     projectEntity.setMilestone(Set.of(MilestoneEntityTestData.get()));
     projectEntity.setName(ProjectTestData.NAME);
     projectEntity.setBudgetInCents(ProjectTestData.BUDGET_IN_CENTS);
@@ -93,4 +98,10 @@ public class ProjectEntityTestData {
     );
     return projectEntity;
   };
+
+  public static ProjectEntity getPullRequest() {
+    final ProjectEntity projectEntity = get();
+    projectEntity.setPullRequest(Set.of(PullrequestEntityTestData.get()));
+    return projectEntity;
+  }
 }

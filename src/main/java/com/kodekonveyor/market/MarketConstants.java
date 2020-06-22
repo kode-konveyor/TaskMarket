@@ -88,4 +88,6 @@ public class MarketConstants {
   public static final String MARKET_USER_RETURNED_SUCCESSFULLY =
       "Market user returned succssfully. Entity Id : ";
 
+  public static final String UNAUTHORIZED_PROJECT_MODIFICATION = "Project model can only be modified by project manager.";
+
 }

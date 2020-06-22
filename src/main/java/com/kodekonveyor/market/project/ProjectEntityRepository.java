@@ -16,4 +16,6 @@ public interface ProjectEntityRepository
 
   Optional<ProjectEntity> findByRole(RoleEntity role);
 
+  Optional<ProjectEntity> findByMilestone(MilestoneEntity entity);
+
 }

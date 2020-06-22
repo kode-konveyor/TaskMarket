@@ -1,15 +1,12 @@
 package com.kodekonveyor.market.proxies;
 
-import java.io.IOException;
-import java.net.URL;
-
-import org.springframework.stereotype.Service;
-
-import com.fasterxml.jackson.core.JsonParseException;
 import com.fasterxml.jackson.databind.DeserializationFeature;
-import com.fasterxml.jackson.databind.JsonMappingException;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.kodekonveyor.annotations.ExcludeFromCodeCoverage;
+import org.springframework.stereotype.Service;
+
+import java.io.IOException;
+import java.io.InputStream;
 
 @Service
 @ExcludeFromCodeCoverage("interface to underlying library")
@@ -22,9 +19,9 @@ public class ObjectMapperService {
   }
 
   public <ValueType> ValueType
-      call(final URL url, final Class<ValueType> cls)
-          throws JsonParseException, JsonMappingException, IOException {
-    return mapper.readValue(url, cls);
+      call(final InputStream content, final Class<ValueType> cls)
+          throws IOException {
+    return mapper.readValue(content, cls);
   }
 
 }
