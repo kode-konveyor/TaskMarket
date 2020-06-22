@@ -81,7 +81,6 @@ public class GrabTaskController {
   }
 
   private void callUpForGrabService(final TaskEntity taskEntity) {
-    System.out.println("In c:" + taskEntity);
     final MilestoneEntity milestoneEntity =
         milestoneEntityRepository.findByTask(taskEntity).get();
     final ProjectEntity projectEntity =
