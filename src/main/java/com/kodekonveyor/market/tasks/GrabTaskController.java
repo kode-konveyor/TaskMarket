@@ -1,6 +1,5 @@
 package com.kodekonveyor.market.tasks;
 
-import java.time.Instant;
 import java.util.HashSet;
 import java.util.Set;
 
@@ -82,7 +81,7 @@ public class GrabTaskController {
   }
 
   private void callUpForGrabService(final TaskEntity taskEntity) {
-
+    System.out.println("In c:" + taskEntity);
     final MilestoneEntity milestoneEntity =
         milestoneEntityRepository.findByTask(taskEntity).get();
     final ProjectEntity projectEntity =
@@ -139,7 +138,7 @@ public class GrabTaskController {
 
   private void
       recordGrabDate(final TaskEntity taskEntity) {
-    taskEntity.setGrabDate(Instant.now());
+    taskEntity.setGrabDate(DateUtil.getInstant());
   }
 
   private void

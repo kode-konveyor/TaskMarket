@@ -16,7 +16,6 @@ public class MilestoneEntityTestData {
     milestoneEntity.setName(MilestoneTestData.NAME);
     milestoneEntity.setPriority(MilestoneTestData.PRIORITY);
     milestoneEntity.setIsActive(MilestoneTestData.IS_ACTIVE);
-
     return milestoneEntity;
   };
 
@@ -26,6 +25,12 @@ public class MilestoneEntityTestData {
     milestoneEntity.setTask(Set.of(TaskEntityTestData.getAssignedTask()));
     return milestoneEntity;
 
+  }
+
+  public final static MilestoneEntity getGrabDateTaskMilestone() {
+    final MilestoneEntity milestoneEntity = get();
+    milestoneEntity.setTask(Set.of(TaskEntityTestData.getTaskWithGrabDate()));
+    return milestoneEntity;
   }
 
 }
