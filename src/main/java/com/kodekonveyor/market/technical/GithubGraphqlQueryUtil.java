@@ -8,7 +8,7 @@ public class GithubGraphqlQueryUtil {
             "      id" +
             "      number" +
             "      title" +
-            "      timelineItems(first: 1, after: %s, itemTypes: [CONNECTED_EVENT]) {" +
+            "      timelineItems(first: 250, after: %s, itemTypes: [CONNECTED_EVENT]) {" +
             "       pageCount" +
             "       pageInfo {" +
             "          endCursor" +
