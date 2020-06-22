@@ -79,4 +79,15 @@ public class MarketConstants {
 
   public static final String KODE_KONVEYOR_PROJECT_NAME = "Kode Konveyor";
 
+  public static final long ZERO = 0;
+
+  public static final long DAYS_UNTIL_UNGRAB = 4;
+
+  public static final long DAYS_UNTIL_UNGRAB_PULL_REQUEST = 3;
+
+  public static final String MARKET_USER_RETURNED_SUCCESSFULLY =
+      "Market user returned succssfully. Entity Id : ";
+
+  public static final String UNAUTHORIZED_PROJECT_MODIFICATION = "Project model can only be modified by project manager.";
+
 }

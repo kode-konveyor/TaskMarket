@@ -23,13 +23,23 @@ public class ProjectEntityRepositoryStubs {
     doReturn(Optional.of(ProjectEntityTestData.getNameKodeKonveyor()))
         .when(projectEntityRepository)
         .findByName(ProjectTestData.NAME_KODE_KONVEYOR);
+    doReturn(Optional.of(ProjectEntityTestData.getUrlAndPullRequest()))
+        .when(projectEntityRepository)
+        .findByName(ProjectTestData.PROJECT_NAME);
     doReturn(Optional.of(ProjectEntityTestData.getNameKodeKonveyor()))
         .when(projectEntityRepository).findByRole(RoleEntityTestData.getRoleKodekonveyorContract());
+    doReturn(Optional.of(ProjectEntityTestData.getUrlAndPullRequest()))
+        .when(projectEntityRepository).findByMilestone(MilestoneEntityTestData.get());
+    doReturn(Optional.of(ProjectEntityTestData.get()))
+        .when(projectEntityRepository).findByMilestone(MilestoneEntityTestData.getOtherMilestone());
   }
 
   public static void
       behaviour2(final ProjectEntityRepository projectEntityRepository) {
-    doReturn(Optional.of(ProjectEntityTestData.getUrlAndPullRequest()))
+    doReturn(Optional.of(ProjectEntityTestData.getAddFunds()))
         .when(projectEntityRepository).findById(ProjectTestData.ID_ADD_FUNDS);
+    doReturn(Optional.of(ProjectEntityTestData.getManagerRole()))
+        .when(projectEntityRepository).findById(ProjectTestData.ID_BUDGET);
   }
+
 }

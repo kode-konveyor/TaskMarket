@@ -4,9 +4,9 @@ package com.kodekonveyor.market.register;
 import org.junit.jupiter.api.BeforeEach;
 import org.mockito.InjectMocks;
 import org.mockito.Mock;
+import org.slf4j.Logger;
 
 import com.kodekonveyor.authentication.AuthenticatedUserService;
-import com.kodekonveyor.market.payment.PaymentUpdateController;
 import com.kodekonveyor.market.payment.TransferTypeEntityRepository;
 import com.kodekonveyor.market.payment.TransferTypeEntityRepositoryStubs;
 import com.kodekonveyor.market.project.ProjectEntityRepository;
@@ -28,6 +28,9 @@ public class PaymentUpdateControllerTestBase {
 
   @Mock
   TransferTypeEntityRepository transferTypeEntityRepository;
+
+  @Mock
+  Logger loggerService;
 
   @BeforeEach
   void setUp() {

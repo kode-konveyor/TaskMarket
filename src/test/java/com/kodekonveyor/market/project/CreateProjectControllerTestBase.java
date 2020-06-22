@@ -8,6 +8,7 @@ import org.slf4j.Logger;
 import com.kodekonveyor.authentication.AuthenticatedUserService;
 import com.kodekonveyor.authentication.RoleEntityRepository;
 import com.kodekonveyor.authentication.RoleEntityRepositoryStubs;
+import com.kodekonveyor.market.register.MarketUserEntityRepository;
 
 public class CreateProjectControllerTestBase {
 
@@ -32,11 +33,14 @@ public class CreateProjectControllerTestBase {
   @Mock
   PullrequestEntityRepository pullrequestEntityRepository;
 
+  @Mock
+  MarketUserEntityRepository marketUserEntityRepository;
+
   @BeforeEach
   void setUp() {
     ProjectEntityRepositoryStubs.behaviour(projectEntityRepository);
     MilestoneEntityRepositoryStubs.behaviour(milestoneEntityRepository);
-    PullrequestEntityStubs.behaviour(pullrequestEntityRepository);
+    PullRequestEntityStubs.behaviour(pullrequestEntityRepository);
     RoleEntityRepositoryStubs.behaviour(roleEntityRepository);
   }
 

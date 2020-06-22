@@ -1,6 +1,6 @@
 package com.kodekonveyor.market.tasks;
 
-import java.util.Date;
+import java.time.Instant;
 
 import javax.annotation.Generated;
 import javax.persistence.Entity;
@@ -34,6 +34,8 @@ public class TaskEntity {
 
   private String service;
 
-  private Date grabDate;
+  private TaskStatusEnum status;
+
+  private Instant grabDate;
 
 }

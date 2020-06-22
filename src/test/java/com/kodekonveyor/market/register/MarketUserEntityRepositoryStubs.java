@@ -29,6 +29,10 @@ public class MarketUserEntityRepositoryStubs {
         .when(marketUserEntityRepository)
         .findByUser(UserEntityTestData.getRoleCanbePaid());
 
+    doReturn(Optional.of(MarketUserEntityTestData.getRoleProjectManager()))
+        .when(marketUserEntityRepository)
+        .findByUser(UserEntityTestData.getRoleProjectManager());
+
     doReturn(Optional.of(MarketUserEntityTestData.getIdInNullDatabase()))
         .when(marketUserEntityRepository)
         .findByUser(UserEntityTestData.getIdInNullDatabase());
@@ -81,4 +85,44 @@ public class MarketUserEntityRepositoryStubs {
         .when(marketUserEntityRepository)
         .findByUser(UserEntityTestData.getRoleKodekonveyorContract());
   }
+
+  public static void
+      behaviour2(
+          final MarketUserEntityRepository marketUserEntityRepository
+      ) {
+    doReturn(Optional.of(MarketUserEntityTestData.getRoleManager()))
+        .when(marketUserEntityRepository)
+        .findByUser(UserEntityTestData.getRoleProjectManager());
+    doReturn(Optional.of(MarketUserEntityTestData.getLessBalance()))
+        .when(marketUserEntityRepository)
+        .findByUser(UserEntityTestData.get());
+
+    doReturn(Optional.of(MarketUserEntityTestData.getZeroBalance()))
+        .when(marketUserEntityRepository)
+        .findByUser(UserEntityTestData.getIdForZeroBalanceForProjectManager());
+  }
+
+  public static void userBalanceEqualToBudget(
+      final MarketUserEntityRepository marketUserEntityRepository
+  ) {
+    doReturn(
+        Optional.of(MarketUserEntityTestData.getRoleProjectManagerEqualBudget())
+    )
+        .when(marketUserEntityRepository)
+        .findByUser(UserEntityTestData.getRoleProjectManager());
+
+  }
+
+  public static void userBalanceMoreThanBudget(
+      final MarketUserEntityRepository marketUserEntityRepository
+  ) {
+    doReturn(
+        Optional
+            .of(MarketUserEntityTestData.getRoleProjectManagerMoreThanBudget())
+    )
+        .when(marketUserEntityRepository)
+        .findByUser(UserEntityTestData.getRoleProjectManager());
+
+  }
+
 }
