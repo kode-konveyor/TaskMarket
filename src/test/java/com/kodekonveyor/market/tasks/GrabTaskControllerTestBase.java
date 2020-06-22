@@ -6,6 +6,8 @@ import org.mockito.Mock;
 
 import com.kodekonveyor.authentication.AuthenticatedUserService;
 import com.kodekonveyor.authentication.AuthenticatedUserServiceStubs;
+import com.kodekonveyor.market.kpi.EventEntityRepository;
+import com.kodekonveyor.market.kpi.EventEntityRepositoryStubs;
 import com.kodekonveyor.market.register.MarketUserEntityRepository;
 import com.kodekonveyor.market.register.MarketUserEntityRepositoryStubs;
 
@@ -23,10 +25,14 @@ public class GrabTaskControllerTestBase {
   @Mock
   MarketUserEntityRepository marketUserEntityRepository;
 
+  @Mock
+  EventEntityRepository eventEntityRepository;
+
   @BeforeEach
   void setUp() {
     AuthenticatedUserServiceStubs.authenticated(authenticatedUserService);
     MarketUserEntityRepositoryStubs.behaviour(marketUserEntityRepository);
-    //TaskEntityRepositoryStubs.behaviour(taskEntityRepository);
+    TaskEntityRepositoryStubs.behaviour(taskEntityRepository);
+    EventEntityRepositoryStubs.behaviour(eventEntityRepository);
   }
 }

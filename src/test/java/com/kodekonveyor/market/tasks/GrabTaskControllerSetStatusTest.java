@@ -15,11 +15,12 @@ import org.mockito.quality.Strictness;
 
 import com.kodekonveyor.annotations.TestedBehaviour;
 import com.kodekonveyor.annotations.TestedService;
+import com.kodekonveyor.market.kpi.EventEntityTestData;
 
 @ExtendWith(MockitoExtension.class)
 @MockitoSettings(strictness = Strictness.LENIENT)
 @RunWith(MockitoJUnitRunner.class)
-@TestedBehaviour("record grab date")
+@TestedBehaviour("record grab date for tasks")
 @TestedService("GrabTaskController")
 public class GrabTaskControllerSetStatusTest
     extends GrabTaskControllerTestBase {
@@ -27,7 +28,6 @@ public class GrabTaskControllerSetStatusTest
   @Test
   @DisplayName("record grab date for tasks")
   public void testGrabDate() {
-
     grabTaskController.call(TaskTestData.ID);
 
     final ArgumentCaptor<TaskEntity> entity =
@@ -36,7 +36,30 @@ public class GrabTaskControllerSetStatusTest
     assertNotNull(
         entity.getValue().getGrabDate()
     );
+  }
+
+  @Test
+  @DisplayName(
+    "Grab event has been raised after the grab date is being recorded."
+  )
+  public void testGrabEvent() {
+    grabTaskController.call(TaskTestData.ID);
+
+    verify(eventEntityRepository)
+        .save(EventEntityTestData.getIdZero());
 
   }
 
+  @Test
+  @DisplayName(
+    "Task is being saved after the grab date is being recorded."
+  )
+  public void testTaskSaved() {
+    grabTaskController.call(TaskTestData.ID);
+    final ArgumentCaptor<TaskEntity> entity =
+        ArgumentCaptor.forClass(TaskEntity.class);
+
+    verify(taskEntityRepository).save(entity.capture());
+
+  }
 }
