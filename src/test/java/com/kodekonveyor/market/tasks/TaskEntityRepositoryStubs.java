@@ -66,7 +66,7 @@ public class TaskEntityRepositoryStubs {
 
   }
 
-  public static void DelimiterNotAtStartDesctiptionTask(
+  public static void delimiterNotAtStartDesctiptionTask(
       final TaskEntityRepository taskEntityRepository
   ) {
     doReturn(

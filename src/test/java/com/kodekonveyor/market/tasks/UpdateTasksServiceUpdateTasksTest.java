@@ -79,7 +79,7 @@ public class UpdateTasksServiceUpdateTasksTest
   )
   void test8() throws JSONException {
     TaskEntityRepositoryStubs
-        .DelimiterNotAtStartDesctiptionTask(taskEntityRepository);
+        .delimiterNotAtStartDesctiptionTask(taskEntityRepository);
     assertEquals(
         TaskEntityTestData.getupdatedDescriptionDelimiterNotAtStart(),
         updateTasksService
