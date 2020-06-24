@@ -47,15 +47,15 @@ public class UpdateTasksService {
           ProjectConstants.TASK_DESCRIPTION_END
       )
     ) {
-      final String[] DescriptionArray =
+      final String[] descriptionArray =
           storedTask.getDescription().split(
-              ProjectConstants.TASK_DESCRIPTION_START + ProjectConstants.OR +
+              ProjectConstants.TASK_DESCRIPTION_START + ProjectConstants.PIPE +
                   ProjectConstants.TASK_DESCRIPTION_END
           );
 
       final StringBuffer desciptionBuffer = new StringBuffer();
 
-      for (final String string : DescriptionArray)
+      for (final String string : descriptionArray)
         desciptionBuffer.append(string);
 
       final String actualDescription = desciptionBuffer.toString();

@@ -22,6 +22,6 @@ public class ProjectConstants {
   public static final String TASK_DESCRIPTION_END =
       "\nEnd of Task Description";
   public static final String DIFF = "\nDiff:\n";
-  public static final String OR = "|";
+  public static final String PIPE = "|";
 
 }
