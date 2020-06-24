@@ -1,7 +1,12 @@
 package com.kodekonveyor.technical;
 
+import org.assertj.core.util.Lists;
+import org.slf4j.Marker;
+import org.slf4j.MarkerFactory;
+
 import java.time.Instant;
 import java.time.temporal.ChronoUnit;
+import java.util.List;
 
 public class TechnicalTestData {
 
@@ -55,4 +60,12 @@ public class TechnicalTestData {
       PULL_REQUEST_COMMENT +
           '"' + Instant.now().minus(8, ChronoUnit.DAYS) + '"' + COMMITS_NODES_COMMIT_PUSHED_DATE + '"' + Instant.now().minus(2, ChronoUnit.DAYS) + '"' + STATUS_STATE_FAILURE;
 
+  public static final Long TEST_ISSUE_ID = 66L;
+  public static final List<Long> TEST_SINGLE_PR_ID = Lists.newArrayList(56L);
+  public static final List<Long> TEST_MULTIPLE_PR_ID = Lists.newArrayList(56L, 57L);
+  public static final String EXPECTED_MSG_WHN_PR_NOT_FOUND_FOR_ISSUE ="Pull request not found for issue.";
+  public static final String EXP_LOG_GET_PR_FOR_ISSUE_CALL = "Execution to fetch pull request starts.";
+  public static final String EXP_LOG_GET_PR_FOR_ISSUE_SUCCESS = "Successfully fetched linked pull request for issue : {}";
+  public static final String EXP_LOG_GET_PR_FOR_ISSUE_FAILURE = "Failed to fetched pull request for issue {}, error : {}";
+  public static final Marker EXP_GITHUB_MARKER = MarkerFactory.getMarker("github");
 }

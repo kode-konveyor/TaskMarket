@@ -39,9 +39,9 @@ public class TaskEntityTestData {
   }
 
   public static TaskEntity getUngrabbedTask() {
-    final TaskEntity taskEntity = getGrabbedOverThreeDays();
+    final TaskEntity taskEntity = get();
+    taskEntity.setGrabDate(null);
     taskEntity.setMarketUser(null);
-    taskEntity.setStatus(TaskStatusEnum.UP_FOR_GRAB);
     return taskEntity;
   }
 
@@ -59,21 +59,6 @@ public class TaskEntityTestData {
     return taskEntity;
   }
 
-  public static TaskEntity getUngrabbedFourDaysTask() {
-    final TaskEntity taskEntity = getGrabbedForFourDays();
-    taskEntity.setMarketUser(null);
-    taskEntity.setStatus(TaskStatusEnum.UP_FOR_GRAB);
-    return taskEntity;
-  }
-
-  public static TaskEntity getUngrabExactlyThreeDaysTask() {
-    final TaskEntity taskEntity = getGrabbedExactlyThreeDays();
-    taskEntity.setMarketUser(null);
-    taskEntity.setStatus(TaskStatusEnum.UP_FOR_GRAB);
-
-    return taskEntity;
-  }
-
   public static TaskEntity getPullRequestIssuedTask() {
     final TaskEntity taskEntity = get();
     taskEntity.setStatus(TaskStatusEnum.IN_PROGRESS);
@@ -85,6 +70,34 @@ public class TaskEntityTestData {
     final TaskEntity taskEntity = getPullRequestIssuedTask();
     taskEntity.setMarketUser(null);
     taskEntity.setStatus(TaskStatusEnum.UP_FOR_GRAB);
+    return taskEntity;
+  }
+
+  public static TaskEntity getTaskWithStatusUpdated() {
+    final TaskEntity taskEntity = get();
+    taskEntity.setStatus(TaskStatusEnum.IN_PROGRESS);
+    return taskEntity;
+  }
+
+  public static TaskEntity getInProgressTask() {
+    final TaskEntity taskEntity = get();
+    taskEntity.setId(TaskTestData.ID_IN_PROGRESS);
+    taskEntity.setStatus(TaskStatusEnum.IN_PROGRESS);
+    return taskEntity;
+  }
+
+  public static TaskEntity getUnassignedTask() {
+    final TaskEntity taskEntity = get();
+    taskEntity.setId(TaskTestData.ID_2);
+    taskEntity.setMarketUser(null);
+    return taskEntity;
+  }
+
+  public static TaskEntity getAssignedTask() {
+    final TaskEntity taskEntity = get();
+    taskEntity.setId(TaskTestData.ID_2);
+    taskEntity.setMarketUser(MarketUserEntityTestData.get());
+    taskEntity.setStatus(TaskStatusEnum.IN_PROGRESS);
     return taskEntity;
   }
 
