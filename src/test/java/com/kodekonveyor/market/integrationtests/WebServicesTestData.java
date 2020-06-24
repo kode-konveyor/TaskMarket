@@ -15,4 +15,6 @@ public class WebServicesTestData {
   public static final String URL_BASE = "http://127.0.0.1:8080/market";
 
   public static final String POST = "POST";
+
+  public static final String LOGIN_PARAM="login";
 }
