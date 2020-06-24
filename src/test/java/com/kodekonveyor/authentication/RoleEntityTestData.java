@@ -40,4 +40,10 @@ public class RoleEntityTestData {
     return roleEntity;
   }
 
+  public static RoleEntity getTechnicalRole() {
+    final RoleEntity roleEntity = new RoleEntity();
+    roleEntity.setId(RoleTestData.ID_TECHNICAL_ROLE);
+    roleEntity.setName(RoleTestData.TECHNICAL_ROLE);
+    return roleEntity;
+  }
 }

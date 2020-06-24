@@ -1,7 +1,10 @@
 package com.kodekonveyor.market.register;
 
+import static com.kodekonveyor.authentication.UserTestData.LOGIN;
+import static com.kodekonveyor.authentication.UserTestData.LOGIN_NO_MARKET_USER;
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
+import com.kodekonveyor.authentication.UserEntityRepositoryStubs;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.extension.ExtendWith;
@@ -28,7 +31,7 @@ public class ShowUserControllerShowHerDataTest
   public void test() {
     AuthenticatedUserServiceStubs
         .authenticated(authenticatedUserService);
-    assertEquals(MarketUserDTOTestData.get(), showUserController.call());
+    assertEquals(MarketUserDTOTestData.get(), showUserController.call(LOGIN));
   }
 
   @Test
@@ -38,9 +41,10 @@ public class ShowUserControllerShowHerDataTest
   public void test2() {
     AuthenticatedUserServiceStubs
         .unregistered(authenticatedUserService);
+    UserEntityRepositoryStubs.behaviour(userEntityRepository);
     assertEquals(
         MarketUserDTOTestData.getIdNotInDatabase(),
-        showUserController.call()
+        showUserController.call(LOGIN_NO_MARKET_USER)
     );
   }
 
