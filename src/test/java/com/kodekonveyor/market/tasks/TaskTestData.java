@@ -49,4 +49,7 @@ public class TaskTestData {
       " and difference in documentation comes here";
 
   public static final String DIFF = "\nDiff:\n";
+
+  public static final String TEXT_BEFORE_DELIMITER =
+      "This is the text before delimiter";
 }

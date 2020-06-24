@@ -1,6 +1,6 @@
 package com.kodekonveyor.market.tasks;
 
-import java.util.List;
+import java.util.Optional;
 
 import org.apache.commons.lang3.StringUtils;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -14,16 +14,16 @@ public class UpdateTasksService {
   @Autowired
   private TaskEntityRepository taskEntityRepository;
 
-  public TaskEntity call(final TaskEntity task) {
-    final List<TaskEntity> taskfromRepository =
+  public TaskEntity call(final TaskEntity inputTask) {
+    final Optional<TaskEntity> storedTask =
         taskEntityRepository.findByServiceAndBehaviour(
-            task.getService(), task.getBehaviour()
+            inputTask.getService(), inputTask.getBehaviour()
         );
 
-    if (!taskfromRepository.isEmpty())
-      return updateTask(task, taskfromRepository.get(0));
+    if (!storedTask.isEmpty())
+      return updateTask(inputTask, storedTask.get());
 
-    return createTaskOnGithub(task);
+    return createTaskOnGithub(inputTask);
 
   }
 
@@ -38,45 +38,55 @@ public class UpdateTasksService {
   }
 
   private TaskEntity
-      updateTask(final TaskEntity task, final TaskEntity taskfromRepository) {
+      updateTask(final TaskEntity inputTask, final TaskEntity storedTask) {
 
     if (
-      taskfromRepository.getDescription().contains(
+      storedTask.getDescription().contains(
           ProjectConstants.TASK_DESCRIPTION_START
+      ) || storedTask.getDescription().contains(
+          ProjectConstants.TASK_DESCRIPTION_END
       )
     ) {
-      final String actaulDescription =
-          taskfromRepository.getDescription().substring(
-              ProjectConstants.TASK_DESCRIPTION_START.length(),
-              taskfromRepository.getDescription()
-                  .indexOf(ProjectConstants.TASK_DESCRIPTION_END)
+      final String[] DescriptionArray =
+          storedTask.getDescription().split(
+              ProjectConstants.TASK_DESCRIPTION_START + ProjectConstants.OR +
+                  ProjectConstants.TASK_DESCRIPTION_END
           );
 
-      if (actaulDescription.equals(task.getDescription()))
-        return taskfromRepository;
+      final StringBuffer desciptionBuffer = new StringBuffer();
+
+      for (final String string : DescriptionArray)
+        desciptionBuffer.append(string);
+
+      final String actualDescription = desciptionBuffer.toString();
+
+      if (actualDescription.equals(inputTask.getDescription()))
+        return storedTask;
 
       final String differenceInDescription = StringUtils
           .difference(
-              actaulDescription, task.getDescription()
+              actualDescription, inputTask.getDescription()
           );
-      taskfromRepository.setDescription(
 
-          taskfromRepository.getDescription() + ProjectConstants.DIFF +
+      storedTask.setDescription(
+          ProjectConstants.TASK_DESCRIPTION_START +
+              actualDescription +
+              ProjectConstants.TASK_DESCRIPTION_END + ProjectConstants.DIFF +
               differenceInDescription
       );
-      return taskfromRepository;
+      return storedTask;
     }
 
     final String differenceInDescription = StringUtils
         .difference(
-            taskfromRepository.getDescription(), task.getDescription()
+            storedTask.getDescription(), inputTask.getDescription()
         );
-    taskfromRepository.setDescription(
+    storedTask.setDescription(
         ProjectConstants.TASK_DESCRIPTION_START +
-            taskfromRepository.getDescription() +
+            storedTask.getDescription() +
             ProjectConstants.TASK_DESCRIPTION_END + ProjectConstants.DIFF +
             differenceInDescription
     );
-    return taskfromRepository;
+    return storedTask;
   }
 }

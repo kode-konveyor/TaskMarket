@@ -32,7 +32,7 @@ public class TaskEntityRepositoryStubs {
       behaviour(final TaskEntityRepository taskEntityRepository) {
     doReturn(Optional.of(TaskEntityTestData.getPullRequestIssuedTask()))
         .when(taskEntityRepository).findById(TaskTestData.ID);
-    doReturn(List.of(TaskEntityTestData.get()))
+    doReturn(Optional.of(TaskEntityTestData.get()))
         .when(taskEntityRepository).findByServiceAndBehaviour(TaskTestData.SERVICE, TaskTestData.BEHAVIOUR);
   }
 
@@ -50,19 +50,52 @@ public class TaskEntityRepositoryStubs {
 
   public static void
       delimiterDescription(final TaskEntityRepository taskEntityRepository) {
-    doReturn(List.of(TaskEntityTestData.getTaskUpdatedDescrition()))
+    doReturn(Optional.of(TaskEntityTestData.getTaskUpdatedDescrition()))
         .when(taskEntityRepository).findByServiceAndBehaviour(TaskTestData.SERVICE, TaskTestData.BEHAVIOUR);
 
   }
 
   public static void
       taskNotinRepository(final TaskEntityRepository taskEntityRepository) {
-    doReturn(List.of())
+    doReturn(Optional.empty())
         .when(taskEntityRepository).findByServiceAndBehaviour(TaskTestData.SERVICE, TaskTestData.BEHAVIOUR);
-    doReturn(List.of())
+    doReturn(Optional.empty())
         .when(taskEntityRepository).findByServiceAndBehaviour(TaskTestData.OTHER_SERVICE, TaskTestData.BEHAVIOUR);
-    doReturn(List.of())
+    doReturn(Optional.empty())
         .when(taskEntityRepository).findByServiceAndBehaviour(TaskTestData.SERVICE, TaskTestData.OTHER_BEHAVIOUR);
+
+  }
+
+  public static void DelimiterNotAtStartDesctiptionTask(
+      final TaskEntityRepository taskEntityRepository
+  ) {
+    doReturn(
+        Optional
+            .of(TaskEntityTestData.getTaskUpdatedDescritionDelimiterNotAtStart())
+    )
+        .when(taskEntityRepository).findByServiceAndBehaviour(TaskTestData.SERVICE, TaskTestData.BEHAVIOUR);
+
+  }
+
+  public static void getupdatedDescriptionNoEndDelimiter(
+      final TaskEntityRepository taskEntityRepository
+  ) {
+    doReturn(
+        Optional
+            .of(TaskEntityTestData.getTaskUpdatedDescritionNoEndDelimiter())
+    )
+        .when(taskEntityRepository).findByServiceAndBehaviour(TaskTestData.SERVICE, TaskTestData.BEHAVIOUR);
+
+  }
+
+  public static void getupdatedDescriptionNoStartDelimiter(
+      final TaskEntityRepository taskEntityRepository
+  ) {
+    doReturn(
+        Optional
+            .of(TaskEntityTestData.getTaskUpdatedDescritionNoStartDelimiter())
+    )
+        .when(taskEntityRepository).findByServiceAndBehaviour(TaskTestData.SERVICE, TaskTestData.BEHAVIOUR);
 
   }
 

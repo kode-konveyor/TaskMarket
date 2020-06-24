@@ -39,9 +39,9 @@ public class TaskEntityTestData { //NOPMD
   }
 
   public static TaskEntity getUngrabbedTask() {
-    final TaskEntity taskEntity = getGrabbedOverThreeDays();
+    final TaskEntity taskEntity = get();
+    taskEntity.setGrabDate(null);
     taskEntity.setMarketUser(null);
-    taskEntity.setStatus(TaskStatusEnum.UP_FOR_GRAB);
     return taskEntity;
   }
 
@@ -65,14 +65,6 @@ public class TaskEntityTestData { //NOPMD
     taskEntity.setStatus(TaskStatusEnum.UP_FOR_GRAB);
     return taskEntity;
   }
-
-  //  public static TaskEntity getUngrabExactlyThreeDaysTask() {
-  //    final TaskEntity taskEntity = getGrabbedExactlyThreeDays();
-  //    taskEntity.setMarketUser(null);
-  //    taskEntity.setStatus(TaskStatusEnum.UP_FOR_GRAB);
-  //
-  //    return taskEntity;
-  //  }
 
   public static TaskEntity getPullRequestIssuedTask() {
     final TaskEntity taskEntity = get();
@@ -180,4 +172,51 @@ public class TaskEntityTestData { //NOPMD
     taskEntity.setStatus(TaskStatusEnum.NOT_IN_MODEL);
     return taskEntity;
   }
+
+  public static TaskEntity getTaskUpdatedDescritionDelimiterNotAtStart() {
+    final TaskEntity taskEntity = get();
+    taskEntity.setDescription(
+        TaskTestData.TEXT_BEFORE_DELIMITER +
+            TaskTestData.TASK_DESCRIPTION_START + TaskTestData.DESCRIPTION +
+            TaskTestData.TASK_DESCRIPTION_END
+    );
+    return taskEntity;
+  }
+
+  public static TaskEntity getupdatedDescriptionDelimiterNotAtStart() {
+    final TaskEntity taskEntity = get();
+    taskEntity.setDescription(
+        TaskTestData.TASK_DESCRIPTION_START +
+            TaskTestData.TEXT_BEFORE_DELIMITER + TaskTestData.DESCRIPTION +
+            TaskTestData.TASK_DESCRIPTION_END + TaskTestData.DIFF +
+            TaskTestData.DIFFERENT_DESCRIPTION
+    );
+    return taskEntity;
+  }
+
+  public static TaskEntity getInputTaskDescriptionDelimiterNotAtStart() {
+    final TaskEntity taskEntity = get();
+    taskEntity.setDescription(
+        TaskTestData.TEXT_BEFORE_DELIMITER + TaskTestData.DESCRIPTION +
+            TaskTestData.DIFFERENT_DESCRIPTION
+    );
+    return taskEntity;
+  }
+
+  public static TaskEntity getTaskUpdatedDescritionNoEndDelimiter() {
+    final TaskEntity taskEntity = get();
+    taskEntity.setDescription(
+        TaskTestData.TASK_DESCRIPTION_START + TaskTestData.DESCRIPTION
+    );
+    return taskEntity;
+  }
+
+  public static TaskEntity getTaskUpdatedDescritionNoStartDelimiter() {
+    final TaskEntity taskEntity = get();
+    taskEntity.setDescription(
+        TaskTestData.DESCRIPTION + TaskTestData.TASK_DESCRIPTION_END
+    );
+    return taskEntity;
+  }
+
 }

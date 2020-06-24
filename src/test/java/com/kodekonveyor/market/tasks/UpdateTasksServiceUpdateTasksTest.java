@@ -75,6 +75,57 @@ public class UpdateTasksServiceUpdateTasksTest
 
   @Test
   @DisplayName(
+    "if description is different from the input task description and the START delimiter is not at the beginning,it is updated"
+  )
+  void test8() throws JSONException {
+    TaskEntityRepositoryStubs
+        .DelimiterNotAtStartDesctiptionTask(taskEntityRepository);
+    assertEquals(
+        TaskEntityTestData.getupdatedDescriptionDelimiterNotAtStart(),
+        updateTasksService
+            .call(
+                TaskEntityTestData.getInputTaskDescriptionDelimiterNotAtStart()
+            )
+    );
+
+  }
+
+  @Test
+  @DisplayName(
+    "if description is different from the input task description and there is no END delimiter,it is updated"
+  )
+  void test9() throws JSONException {
+    TaskEntityRepositoryStubs
+        .getupdatedDescriptionNoEndDelimiter(taskEntityRepository);
+    assertEquals(
+        TaskEntityTestData.getDifferentDescriptionUpdated(),
+        updateTasksService
+            .call(
+                TaskEntityTestData.getDifferentDescription()
+            )
+    );
+
+  }
+
+  @Test
+  @DisplayName(
+    "if description is different from the input task description and there is no START delimiter,it is updated"
+  )
+  void test10() throws JSONException {
+    TaskEntityRepositoryStubs
+        .getupdatedDescriptionNoStartDelimiter(taskEntityRepository);
+    assertEquals(
+        TaskEntityTestData.getDifferentDescriptionUpdated(),
+        updateTasksService
+            .call(
+                TaskEntityTestData.getDifferentDescription()
+            )
+    );
+
+  }
+
+  @Test
+  @DisplayName(
     "If the task has same behaviour as github issue but different service, then it is created."
   )
   void test4() {
