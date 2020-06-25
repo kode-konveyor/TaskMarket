@@ -15,8 +15,8 @@ import org.mockito.quality.Strictness;
 
 import com.kodekonveyor.annotations.TestedBehaviour;
 import com.kodekonveyor.annotations.TestedService;
-import com.kodekonveyor.market.kpi.TimeInstantServiceStub;
 import com.kodekonveyor.market.kpi.EventEntityTestData;
+import com.kodekonveyor.market.kpi.TimeInstantServiceStubs;
 
 @ExtendWith(MockitoExtension.class)
 @MockitoSettings(strictness = Strictness.LENIENT)
@@ -29,7 +29,7 @@ public class GrabTaskControllerRecordGrabDateForTasksTest
   @Test
   @DisplayName("grab date for the task is recorded successfully")
   public void testGrabDate() {
-    TimeInstantServiceStub.getInstant(timeInstantService);
+    TimeInstantServiceStubs.behaviour(timeInstantService);
     grabTaskController.call(TaskTestData.ID_2);
 
     final ArgumentCaptor<TaskEntity> entity =
@@ -44,7 +44,7 @@ public class GrabTaskControllerRecordGrabDateForTasksTest
     "Grab event has been raised after the grab date is being recorded."
   )
   public void testGrabEvent() {
-    TimeInstantServiceStub.getInstant(timeInstantService);
+    TimeInstantServiceStubs.behaviour(timeInstantService);
     grabTaskController.call(TaskTestData.ID_2);
     verify(eventEntityRepository)
         .save(EventEntityTestData.getIdZero());
@@ -56,7 +56,7 @@ public class GrabTaskControllerRecordGrabDateForTasksTest
     "Task is being saved after the grab date is being recorded."
   )
   public void testTaskSaved() {
-    TimeInstantServiceStub.getInstant(timeInstantService);
+    TimeInstantServiceStubs.behaviour(timeInstantService);
     grabTaskController.call(TaskTestData.ID_2);
     final ArgumentCaptor<TaskEntity> entity =
         ArgumentCaptor.forClass(TaskEntity.class);
