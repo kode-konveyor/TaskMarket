@@ -117,9 +117,4 @@ public class TaskEntityTestData {
     return taskEntity;
   }
 
-  public static TaskEntity getTaskWithGrabDate() {
-    final TaskEntity taskEntity = get();
-    taskEntity.setGrabDate(TimeInstantTestData.INSTANT);
-    return taskEntity;
-  }
 }

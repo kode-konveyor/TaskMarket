@@ -27,10 +27,4 @@ public class MilestoneEntityTestData {
 
   }
 
-  public final static MilestoneEntity getGrabDateTaskMilestone() {
-    final MilestoneEntity milestoneEntity = get();
-    milestoneEntity.setTask(Set.of(TaskEntityTestData.getTaskWithGrabDate()));
-    return milestoneEntity;
-  }
-
 }
