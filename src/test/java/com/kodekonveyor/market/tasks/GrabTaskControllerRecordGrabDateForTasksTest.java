@@ -4,6 +4,7 @@ import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.mockito.Mockito.times;
 import static org.mockito.Mockito.verify;
 
+import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.extension.ExtendWith;
@@ -17,6 +18,7 @@ import org.mockito.quality.Strictness;
 import com.kodekonveyor.annotations.TestedBehaviour;
 import com.kodekonveyor.annotations.TestedService;
 import com.kodekonveyor.market.kpi.EventEntityTestData;
+import com.kodekonveyor.market.kpi.TimeInstantServiceStubs;
 
 @ExtendWith(MockitoExtension.class)
 @MockitoSettings(strictness = Strictness.LENIENT)
@@ -25,6 +27,11 @@ import com.kodekonveyor.market.kpi.EventEntityTestData;
 @TestedService("GrabTaskController")
 public class GrabTaskControllerRecordGrabDateForTasksTest
     extends GrabTaskControllerTestBase {
+
+  @BeforeEach
+  void setupCall() {
+    TimeInstantServiceStubs.behaviour(timeInstantService);
+  }
 
   @Test
   @DisplayName("grab date for the task is recorded successfully")
