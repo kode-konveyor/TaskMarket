@@ -1,7 +1,6 @@
 package com.kodekonveyor.market.tasks;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
-import static org.mockito.Mockito.times;
 import static org.mockito.Mockito.verify;
 
 import org.junit.jupiter.api.BeforeEach;
@@ -69,13 +68,4 @@ public class GrabTaskControllerRecordGrabDateForTasksTest
     verify(taskEntityRepository).save(entity.capture());
   }
 
-  @Test
-  @DisplayName(
-    "Time Instant service called to set the record date"
-  )
-  public void testTimeService() {
-    grabTaskController.call(TaskTestData.ID_2);
-    verify(timeInstantService, times(2))
-        .call();
-  }
 }
