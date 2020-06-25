@@ -119,7 +119,7 @@ public class TaskEntityTestData {
 
   public static TaskEntity getTaskWithGrabDate() {
     final TaskEntity taskEntity = get();
-    taskEntity.setGrabDate(DateUtilTestData.INSTANT);
+    taskEntity.setGrabDate(TimeInstantTestData.INSTANT);
     return taskEntity;
   }
 }

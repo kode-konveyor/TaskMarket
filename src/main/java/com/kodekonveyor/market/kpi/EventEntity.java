@@ -1,6 +1,6 @@
 package com.kodekonveyor.market.kpi;
 
-import java.util.Date;
+import java.time.Instant;
 
 import javax.persistence.Entity;
 import javax.persistence.FetchType;
@@ -23,7 +23,7 @@ public class EventEntity {
 
   private EventTypeEnum eventType;
 
-  private Date date;
+  private Instant instant;
 
   @OneToOne(fetch = FetchType.LAZY)
   private UserEntity user;

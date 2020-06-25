@@ -45,7 +45,7 @@ public class GrabTaskControllerTestBase {
   EventEntityRepository eventEntityRepository;
 
   @Mock
-  DateUtilService dateUtilService;
+  TimeInstantService timeInstantService;
 
   @BeforeEach
   void setUp() {

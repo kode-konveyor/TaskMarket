@@ -53,7 +53,7 @@ public class GrabTaskController {
   EventEntityRepository eventEntityRepository;
 
   @Autowired
-  DateUtilService dateUtilService;
+  TimeInstantService timeInstantService;
 
   @PutMapping(UrlMapConstants.GRAB_TASK_PATH)
   public void call(final long taskId) {
@@ -142,16 +142,16 @@ public class GrabTaskController {
 
   private void
       recordGrabDate(final TaskEntity taskEntity) {
-    final Instant grabDate = dateUtilService.getInstant();
+    final Instant grabDate = timeInstantService.call();
     taskEntity.setGrabDate(grabDate);
-    
+
   }
 
   private void
       raiseEvent(final UserEntity userEntity) {
     final EventEntity event = new EventEntity();
     event.setEventType(EventTypeEnum.GRAB);
-    event.setDate(dateUtilService.getDate());
+    event.setInstant(timeInstantService.call());
     event.setUser(userEntity);
     eventEntityRepository.save(event);
   }
