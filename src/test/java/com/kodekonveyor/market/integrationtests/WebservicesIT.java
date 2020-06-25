@@ -65,7 +65,6 @@ public class WebservicesIT {
         .setRequestProperty(
             OIDC_CLAIM_NICKNAME, UserTestData.LOGIN_NO_MARKET_USER
         );
-    connection.addRequestProperty(LOGIN_PARAM, UserTestData.LOGIN_NO_MARKET_USER);
     final MarketUserDTO marketUser = mapper
         .readValue((InputStream) connection.getContent(), MarketUserDTO.class);
     assertEquals(MarketUserDTOTestData.getIdNotInDatabase(), marketUser);
