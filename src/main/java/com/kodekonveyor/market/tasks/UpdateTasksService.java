@@ -68,12 +68,7 @@ public class UpdateTasksService {
               actualDescription, inputTask.getDescription()
           );
 
-      storedTask.setDescription(
-          ProjectConstants.TASK_DESCRIPTION_START +
-              actualDescription +
-              ProjectConstants.TASK_DESCRIPTION_END + ProjectConstants.DIFF +
-              differenceInDescription
-      );
+      updateDescription(storedTask, actualDescription, differenceInDescription);
       return storedTask;
     }
 
@@ -81,12 +76,21 @@ public class UpdateTasksService {
         .difference(
             storedTask.getDescription(), inputTask.getDescription()
         );
-    storedTask.setDescription(
+    updateDescription(
+        storedTask, storedTask.getDescription(), differenceInDescription
+    );
+    return storedTask;
+  }
+
+  private void updateDescription(
+      final TaskEntity task, final String actualDescription,
+      final String differenceInDescription
+  ) {
+    task.setDescription(
         ProjectConstants.TASK_DESCRIPTION_START +
-            storedTask.getDescription() +
+            actualDescription +
             ProjectConstants.TASK_DESCRIPTION_END + ProjectConstants.DIFF +
             differenceInDescription
     );
-    return storedTask;
   }
 }

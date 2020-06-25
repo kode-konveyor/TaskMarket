@@ -24,22 +24,22 @@ public class PullRequestEntityStubs {
           final PullrequestEntityRepository pullrequestEntityRepository
       ) {
     doReturn(List.of())
-        .when(pullrequestEntityRepository).findByTask(TaskEntityTestData.getGrabbedOverThreeDays());
+        .when(pullrequestEntityRepository).findByTask(TaskEntityTestData.getStatusGrabbedOverThreeDays());
     doReturn(List.of())
-        .when(pullrequestEntityRepository).findByTask(TaskEntityTestData.getGrabbedExactlyThreeDays());
+        .when(pullrequestEntityRepository).findByTask(TaskEntityTestData.getStatusGrabbedExactlyThreeDays());
     doReturn(List.of())
-        .when(pullrequestEntityRepository).findByTask(TaskEntityTestData.getGrabbedForFourDays());
+        .when(pullrequestEntityRepository).findByTask(TaskEntityTestData.getStatusGrabbedForFourDays());
   }
 
   public static void pullRequestIssued(
       final PullrequestEntityRepository pullrequestEntityRepository
   ) {
     doReturn(List.of(PullrequestEntityTestData.getGrabbedOverThreeDays()))
-        .when(pullrequestEntityRepository).findByTask(TaskEntityTestData.getGrabbedOverThreeDays());
+        .when(pullrequestEntityRepository).findByTask(TaskEntityTestData.getStatusGrabbedOverThreeDays());
     doReturn(List.of(PullrequestEntityTestData.getGrabbedExactlyThreeDays()))
-        .when(pullrequestEntityRepository).findByTask(TaskEntityTestData.getGrabbedExactlyThreeDays());
+        .when(pullrequestEntityRepository).findByTask(TaskEntityTestData.getStatusGrabbedExactlyThreeDays());
     doReturn(List.of(PullrequestEntityTestData.getGrabbedForFourDays()))
-        .when(pullrequestEntityRepository).findByTask(TaskEntityTestData.getGrabbedForFourDays());
+        .when(pullrequestEntityRepository).findByTask(TaskEntityTestData.getStatusGrabbedForFourDays());
 
   }
 

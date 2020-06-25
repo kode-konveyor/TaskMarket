@@ -31,40 +31,41 @@ public class TaskEntityTestData {
     return taskEntity;
   }
 
-  public static TaskEntity getGrabbedOverThreeDays() {
+  public static TaskEntity getStatusGrabbedOverThreeDays() {
     final TaskEntity taskEntity = get();
     taskEntity.setStatus(TaskStatusEnum.IN_PROGRESS);
     taskEntity.setGrabDate(TaskTestData.DATE_OLDER_THAN_THREE_DAYS);
     return taskEntity;
   }
 
-  public static TaskEntity getUngrabbedTask() {
+  public static TaskEntity getStatusUngrabbed() {
     final TaskEntity taskEntity = get();
     taskEntity.setGrabDate(null);
     taskEntity.setMarketUser(null);
+    taskEntity.setStatus(TaskStatusEnum.UP_FOR_GRAB);
     return taskEntity;
   }
 
-  public static TaskEntity getGrabbedExactlyThreeDays() {
+  public static TaskEntity getStatusGrabbedExactlyThreeDays() {
     final TaskEntity taskEntity = get();
     taskEntity.setStatus(TaskStatusEnum.IN_PROGRESS);
     taskEntity.setGrabDate(TaskTestData.DATE_THREE_DAYS_SINCE_GRABBED);
     return taskEntity;
   }
 
-  public static TaskEntity getGrabbedForFourDays() {
+  public static TaskEntity getStatusGrabbedForFourDays() {
     final TaskEntity taskEntity = get();
     taskEntity.setStatus(TaskStatusEnum.IN_PROGRESS);
     taskEntity.setGrabDate(TaskTestData.DATE_FOUR_DAYS_SINCE_GRABBED);
     return taskEntity;
   }
 
-  public static TaskEntity getUngrabbedFourDaysTask() {
-    final TaskEntity taskEntity = getGrabbedForFourDays();
-    taskEntity.setMarketUser(null);
-    taskEntity.setStatus(TaskStatusEnum.UP_FOR_GRAB);
-    return taskEntity;
-  }
+  //  public static TaskEntity getStatusUngrabbedFourDays() {
+  //    final TaskEntity taskEntity = getGrabbedForFourDays();
+  //    taskEntity.setMarketUser(null);
+  //    taskEntity.setStatus(TaskStatusEnum.UP_FOR_GRAB);
+  //    return taskEntity;
+  //  }
 
   public static TaskEntity getPullRequestIssuedTask() {
     final TaskEntity taskEntity = get();
@@ -73,12 +74,12 @@ public class TaskEntityTestData {
     return taskEntity;
   }
 
-  public static TaskEntity getUngrabPullRequestIssuedtask() {
-    final TaskEntity taskEntity = getPullRequestIssuedTask();
-    taskEntity.setMarketUser(null);
-    taskEntity.setStatus(TaskStatusEnum.UP_FOR_GRAB);
-    return taskEntity;
-  }
+  //  public static TaskEntity getUngrabPullRequestIssuedtask() {
+  //    final TaskEntity taskEntity = getPullRequestIssuedTask();
+  //    taskEntity.setMarketUser(null);
+  //    taskEntity.setStatus(TaskStatusEnum.UP_FOR_GRAB);
+  //    return taskEntity;
+  //  }
 
   public static TaskEntity getTaskWithStatusUpdated() {
     final TaskEntity taskEntity = get();
