@@ -30,7 +30,7 @@ public class UpdateTasksServiceUpdateTasksTest
   void test() throws JSONException {
     TaskEntityRepositoryStubs.taskNotinRepository(taskEntityRepository);
     assertEquals(
-        TaskEntityTestData.getNotInModelTaskUpdatedDescrition(),
+        TaskEntityDescriptionsTestData.getDescriptionUpdatedNotInModel(),
         updateTasksService.call(TaskEntityTestData.get())
     );
   }
@@ -42,8 +42,9 @@ public class UpdateTasksServiceUpdateTasksTest
   void test7() throws JSONException {
     TaskEntityRepositoryStubs.behaviour(taskEntityRepository);
     assertEquals(
-        TaskEntityTestData.getDifferentDescriptionUpdated(),
-        updateTasksService.call(TaskEntityTestData.getDifferentDescription())
+        TaskEntityDescriptionsTestData.getDescriptionDifferentUpdated(),
+        updateTasksService
+            .call(TaskEntityDescriptionsTestData.getDescriptionDifferent())
     );
   }
 
@@ -54,7 +55,7 @@ public class UpdateTasksServiceUpdateTasksTest
   void test2() throws JSONException {
     TaskEntityRepositoryStubs.delimiterDescription(taskEntityRepository);
     assertEquals(
-        TaskEntityTestData.getTaskUpdatedDescrition(),
+        TaskEntityDescriptionsTestData.getDescritionUpdated(),
         updateTasksService.call(TaskEntityTestData.get())
     );
 
@@ -67,8 +68,9 @@ public class UpdateTasksServiceUpdateTasksTest
   void test6() throws JSONException {
     TaskEntityRepositoryStubs.delimiterDescription(taskEntityRepository);
     assertEquals(
-        TaskEntityTestData.getDifferentDescriptionUpdated(),
-        updateTasksService.call(TaskEntityTestData.getDifferentDescription())
+        TaskEntityDescriptionsTestData.getDescriptionDifferentUpdated(),
+        updateTasksService
+            .call(TaskEntityDescriptionsTestData.getDescriptionDifferent())
     );
 
   }
@@ -81,10 +83,12 @@ public class UpdateTasksServiceUpdateTasksTest
     TaskEntityRepositoryStubs
         .delimiterNotAtStartDesctiptionTask(taskEntityRepository);
     assertEquals(
-        TaskEntityTestData.getupdatedDescriptionDelimiterNotAtStart(),
+        TaskEntityDescriptionsTestData
+            .getDescriptionUpdatedDelimiterAtStart(),
         updateTasksService
             .call(
-                TaskEntityTestData.getInputTaskDescriptionDelimiterNotAtStart()
+                TaskEntityDescriptionsTestData
+                    .getDescriptionDelimiterNotAtStart()
             )
     );
 
@@ -98,10 +102,10 @@ public class UpdateTasksServiceUpdateTasksTest
     TaskEntityRepositoryStubs
         .getupdatedDescriptionNoEndDelimiter(taskEntityRepository);
     assertEquals(
-        TaskEntityTestData.getDifferentDescriptionUpdated(),
+        TaskEntityDescriptionsTestData.getDescriptionDifferentUpdated(),
         updateTasksService
             .call(
-                TaskEntityTestData.getDifferentDescription()
+                TaskEntityDescriptionsTestData.getDescriptionDifferent()
             )
     );
 
@@ -115,10 +119,10 @@ public class UpdateTasksServiceUpdateTasksTest
     TaskEntityRepositoryStubs
         .getupdatedDescriptionNoStartDelimiter(taskEntityRepository);
     assertEquals(
-        TaskEntityTestData.getDifferentDescriptionUpdated(),
+        TaskEntityDescriptionsTestData.getDescriptionDifferentUpdated(),
         updateTasksService
             .call(
-                TaskEntityTestData.getDifferentDescription()
+                TaskEntityDescriptionsTestData.getDescriptionDifferent()
             )
     );
 
@@ -131,8 +135,8 @@ public class UpdateTasksServiceUpdateTasksTest
   void test4() {
     TaskEntityRepositoryStubs.taskNotinRepository(taskEntityRepository);
     assertEquals(
-        TaskEntityTestData.getDifferentServiceTaskUpdatedDescrition(),
-        updateTasksService.call(TaskEntityTestData.getDifferentServiceTask())
+        TaskEntityDescriptionsTestData.getDescritionUpdatedDifferentService(),
+        updateTasksService.call(TaskEntityTestData.getServiceDifferent())
 
     );
   }
@@ -144,8 +148,8 @@ public class UpdateTasksServiceUpdateTasksTest
   void test5() {
     TaskEntityRepositoryStubs.taskNotinRepository(taskEntityRepository);
     assertEquals(
-        TaskEntityTestData.getDifferentBehaviourTaskUpdatedDescrition(),
-        updateTasksService.call(TaskEntityTestData.getDifferentBehaviourTask())
+        TaskEntityDescriptionsTestData.getDescritionUpdatedDifferentBehaviour(),
+        updateTasksService.call(TaskEntityTestData.getBehaviourDifferent())
 
     );
   }

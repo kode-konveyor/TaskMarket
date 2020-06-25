@@ -5,7 +5,7 @@ import javax.annotation.Generated;
 import com.kodekonveyor.market.register.MarketUserEntityTestData;
 
 @Generated("by zenta-tools")
-public class TaskEntityTestData { //NOPMD
+public class TaskEntityTestData {
 
   public final static TaskEntity get() {
     final TaskEntity taskEntity = new TaskEntity();
@@ -108,114 +108,15 @@ public class TaskEntityTestData { //NOPMD
     return taskEntity;
   }
 
-  public static TaskEntity getTaskUpdatedDescrition() {
-    final TaskEntity taskEntity = get();
-    taskEntity.setDescription(
-        TaskTestData.TASK_DESCRIPTION_START + TaskTestData.DESCRIPTION +
-            TaskTestData.TASK_DESCRIPTION_END
-    );
-    return taskEntity;
-  }
-
-  public static TaskEntity getDifferentDescriptionUpdated() {
-    final TaskEntity taskEntity = get();
-    taskEntity.setDescription(
-        TaskTestData.TASK_DESCRIPTION_START + TaskTestData.DESCRIPTION +
-            TaskTestData.TASK_DESCRIPTION_END + TaskTestData.DIFF +
-            TaskTestData.DIFFERENT_DESCRIPTION
-    );
-    return taskEntity;
-  }
-
-  public static TaskEntity getDifferentDescription() {
-    final TaskEntity taskEntity = get();
-    taskEntity.setDescription(
-        TaskTestData.DESCRIPTION + TaskTestData.DIFFERENT_DESCRIPTION
-    );
-    return taskEntity;
-  }
-
-  public static TaskEntity getDifferentServiceTaskUpdatedDescrition() {
-    final TaskEntity taskEntity = getDifferentServiceTask();
-    taskEntity.setDescription(
-        TaskTestData.TASK_DESCRIPTION_START + TaskTestData.DESCRIPTION +
-            TaskTestData.TASK_DESCRIPTION_END
-    );
-    taskEntity.setStatus(TaskStatusEnum.NOT_IN_MODEL);
-    return taskEntity;
-  }
-
-  public static TaskEntity getDifferentServiceTask() {
-    final TaskEntity taskEntity = get();
+  public static TaskEntity getServiceDifferent() {
+    final TaskEntity taskEntity = TaskEntityTestData.get();
     taskEntity.setService(TaskTestData.OTHER_SERVICE);
     return taskEntity;
   }
 
-  public static TaskEntity getDifferentBehaviourTask() {
-    final TaskEntity taskEntity = get();
+  public static TaskEntity getBehaviourDifferent() {
+    final TaskEntity taskEntity = TaskEntityTestData.get();
     taskEntity.setBehaviour(TaskTestData.OTHER_BEHAVIOUR);
-    return taskEntity;
-  }
-
-  public static TaskEntity getDifferentBehaviourTaskUpdatedDescrition() {
-    final TaskEntity taskEntity = getDifferentBehaviourTask();
-    taskEntity.setDescription(
-        TaskTestData.TASK_DESCRIPTION_START + TaskTestData.DESCRIPTION +
-            TaskTestData.TASK_DESCRIPTION_END
-    );
-    taskEntity.setStatus(TaskStatusEnum.NOT_IN_MODEL);
-    return taskEntity;
-  }
-
-  public static TaskEntity getNotInModelTaskUpdatedDescrition() {
-    final TaskEntity taskEntity = getTaskUpdatedDescrition();
-    taskEntity.setStatus(TaskStatusEnum.NOT_IN_MODEL);
-    return taskEntity;
-  }
-
-  public static TaskEntity getTaskUpdatedDescritionDelimiterNotAtStart() {
-    final TaskEntity taskEntity = get();
-    taskEntity.setDescription(
-        TaskTestData.TEXT_BEFORE_DELIMITER +
-            TaskTestData.TASK_DESCRIPTION_START + TaskTestData.DESCRIPTION +
-            TaskTestData.TASK_DESCRIPTION_END
-    );
-    return taskEntity;
-  }
-
-  public static TaskEntity getupdatedDescriptionDelimiterNotAtStart() {
-    final TaskEntity taskEntity = get();
-    taskEntity.setDescription(
-        TaskTestData.TASK_DESCRIPTION_START +
-            TaskTestData.TEXT_BEFORE_DELIMITER + TaskTestData.DESCRIPTION +
-            TaskTestData.TASK_DESCRIPTION_END + TaskTestData.DIFF +
-            TaskTestData.DIFFERENT_DESCRIPTION
-    );
-    return taskEntity;
-  }
-
-  public static TaskEntity getInputTaskDescriptionDelimiterNotAtStart() {
-    final TaskEntity taskEntity = get();
-    taskEntity.setDescription(
-        TaskTestData.TEXT_BEFORE_DELIMITER + TaskTestData.DESCRIPTION +
-            TaskTestData.DIFFERENT_DESCRIPTION
-    );
-    return taskEntity;
-  }
-
-  public static TaskEntity getTaskUpdatedDescritionNoEndDelimiter() {
-    final TaskEntity taskEntity = get();
-    taskEntity.setDescription(
-        TaskTestData.TASK_DESCRIPTION_START + TaskTestData.DESCRIPTION
-    );
-    return taskEntity;
-  }
-
-  public static TaskEntity getTaskUpdatedDescritionNoStartDelimiter() {
-    final TaskEntity taskEntity = get();
-    taskEntity.setDescription(
-        TaskTestData.DESCRIPTION + TaskTestData.TASK_DESCRIPTION_END
-    );
     return taskEntity;
   }
 

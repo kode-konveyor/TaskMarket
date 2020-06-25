@@ -50,7 +50,7 @@ public class TaskEntityRepositoryStubs {
 
   public static void
       delimiterDescription(final TaskEntityRepository taskEntityRepository) {
-    doReturn(Optional.of(TaskEntityTestData.getTaskUpdatedDescrition()))
+    doReturn(Optional.of(TaskEntityDescriptionsTestData.getDescritionUpdated()))
         .when(taskEntityRepository).findByServiceAndBehaviour(TaskTestData.SERVICE, TaskTestData.BEHAVIOUR);
 
   }
@@ -71,7 +71,10 @@ public class TaskEntityRepositoryStubs {
   ) {
     doReturn(
         Optional
-            .of(TaskEntityTestData.getTaskUpdatedDescritionDelimiterNotAtStart())
+            .of(
+                TaskEntityDescriptionsTestData
+                    .getDescritionUpdatedDelimiterNotAtStart()
+            )
     )
         .when(taskEntityRepository).findByServiceAndBehaviour(TaskTestData.SERVICE, TaskTestData.BEHAVIOUR);
 
@@ -82,7 +85,10 @@ public class TaskEntityRepositoryStubs {
   ) {
     doReturn(
         Optional
-            .of(TaskEntityTestData.getTaskUpdatedDescritionNoEndDelimiter())
+            .of(
+                TaskEntityDescriptionsTestData
+                    .getDescritionUpdatedNoEndDelimiter()
+            )
     )
         .when(taskEntityRepository).findByServiceAndBehaviour(TaskTestData.SERVICE, TaskTestData.BEHAVIOUR);
 
@@ -93,7 +99,10 @@ public class TaskEntityRepositoryStubs {
   ) {
     doReturn(
         Optional
-            .of(TaskEntityTestData.getTaskUpdatedDescritionNoStartDelimiter())
+            .of(
+                TaskEntityDescriptionsTestData
+                    .getDescritionUpdatedNoStartDelimiter()
+            )
     )
         .when(taskEntityRepository).findByServiceAndBehaviour(TaskTestData.SERVICE, TaskTestData.BEHAVIOUR);
 
