@@ -8,6 +8,7 @@ import com.kodekonveyor.authentication.AuthenticatedUserService;
 import com.kodekonveyor.authentication.AuthenticatedUserServiceStubs;
 import com.kodekonveyor.market.kpi.EventEntityRepository;
 import com.kodekonveyor.market.kpi.EventEntityRepositoryStubs;
+import com.kodekonveyor.market.kpi.TimeInstantServiceStubs;
 import com.kodekonveyor.market.project.MilestoneEntityRepository;
 import com.kodekonveyor.market.project.MilestoneEntityRepositoryStubs;
 import com.kodekonveyor.market.project.ProjectEntityRepository;
@@ -55,6 +56,7 @@ public class GrabTaskControllerTestBase {
     MilestoneEntityRepositoryStubs.behaviour(milestoneEntityRepository);
     ProjectEntityRepositoryStubs.behaviour(projectEntityRepository);
     EventEntityRepositoryStubs.behaviour(eventEntityRepository);
+    TimeInstantServiceStubs.behaviour(timeInstantService);
   }
 
 }

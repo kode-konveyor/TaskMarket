@@ -1,6 +1,7 @@
 package com.kodekonveyor.market.tasks;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.mockito.Mockito.times;
 import static org.mockito.Mockito.verify;
 
 import org.junit.jupiter.api.DisplayName;
@@ -16,7 +17,6 @@ import org.mockito.quality.Strictness;
 import com.kodekonveyor.annotations.TestedBehaviour;
 import com.kodekonveyor.annotations.TestedService;
 import com.kodekonveyor.market.kpi.EventEntityTestData;
-import com.kodekonveyor.market.kpi.TimeInstantServiceStubs;
 
 @ExtendWith(MockitoExtension.class)
 @MockitoSettings(strictness = Strictness.LENIENT)
@@ -29,7 +29,7 @@ public class GrabTaskControllerRecordGrabDateForTasksTest
   @Test
   @DisplayName("grab date for the task is recorded successfully")
   public void testGrabDate() {
-    TimeInstantServiceStubs.behaviour(timeInstantService);
+
     grabTaskController.call(TaskTestData.ID_2);
 
     final ArgumentCaptor<TaskEntity> entity =
@@ -44,7 +44,6 @@ public class GrabTaskControllerRecordGrabDateForTasksTest
     "Grab event has been raised after the grab date is being recorded."
   )
   public void testGrabEvent() {
-    TimeInstantServiceStubs.behaviour(timeInstantService);
     grabTaskController.call(TaskTestData.ID_2);
     verify(eventEntityRepository)
         .save(EventEntityTestData.getIdZero());
@@ -56,7 +55,6 @@ public class GrabTaskControllerRecordGrabDateForTasksTest
     "Task is being saved after the grab date is being recorded."
   )
   public void testTaskSaved() {
-    TimeInstantServiceStubs.behaviour(timeInstantService);
     grabTaskController.call(TaskTestData.ID_2);
     final ArgumentCaptor<TaskEntity> entity =
         ArgumentCaptor.forClass(TaskEntity.class);
@@ -64,4 +62,13 @@ public class GrabTaskControllerRecordGrabDateForTasksTest
     verify(taskEntityRepository).save(entity.capture());
   }
 
+  @Test
+  @DisplayName(
+    "Time Instant service called to set the record date"
+  )
+  public void testTimeService() {
+    grabTaskController.call(TaskTestData.ID_2);
+    verify(timeInstantService, times(2))
+        .call();
+  }
 }
