@@ -101,4 +101,11 @@ public class TaskEntityTestData {
     return taskEntity;
   }
 
+  public static TaskEntity getMarketUserNewlyRegistered() {
+    final TaskEntity taskEntity = get();
+    taskEntity.setMarketUser(MarketUserEntityTestData.getIdNewlySaved());
+    taskEntity.setStatus(TaskStatusEnum.IN_PROGRESS);
+    return taskEntity;
+  }
+
 }

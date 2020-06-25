@@ -1,8 +1,12 @@
 package com.kodekonveyor.market.tasks;
 
-import static org.mockito.Mockito.doReturn;
+import com.google.common.collect.Lists;
+import com.kodekonveyor.market.register.MarketUserEntityTestData;
+
 import java.util.List;
 import java.util.Optional;
+
+import static org.mockito.Mockito.doReturn;
 
 public class TaskEntityRepositoryStubs {
 
@@ -42,6 +46,11 @@ public class TaskEntityRepositoryStubs {
     doReturn(Optional.of(TaskEntityTestData.getUnassignedTask()))
         .when(taskEntityRepository)
         .findById(TaskTestData.ID_2);
+    doReturn(Lists.newArrayList(TaskEntityTestData.get()))
+            .when(taskEntityRepository)
+            .findByMarketUser(MarketUserEntityTestData.get());
+    doReturn(Lists.newArrayList())
+            .when(taskEntityRepository)
+            .findByMarketUser(MarketUserEntityTestData.getIdNewlySaved());
    }
-
 }

@@ -36,4 +36,7 @@ public class TaskTestData {
 
   public static final String TASK_NOT_UP_FOR_GRAB =
       "Task is not in the up for grab status";
+
+  public static final String EXP_USER_NOT_ELIGIBLE_TO_GRAB =
+        "User not eligible to grab task.";
 }
