@@ -1,5 +1,21 @@
 package com.kodekonveyor.market.integrationtests;
 
+import static com.kodekonveyor.market.integrationtests.WebServicesTestData.*; //NOPMD it's not unused import
+import static org.junit.jupiter.api.Assertions.assertEquals;
+
+import java.io.IOException;
+import java.io.InputStream;
+import java.io.OutputStream;
+import java.net.HttpURLConnection;
+import java.net.MalformedURLException;
+import java.net.URL;
+
+import org.junit.jupiter.api.BeforeEach;
+import org.junit.jupiter.api.DisplayName;
+import org.junit.jupiter.api.Tag;
+import org.junit.jupiter.api.Test;
+import org.junit.platform.commons.annotation.Testable;
+
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.kodekonveyor.annotations.TestedBehaviour;
 import com.kodekonveyor.annotations.TestedService;
@@ -10,25 +26,8 @@ import com.kodekonveyor.market.lead.LeadDTO;
 import com.kodekonveyor.market.lead.LeadDTOTestData;
 import com.kodekonveyor.market.register.MarketUserDTO;
 import com.kodekonveyor.market.register.MarketUserDTOTestData;
+
 import net.minidev.json.parser.ParseException;
-import org.junit.jupiter.api.BeforeEach;
-import org.junit.jupiter.api.DisplayName;
-import org.junit.jupiter.api.Tag;
-import org.junit.jupiter.api.Test;
-import org.junit.platform.commons.annotation.Testable;
-import org.springframework.web.util.UriComponentsBuilder;
-
-import java.io.IOException;
-import java.io.InputStream;
-import java.io.OutputStream;
-import java.net.HttpURLConnection;
-import java.net.MalformedURLException;
-import java.net.URL;
-
-import static com.kodekonveyor.market.integrationtests.WebServicesTestData.APPLICATION_X_WWW_FORM_URLENCODED;
-import static com.kodekonveyor.market.integrationtests.WebServicesTestData.LOGIN_PARAM;
-import static com.kodekonveyor.market.integrationtests.WebServicesTestData.POST;
-import static org.junit.jupiter.api.Assertions.assertEquals;
 
 @TestedBehaviour("roles")
 @TestedService("ListLeadController")
@@ -58,16 +57,15 @@ public class WebservicesIT {
   @Test
   @DisplayName("A user can get its data at member/user")
   public void test1() throws IOException, ParseException {
-    final URL url = UriComponentsBuilder.fromHttpUrl(WebServicesTestData.URL_BASE + UrlMapConstants.SHOW_USER_PATH)
-            .queryParam(LOGIN_PARAM, UserTestData.LOGIN_NO_MARKET_USER)
-            .build().toUri()
-            .toURL();
+    final URL url =
+        new URL(URL_BASE + UrlMapConstants.SHOW_USER_PATH);
     final HttpURLConnection connection =
         (HttpURLConnection) url.openConnection();
     connection
         .setRequestProperty(
-            WebServicesTestData.OIDC_CLAIM_NICKNAME, UserTestData.LOGIN_NO_MARKET_USER
+            OIDC_CLAIM_NICKNAME, UserTestData.LOGIN_NO_MARKET_USER
         );
+    connection.addRequestProperty(LOGIN_PARAM, UserTestData.LOGIN_NO_MARKET_USER);
     final MarketUserDTO marketUser = mapper
         .readValue((InputStream) connection.getContent(), MarketUserDTO.class);
     assertEquals(MarketUserDTOTestData.getIdNotInDatabase(), marketUser);
@@ -77,9 +75,9 @@ public class WebservicesIT {
   @DisplayName("/lead accepts application/x-www-form-urlencoded")
   public void test2() throws IOException, ParseException {
     final HttpURLConnection connection =
-        openPostConnection(WebServicesTestData.URL_BASE, UrlMapConstants.LEAD_PATH);
+        openPostConnection(URL_BASE, UrlMapConstants.LEAD_PATH);
     connection.setRequestProperty(
-        WebServicesTestData.CONTENT_TYPE, APPLICATION_X_WWW_FORM_URLENCODED
+        CONTENT_TYPE, APPLICATION_X_WWW_FORM_URLENCODED
     );
     final String text =
         RegisterInterestControllerTestData.LEAD_DTO_AS_URLENCODED;
@@ -95,9 +93,9 @@ public class WebservicesIT {
   @DisplayName("/lead accepts application/json")
   public void test3() throws IOException, ParseException {
     final HttpURLConnection connection =
-        openPostConnection(WebServicesTestData.URL_BASE, UrlMapConstants.LEAD_PATH);
+        openPostConnection(URL_BASE, UrlMapConstants.LEAD_PATH);
     connection
-        .setRequestProperty(WebServicesTestData.CONTENT_TYPE, WebServicesTestData.APPLICATION_JSON_CHARSET_UTF_8);
+        .setRequestProperty(CONTENT_TYPE, APPLICATION_JSON_CHARSET_UTF_8);
     final LeadDTO lead = LeadDTOTestData.get();
     try (OutputStream outputStream = connection.getOutputStream()) {
       mapper.writeValue(outputStream, lead);
