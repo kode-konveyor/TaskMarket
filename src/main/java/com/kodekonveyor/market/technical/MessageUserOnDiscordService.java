@@ -3,7 +3,6 @@ package com.kodekonveyor.market.technical;
 import org.springframework.stereotype.Service;
 
 import com.kodekonveyor.annotations.ExcludeFromCodeCoverage;
-import com.kodekonveyor.market.register.MarketUserEntity;
 
 @Service
 @ExcludeFromCodeCoverage(
@@ -11,7 +10,7 @@ import com.kodekonveyor.market.register.MarketUserEntity;
 )
 public class MessageUserOnDiscordService {
 
-  public void call(final String message, final MarketUserEntity marketUser) {
+  public void call(final String message) {
 
   }
 

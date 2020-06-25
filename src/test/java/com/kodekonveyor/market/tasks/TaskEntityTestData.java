@@ -39,9 +39,9 @@ public class TaskEntityTestData {
   }
 
   public static TaskEntity getUngrabbedTask() {
-    final TaskEntity taskEntity = getGrabbedOverThreeDays();
+    final TaskEntity taskEntity = get();
+    taskEntity.setGrabDate(null);
     taskEntity.setMarketUser(null);
-    taskEntity.setStatus(TaskStatusEnum.UP_FOR_GRAB);
     return taskEntity;
   }
 
@@ -125,4 +125,5 @@ public class TaskEntityTestData {
     taskEntity.setStatus(TaskStatusEnum.IN_PROGRESS);
     return taskEntity;
   }
+
 }

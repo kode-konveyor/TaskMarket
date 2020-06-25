@@ -95,4 +95,8 @@ public class MarketConstants {
       "manager";
 
   public static final String FRONT_SLASH = "/";
+
+  public static final String UNAUTHORIZED_PROJECT_MODIFICATION =
+      "Project model can only be modified by project manager.";
+
 }

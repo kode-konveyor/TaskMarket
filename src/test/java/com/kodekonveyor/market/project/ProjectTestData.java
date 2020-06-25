@@ -57,4 +57,10 @@ public class ProjectTestData {
       "Project Id can only have positive values";
 
   public static final Long MINIMUM_FOR_GRAB = 2L;
+
+  public static final String PROJECT_DTO_RETURNED_SUCCESSFULLY =
+      "Project DTO returned successfully Id : ";
+  public static final String EXPECTED_AUTH_ERROR_FOR_UPDATE_PROJECT =
+      "Project model can only be modified by project manager.";
+
 }

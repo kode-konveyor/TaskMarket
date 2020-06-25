@@ -2,6 +2,11 @@ package com.kodekonveyor.technical;
 
 import java.time.Instant;
 import java.time.temporal.ChronoUnit;
+import java.util.List;
+
+import org.assertj.core.util.Lists;
+import org.slf4j.Marker;
+import org.slf4j.MarkerFactory;
 
 public class TechnicalTestData {
 
@@ -57,5 +62,20 @@ public class TechnicalTestData {
 
   public static final String MESSAGE =
       "Up for grab tasks below minimum for grab";
+
+  public static final Long TEST_ISSUE_ID = 66L;
+  public static final List<Long> TEST_SINGLE_PR_ID = Lists.newArrayList(56L);
+  public static final List<Long> TEST_MULTIPLE_PR_ID =
+      Lists.newArrayList(56L, 57L);
+  public static final String EXPECTED_MSG_WHN_PR_NOT_FOUND_FOR_ISSUE =
+      "Pull request not found for issue.";
+  public static final String EXP_LOG_GET_PR_FOR_ISSUE_CALL =
+      "Execution to fetch pull request starts.";
+  public static final String EXP_LOG_GET_PR_FOR_ISSUE_SUCCESS =
+      "Successfully fetched linked pull request for issue : {}";
+  public static final String EXP_LOG_GET_PR_FOR_ISSUE_FAILURE =
+      "Failed to fetched pull request for issue {}, error : {}";
+  public static final Marker EXP_GITHUB_MARKER =
+      MarkerFactory.getMarker("github");
 
 }

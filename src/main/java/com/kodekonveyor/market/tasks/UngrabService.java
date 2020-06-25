@@ -61,12 +61,16 @@ public class UngrabService {
     if (
       durationInDays >= MarketConstants.DAYS_UNTIL_UNGRAB &&
           pullRequestList.isEmpty()
-    ) {
-      taskEntity.setMarketUser(null);
-      taskEntity.setStatus(TaskStatusEnum.UP_FOR_GRAB);
-      taskEntityRepository.save(taskEntity);
-    }
+    )
+      ungrabTask(taskEntity);
 
+  }
+
+  private void ungrabTask(final TaskEntity taskEntity) {
+    taskEntity.setMarketUser(null);
+    taskEntity.setStatus(TaskStatusEnum.UP_FOR_GRAB);
+    taskEntity.setGrabDate(null);
+    taskEntityRepository.save(taskEntity);
   }
 
   private void pullRequestCheck(
@@ -98,11 +102,8 @@ public class UngrabService {
       pullRequestStatus.equals(
           GithubConstants.FAILURE
       ) && lastCommitDurationInDays >= MarketConstants.DAYS_UNTIL_UNGRAB
-    ) {
-      taskEntity.setMarketUser(null);
-      taskEntity.setStatus(TaskStatusEnum.UP_FOR_GRAB);
-      taskEntityRepository.save(taskEntity);
-    }
+    )
+      ungrabTask(taskEntity);
 
     final Duration durationBetweenReviewAndCommit =
         Duration.between(lastReviewDate, lastCommitDate);
@@ -113,11 +114,8 @@ public class UngrabService {
       pullRequestStatus.equals(
           GithubConstants.SUCCESS
       ) && durationBetweenReviewAndCommitInDays >= MarketConstants.DAYS_UNTIL_UNGRAB
-    ) {
-      taskEntity.setMarketUser(null);
-      taskEntity.setStatus(TaskStatusEnum.UP_FOR_GRAB);
-      taskEntityRepository.save(taskEntity);
-    }
+    )
+      ungrabTask(taskEntity);
 
   }
 
