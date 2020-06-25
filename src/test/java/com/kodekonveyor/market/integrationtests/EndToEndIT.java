@@ -3,7 +3,6 @@ package com.kodekonveyor.market.integrationtests;
 import static com.kodekonveyor.market.integrationtests.EndToEndTestData.*; //NOPMD it's not unused import
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
-import org.junit.Ignore;
 import org.junit.jupiter.api.Tag;
 import org.junit.jupiter.api.Test;
 import org.junit.platform.commons.annotation.Testable;
@@ -21,7 +20,6 @@ import com.kodekonveyor.authentication.UserTestData;
 public class EndToEndIT {
 
   @Test
-  @Ignore
   public void seleniumTest() {
     final WebDriver driver = SeleniumTestHelper.getDriver();
     driver.get(
