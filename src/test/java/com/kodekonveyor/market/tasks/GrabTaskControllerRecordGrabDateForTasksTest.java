@@ -1,6 +1,6 @@
 package com.kodekonveyor.market.tasks;
 
-import static org.junit.Assert.assertNotNull;
+import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.mockito.Mockito.verify;
 
 import org.junit.jupiter.api.DisplayName;
@@ -15,6 +15,7 @@ import org.mockito.quality.Strictness;
 
 import com.kodekonveyor.annotations.TestedBehaviour;
 import com.kodekonveyor.annotations.TestedService;
+import com.kodekonveyor.market.kpi.DateUtilStubs;
 import com.kodekonveyor.market.kpi.EventEntityTestData;
 
 @ExtendWith(MockitoExtension.class)
@@ -26,16 +27,16 @@ public class GrabTaskControllerRecordGrabDateForTasksTest
     extends GrabTaskControllerTestBase {
 
   @Test
-  @DisplayName("record grab date for tasks")
+  @DisplayName("grab date for the task is recorded successfully")
   public void testGrabDate() {
-    grabTaskController.call(TaskTestData.ID);
+    DateUtilStubs.getInstant(dateUtilService);
+    grabTaskController.call(TaskTestData.ID_2);
 
     final ArgumentCaptor<TaskEntity> entity =
         ArgumentCaptor.forClass(TaskEntity.class);
     verify(taskEntityRepository).save(entity.capture());
-    assertNotNull(
-        entity.getValue().getGrabDate()
-    );
+
+    assertEquals(DateUtilTestData.INSTANT, entity.getValue().getGrabDate());
   }
 
   @Test
@@ -43,7 +44,8 @@ public class GrabTaskControllerRecordGrabDateForTasksTest
     "Grab event has been raised after the grab date is being recorded."
   )
   public void testGrabEvent() {
-    grabTaskController.call(TaskTestData.ID);
+    DateUtilStubs.getDate(dateUtilService);
+    grabTaskController.call(TaskTestData.ID_2);
     verify(eventEntityRepository)
         .save(EventEntityTestData.getIdZero());
 
@@ -54,12 +56,12 @@ public class GrabTaskControllerRecordGrabDateForTasksTest
     "Task is being saved after the grab date is being recorded."
   )
   public void testTaskSaved() {
-    grabTaskController.call(TaskTestData.ID);
+    DateUtilStubs.getInstant(dateUtilService);
+    grabTaskController.call(TaskTestData.ID_2);
     final ArgumentCaptor<TaskEntity> entity =
         ArgumentCaptor.forClass(TaskEntity.class);
 
     verify(taskEntityRepository).save(entity.capture());
-
   }
 
 }

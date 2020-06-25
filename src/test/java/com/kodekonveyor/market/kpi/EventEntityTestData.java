@@ -1,7 +1,7 @@
 package com.kodekonveyor.market.kpi;
 
 import com.kodekonveyor.authentication.UserEntityTestData;
-import com.kodekonveyor.market.tasks.DateUtil;
+import com.kodekonveyor.market.tasks.DateUtilTestData;
 
 public class EventEntityTestData {
 
@@ -9,7 +9,7 @@ public class EventEntityTestData {
     final EventEntity eventEntity = new EventEntity();
     eventEntity.setId(EventTestData.ID);
     eventEntity.setEventType(EventTestData.GRAB);
-    eventEntity.setDate(DateUtil.getDate());
+    eventEntity.setDate(DateUtilTestData.DATE);
     eventEntity.setUser(UserEntityTestData.get());
     return eventEntity;
   }

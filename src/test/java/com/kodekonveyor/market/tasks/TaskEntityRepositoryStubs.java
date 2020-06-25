@@ -43,7 +43,7 @@ public class TaskEntityRepositoryStubs {
 
   public static void
       behaviour2(final TaskEntityRepository taskEntityRepository) {
-    doReturn(Optional.of(TaskEntityTestData.getTaskWithGrabDate()))
+    doReturn(Optional.of(TaskEntityTestData.get()))
         .when(taskEntityRepository)
         .findById(TaskTestData.ID);
     doReturn(Optional.of(TaskEntityTestData.getInProgressTask()))

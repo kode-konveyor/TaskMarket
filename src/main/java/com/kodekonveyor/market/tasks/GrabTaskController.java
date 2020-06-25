@@ -1,5 +1,6 @@
 package com.kodekonveyor.market.tasks;
 
+import java.time.Instant;
 import java.util.HashSet;
 import java.util.Set;
 
@@ -51,10 +52,14 @@ public class GrabTaskController {
   @Autowired
   EventEntityRepository eventEntityRepository;
 
+  @Autowired
+  DateUtilService dateUtilService;
+
   @PutMapping(UrlMapConstants.GRAB_TASK_PATH)
   public void call(final long taskId) {
     final TaskEntity taskEntity =
         taskEntityRepository.findById(taskId).get();
+
     final UserEntity userEntity = authenticatedUserService.call();
     final MarketUserEntity marketUserEntity =
         marketUserEntityRepository.findByUser(userEntity).get();
@@ -137,14 +142,16 @@ public class GrabTaskController {
 
   private void
       recordGrabDate(final TaskEntity taskEntity) {
-    taskEntity.setGrabDate(DateUtil.getInstant());
+    final Instant grabDate = dateUtilService.getInstant();
+    taskEntity.setGrabDate(grabDate);
+    
   }
 
   private void
       raiseEvent(final UserEntity userEntity) {
     final EventEntity event = new EventEntity();
     event.setEventType(EventTypeEnum.GRAB);
-    event.setDate(DateUtil.getDate());
+    event.setDate(dateUtilService.getDate());
     event.setUser(userEntity);
     eventEntityRepository.save(event);
   }

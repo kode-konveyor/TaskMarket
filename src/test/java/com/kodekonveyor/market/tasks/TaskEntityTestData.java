@@ -16,7 +16,7 @@ public class TaskEntityTestData {
     taskEntity.setGithubId(TaskTestData.GITHUB_ID);
     taskEntity.setDescription(TaskTestData.DESCRIPTION);
     taskEntity.setStatus(TaskStatusEnum.UP_FOR_GRAB);
-    
+
     return taskEntity;
   }
 
@@ -92,7 +92,6 @@ public class TaskEntityTestData {
   public static TaskEntity getTaskWithStatusUpdated() {
     final TaskEntity taskEntity = get();
     taskEntity.setStatus(TaskStatusEnum.IN_PROGRESS);
-    taskEntity.setGrabDate(DateUtil.getInstant());
     return taskEntity;
   }
 
@@ -120,7 +119,7 @@ public class TaskEntityTestData {
 
   public static TaskEntity getTaskWithGrabDate() {
     final TaskEntity taskEntity = get();
-    taskEntity.setGrabDate(DateUtil.getInstant());
+    taskEntity.setGrabDate(DateUtilTestData.INSTANT);
     return taskEntity;
   }
 }

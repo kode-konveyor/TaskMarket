@@ -44,6 +44,9 @@ public class GrabTaskControllerTestBase {
   @Mock
   EventEntityRepository eventEntityRepository;
 
+  @Mock
+  DateUtilService dateUtilService;
+
   @BeforeEach
   void setUp() {
     AuthenticatedUserServiceStubs.authenticated(authenticatedUserService);
