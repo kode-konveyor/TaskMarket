@@ -100,11 +100,11 @@ public class UserEntityTestData {
     return userEntity;
   };
 
-  public static UserEntity getTechnicalUser() {
+  public static UserEntity getRoleTechnical() {
     final UserEntity userEntity = get();
     userEntity.setId(UserTestData.ID_TECHNICAL);
     userEntity.setLogin(UserTestData.LOGIN_TECHNICAL);
-    userEntity.setRole(Set.of(RoleEntityTestData.getTechnicalRole()));
+    userEntity.setRole(Set.of(RoleEntityTestData.getNameTechnical()));
     return userEntity;
   };
 }

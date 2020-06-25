@@ -2,7 +2,6 @@ package com.kodekonveyor.market.register;
 
 import static org.junit.Assert.assertEquals;
 
-import com.kodekonveyor.authentication.UserTestData;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.extension.ExtendWith;
@@ -29,7 +28,7 @@ public class ShowUserControllerCompileOutputTest
   public void test() {
     AuthenticatedUserServiceStubs
         .authenticated(authenticatedUserService);
-    assertEquals(MarketUserDTOTestData.get(), showUserController.call(UserTestData.LOGIN));
+    assertEquals(MarketUserDTOTestData.get(), showUserController.call(null));
   }
 
   @Test
@@ -38,7 +37,7 @@ public class ShowUserControllerCompileOutputTest
     AuthenticatedUserServiceStubs
         .authenticated(authenticatedUserService);
     assertEquals(
-        MarketUserDTOTestData.get().getId(), showUserController.call(UserTestData.LOGIN).getId()
+        MarketUserDTOTestData.get().getId(), showUserController.call(null).getId()
     );
   }
 
@@ -49,7 +48,7 @@ public class ShowUserControllerCompileOutputTest
         .authenticated(authenticatedUserService);
     assertEquals(
         MarketUserDTOTestData.get().getBalanceInCents(),
-        showUserController.call(UserTestData.LOGIN).getBalanceInCents()
+        showUserController.call(null).getBalanceInCents()
     );
   }
 
@@ -60,7 +59,7 @@ public class ShowUserControllerCompileOutputTest
         .authenticated(authenticatedUserService);
     assertEquals(
         MarketUserDTOTestData.get().getEmail(),
-        showUserController.call(UserTestData.LOGIN).getEmail()
+        showUserController.call(null).getEmail()
     );
   }
 
@@ -73,7 +72,7 @@ public class ShowUserControllerCompileOutputTest
         .authenticated(authenticatedUserService);
     assertEquals(
         MarketUserDTOTestData.get().getIsTermsAccepted(),
-        showUserController.call(UserTestData.LOGIN).getIsTermsAccepted()
+        showUserController.call(null).getIsTermsAccepted()
     );
   }
 
@@ -84,7 +83,7 @@ public class ShowUserControllerCompileOutputTest
         .authenticated(authenticatedUserService);
     assertEquals(
         MarketUserDTOTestData.get().getLegalAddress(),
-        showUserController.call(UserTestData.LOGIN).getLegalAddress()
+        showUserController.call(null).getLegalAddress()
     );
   }
 
@@ -95,7 +94,7 @@ public class ShowUserControllerCompileOutputTest
         .authenticated(authenticatedUserService);
     assertEquals(
         MarketUserDTOTestData.get().getLegalName(),
-        showUserController.call(UserTestData.LOGIN).getLegalName()
+        showUserController.call(null).getLegalName()
     );
   }
 

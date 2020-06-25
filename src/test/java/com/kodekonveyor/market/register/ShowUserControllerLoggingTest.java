@@ -18,7 +18,6 @@ import com.kodekonveyor.authentication.UserEntityTestData;
 import com.kodekonveyor.logging.LoggingMarkerConstants;
 import com.kodekonveyor.market.MarketTestData;
 
-import static com.kodekonveyor.authentication.UserTestData.LOGIN;
 import static com.kodekonveyor.authentication.UserTestData.LOGIN_BAD;
 import static com.kodekonveyor.market.register.RegisterTestData.EXP_LOG_SHOW_MARKET_USER_FAILURE;
 import static com.kodekonveyor.market.register.RegisterTestData.EXP_USER_NOT_FOUND;
@@ -35,7 +34,7 @@ public class ShowUserControllerLoggingTest extends ShowUserControllerTestBase {
   public void test() {
     AuthenticatedUserServiceStubs
         .authenticated(authenticatedUserService);
-    showUserController.call(LOGIN);
+    showUserController.call(null);
     Mockito.verify(logger).info(
         LoggingMarkerConstants.REGISTER, UserEntityTestData.get().toString()
     );
@@ -46,7 +45,7 @@ public class ShowUserControllerLoggingTest extends ShowUserControllerTestBase {
   public void test1() {
     AuthenticatedUserServiceStubs
         .authenticated(authenticatedUserService);
-    showUserController.call(LOGIN);
+    showUserController.call(null);
     Mockito.verify(logger).debug(
         LoggingMarkerConstants.REGISTER,
         MarketTestData.MARKET_USER_RETURNED_SUCCESSFULLY +

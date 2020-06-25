@@ -9,6 +9,7 @@ import com.kodekonveyor.market.UrlMapConstants;
 import com.kodekonveyor.market.ValidationException;
 import com.kodekonveyor.market.lead.CheckRoleUtil;
 import com.kodekonveyor.market.payment.PaymentDetailEntity;
+import org.apache.commons.lang3.StringUtils;
 import org.slf4j.Logger;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -43,20 +44,27 @@ public class ShowUserController {
     final UserEntity sessionUser = authenticatedUserService.call();
     logger.info(LoggingMarkerConstants.REGISTER, sessionUser.toString());
 
-    final Optional<UserEntity> userFound = userEntityRepository.findByLogin(login);
-    MarketUserDTO marketUserDTO;
-    if (userFound.isPresent()) {
-      final Optional<MarketUserEntity> marketUserFound =
-              marketUserEntityRepository.findByUser(userFound.get());
-      if (marketUserFound.isPresent()) {
-        marketUserDTO = copyEntityToDTO(sessionUser, marketUserFound.get());
-      } else {
-        marketUserDTO = createDTOFromUserEntity(userFound.get());
-      }
+    final UserEntity userFound;
+    if (StringUtils.isBlank(login)) {
+      userFound = sessionUser;
     } else {
-      logger.warn(LoggingMarkerConstants.REGISTER, LOG_SHOW_MARKET_USER_FAILURE, login, USER_NOT_FOUND);
-      throw new ValidationException(USER_NOT_FOUND);
+      final Optional<UserEntity> existingUser = userEntityRepository.findByLogin(login);
+      if (existingUser.isPresent()) {
+        userFound = existingUser.get();
+      } else {
+        logger.warn(LoggingMarkerConstants.REGISTER, LOG_SHOW_MARKET_USER_FAILURE, login, USER_NOT_FOUND);
+        throw new ValidationException(USER_NOT_FOUND);
+      }
     }
+    final MarketUserDTO marketUserDTO;
+    final Optional<MarketUserEntity> marketUserFound =
+            marketUserEntityRepository.findByUser(userFound);
+    if (marketUserFound.isPresent()) {
+      marketUserDTO = copyEntityToDTO(sessionUser, marketUserFound.get());
+    } else {
+      marketUserDTO = createDTOFromUserEntity(userFound);
+    }
+
     logger.debug(
             LoggingMarkerConstants.REGISTER,
             MarketConstants.MARKET_USER_RETURNED_SUCCESSFULLY +

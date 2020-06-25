@@ -76,7 +76,7 @@ public class AuthenticatedUserServiceStubs {
   public static void technicalUser(
           final AuthenticatedUserService authenticatedUserService
   ) {
-    doReturn(UserEntityTestData.getTechnicalUser())
+    doReturn(UserEntityTestData.getRoleTechnical())
             .when(authenticatedUserService)
             .call();
   }

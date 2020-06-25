@@ -1,6 +1,5 @@
 package com.kodekonveyor.market.register;
 
-import static com.kodekonveyor.authentication.UserTestData.LOGIN;
 import static org.junit.Assert.assertEquals;
 
 import org.junit.jupiter.api.DisplayName;
@@ -31,7 +30,7 @@ public class ShowUserControllerCompileOutput2Test
         .authenticated(authenticatedUserService);
     assertEquals(
         MarketUserDTOTestData.get().getPersonalName(),
-        showUserController.call(LOGIN).getPersonalName()
+        showUserController.call(null).getPersonalName()
     );
   }
 
@@ -42,7 +41,7 @@ public class ShowUserControllerCompileOutput2Test
         .authenticated(authenticatedUserService);
     assertEquals(
         MarketUserDTOTestData.get().getLegalForm(),
-        showUserController.call(LOGIN).getLegalForm()
+        showUserController.call(null).getLegalForm()
     );
   }
 
@@ -53,7 +52,7 @@ public class ShowUserControllerCompileOutput2Test
         .authenticated(authenticatedUserService);
     assertEquals(
         MarketUserDTOTestData.get().getUser(),
-        showUserController.call(LOGIN).getUser()
+        showUserController.call(null).getUser()
     );
   }
 
@@ -66,7 +65,7 @@ public class ShowUserControllerCompileOutput2Test
         .authenticated(authenticatedUserService);
     assertEquals(
         MarketUserDTOTestData.get().getPaymentDetail(),
-        showUserController.call(LOGIN).getPaymentDetail()
+        showUserController.call(null).getPaymentDetail()
     );
   }
 }
