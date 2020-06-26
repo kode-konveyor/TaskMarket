@@ -72,15 +72,12 @@ public class GrabTaskController {
         marketUserEntityRepository.findByUser(userEntity).get();
 
     validateEligibilty(marketUserEntity);
-    validateTask(taskEntity);
+    if (!taskEntity.getStatus().equals(TaskStatusEnum.UP_FOR_GRAB))
+      throw new ValidationException(TaskConstants.TASK_NOT_UP_FOR_GRAB);
+
     updateTask(taskEntity, marketUserEntity);
     raiseEvent(userEntity);
     taskEntityRepository.save(taskEntity);
-  }
-
-  private void validateTask(final TaskEntity taskEntity) {
-    if (!taskEntity.getStatus().equals(TaskStatusEnum.UP_FOR_GRAB))
-      throw new ValidationException(TaskConstants.TASK_NOT_UP_FOR_GRAB);
   }
 
   private void validateEligibilty(final MarketUserEntity marketUserEntity) {
