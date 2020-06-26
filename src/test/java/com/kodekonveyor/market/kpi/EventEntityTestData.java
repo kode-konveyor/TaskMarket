@@ -8,7 +8,7 @@ public class EventEntityTestData {
   public static final EventEntity get() {
     final EventEntity eventEntity = new EventEntity();
     eventEntity.setId(EventTestData.ID);
-    eventEntity.setEventType(EventTestData.GRAB);
+    eventEntity.setEventType(EventTypeEnum.GRAB);
     eventEntity.setInstant(TimeInstantTestData.INSTANT);
     eventEntity.setUser(UserEntityTestData.get());
     return eventEntity;

@@ -6,5 +6,4 @@ public class EventTestData {
 
   public final static Long ID_0 = 0L;
 
-  public final static EventTypeEnum GRAB = EventTypeEnum.GRAB;
 }
