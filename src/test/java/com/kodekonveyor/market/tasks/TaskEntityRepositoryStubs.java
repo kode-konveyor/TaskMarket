@@ -1,12 +1,12 @@
 package com.kodekonveyor.market.tasks;
 
-import com.google.common.collect.Lists;
-import com.kodekonveyor.market.register.MarketUserEntityTestData;
+import static org.mockito.Mockito.doReturn;
 
 import java.util.List;
 import java.util.Optional;
 
-import static org.mockito.Mockito.doReturn;
+import com.google.common.collect.Lists;
+import com.kodekonveyor.market.register.MarketUserEntityTestData;
 
 public class TaskEntityRepositoryStubs {
 
@@ -36,9 +36,11 @@ public class TaskEntityRepositoryStubs {
     doReturn(Optional.of(TaskEntityTestData.getPullRequestIssuedTask()))
         .when(taskEntityRepository).findById(TaskTestData.ID);
   }
-   public static void
+
+  public static void
       behaviour2(final TaskEntityRepository taskEntityRepository) {
-   doReturn(Optional.of(TaskEntityTestData.get())).when(taskEntityRepository)
+    doReturn(Optional.of(TaskEntityTestData.get()))
+        .when(taskEntityRepository)
         .findById(TaskTestData.ID);
     doReturn(Optional.of(TaskEntityTestData.getInProgressTask()))
         .when(taskEntityRepository)
@@ -47,10 +49,10 @@ public class TaskEntityRepositoryStubs {
         .when(taskEntityRepository)
         .findById(TaskTestData.ID_2);
     doReturn(Lists.newArrayList(TaskEntityTestData.get()))
-            .when(taskEntityRepository)
-            .findByMarketUser(MarketUserEntityTestData.get());
+        .when(taskEntityRepository)
+        .findByMarketUser(MarketUserEntityTestData.get());
     doReturn(Lists.newArrayList())
-            .when(taskEntityRepository)
-            .findByMarketUser(MarketUserEntityTestData.getIdNewlySaved());
-   }
+        .when(taskEntityRepository)
+        .findByMarketUser(MarketUserEntityTestData.getIdNewlySaved());
+  }
 }

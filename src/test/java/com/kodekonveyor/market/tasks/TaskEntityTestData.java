@@ -16,6 +16,7 @@ public class TaskEntityTestData {
     taskEntity.setGithubId(TaskTestData.GITHUB_ID);
     taskEntity.setDescription(TaskTestData.DESCRIPTION);
     taskEntity.setStatus(TaskStatusEnum.UP_FOR_GRAB);
+
     return taskEntity;
   }
 
