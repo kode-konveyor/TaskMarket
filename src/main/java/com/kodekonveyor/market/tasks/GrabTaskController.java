@@ -1,10 +1,13 @@
 package com.kodekonveyor.market.tasks;
 
-import java.time.Instant;
+import static com.kodekonveyor.market.tasks.TaskConstants.USER_NOT_ELIGIBLE_TO_GRAB;
+
 import java.util.HashSet;
+import java.util.List;
 import java.util.Set;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.util.CollectionUtils;
 import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RestController;
 
@@ -22,6 +25,7 @@ import com.kodekonveyor.market.project.ProjectDTO;
 import com.kodekonveyor.market.project.ProjectEntity;
 import com.kodekonveyor.market.project.ProjectEntityRepository;
 import com.kodekonveyor.market.project.PullRequestEntity;
+import com.kodekonveyor.market.project.PullrequestEntityRepository;
 import com.kodekonveyor.market.register.MarketUserEntity;
 import com.kodekonveyor.market.register.MarketUserEntityRepository;
 
@@ -55,6 +59,9 @@ public class GrabTaskController {
   @Autowired
   TimeInstantService timeInstantService;
 
+  @Autowired
+  PullrequestEntityRepository pullrequestEntityRepository;
+
   @PutMapping(UrlMapConstants.GRAB_TASK_PATH)
   public void call(final long taskId) {
     final TaskEntity taskEntity =
@@ -64,9 +71,9 @@ public class GrabTaskController {
     final MarketUserEntity marketUserEntity =
         marketUserEntityRepository.findByUser(userEntity).get();
 
+    validateEligibilty(marketUserEntity);
     validateTask(taskEntity);
     updateTask(taskEntity, marketUserEntity);
-    recordGrabDate(taskEntity);
     raiseEvent(userEntity);
     taskEntityRepository.save(taskEntity);
   }
@@ -76,6 +83,18 @@ public class GrabTaskController {
       throw new ValidationException(TaskConstants.TASK_NOT_UP_FOR_GRAB);
   }
 
+  private void validateEligibilty(final MarketUserEntity marketUserEntity) {
+    final List<TaskEntity> taskForMarketUser =
+        taskEntityRepository.findByMarketUser(marketUserEntity);
+    if (!CollectionUtils.isEmpty(taskForMarketUser)) {
+      final boolean anyTaskWithoutPR = taskForMarketUser.stream()
+          .map(pullrequestEntityRepository::findByTask)
+          .anyMatch(CollectionUtils::isEmpty);
+      if (anyTaskWithoutPR)
+        throw new ValidationException(USER_NOT_ELIGIBLE_TO_GRAB);
+    }
+  }
+
   private void updateTask(
       final TaskEntity taskEntity, final MarketUserEntity marketUserEntity
   ) {
@@ -83,6 +102,7 @@ public class GrabTaskController {
     taskEntity.setMarketUser(marketUserEntity);
     updateGithubIssueService.call(taskEntity);
     callUpForGrabService(taskEntity);
+    taskEntity.setGrabDate(timeInstantService.call());
   }
 
   private void callUpForGrabService(final TaskEntity taskEntity) {
@@ -138,13 +158,6 @@ public class GrabTaskController {
       milestoneIds.add(milestone.getId());
 
     projectDTO.setMilestone(milestoneIds);
-  }
-
-  private void
-      recordGrabDate(final TaskEntity taskEntity) {
-    final Instant grabDate = timeInstantService.call();
-    taskEntity.setGrabDate(grabDate);
-
   }
 
   private void

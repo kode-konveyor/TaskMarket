@@ -12,6 +12,8 @@ import com.kodekonveyor.market.project.MilestoneEntityRepository;
 import com.kodekonveyor.market.project.MilestoneEntityRepositoryStubs;
 import com.kodekonveyor.market.project.ProjectEntityRepository;
 import com.kodekonveyor.market.project.ProjectEntityRepositoryStubs;
+import com.kodekonveyor.market.project.PullRequestEntityStubs;
+import com.kodekonveyor.market.project.PullrequestEntityRepository;
 import com.kodekonveyor.market.register.MarketUserEntityRepository;
 import com.kodekonveyor.market.register.MarketUserEntityRepositoryStubs;
 
@@ -47,6 +49,9 @@ public class GrabTaskControllerTestBase {
   @Mock
   TimeInstantService timeInstantService;
 
+  @Mock
+  PullrequestEntityRepository pullrequestEntityRepository;
+
   @BeforeEach
   void setUp() {
     AuthenticatedUserServiceStubs.authenticated(authenticatedUserService);
@@ -55,6 +60,7 @@ public class GrabTaskControllerTestBase {
     MilestoneEntityRepositoryStubs.behaviour(milestoneEntityRepository);
     ProjectEntityRepositoryStubs.behaviour(projectEntityRepository);
     EventEntityRepositoryStubs.behaviour(eventEntityRepository);
+    PullRequestEntityStubs.pullRequestIssued(pullrequestEntityRepository);
   }
 
 }

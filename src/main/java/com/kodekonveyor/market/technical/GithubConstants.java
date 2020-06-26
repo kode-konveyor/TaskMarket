@@ -75,6 +75,14 @@ public class GithubConstants {
       "$['data']['repository']['pullRequest']['reviews']['nodes'][0]['updatedAt']";
   public static final String LAST_COMMENT_DATE_QUERY =
       "$['data']['repository']['pullRequest']['comments']['nodes'][0]['updatedAt']";
+  public static final String PR_FOR_ISSUE_QUERY_PATH =
+          "$['data']['repository']['issue']['timelineItems']['nodes'][*]['subject']['number']";
+  public static final String PR_FOR_ISSUE_QUERY_PAGE_COUNT_PATH =
+          "$['data']['repository']['issue']['timelineItems']['totalCount']";
+  public static final String PR_FOR_ISSUE_QUERY_END_CURSOR_PATH =
+          "$['data']['repository']['issue']['timelineItems']['pageInfo']['endCursor']";
+  public static final String PR_FOR_ISSUE_QUERY_HAS_NXT_PAGE_PATH =
+          "$['data']['repository']['issue']['timelineItems']['pageInfo']['hasNextPage']";
   public static final long DAILY = 246_060 * 1000;
 
   public static final String TASK_MARKET = "TaskMarket";
