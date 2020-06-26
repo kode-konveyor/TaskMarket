@@ -21,14 +21,17 @@ public class MarketUserEntityRepositoryStubs {
         .when(marketUserEntityRepository)
         .findByUser(UserEntityTestData.get());
     doReturn(Optional.of(MarketUserEntityTestData.getUnacceptedContractuser()))
-        .when(marketUserEntityRepository).findById(MarketUserTestData.ID_IS_TERMS_ACCEPTED_FALSE);
+        .when(marketUserEntityRepository)
+            .findById(MarketUserTestData.ID_IS_TERMS_ACCEPTED_FALSE);
     doReturn(Optional.of(MarketUserEntityTestData.get()))
         .when(marketUserEntityRepository).findById(MarketUserTestData.ID);
 
     doReturn(Optional.of(MarketUserEntityTestData.getRoleCanBePaid()))
         .when(marketUserEntityRepository)
         .findByUser(UserEntityTestData.getRoleCanbePaid());
-
+    doReturn(Optional.of(MarketUserEntityTestData.getRoleCanBePaid()))
+            .when(marketUserEntityRepository)
+            .findById(MarketUserTestData.ID_CAN_BE_PAID);
     doReturn(Optional.of(MarketUserEntityTestData.getRoleProjectManager()))
         .when(marketUserEntityRepository)
         .findByUser(UserEntityTestData.getRoleProjectManager());
