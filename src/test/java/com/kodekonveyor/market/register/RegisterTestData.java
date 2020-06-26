@@ -13,4 +13,8 @@ public class RegisterTestData {
       "no can_be_paid role for user: ";
   public static final String PAYMENT_UPDATED_SUCCESSFULLY =
       "Payment updated successfully";
+  public static final String EXP_USER_NOT_FOUND =
+          "User not found!";
+  public static final String EXP_LOG_SHOW_MARKET_USER_FAILURE =
+          "Failed to fetch market user for {}, error : {}";
 }

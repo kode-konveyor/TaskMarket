@@ -39,9 +39,9 @@ public class TaskEntityTestData {
   }
 
   public static TaskEntity getUngrabbedTask() {
-    final TaskEntity taskEntity = getGrabbedOverThreeDays();
+    final TaskEntity taskEntity = get();
+    taskEntity.setGrabDate(null);
     taskEntity.setMarketUser(null);
-    taskEntity.setStatus(TaskStatusEnum.UP_FOR_GRAB);
     return taskEntity;
   }
 
@@ -56,21 +56,6 @@ public class TaskEntityTestData {
     final TaskEntity taskEntity = get();
     taskEntity.setStatus(TaskStatusEnum.IN_PROGRESS);
     taskEntity.setGrabDate(TaskTestData.DATE_FOUR_DAYS_SINCE_GRABBED);
-    return taskEntity;
-  }
-
-  public static TaskEntity getUngrabbedFourDaysTask() {
-    final TaskEntity taskEntity = getGrabbedForFourDays();
-    taskEntity.setMarketUser(null);
-    taskEntity.setStatus(TaskStatusEnum.UP_FOR_GRAB);
-    return taskEntity;
-  }
-
-  public static TaskEntity getUngrabExactlyThreeDaysTask() {
-    final TaskEntity taskEntity = getGrabbedExactlyThreeDays();
-    taskEntity.setMarketUser(null);
-    taskEntity.setStatus(TaskStatusEnum.UP_FOR_GRAB);
-
     return taskEntity;
   }
 
@@ -115,4 +100,12 @@ public class TaskEntityTestData {
     taskEntity.setStatus(TaskStatusEnum.IN_PROGRESS);
     return taskEntity;
   }
+
+  public static TaskEntity getMarketUserNewlyRegistered() {
+    final TaskEntity taskEntity = get();
+    taskEntity.setMarketUser(MarketUserEntityTestData.getIdNewlySaved());
+    taskEntity.setStatus(TaskStatusEnum.IN_PROGRESS);
+    return taskEntity;
+  }
+
 }
