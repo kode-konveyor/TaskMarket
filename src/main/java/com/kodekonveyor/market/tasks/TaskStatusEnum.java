@@ -5,7 +5,8 @@ public enum TaskStatusEnum {
   DONE("done"),
   IN_PROGRESS("in progress"),
   OPEN("open"),
-  UP_FOR_GRAB("up for grab");
+  UP_FOR_GRAB("up for grab"),
+  NOT_IN_MODEL("not in model");
 
   public final String value;
 

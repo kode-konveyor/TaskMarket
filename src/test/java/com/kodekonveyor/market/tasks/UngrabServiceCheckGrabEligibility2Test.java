@@ -35,7 +35,7 @@ public class UngrabServiceCheckGrabEligibility2Test
     TaskEntityRepositoryStubs.behaviour(taskEntityRepository);
     ungrabService.call();
     Mockito.verify(taskEntityRepository, Mockito.times(0))
-        .save(TaskEntityTestData.getUngrabbedTask());
+        .save(TaskEntityTestData.getStatusUngrabbed());
   }
 
   @Test
@@ -50,7 +50,7 @@ public class UngrabServiceCheckGrabEligibility2Test
     TaskEntityRepositoryStubs.behaviour(taskEntityRepository);
     ungrabService.call();
     Mockito.verify(taskEntityRepository)
-        .save(TaskEntityTestData.getUngrabbedTask());
+        .save(TaskEntityTestData.getStatusUngrabbed());
   }
 
   @Test
@@ -65,7 +65,7 @@ public class UngrabServiceCheckGrabEligibility2Test
     TaskEntityRepositoryStubs.behaviour(taskEntityRepository);
     ungrabService.call();
     Mockito.verify(taskEntityRepository)
-        .save(TaskEntityTestData.getUngrabbedTask());
+        .save(TaskEntityTestData.getStatusUngrabbed());
   }
 
   @Test
@@ -80,7 +80,7 @@ public class UngrabServiceCheckGrabEligibility2Test
     TaskEntityRepositoryStubs.behaviour(taskEntityRepository);
     ungrabService.call();
     Mockito.verify(taskEntityRepository)
-        .save(TaskEntityTestData.getUngrabbedTask());
+        .save(TaskEntityTestData.getStatusUngrabbed());
   }
 
   @Test
@@ -95,7 +95,7 @@ public class UngrabServiceCheckGrabEligibility2Test
     TaskEntityRepositoryStubs.behaviour(taskEntityRepository);
     ungrabService.call();
     Mockito.verify(taskEntityRepository, Mockito.times(0))
-        .save(TaskEntityTestData.getUngrabbedTask());
+        .save(TaskEntityTestData.getStatusUngrabbed());
   }
 
 }
