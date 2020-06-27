@@ -32,28 +32,29 @@ public class TaskEntityTestData {
     return taskEntity;
   }
 
-  public static TaskEntity getGrabbedOverThreeDays() {
+  public static TaskEntity getStatusGrabbedOverThreeDays() {
     final TaskEntity taskEntity = get();
     taskEntity.setStatus(TaskStatusEnum.IN_PROGRESS);
     taskEntity.setGrabDate(TaskTestData.DATE_OLDER_THAN_THREE_DAYS);
     return taskEntity;
   }
 
-  public static TaskEntity getUngrabbedTask() {
+  public static TaskEntity getStatusUngrabbed() {
     final TaskEntity taskEntity = get();
     taskEntity.setGrabDate(null);
     taskEntity.setMarketUser(null);
+    taskEntity.setStatus(TaskStatusEnum.UP_FOR_GRAB);
     return taskEntity;
   }
 
-  public static TaskEntity getGrabbedExactlyThreeDays() {
+  public static TaskEntity getStatusGrabbedExactlyThreeDays() {
     final TaskEntity taskEntity = get();
     taskEntity.setStatus(TaskStatusEnum.IN_PROGRESS);
     taskEntity.setGrabDate(TaskTestData.DATE_THREE_DAYS_SINCE_GRABBED);
     return taskEntity;
   }
 
-  public static TaskEntity getGrabbedForFourDays() {
+  public static TaskEntity getStatusGrabbedForFourDays() {
     final TaskEntity taskEntity = get();
     taskEntity.setStatus(TaskStatusEnum.IN_PROGRESS);
     taskEntity.setGrabDate(TaskTestData.DATE_FOUR_DAYS_SINCE_GRABBED);
@@ -64,13 +65,6 @@ public class TaskEntityTestData {
     final TaskEntity taskEntity = get();
     taskEntity.setStatus(TaskStatusEnum.IN_PROGRESS);
     taskEntity.setGrabDate(TaskTestData.DATE_OLDER_THAN_THREE_DAYS);
-    return taskEntity;
-  }
-
-  public static TaskEntity getUngrabPullRequestIssuedtask() {
-    final TaskEntity taskEntity = getPullRequestIssuedTask();
-    taskEntity.setMarketUser(null);
-    taskEntity.setStatus(TaskStatusEnum.UP_FOR_GRAB);
     return taskEntity;
   }
 
@@ -99,6 +93,18 @@ public class TaskEntityTestData {
     taskEntity.setId(TaskTestData.ID_2);
     taskEntity.setMarketUser(MarketUserEntityTestData.get());
     taskEntity.setStatus(TaskStatusEnum.IN_PROGRESS);
+    return taskEntity;
+  }
+
+  public static TaskEntity getServiceDifferent() {
+    final TaskEntity taskEntity = TaskEntityTestData.get();
+    taskEntity.setService(TaskTestData.OTHER_SERVICE);
+    return taskEntity;
+  }
+
+  public static TaskEntity getBehaviourDifferent() {
+    final TaskEntity taskEntity = TaskEntityTestData.get();
+    taskEntity.setBehaviour(TaskTestData.OTHER_BEHAVIOUR);
     return taskEntity;
   }
 
