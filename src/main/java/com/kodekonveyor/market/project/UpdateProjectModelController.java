@@ -62,8 +62,13 @@ public class UpdateProjectModelController {
   private void validateAuthoization(final ProjectEntity projectEntity) {
     final UserEntity sessionUser = authenticatedUserService.call();
 
-    if (!CheckRoleUtil.hasRole(sessionUser, projectEntity, MANAGER))
+    if (!CheckRoleUtil.hasRole(sessionUser, projectEntity, MANAGER)) {
+      logger.warn(
+          LoggingMarkerConstants.PROJECT,
+          ProjectConstants.USER_NOT_MANAGER + sessionUser.getId()
+      );
       throw new UnauthorizedException(UNAUTHORIZED_PROJECT_MODIFICATION);
+    }
 
   }
 
