@@ -27,20 +27,20 @@ public class ShowUserControllerShowHerDataTest
   @DisplayName("The data of the currently authenticated user is shown")
   public void test() {
     AuthenticatedUserServiceStubs
-        .authenticated(authenticatedUserService);
-    assertEquals(MarketUserDTOTestData.get(), showUserController.call());
+            .authenticated(authenticatedUserService);
+    assertEquals(MarketUserDTOTestData.get(), showUserController.call(null));
   }
 
   @Test
   @DisplayName(
-    "The data of the currently authenticated user is shown with empty set even if the database returns nulls"
+          "The data of the currently authenticated user is shown with empty set even if the database returns nulls"
   )
   public void test2() {
     AuthenticatedUserServiceStubs
-        .unregistered(authenticatedUserService);
+            .unregistered(authenticatedUserService);
     assertEquals(
-        MarketUserDTOTestData.getIdNotInDatabase(),
-        showUserController.call()
+            MarketUserDTOTestData.getIdNotInDatabase(),
+            showUserController.call(null)
     );
   }
 

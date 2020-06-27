@@ -16,7 +16,6 @@ public class MilestoneEntityTestData {
     milestoneEntity.setName(MilestoneTestData.NAME);
     milestoneEntity.setPriority(MilestoneTestData.PRIORITY);
     milestoneEntity.setIsActive(MilestoneTestData.IS_ACTIVE);
-
     return milestoneEntity;
   };
 

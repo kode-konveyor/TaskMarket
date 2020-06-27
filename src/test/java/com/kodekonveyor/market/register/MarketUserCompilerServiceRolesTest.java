@@ -43,7 +43,7 @@ public class MarketUserCompilerServiceRolesTest
   void test0() {
     AuthenticatedUserServiceStubs.registered(authenticatedUserService);
     ThrowableTester.assertNoException(
-        () -> marketUserCompilerService.call(MarketUserTestData.ID)
+        () -> marketUserCompilerService.call(MarketUserTestData.ID_CAN_BE_PAID)
     );
   }
 
