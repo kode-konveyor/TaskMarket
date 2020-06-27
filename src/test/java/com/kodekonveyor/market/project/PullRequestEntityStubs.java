@@ -29,6 +29,8 @@ public class PullRequestEntityStubs {
         .when(pullrequestEntityRepository).findByTask(TaskEntityTestData.getStatusGrabbedExactlyThreeDays());
     doReturn(List.of())
         .when(pullrequestEntityRepository).findByTask(TaskEntityTestData.getStatusGrabbedForFourDays());
+    doReturn(List.of())
+        .when(pullrequestEntityRepository).findByTask(TaskEntityTestData.get());
   }
 
   public static void pullRequestIssued(
@@ -40,6 +42,8 @@ public class PullRequestEntityStubs {
         .when(pullrequestEntityRepository).findByTask(TaskEntityTestData.getStatusGrabbedExactlyThreeDays());
     doReturn(List.of(PullrequestEntityTestData.getGrabbedForFourDays()))
         .when(pullrequestEntityRepository).findByTask(TaskEntityTestData.getStatusGrabbedForFourDays());
+    doReturn(List.of(PullrequestEntityTestData.getGrabbedExactlyThreeDays()))
+        .when(pullrequestEntityRepository).findByTask(TaskEntityTestData.get());
 
   }
 

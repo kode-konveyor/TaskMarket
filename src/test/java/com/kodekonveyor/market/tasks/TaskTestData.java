@@ -52,4 +52,8 @@ public class TaskTestData {
 
   public static final String TEXT_BEFORE_DELIMITER =
       "This is the text before delimiter";
+
+  public static final String EXP_USER_NOT_ELIGIBLE_TO_GRAB =
+      "User not eligible to grab task.";
+
 }

@@ -31,4 +31,7 @@ public class UserTestData {
   public static final Long ID_FOR_NEGATIVE = 1218L;
 
   public static final Long ID_FOR_ZERO_BALANCE = 1220L;
+  
+  public static final Long ID_TECHNICAL = 1901L;
+  public static final String LOGIN_TECHNICAL = "techuser";
 }
