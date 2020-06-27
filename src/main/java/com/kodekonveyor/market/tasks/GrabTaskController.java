@@ -16,6 +16,9 @@ import com.kodekonveyor.authentication.RoleEntity;
 import com.kodekonveyor.authentication.UserEntity;
 import com.kodekonveyor.market.UrlMapConstants;
 import com.kodekonveyor.market.ValidationException;
+import com.kodekonveyor.market.kpi.EventEntity;
+import com.kodekonveyor.market.kpi.EventEntityRepository;
+import com.kodekonveyor.market.kpi.EventTypeEnum;
 import com.kodekonveyor.market.project.MilestoneEntity;
 import com.kodekonveyor.market.project.MilestoneEntityRepository;
 import com.kodekonveyor.market.project.ProjectDTO;
@@ -51,24 +54,30 @@ public class GrabTaskController {
   CheckUpforgrabTasksService checkUpforgrabTasksService;
 
   @Autowired
+  EventEntityRepository eventEntityRepository;
+
+  @Autowired
+  TimeInstantService timeInstantService;
+
+  @Autowired
   PullrequestEntityRepository pullrequestEntityRepository;
 
   @PutMapping(UrlMapConstants.GRAB_TASK_PATH)
   public void call(final long taskId) {
     final TaskEntity taskEntity =
         taskEntityRepository.findById(taskId).get();
+
     final UserEntity userEntity = authenticatedUserService.call();
     final MarketUserEntity marketUserEntity =
         marketUserEntityRepository.findByUser(userEntity).get();
 
     validateEligibilty(marketUserEntity);
-    validateTask(taskEntity);
-    updateTask(taskEntity, marketUserEntity);
-  }
-
-  private void validateTask(final TaskEntity taskEntity) {
     if (!taskEntity.getStatus().equals(TaskStatusEnum.UP_FOR_GRAB))
       throw new ValidationException(TaskConstants.TASK_NOT_UP_FOR_GRAB);
+
+    updateTask(taskEntity, marketUserEntity);
+    raiseEvent(userEntity);
+    taskEntityRepository.save(taskEntity);
   }
 
   private void validateEligibilty(final MarketUserEntity marketUserEntity) {
@@ -88,13 +97,12 @@ public class GrabTaskController {
   ) {
     taskEntity.setStatus(TaskStatusEnum.IN_PROGRESS);
     taskEntity.setMarketUser(marketUserEntity);
-    taskEntityRepository.save(taskEntity);
     updateGithubIssueService.call(taskEntity);
     callUpForGrabService(taskEntity);
+    taskEntity.setGrabDate(timeInstantService.call());
   }
 
   private void callUpForGrabService(final TaskEntity taskEntity) {
-
     final MilestoneEntity milestoneEntity =
         milestoneEntityRepository.findByTask(taskEntity).get();
     final ProjectEntity projectEntity =
@@ -147,5 +155,14 @@ public class GrabTaskController {
       milestoneIds.add(milestone.getId());
 
     projectDTO.setMilestone(milestoneIds);
+  }
+
+  private void
+      raiseEvent(final UserEntity userEntity) {
+    final EventEntity event = new EventEntity();
+    event.setEventType(EventTypeEnum.GRAB);
+    event.setInstant(timeInstantService.call());
+    event.setUser(userEntity);
+    eventEntityRepository.save(event);
   }
 }
