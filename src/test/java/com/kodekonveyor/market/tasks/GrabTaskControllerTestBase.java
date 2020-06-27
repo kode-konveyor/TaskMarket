@@ -6,10 +6,14 @@ import org.mockito.Mock;
 
 import com.kodekonveyor.authentication.AuthenticatedUserService;
 import com.kodekonveyor.authentication.AuthenticatedUserServiceStubs;
+import com.kodekonveyor.market.kpi.EventEntityRepository;
+import com.kodekonveyor.market.kpi.EventEntityRepositoryStubs;
 import com.kodekonveyor.market.project.MilestoneEntityRepository;
 import com.kodekonveyor.market.project.MilestoneEntityRepositoryStubs;
 import com.kodekonveyor.market.project.ProjectEntityRepository;
 import com.kodekonveyor.market.project.ProjectEntityRepositoryStubs;
+import com.kodekonveyor.market.project.PullRequestEntityStubs;
+import com.kodekonveyor.market.project.PullrequestEntityRepository;
 import com.kodekonveyor.market.register.MarketUserEntityRepository;
 import com.kodekonveyor.market.register.MarketUserEntityRepositoryStubs;
 
@@ -39,6 +43,15 @@ public class GrabTaskControllerTestBase {
   @Mock
   CheckUpforgrabTasksService checkUpforgrabTasksService;
 
+  @Mock
+  EventEntityRepository eventEntityRepository;
+
+  @Mock
+  TimeInstantService timeInstantService;
+
+  @Mock
+  PullrequestEntityRepository pullrequestEntityRepository;
+
   @BeforeEach
   void setUp() {
     AuthenticatedUserServiceStubs.authenticated(authenticatedUserService);
@@ -46,6 +59,8 @@ public class GrabTaskControllerTestBase {
     TaskEntityRepositoryStubs.behaviour2(taskEntityRepository);
     MilestoneEntityRepositoryStubs.behaviour(milestoneEntityRepository);
     ProjectEntityRepositoryStubs.behaviour(projectEntityRepository);
+    EventEntityRepositoryStubs.behaviour(eventEntityRepository);
+    PullRequestEntityStubs.pullRequestIssued(pullrequestEntityRepository);
   }
 
 }

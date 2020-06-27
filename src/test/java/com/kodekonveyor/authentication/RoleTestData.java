@@ -28,4 +28,8 @@ public class RoleTestData {
   public static final Long ID_CODER = 1121L;
   public static final String NAME_PRIVATE_PROJECT_CODER =
       "kode-konveyor/TaskMarket/coder";
+
+  public static final Long ID_TECHNICAL_ROLE = 1901L;
+  public static final String TECHNICAL_ROLE = "technical";
+
 }

@@ -82,4 +82,12 @@ public class AuthenticatedUserServiceStubs {
         .call();
   }
 
+  public static void technicalUser(
+      final AuthenticatedUserService authenticatedUserService
+  ) {
+    doReturn(UserEntityTestData.getRoleTechnical())
+        .when(authenticatedUserService)
+        .call();
+  }
+
 }

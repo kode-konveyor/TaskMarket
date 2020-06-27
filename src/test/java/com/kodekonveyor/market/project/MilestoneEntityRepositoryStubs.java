@@ -20,9 +20,19 @@ public class MilestoneEntityRepositoryStubs {
         milestoneEntityRepository
     ).findByTask(TaskEntityTestData.getTaskWithStatusUpdated());
 
+    doReturn(Optional.of(MilestoneEntityTestData.get())).when(
+            milestoneEntityRepository
+    ).findByTask(TaskEntityTestData.getMarketUserNewlyRegistered());
+
     doReturn(Optional.of(MilestoneEntityTestData.getOtherMilestone())).when(
         milestoneEntityRepository
     ).findByTask(TaskEntityTestData.getAssignedTask());
+
+    doReturn(Optional.of(MilestoneEntityTestData.get()))
+        .when(
+            milestoneEntityRepository
+        ).findByTask(TaskEntityTestData.get());
+
   }
 
 }

@@ -5,6 +5,7 @@ import static org.mockito.Mockito.doReturn;
 import java.util.List;
 import java.util.Optional;
 
+import com.google.common.collect.Lists;
 import com.kodekonveyor.market.register.MarketUserEntityTestData;
 
 public class TaskEntityRepositoryStubs {
@@ -70,7 +71,10 @@ public class TaskEntityRepositoryStubs {
 
   public static void
       behaviour2(final TaskEntityRepository taskEntityRepository) {
-    doReturn(Optional.of(TaskEntityTestData.get())).when(taskEntityRepository)
+
+    doReturn(Optional.of(TaskEntityTestData.get()))
+        .when(taskEntityRepository)
+
         .findById(TaskTestData.ID);
     doReturn(Optional.of(TaskEntityTestData.getInProgressTask()))
         .when(taskEntityRepository)
@@ -78,6 +82,13 @@ public class TaskEntityRepositoryStubs {
     doReturn(Optional.of(TaskEntityTestData.getUnassignedTask()))
         .when(taskEntityRepository)
         .findById(TaskTestData.ID_2);
+
+    doReturn(Lists.newArrayList(TaskEntityTestData.get()))
+        .when(taskEntityRepository)
+        .findByMarketUser(MarketUserEntityTestData.get());
+    doReturn(Lists.newArrayList())
+        .when(taskEntityRepository)
+        .findByMarketUser(MarketUserEntityTestData.getIdNewlySaved());
   }
 
 }

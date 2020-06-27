@@ -47,4 +47,11 @@ public class RoleEntityTestData {
     return roleEntity;
   }
 
+  public static RoleEntity getNameTechnical() {
+    final RoleEntity roleEntity = new RoleEntity();
+    roleEntity.setId(RoleTestData.ID_TECHNICAL_ROLE);
+    roleEntity.setName(RoleTestData.TECHNICAL_ROLE);
+    return roleEntity;
+  }
+
 }

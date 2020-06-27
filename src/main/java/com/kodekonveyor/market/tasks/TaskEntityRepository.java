@@ -14,4 +14,6 @@ public interface TaskEntityRepository extends CrudRepository<TaskEntity, Long> {
       TaskStatusEnum inProgress, MarketUserEntity marketUser
   );
 
+  List<TaskEntity> findByMarketUser(MarketUserEntity marketUserEntity);
+
 }
