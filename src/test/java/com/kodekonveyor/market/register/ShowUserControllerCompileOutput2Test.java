@@ -30,7 +30,7 @@ public class ShowUserControllerCompileOutput2Test
         .authenticated(authenticatedUserService);
     assertEquals(
         MarketUserDTOTestData.get().getPersonalName(),
-        showUserController.call().getPersonalName()
+        showUserController.call(null).getPersonalName()
     );
   }
 
@@ -41,7 +41,7 @@ public class ShowUserControllerCompileOutput2Test
         .authenticated(authenticatedUserService);
     assertEquals(
         MarketUserDTOTestData.get().getLegalForm(),
-        showUserController.call().getLegalForm()
+        showUserController.call(null).getLegalForm()
     );
   }
 
@@ -52,7 +52,7 @@ public class ShowUserControllerCompileOutput2Test
         .authenticated(authenticatedUserService);
     assertEquals(
         MarketUserDTOTestData.get().getUser(),
-        showUserController.call().getUser()
+        showUserController.call(null).getUser()
     );
   }
 
@@ -65,7 +65,7 @@ public class ShowUserControllerCompileOutput2Test
         .authenticated(authenticatedUserService);
     assertEquals(
         MarketUserDTOTestData.get().getPaymentDetail(),
-        showUserController.call().getPaymentDetail()
+        showUserController.call(null).getPaymentDetail()
     );
   }
 }

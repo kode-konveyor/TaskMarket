@@ -28,7 +28,7 @@ public class ShowUserControllerCompileOutputTest
   public void test() {
     AuthenticatedUserServiceStubs
         .authenticated(authenticatedUserService);
-    assertEquals(MarketUserDTOTestData.get(), showUserController.call());
+    assertEquals(MarketUserDTOTestData.get(), showUserController.call(null));
   }
 
   @Test
@@ -37,7 +37,7 @@ public class ShowUserControllerCompileOutputTest
     AuthenticatedUserServiceStubs
         .authenticated(authenticatedUserService);
     assertEquals(
-        MarketUserDTOTestData.get().getId(), showUserController.call().getId()
+        MarketUserDTOTestData.get().getId(), showUserController.call(null).getId()
     );
   }
 
@@ -48,7 +48,7 @@ public class ShowUserControllerCompileOutputTest
         .authenticated(authenticatedUserService);
     assertEquals(
         MarketUserDTOTestData.get().getBalanceInCents(),
-        showUserController.call().getBalanceInCents()
+        showUserController.call(null).getBalanceInCents()
     );
   }
 
@@ -59,7 +59,7 @@ public class ShowUserControllerCompileOutputTest
         .authenticated(authenticatedUserService);
     assertEquals(
         MarketUserDTOTestData.get().getEmail(),
-        showUserController.call().getEmail()
+        showUserController.call(null).getEmail()
     );
   }
 
@@ -72,7 +72,7 @@ public class ShowUserControllerCompileOutputTest
         .authenticated(authenticatedUserService);
     assertEquals(
         MarketUserDTOTestData.get().getIsTermsAccepted(),
-        showUserController.call().getIsTermsAccepted()
+        showUserController.call(null).getIsTermsAccepted()
     );
   }
 
@@ -83,7 +83,7 @@ public class ShowUserControllerCompileOutputTest
         .authenticated(authenticatedUserService);
     assertEquals(
         MarketUserDTOTestData.get().getLegalAddress(),
-        showUserController.call().getLegalAddress()
+        showUserController.call(null).getLegalAddress()
     );
   }
 
@@ -94,7 +94,7 @@ public class ShowUserControllerCompileOutputTest
         .authenticated(authenticatedUserService);
     assertEquals(
         MarketUserDTOTestData.get().getLegalName(),
-        showUserController.call().getLegalName()
+        showUserController.call(null).getLegalName()
     );
   }
 

@@ -1,21 +1,24 @@
 package com.kodekonveyor.market.project;
 
-import com.google.common.collect.Sets;
-import com.kodekonveyor.authentication.AuthenticatedUserService;
-import com.kodekonveyor.authentication.RoleEntity;
-import com.kodekonveyor.authentication.UserEntity;
-import com.kodekonveyor.market.UnauthorizedException;
-import com.kodekonveyor.market.UrlMapConstants;
-import com.kodekonveyor.market.lead.CheckRoleUtil;
-import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.annotation.PutMapping;
-import org.springframework.web.bind.annotation.RestController;
+import static com.kodekonveyor.market.MarketConstants.MANAGER;
+import static com.kodekonveyor.market.MarketConstants.UNAUTHORIZED_PROJECT_MODIFICATION;
 
 import java.util.Set;
 import java.util.stream.Collectors;
 
-import static com.kodekonveyor.market.MarketConstants.MANAGER;
-import static com.kodekonveyor.market.MarketConstants.UNAUTHORIZED_PROJECT_MODIFICATION;
+import org.slf4j.Logger;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.web.bind.annotation.PutMapping;
+import org.springframework.web.bind.annotation.RestController;
+
+import com.google.common.collect.Sets;
+import com.kodekonveyor.authentication.AuthenticatedUserService;
+import com.kodekonveyor.authentication.RoleEntity;
+import com.kodekonveyor.authentication.UserEntity;
+import com.kodekonveyor.logging.LoggingMarkerConstants;
+import com.kodekonveyor.market.UnauthorizedException;
+import com.kodekonveyor.market.UrlMapConstants;
+import com.kodekonveyor.market.lead.CheckRoleUtil;
 
 @RestController
 public class UpdateProjectModelController {
@@ -27,9 +30,14 @@ public class UpdateProjectModelController {
   @Autowired
   AuthenticatedUserService authenticatedUserService;
 
+  @Autowired
+  Logger logger;
+
   @PutMapping(UrlMapConstants.UPDATE_PROJECT_MODEL_PATH)
   public ProjectDTO
       call(final ProjectModelDTO projectModelDTO, final String projectName) {
+    logger.info(LoggingMarkerConstants.PROJECT, projectName);
+
     final ProjectEntity project = projectEntityRepository
         .findByName(projectName).get();
 
@@ -43,15 +51,22 @@ public class UpdateProjectModelController {
         )
     );
     projectEntityRepository.save(project);
-
+    logger.debug(
+        LoggingMarkerConstants.PROJECT,
+        ProjectConstants.PROJECT_DTO_RETURNED_SUCCESSFULLY + project.getId()
+    );
     return getProjectDTO(project);
 
   }
 
   private void validateAuthoization(final ProjectEntity projectEntity) {
-    UserEntity sessionUser = authenticatedUserService.call();
+    final UserEntity sessionUser = authenticatedUserService.call();
 
     if (!CheckRoleUtil.hasRole(sessionUser, projectEntity, MANAGER)) {
+      logger.warn(
+          LoggingMarkerConstants.PROJECT,
+          ProjectConstants.USER_NOT_MANAGER + sessionUser.getId()
+      );
       throw new UnauthorizedException(UNAUTHORIZED_PROJECT_MODIFICATION);
     }
 

@@ -19,19 +19,21 @@ public class PullrequestEntityTestData {
 
   public static PullRequestEntity getGrabbedOverThreeDays() {
     final PullRequestEntity pullrequestEntity = get();
-    pullrequestEntity.setTask(TaskEntityTestData.getGrabbedOverThreeDays());
+    pullrequestEntity
+        .setTask(TaskEntityTestData.getStatusGrabbedOverThreeDays());
     return pullrequestEntity;
   }
 
   public static PullRequestEntity getGrabbedExactlyThreeDays() {
     final PullRequestEntity pullrequestEntity = get();
-    pullrequestEntity.setTask(TaskEntityTestData.getGrabbedExactlyThreeDays());
+    pullrequestEntity
+        .setTask(TaskEntityTestData.getStatusGrabbedExactlyThreeDays());
     return pullrequestEntity;
   }
 
   public static PullRequestEntity getGrabbedForFourDays() {
     final PullRequestEntity pullrequestEntity = get();
-    pullrequestEntity.setTask(TaskEntityTestData.getGrabbedForFourDays());
+    pullrequestEntity.setTask(TaskEntityTestData.getStatusGrabbedForFourDays());
     return pullrequestEntity;
   }
 
