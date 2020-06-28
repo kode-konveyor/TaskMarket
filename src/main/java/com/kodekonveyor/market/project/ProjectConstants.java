@@ -18,4 +18,10 @@ public class ProjectConstants {
   public static final String BALANCE_LESS_THAN_USER_BUDGET =
       "The user balance is less than project budget";
 
+  public static final String TASK_DESCRIPTION_START = "Task Description:\n";
+  public static final String TASK_DESCRIPTION_END =
+      "\nEnd of Task Description";
+  public static final String DIFF = "\nDiff:\n";
+  public static final String PIPE = "|";
+
 }

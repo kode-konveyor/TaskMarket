@@ -1,6 +1,7 @@
 package com.kodekonveyor.market.tasks;
 
 import java.util.List;
+import java.util.Optional;
 
 import org.springframework.data.repository.CrudRepository;
 
@@ -13,6 +14,9 @@ public interface TaskEntityRepository extends CrudRepository<TaskEntity, Long> {
   List<TaskEntity> findByStatusAndMarketUser(
       TaskStatusEnum inProgress, MarketUserEntity marketUser
   );
+
+  Optional<TaskEntity>
+      findByServiceAndBehaviour(String service, String behaviour);
 
   List<TaskEntity> findByMarketUser(MarketUserEntity marketUserEntity);
 
