@@ -32,7 +32,7 @@ public class MilestoneEntityTestData {
     milestoneEntity.setTask(
         Set.of(
             TaskEntityTestData.getUpForGrab(),
-            TaskEntityTestData.getInProgress()
+            TaskEntityTestData.getPrivateProjectInProgressTask()
         )
     );
     return milestoneEntity;

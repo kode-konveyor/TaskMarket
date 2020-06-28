@@ -36,12 +36,13 @@ public class TaskEntityRepositoryStubs {
     doReturn(Optional.of(TaskEntityTestData.getPullRequestIssuedTask()))
         .when(taskEntityRepository).findById(TaskTestData.ID);
 
-    doReturn(List.of(TaskEntityTestData.getInProgress())).when(
-        taskEntityRepository
-    ).findByStatusAndMarketUser(
-        TaskStatusEnum.IN_PROGRESS,
-        MarketUserEntityTestData.getPrivateProjectCoder()
-    );
+    doReturn(List.of(TaskEntityTestData.getPrivateProjectInProgressTask()))
+        .when(
+            taskEntityRepository
+        ).findByStatusAndMarketUser(
+            TaskStatusEnum.IN_PROGRESS,
+            MarketUserEntityTestData.getPrivateProjectCoder()
+        );
 
     doReturn(List.of(TaskEntityTestData.getInProgressPublicProject()))
         .when(

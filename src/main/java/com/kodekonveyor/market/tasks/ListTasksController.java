@@ -75,7 +75,7 @@ public class ListTasksController {
 
       for (final ProjectEntity projectEntity : privateProjects)
         for (final RoleEntity roleEntity : userRoles)
-          if (roleEntity.getName().contains(projectEntity.getName()))
+          if (projectEntity.getRole().contains(roleEntity))
             userAccessableprojects.add(projectEntity);
     }
 

@@ -40,7 +40,7 @@ public class ListTasksControllerListUsersTasksTest
 
     assertEquals(
         List.of(
-            TaskEntityTestData.getInProgress(),
+            TaskEntityTestData.getPrivateProjectInProgressTask(),
             TaskEntityTestData.getUpForGrab(),
             TaskEntityTestData.getUpForGrab(),
             TaskEntityTestData.getClosedTask()

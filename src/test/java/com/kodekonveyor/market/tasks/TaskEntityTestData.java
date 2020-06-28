@@ -102,7 +102,7 @@ public class TaskEntityTestData {
     return taskEntity;
   }
 
-  public static TaskEntity getInProgress() {
+  public static TaskEntity getPrivateProjectInProgressTask() {
     final TaskEntity taskEntity = get();
     taskEntity.setStatus(TaskStatusEnum.IN_PROGRESS);
     taskEntity.setMarketUser(MarketUserEntityTestData.getPrivateProjectCoder());
