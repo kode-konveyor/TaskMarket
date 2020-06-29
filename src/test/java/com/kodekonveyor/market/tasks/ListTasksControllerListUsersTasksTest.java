@@ -15,6 +15,7 @@ import org.mockito.quality.Strictness;
 
 import com.kodekonveyor.annotations.TestedBehaviour;
 import com.kodekonveyor.annotations.TestedService;
+import com.kodekonveyor.authentication.AuthenticatedUserService2Stubs;
 import com.kodekonveyor.authentication.AuthenticatedUserServiceStubs;
 import com.kodekonveyor.market.project.ProjectEntityRepositoryStubs;
 import com.kodekonveyor.market.register.MarketUserEntityRepositoryStubs;
@@ -32,7 +33,8 @@ public class ListTasksControllerListUsersTasksTest
     "user's task list returned successfully"
   )
   void test() {
-    AuthenticatedUserServiceStubs.privateProjectCoder(authenticatedUserService);
+    AuthenticatedUserService2Stubs
+        .privateProjectCoder(authenticatedUserService);
     MarketUserEntityRepositoryStubs
         .memberOfPrivateProject(marketUserEntityRepository);
     TaskEntityRepositoryStubs.behaviour(taskEntityRepository);
