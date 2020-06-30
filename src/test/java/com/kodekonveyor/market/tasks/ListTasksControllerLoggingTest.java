@@ -45,7 +45,7 @@ public class ListTasksControllerLoggingTest
   }
 
   @Test
-  @DisplayName("return of DTO is logged")
+  @DisplayName("return of tasks is logged")
   void test2() {
     AuthenticatedUserService2Stubs
         .privateProjectCoder(authenticatedUserService);
