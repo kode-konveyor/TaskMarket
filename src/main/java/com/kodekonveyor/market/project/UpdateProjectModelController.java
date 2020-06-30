@@ -3,9 +3,11 @@ package com.kodekonveyor.market.project;
 import static com.kodekonveyor.market.MarketConstants.MANAGER;
 import static com.kodekonveyor.market.MarketConstants.UNAUTHORIZED_PROJECT_MODIFICATION;
 
+import java.util.List;
 import java.util.Set;
 import java.util.stream.Collectors;
 
+import org.json.JSONException;
 import org.slf4j.Logger;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.PutMapping;
@@ -19,6 +21,10 @@ import com.kodekonveyor.logging.LoggingMarkerConstants;
 import com.kodekonveyor.market.UnauthorizedException;
 import com.kodekonveyor.market.UrlMapConstants;
 import com.kodekonveyor.market.lead.CheckRoleUtil;
+import com.kodekonveyor.market.tasks.GetRepositoryTasksService;
+import com.kodekonveyor.market.tasks.TaskEntity;
+import com.kodekonveyor.market.tasks.TaskEntityRepository;
+import com.kodekonveyor.market.tasks.UpdateTasksService;
 
 @RestController
 public class UpdateProjectModelController {
@@ -29,13 +35,19 @@ public class UpdateProjectModelController {
   MilestoneEntityRepository milestoneEntityRepository;
   @Autowired
   AuthenticatedUserService authenticatedUserService;
+  @Autowired
+  GetRepositoryTasksService getRepositoryTasksService;
+  @Autowired
+  UpdateTasksService updateTasksService;
+  @Autowired
+  TaskEntityRepository taskEntityRepository;
 
   @Autowired
   Logger logger;
 
   @PutMapping(UrlMapConstants.UPDATE_PROJECT_MODEL_PATH)
   public ProjectDTO
-      call(final ProjectModelDTO projectModelDTO, final String projectName) {
+      call(final ProjectModelDTO projectModelDTO, final String projectName) throws JSONException {
     logger.info(LoggingMarkerConstants.PROJECT, projectName);
 
     final ProjectEntity project = projectEntityRepository
@@ -50,12 +62,25 @@ public class UpdateProjectModelController {
                 .findAllById(milestoneIds)
         )
     );
+
     projectEntityRepository.save(project);
+    updateTasks();
     logger.debug(
         LoggingMarkerConstants.PROJECT,
         ProjectConstants.PROJECT_DTO_RETURNED_SUCCESSFULLY + project.getId()
     );
+
     return getProjectDTO(project);
+
+  }
+
+  private void updateTasks() throws JSONException {
+    final List<TaskEntity> tasks =
+        getRepositoryTasksService.call(ProjectConstants.REPO_NAME);
+    for (final TaskEntity task : tasks) {
+      final TaskEntity updatedTask = updateTasksService.call(task);
+      taskEntityRepository.save(updatedTask);
+    }
 
   }
 
