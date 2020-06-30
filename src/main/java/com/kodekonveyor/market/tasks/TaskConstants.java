@@ -11,6 +11,9 @@ public class TaskConstants {
       "Task is not in the up for grab status";
 
   public static final String USER_NOT_ELIGIBLE_TO_GRAB =
-          "User not eligible to grab task.";
+      "User not eligible to grab task.";
+
+  public static final String TASKS_RETURNED_SUCCESSFULLY =
+      "Tasks returned successfully Ids :";
 
 }

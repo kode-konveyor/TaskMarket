@@ -2,6 +2,7 @@ package com.kodekonveyor.market.tasks;
 
 import org.mockito.InjectMocks;
 import org.mockito.Mock;
+import org.slf4j.Logger;
 
 import com.kodekonveyor.authentication.AuthenticatedUserService;
 import com.kodekonveyor.market.project.ProjectEntityRepository;
@@ -23,5 +24,8 @@ public class ListTasksControllerTestBase {
 
   @Mock
   ProjectEntityRepository projectEntityRepository;
+
+  @Mock
+  Logger logger;
 
 }
