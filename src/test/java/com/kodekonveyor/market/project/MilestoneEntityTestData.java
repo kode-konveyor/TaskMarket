@@ -31,8 +31,8 @@ public class MilestoneEntityTestData {
     final MilestoneEntity milestoneEntity = get();
     milestoneEntity.setTask(
         Set.of(
-            TaskEntityTestData.get(),
-            TaskEntityTestData.getInProgressTask()
+            TaskEntityTestData.getUpForGrab(),
+            TaskEntityTestData.getPrivateProjectInProgressTask()
         )
     );
     return milestoneEntity;
@@ -71,4 +71,5 @@ public class MilestoneEntityTestData {
     milestoneEntity.setId(MilestoneTestData.ID_1);
     return milestoneEntity;
   }
+
 }

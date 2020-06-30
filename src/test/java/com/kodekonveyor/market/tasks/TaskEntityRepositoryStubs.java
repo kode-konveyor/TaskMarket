@@ -35,8 +35,43 @@ public class TaskEntityRepositoryStubs {
       behaviour(final TaskEntityRepository taskEntityRepository) {
     doReturn(Optional.of(TaskEntityTestData.getPullRequestIssuedTask()))
         .when(taskEntityRepository).findById(TaskTestData.ID);
+
+    doReturn(List.of(TaskEntityTestData.getPrivateProjectInProgressTask()))
+        .when(
+            taskEntityRepository
+        ).findByStatusAndMarketUser(
+            TaskStatusEnum.IN_PROGRESS,
+            MarketUserEntityTestData.getPrivateProjectCoder()
+        );
+
+    doReturn(List.of(TaskEntityTestData.getInProgressPublicProject()))
+        .when(
+            taskEntityRepository
+        ).findByStatusAndMarketUser(
+            TaskStatusEnum.IN_PROGRESS,
+            MarketUserEntityTestData.get()
+        );
+
+    doReturn(List.of(TaskEntityTestData.getUpForGrab())).when(
+        taskEntityRepository
+    ).findByStatus(TaskStatusEnum.UP_FOR_GRAB);
+
+    doReturn(List.of(TaskEntityTestData.getClosedTask())).when(
+        taskEntityRepository
+    ).findByStatusAndMarketUser(
+        TaskStatusEnum.DONE, MarketUserEntityTestData.getPrivateProjectCoder()
+    );
+
+    doReturn(List.of(TaskEntityTestData.getClosedTaskPublicProject()))
+        .when(
+            taskEntityRepository
+        ).findByStatusAndMarketUser(
+            TaskStatusEnum.DONE, MarketUserEntityTestData.get()
+        );
+
     doReturn(Optional.of(TaskEntityTestData.get()))
         .when(taskEntityRepository).findByServiceAndBehaviour(TaskTestData.SERVICE, TaskTestData.BEHAVIOUR);
+
   }
 
   public static void
@@ -44,6 +79,7 @@ public class TaskEntityRepositoryStubs {
 
     doReturn(Optional.of(TaskEntityTestData.get()))
         .when(taskEntityRepository)
+
         .findById(TaskTestData.ID);
     doReturn(Optional.of(TaskEntityTestData.getInProgressTask()))
         .when(taskEntityRepository)
@@ -51,6 +87,7 @@ public class TaskEntityRepositoryStubs {
     doReturn(Optional.of(TaskEntityTestData.getUnassignedTask()))
         .when(taskEntityRepository)
         .findById(TaskTestData.ID_2);
+
     doReturn(Lists.newArrayList(TaskEntityTestData.get()))
         .when(taskEntityRepository)
         .findByMarketUser(MarketUserEntityTestData.get());

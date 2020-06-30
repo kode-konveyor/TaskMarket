@@ -1,8 +1,21 @@
 <checks>
+<!--
+		stage/@value='clarifications' or
+		stage/@value='data_structures'
+-->
 <check
 		title="Model Errors"
       	modelfile="taskmarket.rich"
-      	modelbasepath="//error"
+      	modelbasepath="//error[
+		stage/@value='high_level_requirements' or
+		stage/@value='policies' or
+		stage/@value='user_journey' or
+		stage/@value='low_level_requirements' or
+		stage/@value='milestones' or
+		stage/@value='application_structure' or
+		stage/@value='services' or
+		stage/@value='deprecation' 
+	]"
       	modelnamepath="@type"
       	modelvaluepath="for $current in . return concat(//element[@id=$current/@element]/@name,' ',@name)"
         modelerrorid="$error/object/error/@errorID"
@@ -12,7 +25,7 @@
       	inputnamepath=""
       	inputvaluepath=""
         inputerrorid="$error"
-        errorURL="concat('https://repository.kodekonveyor.com/TaskMarket/kode-konveyor/develop/index.html#',$error)"
+        errorURL="concat('https://repository.kodekonveyor.com/taskmarket/kode-konveyor/develop/index.html#',$error)"
         errortitlestring="zenta:modelErrorTitle($error,$doc)"
         errordescription="zenta:modelErrorDescription($error,$doc,$entryName)"
       	/>
@@ -28,8 +41,9 @@
       	inputnamepath=""
       	inputvaluepath=""
         inputerrorid="$error"
-        errorURL="concat('https://repository.kodekonveyor.com/TaskMarket/kode-konveyor/develop/index.html#',$error)"
+        errorURL="concat('https://repository.kodekonveyor.com/taskmarket/kode-konveyor/develop/index.html#',$error)"
         errortitlestring="zenta:unimplementedErrorTitle($error)"
         errordescription="zenta:unimplementedErrorDescription($error, $doc)"
       	/>
 </checks>
+

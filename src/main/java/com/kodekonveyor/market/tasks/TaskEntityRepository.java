@@ -11,6 +11,10 @@ public interface TaskEntityRepository extends CrudRepository<TaskEntity, Long> {
 
   List<TaskEntity> findByStatus(TaskStatusEnum status);
 
+  List<TaskEntity> findByStatusAndMarketUser(
+      TaskStatusEnum inProgress, MarketUserEntity marketUser
+  );
+
   Optional<TaskEntity>
       findByServiceAndBehaviour(String service, String behaviour);
 
