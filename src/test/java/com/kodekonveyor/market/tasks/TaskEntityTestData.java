@@ -96,6 +96,41 @@ public class TaskEntityTestData {
     return taskEntity;
   }
 
+  public static TaskEntity getPrivateProjectInProgressTask() {
+    final TaskEntity taskEntity = get();
+    taskEntity.setStatus(TaskStatusEnum.IN_PROGRESS);
+    taskEntity.setMarketUser(MarketUserEntityTestData.getPrivateProjectCoder());
+    return taskEntity;
+  }
+
+  public static TaskEntity getUpForGrab() {
+    final TaskEntity taskEntity = get();
+    taskEntity.setMarketUser(null);
+    taskEntity.setStatus(TaskStatusEnum.UP_FOR_GRAB);
+    return taskEntity;
+  }
+
+  public static TaskEntity getClosedTask() {
+    final TaskEntity taskEntity = get();
+    taskEntity.setStatus(TaskStatusEnum.DONE);
+    taskEntity.setMarketUser(MarketUserEntityTestData.getPrivateProjectCoder());
+    return taskEntity;
+  }
+
+  public static Object getInProgressPublicProject() {
+    final TaskEntity taskEntity = get();
+    taskEntity.setStatus(TaskStatusEnum.IN_PROGRESS);
+    taskEntity.setMarketUser(MarketUserEntityTestData.get());
+    return taskEntity;
+  }
+
+  public static Object getClosedTaskPublicProject() {
+    final TaskEntity taskEntity = get();
+    taskEntity.setStatus(TaskStatusEnum.DONE);
+    taskEntity.setMarketUser(MarketUserEntityTestData.get());
+    return taskEntity;
+  }
+
   public static TaskEntity getServiceDifferent() {
     final TaskEntity taskEntity = TaskEntityTestData.get();
     taskEntity.setService(TaskTestData.OTHER_SERVICE);

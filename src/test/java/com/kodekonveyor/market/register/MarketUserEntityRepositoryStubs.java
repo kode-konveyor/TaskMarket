@@ -22,7 +22,7 @@ public class MarketUserEntityRepositoryStubs {
         .findByUser(UserEntityTestData.get());
     doReturn(Optional.of(MarketUserEntityTestData.getUnacceptedContractuser()))
         .when(marketUserEntityRepository)
-            .findById(MarketUserTestData.ID_IS_TERMS_ACCEPTED_FALSE);
+        .findById(MarketUserTestData.ID_IS_TERMS_ACCEPTED_FALSE);
     doReturn(Optional.of(MarketUserEntityTestData.get()))
         .when(marketUserEntityRepository).findById(MarketUserTestData.ID);
 
@@ -30,8 +30,8 @@ public class MarketUserEntityRepositoryStubs {
         .when(marketUserEntityRepository)
         .findByUser(UserEntityTestData.getRoleCanbePaid());
     doReturn(Optional.of(MarketUserEntityTestData.getRoleCanBePaid()))
-            .when(marketUserEntityRepository)
-            .findById(MarketUserTestData.ID_CAN_BE_PAID);
+        .when(marketUserEntityRepository)
+        .findById(MarketUserTestData.ID_CAN_BE_PAID);
     doReturn(Optional.of(MarketUserEntityTestData.getRoleProjectManager()))
         .when(marketUserEntityRepository)
         .findByUser(UserEntityTestData.getRoleProjectManager());
@@ -128,10 +128,28 @@ public class MarketUserEntityRepositoryStubs {
 
   }
 
-  public static void userNewlyRegistered(final MarketUserEntityRepository marketUserEntityRepository){
+  public static void memberOfPrivateProject(
+      final MarketUserEntityRepository marketUserEntityRepository
+  ) {
+    doReturn(Optional.of(MarketUserEntityTestData.getPrivateProjectCoder()))
+        .when(marketUserEntityRepository)
+        .findByUser(UserEntityTestData.getPrivateProjectCoder());
+  }
+
+  public static void
+      nonMarketUser(final MarketUserEntityRepository marketUserEntityRepository) {
+    doReturn(Optional.empty())
+        .when(marketUserEntityRepository)
+        .findByUser(UserEntityTestData.get());
+  }
+
+  public static void userNewlyRegistered(
+      final MarketUserEntityRepository marketUserEntityRepository
+  ) {
     doReturn(Optional.of(MarketUserEntityTestData.getIdNewlySaved()))
-            .when(marketUserEntityRepository)
-            .findByUser(UserEntityTestData.getIdNoMarketUser());
+        .when(marketUserEntityRepository)
+        .findByUser(UserEntityTestData.getIdNoMarketUser());
+
   }
 
 }

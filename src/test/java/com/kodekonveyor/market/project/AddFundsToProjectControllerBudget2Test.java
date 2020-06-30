@@ -15,6 +15,7 @@ import org.mockito.quality.Strictness;
 
 import com.kodekonveyor.annotations.TestedBehaviour;
 import com.kodekonveyor.annotations.TestedService;
+import com.kodekonveyor.authentication.AuthenticatedUserService2Stubs;
 import com.kodekonveyor.authentication.AuthenticatedUserServiceStubs;
 import com.kodekonveyor.exception.ThrowableTester;
 import com.kodekonveyor.market.register.MarketUserEntityRepositoryStubs;
@@ -68,7 +69,7 @@ public class AddFundsToProjectControllerBudget2Test
     "When User is Project manager with the balance amount as zero, an exception is thrown ."
   )
   public void testForProjectManager() {
-    AuthenticatedUserServiceStubs
+    AuthenticatedUserService2Stubs
         .forProjectManagerForZeroBalance(authenticatedUserService);
     ThrowableTester.assertThrows(
         () -> addFundsToProjectController.call(

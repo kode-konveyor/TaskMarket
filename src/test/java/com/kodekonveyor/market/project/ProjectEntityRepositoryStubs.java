@@ -32,6 +32,11 @@ public class ProjectEntityRepositoryStubs {
         .when(projectEntityRepository).findByMilestone(MilestoneEntityTestData.get());
     doReturn(Optional.of(ProjectEntityTestData.get()))
         .when(projectEntityRepository).findByMilestone(MilestoneEntityTestData.getOtherMilestone());
+    doReturn(List.of(ProjectEntityTestData.getPrivateProject()))
+        .when(projectEntityRepository).findByIsPublic(false);
+
+    doReturn(List.of(ProjectEntityTestData.getPublicProject()))
+        .when(projectEntityRepository).findByIsPublic(true);
   }
 
   public static void
