@@ -5,6 +5,7 @@ import static org.mockito.Mockito.doReturn;
 import java.util.List;
 import java.util.Optional;
 
+import com.kodekonveyor.market.tasks.TaskEntityStatusesTestData;
 import com.kodekonveyor.market.tasks.TaskEntityTestData;
 
 public class PullRequestEntityStubs {
@@ -24,11 +25,11 @@ public class PullRequestEntityStubs {
           final PullrequestEntityRepository pullrequestEntityRepository
       ) {
     doReturn(List.of())
-        .when(pullrequestEntityRepository).findByTask(TaskEntityTestData.getStatusGrabbedOverThreeDays());
+        .when(pullrequestEntityRepository).findByTask(TaskEntityStatusesTestData.getStatusGrabbedOverThreeDays());
     doReturn(List.of())
-        .when(pullrequestEntityRepository).findByTask(TaskEntityTestData.getStatusGrabbedExactlyThreeDays());
+        .when(pullrequestEntityRepository).findByTask(TaskEntityStatusesTestData.getStatusGrabbedExactlyThreeDays());
     doReturn(List.of())
-        .when(pullrequestEntityRepository).findByTask(TaskEntityTestData.getStatusGrabbedForFourDays());
+        .when(pullrequestEntityRepository).findByTask(TaskEntityStatusesTestData.getStatusGrabbedForFourDays());
     doReturn(List.of())
         .when(pullrequestEntityRepository).findByTask(TaskEntityTestData.get());
   }
@@ -37,11 +38,11 @@ public class PullRequestEntityStubs {
       final PullrequestEntityRepository pullrequestEntityRepository
   ) {
     doReturn(List.of(PullrequestEntityTestData.getGrabbedOverThreeDays()))
-        .when(pullrequestEntityRepository).findByTask(TaskEntityTestData.getStatusGrabbedOverThreeDays());
+        .when(pullrequestEntityRepository).findByTask(TaskEntityStatusesTestData.getStatusGrabbedOverThreeDays());
     doReturn(List.of(PullrequestEntityTestData.getGrabbedExactlyThreeDays()))
-        .when(pullrequestEntityRepository).findByTask(TaskEntityTestData.getStatusGrabbedExactlyThreeDays());
+        .when(pullrequestEntityRepository).findByTask(TaskEntityStatusesTestData.getStatusGrabbedExactlyThreeDays());
     doReturn(List.of(PullrequestEntityTestData.getGrabbedForFourDays()))
-        .when(pullrequestEntityRepository).findByTask(TaskEntityTestData.getStatusGrabbedForFourDays());
+        .when(pullrequestEntityRepository).findByTask(TaskEntityStatusesTestData.getStatusGrabbedForFourDays());
     doReturn(List.of(PullrequestEntityTestData.getGrabbedExactlyThreeDays()))
         .when(pullrequestEntityRepository).findByTask(TaskEntityTestData.get());
 
