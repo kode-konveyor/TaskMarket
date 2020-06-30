@@ -13,10 +13,10 @@ public class ProjectDTOTestData {
     final ProjectDTO projectDTO = new ProjectDTO();
     projectDTO.setId(ProjectTestData.ID);
     projectDTO.setRole(
-            Set.of(
-                    RoleTestData.ID,
-                    RoleTestData.ID_PROJECT_MANAGER
-            )
+        Set.of(
+            RoleTestData.ID,
+            RoleTestData.ID_PROJECT_MANAGER
+        )
     );
     projectDTO.setMilestone(Set.of(MilestoneTestData.ID));
     projectDTO.setPullRequest(Set.of(PullRequestTestData.ID));
@@ -83,6 +83,19 @@ public class ProjectDTOTestData {
   public static ProjectDTO getMinimumForGab() {
     final ProjectDTO projectDTO = get();
     projectDTO.setMinimumForGrab(ProjectTestData.MINIMUM_FOR_GRAB);
+    return projectDTO;
+  }
+
+  public static ProjectDTO getZeroMilestonesProject() {
+    final ProjectDTO projectDTO = getMinimumForGab();
+    projectDTO.setMilestone(Set.of());
+    return projectDTO;
+  }
+
+  public static ProjectDTO getMultipleMilestonesProject() {
+    final ProjectDTO projectDTO = getMinimumForGab();
+    projectDTO
+        .setMilestone(Set.of(MilestoneTestData.ID, MilestoneTestData.ID_1));
     return projectDTO;
   }
 }

@@ -71,4 +71,44 @@ public class CheckUpforgrabTasksServiceCountTheTasksTest
 
   }
 
+  @Test
+  @DisplayName(
+    "If there are no milestones in the project, message is sent to project manager on discord"
+  )
+  void test3() {
+    checkUpforgrabTasksService
+        .call(ProjectDTOTestData.getZeroMilestonesProject());
+    Mockito.verify(messageUserOnDiscordService).call(
+        TechnicalTestData.MESSAGE
+    );
+  }
+
+  @Test
+  @DisplayName(
+    "If there are no tasks in milestones of a project, message is sent to project manager on discord"
+  )
+  void test4() {
+    MilestoneEntityRepositoryStubs
+        .emptyMilestone(milestoneEntityRepository);
+    checkUpforgrabTasksService
+        .call(ProjectDTOTestData.getMinimumForGab());
+    Mockito.verify(messageUserOnDiscordService).call(
+        TechnicalTestData.MESSAGE
+    );
+  }
+
+  @Test
+  @DisplayName(
+    "In project with multiple milestone if up for grab tasks are more than minimum for grab, nothing is done"
+  )
+  void test5() {
+    MilestoneEntityRepositoryStubs
+        .multipleMilestone(milestoneEntityRepository);
+    checkUpforgrabTasksService
+        .call(ProjectDTOTestData.getMultipleMilestonesProject());
+    Mockito.verify(messageUserOnDiscordService, Mockito.times(0)).call(
+        TechnicalTestData.MESSAGE
+    );
+  }
+
 }

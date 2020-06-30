@@ -27,6 +27,17 @@ public class MilestoneEntityTestData {
 
   }
 
+  public static MilestoneEntity getUpForGrab() {
+    final MilestoneEntity milestoneEntity = get();
+    milestoneEntity.setTask(
+        Set.of(
+            TaskEntityTestData.get(),
+            TaskEntityTestData.getInProgressTask()
+        )
+    );
+    return milestoneEntity;
+  }
+
   public static MilestoneEntity getTasksMoreThanMinimumForGrab() {
     final MilestoneEntity milestoneEntity = get();
     milestoneEntity.setTask(
@@ -49,4 +60,15 @@ public class MilestoneEntityTestData {
     return milestoneEntity;
   }
 
+  public static Object getNoTasksMilestone() {
+    final MilestoneEntity milestoneEntity = get();
+    milestoneEntity.setTask(Set.of());
+    return milestoneEntity;
+  }
+
+  public static MilestoneEntity getMilestoneTwo() {
+    final MilestoneEntity milestoneEntity = getTasksEqualToMinimumForGrab();
+    milestoneEntity.setId(MilestoneTestData.ID_1);
+    return milestoneEntity;
+  }
 }

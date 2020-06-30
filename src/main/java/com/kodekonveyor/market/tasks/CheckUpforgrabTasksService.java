@@ -8,6 +8,7 @@ import org.springframework.stereotype.Service;
 import com.kodekonveyor.market.MarketConstants;
 import com.kodekonveyor.market.project.MilestoneEntity;
 import com.kodekonveyor.market.project.MilestoneEntityRepository;
+import com.kodekonveyor.market.project.ProjectConstants;
 import com.kodekonveyor.market.project.ProjectDTO;
 import com.kodekonveyor.market.technical.MessageUserOnDiscordService;
 
@@ -30,6 +31,9 @@ public class CheckUpforgrabTasksService {
   }
 
   private long countTheTasks(final ProjectDTO projectDTO) {
+
+    if (projectDTO.getMilestone().isEmpty())
+      return ProjectConstants.NO_UP_FOR_GRAB_TASKS;
 
     final Iterable<MilestoneEntity> milestones =
         milestoneEntityRepository.findAllById(projectDTO.getMilestone());
