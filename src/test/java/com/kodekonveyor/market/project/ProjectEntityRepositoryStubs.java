@@ -53,4 +53,9 @@ public class ProjectEntityRepositoryStubs {
             .when(projectEntityRepository).save(any(ProjectEntity.class));
   }
 
+  public static void mockIncorrectSaveBehaviour(final ProjectEntityRepository projectEntityRepository) {
+    doReturn(ProjectEntityTestData.getManagerRole())
+            .when(projectEntityRepository).save(any(ProjectEntity.class));
+  }
+
 }
