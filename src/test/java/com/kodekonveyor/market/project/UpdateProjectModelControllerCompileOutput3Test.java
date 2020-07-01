@@ -22,7 +22,7 @@ public class UpdateProjectModelControllerCompileOutput3Test
     extends UpdateProjectModelControllerTestBase {
 
   @Test
-  @DisplayName("The project details with budget returned successfully")
+  @DisplayName("When saving entity to db returns different data, the response is different for the input to api.")
   public void test12() {
     ProjectEntityRepositoryStubs.mockIncorrectSaveBehaviour(projectEntityRepository);
 
