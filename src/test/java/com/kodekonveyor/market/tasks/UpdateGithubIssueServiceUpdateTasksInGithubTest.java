@@ -2,6 +2,7 @@ package com.kodekonveyor.market.tasks;
 
 import com.kodekonveyor.annotations.TestedBehaviour;
 import com.kodekonveyor.annotations.TestedService;
+import com.kodekonveyor.authentication.UserTestData;
 import com.kodekonveyor.exception.ThrowableTester;
 import com.kodekonveyor.technical.GithubAPIExecutorServiceStubs;
 import com.kodekonveyor.technical.TechnicalTestData;
@@ -22,6 +23,7 @@ import java.util.Map;
 
 import static com.kodekonveyor.technical.TechnicalTestData.GITHUB_UPDATE_ISSUE_FAILURE_RES;
 import static java.util.Collections.emptySet;
+import static java.util.Collections.singleton;
 
 @ExtendWith(MockitoExtension.class)
 @MockitoSettings(strictness = Strictness.LENIENT)
@@ -70,7 +72,10 @@ public class UpdateGithubIssueServiceUpdateTasksInGithubTest
 
         updateGithubIssueService.call(TaskEntityTestData.getUpForGrab());
 
-        Assert.assertEquals(argumentCaptor.getValue().get(TechnicalTestData.ASSIGNEES), emptySet());
+        Assert.assertEquals(
+                argumentCaptor.getValue().get(TechnicalTestData.ASSIGNEES),
+                emptySet()
+        );
     }
 
     @Test
@@ -80,7 +85,36 @@ public class UpdateGithubIssueServiceUpdateTasksInGithubTest
 
         updateGithubIssueService.call(TaskEntityStatusTestData.getMarketUserStatusNull());
 
-        Assert.assertEquals(argumentCaptor.getValue().get(TechnicalTestData.LABELS), emptySet());
+        Assert.assertEquals(
+                argumentCaptor.getValue().get(TechnicalTestData.LABELS),
+                emptySet()
+        );
+    }
+
+    @Test
+    @DisplayName("When task is assigned, the assignees are updated in github and sent in request.")
+    public void test6() {
+        GithubAPIExecutorServiceStubs.mockUpdateIssueSuccessAndCaptureReq(githubAPIExecutorService, argumentCaptor);
+
+        updateGithubIssueService.call(TaskEntityTestData.get());
+
+        Assert.assertEquals(
+                argumentCaptor.getValue().get(TechnicalTestData.ASSIGNEES),
+                singleton(UserTestData.LOGIN)
+        );
+    }
+
+    @Test
+    @DisplayName("When status is not null for task, then labels are updated in github and sent in request.")
+    public void test7() {
+        GithubAPIExecutorServiceStubs.mockUpdateIssueSuccessAndCaptureReq(githubAPIExecutorService, argumentCaptor);
+
+        updateGithubIssueService.call(TaskEntityTestData.get());
+
+        Assert.assertEquals(
+                argumentCaptor.getValue().get(TechnicalTestData.LABELS),
+                singleton(TaskStatusEnum.UP_FOR_GRAB.getValue())
+        );
     }
 
 }
