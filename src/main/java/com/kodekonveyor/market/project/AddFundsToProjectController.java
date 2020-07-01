@@ -45,10 +45,9 @@ public class AddFundsToProjectController {
         projectEntityRepository
             .findById(projectId).get();
     final UserEntity user = authenticatedUserService.call();
-    final ProjectDTO projectDTO = getProjectDTO(project);
     validateBalance(user, project, budgetInCents);
-    addFundsToProject(user, project, budgetInCents, projectDTO);
-
+    ProjectEntity projectEntityUpdated = addFundsToProject(user, project, budgetInCents);
+    final ProjectDTO projectDTO = getProjectDTO(projectEntityUpdated);
     logger.debug(
         LoggingMarkerConstants.PROJECT,
         ProjectConstants.PROJECT_DTO_RETURNED_SUCCESSFULLY +
@@ -65,6 +64,7 @@ public class AddFundsToProjectController {
     projectDTO.setUrl(project.getUrl());
     projectDTO.setName(project.getName());
     projectDTO.setProjectId(project.getProjectId());
+    projectDTO.setBudgetInCents(project.getBudgetInCents());
     projectDTO
         .setMilestone(project.getMilestone().stream().map(MilestoneEntity::getId).collect(Collectors.toSet()));
     projectDTO
@@ -107,10 +107,9 @@ public class AddFundsToProjectController {
       );
   }
 
-  private void addFundsToProject(
+  private ProjectEntity addFundsToProject(
       final UserEntity user,
-      final ProjectEntity project, final long budgetInCents,
-      final ProjectDTO projectDTO
+      final ProjectEntity project, final long budgetInCents
   ) {
     final Optional<MarketUserEntity> marketUserEntity =
         marketUserEntityRepository.findByUser(user);
@@ -126,7 +125,6 @@ public class AddFundsToProjectController {
         .setBalanceInCents(updatedUserBalance);
     marketUserEntityRepository.save(marketUserEntity.get());
     project.setBudgetInCents(updatedProjectBudget);
-    projectDTO.setBudgetInCents(updatedProjectBudget);
-    projectEntityRepository.save(project);
+    return projectEntityRepository.save(project);
   }
 }
