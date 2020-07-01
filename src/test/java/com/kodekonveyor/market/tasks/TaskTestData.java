@@ -37,6 +37,10 @@ public class TaskTestData {
   public static final String TASK_NOT_UP_FOR_GRAB =
       "Task is not in the up for grab status";
 
+  public static final Long ID_ONE = 1196L;
+
+  public static final Long ID_TWO = 1999L;
+
   public static final String OTHER_SERVICE = "SomeServie";
 
   public static final String OTHER_BEHAVIOUR = "Other behaviour";

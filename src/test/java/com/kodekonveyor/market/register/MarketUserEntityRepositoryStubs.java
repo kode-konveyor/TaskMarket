@@ -52,6 +52,12 @@ public class MarketUserEntityRepositoryStubs {
         .when(marketUserEntityRepository)
         .findByUser(UserEntityTestData.getRoleKodekonveyorContract());
 
+    doReturn(
+        Optional.of(MarketUserEntityTestData.getRoleManager())
+    )
+        .when(marketUserEntityRepository)
+        .findByUser(UserEntityTestData.getRoleProjectManager());
+
     doAnswer(new Answer<Void>() {
 
       @Override

@@ -12,21 +12,25 @@ public class TaskEntityRepositoryStubs {
 
   public static void
       grabbedOverThreeDays(final TaskEntityRepository taskEntityRepository) {
-    doReturn(List.of(TaskEntityTestData.getStatusGrabbedOverThreeDays()))
+    doReturn(
+        List.of(TaskEntityStatusesTestData.getStatusGrabbedOverThreeDays())
+    )
         .when(taskEntityRepository).findByStatus(TaskStatusEnum.IN_PROGRESS);
 
   }
 
   public static void
       grabbedExactlyThreeDays(final TaskEntityRepository taskEntityRepository) {
-    doReturn(List.of(TaskEntityTestData.getStatusGrabbedExactlyThreeDays()))
+    doReturn(
+        List.of(TaskEntityStatusesTestData.getStatusGrabbedExactlyThreeDays())
+    )
         .when(taskEntityRepository).findByStatus(TaskStatusEnum.IN_PROGRESS);
 
   }
 
   public static void
       grabbedForFourDays(final TaskEntityRepository taskEntityRepository) {
-    doReturn(List.of(TaskEntityTestData.getStatusGrabbedForFourDays()))
+    doReturn(List.of(TaskEntityStatusesTestData.getStatusGrabbedForFourDays()))
         .when(taskEntityRepository).findByStatus(TaskStatusEnum.IN_PROGRESS);
 
   }
