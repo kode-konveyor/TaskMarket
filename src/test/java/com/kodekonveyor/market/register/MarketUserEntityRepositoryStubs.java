@@ -3,7 +3,6 @@ package com.kodekonveyor.market.register;
 import static org.mockito.Mockito.doAnswer;
 import static org.mockito.Mockito.doReturn;
 
-import java.util.List;
 import java.util.Optional;
 
 import org.mockito.Mockito;
@@ -58,11 +57,6 @@ public class MarketUserEntityRepositoryStubs {
     )
         .when(marketUserEntityRepository)
         .findByUser(UserEntityTestData.getRoleProjectManager());
-    doReturn(
-        List.of(MarketUserEntityTestData.getRoleManager())
-    )
-        .when(marketUserEntityRepository)
-        .findAllByUser(List.of(UserEntityTestData.getRoleProjectManager()));
 
     doAnswer(new Answer<Void>() {
 

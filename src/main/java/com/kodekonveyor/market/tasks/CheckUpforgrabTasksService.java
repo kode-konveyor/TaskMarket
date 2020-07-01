@@ -1,5 +1,6 @@
 package com.kodekonveyor.market.tasks;
 
+import java.util.ArrayList;
 import java.util.List;
 import java.util.stream.StreamSupport;
 
@@ -47,8 +48,13 @@ public class CheckUpforgrabTasksService {
 
     final List<UserEntity> users = userEntityRepository.findByRole(roleEntity);
 
-    final List<MarketUserEntity> projectmanagers =
-        marketUserEntityRepository.findAllByUser(users);
+    final List<MarketUserEntity> projectmanagers = new ArrayList<>();
+
+    for (final UserEntity user : users) {
+      final MarketUserEntity projectmanager =
+          marketUserEntityRepository.findByUser(user).get();
+      projectmanagers.add(projectmanager);
+    }
 
     if (countTheTasks(projectDTO) <= projectDTO.getMinimumForGrab())
 
