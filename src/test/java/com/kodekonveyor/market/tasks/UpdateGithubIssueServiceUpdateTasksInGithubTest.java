@@ -78,7 +78,7 @@ public class UpdateGithubIssueServiceUpdateTasksInGithubTest
     public void test5() {
         GithubAPIExecutorServiceStubs.mockUpdateIssueSuccessAndCaptureReq(githubAPIExecutorService, argumentCaptor);
 
-        updateGithubIssueService.call(TaskEntityTestData.getMarketUserStatusNull());
+        updateGithubIssueService.call(TaskEntityStatusTestData.getMarketUserStatusNull());
 
         Assert.assertEquals(argumentCaptor.getValue().get(TechnicalTestData.LABELS), emptySet());
     }

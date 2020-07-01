@@ -150,10 +150,4 @@ public class TaskEntityTestData {
     return taskEntity;
   }
 
-  public static TaskEntity getMarketUserStatusNull() {
-    final TaskEntity taskEntity = get();
-    taskEntity.setStatus(null);
-    return taskEntity;
-  }
-
 }
