@@ -2,6 +2,7 @@ package com.kodekonveyor.authentication;
 
 import static org.mockito.Mockito.*;//NOPMD
 
+import java.util.List;
 import java.util.Optional;
 
 import org.mockito.invocation.InvocationOnMock;
@@ -28,6 +29,10 @@ public class UserEntityRepositoryStubs {
         .findByLogin(UserTestData.LOGIN_BAD);
     doReturn(Optional.of(UserEntityTestData.getIdNoMarketUser())).when(userEntityRepository)
             .findByLogin(UserTestData.LOGIN_NO_MARKET_USER);
+
+    doReturn(List.of(UserEntityTestData.getRoleProjectManager()))
+        .when(userEntityRepository)
+        .findByRole(RoleEntityTestData.getNameProjectManager());
 
     final Answer<UserEntity> answer = new Answer<>() {
 
