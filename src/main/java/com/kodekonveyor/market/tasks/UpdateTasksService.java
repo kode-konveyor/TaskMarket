@@ -14,12 +14,14 @@ public class UpdateTasksService {
   @Autowired
   private TaskEntityRepository taskEntityRepository;
 
+  @Autowired
+  private UpdateGithubIssueService updateGithubIssueService;
+
   public TaskEntity call(final TaskEntity inputTask) {
     final Optional<TaskEntity> storedTask =
         taskEntityRepository.findByServiceAndBehaviour(
             inputTask.getService(), inputTask.getBehaviour()
         );
-
     if (!storedTask.isEmpty())
       return updateTask(inputTask, storedTask.get());
 
@@ -33,7 +35,7 @@ public class UpdateTasksService {
             ProjectConstants.TASK_DESCRIPTION_END
     );
     task.setStatus(TaskStatusEnum.NOT_IN_MODEL);
-
+    updateGithubIssueService.call(task);
     return task;
   }
 
@@ -69,6 +71,7 @@ public class UpdateTasksService {
           );
 
       updateDescription(storedTask, actualDescription, differenceInDescription);
+      updateGithubIssueService.call(storedTask);
       return storedTask;
     }
 
@@ -79,6 +82,7 @@ public class UpdateTasksService {
     updateDescription(
         storedTask, storedTask.getDescription(), differenceInDescription
     );
+    updateGithubIssueService.call(storedTask);
     return storedTask;
   }
 
