@@ -1,10 +1,9 @@
 package com.kodekonveyor.market.project;
 
-import com.kodekonveyor.authentication.RoleEntityTestData;
-import org.mockito.ArgumentCaptor;
-
 import java.util.List;
 import java.util.Optional;
+
+import com.kodekonveyor.authentication.RoleEntityTestData;
 
 import static org.mockito.Mockito.any;
 import static org.mockito.Mockito.doAnswer;
@@ -52,12 +51,6 @@ public class ProjectEntityRepositoryStubs {
         .when(projectEntityRepository).findById(ProjectTestData.ID_BUDGET);
     doAnswer(invocationOnMock -> invocationOnMock.getArgument(0))
             .when(projectEntityRepository).save(any(ProjectEntity.class));
-  }
-
-  public static void mockSaveAndCapture(final ProjectEntityRepository repository, final ArgumentCaptor<ProjectEntity> argumentCaptor) {
-    doAnswer(invocationOnMock -> invocationOnMock.getArgument(0))
-            .when(repository).save(argumentCaptor.capture());
-
   }
 
 }
