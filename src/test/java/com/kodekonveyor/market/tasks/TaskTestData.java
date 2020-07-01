@@ -56,4 +56,13 @@ public class TaskTestData {
   public static final String EXP_USER_NOT_ELIGIBLE_TO_GRAB =
       "User not eligible to grab task.";
 
+  public static final String EXP_LOG_UPDATE_GITHUB_ISSUE_SERVICE_CALL =
+          "Execution for updating issue in github for #{} starts.";
+
+  public static final String EXP_LOG_UPDATE_GITHUB_ISSUE_SERVICE_SUCCESS_CALL =
+          "Execution for updating issue in github for #{} successful.";
+
+  public static final String EXP_LOG_UPDATE_GITHUB_ISSUE_SERVICE_FAILURE_CALL =
+          "Execution for updating issue in github for #{} failed, error : {}";
+
 }

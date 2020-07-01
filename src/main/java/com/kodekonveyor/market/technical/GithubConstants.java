@@ -20,15 +20,17 @@ public class GithubConstants {
   public static final String LABELS = "labels";
   public static final String LOGIN = "login";
   public static final String NAME = "name";
+  public static final String TITLE_TEMPLATE = "%s/%s";
   public static final String OPEN = "open";
   public static final String REPO_NAME = "kode-konveyor/TaskMarket";
   public static final String REPOS = "/repos/";
   public static final String TITLE = "title";
+  public static final String ASSIGNEES = "assignees";
   public static final String UP_FOR_GRAB = "up for grab";
   public static final String USER = "user";
   public static String GITHUB_GRAPHQL_ENDPOINT =
       "https://api.github.com/graphql";
-
+  public static final String UPDATE_ISSUE_PATH_TEMPLATE = "/repos/kode-konveyor/TaskMarket/issues/%d";
   public static final String UTF_8 = "utf-8";
   public static final String BEARER = "bearer %s";
   public static final String APPLICATION_JSON_UTF_8 = "application/json; utf-8";
@@ -89,5 +91,7 @@ public class GithubConstants {
   public static final String KODE_KONVEYOR = "kode-konveyor";
   public static final Object FAILURE = "FAILURE";
   public static final Object SUCCESS = "SUCCESS";
+  public static final String FAILED_TO_CONVERT_TO_JSON = "Unable to convert to json string.";
+  public static final String GITHUB_API_CALL_FAILURE = "Failure with status %s, while making call to github.";
 
 }
