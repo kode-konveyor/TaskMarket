@@ -63,4 +63,5 @@ public class ProjectTestData {
   public static final String EXPECTED_AUTH_ERROR_FOR_UPDATE_PROJECT =
       "Project model can only be modified by project manager.";
 
+  public static final Long UPDATED_BUDGET_AFTER_ADD = 1_000_004_242L;
 }
