@@ -17,7 +17,9 @@ import org.mockito.junit.jupiter.MockitoSettings;
 import org.mockito.quality.Strictness;
 
 import static com.kodekonveyor.logging.LoggingMarkerConstants.TASK;
+import static com.kodekonveyor.market.tasks.TaskTestData.EXP_LOG_GRAB_TASK_FAILURE_CALL;
 import static com.kodekonveyor.market.tasks.TaskTestData.EXP_USER_NOT_ELIGIBLE_TO_GRAB;
+import static com.kodekonveyor.market.tasks.TaskTestData.TASK_NOT_UP_FOR_GRAB;
 
 @ExtendWith(MockitoExtension.class)
 @MockitoSettings(strictness = Strictness.LENIENT)
@@ -39,7 +41,7 @@ public class GrabTaskControllerLoggingTest
         Mockito.verify(logger)
                 .info(
                         TASK,
-                        TaskConstants.LOG_GRAB_TASK_CALL,
+                        TaskTestData.EXP_LOG_GRAB_TASK_CALL,
                         TaskTestData.ID
                 );
     }
@@ -56,7 +58,7 @@ public class GrabTaskControllerLoggingTest
         Mockito.verify(logger)
                 .debug(
                         TASK,
-                        TaskConstants.LOG_GRAB_TASK_SUCCESS_CALL,
+                        TaskTestData.EXP_LOG_GRAB_TASK_SUCCESS_CALL,
                         TaskTestData.ID
                 );
     }
@@ -71,7 +73,7 @@ public class GrabTaskControllerLoggingTest
         Mockito.verify(logger)
                 .warn(
                         TASK,
-                        TaskConstants.LOG_GRAB_TASK_FAILURE_CALL,
+                        EXP_LOG_GRAB_TASK_FAILURE_CALL,
                         EXP_USER_NOT_ELIGIBLE_TO_GRAB
                 );
     }
@@ -83,13 +85,13 @@ public class GrabTaskControllerLoggingTest
     public void test4() {
         ThrowableTester.assertThrows(
                 () -> grabTaskController.call(TaskTestData.ID_IN_PROGRESS)
-        ).assertMessageIs(TaskTestData.TASK_NOT_UP_FOR_GRAB);
+        ).assertMessageIs(TASK_NOT_UP_FOR_GRAB);
 
         Mockito.verify(logger)
                 .warn(
                         TASK,
-                        TaskConstants.LOG_GRAB_TASK_FAILURE_CALL,
-                        TaskTestData.TASK_NOT_UP_FOR_GRAB
+                        EXP_LOG_GRAB_TASK_FAILURE_CALL,
+                        TASK_NOT_UP_FOR_GRAB
                 );
     }
 }
