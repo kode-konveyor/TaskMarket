@@ -1,15 +1,22 @@
 package com.kodekonveyor.market.tasks;
 
+import java.util.List;
 import java.util.stream.StreamSupport;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import com.kodekonveyor.authentication.RoleEntity;
+import com.kodekonveyor.authentication.RoleEntityRepository;
+import com.kodekonveyor.authentication.UserEntity;
+import com.kodekonveyor.authentication.UserEntityRepository;
 import com.kodekonveyor.market.MarketConstants;
 import com.kodekonveyor.market.project.MilestoneEntity;
 import com.kodekonveyor.market.project.MilestoneEntityRepository;
 import com.kodekonveyor.market.project.ProjectConstants;
 import com.kodekonveyor.market.project.ProjectDTO;
+import com.kodekonveyor.market.register.MarketUserEntity;
+import com.kodekonveyor.market.register.MarketUserEntityRepository;
 import com.kodekonveyor.market.technical.MessageUserOnDiscordService;
 
 @Service
@@ -21,12 +28,38 @@ public class CheckUpforgrabTasksService {
   @Autowired
   private MessageUserOnDiscordService messageUserOnDiscordService;
 
+  @Autowired
+  private RoleEntityRepository roleEntityRepository;
+
+  @Autowired
+  private UserEntityRepository userEntityRepository;
+
+  @Autowired
+  private MarketUserEntityRepository marketUserEntityRepository;
+
   public void call(final ProjectDTO projectDTO) {
 
+    final RoleEntity roleEntity =
+        roleEntityRepository.findByName(
+            projectDTO.getName() + MarketConstants.FRONT_SLASH +
+                MarketConstants.PROJECT_MANAGER_ROLE
+        ).get();
+
+    final List<UserEntity> users = userEntityRepository.findByRole(roleEntity);
+
+    final List<MarketUserEntity> projectmanagers =
+        marketUserEntityRepository.findAllByUser(users);
+
     if (countTheTasks(projectDTO) <= projectDTO.getMinimumForGrab())
-      messageUserOnDiscordService.call(
-          MarketConstants.UP_FOR_GRAB_TASKS_BELOW_MINIMUM_FOR_GRAB
-      );
+
+      for (final MarketUserEntity manager : projectmanagers)
+        messageUserOnDiscordService.call(
+            String.format(
+                MarketConstants.UP_FOR_GRAB_TASKS_BELOW_MINIMUM_FOR_GRAB,
+                projectDTO.getName(),
+                countTheTasks(projectDTO), projectDTO.getMinimumForGrab()
+            ), manager
+        );
 
   }
 

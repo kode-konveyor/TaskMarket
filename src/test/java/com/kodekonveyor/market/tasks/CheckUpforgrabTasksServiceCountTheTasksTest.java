@@ -14,6 +14,7 @@ import com.kodekonveyor.annotations.TestedBehaviour;
 import com.kodekonveyor.annotations.TestedService;
 import com.kodekonveyor.market.project.MilestoneEntityRepositoryStubs;
 import com.kodekonveyor.market.project.ProjectDTOTestData;
+import com.kodekonveyor.market.register.MarketUserEntityTestData;
 import com.kodekonveyor.technical.TechnicalTestData;
 
 @ExtendWith(MockitoExtension.class)
@@ -30,13 +31,13 @@ public class CheckUpforgrabTasksServiceCountTheTasksTest
     "Do nothing, if the count of up for grab tasks in the project is more than minimum for grab"
   )
   void test() {
+
     MilestoneEntityRepositoryStubs
         .tasksMoreThanMinimumForGrab(milestoneEntityRepository);
-
     checkUpforgrabTasksService
         .call(ProjectDTOTestData.getMinimumForGab());
     Mockito.verify(messageUserOnDiscordService, Mockito.times(0)).call(
-        TechnicalTestData.MESSAGE
+        TechnicalTestData.MESSAGE, MarketUserEntityTestData.getRoleManager()
     );
 
   }
@@ -52,7 +53,7 @@ public class CheckUpforgrabTasksServiceCountTheTasksTest
     checkUpforgrabTasksService
         .call(ProjectDTOTestData.getMinimumForGab());
     Mockito.verify(messageUserOnDiscordService, Mockito.times(1)).call(
-        TechnicalTestData.MESSAGE
+        TechnicalTestData.MESSAGE1, MarketUserEntityTestData.getRoleManager()
     );
 
   }
@@ -66,7 +67,7 @@ public class CheckUpforgrabTasksServiceCountTheTasksTest
         .behaviour(milestoneEntityRepository);
     checkUpforgrabTasksService.call(ProjectDTOTestData.getMinimumForGab());
     Mockito.verify(messageUserOnDiscordService).call(
-        TechnicalTestData.MESSAGE
+        TechnicalTestData.MESSAGE, MarketUserEntityTestData.getRoleManager()
     );
 
   }
@@ -79,7 +80,7 @@ public class CheckUpforgrabTasksServiceCountTheTasksTest
     checkUpforgrabTasksService
         .call(ProjectDTOTestData.getZeroMilestonesProject());
     Mockito.verify(messageUserOnDiscordService).call(
-        TechnicalTestData.MESSAGE
+        TechnicalTestData.MESSAGE2, MarketUserEntityTestData.getRoleManager()
     );
   }
 
@@ -93,7 +94,7 @@ public class CheckUpforgrabTasksServiceCountTheTasksTest
     checkUpforgrabTasksService
         .call(ProjectDTOTestData.getMinimumForGab());
     Mockito.verify(messageUserOnDiscordService).call(
-        TechnicalTestData.MESSAGE
+        TechnicalTestData.MESSAGE2, MarketUserEntityTestData.getRoleManager()
     );
   }
 
@@ -107,7 +108,7 @@ public class CheckUpforgrabTasksServiceCountTheTasksTest
     checkUpforgrabTasksService
         .call(ProjectDTOTestData.getMultipleMilestonesProject());
     Mockito.verify(messageUserOnDiscordService, Mockito.times(0)).call(
-        TechnicalTestData.MESSAGE
+        TechnicalTestData.MESSAGE, MarketUserEntityTestData.getRoleManager()
     );
   }
 

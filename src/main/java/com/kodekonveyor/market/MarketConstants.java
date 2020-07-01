@@ -89,7 +89,7 @@ public class MarketConstants {
       "Market user returned succssfully. Entity Id : ";
 
   public static final String UP_FOR_GRAB_TASKS_BELOW_MINIMUM_FOR_GRAB =
-      "Up for grab tasks below minimum for grab";
+      "Up for grab tasks below minimum for grab for project : %s . Current 'up for grab' tasks count : %d , the minimum count of 'up for grab' tasks required : %d";
 
   public static final Object PROJECT_MANAGER_ROLE =
       "manager";

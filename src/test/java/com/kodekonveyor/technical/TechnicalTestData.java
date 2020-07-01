@@ -61,7 +61,7 @@ public class TechnicalTestData {
           '"' + Instant.now().minus(8, ChronoUnit.DAYS) + '"' + COMMITS_NODES_COMMIT_PUSHED_DATE + '"' + Instant.now().minus(2, ChronoUnit.DAYS) + '"' + STATUS_STATE_FAILURE;
 
   public static final String MESSAGE =
-      "Up for grab tasks below minimum for grab";
+      "Up for grab tasks below minimum for grab for project : kode-konveyor/TaskMarket . Current 'up for grab' tasks count : 1 , the minimum count of 'up for grab' tasks required : 2";
 
   public static final Long TEST_ISSUE_ID = 66L;
   public static final List<Long> TEST_SINGLE_PR_ID = Lists.newArrayList(56L);
@@ -77,5 +77,8 @@ public class TechnicalTestData {
       "Failed to fetched pull request for issue {}, error : {}";
   public static final Marker EXP_GITHUB_MARKER =
       MarkerFactory.getMarker("github");
-
+  public static final String MESSAGE1 =
+      "Up for grab tasks below minimum for grab for project : kode-konveyor/TaskMarket . Current 'up for grab' tasks count : 2 , the minimum count of 'up for grab' tasks required : 2";
+  public static final String MESSAGE2 =
+      "Up for grab tasks below minimum for grab for project : kode-konveyor/TaskMarket . Current 'up for grab' tasks count : 0 , the minimum count of 'up for grab' tasks required : 2";
 }
