@@ -70,4 +70,7 @@ public class TechnicalTestData {
   public static final Marker EXP_GITHUB_MARKER = MarkerFactory.getMarker("github");
 
   public static final String GITHUB_UPDATE_ISSUE_FAILURE_RES = "Failure with status 500, while making call to github.";
+  public static final String ASSIGNEES = "assignees";
+  public static final String LABELS = "labels";
+
 }
