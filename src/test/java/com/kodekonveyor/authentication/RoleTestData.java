@@ -13,7 +13,7 @@ public class RoleTestData {
 
   public static final Long ID_PROJECT_MANAGER = 1197L;
   public static final String NAME_PROJECT_MANAGER =
-      "manager";
+      "kode-konveyor/TaskMarket/manager";
 
   public static final Long ID_KODEKONVEYOR_CONTRACT = 1198L;
 

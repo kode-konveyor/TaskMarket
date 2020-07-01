@@ -41,7 +41,7 @@ public class MarketConstants {
 
   public static final String KODEKONVEYOR_TECHNICAL = "technical";
 
-  public static final String MANAGER = "manager";
+  public static final String MANAGER = "kode-konveyor/TaskMarket/manager";
 
   public static final Long MINIMUM_PROJECT_ID = (long) 1;
 
@@ -88,6 +88,15 @@ public class MarketConstants {
   public static final String MARKET_USER_RETURNED_SUCCESSFULLY =
       "Market user returned succssfully. Entity Id : ";
 
-  public static final String UNAUTHORIZED_PROJECT_MODIFICATION = "Project model can only be modified by project manager.";
+  public static final String UP_FOR_GRAB_TASKS_BELOW_MINIMUM_FOR_GRAB =
+      "Up for grab tasks below minimum for grab for project : %s . Current 'up for grab' tasks count : %d , the minimum count of 'up for grab' tasks required : %d";
+
+  public static final Object PROJECT_MANAGER_ROLE =
+      "manager";
+
+  public static final String FRONT_SLASH = "/";
+
+  public static final String UNAUTHORIZED_PROJECT_MODIFICATION =
+      "Project model can only be modified by project manager.";
 
 }

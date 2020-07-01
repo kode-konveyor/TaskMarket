@@ -31,7 +31,7 @@ public class UngrabServiceRecordGrabDateForTasksTest
     PullRequestEntityStubs.pullRequestNotIssued(pullrequestEntityRepository);
     ungrabService.call();
     Mockito.verify(taskEntityRepository)
-        .save(TaskEntityTestData.getStatusUngrabbed());
+        .save(TaskEntityStatusesTestData.getStatusUngrabbed());
   }
 
 }

@@ -23,5 +23,6 @@ public class ProjectConstants {
       "\nEnd of Task Description";
   public static final String DIFF = "\nDiff:\n";
   public static final String PIPE = "|";
+  public static final long NO_UP_FOR_GRAB_TASKS = 0;
 
 }
