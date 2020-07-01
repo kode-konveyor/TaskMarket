@@ -13,10 +13,10 @@ public class ProjectDTOTestData {
     final ProjectDTO projectDTO = new ProjectDTO();
     projectDTO.setId(ProjectTestData.ID);
     projectDTO.setRole(
-            Set.of(
-                    RoleTestData.ID,
-                    RoleTestData.ID_PROJECT_MANAGER
-            )
+        Set.of(
+            RoleTestData.ID,
+            RoleTestData.ID_PROJECT_MANAGER
+        )
     );
     projectDTO.setMilestone(Set.of(MilestoneTestData.ID));
     projectDTO.setPullRequest(Set.of(PullRequestTestData.ID));
@@ -71,24 +71,6 @@ public class ProjectDTOTestData {
     return projectDTO;
   };
 
-  public static ProjectDTO getBudgetEqualToUserBalance() {
-    final ProjectDTO projectDTO = get();
-    projectDTO.setBudgetInCents(ProjectTestData.BUDGET_EQUAL_TO_USER_BALANCE);
-    return projectDTO;
-  }
-
-  public static ProjectDTO getBudgetLessThanUserBalance() {
-    final ProjectDTO projectDTO = get();
-    projectDTO.setBudgetInCents(ProjectTestData.BUDGET_LESS_THAN_USER_BALANCE);
-    return projectDTO;
-  }
-
-  public static ProjectDTO getUpdatedBudget() {
-    final ProjectDTO projectDTO = get();
-    projectDTO.setBudgetInCents(ProjectTestData.UPDATED_BUDGET);
-    return projectDTO;
-
-  }
   public static ProjectDTO getUrlAndPullRequest() {
     final ProjectDTO dto = get();
     dto.setUrl(ProjectTestData.URL);
@@ -96,5 +78,24 @@ public class ProjectDTOTestData {
     dto.setProjectId(ProjectTestData.PROJECT_ID);
     dto.setPullRequest(Set.of(PullRequestDTOTestData.get().getId()));
     return dto;
+  }
+
+  public static ProjectDTO getMinimumForGab() {
+    final ProjectDTO projectDTO = get();
+    projectDTO.setMinimumForGrab(ProjectTestData.MINIMUM_FOR_GRAB);
+    return projectDTO;
+  }
+
+  public static ProjectDTO getZeroMilestonesProject() {
+    final ProjectDTO projectDTO = getMinimumForGab();
+    projectDTO.setMilestone(Set.of());
+    return projectDTO;
+  }
+
+  public static ProjectDTO getMultipleMilestonesProject() {
+    final ProjectDTO projectDTO = getMinimumForGab();
+    projectDTO
+        .setMilestone(Set.of(MilestoneTestData.ID, MilestoneTestData.ID_1));
+    return projectDTO;
   }
 }
