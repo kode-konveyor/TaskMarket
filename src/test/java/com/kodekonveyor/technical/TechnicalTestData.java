@@ -68,4 +68,6 @@ public class TechnicalTestData {
   public static final String EXP_LOG_GET_PR_FOR_ISSUE_SUCCESS = "Successfully fetched linked pull request for issue : {}";
   public static final String EXP_LOG_GET_PR_FOR_ISSUE_FAILURE = "Failed to fetched pull request for issue {}, error : {}";
   public static final Marker EXP_GITHUB_MARKER = MarkerFactory.getMarker("github");
+
+  public static final String GITHUB_UPDATE_ISSUE_FAILURE_RES = "Failure with status 500, while making call to github.";
 }
