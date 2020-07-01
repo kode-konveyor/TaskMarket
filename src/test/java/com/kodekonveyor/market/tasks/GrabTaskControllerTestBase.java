@@ -16,6 +16,7 @@ import com.kodekonveyor.market.project.PullRequestEntityStubs;
 import com.kodekonveyor.market.project.PullrequestEntityRepository;
 import com.kodekonveyor.market.register.MarketUserEntityRepository;
 import com.kodekonveyor.market.register.MarketUserEntityRepositoryStubs;
+import org.slf4j.Logger;
 
 public class GrabTaskControllerTestBase {
 
@@ -51,6 +52,9 @@ public class GrabTaskControllerTestBase {
 
   @Mock
   PullrequestEntityRepository pullrequestEntityRepository;
+
+  @Mock
+  Logger logger;
 
   @BeforeEach
   void setUp() {

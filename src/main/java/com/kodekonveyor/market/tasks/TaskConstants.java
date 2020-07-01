@@ -16,4 +16,13 @@ public class TaskConstants {
   public static final String TASKS_RETURNED_SUCCESSFULLY =
       "Tasks returned successfully Ids :";
 
+  public static final String LOG_GRAB_TASK_CALL =
+          "API execution starts for grabbing task : {} .";
+
+  public static final String LOG_GRAB_TASK_SUCCESS_CALL =
+          "API execution successfully completed for grabbing task : {} .";
+
+  public static final String LOG_GRAB_TASK_FAILURE_CALL =
+          "API execution failed for grabbing task, error : {} .";
+
 }
