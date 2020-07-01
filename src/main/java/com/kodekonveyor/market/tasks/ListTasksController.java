@@ -63,17 +63,12 @@ public class ListTasksController {
     userTasksList.addAll(upForGrabTasks(marketUser));
     userTasksList.addAll(usersClosedTasks);
 
-    final List<Long> taskIds = new ArrayList<>();
-
-    for (final TaskEntity task : userTasksList)
-      taskIds.add(task.getId());
-
     logger.debug(
         LoggingMarkerConstants.TASK,
-        TaskConstants.TASKS_RETURNED_SUCCESSFULLY + taskIds
+        TaskConstants.TASKS_RETURNED_SUCCESSFULLY + userTasksList.stream()
+            .map(TaskEntity::getId).collect(Collectors.toList())
     );
     return userTasksList;
-
   }
 
   private List<TaskEntity>
