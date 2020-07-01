@@ -11,5 +11,6 @@ public class TransferTypeTestData {
   public static final String ACCOUNT_ID_LABEL = "iban";
   public static final Boolean IS_BANKID_SHOWN = true;
   public static final Long ID_NONEXISTENT = 2050L;
-
+  public static final String EXP_LOG_LIST_TRANSFER_TYPES_CALL = "Api execution for list transfer types starts.";
+  public static final String EXP_LOG_LIST_TRANSFER_TYPES_SUCCESS_CALL = "Api execution for list transfer types is successful.";
 }

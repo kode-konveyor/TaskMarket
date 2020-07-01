@@ -1,5 +1,6 @@
 package com.kodekonveyor.market.project;
 
+import java.util.List;
 import java.util.Optional;
 
 import org.springframework.data.repository.CrudRepository;
@@ -17,5 +18,7 @@ public interface ProjectEntityRepository
   Optional<ProjectEntity> findByRole(RoleEntity role);
 
   Optional<ProjectEntity> findByMilestone(MilestoneEntity entity);
+
+  List<ProjectEntity> findByIsPublic(boolean bool);
 
 }

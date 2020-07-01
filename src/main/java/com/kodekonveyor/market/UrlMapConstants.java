@@ -18,5 +18,5 @@ public class UrlMapConstants {
   public static final String PROJECT_BUDGET_PATH = "/project/budget";
   public static final String GRAB_TASK_PATH =
       "/member/task/{taskId}/grab";
-
+  public static final String LIST_TASK_PATH = "/member/task";
 }

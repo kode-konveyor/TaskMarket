@@ -1,12 +1,14 @@
 package com.kodekonveyor.market.project;
 
-import static org.mockito.Mockito.doReturn;
-import static org.mockito.Mockito.reset;
-
 import java.util.List;
 import java.util.Optional;
 
 import com.kodekonveyor.authentication.RoleEntityTestData;
+
+import static org.mockito.Mockito.any;
+import static org.mockito.Mockito.doAnswer;
+import static org.mockito.Mockito.doReturn;
+import static org.mockito.Mockito.reset;
 
 public class ProjectEntityRepositoryStubs {
 
@@ -32,6 +34,13 @@ public class ProjectEntityRepositoryStubs {
         .when(projectEntityRepository).findByMilestone(MilestoneEntityTestData.get());
     doReturn(Optional.of(ProjectEntityTestData.get()))
         .when(projectEntityRepository).findByMilestone(MilestoneEntityTestData.getOtherMilestone());
+    doReturn(List.of(ProjectEntityTestData.getPrivateProject()))
+        .when(projectEntityRepository).findByIsPublic(false);
+
+    doReturn(List.of(ProjectEntityTestData.getPublicProject()))
+        .when(projectEntityRepository).findByIsPublic(true);
+    doAnswer(invocationOnMock -> invocationOnMock.getArgument(0))
+            .when(projectEntityRepository).save(any(ProjectEntity.class));
   }
 
   public static void
@@ -40,6 +49,8 @@ public class ProjectEntityRepositoryStubs {
         .when(projectEntityRepository).findById(ProjectTestData.ID_ADD_FUNDS);
     doReturn(Optional.of(ProjectEntityTestData.getManagerRole()))
         .when(projectEntityRepository).findById(ProjectTestData.ID_BUDGET);
+    doAnswer(invocationOnMock -> invocationOnMock.getArgument(0))
+            .when(projectEntityRepository).save(any(ProjectEntity.class));
   }
 
 }

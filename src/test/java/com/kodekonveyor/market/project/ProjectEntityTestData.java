@@ -15,10 +15,10 @@ public class ProjectEntityTestData {
     final ProjectEntity projectEntity = new ProjectEntity();
     projectEntity.setId(ProjectTestData.ID);
     projectEntity.setRole(
-            Set.of(
-                    RoleEntityTestData.get(),
-                    RoleEntityTestData.getNameProjectManager()
-            )
+        Set.of(
+            RoleEntityTestData.get(),
+            RoleEntityTestData.getNameProjectManager()
+        )
     );
     projectEntity.setMilestone(Set.of(MilestoneEntityTestData.get()));
     projectEntity.setName(ProjectTestData.NAME);
@@ -102,6 +102,21 @@ public class ProjectEntityTestData {
   public static ProjectEntity getPullRequest() {
     final ProjectEntity projectEntity = get();
     projectEntity.setPullRequest(Set.of(PullrequestEntityTestData.get()));
+    return projectEntity;
+  }
+
+  public static ProjectEntity getPrivateProject() {
+    final ProjectEntity projectEntity = get();
+    projectEntity.setIsPublic(ProjectTestData.NOT_PUBLIC);
+    projectEntity.setMilestone(Set.of(MilestoneEntityTestData.getUpForGrab()));
+    projectEntity
+        .setRole(Set.of(RoleEntityTestData.getNamePrivateProjectCoder()));
+    return projectEntity;
+  }
+
+  public static ProjectEntity getPublicProject() {
+    final ProjectEntity projectEntity = get();
+    projectEntity.setMilestone(Set.of(MilestoneEntityTestData.getUpForGrab()));
     return projectEntity;
   }
 }
