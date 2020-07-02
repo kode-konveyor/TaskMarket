@@ -69,13 +69,4 @@ public class TaskTestData {
   public static final String EXP_LOG_GRAB_TASK_FAILURE_CALL =
           "API execution failed for grabbing task, error : {} .";
 
-  public static final String EXP_LOG_UPDATE_GITHUB_ISSUE_SERVICE_CALL =
-          "Execution for updating issue in github for #{} starts.";
-
-  public static final String EXP_LOG_UPDATE_GITHUB_ISSUE_SERVICE_SUCCESS_CALL =
-          "Execution for updating issue in github for #{} successful.";
-
-  public static final String EXP_LOG_UPDATE_GITHUB_ISSUE_SERVICE_FAILURE_CALL =
-          "Execution for updating issue in github for #{} failed, error : {}";
-
 }
