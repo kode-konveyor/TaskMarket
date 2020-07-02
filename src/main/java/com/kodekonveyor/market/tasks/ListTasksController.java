@@ -7,6 +7,7 @@ import java.util.Set;
 import java.util.stream.Collectors;
 import java.util.stream.StreamSupport;
 
+import org.slf4j.Logger;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RestController;
@@ -14,6 +15,7 @@ import org.springframework.web.bind.annotation.RestController;
 import com.kodekonveyor.authentication.AuthenticatedUserService;
 import com.kodekonveyor.authentication.RoleEntity;
 import com.kodekonveyor.authentication.UserEntity;
+import com.kodekonveyor.logging.LoggingMarkerConstants;
 import com.kodekonveyor.market.UrlMapConstants;
 import com.kodekonveyor.market.project.ProjectEntity;
 import com.kodekonveyor.market.project.ProjectEntityRepository;
@@ -35,10 +37,14 @@ public class ListTasksController {
   @Autowired
   ProjectEntityRepository projectEntityRepository;
 
+  @Autowired
+  Logger logger;
+
   @GetMapping(UrlMapConstants.LIST_TASK_PATH)
   public List<TaskEntity> call() {
 
     final UserEntity user = authenticatedUserService.call();
+    logger.info(LoggingMarkerConstants.TASK, user.getId().toString());
     final Optional<MarketUserEntity> marketUser =
         marketUserEntityRepository.findByUser(user);
 
@@ -57,8 +63,12 @@ public class ListTasksController {
     userTasksList.addAll(upForGrabTasks(marketUser));
     userTasksList.addAll(usersClosedTasks);
 
+    logger.debug(
+        LoggingMarkerConstants.TASK,
+        TaskConstants.TASKS_RETURNED_SUCCESSFULLY + userTasksList.stream()
+            .map(TaskEntity::getId).collect(Collectors.toList())
+    );
     return userTasksList;
-
   }
 
   private List<TaskEntity>

@@ -60,6 +60,9 @@ public class TaskTestData {
   public static final String EXP_USER_NOT_ELIGIBLE_TO_GRAB =
       "User not eligible to grab task.";
 
+  public static final String TASKS_RETURNED_SUCCESSFULLY =
+      "Tasks returned successfully Ids :";
+
   public static final String EXP_LOG_GRAB_TASK_CALL =
           "API execution starts for grabbing task : {} .";
 
