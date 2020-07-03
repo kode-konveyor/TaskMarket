@@ -31,7 +31,7 @@ public class UngrabServiceCheckGrabEligibilityTest
     PullRequestEntityStubs.pullRequestNotIssued(pullrequestEntityRepository);
     ungrabService.call();
     Mockito.verify(taskEntityRepository)
-        .save(TaskEntityTestData.getUngrabbedTask());
+        .save(TaskEntityStatusesTestData.getStatusUngrabbed());
   }
 
   @Test
@@ -43,7 +43,7 @@ public class UngrabServiceCheckGrabEligibilityTest
     PullRequestEntityStubs.pullRequestIssued(pullrequestEntityRepository);
     ungrabService.call();
     Mockito.verify(taskEntityRepository, Mockito.times(0))
-        .save(TaskEntityTestData.getUngrabbedTask());
+        .save(TaskEntityStatusesTestData.getStatusUngrabbed());
   }
 
   @Test
@@ -55,7 +55,7 @@ public class UngrabServiceCheckGrabEligibilityTest
     PullRequestEntityStubs.pullRequestNotIssued(pullrequestEntityRepository);
     ungrabService.call();
     Mockito.verify(taskEntityRepository, Mockito.times(0))
-        .save(TaskEntityTestData.getUngrabbedTask());
+        .save(TaskEntityStatusesTestData.getStatusUngrabbed());
   }
 
   @Test
@@ -67,7 +67,7 @@ public class UngrabServiceCheckGrabEligibilityTest
     PullRequestEntityStubs.pullRequestIssued(pullrequestEntityRepository);
     ungrabService.call();
     Mockito.verify(taskEntityRepository, Mockito.times(0))
-        .save(TaskEntityTestData.getUngrabbedTask());
+        .save(TaskEntityStatusesTestData.getStatusUngrabbed());
   }
 
   @Test
@@ -79,7 +79,7 @@ public class UngrabServiceCheckGrabEligibilityTest
     PullRequestEntityStubs.pullRequestNotIssued(pullrequestEntityRepository);
     ungrabService.call();
     Mockito.verify(taskEntityRepository)
-        .save(TaskEntityTestData.getUngrabbedFourDaysTask());
+        .save(TaskEntityStatusesTestData.getStatusUngrabbed());
   }
 
   @Test
@@ -91,6 +91,6 @@ public class UngrabServiceCheckGrabEligibilityTest
     PullRequestEntityStubs.pullRequestIssued(pullrequestEntityRepository);
     ungrabService.call();
     Mockito.verify(taskEntityRepository, Mockito.times(0))
-        .save(TaskEntityTestData.getUngrabbedFourDaysTask());
+        .save(TaskEntityStatusesTestData.getStatusUngrabbed());
   }
 }

@@ -61,4 +61,12 @@ public class AddFundsToProjectControllerCompileOutput2Test
     );
   }
 
+  @Test
+  @DisplayName("The project details with budgetInCents returned successfully")
+  public void test11() {
+    assertEquals(
+            projectDTO.getBudgetInCents(), ProjectTestData.UPDATED_BUDGET_AFTER_ADD
+    );
+  }
+
 }

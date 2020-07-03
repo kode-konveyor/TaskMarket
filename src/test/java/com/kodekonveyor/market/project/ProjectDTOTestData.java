@@ -12,7 +12,12 @@ public class ProjectDTOTestData {
   public final static ProjectDTO get() {
     final ProjectDTO projectDTO = new ProjectDTO();
     projectDTO.setId(ProjectTestData.ID);
-    projectDTO.setRole(Set.of(RoleTestData.ID));
+    projectDTO.setRole(
+        Set.of(
+            RoleTestData.ID,
+            RoleTestData.ID_PROJECT_MANAGER
+        )
+    );
     projectDTO.setMilestone(Set.of(MilestoneTestData.ID));
     projectDTO.setPullRequest(Set.of(PullRequestTestData.ID));
     projectDTO.setName(ProjectTestData.NAME);
@@ -66,22 +71,31 @@ public class ProjectDTOTestData {
     return projectDTO;
   };
 
-  public static ProjectDTO getBudgetEqualToUserBalance() {
+  public static ProjectDTO getUrlAndPullRequest() {
+    final ProjectDTO dto = get();
+    dto.setUrl(ProjectTestData.URL);
+    dto.setDescription(ProjectTestData.DESCRIPTION);
+    dto.setProjectId(ProjectTestData.PROJECT_ID);
+    dto.setPullRequest(Set.of(PullRequestDTOTestData.get().getId()));
+    return dto;
+  }
+
+  public static ProjectDTO getMinimumForGab() {
     final ProjectDTO projectDTO = get();
-    projectDTO.setBudgetInCents(ProjectTestData.BUDGET_EQUAL_TO_USER_BALANCE);
+    projectDTO.setMinimumForGrab(ProjectTestData.MINIMUM_FOR_GRAB);
     return projectDTO;
   }
 
-  public static ProjectDTO getBudgetLessThanUserBalance() {
-    final ProjectDTO projectDTO = get();
-    projectDTO.setBudgetInCents(ProjectTestData.BUDGET_LESS_THAN_USER_BALANCE);
+  public static ProjectDTO getZeroMilestonesProject() {
+    final ProjectDTO projectDTO = getMinimumForGab();
+    projectDTO.setMilestone(Set.of());
     return projectDTO;
   }
 
-  public static ProjectDTO getUpdatedBudget() {
-    final ProjectDTO projectDTO = get();
-    projectDTO.setBudgetInCents(ProjectTestData.UPDATED_BUDGET);
+  public static ProjectDTO getMultipleMilestonesProject() {
+    final ProjectDTO projectDTO = getMinimumForGab();
+    projectDTO
+        .setMilestone(Set.of(MilestoneTestData.ID, MilestoneTestData.ID_1));
     return projectDTO;
   }
-
 }

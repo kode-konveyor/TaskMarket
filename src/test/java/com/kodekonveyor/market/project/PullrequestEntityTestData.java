@@ -2,6 +2,7 @@ package com.kodekonveyor.market.project;
 
 import javax.annotation.Generated;
 
+import com.kodekonveyor.market.tasks.TaskEntityStatusesTestData;
 import com.kodekonveyor.market.tasks.TaskEntityTestData;
 
 @Generated("by zenta-tools")
@@ -19,19 +20,22 @@ public class PullrequestEntityTestData {
 
   public static PullRequestEntity getGrabbedOverThreeDays() {
     final PullRequestEntity pullrequestEntity = get();
-    pullrequestEntity.setTask(TaskEntityTestData.getGrabbedOverThreeDays());
+    pullrequestEntity
+        .setTask(TaskEntityStatusesTestData.getStatusGrabbedOverThreeDays());
     return pullrequestEntity;
   }
 
   public static PullRequestEntity getGrabbedExactlyThreeDays() {
     final PullRequestEntity pullrequestEntity = get();
-    pullrequestEntity.setTask(TaskEntityTestData.getGrabbedExactlyThreeDays());
+    pullrequestEntity
+        .setTask(TaskEntityStatusesTestData.getStatusGrabbedExactlyThreeDays());
     return pullrequestEntity;
   }
 
   public static PullRequestEntity getGrabbedForFourDays() {
     final PullRequestEntity pullrequestEntity = get();
-    pullrequestEntity.setTask(TaskEntityTestData.getGrabbedForFourDays());
+    pullrequestEntity
+        .setTask(TaskEntityStatusesTestData.getStatusGrabbedForFourDays());
     return pullrequestEntity;
   }
 

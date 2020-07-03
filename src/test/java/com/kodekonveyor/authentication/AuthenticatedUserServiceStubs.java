@@ -56,21 +56,4 @@ public class AuthenticatedUserServiceStubs {
     doReturn(UserEntityTestData.getRoleSales()).when(authenticatedUserService)
         .call();
   }
-
-  public static void authenticatedInNullDatabase(
-      final AuthenticatedUserService authenticatedUserService
-  ) {
-    doReturn(UserEntityTestData.getIdInNullDatabase())
-        .when(authenticatedUserService)
-        .call();
-  }
-
-  public static void forProjectManagerForZeroBalance(
-      final AuthenticatedUserService authenticatedUserService
-  ) {
-    doReturn(UserEntityTestData.getIdForZeroBalanceForProjectManager())
-        .when(authenticatedUserService)
-        .call();
-  }
-
 }

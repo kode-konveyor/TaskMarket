@@ -11,6 +11,7 @@ import com.kodekonveyor.authentication.UserEntityRepository;
 import com.kodekonveyor.authentication.UserEntityRepositoryStubs;
 import com.kodekonveyor.market.project.ProjectEntityRepository;
 import com.kodekonveyor.market.project.ProjectEntityRepositoryStubs;
+import org.slf4j.Logger;
 
 public class AddToRoleControllerTestBase {
 
@@ -28,6 +29,9 @@ public class AddToRoleControllerTestBase {
 
   @Mock
   ProjectEntityRepository projectEntityRepository;
+
+  @Mock
+  Logger loggerService;
 
   @BeforeEach
   void setUp() {

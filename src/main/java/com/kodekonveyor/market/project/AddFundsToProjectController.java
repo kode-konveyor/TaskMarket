@@ -3,6 +3,7 @@ package com.kodekonveyor.market.project;
 import java.util.Optional;
 import java.util.stream.Collectors;
 
+import org.slf4j.Logger;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RestController;
@@ -10,6 +11,7 @@ import org.springframework.web.bind.annotation.RestController;
 import com.kodekonveyor.authentication.AuthenticatedUserService;
 import com.kodekonveyor.authentication.RoleEntity;
 import com.kodekonveyor.authentication.UserEntity;
+import com.kodekonveyor.logging.LoggingMarkerConstants;
 import com.kodekonveyor.market.MarketConstants;
 import com.kodekonveyor.market.UrlMapConstants;
 import com.kodekonveyor.market.ValidationException;
@@ -28,16 +30,29 @@ public class AddFundsToProjectController {
   @Autowired
   MarketUserEntityRepository marketUserEntityRepository;
 
+  @Autowired
+  Logger logger;
+
   @PutMapping(UrlMapConstants.PROJECT_BUDGET_PATH)
   public ProjectDTO call(final long projectId, final long budgetInCents) {
+    logger.info(
+        LoggingMarkerConstants.PROJECT, String.valueOf(projectId)
+    );
+
     inputValidation(projectId);
+
     final ProjectEntity project =
         projectEntityRepository
             .findById(projectId).get();
     final UserEntity user = authenticatedUserService.call();
-    final ProjectDTO projectDTO = getProjectDTO(project);
     validateBalance(user, project, budgetInCents);
-    addFundsToProject(user, project, budgetInCents, projectDTO);
+    ProjectEntity projectEntityUpdated = addFundsToProject(user, project, budgetInCents);
+    final ProjectDTO projectDTO = getProjectDTO(projectEntityUpdated);
+    logger.debug(
+        LoggingMarkerConstants.PROJECT,
+        ProjectConstants.PROJECT_DTO_RETURNED_SUCCESSFULLY +
+            projectDTO.getId().toString()
+    );
     return projectDTO;
   }
 
@@ -49,6 +64,7 @@ public class AddFundsToProjectController {
     projectDTO.setUrl(project.getUrl());
     projectDTO.setName(project.getName());
     projectDTO.setProjectId(project.getProjectId());
+    projectDTO.setBudgetInCents(project.getBudgetInCents());
     projectDTO
         .setMilestone(project.getMilestone().stream().map(MilestoneEntity::getId).collect(Collectors.toSet()));
     projectDTO
@@ -91,10 +107,9 @@ public class AddFundsToProjectController {
       );
   }
 
-  private void addFundsToProject(
+  private ProjectEntity addFundsToProject(
       final UserEntity user,
-      final ProjectEntity project, final long budgetInCents,
-      final ProjectDTO projectDTO
+      final ProjectEntity project, final long budgetInCents
   ) {
     final Optional<MarketUserEntity> marketUserEntity =
         marketUserEntityRepository.findByUser(user);
@@ -110,7 +125,6 @@ public class AddFundsToProjectController {
         .setBalanceInCents(updatedUserBalance);
     marketUserEntityRepository.save(marketUserEntity.get());
     project.setBudgetInCents(updatedProjectBudget);
-    projectDTO.setBudgetInCents(updatedProjectBudget);
-    projectEntityRepository.save(project);
+    return projectEntityRepository.save(project);
   }
 }
