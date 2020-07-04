@@ -50,12 +50,12 @@ public class UpdateProjectModelController {
                 .findAllById(milestoneIds)
         )
     );
-    projectEntityRepository.save(project);
+    ProjectEntity projectEntityUpdated = projectEntityRepository.save(project);
     logger.debug(
         LoggingMarkerConstants.PROJECT,
         ProjectConstants.PROJECT_DTO_RETURNED_SUCCESSFULLY + project.getId()
     );
-    return getProjectDTO(project);
+    return getProjectDTO(projectEntityUpdated);
 
   }
 

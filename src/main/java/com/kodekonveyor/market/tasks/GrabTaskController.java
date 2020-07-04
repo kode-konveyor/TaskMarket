@@ -1,11 +1,10 @@
 package com.kodekonveyor.market.tasks;
 
-import static com.kodekonveyor.market.tasks.TaskConstants.USER_NOT_ELIGIBLE_TO_GRAB;
-
 import java.util.HashSet;
 import java.util.List;
 import java.util.Set;
 
+import org.slf4j.Logger;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.util.CollectionUtils;
 import org.springframework.web.bind.annotation.PutMapping;
@@ -28,6 +27,11 @@ import com.kodekonveyor.market.project.PullRequestEntity;
 import com.kodekonveyor.market.project.PullrequestEntityRepository;
 import com.kodekonveyor.market.register.MarketUserEntity;
 import com.kodekonveyor.market.register.MarketUserEntityRepository;
+
+import static com.kodekonveyor.logging.LoggingMarkerConstants.TASK;
+import static com.kodekonveyor.market.tasks.TaskConstants.LOG_GRAB_TASK_FAILURE_CALL;
+import static com.kodekonveyor.market.tasks.TaskConstants.TASK_NOT_UP_FOR_GRAB;
+import static com.kodekonveyor.market.tasks.TaskConstants.USER_NOT_ELIGIBLE_TO_GRAB;
 
 @RestController
 public class GrabTaskController {
@@ -62,8 +66,12 @@ public class GrabTaskController {
   @Autowired
   PullrequestEntityRepository pullrequestEntityRepository;
 
+  @Autowired
+  Logger logger;
+
   @PutMapping(UrlMapConstants.GRAB_TASK_PATH)
   public void call(final long taskId) {
+    logger.info(TASK, TaskConstants.LOG_GRAB_TASK_CALL, taskId);
     final TaskEntity taskEntity =
         taskEntityRepository.findById(taskId).get();
 
@@ -72,12 +80,14 @@ public class GrabTaskController {
         marketUserEntityRepository.findByUser(userEntity).get();
 
     validateEligibilty(marketUserEntity);
-    if (!taskEntity.getStatus().equals(TaskStatusEnum.UP_FOR_GRAB))
-      throw new ValidationException(TaskConstants.TASK_NOT_UP_FOR_GRAB);
-
+    if (!taskEntity.getStatus().equals(TaskStatusEnum.UP_FOR_GRAB)) {
+      logger.warn(TASK, LOG_GRAB_TASK_FAILURE_CALL, TASK_NOT_UP_FOR_GRAB);
+      throw new ValidationException(TASK_NOT_UP_FOR_GRAB);
+    }
     updateTask(taskEntity, marketUserEntity);
     raiseEvent(userEntity);
     taskEntityRepository.save(taskEntity);
+    logger.debug(TASK, TaskConstants.LOG_GRAB_TASK_SUCCESS_CALL, taskId);
   }
 
   private void validateEligibilty(final MarketUserEntity marketUserEntity) {
@@ -87,8 +97,10 @@ public class GrabTaskController {
       final boolean anyTaskWithoutPR = taskForMarketUser.stream()
           .map(pullrequestEntityRepository::findByTask)
           .anyMatch(CollectionUtils::isEmpty);
-      if (anyTaskWithoutPR)
+      if (anyTaskWithoutPR) {
+        logger.warn(TASK, LOG_GRAB_TASK_FAILURE_CALL, USER_NOT_ELIGIBLE_TO_GRAB);
         throw new ValidationException(USER_NOT_ELIGIBLE_TO_GRAB);
+      }
     }
   }
 
