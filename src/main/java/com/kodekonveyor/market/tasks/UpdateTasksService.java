@@ -22,10 +22,13 @@ public class UpdateTasksService {
         taskEntityRepository.findByServiceAndBehaviour(
             inputTask.getService(), inputTask.getBehaviour()
         );
-    if (!storedTask.isEmpty())
-      return updateTask(inputTask, storedTask.get());
+    final TaskEntity result = storedTask.isEmpty() ?
+        createTaskOnGithub(inputTask) :
+        updateTask(inputTask, storedTask.get());
 
-    return createTaskOnGithub(inputTask);
+    updateGithubIssueService.call(result);
+
+    return result;
 
   }
 
@@ -35,7 +38,6 @@ public class UpdateTasksService {
             ProjectConstants.TASK_DESCRIPTION_END
     );
     task.setStatus(TaskStatusEnum.NOT_IN_MODEL);
-    updateGithubIssueService.call(task);
     return task;
   }
 
@@ -71,7 +73,6 @@ public class UpdateTasksService {
           );
 
       updateDescription(storedTask, actualDescription, differenceInDescription);
-      updateGithubIssueService.call(storedTask);
       return storedTask;
     }
 
@@ -82,7 +83,6 @@ public class UpdateTasksService {
     updateDescription(
         storedTask, storedTask.getDescription(), differenceInDescription
     );
-    updateGithubIssueService.call(storedTask);
     return storedTask;
   }
 

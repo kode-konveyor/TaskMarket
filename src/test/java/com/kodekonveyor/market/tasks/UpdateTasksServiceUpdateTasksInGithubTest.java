@@ -54,7 +54,7 @@ public class UpdateTasksServiceUpdateTasksInGithubTest
   void test2() {
     TaskEntityRepositoryStubs.delimiterDescription(taskEntityRepository);
     updateTasksService.call(TaskEntityTestData.get());
-    Mockito.verify(updateGithubIssueService, Mockito.times(0))
+    Mockito.verify(updateGithubIssueService)
         .call(
             TaskEntityDescriptionsTestData.getDescritionUpdated()
         );
