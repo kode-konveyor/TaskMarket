@@ -1,12 +1,12 @@
 package com.kodekonveyor.technical;
 
-import java.time.Instant;
-import java.time.temporal.ChronoUnit;
-import java.util.List;
-
 import org.assertj.core.util.Lists;
 import org.slf4j.Marker;
 import org.slf4j.MarkerFactory;
+
+import java.time.Instant;
+import java.time.temporal.ChronoUnit;
+import java.util.List;
 
 public class TechnicalTestData {
 
@@ -81,4 +81,11 @@ public class TechnicalTestData {
       "Up for grab tasks below minimum for grab for project : kode-konveyor/TaskMarket . Current 'up for grab' tasks count : 2 , the minimum count of 'up for grab' tasks required : 2";
   public static final String MESSAGE2 =
       "Up for grab tasks below minimum for grab for project : kode-konveyor/TaskMarket . Current 'up for grab' tasks count : 0 , the minimum count of 'up for grab' tasks required : 2";
+  public static final String GITHUB_UPDATE_ISSUE_FAILURE_RES =
+          "Failure with status 500, while making call to github.";
+  public static final String ASSIGNEES =
+          "assignees";
+  public static final String LABELS =
+          "labels";
+
 }
