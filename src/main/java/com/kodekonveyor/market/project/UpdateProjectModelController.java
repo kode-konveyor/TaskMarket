@@ -3,6 +3,8 @@ package com.kodekonveyor.market.project;
 import static com.kodekonveyor.market.MarketConstants.MANAGER;
 import static com.kodekonveyor.market.MarketConstants.UNAUTHORIZED_PROJECT_MODIFICATION;
 
+import java.util.ArrayList;
+import java.util.HashSet;
 import java.util.List;
 import java.util.Set;
 import java.util.stream.Collectors;
@@ -21,7 +23,8 @@ import com.kodekonveyor.logging.LoggingMarkerConstants;
 import com.kodekonveyor.market.UnauthorizedException;
 import com.kodekonveyor.market.UrlMapConstants;
 import com.kodekonveyor.market.lead.CheckRoleUtil;
-import com.kodekonveyor.market.tasks.GetRepositoryTasksService;
+import com.kodekonveyor.market.register.MarketUserEntityRepository;
+import com.kodekonveyor.market.tasks.TaskDTO;
 import com.kodekonveyor.market.tasks.TaskEntity;
 import com.kodekonveyor.market.tasks.TaskEntityRepository;
 import com.kodekonveyor.market.tasks.UpdateTasksService;
@@ -36,7 +39,7 @@ public class UpdateProjectModelController {
   @Autowired
   AuthenticatedUserService authenticatedUserService;
   @Autowired
-  GetRepositoryTasksService getRepositoryTasksService;
+  MarketUserEntityRepository marketUserEntityRepository;
   @Autowired
   UpdateTasksService updateTasksService;
   @Autowired
@@ -55,16 +58,18 @@ public class UpdateProjectModelController {
 
     validateAuthoization(project);
 
-    final Set<Long> milestoneIds = projectModelDTO.getMilestone();
+    final Set<MilestoneDTO> milestones = projectModelDTO.getMilestone();
+    final Set<Long> milestonIds = new HashSet<>();
+    milestones.forEach((milestone) -> milestonIds.add(milestone.getId()));
     project.setMilestone(
         Sets.newHashSet(
             milestoneEntityRepository
-                .findAllById(milestoneIds)
+                .findAllById(milestonIds)
         )
     );
-
+    updateTasks(projectModelDTO);
     projectEntityRepository.save(project);
-    updateTasks();
+
     logger.debug(
         LoggingMarkerConstants.PROJECT,
         ProjectConstants.PROJECT_DTO_RETURNED_SUCCESSFULLY + project.getId()
@@ -74,14 +79,33 @@ public class UpdateProjectModelController {
 
   }
 
-  private void updateTasks() throws JSONException {
-    final List<TaskEntity> tasks =
-        getRepositoryTasksService.call(ProjectConstants.REPO_NAME);
+  private void updateTasks(
+      final ProjectModelDTO projectModelDTO
+  ) throws JSONException {
+    final Set<TaskDTO> projectDTOTasks = projectModelDTO.getTask();
+    final List<TaskEntity> tasks = convertTaskDTOs(projectDTOTasks);
     for (final TaskEntity task : tasks) {
       final TaskEntity updatedTask = updateTasksService.call(task);
       taskEntityRepository.save(updatedTask);
     }
+  }
 
+  private List<TaskEntity> convertTaskDTOs(final Set<TaskDTO> projectDTOTasks) {
+    final TaskEntity task = new TaskEntity();
+    final List<TaskEntity> taskEntities = new ArrayList<>();
+    for (final TaskDTO taskDTO : projectDTOTasks) {
+      task.setId(taskDTO.getId());
+      task.setBehaviour(taskDTO.getBehaviour());
+      task.setDescription(taskDTO.getDescription());
+      task.setGithubId(taskDTO.getGithubId());
+      task.setService(taskDTO.getService());
+      task.setMarketUser(
+          marketUserEntityRepository.findById(taskDTO.getMarketUser()).get()
+      );
+      task.setStatus(taskDTO.getStatus());
+      taskEntities.add(task);
+    }
+    return taskEntities;
   }
 
   private void validateAuthoization(final ProjectEntity projectEntity) {

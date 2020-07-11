@@ -13,8 +13,6 @@ import org.mockito.quality.Strictness;
 
 import com.kodekonveyor.annotations.TestedBehaviour;
 import com.kodekonveyor.annotations.TestedService;
-import com.kodekonveyor.market.tasks.GetRepositoryTasksServiceStubs;
-import com.kodekonveyor.market.tasks.GetRepositoryTasksServiceTestData;
 import com.kodekonveyor.market.tasks.TaskEntityDescriptionsTestData;
 import com.kodekonveyor.market.tasks.TaskEntityTestData;
 import com.kodekonveyor.market.tasks.UpdateTasksServiceStubs;
@@ -27,22 +25,11 @@ import com.kodekonveyor.market.tasks.UpdateTasksServiceStubs;
 public class UpdateProjectModelControllerUpdateTasksTest
     extends UpdateProjectModelControllerTestBase {
 
-  @Test
-  @DisplayName("Get Repository tasks service is called")
-  public void test() throws JSONException {
-
-    updateProjectModelController
-        .call(ProjectModelDTOTestData.get(), ProjectTestData.PROJECT_NAME);
-
-    Mockito.verify(getRepositoryTasksService)
-        .call(GetRepositoryTasksServiceTestData.REPO_NAME);
-
-  }
+  
 
   @Test
   @DisplayName("Update tasks service is called")
   public void testUpdateTasksService() throws JSONException {
-    GetRepositoryTasksServiceStubs.behaviour(getRepositoryTasksService);
     updateProjectModelController
         .call(ProjectModelDTOTestData.get(), ProjectTestData.PROJECT_NAME);
     Mockito.verify(updateTasksService)
@@ -53,7 +40,6 @@ public class UpdateProjectModelControllerUpdateTasksTest
   @Test
   @DisplayName("Updated tasks are saved ")
   public void testSaveTask() throws JSONException {
-    GetRepositoryTasksServiceStubs.behaviour(getRepositoryTasksService);
     UpdateTasksServiceStubs.behaviour(updateTasksService);
     updateProjectModelController
         .call(ProjectModelDTOTestData.get(), ProjectTestData.PROJECT_NAME);

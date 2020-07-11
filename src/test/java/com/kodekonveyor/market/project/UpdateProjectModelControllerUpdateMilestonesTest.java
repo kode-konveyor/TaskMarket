@@ -43,7 +43,7 @@ public class UpdateProjectModelControllerUpdateMilestonesTest
         .call(ProjectModelDTOTestData.get(), ProjectTestData.NAME);
     assertEquals(
         ProjectModelDTOTestData.get().getMilestone(),
-        Set.of(MilestoneTestData.ID)
+        Set.of(MilestoneDTOTestData.get())
     );
 
   }
