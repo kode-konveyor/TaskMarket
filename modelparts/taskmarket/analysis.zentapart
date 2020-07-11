@@ -2114,24 +2114,29 @@
                                  source="90d1bb4c-1e76-4043-b3d4-11d25c7b5c8e"
                                  target="6a1f49a2-478d-4aac-afee-f085957351ad"
                                  relationship="52911622-3825-4b77-9841-4bdc54675bc2"/>
+               <sourceConnection xsi:type="zenta:Connection"
+                                 id="e77f6a3a-992c-4e75-a22d-2743f13faa43"
+                                 source="90d1bb4c-1e76-4043-b3d4-11d25c7b5c8e"
+                                 target="88d2b28f-b875-47e1-9687-8e16e951db19"
+                                 relationship="cd5953fd-355c-4007-a9e8-30e06d500d18"/>
             </child>
             <child xsi:type="zenta:DiagramObject"
                    id="e7fce975-d431-4673-8355-b02daa5dccb2"
                    targetConnections="e248fbc8-9406-4536-866c-a636d70a2638"
                    zentaElement="f9e928c5-a7ca-4df9-9bc2-ffa6e79007e9">
-               <bounds x="48" y="780" width="146" height="85"/>
+               <bounds x="48" y="854" width="146" height="85"/>
             </child>
             <child xsi:type="zenta:DiagramObject"
                    id="ea15fe8c-d2cb-41fd-8a21-31e9d4a7d254"
                    targetConnections="2e0d2f8a-185a-440a-8b07-d3580372ab55"
                    zentaElement="6ce4abad-0733-44a4-8fdf-53ccd6aa7874">
-               <bounds x="55" y="912" width="-1" height="-1"/>
+               <bounds x="55" y="986" width="-1" height="-1"/>
             </child>
             <child xsi:type="zenta:DiagramObject"
                    id="c0748c19-341b-4db6-8ca8-14e73b3a94cb"
                    targetConnections="c1740feb-478c-4fb4-aba4-abf7040575f1"
                    zentaElement="a0dbab86-51c7-43a3-b073-a91f7b7eec55">
-               <bounds x="328" y="948" width="151" height="85"/>
+               <bounds x="328" y="1022" width="151" height="85"/>
             </child>
             <child xsi:type="zenta:DiagramObject"
                    id="d4e13a75-702f-4722-92b9-056f249801dd"
@@ -2143,7 +2148,7 @@
                    id="8a49d192-ff25-4869-9ddc-825d3edb8301"
                    targetConnections="6d66e3c8-8ad3-4911-b88d-973ceb71f266"
                    zentaElement="e7741930-a840-4d00-a236-3d26d10d0fe8">
-               <bounds x="328" y="780" width="-1" height="-1"/>
+               <bounds x="328" y="854" width="-1" height="-1"/>
             </child>
             <child xsi:type="zenta:DiagramObject"
                    id="a24436ad-24c7-4e8b-8067-09cfbedf9099"
@@ -2273,13 +2278,13 @@
                    id="d3076fb4-c272-4b2f-b2ac-c0e956fe5ac1"
                    targetConnections="a2b6827f-a684-43aa-8620-a0180a0722ce"
                    zentaElement="e4f036eb-ed47-4d89-b3a4-62a8232fe185">
-               <bounds x="312" y="864" width="-1" height="-1"/>
+               <bounds x="312" y="938" width="-1" height="-1"/>
             </child>
             <child xsi:type="zenta:DiagramObject"
                    id="e99cc085-001a-43e8-a624-494040b10a07"
                    targetConnections="84a6fa31-bf0d-46f6-9ab6-3baffa637faa"
                    zentaElement="80ce62bc-a239-4d68-8fe9-a073956e81eb">
-               <bounds x="193" y="963" width="-1" height="-1"/>
+               <bounds x="193" y="1037" width="-1" height="-1"/>
             </child>
             <child xsi:type="zenta:DiagramObject"
                    id="5c1e774a-904e-44f4-ac1a-ecb5b1b4b87c"
@@ -2291,7 +2296,7 @@
                    id="2c07022e-c374-4d60-bc5e-493c92a1902f"
                    targetConnections="84c1e011-27fb-467b-b741-822ae9e1f72a"
                    zentaElement="6e110a6e-4572-43d6-b4d3-dba43ba5c489">
-               <bounds x="492" y="780" width="-1" height="-1"/>
+               <bounds x="492" y="854" width="-1" height="-1"/>
             </child>
             <child xsi:type="zenta:DiagramObject"
                    id="cde3018f-c5bf-4910-9dd8-844cad310870"
@@ -2328,7 +2333,7 @@
             <child xsi:type="zenta:DiagramObject"
                    id="3bec6b71-dc04-4bac-a5a3-c03d7aa48e66"
                    zentaElement="635be1e6-f9af-451f-b522-160bf55f1357">
-               <bounds x="492" y="699" width="-1" height="-1"/>
+               <bounds x="492" y="773" width="-1" height="-1"/>
                <sourceConnection xsi:type="zenta:Connection"
                                  id="84c1e011-27fb-467b-b741-822ae9e1f72a"
                                  source="3bec6b71-dc04-4bac-a5a3-c03d7aa48e66"
@@ -2371,7 +2376,7 @@
             <child xsi:type="zenta:DiagramObject"
                    id="fddbbe21-c3a2-4238-8e6b-2b47bd391a72"
                    zentaElement="a91a24ff-d4fc-4537-ade2-fee4003261fc">
-               <bounds x="114" y="690" width="-1" height="-1"/>
+               <bounds x="114" y="764" width="-1" height="-1"/>
                <sourceConnection xsi:type="zenta:Connection"
                                  id="e248fbc8-9406-4536-866c-a636d70a2638"
                                  source="fddbbe21-c3a2-4238-8e6b-2b47bd391a72"
@@ -2398,7 +2403,7 @@
             <child xsi:type="zenta:DiagramObject"
                    id="142c8484-5b92-4392-984a-10eeeb86e804"
                    zentaElement="9d580595-f26d-405a-8169-14596def2211">
-               <bounds x="328" y="699" width="-1" height="-1"/>
+               <bounds x="328" y="773" width="-1" height="-1"/>
                <sourceConnection xsi:type="zenta:Connection"
                                  id="6d66e3c8-8ad3-4911-b88d-973ceb71f266"
                                  source="142c8484-5b92-4392-984a-10eeeb86e804"
@@ -2698,7 +2703,7 @@
                    id="e5dc0669-4b43-4ce6-a82b-e5e0f3bb76ff"
                    targetConnections="55cd9861-5059-4424-a5a0-0087133b0b60"
                    zentaElement="5ed3c96e-3a7a-44b3-8bc3-3f5ba36afeb9">
-               <bounds x="492" y="891" width="-1" height="-1"/>
+               <bounds x="492" y="965" width="-1" height="-1"/>
             </child>
             <child xsi:type="zenta:DiagramObject"
                    id="84129780-9bc5-40e8-9f13-bc178b058d33"
@@ -2740,6 +2745,12 @@
                    zentaElement="03c46d81-8805-440f-9ee1-7d41e4132401">
                <bounds x="625" y="294" width="-1" height="-1"/>
             </child>
+            <child xsi:type="zenta:DiagramObject"
+                   id="88d2b28f-b875-47e1-9687-8e16e951db19"
+                   targetConnections="e77f6a3a-992c-4e75-a22d-2743f13faa43"
+                   zentaElement="2f704124-4925-46df-a353-1f80969fac89">
+               <bounds x="55" y="690" width="-1" height="-1"/>
+            </child>
          </element>
          <element xsi:type="zenta:BasicRelationship"
                   id="5b23169d-ce63-4fc7-bf71-b9044ce43025"
@@ -2751,6 +2762,11 @@
                   ancestor="f0d0d4a5-201b-41b4-a047-70308c99bdb7"
                   source="d1754fb1-2177-4f76-9985-46678bbe0d7f"
                   target="81f3326b-3791-4e6d-a12d-36fe4f58c86e"/>
+         <element xsi:type="zenta:BasicRelationship"
+                  id="cd5953fd-355c-4007-a9e8-30e06d500d18"
+                  ancestor="f0d0d4a5-201b-41b4-a047-70308c99bdb7"
+                  source="06008814-0727-4cf6-b810-e01d70c3b72c"
+                  target="2f704124-4925-46df-a353-1f80969fac89"/>
       </folder>
       <folder name="0. Analysis relations" id="f0d3545d-9232-4a49-b554-c20256ce5fda">
          <folder name="1" id="513d028f-e21a-4ce6-8798-b2d716cd0be3">
@@ -10313,7 +10329,7 @@
                   </child>
                   <child xsi:type="zenta:DiagramObject"
                          id="981a21f3-e9a4-4880-92cb-1dd98c6d1f55"
-                         targetConnections="c2a5552a-c3ba-488f-b564-0ca6f987a533 d025a11f-84aa-4c26-8afe-84d2521fc24e 985534ad-0cfc-4bc3-a016-04976a6226ee 5b2f8dad-a30f-4e86-aa99-9ae0be9f9bab"
+                         targetConnections="c2a5552a-c3ba-488f-b564-0ca6f987a533 d025a11f-84aa-4c26-8afe-84d2521fc24e 985534ad-0cfc-4bc3-a016-04976a6226ee 5b2f8dad-a30f-4e86-aa99-9ae0be9f9bab 05f8a257-8cf9-41a2-9a65-df043d5de277"
                          zentaElement="ce6ad605-d92c-406d-b1aa-55158a37233b">
                      <bounds x="309" y="60" height="121"/>
                   </child>
@@ -10358,6 +10374,16 @@
                                        target="981a21f3-e9a4-4880-92cb-1dd98c6d1f55"
                                        relationship="259fb85f-70eb-40e6-bc0b-029111b9ef8f"/>
                   </child>
+                  <child xsi:type="zenta:DiagramObject"
+                         id="5eac7548-7455-4e85-8b24-90de7d4b12c7"
+                         zentaElement="2f704124-4925-46df-a353-1f80969fac89">
+                     <bounds x="508" y="96" height="76"/>
+                     <sourceConnection xsi:type="zenta:Connection"
+                                       id="05f8a257-8cf9-41a2-9a65-df043d5de277"
+                                       source="5eac7548-7455-4e85-8b24-90de7d4b12c7"
+                                       target="981a21f3-e9a4-4880-92cb-1dd98c6d1f55"
+                                       relationship="387a84a2-3fab-4a5e-84ea-c8d0f67fb338"/>
+                  </child>
                </element>
                <element xsi:type="zenta:BasicObject"
                         name="Compiles a market user dto according to the querying role"
@@ -10396,7 +10422,7 @@
                         source="ce6ad605-d92c-406d-b1aa-55158a37233b"
                         target="dd69f9d8-81fb-4ae0-af5f-1e1a623f4ef7"/>
                <element xsi:type="zenta:BasicRelationship"
-                        name=";One,Entity,Repo;"
+                        name=";One,Entity,Interface;"
                         id="ad795fa9-9de6-417c-992f-2bcd9ace8815"
                         ancestor="d9f4a80e-d07b-4767-ad0a-aa86988783f8"
                         source="ce6ad605-d92c-406d-b1aa-55158a37233b"
@@ -10490,6 +10516,27 @@
                         ancestor="64fbbfdf-420d-4756-821b-54fab6e7a8d2"
                         source="23e8d67b-245e-4dc8-ae5e-0e8380b3450a"
                         target="fa9e083c-e45d-4770-9e65-0a03fdadcd6c"/>
+               <element xsi:type="zenta:BasicObject"
+                        name="List registered users"
+                        id="2f704124-4925-46df-a353-1f80969fac89"
+                        ancestor="83af8497-bfef-451b-9bc6-f00d58c8df6a"/>
+               <element xsi:type="zenta:BasicRelationship"
+                        id="387a84a2-3fab-4a5e-84ea-c8d0f67fb338"
+                        ancestor="b6f9974a-1393-4848-a6f1-febcd90c0de1"
+                        source="2f704124-4925-46df-a353-1f80969fac89"
+                        target="ce6ad605-d92c-406d-b1aa-55158a37233b"/>
+               <element xsi:type="zenta:BasicRelationship"
+                        name=";Ordered,DTO,Interface"
+                        id="be5c5159-9850-48e5-866f-8650084ab3bd"
+                        ancestor="64fbbfdf-420d-4756-821b-54fab6e7a8d2"
+                        source="2f704124-4925-46df-a353-1f80969fac89"
+                        target="dd69f9d8-81fb-4ae0-af5f-1e1a623f4ef7"/>
+               <element xsi:type="zenta:BasicRelationship"
+                        name=";Ordered,Entity,Repo"
+                        id="9d084586-6046-4d1d-b4e9-a55e34bfcc0a"
+                        ancestor="d9f4a80e-d07b-4767-ad0a-aa86988783f8"
+                        source="2f704124-4925-46df-a353-1f80969fac89"
+                        target="dd69f9d8-81fb-4ae0-af5f-1e1a623f4ef7"/>
             </folder>
             <folder name="authentication framework"
                     id="b53d1f04-55bb-4f95-a6b3-38765a6bbc6f">
@@ -13337,6 +13384,11 @@ We intend to support all of them.
                                  source="467771b7-8cbc-4c08-8977-5edf22e7da19"
                                  target="d24278cd-d08d-405d-9ae8-40ba8f34e49b"
                                  relationship="579814ed-b3a7-4bed-ac15-3e393c8029fe"/>
+               <sourceConnection xsi:type="zenta:Connection"
+                                 id="6f7f1f9f-9c5b-4bea-97ea-ec2a330682cd"
+                                 source="467771b7-8cbc-4c08-8977-5edf22e7da19"
+                                 target="0f54f82b-8c7d-4cf9-a7e7-4bad165a01b8"
+                                 relationship="4cdfba12-c847-470c-aa05-357f41c29b06"/>
             </child>
             <child xsi:type="zenta:DiagramObject"
                    id="d24278cd-d08d-405d-9ae8-40ba8f34e49b"
@@ -13388,10 +13440,31 @@ We intend to support all of them.
                    zentaElement="f7fd5482-699d-4ffa-81f4-6a07a07e1db0">
                <bounds x="924" y="180" width="-1" height="-1"/>
             </child>
+            <child xsi:type="zenta:DiagramObject"
+                   id="0f54f82b-8c7d-4cf9-a7e7-4bad165a01b8"
+                   targetConnections="6f7f1f9f-9c5b-4bea-97ea-ec2a330682cd"
+                   zentaElement="c3438668-888f-4e6f-a9a6-b6ea8d0d70e7">
+               <bounds x="169" y="216" width="168"/>
+               <sourceConnection xsi:type="zenta:Connection"
+                                 id="608c2ccf-24d5-4e5f-96b8-3da2486501de"
+                                 source="0f54f82b-8c7d-4cf9-a7e7-4bad165a01b8"
+                                 target="598b9a67-8929-4459-82b0-ebe360793975"
+                                 relationship="f71a2b8a-6bc0-484e-a07e-bb933e61b28b"/>
+            </child>
+            <child xsi:type="zenta:DiagramObject"
+                   id="598b9a67-8929-4459-82b0-ebe360793975"
+                   targetConnections="608c2ccf-24d5-4e5f-96b8-3da2486501de"
+                   zentaElement="2f704124-4925-46df-a353-1f80969fac89">
+               <bounds x="324" y="324" width="-1" height="-1"/>
+            </child>
          </element>
          <element xsi:type="zenta:BasicObject"
                   name="Support lead generation"
                   id="b2f01583-ca1c-4f65-a4a7-ac7f9b86cc33"
+                  ancestor="e7c7a3b9-cc91-4d99-854a-d5eab68efd7c"/>
+         <element xsi:type="zenta:BasicObject"
+                  name="Support reaching user data"
+                  id="c3438668-888f-4e6f-a9a6-b6ea8d0d70e7"
                   ancestor="e7c7a3b9-cc91-4d99-854a-d5eab68efd7c"/>
       </folder>
       <folder name="Support task administration"
@@ -14421,6 +14494,11 @@ The user is entitled to see all the data we are storing about her.
                               source="0fb78c58-9f82-4761-95e5-28046301a281"
                               target="5c29c1fd-855f-41a5-872c-f08aaee720bd"
                               relationship="579814ed-b3a7-4bed-ac15-3e393c8029fe"/>
+            <sourceConnection xsi:type="zenta:Connection"
+                              id="1bb4887d-365b-41b3-9db1-2977b6084d17"
+                              source="0fb78c58-9f82-4761-95e5-28046301a281"
+                              target="6e6dec16-78e1-4fc4-9222-6cb218c5f5e0"
+                              relationship="4cdfba12-c847-470c-aa05-357f41c29b06"/>
          </child>
          <child xsi:type="zenta:DiagramObject"
                 id="dc460448-66b6-477d-a10d-361e55a5f9a4"
@@ -14534,6 +14612,12 @@ The user is entitled to see all the data we are storing about her.
                               target="24bdff99-f904-4d78-9d2a-e63525c59df1"
                               relationship="f79cfe0f-7bf3-431a-a77f-53874916d7a9"/>
          </child>
+         <child xsi:type="zenta:DiagramObject"
+                id="6e6dec16-78e1-4fc4-9222-6cb218c5f5e0"
+                targetConnections="1bb4887d-365b-41b3-9db1-2977b6084d17"
+                zentaElement="c3438668-888f-4e6f-a9a6-b6ea8d0d70e7">
+            <bounds x="636" y="192" width="197"/>
+         </child>
       </element>
       <element xsi:type="zenta:BasicRelationship"
                id="143fb43c-6999-47fb-8f5d-25e55c346b8e"
@@ -14585,5 +14669,10 @@ The user is entitled to see all the data we are storing about her.
                ancestor="22eea5e8-d46b-4ac4-9621-7bbf22994de4"
                source="bd341262-15ee-448c-99ed-8c91861db09d"
                target="e9b858d1-1022-412c-ae20-2403994ba3df"/>
+      <element xsi:type="zenta:BasicRelationship"
+               id="4cdfba12-c847-470c-aa05-357f41c29b06"
+               ancestor="1a16ba6a-0441-4e7d-8f9c-f6394fcdd10b"
+               source="645e47fc-6a34-44de-bf2c-7be13d233477"
+               target="c3438668-888f-4e6f-a9a6-b6ea8d0d70e7"/>
    </folder>
 </folder>
