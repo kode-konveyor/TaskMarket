@@ -1,0 +1,8 @@
+<element xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xmlns:zenta="http://magwas.rulez.org/zenta"
+         xsi:type="zenta:BasicObject"
+         name="NEXT"
+         id="c27e212f-b01b-40cc-ab54-e2752e1e3746"
+         ancestor="ffbe5058-5089-4c5a-965d-e996df089f8e">
+   <documentation>"/foo.html"</documentation>
+</element>

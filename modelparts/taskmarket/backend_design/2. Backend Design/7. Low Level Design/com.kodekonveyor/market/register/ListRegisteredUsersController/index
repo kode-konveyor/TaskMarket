@@ -1,0 +1,12 @@
+<index xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:zenta="http://magwas.rulez.org/zenta">
+   <entry name="ListRegisteredUsersController"
+          id="6e003d19-df10-4b08-a76b-5ada195f854a"/>
+   <entry id="1b5506d7-fd31-4d4f-ae47-ed6f699e070a"/>
+   <entry name="ListRegisteredUsersController"
+          id="7e3ce2b3-0abd-410b-a50a-e2c697166900"/>
+   <entry id="82bb2156-5285-420c-9559-b37c28c6ab54"/>
+   <entry id="7a090541-c717-41eb-8369-9874ac13cc67"/>
+   <entry id="4fac992c-d345-4e8c-84ec-5ce4ef4499f4"/>
+   <entry id="eb2c94dc-3f1a-40b0-b643-18fc4193f723"/>
+</index>

@@ -1,0 +1,10 @@
+<index xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:zenta="http://magwas.rulez.org/zenta">
+   <entry name="Support payment process"
+          id="c6081852-9eb4-4b76-bc14-3be06a675203"/>
+   <entry name="check Legal form" id="a02d1c44-d7f3-48fe-8809-9a027ddae987"/>
+   <entry name="payment channels" id="2ac87ed9-1bc3-4e35-ac22-256f42aba08d"/>
+   <entry name="Support payment regimes for all participants"
+          id="5b3e7fc1-6d64-441f-b67a-bc973ea86e3a"/>
+   <entry name="Support payment" id="bbfcab70-7931-48c9-a9b9-f666320592b4"/>
+</index>

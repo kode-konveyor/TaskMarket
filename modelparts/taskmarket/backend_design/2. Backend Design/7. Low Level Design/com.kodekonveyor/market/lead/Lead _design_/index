@@ -1,0 +1,17 @@
+<index xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:zenta="http://magwas.rulez.org/zenta">
+   <entry name="Lead (design)" id="5f857642-dab5-48a9-af24-430fd54359e6"/>
+   <entry name="FIRST_NAME" id="26fc1b07-2452-4df7-b888-437f8d913a76"/>
+   <entry name="INTEREST" id="f5057516-4039-4b38-a969-0b87bbbde088"/>
+   <entry name="LeadTestData" id="3ce4cf32-70a8-492a-a298-79b34bbe75a9"/>
+   <entry id="de316b46-bb6c-490f-be4b-23eb4ae624fa"/>
+   <entry id="5e48fc8c-fa70-45b5-9b87-0b2b2aaea6fc"/>
+   <entry id="a0a8e370-b629-4129-a505-90384f1f9618"/>
+   <entry id="41a81963-b8d6-47d4-8530-eb73c0279e68"/>
+   <entry id="82a9d5b6-7005-4279-96a7-f155fa3957af"/>
+   <entry id="fa10de02-ea41-475b-9395-03ac6ec2554a"/>
+   <entry id="192275a3-04b8-41e4-be37-e350bdffcc74"/>
+   <entry name="EMAIL" id="0c3d0523-6581-4090-8c8b-7a96042d8894"/>
+   <entry id="d5c6c6f8-569c-44b6-ac38-4b9a20e55e1d"/>
+   <entry id="c90c6ec3-55cd-4302-ac27-38a345b193d9"/>
+</index>

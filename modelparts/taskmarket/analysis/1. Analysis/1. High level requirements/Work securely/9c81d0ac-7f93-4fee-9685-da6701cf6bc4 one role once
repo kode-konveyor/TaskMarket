@@ -1,0 +1,9 @@
+<element xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xmlns:zenta="http://magwas.rulez.org/zenta"
+         xsi:type="zenta:BasicObject"
+         name="one role once"
+         id="9c81d0ac-7f93-4fee-9685-da6701cf6bc4"
+         ancestor="behaviour">
+   <documentation>the user is added to the role, if is not already member (in case it is already a member, silently not adding a role is an acceptable solution)
+</documentation>
+</element>

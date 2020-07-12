@@ -1,0 +1,6 @@
+<element xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xmlns:zenta="http://magwas.rulez.org/zenta"
+         xsi:type="zenta:BasicObject"
+         name="UrlMap"
+         id="6b11c99c-1da4-4624-9f51-8bfce31a538a"
+         ancestor="constantProvider"/>

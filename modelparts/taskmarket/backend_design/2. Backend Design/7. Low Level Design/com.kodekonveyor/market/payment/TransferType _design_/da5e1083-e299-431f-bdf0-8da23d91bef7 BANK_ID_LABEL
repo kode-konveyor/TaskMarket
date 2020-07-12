@@ -1,0 +1,8 @@
+<element xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xmlns:zenta="http://magwas.rulez.org/zenta"
+         xsi:type="zenta:BasicObject"
+         name="BANK_ID_LABEL"
+         id="da5e1083-e299-431f-bdf0-8da23d91bef7"
+         ancestor="ffbe5058-5089-4c5a-965d-e996df089f8e">
+   <documentation>"SWIFT"</documentation>
+</element>

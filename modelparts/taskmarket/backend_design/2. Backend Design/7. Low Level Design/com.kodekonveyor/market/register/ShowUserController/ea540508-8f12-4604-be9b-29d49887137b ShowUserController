@@ -1,0 +1,6 @@
+<element xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xmlns:zenta="http://magwas.rulez.org/zenta"
+         xsi:type="zenta:BasicObject"
+         name="ShowUserController"
+         id="ea540508-8f12-4604-be9b-29d49887137b"
+         ancestor="5491f72b-93ec-4ad5-b6a9-2653fe808a03"/>

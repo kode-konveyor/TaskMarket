@@ -1,0 +1,6 @@
+<element xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xmlns:zenta="http://magwas.rulez.org/zenta"
+         xsi:type="zenta:BasicObject"
+         name="RemoteAuthenticationFilter"
+         id="94fd8369-4b9c-4f46-b1d6-baa4effb9a09"
+         ancestor="callable"/>

@@ -1,0 +1,97 @@
+<element xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xmlns:zenta="http://magwas.rulez.org/zenta"
+         xsi:type="zenta:ZentaDiagramModel"
+         name="project management"
+         id="5306bf7e-44a6-4ca1-b693-3813cf7aacba">
+   <child xsi:type="zenta:DiagramObject"
+          id="1b2758ff-7603-4455-8080-cc7b23b1e285"
+          zentaElement="d1f9203f-779b-4a94-ad15-fc75f31cfd0b">
+      <bounds x="504" y="408" width="-1" height="-1"/>
+   </child>
+   <child xsi:type="zenta:DiagramObject"
+          id="866788ae-0c16-40e6-aef2-f50f483f4b89"
+          targetConnections="ab112a8a-ace7-467e-a307-e96e5a33e377"
+          zentaElement="6a69a163-a04c-4764-ab1a-c676f0bc2e82">
+      <bounds x="504" y="480" width="-1" height="-1"/>
+   </child>
+   <child xsi:type="zenta:DiagramObject"
+          id="9c23c626-2eba-40b4-a65b-3714990607ab"
+          zentaElement="68f46fc3-feec-4ee0-a723-f27b3d6cc4fe">
+      <bounds x="504" y="216" width="-1" height="-1"/>
+   </child>
+   <child xsi:type="zenta:DiagramObject"
+          id="fa59d56b-14c6-48ee-8bab-a1e30b5a3833"
+          zentaElement="cec810a4-2a91-4b4f-a7e7-1e3e325770f2">
+      <bounds x="504" y="312" width="-1" height="-1"/>
+   </child>
+   <child xsi:type="zenta:DiagramObject"
+          id="c52bdbfd-e215-4573-b710-8430169e7c7a"
+          targetConnections="972a1152-6ea8-4171-bebf-e6224f1707a1"
+          zentaElement="994fba20-1037-41c8-9db3-7c39bb49d2d8">
+      <bounds x="504" y="132" width="-1" height="-1"/>
+   </child>
+   <child xsi:type="zenta:DiagramObject"
+          id="992642a8-420b-48bf-8938-d8abab270b1d"
+          targetConnections="63581fab-37a9-4960-aa02-66b73b1f81b5"
+          zentaElement="6bdcadcd-8098-4a7f-97a4-b49a5ae32619">
+      <bounds x="194" y="144" width="-1" height="-1"/>
+      <sourceConnection xsi:type="zenta:Connection"
+                        id="972a1152-6ea8-4171-bebf-e6224f1707a1"
+                        source="992642a8-420b-48bf-8938-d8abab270b1d"
+                        target="c52bdbfd-e215-4573-b710-8430169e7c7a"
+                        relationship="668e4b7b-9d33-43bf-95fe-d5be16c54f08"/>
+      <sourceConnection xsi:type="zenta:Connection"
+                        id="ab112a8a-ace7-467e-a307-e96e5a33e377"
+                        source="992642a8-420b-48bf-8938-d8abab270b1d"
+                        target="866788ae-0c16-40e6-aef2-f50f483f4b89"
+                        relationship="69c1c6ab-59a6-488c-bc9f-0fd87439bfdc"/>
+   </child>
+   <child xsi:type="zenta:DiagramObject"
+          id="6ce023b4-855d-4334-987d-a1fa04518b79"
+          zentaElement="bd341262-15ee-448c-99ed-8c91861db09d">
+      <bounds x="144" y="426" width="219"/>
+      <sourceConnection xsi:type="zenta:Connection"
+                        id="63581fab-37a9-4960-aa02-66b73b1f81b5"
+                        source="6ce023b4-855d-4334-987d-a1fa04518b79"
+                        target="992642a8-420b-48bf-8938-d8abab270b1d"
+                        relationship="18080c89-2830-45a2-afd5-3b98ae6cb449"/>
+      <sourceConnection xsi:type="zenta:Connection"
+                        id="3410397a-bf21-4a9f-9957-22f6eff98807"
+                        source="6ce023b4-855d-4334-987d-a1fa04518b79"
+                        target="11fe493c-78e3-4b0b-90d4-75e5ded5c7bb"
+                        relationship="9c5ff3f9-e6a4-42c6-8bb5-34ed206210e7"/>
+   </child>
+   <child xsi:type="zenta:DiagramObject"
+          id="820e3710-90e3-4f59-a8a4-19f6cbcd4929"
+          targetConnections="be8d7b71-6da7-419b-9cfb-29c1a0a4b2d5"
+          zentaElement="bc40b201-5f89-431e-8f88-225f25a10647">
+      <bounds x="504" y="576" width="145" height="73"/>
+   </child>
+   <child xsi:type="zenta:DiagramObject"
+          id="11fe493c-78e3-4b0b-90d4-75e5ded5c7bb"
+          targetConnections="3410397a-bf21-4a9f-9957-22f6eff98807"
+          zentaElement="a7a9bc9f-6241-4273-8bd9-455b3bc8faf6">
+      <bounds x="194" y="565" width="-1" height="-1"/>
+      <sourceConnection xsi:type="zenta:Connection"
+                        id="8c789fc5-2a73-49fd-b0f6-db8a11be8705"
+                        source="11fe493c-78e3-4b0b-90d4-75e5ded5c7bb"
+                        target="0dc7cb1f-4c7b-49e5-b03d-3f985f90979a"
+                        relationship="713d90a2-4088-43c4-9112-fd6cc3effcfe"/>
+      <sourceConnection xsi:type="zenta:Connection"
+                        id="be8d7b71-6da7-419b-9cfb-29c1a0a4b2d5"
+                        source="11fe493c-78e3-4b0b-90d4-75e5ded5c7bb"
+                        target="820e3710-90e3-4f59-a8a4-19f6cbcd4929"
+                        relationship="03a4eb48-9810-4aa5-bbc0-c5786062caf9"/>
+   </child>
+   <child xsi:type="zenta:DiagramObject"
+          id="0dc7cb1f-4c7b-49e5-b03d-3f985f90979a"
+          targetConnections="8c789fc5-2a73-49fd-b0f6-db8a11be8705"
+          zentaElement="f48f189a-b8ea-4618-8901-50ab4c79b1a3">
+      <bounds x="526" y="692" width="-1" height="-1"/>
+   </child>
+   <child xsi:type="zenta:DiagramObject"
+          id="3e5c2877-adfb-4243-a2c1-7bc82a55845d"
+          zentaElement="5877a236-16bf-415c-aca7-747112c7e670">
+      <bounds x="526" y="780" width="-1" height="-1"/>
+   </child>
+</element>

@@ -1,0 +1,6 @@
+<element xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xmlns:zenta="http://magwas.rulez.org/zenta"
+         xsi:type="zenta:BasicObject"
+         name="add funds to project"
+         id="f48f189a-b8ea-4618-8901-50ab4c79b1a3"
+         ancestor="83af8497-bfef-451b-9bc6-f00d58c8df6a"/>

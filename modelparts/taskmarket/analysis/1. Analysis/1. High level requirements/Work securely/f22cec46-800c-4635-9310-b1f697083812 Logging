@@ -1,0 +1,24 @@
+<element xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xmlns:zenta="http://magwas.rulez.org/zenta"
+         xsi:type="zenta:BasicObject"
+         name="Logging"
+         id="f22cec46-800c-4635-9310-b1f697083812"
+         ancestor="behaviour">
+   <documentation>- All activities should be logged at start of the operation.
+- All failed operations should be logged with the reason of the failure
+- All successful operations should be logged with reference to the accessed data
+
+Logger usage:
+
+import org.slf4j.Logger;
+
+@Autowired
+private Logger logger
+
+Call the proper method of logger according to the severity.
+logger.info(LoggingMarkers.AUTHENTICATION, "{} successfully authenticated", user.getLogin());
+
+* Choose marker from the LoggingMarkers or create one if not exists. The marker name to be used starts with the name of behaviour and continues with any subcategories defined in the relevant behaviour.
+* Use format templates instead of string additions.
+* {} is the placeholder of the following parameters in order.</documentation>
+</element>

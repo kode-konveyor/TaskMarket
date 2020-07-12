@@ -1,0 +1,6 @@
+<element xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xmlns:zenta="http://magwas.rulez.org/zenta"
+         xsi:type="zenta:BasicObject"
+         name="Show all data to the user we are storing about her"
+         id="6d37a590-efab-43c0-a23d-aa8e7978c7f6"
+         ancestor="e7c7a3b9-cc91-4d99-854a-d5eab68efd7c"/>

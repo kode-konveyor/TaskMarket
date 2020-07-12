@@ -1,0 +1,6 @@
+<element xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xmlns:zenta="http://magwas.rulez.org/zenta"
+         xsi:type="zenta:BasicObject"
+         name="org.slf4j.Marker"
+         id="01bf803f-bd6a-43cb-991a-fd38555a72d2"
+         ancestor="36ff5aca-f5cf-4e04-8d74-39cbb035cc2d"/>

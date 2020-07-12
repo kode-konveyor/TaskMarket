@@ -1,0 +1,6 @@
+<element xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xmlns:zenta="http://magwas.rulez.org/zenta"
+         xsi:type="zenta:BasicObject"
+         name="roles"
+         id="30260393-9986-4bc8-9a49-4e8b07a2b194"
+         ancestor="4753b1bb-fc45-4aa1-821d-f08baf8a1766"/>

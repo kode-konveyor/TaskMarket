@@ -1,0 +1,38 @@
+<index xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:zenta="http://magwas.rulez.org/zenta">
+   <entry name="MarketUser (design)" id="0d53c27b-2d32-4e6e-be17-9b9a4e3e818d"/>
+   <entry name="MarketUserTestData" id="a9b117a2-d511-448e-af9e-e9acf3162e66"/>
+   <entry name="PERSONAL_NAME" id="32592041-d4b2-4755-b2af-2bcd346f33ca"/>
+   <entry id="1f5da7af-9818-46cb-bb65-b85d2c8252c6"/>
+   <entry name="EMAIL" id="b5ef7ee6-5bfd-45fa-a53e-4f1cddaaf5e9"/>
+   <entry id="9b8a4b16-7b6c-4873-83d3-4352d5a203d2"/>
+   <entry name="IS_TERMS_ACCEPTED" id="6fdc5b22-2ee2-4f4e-a433-2cea490b7baf"/>
+   <entry id="4740dece-403e-43b8-9dec-9f9b39fb0625"/>
+   <entry name="BALANCE_IN_CENTS" id="040cf096-e4e2-435e-8b3f-4800403499c2"/>
+   <entry id="be16f537-7aa2-4027-8adb-e1c9272e29ee"/>
+   <entry id="2d5c637e-565a-4100-9c25-22f7e9ed2c11"/>
+   <entry id="df307c07-5667-4b9e-9b33-7ede439e14ea"/>
+   <entry id="1e110d0e-8903-4b8a-aa9d-4049d2e9e539"/>
+   <entry id="b0b5ac18-ac20-4c9c-9596-ed3ccebfacf3"/>
+   <entry id="4ce395f3-45e5-4e5a-ac19-578296fefd1d"/>
+   <entry id="5c24c306-2518-4226-b08a-c8f4c3d65e49"/>
+   <entry id="36657e7b-9865-4634-b3b8-a0678c2fe1e2"/>
+   <entry id="6c83bef5-1b71-4bd7-94cf-0b96680ce944"/>
+   <entry id="677e1d9e-8733-4111-8897-9a5bb817397e"/>
+   <entry id="d0ab25d2-a4cc-46c8-8d8d-000e313cdeca"/>
+   <entry id="1f0c63c6-fc86-4967-93d1-3fea3dca69f7"/>
+   <entry id="e0827066-0e22-42d3-9905-97f0d153c190"/>
+   <entry id="8b89f2d3-274d-4e14-8361-2301da65cc3f"/>
+   <entry id="938fb7b4-2e0a-4e26-b244-a42682ca06ca"/>
+   <entry id="69f93d2a-0f93-4687-a272-738e88312709"/>
+   <entry name="LEGAL_ADDRESS" id="4cc2a89f-366c-4f20-8cf8-0a18eb1316ea"/>
+   <entry name="LEGAL_NAME" id="19af984a-374c-4ba1-be72-3e714bff73c2"/>
+   <entry name="get()" id="2b927133-c310-42f3-ba4f-ed1608e0db13"/>
+   <entry id="be3bf642-a534-4440-9adf-b1b95d32a85e"/>
+   <entry id="babcee1c-fbf0-416d-b325-4b4e33770984"/>
+   <entry id="db7dfe24-3690-4293-a9a3-b1fa0e819e0d"/>
+   <entry name="DISCORD_USER" id="2d2a6f0c-226a-40d3-bbfa-5ceed611c85c"/>
+   <entry id="12062bf7-9eaa-43b4-8594-33690819c709"/>
+   <entry id="a3f6cdeb-c1be-4673-aab0-1bb10996093c"/>
+   <entry id="d65fb5cc-dad0-4673-a676-404010bc5bd0"/>
+</index>

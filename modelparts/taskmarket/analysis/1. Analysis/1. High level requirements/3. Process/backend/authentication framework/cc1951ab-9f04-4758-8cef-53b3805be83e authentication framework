@@ -1,0 +1,36 @@
+<element xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xmlns:zenta="http://magwas.rulez.org/zenta"
+         xsi:type="zenta:ZentaDiagramModel"
+         name="authentication framework"
+         id="cc1951ab-9f04-4758-8cef-53b3805be83e">
+   <child xsi:type="zenta:DiagramObject"
+          id="560c71b9-640b-4642-92a6-ae09aa031f44"
+          zentaElement="15101279-7200-4199-a2b5-59138691bb31">
+      <bounds x="576" y="372" width="204" height="67"/>
+   </child>
+   <child xsi:type="zenta:DiagramObject"
+          id="d8a174c7-b5fc-4eff-a7b1-3316cae8f630"
+          zentaElement="65a48c8b-046f-4ba8-8024-e34116a857d0">
+      <bounds x="600" y="282" width="168" height="73"/>
+   </child>
+   <child xsi:type="zenta:DiagramObject"
+          id="07371f13-d4ee-4a83-b640-dfb17d17a00d"
+          zentaElement="081a0bca-81e5-407f-b557-b8ee88518638">
+      <bounds x="840" y="282" height="67"/>
+   </child>
+   <child xsi:type="zenta:DiagramObject"
+          id="9fe42cb6-9226-45da-b855-7e564158895c"
+          zentaElement="9993ad73-7a8f-4330-92cb-da11167aa552">
+      <bounds x="672" y="192" width="-1" height="-1"/>
+   </child>
+   <child xsi:type="zenta:DiagramObject"
+          id="90eaec6f-56f8-4edd-b573-72e15718358e"
+          zentaElement="01c14638-ac63-4be4-a171-c1c09128ee45">
+      <bounds x="624" y="456" width="168" height="73"/>
+   </child>
+   <child xsi:type="zenta:DiagramObject"
+          id="c86cb0fb-3292-4d97-8ba1-152541b3d157"
+          zentaElement="153d3e00-6b45-45e4-9c5a-f52aa938bc13">
+      <bounds x="828" y="372" width="181" height="85"/>
+   </child>
+</element>

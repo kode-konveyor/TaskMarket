@@ -1,0 +1,20 @@
+<index xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:zenta="http://magwas.rulez.org/zenta">
+   <folder name="ListTasksController" id="2bfe8744-c8f6-431e-8a2a-a1a4d88152eb"/>
+   <folder name="GetRepositoryTasksService"
+           id="6ee8c995-fc9c-4884-ab06-2f1153334b90"/>
+   <folder name="TaskStatusEnum" id="5b0645bf-8620-421e-9e60-1bb50206b167"/>
+   <folder name="UpdateTasksService" id="d245cb9d-6e7c-45d6-80a3-d66dbf31fc8c"/>
+   <folder name="Task (design)" id="609ff94d-40e2-46a9-88fc-106b56ed214c"/>
+   <folder name="UpdateGithubIssueService"
+           id="53a74de1-9ef6-4e90-92d5-0e88d6e923b5"/>
+   <folder name="CheckUpforgrabTasksService"
+           id="7fa0ecba-1bc9-4998-b886-0455c2eb6763"/>
+   <folder name="UngrabService" id="da944846-9a9d-45df-83ed-28da3e92c07d"/>
+   <folder name="GithubGraphqlService" id="f8031f57-13ac-4984-95e3-f1d3193bc503"/>
+   <folder name="GrabTaskController" id="247844b8-7dde-4592-a736-adbaea85603d"/>
+   <folder name="CountUpForGrabTasksService"
+           id="63bc6d04-a4f5-428b-a401-5574003da848"/>
+   <entry name="tasks" id="3fa1619e-693f-43ce-ae1e-d739b848a1ed"/>
+   <entry name="tasks" id="c234c0e4-fc77-48dc-87b4-5ef8a228dd1f"/>
+</index>

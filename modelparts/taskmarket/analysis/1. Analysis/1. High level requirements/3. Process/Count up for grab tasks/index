@@ -1,0 +1,10 @@
+<index xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:zenta="http://magwas.rulez.org/zenta">
+   <entry name="Count up for grab tasks"
+          id="dddcccaa-4e30-496c-9d9c-2d4574e9bd59"/>
+   <entry id="65d1baa0-aa3e-4f8a-ada6-9b57e8a1062a"/>
+   <entry name=";One,DTO,Interface;" id="960a687d-749c-46bf-9e19-d67cb9ac7f0a"/>
+   <entry name="Count up for grab tasks"
+          id="03c46d81-8805-440f-9ee1-7d41e4132401"/>
+   <entry name=";One,Entity,Interface;" id="41c459e9-1a79-4100-9d6f-a85f15783431"/>
+</index>

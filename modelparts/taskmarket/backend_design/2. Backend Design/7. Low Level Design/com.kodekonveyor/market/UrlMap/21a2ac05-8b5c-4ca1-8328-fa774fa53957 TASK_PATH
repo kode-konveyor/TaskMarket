@@ -1,0 +1,8 @@
+<element xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xmlns:zenta="http://magwas.rulez.org/zenta"
+         xsi:type="zenta:BasicObject"
+         name="TASK_PATH"
+         id="21a2ac05-8b5c-4ca1-8328-fa774fa53957"
+         ancestor="2cb904ef-0cda-422b-82f6-0509c595b8fd">
+   <documentation>/member/task</documentation>
+</element>

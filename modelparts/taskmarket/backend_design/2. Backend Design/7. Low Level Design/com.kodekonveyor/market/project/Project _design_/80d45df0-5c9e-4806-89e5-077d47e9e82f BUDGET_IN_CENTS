@@ -1,0 +1,8 @@
+<element xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xmlns:zenta="http://magwas.rulez.org/zenta"
+         xsi:type="zenta:BasicObject"
+         name="BUDGET_IN_CENTS"
+         id="80d45df0-5c9e-4806-89e5-077d47e9e82f"
+         ancestor="ffbe5058-5089-4c5a-965d-e996df089f8e">
+   <documentation>0</documentation>
+</element>

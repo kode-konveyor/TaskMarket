@@ -1,0 +1,6 @@
+<element xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xmlns:zenta="http://magwas.rulez.org/zenta"
+         xsi:type="zenta:BasicObject"
+         name="PaymentDetailTestData"
+         id="983452da-86f9-4e15-a8c5-03fb626d8a61"
+         ancestor="9ec42823-7056-4e73-b1f4-600a066c8d88"/>

@@ -1,0 +1,40 @@
+<index xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:zenta="http://magwas.rulez.org/zenta">
+   <folder name="1. Policies and Objectives"
+           id="caa3af6a-e84f-49ef-8312-69e8726eb846"/>
+   <folder name="2. Business Objects" id="d75d7b96-d53e-4dd4-b34b-10ff3b640764"/>
+   <folder name="6. Milestones" id="375647e7-71d8-4384-a61d-9c3a14557825"/>
+   <folder name="0. Analysis relations" id="f0d3545d-9232-4a49-b554-c20256ce5fda"/>
+   <folder name="3. Process" id="1eca70e7-4c69-4ce1-a9c1-61ad8c5e83f8"/>
+   <folder name="4. User Interface" id="1b4d6122-d2d8-440e-ae23-a76341ff633a"/>
+   <folder name="Be compliant with laws and privacy expectations of people"
+           id="068d16d6-ecfb-41f4-8d63-699097c69dc7"/>
+   <folder name="Developer onboarding" id="896917a6-19b2-4dd8-84cd-02a651887a99"/>
+   <folder name="Easy authentication and registration using github"
+           id="d715c4c1-223d-424b-8531-1fe76ed150b3"/>
+   <folder name="Make it easy to use" id="03ef7897-173f-44fb-80b2-de8ddb4e1177"/>
+   <folder name="Payment security" id="5ab478f3-99da-487c-b9d0-218f06b92128"/>
+   <folder name="Performance" id="7ed3a258-4ff7-40ad-865c-c6c92a0dcc97"/>
+   <folder name="policies" id="c04464c3-20cf-4d02-82ea-980633ea6630"/>
+   <folder name="Support payment process"
+           id="4bf5339d-b739-485d-af77-eca08f09319f"/>
+   <folder name="Support sales" id="6a8cfa4b-43e7-43e3-96b0-590216fdcede"/>
+   <folder name="Support task administration"
+           id="0d69eb24-cfb8-487f-a0a1-3e5263c879f7"/>
+   <folder name="Work securely" id="92131a72-f5b9-4f79-b948-86da4fdd97e4"/>
+   <entry name="kode-konveyor/TaskMarket"
+          id="bd341262-15ee-448c-99ed-8c91861db09d"/>
+   <entry name="High level requirements"
+          id="9af13a2f-52b6-413a-890b-0f8c2b0d477d"/>
+   <entry id="143fb43c-6999-47fb-8f5d-25e55c346b8e"/>
+   <entry id="8e79cb21-50a1-4bcd-a73e-a52bd826bf72"/>
+   <entry id="dc039309-5017-4a20-9a28-97c5ec2901e4"/>
+   <entry id="bac14b5c-da68-4885-b789-e3dca656dc6b"/>
+   <entry id="c1adaf9c-bae3-4b05-97fa-100bccaa2b8b"/>
+   <entry id="8374d784-3fa1-4960-8c8c-608b4789891f"/>
+   <entry id="4f1e5df6-43b9-417b-b2bb-1d0910934fad"/>
+   <entry id="fa24b1e9-3d8f-481c-932c-3f440bea06f0"/>
+   <entry id="ef151c95-cab0-42ba-be87-3a05c87fcc87"/>
+   <entry id="f79cfe0f-7bf3-431a-a77f-53874916d7a9"/>
+   <entry id="4cdfba12-c847-470c-aa05-357f41c29b06"/>
+</index>

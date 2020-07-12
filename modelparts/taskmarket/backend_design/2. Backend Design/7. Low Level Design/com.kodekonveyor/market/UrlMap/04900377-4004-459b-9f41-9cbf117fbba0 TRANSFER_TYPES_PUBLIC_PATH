@@ -1,0 +1,8 @@
+<element xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xmlns:zenta="http://magwas.rulez.org/zenta"
+         xsi:type="zenta:BasicObject"
+         name="TRANSFER_TYPES_PUBLIC_PATH"
+         id="04900377-4004-459b-9f41-9cbf117fbba0"
+         ancestor="2cb904ef-0cda-422b-82f6-0509c595b8fd">
+   <documentation>"/transfertype"</documentation>
+</element>

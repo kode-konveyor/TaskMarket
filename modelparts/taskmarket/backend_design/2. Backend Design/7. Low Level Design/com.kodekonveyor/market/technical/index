@@ -1,0 +1,13 @@
+<index xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:zenta="http://magwas.rulez.org/zenta">
+   <folder name="GithubGetService" id="75b1c326-729d-455b-94af-d72fd728d2fa"/>
+   <folder name="GithubGetService (design)"
+           id="1d9a0383-65f4-4f33-a88e-8af61b3e26b8"/>
+   <folder name="MessageUserOnDiscordService"
+           id="9ce43513-66fc-40f4-8d94-a63fc1f1fec1"/>
+   <folder name="Technical (design)" id="d7cbddc0-7200-455a-8138-b227592b5970"/>
+   <folder name="GetPullRequestForIssueService"
+           id="520e1061-0e1d-4b53-8bcb-64fc00af1fe1"/>
+   <entry name="technical" id="f63ccd17-78ae-4899-9efd-d2404dc40862"/>
+   <entry name="technical" id="d7ddc1bb-2cc6-485b-a79b-3e34d6ebf51e"/>
+</index>

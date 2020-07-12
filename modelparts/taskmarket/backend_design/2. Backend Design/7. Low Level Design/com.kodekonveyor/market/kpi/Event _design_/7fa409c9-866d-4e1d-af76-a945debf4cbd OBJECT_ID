@@ -1,0 +1,8 @@
+<element xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xmlns:zenta="http://magwas.rulez.org/zenta"
+         xsi:type="zenta:BasicObject"
+         name="OBJECT_ID"
+         id="7fa409c9-866d-4e1d-af76-a945debf4cbd"
+         ancestor="ffbe5058-5089-4c5a-965d-e996df089f8e">
+   <documentation>42L</documentation>
+</element>

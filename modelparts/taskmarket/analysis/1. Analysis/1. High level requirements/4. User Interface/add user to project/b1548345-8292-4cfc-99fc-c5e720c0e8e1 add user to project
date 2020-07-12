@@ -1,0 +1,6 @@
+<element xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xmlns:zenta="http://magwas.rulez.org/zenta"
+         xsi:type="zenta:BasicObject"
+         name="add user to project"
+         id="b1548345-8292-4cfc-99fc-c5e720c0e8e1"
+         ancestor="4753b1bb-fc45-4aa1-821d-f08baf8a1766"/>

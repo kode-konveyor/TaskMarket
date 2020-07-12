@@ -1,0 +1,14 @@
+<index xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:zenta="http://magwas.rulez.org/zenta">
+   <entry name="SpringConfig" id="4f42908c-82d6-4d20-8b0f-d226217117c7"/>
+   <entry name="SpringConfig" id="90296211-117c-44f3-8181-b553a3a74dee"/>
+   <entry id="66a1a54f-ceb6-49ba-823d-04cc64ef66b7"/>
+   <entry name="jdbcUri" id="21039017-51a8-4aaa-9d9a-ae90a7e359a9"/>
+   <entry id="c7686cc5-6e9c-449a-a36b-2aa0361338e9"/>
+   <entry name="jdbcDriver" id="756b4eea-d1ae-4416-a013-3eb65b1c1be9"/>
+   <entry id="a112d61d-86c0-43e4-a106-6074bbd2d0f5"/>
+   <entry name="githubToken" id="e2ae4052-084a-4765-b6ad-8c249207d5bf"/>
+   <entry id="a331fb65-0dcc-41e7-a848-6f270f138320"/>
+   <entry id="717a0cec-4df5-4762-b401-1bca4b8d9a79"/>
+   <entry id="4ac66ddc-445a-464d-aa62-10dbbee8cee9"/>
+</index>

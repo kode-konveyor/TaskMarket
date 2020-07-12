@@ -1,0 +1,22 @@
+<index xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:zenta="http://magwas.rulez.org/zenta">
+   <entry name="Bill (design)" id="9a527ffa-fc51-4509-b3c1-dd3476a236c5"/>
+   <entry name="BillTestData" id="a5c95d83-314b-4af4-a33a-85610403e0db"/>
+   <entry name="get()" id="83fe3f85-0628-4458-841c-9384ace14caf"/>
+   <entry id="8e8cf90e-c76f-40a3-a76d-1e5b3781c49a"/>
+   <entry id="e7616ae5-f231-4849-9d7c-88c834e3d7bd"/>
+   <entry name="BILL_AMOUNT_IN_CENTS" id="02b2ccd2-3408-4449-92f3-b72fa8d110ed"/>
+   <entry id="8c83cc5e-59b2-49bb-97f3-35e230b92878"/>
+   <entry name="IS_CHECKED" id="edff5bef-2061-4115-b964-b53096dd1d53"/>
+   <entry id="d07770d5-c866-4fef-8d75-c8b69a3fe781"/>
+   <entry name="BILL_PICTURE" id="45fe6743-aab3-452a-92d3-720cae0f8e08"/>
+   <entry id="3514b8ce-4b69-4720-a6e8-f69477fd7e36"/>
+   <entry id="91156708-a4ba-4d21-8068-da75fe573698"/>
+   <entry id="b390da4d-f07a-43dd-8135-71e1be08bf20"/>
+   <entry id="6f972aac-3ea7-4575-be72-922d291ccae0"/>
+   <entry id="dae8f318-d965-4d80-a8b7-e375e8aa7ed8"/>
+   <entry id="e5c89b8b-d1d6-44d0-932e-31c7c95955d7"/>
+   <entry id="20d6e971-6e25-493c-8f67-10c96b6be7a3"/>
+   <entry id="be0399fd-8fb2-442c-a687-468d509a3436"/>
+   <entry id="4026e9d0-c19e-4bfc-83c3-35d9a92a530c"/>
+</index>

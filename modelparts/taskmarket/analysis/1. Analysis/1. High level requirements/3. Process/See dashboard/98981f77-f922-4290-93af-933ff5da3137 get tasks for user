@@ -1,0 +1,6 @@
+<element xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xmlns:zenta="http://magwas.rulez.org/zenta"
+         xsi:type="zenta:BasicObject"
+         name="get tasks for user"
+         id="98981f77-f922-4290-93af-933ff5da3137"
+         ancestor="83af8497-bfef-451b-9bc6-f00d58c8df6a"/>

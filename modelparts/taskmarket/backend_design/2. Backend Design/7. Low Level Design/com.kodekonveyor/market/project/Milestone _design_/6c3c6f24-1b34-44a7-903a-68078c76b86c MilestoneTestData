@@ -1,0 +1,6 @@
+<element xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xmlns:zenta="http://magwas.rulez.org/zenta"
+         xsi:type="zenta:BasicObject"
+         name="MilestoneTestData"
+         id="6c3c6f24-1b34-44a7-903a-68078c76b86c"
+         ancestor="9ec42823-7056-4e73-b1f4-600a066c8d88"/>

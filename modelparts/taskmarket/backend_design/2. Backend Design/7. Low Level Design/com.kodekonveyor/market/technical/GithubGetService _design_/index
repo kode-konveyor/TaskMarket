@@ -1,0 +1,13 @@
+<index xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:zenta="http://magwas.rulez.org/zenta">
+   <entry name="GithubGetService (design)"
+          id="c2d1d9f8-a581-4f75-ad88-21369b04e8d1"/>
+   <entry name="URL" id="514491ac-d824-4c6e-9bb2-f2f62ea45559"/>
+   <entry name="GithubGetServiceTestData"
+          id="366281f0-7b65-4459-b9f8-3617850715ef"/>
+   <entry name="EXPECTED_TYPE" id="fb1d0159-4720-4969-9198-ccb683ae5b54"/>
+   <entry id="eb8a2287-75fa-418b-98f4-7ec17599ac60"/>
+   <entry id="419313cc-07ed-4952-afc1-3ec7ab29d93c"/>
+   <entry id="8ee400a7-8afb-4022-8f91-2419e9390c5a"/>
+   <entry id="fca68c02-38d3-4a07-aa83-d446245fd5c0"/>
+</index>

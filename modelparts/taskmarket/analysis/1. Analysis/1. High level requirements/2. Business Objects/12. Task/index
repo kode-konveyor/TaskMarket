@@ -1,0 +1,15 @@
+<index xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:zenta="http://magwas.rulez.org/zenta">
+   <folder name="Tasks" id="41460c58-8b58-4cab-b2ec-6d66302ae7dd"/>
+   <entry name="Task" id="b4a71889-964a-4100-84a2-d80d3648191c"/>
+   <entry name="behaviour" id="3a03e97d-5bd8-4088-9e42-bfe58ffa6b10"/>
+   <entry name="description" id="c05cb153-ec1d-4c88-8364-0150b6eaedbd"/>
+   <entry name="github id" id="c09d6b67-f6f4-487b-975e-d955738828d0"/>
+   <entry name="service" id="392a63cf-4224-47a7-984a-d76bcfc62775"/>
+   <entry name="Task" id="d1309ab2-d933-40f2-9f1d-2549b2b85029"/>
+   <entry name=";Reference;" id="974203bc-df9a-4a23-958e-d1fab577cf2c"/>
+   <entry name=";Direct;" id="7f298e98-d60e-4f6b-bd3f-afe489015eca"/>
+   <entry name=";Direct;" id="95c92977-0925-4c13-96c8-6bb7ad42bf6e"/>
+   <entry name=";Direct;" id="1f96a0f5-6e98-461b-b85f-7a8d0b0d4e22"/>
+   <entry name=";Direct;" id="a0c7cec9-748d-41cb-8b2c-e94891d219f3"/>
+</index>

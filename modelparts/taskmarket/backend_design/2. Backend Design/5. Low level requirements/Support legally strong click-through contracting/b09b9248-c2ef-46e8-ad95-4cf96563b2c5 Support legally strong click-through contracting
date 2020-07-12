@@ -1,0 +1,22 @@
+<element xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xmlns:zenta="http://magwas.rulez.org/zenta"
+         xsi:type="zenta:ZentaDiagramModel"
+         name="Support legally strong click-through contracting"
+         id="b09b9248-c2ef-46e8-ad95-4cf96563b2c5">
+   <child xsi:type="zenta:DiagramObject"
+          id="e15fe042-cc34-4ef0-86de-a7ef88d8dd06"
+          zentaElement="d87c9719-b2ac-4f79-9c0c-60763746018c">
+      <bounds x="219" y="53" width="202" height="68"/>
+      <sourceConnection xsi:type="zenta:Connection"
+                        id="5e1258ee-6c7a-4c91-9de2-c9e2a00c51e6"
+                        source="e15fe042-cc34-4ef0-86de-a7ef88d8dd06"
+                        target="9d73b041-19fa-4f68-984b-94993d301059"
+                        relationship="07e8c445-4eb1-4350-864b-739dea1b03f9"/>
+   </child>
+   <child xsi:type="zenta:DiagramObject"
+          id="9d73b041-19fa-4f68-984b-94993d301059"
+          targetConnections="5e1258ee-6c7a-4c91-9de2-c9e2a00c51e6"
+          zentaElement="f9e928c5-a7ca-4df9-9bc2-ffa6e79007e9">
+      <bounds x="531" y="161" width="190" height="80"/>
+   </child>
+</element>

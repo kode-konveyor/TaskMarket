@@ -1,0 +1,14 @@
+<index xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:zenta="http://magwas.rulez.org/zenta">
+   <entry name="grab" id="ec812ee5-37d7-42b0-b489-775946e865b1"/>
+   <entry name="milestone" id="c021dcc3-bcbb-4b35-8830-4433bfa12e2c"/>
+   <entry name="pull request with link to github"
+          id="cd9e3f40-9b73-443e-86f6-36d9037b99fe"/>
+   <entry name="status" id="8cbc1125-c0a2-4d02-b0d7-1deaabfd05d6"/>
+   <entry name="tasks" id="f5838ce7-dcb6-407d-b7e5-9456f6328210"/>
+   <entry name="name with link to github"
+          id="da683ce8-5344-43a9-a58d-7e6f957a379a"/>
+   <entry name="task" id="fc6ec467-e23a-45db-b697-24b3a095c437"/>
+   <entry name="tasks" id="d35740f5-f44e-4b26-bf98-d5a8dabd2c97"/>
+   <entry id="c2b73fdc-8e58-48cc-b94b-c304a2fa70a0"/>
+</index>

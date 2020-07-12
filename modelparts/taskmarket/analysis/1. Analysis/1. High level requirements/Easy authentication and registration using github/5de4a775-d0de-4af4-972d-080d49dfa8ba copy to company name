@@ -1,0 +1,8 @@
+<element xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xmlns:zenta="http://magwas.rulez.org/zenta"
+         xsi:type="zenta:BasicObject"
+         name="copy to company name"
+         id="5de4a775-d0de-4af4-972d-080d49dfa8ba"
+         ancestor="behaviour">
+   <documentation>the name entered is copied to company name</documentation>
+</element>

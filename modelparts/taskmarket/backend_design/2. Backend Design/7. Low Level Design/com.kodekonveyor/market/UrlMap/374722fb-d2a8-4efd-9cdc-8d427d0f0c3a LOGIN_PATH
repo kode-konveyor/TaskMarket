@@ -1,0 +1,8 @@
+<element xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xmlns:zenta="http://magwas.rulez.org/zenta"
+         xsi:type="zenta:BasicObject"
+         name="LOGIN_PATH"
+         id="374722fb-d2a8-4efd-9cdc-8d427d0f0c3a"
+         ancestor="2cb904ef-0cda-422b-82f6-0509c595b8fd">
+   <documentation>"/member/login"</documentation>
+</element>

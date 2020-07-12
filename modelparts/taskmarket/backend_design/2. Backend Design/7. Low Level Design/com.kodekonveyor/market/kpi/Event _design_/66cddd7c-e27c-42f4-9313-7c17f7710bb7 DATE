@@ -1,0 +1,8 @@
+<element xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xmlns:zenta="http://magwas.rulez.org/zenta"
+         xsi:type="zenta:BasicObject"
+         name="DATE"
+         id="66cddd7c-e27c-42f4-9313-7c17f7710bb7"
+         ancestor="ffbe5058-5089-4c5a-965d-e996df089f8e">
+   <documentation>new Date(1593607629)</documentation>
+</element>

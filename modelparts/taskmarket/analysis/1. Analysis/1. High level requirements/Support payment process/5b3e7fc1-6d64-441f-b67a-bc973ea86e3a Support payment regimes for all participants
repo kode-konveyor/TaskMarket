@@ -1,0 +1,10 @@
+<element xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xmlns:zenta="http://magwas.rulez.org/zenta"
+         xsi:type="zenta:BasicObject"
+         name="Support payment regimes for all participants"
+         id="5b3e7fc1-6d64-441f-b67a-bc973ea86e3a"
+         ancestor="e7c7a3b9-cc91-4d99-854a-d5eab68efd7c">
+   <documentation>There are different tax and other rules based on country and the form of the enterprise (natural person, different company forms).
+We intend to support all of them.
+</documentation>
+</element>

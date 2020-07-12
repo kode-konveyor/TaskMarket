@@ -1,0 +1,10 @@
+<element xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xmlns:zenta="http://magwas.rulez.org/zenta"
+         xsi:type="zenta:BasicObject"
+         name="No constraints in database"
+         id="6a795327-82eb-4627-9bc6-eeda4bbaa360"
+         ancestor="09407896-919e-4388-9e20-427696f9fbbc">
+   <documentation>The constraints are handled by the project logic
+It is external requirements, as it is against the design level metamodel
+</documentation>
+</element>

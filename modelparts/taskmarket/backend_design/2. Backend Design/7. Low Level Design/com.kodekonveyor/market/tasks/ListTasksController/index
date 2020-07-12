@@ -1,0 +1,20 @@
+<index xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:zenta="http://magwas.rulez.org/zenta">
+   <entry name="ListTasksController" id="07d46105-71f2-43a6-b097-3356bd5e8cdd"/>
+   <entry name="ListTasksController" id="04a64ca0-b7dc-438b-ad76-e966ba0bd84c"/>
+   <entry id="17bfaee5-0cce-4adc-b17f-2a1ee9306a89"/>
+   <entry id="40d4edfb-3ee7-44d0-84c4-77b06a6d445b"/>
+   <entry id="2baab387-e40e-47ab-9ebf-bd114780fb43"/>
+   <entry id="e9a4e12b-2513-4236-81fd-50c32932ad0c"/>
+   <entry id="8e45d914-d9a8-441e-8692-9e5b1fe37936"/>
+   <entry id="048ae181-d3dc-48fd-a333-d2646ad85eb9"/>
+   <entry id="b642dacc-d56c-4809-9819-c3af3b440ad9"/>
+   <entry id="e42a75d0-3fe6-468f-acc8-658d8eee4add"/>
+   <entry id="63c8f816-5e56-42f1-8a8a-58b0aabd701a"/>
+   <entry id="dba09ab5-39a2-42f9-8332-ef3aaced8980"/>
+   <entry id="4bf18a05-0fe1-4315-aa9c-d6eb747c0250"/>
+   <entry id="783332f3-e5e8-400c-a5bc-8d1e1828755e"/>
+   <entry id="48ba1420-5f7d-4b62-a6a1-0c4476bb06eb"/>
+   <entry id="6ac7c6e7-f2be-4a02-bcda-cc66b645cac8"/>
+   <entry id="d5d9cc1b-d29a-44ee-9f19-b07f76349186"/>
+</index>

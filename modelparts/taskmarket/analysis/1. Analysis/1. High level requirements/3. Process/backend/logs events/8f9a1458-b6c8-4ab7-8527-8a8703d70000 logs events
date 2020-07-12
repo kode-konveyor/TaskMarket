@@ -1,0 +1,11 @@
+<element xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xmlns:zenta="http://magwas.rulez.org/zenta"
+         xsi:type="zenta:ZentaDiagramModel"
+         name="logs events"
+         id="8f9a1458-b6c8-4ab7-8527-8a8703d70000">
+   <child xsi:type="zenta:DiagramObject"
+          id="e548b03b-ac08-4c13-a73e-ea598f3ffa65"
+          zentaElement="9255b3fb-1ea3-400b-b184-bd3d2a8ec749">
+      <bounds x="155" y="177" width="-1" height="-1"/>
+   </child>
+</element>

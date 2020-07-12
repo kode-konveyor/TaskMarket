@@ -1,0 +1,14 @@
+<index xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:zenta="http://magwas.rulez.org/zenta">
+   <entry name="LogMessage (design)" id="f5024f4e-e498-49a7-b5ea-53c040749d58"/>
+   <entry id="97041577-92c7-4692-9fae-58c4daf1d5c4"/>
+   <entry name="ARGUMENT" id="70ba3cca-c8c3-46ac-b2de-5439b7b0d6be"/>
+   <entry name="MARKER" id="a3b100b5-c71a-4720-a854-df61b5e43b72"/>
+   <entry name="LogMessageTestData" id="61e15f0e-8ecc-4d07-af97-03efc857d763"/>
+   <entry name="org.slf4j.Marker" id="01bf803f-bd6a-43cb-991a-fd38555a72d2"/>
+   <entry id="67e93e6a-ce79-4625-9794-30938c88ecf4"/>
+   <entry id="cd9572bf-411d-4942-8168-9819ba685068"/>
+   <entry name="MESSAGE" id="c6940779-32dd-424c-a4b9-afd68e5559bd"/>
+   <entry id="bbcc997a-1576-4eea-aa16-32a9dadac73b"/>
+   <entry id="37a8b644-156b-4f12-9438-1594715c87b2"/>
+</index>

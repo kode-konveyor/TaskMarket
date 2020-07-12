@@ -1,0 +1,26 @@
+<index xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:zenta="http://magwas.rulez.org/zenta">
+   <entry name="accept terms and conditions"
+          id="21325593-2c37-45b3-b8dd-9a26913efc8e"/>
+   <entry name="choose legal form" id="5a97db1d-a61b-4ce0-8ee8-fe955ee4ca39"/>
+   <entry name="enter address" id="64c6ca3e-0167-4929-83ef-1c94c485e667"/>
+   <entry name="enter company name if different"
+          id="3b0e60a9-03af-474c-85cb-a7f19febdfee"/>
+   <entry name="enter email" id="a4d831e1-045c-479e-aa03-d9b13cc4ccdb"/>
+   <entry name="Enter name" id="acee3530-a49c-4a48-8e64-43e15b9cf06e"/>
+   <entry name="submit" id="49936155-dc06-472c-b2ad-87e20edb03fa"/>
+   <entry name="Register the user with the most important details"
+          id="f9e928c5-a7ca-4df9-9bc2-ffa6e79007e9"/>
+   <entry id="4ea19503-d2ee-4749-affe-6c8d9dd87d45"/>
+   <entry name="Register the user with the most important details"
+          id="fc104849-5522-46e6-9520-3242e4c94628"/>
+   <entry id="be5f65b6-0cfe-469d-ae9e-c132f81e7bb9"/>
+   <entry name="choose profile" id="4f41cfc1-ec8d-4b26-b554-fa3d024eb5e3"/>
+   <entry name="registration area replaces the profile area for this story "
+          id="c61e533a-5c6a-45b2-bc50-82678ac60088"/>
+   <entry id="d79344ca-b2d2-458d-a625-5ee28060a30f"/>
+   <entry id="30259a8d-3344-455c-9ba7-6e1d1160c2b0"/>
+   <entry id="1645cc50-e076-485c-be5d-2a28b0059a77"/>
+   <entry id="aa1305ce-f204-4c24-8fc9-b3766fafe211"/>
+   <entry id="283533c3-4e9a-428c-9110-d3356abdd758"/>
+</index>

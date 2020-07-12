@@ -1,0 +1,8 @@
+<element xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xmlns:zenta="http://magwas.rulez.org/zenta"
+         xsi:type="zenta:BasicObject"
+         name="PERCENTAGE"
+         id="c5dddbb9-1383-4fe6-afa5-9190de403603"
+         ancestor="ffbe5058-5089-4c5a-965d-e996df089f8e">
+   <documentation>100L</documentation>
+</element>

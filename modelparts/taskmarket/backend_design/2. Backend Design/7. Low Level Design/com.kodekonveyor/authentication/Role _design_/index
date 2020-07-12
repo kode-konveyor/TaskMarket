@@ -1,0 +1,10 @@
+<index xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:zenta="http://magwas.rulez.org/zenta">
+   <entry name="Role (design)" id="62c01800-4aec-4cc0-ba83-1f3b03286a92"/>
+   <entry id="9173767b-e21d-4fda-8964-a4d3bbf5a663"/>
+   <entry id="76ad0d34-00b4-4c4c-9150-3ad3d367e1f3"/>
+   <entry id="08e825fe-716e-4026-88e6-e91ea7f5da94"/>
+   <entry name="NAME" id="bf67dcd9-f235-4e7e-b7ab-56851ff85651"/>
+   <entry name="RoleTestData" id="146b40cb-a851-49a4-bd4d-a238cfe8d999"/>
+   <entry id="2b07140e-abc2-4376-9a7b-8314aa4700f6"/>
+</index>

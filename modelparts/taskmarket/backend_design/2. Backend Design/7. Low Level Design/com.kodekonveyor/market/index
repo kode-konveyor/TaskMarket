@@ -1,0 +1,15 @@
+<index xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:zenta="http://magwas.rulez.org/zenta">
+   <folder name="UrlMap" id="db8ea202-78f6-43f8-8492-9268f0af392e"/>
+   <folder name="SpringConfig" id="677d3ef7-855c-4e79-a0d3-75b5e40843b3"/>
+   <folder name="lead" id="a4bb2618-ff8f-44b2-be54-c88e5b2c03fe"/>
+   <folder name="project" id="19d637c7-07cc-4388-9b9a-009447c55e55"/>
+   <folder name="register" id="6b1def28-7f4b-4397-8239-7fa1b65c4f46"/>
+   <folder name="payment" id="de888230-d8d8-415e-ae5d-0a42d61e13c8"/>
+   <folder name="tasks" id="cea9f11c-8bc7-402e-b2de-38177086f0dc"/>
+   <folder name="technical" id="aeba9036-b192-4304-b904-4c89f31bf7fe"/>
+   <folder name="kpi" id="58961158-820a-4b6c-b164-4148cb3bb7ae"/>
+   <entry name="market" id="bd491eca-1d0f-4768-8de7-bbc4442d2a3f"/>
+   <entry name="market" id="7ab5cd9e-b59a-4d29-bc60-1b542cb3e99e"/>
+   <entry id="d7bc7ffe-1bef-4032-b502-5074a90ed6a3"/>
+</index>

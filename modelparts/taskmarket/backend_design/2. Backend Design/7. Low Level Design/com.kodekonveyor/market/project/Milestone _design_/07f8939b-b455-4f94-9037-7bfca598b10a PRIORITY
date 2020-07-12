@@ -1,0 +1,8 @@
+<element xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xmlns:zenta="http://magwas.rulez.org/zenta"
+         xsi:type="zenta:BasicObject"
+         name="PRIORITY"
+         id="07f8939b-b455-4f94-9037-7bfca598b10a"
+         ancestor="ffbe5058-5089-4c5a-965d-e996df089f8e">
+   <documentation>1L</documentation>
+</element>

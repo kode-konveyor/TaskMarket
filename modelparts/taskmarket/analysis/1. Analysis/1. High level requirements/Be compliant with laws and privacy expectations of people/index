@@ -1,0 +1,9 @@
+<index xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:zenta="http://magwas.rulez.org/zenta">
+   <entry name="Be compliant with laws and privacy expectations of people"
+          id="179d5b22-f496-44eb-80ac-4297da0ecc8c"/>
+   <entry name="Show all data to the user we are storing about her"
+          id="6d37a590-efab-43c0-a23d-aa8e7978c7f6"/>
+   <entry name="Support legally strong click-through contracting"
+          id="d87c9719-b2ac-4f79-9c0c-60763746018c"/>
+</index>

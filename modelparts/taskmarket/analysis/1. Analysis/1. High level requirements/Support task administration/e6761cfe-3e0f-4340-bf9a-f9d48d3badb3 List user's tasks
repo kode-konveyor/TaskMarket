@@ -1,0 +1,14 @@
+<element xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xmlns:zenta="http://magwas.rulez.org/zenta"
+         xsi:type="zenta:BasicObject"
+         name="List user's tasks"
+         id="e6761cfe-3e0f-4340-bf9a-f9d48d3badb3"
+         ancestor="behaviour">
+   <documentation>The tasks should be listed for a user in the following order:
+
+* IN_PROGRESS tasks where the user is responsible
+* UP_FOR_GRAB tasks for closed projects the user is a member of
+* UP_FOR_GRAB tasks for open projects
+* CLOSED tasks where the user is responsible
+</documentation>
+</element>

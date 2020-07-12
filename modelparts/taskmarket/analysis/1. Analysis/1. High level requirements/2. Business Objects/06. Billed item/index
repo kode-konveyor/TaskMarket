@@ -1,0 +1,13 @@
+<index xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:zenta="http://magwas.rulez.org/zenta">
+   <entry name="Billed item" id="99c752de-1d81-4f06-bb56-edaa7990d28a"/>
+   <entry name="Billed item" id="febcc216-be50-4d59-a015-64e5552fc0ab"/>
+   <entry name="deliverable count" id="ed9fb906-fe1d-4f3e-acbc-311b52ed3d9a"/>
+   <entry name="item price in cents" id="b81faff5-64d7-4b75-a0e6-46314da6bc9f"/>
+   <entry name="deliverable price in cents"
+          id="0493236b-7c94-45dd-85f7-80c4df4ebb98"/>
+   <entry name=";Direct;" id="e4c36b80-2948-4d37-94c6-2ef8174e29e5"/>
+   <entry name=";Reference;" id="a9775fce-aa65-421f-895c-9dec3f1d18b7"/>
+   <entry name=";Direct;" id="e853dce8-e909-4bbb-9cd5-274afbb1fd23"/>
+   <entry name=";Direct;" id="fc2beb4c-ca5f-47ad-bcc5-c67790835f02"/>
+</index>
