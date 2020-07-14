@@ -1,0 +1,10 @@
+<element xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xmlns:zenta="http://magwas.rulez.org/zenta"
+         xsi:type="zenta:BasicObject"
+         name="store contract details"
+         id="60d84108-319f-4bee-9943-e24a27242a44"
+         ancestor="behaviour">
+   <documentation>create the user and store all the simple fields in Market User
+the balance is set to 0
+</documentation>
+</element>

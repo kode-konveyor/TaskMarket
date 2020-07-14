@@ -1,0 +1,24 @@
+<index xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:zenta="http://magwas.rulez.org/zenta">
+   <entry name="Task (design)" id="114fe490-4bf7-43b7-ae60-385c15f522ad"/>
+   <entry name="SERVICE" id="8fe3f4f3-3fe9-4673-97a3-0dcde1cac255"/>
+   <entry id="67de811e-818b-43b1-b64b-3ce7baee8578"/>
+   <entry name="TaskTestData" id="9f29f608-2b8c-42d6-a5f3-933022e1ca94"/>
+   <entry id="dbcf2a21-d7a0-4b89-a177-46faf6d96591"/>
+   <entry name="BEHAVIOUR" id="3276d1c6-69e1-420c-8668-bccd64f8d223"/>
+   <entry id="e722bd49-1590-4841-b7ec-5c552b2b3cc9"/>
+   <entry name="DESCRIPTION" id="6b2a5296-0e06-4ef1-9ab3-caca62a3d567"/>
+   <entry id="24a234aa-58d8-47e7-b86f-a6155b58c893"/>
+   <entry name="GITHUB_ID" id="05d134d9-4430-4aa0-b28a-7732f7442c98"/>
+   <entry id="174736be-86b0-4c21-b15d-7908bcc1b969"/>
+   <entry id="7741ce94-67f1-4b27-b687-76095f5700fa"/>
+   <entry id="f66e6682-074b-41bd-b102-5da197c0d053"/>
+   <entry id="bb9f20ca-c48a-4550-91df-886b7614b5f9"/>
+   <entry id="279e3acb-f0cc-4658-aec5-a0e5aca95af2"/>
+   <entry id="cc86ac8c-76bc-4096-87dd-98729d01b8c9"/>
+   <entry id="ac7e3fa5-7417-485b-91be-418c563bbf05"/>
+   <entry id="cb8525c6-6560-4332-a9a0-b9d1b6a48ec8"/>
+   <entry id="b58da216-1cc2-44bb-8cda-b5504fe4aca7"/>
+   <entry id="f3d7a409-178f-41da-a465-3fa41d800427"/>
+   <entry id="5acd425d-07a2-4169-b9d9-b54791a734be"/>
+</index>

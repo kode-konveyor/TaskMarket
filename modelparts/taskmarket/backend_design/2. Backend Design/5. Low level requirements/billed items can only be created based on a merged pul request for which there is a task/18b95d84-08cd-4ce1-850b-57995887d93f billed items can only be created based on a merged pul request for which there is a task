@@ -1,0 +1,22 @@
+<element xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xmlns:zenta="http://magwas.rulez.org/zenta"
+         xsi:type="zenta:ZentaDiagramModel"
+         name="billed items can only be created based on a merged pul request for which there is a task"
+         id="18b95d84-08cd-4ce1-850b-57995887d93f">
+   <child xsi:type="zenta:DiagramObject"
+          id="b2f849f5-26a1-4e42-808d-e5bb754009dc"
+          zentaElement="d58e2f2d-0dd6-477b-b01d-6c15a4da6c55">
+      <bounds x="62" y="63" width="263" height="94"/>
+      <sourceConnection xsi:type="zenta:Connection"
+                        id="4f7451b0-a3c3-4eac-9f28-9a57aa90319b"
+                        source="b2f849f5-26a1-4e42-808d-e5bb754009dc"
+                        target="45e6e476-e876-4eb6-b2f4-1eb1792eb233"
+                        relationship="42dfb1db-7145-48f3-bb8f-70345174f02f"/>
+   </child>
+   <child xsi:type="zenta:DiagramObject"
+          id="45e6e476-e876-4eb6-b2f4-1eb1792eb233"
+          targetConnections="4f7451b0-a3c3-4eac-9f28-9a57aa90319b"
+          zentaElement="f40843ff-1955-4251-b104-b8b7f48c7463">
+      <bounds x="395" y="221" width="182" height="68"/>
+   </child>
+</element>

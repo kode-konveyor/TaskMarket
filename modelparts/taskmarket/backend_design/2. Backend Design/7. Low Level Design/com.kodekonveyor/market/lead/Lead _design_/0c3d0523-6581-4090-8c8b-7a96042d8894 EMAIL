@@ -1,0 +1,8 @@
+<element xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xmlns:zenta="http://magwas.rulez.org/zenta"
+         xsi:type="zenta:BasicObject"
+         name="EMAIL"
+         id="0c3d0523-6581-4090-8c8b-7a96042d8894"
+         ancestor="ffbe5058-5089-4c5a-965d-e996df089f8e">
+   <documentation>"john.bigboot@example.com"</documentation>
+</element>

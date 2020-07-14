@@ -1,0 +1,16 @@
+<index xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:zenta="http://magwas.rulez.org/zenta">
+   <folder name="AuthenticatedUserService"
+           id="ebd1bd3f-404d-4c99-8229-31fc8faa0d9e"/>
+   <folder name="User (design)" id="006c544c-7988-4154-bce6-93ba418b40fc"/>
+   <folder name="Role (design)" id="7f46abcf-3013-4c49-85a8-e71efe7748b9"/>
+   <folder name="LoginController" id="1e6b4a5a-4a9d-48ab-9f33-adec9ebcc2ea"/>
+   <folder name="LoginController (design)"
+           id="0b22d301-e804-4e56-a680-bf4573040f29"/>
+   <entry name="authentication" id="01aa36b2-7087-4e0c-86d2-6fe43f627949"/>
+   <entry name="authentication" id="91b617b2-32a4-4e77-9883-a54ebca63034"/>
+   <entry name="RemoteAuthenticationFilter"
+          id="94fd8369-4b9c-4f46-b1d6-baa4effb9a09"/>
+   <entry name="NotLoggedInException" id="5fa38dc0-12a1-4865-94ec-7d32d1761867"/>
+   <entry name="RemoteAuthentication" id="ba2a43e8-5a13-4483-88c5-c62b459a621b"/>
+</index>

@@ -1,0 +1,4 @@
+<folder xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xmlns:zenta="http://magwas.rulez.org/zenta"
+        name="billed items can only be created based on a merged pul request for which there is a task"
+        id="8be0318f-91be-4f56-b86c-429d1a30027f"/>

@@ -1,0 +1,11 @@
+<element xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xmlns:zenta="http://magwas.rulez.org/zenta"
+         xsi:type="zenta:BasicObject"
+         name="set iban/swift"
+         id="b7051850-2ea9-4002-a597-50851ec50c89"
+         ancestor="behaviour">
+   <documentation>the "iban" and "swift" fields can have other names based on the payment regime,
+and sometimes one identifier is enough.
+when the transfer type is decided, the fields are labeled accordingly, and one or two of those fields are unhidden
+</documentation>
+</element>

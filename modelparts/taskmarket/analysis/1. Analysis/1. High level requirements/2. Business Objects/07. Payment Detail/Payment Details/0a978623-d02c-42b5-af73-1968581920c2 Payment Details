@@ -1,0 +1,22 @@
+<element xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xmlns:zenta="http://magwas.rulez.org/zenta"
+         xsi:type="zenta:ZentaDiagramModel"
+         name="Payment Details"
+         id="0a978623-d02c-42b5-af73-1968581920c2">
+   <child xsi:type="zenta:DiagramObject"
+          id="c5ce2243-225f-4f4b-a280-72a256312095"
+          zentaElement="27bc0449-120e-4bf7-b2c0-30b9157ecce8">
+      <bounds x="254" y="155" width="-1" height="-1"/>
+      <sourceConnection xsi:type="zenta:Connection"
+                        id="8e1573bb-d7e7-47d5-b931-71f9fd9af573"
+                        source="c5ce2243-225f-4f4b-a280-72a256312095"
+                        target="4b125260-4117-4c81-9ef6-ab771d1b586e"
+                        relationship="199174bc-a1db-455c-8c6c-95835283e793"/>
+   </child>
+   <child xsi:type="zenta:DiagramObject"
+          id="4b125260-4117-4c81-9ef6-ab771d1b586e"
+          targetConnections="8e1573bb-d7e7-47d5-b931-71f9fd9af573"
+          zentaElement="fa9e083c-e45d-4770-9e65-0a03fdadcd6c">
+      <bounds x="244" y="310" width="-1" height="-1"/>
+   </child>
+</element>

@@ -1,0 +1,6 @@
+<element xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xmlns:zenta="http://magwas.rulez.org/zenta"
+         xsi:type="zenta:BasicObject"
+         name="LoggingMarkerConstants"
+         id="4ecbbdf1-36b3-48c0-b5e5-4c0eb4f2e8ff"
+         ancestor="constantProvider"/>

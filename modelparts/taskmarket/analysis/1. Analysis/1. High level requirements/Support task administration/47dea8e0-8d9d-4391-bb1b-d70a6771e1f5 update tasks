@@ -1,0 +1,26 @@
+<element xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xmlns:zenta="http://magwas.rulez.org/zenta"
+         xsi:type="zenta:BasicObject"
+         name="update tasks"
+         id="47dea8e0-8d9d-4391-bb1b-d70a6771e1f5"
+         ancestor="behaviour">
+   <documentation>The tasks are updated by the project manager as part of updating the project model.
+
+This is called from UpdateProjectModelController, and implemented in UpdateTasksService.
+
+Current tasks are gathered using GetRepositoryTasksService
+
+Github issue descriptions have a beginning and ending delimiter line.
+* the beginning delimiter line is: "Task Description:"
+* the ending delimiter line is: "End of Task Description"
+
+For each tasks in the tasks parameter:
+The task name is &lt;serviceName&gt;/&lt;behaviourName&gt;.
+* If there is no task with the name, then it is created.
+* If there is already a task with the name
+  * if the documentationof the task is the same as the documentation of the github issue between the delimiter lines, then nothing is done
+  * in case of difference, then the documentation is put between delimiter lines, the diff of the whole issue description and the task documentation is put after the ending delimiter line, and the task is updated
+ 
+
+</documentation>
+</element>

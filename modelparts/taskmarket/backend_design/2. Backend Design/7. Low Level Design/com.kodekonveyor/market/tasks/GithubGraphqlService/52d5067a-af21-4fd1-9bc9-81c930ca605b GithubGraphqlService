@@ -1,0 +1,6 @@
+<element xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xmlns:zenta="http://magwas.rulez.org/zenta"
+         xsi:type="zenta:BasicObject"
+         name="GithubGraphqlService"
+         id="52d5067a-af21-4fd1-9bc9-81c930ca605b"
+         ancestor="service"/>

@@ -1,0 +1,13 @@
+<element xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xmlns:zenta="http://magwas.rulez.org/zenta"
+         xsi:type="zenta:BasicObject"
+         name="payment channels"
+         id="2ac87ed9-1bc3-4e35-ac22-256f42aba08d"
+         ancestor="behaviour">
+   <documentation>A user can have more payment channels. The payout is divided between payment channels according to their percentage.
+All amounts are rounded to cent.
+The sum of amounts paid out is equal to the payout.
+The sum of percentages of payment channels is 100.
+
+</documentation>
+</element>

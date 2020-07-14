@@ -1,0 +1,9 @@
+<element xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xmlns:zenta="http://magwas.rulez.org/zenta"
+         xsi:type="zenta:BasicObject"
+         name="grab eligibility"
+         id="ec679888-2876-4d10-83e7-a70c7a639ed1"
+         ancestor="behaviour">
+   <documentation>a task can be grabbed if the grabbing user have a pull request for each of her issues
+</documentation>
+</element>

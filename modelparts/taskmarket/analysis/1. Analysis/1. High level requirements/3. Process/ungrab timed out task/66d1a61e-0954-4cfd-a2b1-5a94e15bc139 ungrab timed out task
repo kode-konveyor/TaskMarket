@@ -1,0 +1,38 @@
+<element xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xmlns:zenta="http://magwas.rulez.org/zenta"
+         xsi:type="zenta:ZentaDiagramModel"
+         name="ungrab timed out task"
+         id="66d1a61e-0954-4cfd-a2b1-5a94e15bc139">
+   <child xsi:type="zenta:DiagramObject"
+          id="4d017fa2-269f-42ad-a2f0-38b741ddaa9f"
+          zentaElement="383970bb-c6a0-4321-b961-41f8bb4aaeef">
+      <bounds x="312" y="149" width="-1" height="-1"/>
+      <sourceConnection xsi:type="zenta:Connection"
+                        id="0a4be1c4-6428-42aa-8ad9-2185681c5dc8"
+                        source="4d017fa2-269f-42ad-a2f0-38b741ddaa9f"
+                        target="d8fa77ac-743a-4b89-b3b4-86bab890243e"
+                        relationship="cdcbf98b-72ef-49fb-9e0b-f00d17a1ae9e"/>
+      <sourceConnection xsi:type="zenta:Connection"
+                        id="2c96c71b-1210-494c-9cba-48c4bd0de295"
+                        source="4d017fa2-269f-42ad-a2f0-38b741ddaa9f"
+                        target="d8fa77ac-743a-4b89-b3b4-86bab890243e"
+                        relationship="c6254b51-a090-4bfa-af27-b7b43e83c0ac"/>
+      <sourceConnection xsi:type="zenta:Connection"
+                        id="c7ce885d-7bac-4d7a-8da8-b273599daf3a"
+                        source="4d017fa2-269f-42ad-a2f0-38b741ddaa9f"
+                        target="b4f46922-ca66-4274-9e0a-168996607a8d"
+                        relationship="757e45c4-bd91-4d05-85a9-d5ee9b5c55ad"/>
+   </child>
+   <child xsi:type="zenta:DiagramObject"
+          id="d8fa77ac-743a-4b89-b3b4-86bab890243e"
+          targetConnections="0a4be1c4-6428-42aa-8ad9-2185681c5dc8 2c96c71b-1210-494c-9cba-48c4bd0de295"
+          zentaElement="d1309ab2-d933-40f2-9f1d-2549b2b85029">
+      <bounds x="312" y="276" width="-1" height="-1"/>
+   </child>
+   <child xsi:type="zenta:DiagramObject"
+          id="b4f46922-ca66-4274-9e0a-168996607a8d"
+          targetConnections="c7ce885d-7bac-4d7a-8da8-b273599daf3a"
+          zentaElement="81f3326b-3791-4e6d-a12d-36fe4f58c86e">
+      <bounds x="528" y="149" width="-1" height="-1"/>
+   </child>
+</element>

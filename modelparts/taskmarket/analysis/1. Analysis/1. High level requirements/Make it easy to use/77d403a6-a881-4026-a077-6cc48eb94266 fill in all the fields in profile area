@@ -1,0 +1,6 @@
+<element xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xmlns:zenta="http://magwas.rulez.org/zenta"
+         xsi:type="zenta:BasicObject"
+         name="fill in all the fields in profile area"
+         id="77d403a6-a881-4026-a077-6cc48eb94266"
+         ancestor="behaviour"/>

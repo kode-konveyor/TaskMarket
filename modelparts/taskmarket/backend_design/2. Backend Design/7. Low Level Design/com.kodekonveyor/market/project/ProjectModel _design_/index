@@ -1,0 +1,10 @@
+<index xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:zenta="http://magwas.rulez.org/zenta">
+   <entry name="ProjectModel (design)" id="0a18247b-d789-4885-b1cc-fb1dd0f1c420"/>
+   <entry name="ProjectModelTestData" id="cda9c6a7-61d8-47c8-8715-f42a13ed78e7"/>
+   <entry name="get()" id="f856bcb7-0609-4903-aa59-ae3c95478671"/>
+   <entry id="66af7f8e-707a-4caa-bfbb-d1a96e9d0110"/>
+   <entry id="37dafc03-fb50-41ed-957b-fbf7787973f4"/>
+   <entry id="c3a7009b-5f54-4479-a34f-5db143870f4e"/>
+   <entry id="25ef86eb-aedf-4beb-9d50-70c78571387b"/>
+</index>

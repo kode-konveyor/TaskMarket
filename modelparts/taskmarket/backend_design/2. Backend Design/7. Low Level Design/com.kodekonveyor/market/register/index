@@ -1,0 +1,15 @@
+<index xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:zenta="http://magwas.rulez.org/zenta">
+   <folder name="PaymentUpdateController"
+           id="3a32c397-19a8-4233-8cdc-8d74ee4f3c95"/>
+   <folder name="AddToRoleController" id="1bf519e8-dc03-49ed-8d27-b2d63e0fb8cc"/>
+   <folder name="ShowUserController" id="df77a808-a5a1-497c-84ea-1b052326b119"/>
+   <folder name="MarketUserCompilerService"
+           id="6ed5e7d9-d5b5-49a3-bf73-d10fd80c53a4"/>
+   <folder name="RegistrationController" id="0760483a-86e7-4c4c-94b8-4d27da2a2fb1"/>
+   <folder name="MarketUser (design)" id="8b4c8201-4567-4b1f-a0a1-6ec1713dec40"/>
+   <folder name="ListRegisteredUsersController"
+           id="7a604496-ea5f-4f9c-8384-a99189f16803"/>
+   <entry name="register" id="9cbe82ab-fb63-4d28-b8e7-249a5398f30d"/>
+   <entry name="register" id="c9292aab-6f1d-49bd-8103-defed8f801d3"/>
+</index>

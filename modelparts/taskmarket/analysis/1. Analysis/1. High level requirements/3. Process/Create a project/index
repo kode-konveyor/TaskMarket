@@ -1,0 +1,15 @@
+<index xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:zenta="http://magwas.rulez.org/zenta">
+   <entry name="Create a project" id="2c7fa699-cf85-4d21-b72e-92008e938ad7"/>
+   <entry name="assign budget" id="62f0ed6a-4221-4e27-bfad-ed8b02777882"/>
+   <entry name="choose add project" id="19322297-edce-44bc-8f3d-33d11bf3ce9b"/>
+   <entry name="choose whether it is public"
+          id="689c2e40-c0bc-4109-a728-8188c7e72bd8"/>
+   <entry name="fill in name" id="cc72ad75-541b-40c4-8dd5-726169ef665f"/>
+   <entry name="submit" id="7a60a8c5-2695-4dce-ae79-1bbf3d79c926"/>
+   <entry name="Create a project" id="e7741930-a840-4d00-a236-3d26d10d0fe8"/>
+   <entry id="477882d0-ce50-40b1-a77b-912e99d65224"/>
+   <entry name="create project" id="7d8fe2eb-fea8-47b3-a357-26b7f0d91c42"/>
+   <entry name=";One,Entity,Repo;" id="ad9401aa-673e-4e47-89ed-d7223f1450c0"/>
+   <entry name=";One,DTO,Interface;" id="3c264302-5847-4c64-8cd3-b54030708ad1"/>
+</index>

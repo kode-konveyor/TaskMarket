@@ -1,0 +1,8 @@
+<index xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:zenta="http://magwas.rulez.org/zenta">
+   <folder name="authentication" id="568ddb13-18c0-47a8-b420-bbd2fd9fc8e5"/>
+   <folder name="logging" id="14b3efc3-5d02-4d32-baa4-2c9dac181dc5"/>
+   <folder name="market" id="efda9800-11b0-46aa-82e5-9944d7a94e3a"/>
+   <entry name="com.kodekonveyor" id="5a02237b-3396-40d6-b114-a956998c835b"/>
+   <entry name="com.kodekonveyor" id="7f27475f-50da-407b-897c-a71fe3ac18c3"/>
+</index>

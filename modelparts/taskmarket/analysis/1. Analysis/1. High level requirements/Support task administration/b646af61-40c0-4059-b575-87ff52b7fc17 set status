@@ -1,0 +1,13 @@
+<element xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xmlns:zenta="http://magwas.rulez.org/zenta"
+         xsi:type="zenta:BasicObject"
+         name="set status"
+         id="b646af61-40c0-4059-b575-87ff52b7fc17"
+         ancestor="behaviour">
+   <documentation>* if the status is up for grab:
+  * set status to in progress
+  * assign the user to the task
+  * update the task on github
+  * check number of up for grab tasks in the project
+</documentation>
+</element>

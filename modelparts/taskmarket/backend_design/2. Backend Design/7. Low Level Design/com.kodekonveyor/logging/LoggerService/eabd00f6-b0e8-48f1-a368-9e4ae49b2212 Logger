@@ -1,0 +1,6 @@
+<element xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xmlns:zenta="http://magwas.rulez.org/zenta"
+         xsi:type="zenta:BasicObject"
+         name="Logger"
+         id="eabd00f6-b0e8-48f1-a368-9e4ae49b2212"
+         ancestor="aca75b0b-3d33-4083-a72d-e853a0cada97"/>

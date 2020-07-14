@@ -1,0 +1,18 @@
+<index xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:zenta="http://magwas.rulez.org/zenta">
+   <entry name="Technical (design)" id="1eda28e8-9251-44a8-8cd5-c2f0d986abe3"/>
+   <entry name="GRAPHQL_QUERY" id="ed9c388d-d1ec-4138-b5d2-a9b6d5fc2dc2"/>
+   <entry id="abf1a318-841f-436f-948b-150115051714"/>
+   <entry id="a610e4de-33a1-4a71-a6f5-9cbedad5db73"/>
+   <entry name="JSON_PATH_DOCUMENT_CONTEXT"
+          id="3944862c-a60e-4206-a390-ab1536b7bcfc"/>
+   <entry id="c6b3b0a9-61a5-44c7-a57f-4a5654ade3e5"/>
+   <entry id="c73a64ff-147e-445b-aa4b-52c793ee4096"/>
+   <entry name="TechnicalTestData" id="b1dad42d-fffb-481a-a350-d7241aa4b131"/>
+   <entry name="MESSAGE" id="4f118113-8734-4ab3-b317-38626c521e03"/>
+   <entry name="JSON_OBJECT" id="bffec169-8385-46e5-b424-61aca1617e83"/>
+   <entry id="cca9aee7-5973-4218-8ac9-10c483b00e1a"/>
+   <entry id="b5b7795d-2b48-490d-88cf-241826270041"/>
+   <entry name="JSONObject" id="4e793d48-626b-414c-9ca2-42cc9f21cdcf"/>
+   <entry id="1b1697f4-832d-429b-94d1-1fbc4a6a1a3d"/>
+</index>

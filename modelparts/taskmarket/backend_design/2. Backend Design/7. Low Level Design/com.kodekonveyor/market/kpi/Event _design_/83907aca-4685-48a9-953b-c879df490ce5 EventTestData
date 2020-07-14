@@ -1,0 +1,6 @@
+<element xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xmlns:zenta="http://magwas.rulez.org/zenta"
+         xsi:type="zenta:BasicObject"
+         name="EventTestData"
+         id="83907aca-4685-48a9-953b-c879df490ce5"
+         ancestor="9ec42823-7056-4e73-b1f4-600a066c8d88"/>

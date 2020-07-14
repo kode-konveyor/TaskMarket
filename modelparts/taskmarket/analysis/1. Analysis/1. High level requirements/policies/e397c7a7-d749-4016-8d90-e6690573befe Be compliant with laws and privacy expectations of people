@@ -1,0 +1,6 @@
+<element xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xmlns:zenta="http://magwas.rulez.org/zenta"
+         xsi:type="zenta:BasicObject"
+         name="Be compliant with laws and privacy expectations of people"
+         id="e397c7a7-d749-4016-8d90-e6690573befe"
+         ancestor="107b9a83-1292-49ee-bf2f-542de02b2654"/>

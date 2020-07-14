@@ -1,0 +1,6 @@
+<element xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xmlns:zenta="http://magwas.rulez.org/zenta"
+         xsi:type="zenta:BasicObject"
+         name="list users of project"
+         id="08ff87a5-a775-4e27-91d0-70d93535154f"
+         ancestor="83af8497-bfef-451b-9bc6-f00d58c8df6a"/>

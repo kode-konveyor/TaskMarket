@@ -1,0 +1,26 @@
+<index xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:zenta="http://magwas.rulez.org/zenta">
+   <entry name="Support task administration"
+          id="9d736913-0f90-4cd2-a320-054bf5410695"/>
+   <entry name="budget" id="d0028317-1851-41ec-838a-9457eb59c252"/>
+   <entry name="Get tasks from github" id="f3edba53-ca06-4a83-a6e4-19e5fe7d8cda"/>
+   <entry name="List user's tasks" id="e6761cfe-3e0f-4340-bf9a-f9d48d3badb3"/>
+   <entry name="update milestones" id="1a974cd4-cf42-4311-ac12-fa526450a4b7"/>
+   <entry name="update tasks" id="47dea8e0-8d9d-4391-bb1b-d70a6771e1f5"/>
+   <entry name="update tasks in github" id="2ab0222c-e911-47a0-9c99-8bbb59046403"/>
+   <entry name="Detect and pay completed tasks"
+          id="202810e6-5cce-4ce7-b2a1-6016376af667"/>
+   <entry name="Support listing and grabbing tasks"
+          id="27ffe0e5-ad20-424a-85ff-601bfa735a7a"/>
+   <entry name="Support project management"
+          id="2807128d-35f0-4c80-92e8-f844dc05cd93"/>
+   <entry id="00250044-da5c-44fa-ba08-baf4c160bbe3"/>
+   <entry name="record grab date for tasks"
+          id="87be43b8-5c5d-4e2f-b5aa-dc33723f7501"/>
+   <entry name="set status" id="b646af61-40c0-4059-b575-87ff52b7fc17"/>
+   <entry id="12f3fb0e-4fe2-4b27-88e8-3487c1b88bfa"/>
+   <entry id="89a1e35d-18c4-4842-857c-e7506d443107"/>
+   <entry name="alert project manager" id="9973119b-5bc2-4783-9cb2-24f9aa901d35"/>
+   <entry name="count up for grab tasks"
+          id="afa05810-6f96-4ea3-9ddb-03847ebcb488"/>
+</index>

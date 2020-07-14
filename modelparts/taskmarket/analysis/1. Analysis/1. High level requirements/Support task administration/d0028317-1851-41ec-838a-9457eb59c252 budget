@@ -1,0 +1,11 @@
+<element xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xmlns:zenta="http://magwas.rulez.org/zenta"
+         xsi:type="zenta:BasicObject"
+         name="budget"
+         id="d0028317-1851-41ec-838a-9457eb59c252"
+         ancestor="behaviour">
+   <documentation>The given budget should be greater than equal to the account balance of the user.
+The given budget is substracted from the acount balance of the user.
+For the project manager the amount can be negative. In this case the absolute value of the amount is substracted from the project budget and added to the personal budget of the user. In this case the absolute calue should be less than equal to the budget of the project.
+</documentation>
+</element>

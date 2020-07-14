@@ -1,0 +1,6 @@
+<element xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xmlns:zenta="http://magwas.rulez.org/zenta"
+         xsi:type="zenta:BasicObject"
+         name="GRAB"
+         id="1705c5a1-f2a9-412f-b1c5-2c61150f4452"
+         ancestor="ebc74a50-0298-4c43-8830-d93ede22576b"/>

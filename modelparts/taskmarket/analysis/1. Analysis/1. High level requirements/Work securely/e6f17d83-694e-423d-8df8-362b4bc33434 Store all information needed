@@ -1,0 +1,6 @@
+<element xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xmlns:zenta="http://magwas.rulez.org/zenta"
+         xsi:type="zenta:BasicObject"
+         name="Store all information needed"
+         id="e6f17d83-694e-423d-8df8-362b4bc33434"
+         ancestor="e7c7a3b9-cc91-4d99-854a-d5eab68efd7c"/>

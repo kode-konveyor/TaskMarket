@@ -1,0 +1,6 @@
+<element xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xmlns:zenta="http://magwas.rulez.org/zenta"
+         xsi:type="zenta:BasicObject"
+         name="Easy authentication and registration using github"
+         id="de813116-d9af-49d7-9bbc-506086037c81"
+         ancestor="107b9a83-1292-49ee-bf2f-542de02b2654"/>

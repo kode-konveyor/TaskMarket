@@ -1,0 +1,6 @@
+<element xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xmlns:zenta="http://magwas.rulez.org/zenta"
+         xsi:type="zenta:BasicObject"
+         name="account balance"
+         id="0a71e162-d204-44bb-a974-0fa503017186"
+         ancestor="4753b1bb-fc45-4aa1-821d-f08baf8a1766"/>

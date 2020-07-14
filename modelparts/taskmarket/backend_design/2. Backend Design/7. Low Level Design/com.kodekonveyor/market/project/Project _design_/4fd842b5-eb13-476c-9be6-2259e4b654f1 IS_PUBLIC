@@ -1,0 +1,8 @@
+<element xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xmlns:zenta="http://magwas.rulez.org/zenta"
+         xsi:type="zenta:BasicObject"
+         name="IS_PUBLIC"
+         id="4fd842b5-eb13-476c-9be6-2259e4b654f1"
+         ancestor="ffbe5058-5089-4c5a-965d-e996df089f8e">
+   <documentation>true</documentation>
+</element>

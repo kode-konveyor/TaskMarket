@@ -1,0 +1,32 @@
+<index xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:zenta="http://magwas.rulez.org/zenta">
+   <entry name="Ability to setup projects"
+          id="6bdcadcd-8098-4a7f-97a4-b49a5ae32619"/>
+   <entry name="Basic github integration"
+          id="d1754fb1-2177-4f76-9985-46678bbe0d7f"/>
+   <entry name="Pull request management"
+          id="454cd3d4-4bd7-457e-a08c-afe2afa7d68a"/>
+   <entry name="Grabbing" id="51da13b8-1bc3-4629-b29f-954f2a57f6e8"/>
+   <entry name="Basic payment support" id="0c52fda6-fd1a-4b5c-b7d3-f0c6ee479ee3"/>
+   <entry name="User management" id="06008814-0727-4cf6-b810-e01d70c3b72c"/>
+   <entry name="payment order support" id="1828c8ac-d0ae-403f-b649-ecc5606be065"/>
+   <entry name="Futures support" id="9b8ff260-b83a-4b24-8567-c57beeb83724"/>
+   <entry name="project management" id="a7a9bc9f-6241-4273-8bd9-455b3bc8faf6"/>
+   <entry name="dashboard" id="635be1e6-f9af-451f-b522-160bf55f1357"/>
+   <entry name="maintain baseline data" id="3e1d0c78-5907-430a-b30c-59f07be9897b"/>
+   <entry name="user management frontend"
+          id="a91a24ff-d4fc-4537-ade2-fee4003261fc"/>
+   <entry name="project management frontend"
+          id="9d580595-f26d-405a-8169-14596def2211"/>
+   <entry name="lead management frontend"
+          id="ecc434b5-5598-4e7a-86e5-fc807b082aac"/>
+   <entry name="framework" id="62a2c1f3-88f4-44a7-ba8c-7150da514864"/>
+   <entry name="Project management (frontend)"
+          id="a96b4416-133c-4094-9bb2-9f0b3b766837"/>
+   <entry name="Lead management" id="d8ac2ef6-7ec6-4fed-80d7-3a99180a2dc0"/>
+   <entry name="mentoring support" id="6b053404-cd84-4114-be6d-8c4fa7b02eb7"/>
+   <entry name="Milestones" id="9d676d45-67ca-4d22-9585-f3b23fc5c983"/>
+   <entry id="5b23169d-ce63-4fc7-bf71-b9044ce43025"/>
+   <entry id="e7c439b4-84cd-4564-831e-6ee3a766fe99"/>
+   <entry id="cd5953fd-355c-4007-a9e8-30e06d500d18"/>
+</index>

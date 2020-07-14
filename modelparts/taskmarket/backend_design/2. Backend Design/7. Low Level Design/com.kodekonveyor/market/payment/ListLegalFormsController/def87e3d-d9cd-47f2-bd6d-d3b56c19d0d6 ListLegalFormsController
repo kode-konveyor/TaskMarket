@@ -1,0 +1,6 @@
+<element xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xmlns:zenta="http://magwas.rulez.org/zenta"
+         xsi:type="zenta:BasicObject"
+         name="ListLegalFormsController"
+         id="def87e3d-d9cd-47f2-bd6d-d3b56c19d0d6"
+         ancestor="5491f72b-93ec-4ad5-b6a9-2653fe808a03"/>

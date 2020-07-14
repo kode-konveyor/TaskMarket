@@ -1,0 +1,6 @@
+<element xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xmlns:zenta="http://magwas.rulez.org/zenta"
+         xsi:type="zenta:BasicObject"
+         name="enter swift"
+         id="a1e83b73-6b05-4c01-96f9-43841ad66f87"
+         ancestor="83af8497-bfef-451b-9bc6-f00d58c8df6a"/>

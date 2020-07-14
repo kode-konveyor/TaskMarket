@@ -1,0 +1,9 @@
+<element xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xmlns:zenta="http://magwas.rulez.org/zenta"
+         xsi:type="zenta:BasicObject"
+         name="Stateless backend"
+         id="c0772d44-5e3f-4bb8-8ec8-42eb77b4ef17"
+         ancestor="09407896-919e-4388-9e20-427696f9fbbc">
+   <documentation>This objective is external, as it is against the design level metamodel
+</documentation>
+</element>

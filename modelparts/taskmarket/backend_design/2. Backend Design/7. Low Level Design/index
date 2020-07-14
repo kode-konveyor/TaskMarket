@@ -1,0 +1,6 @@
+<index xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:zenta="http://magwas.rulez.org/zenta">
+   <folder name="milestones" id="6af3ccd7-a161-4a64-8ea4-d53bba568808"/>
+   <folder name="com.kodekonveyor" id="6c1964bd-4b2a-40d5-bc01-0568a3cb8e87"/>
+   <entry name="Application Structure" id="e90f70f2-2544-478e-887c-1e752fe7c89a"/>
+</index>

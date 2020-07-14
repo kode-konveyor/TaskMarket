@@ -1,0 +1,20 @@
+<index xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:zenta="http://magwas.rulez.org/zenta">
+   <entry name="choose default" id="4aa61037-0b30-4e29-a532-23253d5f416b"/>
+   <entry name="choose transfer type" id="4a777ada-af02-4958-9a82-b6b420f8a8fb"/>
+   <entry name="enter iban" id="27522dcd-68d9-4c27-bd83-8c4cdaa34871"/>
+   <entry name="enter percentage" id="0118197b-dc35-4461-ad37-0450274e713e"/>
+   <entry name="enter swift" id="a1e83b73-6b05-4c01-96f9-43841ad66f87"/>
+   <entry name="enter transfer name" id="1b90bdde-f3e5-4440-a3a9-03ff779419b4"/>
+   <entry name="submit" id="a9dd816a-d549-4545-b1dd-bcbecd36ad16"/>
+   <entry name="Register payout details"
+          id="6ce4abad-0733-44a4-8fdf-53ccd6aa7874"/>
+   <entry id="93b10ac0-a42a-45f7-b089-f2b2b63fc567"/>
+   <entry name="Register payout details"
+          id="3b8c201e-1752-426b-9e1e-f70a53dece99"/>
+   <entry name="choose payment" id="ed28f442-eca7-4b61-9bd6-9648bb3ab7dd"/>
+   <entry id="2d53a5e4-ac3b-4adc-aa7c-441d4c5c0769"/>
+   <entry id="6ad54f9e-89a1-4b40-bf57-087ddc01ed0b"/>
+   <entry id="81c665f1-3f01-46a5-b34a-8f6cd5031ff6"/>
+   <entry id="4fb4ae10-e38c-4df9-aad5-3c9b29e477e4"/>
+</index>

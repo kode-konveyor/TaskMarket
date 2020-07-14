@@ -1,0 +1,6 @@
+<element xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xmlns:zenta="http://magwas.rulez.org/zenta"
+         xsi:type="zenta:BasicObject"
+         name="Support listing and grabbing tasks"
+         id="27ffe0e5-ad20-424a-85ff-601bfa735a7a"
+         ancestor="e7c7a3b9-cc91-4d99-854a-d5eab68efd7c"/>

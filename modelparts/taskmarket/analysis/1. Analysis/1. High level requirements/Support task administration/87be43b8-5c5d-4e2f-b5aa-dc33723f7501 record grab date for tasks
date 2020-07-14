@@ -1,0 +1,11 @@
+<element xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xmlns:zenta="http://magwas.rulez.org/zenta"
+         xsi:type="zenta:BasicObject"
+         name="record grab date for tasks"
+         id="87be43b8-5c5d-4e2f-b5aa-dc33723f7501"
+         ancestor="behaviour">
+   <documentation>and clear date when the task is ungrabbed
+The event type is GRAB, the user is the user grabbing the task, the object id is the id of the task.
+
+</documentation>
+</element>

@@ -1,0 +1,11 @@
+<index xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:zenta="http://magwas.rulez.org/zenta">
+   <entry name="Add funds to the project"
+          id="c734880d-a983-45e0-9003-f145e937e3c4"/>
+   <entry name="Add funds to the project"
+          id="80ce62bc-a239-4d68-8fe9-a073956e81eb"/>
+   <entry name="click plus" id="341da9de-f22c-4934-afb0-604d5329f253"/>
+   <entry name="enter amount" id="56e43a32-5cd5-458e-88f4-48a26bfca747"/>
+   <entry id="7572a747-7460-437e-85cb-3162d53a8ece"/>
+   <entry id="1be43c3a-b8f3-4c7c-9e12-d5d59a5a0adb"/>
+</index>

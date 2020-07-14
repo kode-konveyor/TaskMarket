@@ -1,0 +1,71 @@
+<element xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xmlns:zenta="http://magwas.rulez.org/zenta"
+         xsi:type="zenta:ZentaDiagramModel"
+         name="Show information in an easily comprehensible way"
+         id="e72f5bf5-8dc0-465a-baeb-908fae6ab684">
+   <child xsi:type="zenta:DiagramObject"
+          id="13f32e67-fa04-4af0-8550-c9ca0950884b"
+          zentaElement="c6bb4719-b407-49e8-82c4-9b7431339d56">
+      <bounds x="129" y="63" width="220" height="70"/>
+      <sourceConnection xsi:type="zenta:Connection"
+                        id="767945e6-3425-44ef-8046-b0f1e9d61066"
+                        source="13f32e67-fa04-4af0-8550-c9ca0950884b"
+                        target="a0acca71-2164-4778-96c9-953ca679f475"
+                        relationship="9a62b222-7f37-4c1a-8b15-34f51a48e87b"/>
+      <sourceConnection xsi:type="zenta:Connection"
+                        id="5d8c9b19-68c5-4f6b-a68c-fe26aef5807d"
+                        source="13f32e67-fa04-4af0-8550-c9ca0950884b"
+                        target="32a856ce-c797-4332-99b8-6cdd348ffd25"
+                        relationship="9aafe0d6-e0bf-47b2-afb6-c5755d2b33cd"/>
+      <sourceConnection xsi:type="zenta:Connection"
+                        id="fc002a0a-e87f-4b8c-8f18-d0f9231d2cce"
+                        source="13f32e67-fa04-4af0-8550-c9ca0950884b"
+                        target="e15316f3-3a64-4a72-8f14-f6a2c5c12a75"
+                        relationship="a4c9aecb-facc-4bd6-8ad8-c8451ba4da38"/>
+      <sourceConnection xsi:type="zenta:Connection"
+                        id="114c1487-d572-4f40-b3fb-85b34f0d8943"
+                        source="13f32e67-fa04-4af0-8550-c9ca0950884b"
+                        target="32842c78-0594-443b-b634-13aa65b82e33"
+                        relationship="adeefa5d-aeb8-4bd6-a835-b22f8a11e18c"/>
+      <sourceConnection xsi:type="zenta:Connection"
+                        id="6bd59bbf-d5a4-49f3-b09b-75f977eaa196"
+                        source="13f32e67-fa04-4af0-8550-c9ca0950884b"
+                        target="224acbea-5452-496b-9efb-bad4b00741cd"
+                        relationship="3d974eeb-cb32-4ff5-9a19-a22f822c71b6"/>
+   </child>
+   <child xsi:type="zenta:DiagramObject"
+          id="a0acca71-2164-4778-96c9-953ca679f475"
+          targetConnections="767945e6-3425-44ef-8046-b0f1e9d61066 19e241d8-8a51-4e1b-8b49-d6a555b65b4d"
+          zentaElement="906f88cc-7dab-4e27-a2b0-92058eed3965">
+      <bounds x="400" y="236" width="153" height="77"/>
+   </child>
+   <child xsi:type="zenta:DiagramObject"
+          id="32a856ce-c797-4332-99b8-6cdd348ffd25"
+          targetConnections="5d8c9b19-68c5-4f6b-a68c-fe26aef5807d"
+          zentaElement="77d403a6-a881-4026-a077-6cc48eb94266">
+      <bounds x="550" y="236" width="153" height="77"/>
+   </child>
+   <child xsi:type="zenta:DiagramObject"
+          id="e15316f3-3a64-4a72-8f14-f6a2c5c12a75"
+          targetConnections="fc002a0a-e87f-4b8c-8f18-d0f9231d2cce"
+          zentaElement="7355db42-307a-4943-b8cc-0c0ad49d9f7d">
+      <bounds x="700" y="236" width="153" height="77"/>
+   </child>
+   <child xsi:type="zenta:DiagramObject"
+          id="32842c78-0594-443b-b634-13aa65b82e33"
+          targetConnections="114c1487-d572-4f40-b3fb-85b34f0d8943"
+          zentaElement="13d57563-2c16-4416-849e-045927bf3064">
+      <bounds x="400" y="336" width="153" height="77"/>
+   </child>
+   <child xsi:type="zenta:DiagramObject"
+          id="224acbea-5452-496b-9efb-bad4b00741cd"
+          targetConnections="6bd59bbf-d5a4-49f3-b09b-75f977eaa196"
+          zentaElement="65a48c8b-046f-4ba8-8024-e34116a857d0">
+      <bounds x="550" y="336" width="153" height="77"/>
+      <sourceConnection xsi:type="zenta:Connection"
+                        id="19e241d8-8a51-4e1b-8b49-d6a555b65b4d"
+                        source="224acbea-5452-496b-9efb-bad4b00741cd"
+                        target="a0acca71-2164-4778-96c9-953ca679f475"
+                        relationship="b42c060d-a4e7-4d27-890f-b744c26f4590"/>
+   </child>
+</element>

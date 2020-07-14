@@ -1,0 +1,13 @@
+<index xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:zenta="http://magwas.rulez.org/zenta">
+   <entry name="Bill" id="edb9d51a-7a56-4bab-add1-cd6fa9668de6"/>
+   <entry name="Bill" id="5da051ec-c7b1-4ae4-8404-0bd3570336b0"/>
+   <entry name="bill amount in cents" id="218a1bdb-8dee-420b-8cbd-8848a8d4fbfa"/>
+   <entry name="bill picture" id="e3735df5-2164-40de-b0b1-b9b7a6398e45"/>
+   <entry name="is checked" id="6791f9a9-56e9-4b96-b64e-004fbbd88f81"/>
+   <entry name=";Direct;" id="78c3b6a6-1c0d-4253-bd40-9e90ac40baa8"/>
+   <entry name=";Direct;" id="d17fcaff-2d06-421d-bbf1-e1883738f5b8"/>
+   <entry name=";Direct;" id="dc7d0c2e-2995-4faa-b5eb-e219bbfd4df5"/>
+   <entry name=";Reference,Ordered;" id="c45b53d0-cfd6-4190-9db9-c86eebfd8e05"/>
+   <entry name=";Reference;" id="3f97cf2f-d35e-4f65-baf7-e8dc8e126afe"/>
+</index>

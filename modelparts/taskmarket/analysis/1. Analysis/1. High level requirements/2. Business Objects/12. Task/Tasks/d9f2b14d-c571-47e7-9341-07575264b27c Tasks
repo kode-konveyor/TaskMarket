@@ -1,0 +1,22 @@
+<element xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xmlns:zenta="http://magwas.rulez.org/zenta"
+         xsi:type="zenta:ZentaDiagramModel"
+         name="Tasks"
+         id="d9f2b14d-c571-47e7-9341-07575264b27c">
+   <child xsi:type="zenta:DiagramObject"
+          id="ab212c53-78ec-45c5-988b-6e1a1e00be68"
+          zentaElement="7183eb14-58e7-4e4a-b5e1-9faec9baee8e">
+      <bounds x="246" y="73" width="-1" height="-1"/>
+      <sourceConnection xsi:type="zenta:Connection"
+                        id="c2c63e8a-b174-4cf0-b5ff-5742735c4673"
+                        source="ab212c53-78ec-45c5-988b-6e1a1e00be68"
+                        target="ce8cfdb5-c873-44ae-93b1-318032036c8e"
+                        relationship="bce17232-9eac-4a3b-9002-5e406e659513"/>
+   </child>
+   <child xsi:type="zenta:DiagramObject"
+          id="ce8cfdb5-c873-44ae-93b1-318032036c8e"
+          targetConnections="c2c63e8a-b174-4cf0-b5ff-5742735c4673"
+          zentaElement="d1309ab2-d933-40f2-9f1d-2549b2b85029">
+      <bounds x="240" y="215" width="-1" height="-1"/>
+   </child>
+</element>

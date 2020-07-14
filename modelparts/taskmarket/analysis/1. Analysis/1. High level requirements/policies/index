@@ -1,0 +1,17 @@
+<index xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:zenta="http://magwas.rulez.org/zenta">
+   <entry name="Easy authentication and registration using github"
+          id="de813116-d9af-49d7-9bbc-506086037c81"/>
+   <entry name="Work securely" id="2965ee01-2400-4a44-b6c9-4e18b61150c1"/>
+   <entry name="Be compliant with laws and privacy expectations of people"
+          id="e397c7a7-d749-4016-8d90-e6690573befe"/>
+   <entry name="Make it easy to use" id="22bf6202-0aa5-431c-8938-95d94818bce8"/>
+   <entry name="Developer onboarding" id="a2e07b46-9388-4915-9ba9-ddd4083b78fc"/>
+   <entry name="Support payment process"
+          id="c636fe0c-2674-4994-bbe7-0cf71a611b52"/>
+   <entry name="Payment security" id="925b4c7d-3d1f-4c4b-8164-1b2ed82d94ef"/>
+   <entry name="Performance" id="e9b858d1-1022-412c-ae20-2403994ba3df"/>
+   <entry name="Support sales" id="645e47fc-6a34-44de-bf2c-7be13d233477"/>
+   <entry name="Support task administration"
+          id="2d3525f3-d02f-4785-aa09-01b455653340"/>
+</index>

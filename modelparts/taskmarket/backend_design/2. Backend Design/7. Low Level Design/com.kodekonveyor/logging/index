@@ -1,0 +1,10 @@
+<index xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:zenta="http://magwas.rulez.org/zenta">
+   <folder name="LoggerService" id="f5f7fd32-9c42-4931-80fb-66df19be06de"/>
+   <folder name="LogMessage (design)" id="fbb243dc-b61b-43d2-9f86-845848b7f459"/>
+   <folder name="RestResponseEntityExceptionHandler"
+           id="87dfd0d3-7755-4ec0-9cb0-3a07ca9e5bae"/>
+   <folder name="LoggingMarkerConstants" id="adec64d7-c28d-4f71-8e28-a5f65a11f151"/>
+   <entry name="logging" id="af7361fb-d562-4de6-8b44-d9726c097e6a"/>
+   <entry name="logging" id="0c946356-c081-4983-8bce-457dfb81df85"/>
+</index>

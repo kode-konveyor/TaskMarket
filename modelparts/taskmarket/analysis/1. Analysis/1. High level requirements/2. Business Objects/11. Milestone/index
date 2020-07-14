@@ -1,0 +1,12 @@
+<index xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:zenta="http://magwas.rulez.org/zenta">
+   <entry name="Milestone" id="58350d43-d7b2-477c-b73c-20b832b05d3c"/>
+   <entry name="is active" id="b130c19e-e700-4e80-ba74-efe52b4d0585"/>
+   <entry name="Milestone" id="191b23ce-80de-486d-b2d1-5c4e8e661eb1"/>
+   <entry name="name" id="f343c8c6-adb8-4d49-802f-88c8f82fd394"/>
+   <entry name="priority" id="f44a3ece-61d4-46a4-a438-91b1dc885d4d"/>
+   <entry name=";Direct;" id="646c49e5-f83d-4078-8172-095adfdc2ba8"/>
+   <entry name=";Direct;" id="75bc39ad-2793-4968-81e9-38503e32580b"/>
+   <entry name=";Direct;" id="ef944fe2-fb08-4158-a662-4a3cba27d5c4"/>
+   <entry name=";Reference,Ordered;" id="e8360745-6000-4be4-99e3-42206d2d1145"/>
+</index>

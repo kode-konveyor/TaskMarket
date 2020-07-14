@@ -1,0 +1,30 @@
+<element xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xmlns:zenta="http://magwas.rulez.org/zenta"
+         xsi:type="zenta:BasicObject"
+         name="use github api"
+         id="9b5875a9-4845-4d7a-885c-883dea7c2485"
+         ancestor="behaviour">
+   <documentation>use github api using token authentication
+
+You should set the "Authorization" header to "token my_access_token" as described in https://developer.github.com/changes/2020-02-14-deprecating-password-auth/
+
+See https://www.baeldung.com/httpclient-custom-http-header for setting the header.
+
+for access token you generate one at https://github.com/settings/tokens with "repo" scope, and put it to the "issuetoken" environment variable.
+
+In Linux you can use your .bashrc to set the environment variable. You can use the command line
+
+    curl -H "Authorization: token $issuetoken" https://api.github.com/repos/kode-konveyor/taskmarket/issues/74
+
+to check your environment.
+
+This service should be integration tested instead of unit testing:
+
+* put the tests under the src/integration-tests hierarchy
+* use the @ExcludeFromCodeCoverage annotation on the production service
+* no mocking, just calling the service and examining the result
+* read the value of the token from the issuetoken environment variable, and put it to the githubToken configuration field in the setUp method.
+
+
+</documentation>
+</element>

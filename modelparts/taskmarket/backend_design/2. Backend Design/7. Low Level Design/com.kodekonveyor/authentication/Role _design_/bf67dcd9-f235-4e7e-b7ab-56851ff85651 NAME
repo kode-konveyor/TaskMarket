@@ -1,0 +1,8 @@
+<element xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xmlns:zenta="http://magwas.rulez.org/zenta"
+         xsi:type="zenta:BasicObject"
+         name="NAME"
+         id="bf67dcd9-f235-4e7e-b7ab-56851ff85651"
+         ancestor="ffbe5058-5089-4c5a-965d-e996df089f8e">
+   <documentation>"kode-konveyor/taskmarket/coder"</documentation>
+</element>

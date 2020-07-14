@@ -1,0 +1,19 @@
+<index xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:zenta="http://magwas.rulez.org/zenta">
+   <entry name="Milestone (design)" id="23f85df7-57cf-4fa3-ba89-962eebe2f707"/>
+   <entry name="MilestoneTestData" id="6c3c6f24-1b34-44a7-903a-68078c76b86c"/>
+   <entry name="NAME" id="7f06ff95-c1eb-44c6-bd09-e9eb5916d6a2"/>
+   <entry id="34dcdc24-6d61-4517-8479-4e74670b1ab0"/>
+   <entry name="PRIORITY" id="07f8939b-b455-4f94-9037-7bfca598b10a"/>
+   <entry id="ddb182da-0ef3-4968-8eae-0e2947ace4bd"/>
+   <entry name="IS_ACTIVE" id="3155b816-4b28-4a27-bbde-c088ce932a4c"/>
+   <entry id="970ad67a-0a19-47ab-be92-e1c5b7d1ec4e"/>
+   <entry id="ef0bb0bb-940a-44bf-8e69-18d606bf7436"/>
+   <entry id="9b8d1346-2a4a-48d5-8e4c-839aa6fad4ac"/>
+   <entry id="16008541-8c9a-4134-a455-7e460152b8e5"/>
+   <entry id="9ef5c899-b3e5-4726-80d7-bc8829024ab7"/>
+   <entry id="9626fcab-c8d2-4383-ba4c-602a9d1899fb"/>
+   <entry id="9150ab2c-7c0f-491c-99af-d1355a00c438"/>
+   <entry id="4ef1809d-5399-4422-b21b-8ea7de04916c"/>
+   <entry id="7ee669e5-1c65-4e9f-aad7-8da46754ab91"/>
+</index>

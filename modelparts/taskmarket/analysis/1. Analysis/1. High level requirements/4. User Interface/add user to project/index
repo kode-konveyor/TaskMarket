@@ -1,0 +1,8 @@
+<index xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:zenta="http://magwas.rulez.org/zenta">
+   <entry name="add user to project" id="648d99ca-8ac9-4243-8612-59ab018100cf"/>
+   <entry name="add user to project" id="b1548345-8292-4cfc-99fc-c5e720c0e8e1"/>
+   <entry name="role chooser" id="afcf9822-46f7-4870-9e28-8ecd979376c4"/>
+   <entry name="submit" id="f3a3d1bd-2bec-4665-873d-5eb40cd1586b"/>
+   <entry name="user chooser" id="21cb2226-61cd-467b-9f86-320fdd58e504"/>
+</index>

@@ -1,0 +1,39 @@
+<index xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:zenta="http://magwas.rulez.org/zenta">
+   <entry name="Process with UI" id="217b41ab-2985-48c7-8c77-1dade1bb8043"/>
+   <entry name="Create/update/close tasks"
+          id="c8ddeafc-def8-4a87-ba7d-bddda0cc2cf9"/>
+   <entry name="End payment order" id="43711cfd-a53a-43de-aa20-6daf57ea0a94"/>
+   <entry name="Enter bill" id="12d40b3c-3e04-4ddf-97f9-ae965592a7f4"/>
+   <entry name="handle merged pull request"
+          id="f40843ff-1955-4251-b104-b8b7f48c7463"/>
+   <entry name="Issue futures order" id="b47551db-1612-4cea-8118-78f22bb4066b"/>
+   <entry name="Leave payment order" id="bf1953fd-9e0e-4837-9900-6b70fece4978"/>
+   <entry name="maintain legal forms" id="be346018-ed80-4947-975d-16f4d2d3ade2"/>
+   <entry name="maintain payment methods"
+          id="724da442-35b9-4d9b-a6d8-5f0cc204b2e8"/>
+   <entry name="make futures deal" id="b03e5098-4559-4e3e-aecc-8d5b03153aaa"/>
+   <entry name="Offer future work" id="74219758-1ec0-4e76-974f-4366b1033aa3"/>
+   <entry name="Payout" id="e72adcce-0d43-481e-a3fc-05f0f8489dde"/>
+   <entry name="unassign pull request" id="def09845-52b2-4566-9860-9550a980b550"/>
+   <entry name="associate pull request to task"
+          id="38183e57-4dbc-43e3-bc2a-68b13091db6e"/>
+   <entry name="in progress" id="eacf1b41-9c48-449a-a774-85cc4b47b64e"/>
+   <entry name="record mentoring session dates"
+          id="9fb6710c-3599-4575-b128-a1a71882d757"/>
+   <entry id="76668b78-9057-4702-9fd1-7a1e0e81078f"/>
+   <entry id="a7283ffb-0cea-43ea-8663-68004afce817"/>
+   <entry id="441706ac-eb9e-41fc-95c5-cff7a9196396"/>
+   <entry id="aff7cb5c-74f1-45a3-a23d-06e866528053"/>
+   <entry id="872af3dd-b383-42c7-9b7e-990a37c3ff29"/>
+   <entry id="50ffed5a-4366-4c9b-ab39-8bce398d49d2"/>
+   <entry id="f1c99a82-ba1e-4ea8-8016-728f41bb12e6"/>
+   <entry id="86cbb187-cff6-4282-a7d7-f3e3c274be2c"/>
+   <entry id="00716747-a0ea-46ca-867c-baebba0d525e"/>
+   <entry id="f15c63dc-f337-4ce1-ba83-005cdda5ee85"/>
+   <entry id="daec45a3-7a71-4aaf-9d96-ae8365c99701"/>
+   <entry id="a4b40a02-1f87-41ac-89eb-8df24347d5bd"/>
+   <entry id="e780544d-6ccf-4ca9-879b-a065855baa99"/>
+   <entry id="2cf4bb18-05a7-4a95-b7ad-daba05652643"/>
+   <entry id="dcf9b0c8-564e-4169-9e56-58cf5685e6ad"/>
+</index>

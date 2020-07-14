@@ -1,0 +1,15 @@
+<index xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:zenta="http://magwas.rulez.org/zenta">
+   <entry name="GithubGraphqlService" id="d83695ca-d28b-43ab-bf8e-084248ca6b44"/>
+   <entry id="75b6d923-2405-4363-84d6-3ee4324591f2"/>
+   <entry id="f86f4c4d-343f-4a00-991e-0b79ccd6e99d"/>
+   <entry id="35ee045a-e252-4008-8af0-dc7a65423935"/>
+   <entry name="GithubGraphqlService" id="52d5067a-af21-4fd1-9bc9-81c930ca605b"/>
+   <entry id="53240c31-b9a7-4de2-8586-e19dff9050d3"/>
+   <entry id="7ef8cf49-7ef9-4fcb-80fd-076733018c55"/>
+   <entry name="DocumentContext" id="bddc4fb4-0ec1-426d-b4b7-080265939e1c"/>
+   <entry id="e53ddad5-81a1-416b-914c-207091bb0dae"/>
+   <entry id="0ed49326-8083-456a-8ded-4b1122a13bdb"/>
+   <entry id="7ce792fd-74ac-479d-ad96-f6b7a3fb79f5"/>
+   <entry id="80f42e96-e380-4ec3-8f48-1d84c8ba083f"/>
+</index>

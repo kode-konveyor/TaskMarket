@@ -1,0 +1,6 @@
+<element xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xmlns:zenta="http://magwas.rulez.org/zenta"
+         xsi:type="zenta:BasicObject"
+         name="create payment transfer from billed items"
+         id="56d698d7-3931-4592-aefd-a3afee02ce6a"
+         ancestor="behaviour"/>

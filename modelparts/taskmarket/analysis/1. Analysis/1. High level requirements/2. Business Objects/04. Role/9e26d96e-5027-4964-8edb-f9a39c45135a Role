@@ -1,0 +1,22 @@
+<element xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xmlns:zenta="http://magwas.rulez.org/zenta"
+         xsi:type="zenta:ZentaDiagramModel"
+         name="Role"
+         id="9e26d96e-5027-4964-8edb-f9a39c45135a">
+   <child xsi:type="zenta:DiagramObject"
+          id="0d31de93-ae7e-4c12-9729-34bc316e96e2"
+          targetConnections="37d0c7b6-3461-4ecf-9f58-c980f73a077b"
+          zentaElement="a01c80d3-083f-4dc4-b9e3-d986d940def8">
+      <bounds x="424" y="240" width="-1" height="-1"/>
+   </child>
+   <child xsi:type="zenta:DiagramObject"
+          id="042016ba-8eb4-4b38-a34e-03df05a596a4"
+          zentaElement="11f271c7-2e55-4002-b7f4-2d8a4438a836">
+      <bounds x="424" y="146" width="-1" height="-1"/>
+      <sourceConnection xsi:type="zenta:Connection"
+                        id="37d0c7b6-3461-4ecf-9f58-c980f73a077b"
+                        source="042016ba-8eb4-4b38-a34e-03df05a596a4"
+                        target="0d31de93-ae7e-4c12-9729-34bc316e96e2"
+                        relationship="9af8e97f-aae5-401a-a98e-a4ee64d416d0"/>
+   </child>
+</element>
