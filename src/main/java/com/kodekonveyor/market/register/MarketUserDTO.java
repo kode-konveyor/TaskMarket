@@ -4,6 +4,8 @@ import java.util.Set;
 
 import javax.annotation.Generated;
 
+import com.kodekonveyor.authentication.UserDTO;
+
 import lombok.Data;
 
 @Generated("by zenta-tools")
@@ -18,8 +20,7 @@ public class MarketUserDTO {
   private String legalName;
   private String personalName;
   private Long legalForm;
-  private Long user;
-  private String login;
+  private UserDTO user;
   private Set<Long> paymentDetail;
 
 }
