@@ -76,6 +76,7 @@ public class UserEntityTestData {
     final UserEntity userEntity = get();
     userEntity.setId(UserTestData.ID_NO_MARKET_USER);
     userEntity.setLogin(UserTestData.LOGIN_NO_MARKET_USER);
+    userEntity.setRole(Set.of());
     return userEntity;
   }
 

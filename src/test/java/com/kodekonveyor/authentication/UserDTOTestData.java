@@ -20,6 +20,7 @@ public class UserDTOTestData {
     final UserDTO userDTO = get();
     userDTO.setId(UserTestData.ID_NO_MARKET_USER);
     userDTO.setLogin(UserTestData.LOGIN_NO_MARKET_USER);
+    userDTO.setRole(Set.of());
     return userDTO;
   }
 
