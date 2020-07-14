@@ -2,7 +2,8 @@
          xmlns:zenta="http://magwas.rulez.org/zenta"
          xsi:type="zenta:ZentaDiagramModel"
          name="Easy authentication and registration using github"
-         id="ec8f6dfb-52e6-488c-883f-a0c7f48f2e40">
+         id="ec8f6dfb-52e6-488c-883f-a0c7f48f2e40"
+         connectionRouterType="1">
    <child xsi:type="zenta:DiagramObject"
           id="66903534-b95e-44e0-aca7-693509f6be2e"
           zentaElement="de813116-d9af-49d7-9bbc-506086037c81">
@@ -74,6 +75,11 @@
           targetConnections="45f6910d-c991-4045-a4be-aebb38b37157"
           zentaElement="8529801e-d448-426a-aaa0-329ada6ba580">
       <bounds x="288" y="360" width="181"/>
+      <sourceConnection xsi:type="zenta:Connection"
+                        id="e74a3cb3-fab8-497d-b25f-b0fbe4d4ea4a"
+                        source="2a7b0ecd-cba2-45da-ad0b-02ed291dd059"
+                        target="2c170e36-9152-42c3-9a2a-457c3f2cd04c"
+                        relationship="2ec92071-9621-4d2f-a755-d55b5acd8968"/>
    </child>
    <child xsi:type="zenta:DiagramObject"
           id="0e56320a-b80f-4719-b152-5ec645ced6f3"
@@ -120,5 +126,21 @@
           id="b47f58da-15ca-46fa-bdb0-802fc24ad0ce"
           zentaElement="6ce4abad-0733-44a4-8fdf-53ccd6aa7874">
       <bounds x="966" y="456" height="97"/>
+   </child>
+   <child xsi:type="zenta:DiagramObject"
+          id="2c170e36-9152-42c3-9a2a-457c3f2cd04c"
+          targetConnections="e74a3cb3-fab8-497d-b25f-b0fbe4d4ea4a e38b5161-cfda-43a7-9a6c-c15fd37e13c5"
+          zentaElement="a321e677-ac1f-40c8-8931-e958af978024">
+      <bounds x="1200" y="345" width="121" height="85"/>
+   </child>
+   <child xsi:type="zenta:DiagramObject"
+          id="52bfa988-d0c7-475d-ad3a-e326135b7830"
+          zentaElement="e5a43c27-512c-4972-8ac5-f76db46836d8">
+      <bounds x="1158" y="462" width="109" height="85"/>
+      <sourceConnection xsi:type="zenta:Connection"
+                        id="e38b5161-cfda-43a7-9a6c-c15fd37e13c5"
+                        source="52bfa988-d0c7-475d-ad3a-e326135b7830"
+                        target="2c170e36-9152-42c3-9a2a-457c3f2cd04c"
+                        relationship="b46af2be-70f2-48c9-961f-631090ae8bc3"/>
    </child>
 </element>

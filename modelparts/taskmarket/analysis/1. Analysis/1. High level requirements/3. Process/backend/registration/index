@@ -35,4 +35,7 @@
    <entry id="387a84a2-3fab-4a5e-84ea-c8d0f67fb338"/>
    <entry name=";Ordered,DTO,Interface" id="be5c5159-9850-48e5-866f-8650084ab3bd"/>
    <entry name=";Ordered,Entity,Repo" id="9d084586-6046-4d1d-b4e9-a55e34bfcc0a"/>
+   <entry name="Update user data" id="e5a43c27-512c-4972-8ac5-f76db46836d8"/>
+   <entry name=";One,DTO,Interface;" id="ed745353-5ae0-4284-8a03-88687492ca97"/>
+   <entry name=";One,Entity,Repo;" id="c7635743-776e-4e36-80b8-5584ca7102a6"/>
 </index>

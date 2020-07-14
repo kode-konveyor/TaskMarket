@@ -10,6 +10,9 @@
    <folder name="MarketUser (design)" id="8b4c8201-4567-4b1f-a0a1-6ec1713dec40"/>
    <folder name="ListRegisteredUsersController"
            id="7a604496-ea5f-4f9c-8384-a99189f16803"/>
+   <folder name="UpdateMarketUserController"
+           id="96e483fa-35eb-4228-9fff-f27764ffdac7"/>
    <entry name="register" id="9cbe82ab-fb63-4d28-b8e7-249a5398f30d"/>
    <entry name="register" id="c9292aab-6f1d-49bd-8103-defed8f801d3"/>
+   <entry id="d1ac7de6-e3b2-4def-946b-f1e6266f0a2b"/>
 </index>

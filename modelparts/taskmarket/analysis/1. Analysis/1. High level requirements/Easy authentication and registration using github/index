@@ -15,4 +15,8 @@
    <entry name="set iban/swift" id="b7051850-2ea9-4002-a597-50851ec50c89"/>
    <entry name="store contract details" id="60d84108-319f-4bee-9943-e24a27242a44"/>
    <entry name="Support registration" id="8529801e-d448-426a-aaa0-329ada6ba580"/>
+   <entry name="update contract details"
+          id="a321e677-ac1f-40c8-8931-e958af978024"/>
+   <entry id="2ec92071-9621-4d2f-a755-d55b5acd8968"/>
+   <entry id="b46af2be-70f2-48c9-961f-631090ae8bc3"/>
 </index>

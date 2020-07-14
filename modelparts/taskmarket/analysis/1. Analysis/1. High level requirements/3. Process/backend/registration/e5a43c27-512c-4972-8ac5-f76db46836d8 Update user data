@@ -1,0 +1,6 @@
+<element xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xmlns:zenta="http://magwas.rulez.org/zenta"
+         xsi:type="zenta:BasicObject"
+         name="Update user data"
+         id="e5a43c27-512c-4972-8ac5-f76db46836d8"
+         ancestor="83af8497-bfef-451b-9bc6-f00d58c8df6a"/>
