@@ -4,7 +4,7 @@ import java.util.Set;
 
 import javax.annotation.Generated;
 
-import com.kodekonveyor.authentication.UserTestData;
+import com.kodekonveyor.authentication.UserDTOTestData;
 import com.kodekonveyor.market.payment.LegalFormTestData;
 import com.kodekonveyor.market.payment.PaymentDetailTestData;
 
@@ -20,8 +20,7 @@ public class MarketUserDTOTestData {
     marketUserDTO.setLegalAddress(MarketUserTestData.LEGAL_ADDRESS);
     marketUserDTO.setLegalName(MarketUserTestData.LEGAL_NAME);
     marketUserDTO.setPersonalName(MarketUserTestData.PERSONAL_NAME);
-    marketUserDTO.setUser(UserTestData.ID);
-    marketUserDTO.setLogin(UserTestData.LOGIN);
+    marketUserDTO.setUser(UserDTOTestData.get());
     marketUserDTO.setBalanceInCents(MarketUserTestData.BALANCE_IN_CENTS);
     marketUserDTO.setLegalForm(LegalFormTestData.ID);
 
@@ -43,7 +42,7 @@ public class MarketUserDTOTestData {
   public static MarketUserDTO getIdNotInDatabase() {
     final MarketUserDTO marketUserDTO = get();
     marketUserDTO.setId(null);
-    marketUserDTO.setUser(UserTestData.ID_NO_MARKET_USER);
+    marketUserDTO.setUser(UserDTOTestData.getNotInDatabase());
     marketUserDTO.setIsTermsAccepted(null);
     marketUserDTO.setEmail(null);
     marketUserDTO.setLegalAddress(null);
@@ -51,7 +50,6 @@ public class MarketUserDTOTestData {
     marketUserDTO.setPersonalName(null);
     marketUserDTO.setBalanceInCents(null);
     marketUserDTO.setLegalForm(null);
-    marketUserDTO.setLogin(UserTestData.LOGIN_NO_MARKET_USER);
     marketUserDTO.setPaymentDetail(null);
 
     return marketUserDTO;
@@ -59,7 +57,7 @@ public class MarketUserDTOTestData {
 
   public static MarketUserDTO getRoleCanBePaid() {
     final MarketUserDTO marketUserDTO = get();
-    marketUserDTO.setUser(UserTestData.ID_REGISTERED);
+    marketUserDTO.setUser(UserDTOTestData.getRegistered());
     marketUserDTO.setId(MarketUserTestData.ID_CAN_BE_PAID);
     return marketUserDTO;
   }

@@ -55,8 +55,8 @@ public class ShowUserControllerRoles1Test extends ShowUserControllerTestBase {
   public void test3() {
     AuthenticatedUserService2Stubs.technicalUser(authenticatedUserService);
     assertEquals(
-        MarketUserDTOTestData.get().getLogin(),
-        showUserController.call(LOGIN).getLogin()
+        MarketUserDTOTestData.get().getUser().getLogin(),
+        showUserController.call(LOGIN).getUser().getLogin()
     );
   }
 
