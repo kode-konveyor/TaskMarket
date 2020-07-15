@@ -1,0 +1,15 @@
+<index xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:zenta="http://magwas.rulez.org/zenta">
+   <entry name="PullRequest (design)" id="6b10bdbb-7930-4a9a-843b-b6aa688d8011"/>
+   <entry name="PullRequestTestData" id="9eb3be46-e674-448e-8945-5e4bd77cc002"/>
+   <entry id="9303590b-455e-4b89-96cb-02476bf111fc"/>
+   <entry name="REFERENCE" id="c0b62385-90a1-453d-83b4-f6591671119d"/>
+   <entry id="f11dffd0-b315-4a10-9fa2-d7e6a6d98441"/>
+   <entry name="IS_ACCEPTED" id="c6a95233-44ce-480c-b44e-ffc048d4aeff"/>
+   <entry id="89cba1bf-7b59-4e55-a9e0-2860815147b7"/>
+   <entry id="81713459-2cb6-47ed-bdd9-26c963904c9d"/>
+   <entry id="4813cbf0-d8e0-416b-a6c4-af0166bf83bb"/>
+   <entry id="6e7eeefa-9d54-413a-a30b-4233cef758bb"/>
+   <entry id="ae24e463-4798-4189-bfdc-38b48a7e53cc"/>
+   <entry id="096dd8e9-a906-404f-bbb2-15dc64bcd126"/>
+</index>

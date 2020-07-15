@@ -1,0 +1,6 @@
+<element xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xmlns:zenta="http://magwas.rulez.org/zenta"
+         xsi:type="zenta:BasicObject"
+         name="number of up for grab tasks"
+         id="052aea60-54c3-4f3c-899d-07d4878908eb"
+         ancestor="267f4d47-e1e6-4af4-8677-3cf65fc8db86"/>

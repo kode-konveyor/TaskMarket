@@ -1,0 +1,10 @@
+<element xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xmlns:zenta="http://magwas.rulez.org/zenta"
+         xsi:type="zenta:BasicObject"
+         name="next step"
+         id="7355db42-307a-4943-b8cc-0c0ad49d9f7d"
+         ancestor="behaviour">
+   <documentation>If the registration data is not given, next step contains profile
+if the registration data given, but no payment channel set up, next step contains payment
+</documentation>
+</element>

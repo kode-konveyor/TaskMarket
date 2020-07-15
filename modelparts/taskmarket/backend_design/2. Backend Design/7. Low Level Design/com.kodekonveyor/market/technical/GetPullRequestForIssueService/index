@@ -1,0 +1,12 @@
+<index xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:zenta="http://magwas.rulez.org/zenta">
+   <entry name="GetPullRequestForIssueService"
+          id="0c6a9956-7d03-4b8f-b222-b18bed9d24f0"/>
+   <entry id="75718f35-49f5-4880-9c5a-9a0a35e8c2f8"/>
+   <entry id="cfeb65d1-e326-48ab-bbe0-099eb4649fdd"/>
+   <entry name="GetPullRequestForIssueService"
+          id="35d0e152-af3b-4502-ad49-0dbc32660e0f"/>
+   <entry id="3c0e0ddb-82e0-4848-a0b0-6d9bd93fbd15"/>
+   <entry id="7b789320-2f2b-4eea-b8c7-85d5a37f984c"/>
+   <entry id="0dd6985f-e9f0-48cb-9aeb-4868aea9fdf2"/>
+</index>

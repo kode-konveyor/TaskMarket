@@ -1,0 +1,6 @@
+<element xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xmlns:zenta="http://magwas.rulez.org/zenta"
+         xsi:type="zenta:BasicObject"
+         name="ProjectModelTestData"
+         id="cda9c6a7-61d8-47c8-8715-f42a13ed78e7"
+         ancestor="9ec42823-7056-4e73-b1f4-600a066c8d88"/>

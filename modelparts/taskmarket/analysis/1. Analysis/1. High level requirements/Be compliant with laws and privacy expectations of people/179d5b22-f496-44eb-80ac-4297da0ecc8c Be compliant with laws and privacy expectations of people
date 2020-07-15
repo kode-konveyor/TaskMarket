@@ -1,0 +1,43 @@
+<element xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xmlns:zenta="http://magwas.rulez.org/zenta"
+         xsi:type="zenta:ZentaDiagramModel"
+         name="Be compliant with laws and privacy expectations of people"
+         id="179d5b22-f496-44eb-80ac-4297da0ecc8c">
+   <child xsi:type="zenta:DiagramObject"
+          id="98798c1e-26cb-4911-a306-550527a999bd"
+          zentaElement="e397c7a7-d749-4016-8d90-e6690573befe">
+      <bounds x="60" y="48" width="193" height="85"/>
+      <sourceConnection xsi:type="zenta:Connection"
+                        id="60d0ceeb-cd32-4393-8d11-22f99f8bf341"
+                        source="98798c1e-26cb-4911-a306-550527a999bd"
+                        target="8986ddf0-7ccd-43dc-b9f7-3063d4519170"
+                        relationship="db0998f1-7b3e-4d28-9fa9-802ff588ecd7"/>
+      <sourceConnection xsi:type="zenta:Connection"
+                        id="cc8e6150-16c5-4403-8bc7-7076234e6bca"
+                        source="98798c1e-26cb-4911-a306-550527a999bd"
+                        target="b5ad7eb5-af4c-4188-8043-58aa3d766763"
+                        relationship="eacc1665-e9ad-404c-bb94-0b28c90547e0"/>
+   </child>
+   <child xsi:type="zenta:DiagramObject"
+          id="b5ad7eb5-af4c-4188-8043-58aa3d766763"
+          targetConnections="cc8e6150-16c5-4403-8bc7-7076234e6bca"
+          zentaElement="d87c9719-b2ac-4f79-9c0c-60763746018c">
+      <bounds x="336" y="24" width="179"/>
+   </child>
+   <child xsi:type="zenta:DiagramObject"
+          id="8986ddf0-7ccd-43dc-b9f7-3063d4519170"
+          targetConnections="60d0ceeb-cd32-4393-8d11-22f99f8bf341"
+          zentaElement="6d37a590-efab-43c0-a23d-aa8e7978c7f6">
+      <bounds x="326" y="180" width="179"/>
+   </child>
+   <child xsi:type="zenta:DiagramObject"
+          id="c0ff5326-6a7a-468a-ab38-d40cf1048d6e"
+          zentaElement="f9e928c5-a7ca-4df9-9bc2-ffa6e79007e9">
+      <bounds x="526" y="108" width="193"/>
+   </child>
+   <child xsi:type="zenta:DiagramObject"
+          id="bf71c757-0092-43e2-878b-d84bd071b67c"
+          zentaElement="3f339d77-39b1-42c1-beee-d56ae0bce552">
+      <bounds x="526" y="252" width="-1" height="-1"/>
+   </child>
+</element>

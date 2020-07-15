@@ -1,0 +1,19 @@
+<index xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:zenta="http://magwas.rulez.org/zenta">
+   <folder name="01. Market User" id="c8bfe6be-f5cf-42bf-9c04-efd3fd95c94a"/>
+   <folder name="05. Bill" id="67adebae-ec8c-423b-bb2f-054b4adb430a"/>
+   <folder name="07. Payment Detail" id="4464535f-51cc-413e-be69-58dd7bea2033"/>
+   <folder name="08. Project" id="c81be5e9-d424-4d46-8490-87f98f18f536"/>
+   <folder name="13. Pull request" id="50519f50-c0da-45e7-b6f6-0922c5af6828"/>
+   <folder name="14. Legal form" id="bfe8494b-39d4-43cc-8dbb-c789f8703297"/>
+   <folder name="15. Transfer type" id="a6de3af0-a8b6-4fb9-a11b-0a978b63ee05"/>
+   <folder name="16. Lead" id="657b0a2c-073a-4a2c-a269-46114d7bf678"/>
+   <folder name="10. Log message" id="cc121ed7-882c-475f-84cb-0399ecde2e0f"/>
+   <folder name="04. Role" id="5636c10f-c38b-40d5-b53e-10aaea5c6ce0"/>
+   <folder name="02. User" id="80ae17e8-2fad-4e14-8583-a7e6e8ebbd2d"/>
+   <folder name="06. Billed item" id="959f621b-8800-4112-aa5a-b78822e1f65e"/>
+   <folder name="11. Milestone" id="2a6a2842-cbab-4a5e-884d-5611d04aa815"/>
+   <folder name="12. Task" id="54e1b8a3-b9aa-4ed4-9405-d312b2358b79"/>
+   <folder name="others" id="620bc623-9ab8-4fd5-95bc-b9772ff1f797"/>
+   <folder name="17. Event" id="561e44e8-3936-47f4-b4fd-0589e28337e0"/>
+</index>

@@ -1,0 +1,8 @@
+<element xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xmlns:zenta="http://magwas.rulez.org/zenta"
+         xsi:type="zenta:BasicObject"
+         name="LEGALFORM_PUBLIC_PATH"
+         id="886915a4-7e2a-422d-8399-3208db8af8fd"
+         ancestor="2cb904ef-0cda-422b-82f6-0509c595b8fd">
+   <documentation>"/legalform"</documentation>
+</element>

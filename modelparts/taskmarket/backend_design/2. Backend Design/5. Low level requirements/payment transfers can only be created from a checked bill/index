@@ -1,0 +1,5 @@
+<index xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:zenta="http://magwas.rulez.org/zenta">
+   <entry name="payment transfers can only be created from a checked bill"
+          id="248cf1a6-852e-4c7e-bb74-5ea52a637a04"/>
+</index>

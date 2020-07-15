@@ -1,0 +1,8 @@
+<element xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xmlns:zenta="http://magwas.rulez.org/zenta"
+         xsi:type="zenta:BasicObject"
+         name="BEHAVIOUR"
+         id="3276d1c6-69e1-420c-8668-bccd64f8d223"
+         ancestor="ffbe5058-5089-4c5a-965d-e996df089f8e">
+   <documentation>"Get tasks from github"</documentation>
+</element>

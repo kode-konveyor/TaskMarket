@@ -1,0 +1,14 @@
+<element xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xmlns:zenta="http://magwas.rulez.org/zenta"
+         xsi:type="zenta:BasicObject"
+         name="authentication infrastructure"
+         id="ae41ab47-cbfb-4053-bf32-d1b3f74dcde1"
+         ancestor="behaviour">
+   <documentation>RemoteAuthenticationFilter is a authentication filter implementation to retrieve the auth0 authenticated user from apache
+
+NotLoggedInException is an exception signalling unauthenticated condition
+
+RemoteAuthentication is an Authentication implementation
+
+</documentation>
+</element>

@@ -1,0 +1,8 @@
+<element xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xmlns:zenta="http://magwas.rulez.org/zenta"
+         xsi:type="zenta:BasicObject"
+         name="EXPECTED_TYPE"
+         id="fb1d0159-4720-4969-9198-ccb683ae5b54"
+         ancestor="ffbe5058-5089-4c5a-965d-e996df089f8e">
+   <documentation>TaskDTO.class</documentation>
+</element>

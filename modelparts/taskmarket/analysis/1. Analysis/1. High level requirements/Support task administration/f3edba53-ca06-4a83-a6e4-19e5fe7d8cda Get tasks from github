@@ -1,0 +1,23 @@
+<element xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xmlns:zenta="http://magwas.rulez.org/zenta"
+         xsi:type="zenta:BasicObject"
+         name="Get tasks from github"
+         id="f3edba53-ca06-4a83-a6e4-19e5fe7d8cda"
+         ancestor="behaviour">
+   <documentation>Issues for one repository are gathered with GetRepositoryTasksService
+
+Issues can be retrieved according to this documentation: https://developer.github.com/v3/issues/#list-repository-issues
+
+The newly obtained tasks are saved in the repository
+
+The status is set by the following rules:
+- open issues marked as "up for grab" are UP_FOR_GRAB
+- open issues marked as "in progress" are IN_PROGRESS
+- other open issues are OPEN
+- closed issues are CLOSED
+
+
+If a github issue has no corresponding task in the list, it is marked with the "not in model" label (if it does not already have it)
+
+</documentation>
+</element>

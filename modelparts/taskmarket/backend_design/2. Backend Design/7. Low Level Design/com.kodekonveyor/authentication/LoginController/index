@@ -1,0 +1,14 @@
+<index xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:zenta="http://magwas.rulez.org/zenta">
+   <entry name="LoginController" id="a0f59c10-756c-43c0-89cd-107cbb70c700"/>
+   <entry name="LoginController" id="4be6da96-cc23-4da1-8229-c3cae77db637"/>
+   <entry name="RedirectView" id="dba65f54-d85f-4852-bdef-caafb5c36c1e"/>
+   <entry id="e5aa0f64-03c1-421d-821e-502a4b92b645"/>
+   <entry id="edc9fd1f-604d-48e4-bb8f-c4da1adf41ae"/>
+   <entry id="523c058f-e077-4a05-85cd-2f1ab124a868"/>
+   <entry id="9cd3bf8e-129e-4304-816a-f604cd6e4468"/>
+   <entry id="a40a63df-3b13-44ab-8c7d-c2180dc0782b"/>
+   <entry id="0f768f4b-1f95-4530-8fe0-58820d0e4d5d"/>
+   <entry id="f52f1630-7bee-488c-ba58-94c049822b45"/>
+   <entry id="922e18ae-bf36-45bb-8d71-ffffdace5e81"/>
+</index>

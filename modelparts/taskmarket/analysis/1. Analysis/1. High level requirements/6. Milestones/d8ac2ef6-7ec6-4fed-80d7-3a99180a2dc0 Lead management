@@ -1,0 +1,6 @@
+<element xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xmlns:zenta="http://magwas.rulez.org/zenta"
+         xsi:type="zenta:BasicObject"
+         name="Lead management"
+         id="d8ac2ef6-7ec6-4fed-80d7-3a99180a2dc0"
+         ancestor="36a15a23-a4a0-40b5-901b-310f3a1df0c7"/>

@@ -1,0 +1,6 @@
+<element xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xmlns:zenta="http://magwas.rulez.org/zenta"
+         xsi:type="zenta:BasicObject"
+         name="RestResponseEntityExceptionHandler"
+         id="0b7c97f6-08fd-4546-b80d-87ac07dbe1b3"
+         ancestor="callable"/>

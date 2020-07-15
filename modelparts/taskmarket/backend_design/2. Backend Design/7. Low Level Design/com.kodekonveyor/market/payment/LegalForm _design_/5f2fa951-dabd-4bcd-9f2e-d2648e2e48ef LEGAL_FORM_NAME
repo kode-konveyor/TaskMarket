@@ -1,0 +1,8 @@
+<element xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xmlns:zenta="http://magwas.rulez.org/zenta"
+         xsi:type="zenta:BasicObject"
+         name="LEGAL_FORM_NAME"
+         id="5f2fa951-dabd-4bcd-9f2e-d2648e2e48ef"
+         ancestor="ffbe5058-5089-4c5a-965d-e996df089f8e">
+   <documentation>"OÜ"</documentation>
+</element>

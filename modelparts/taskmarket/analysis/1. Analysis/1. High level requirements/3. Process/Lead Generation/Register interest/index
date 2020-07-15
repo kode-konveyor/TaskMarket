@@ -1,0 +1,13 @@
+<index xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:zenta="http://magwas.rulez.org/zenta">
+   <entry name="Register interest" id="a5cea7ab-5095-4675-a1fb-638dc9e35617"/>
+   <entry name="choose interest" id="34daf756-21f3-4798-a63d-84887ef9fd7e"/>
+   <entry name="enter email" id="f09df484-c51b-4fda-8e4b-f4a9542534e3"/>
+   <entry name="enter first name" id="d6ac7596-d4f5-4cfb-b226-c5190e5c06e8"/>
+   <entry name="Register interest" id="e3f3dfdf-1f47-49e7-8a4f-c7dd41a0750e"/>
+   <entry name="submit" id="18a7229f-0351-4abf-922d-b84d1261d4f4"/>
+   <entry name="Store lead" id="82b8c17d-46cd-424a-a583-691822bce012"/>
+   <entry name=";One,Entity,Repo;" id="03d229d1-6c3c-42e7-9b94-30a3bf594d89"/>
+   <entry name=";One,DTO,Interface;" id="efeb77f9-c296-46fe-8824-a6ed4f8226a2"/>
+   <entry id="c534fdb1-6612-4618-94bb-232bfa497113"/>
+</index>

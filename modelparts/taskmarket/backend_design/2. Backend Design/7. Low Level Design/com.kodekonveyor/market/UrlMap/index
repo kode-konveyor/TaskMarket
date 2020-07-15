@@ -1,0 +1,30 @@
+<index xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:zenta="http://magwas.rulez.org/zenta">
+   <entry name="UrlMap" id="935791a7-b774-4e46-a340-d745df04bc24"/>
+   <entry name="UrlMap" id="6b11c99c-1da4-4624-9f51-8bfce31a538a"/>
+   <entry name="REGISTER_USER_PATH" id="8d04e97a-97ee-4b94-ab35-ae0976ef10f8"/>
+   <entry name="PAYMENT_UPDATE_PATH" id="7895e686-3afe-4ed2-ad59-e96e709b8591"/>
+   <entry name="ADDPROJECTROLE_PATH" id="359288b9-f8a3-40a4-9fb6-1bff1b3b6578"/>
+   <entry name="SHOW_USER_PATH" id="10b8022a-8267-4c3d-af65-fe0cf61c5aa6"/>
+   <entry name="LEAD_PATH" id="a5bf867f-6fd1-41c7-9cce-05eeb89f3aab"/>
+   <entry name="LOGIN_PATH" id="374722fb-d2a8-4efd-9cdc-8d427d0f0c3a"/>
+   <entry id="7a429fcd-9166-4ee5-99e1-fa84bf0f8333"/>
+   <entry id="fd50092a-7733-40b2-91c4-21dd8ea99321"/>
+   <entry id="cb11de3c-64e2-4cea-8779-ddbca68a334d"/>
+   <entry name="LIST_LEAD_PATH" id="8f219d98-9e8c-49de-8a7e-633522964d6f"/>
+   <entry name="LEGALFORM_PUBLIC_PATH" id="886915a4-7e2a-422d-8399-3208db8af8fd"/>
+   <entry name="PROJECT_PATH" id="b796a7e2-f054-471c-a2d3-fd7a193774b4"/>
+   <entry name="UPDATE_PROJECT_MODEL_PATH"
+          id="541c9928-980e-46fb-aa8a-5c1e1148afee"/>
+   <entry id="ebb704d8-a91c-4fb5-88d0-2113f9ad3db4"/>
+   <entry id="75c7f077-c88d-4d8e-b039-a45517cea549"/>
+   <entry id="33c97963-192b-447b-93c0-e7dc429547a7"/>
+   <entry name="PROJECT_BUDGET_PATH" id="2e4696cd-0d8c-4bb7-997d-0785aaee2797"/>
+   <entry name="TRANSFER_TYPES_PUBLIC_PATH"
+          id="04900377-4004-459b-9f41-9cbf117fbba0"/>
+   <entry name="GRAB_TASK_PATH" id="dbd5cb37-beb5-4e57-8bf1-7d14fa59d974"/>
+   <entry name="TASK_PATH" id="21a2ac05-8b5c-4ca1-8328-fa774fa53957"/>
+   <entry name="LIST_REGISTERED_USERS_PATH"
+          id="e3f3c776-976a-48cd-9797-5c6ace67292c"/>
+   <entry id="e17fa6e1-e399-42f8-9f79-ce524c757d8c"/>
+</index>

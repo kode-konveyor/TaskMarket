@@ -1,0 +1,7 @@
+<index xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:zenta="http://magwas.rulez.org/zenta">
+   <folder name="Event (design)" id="a4a419a8-b5e3-4fba-9c9c-1a03e906b8c8"/>
+   <folder name="EventTypeEnum" id="d8fff655-7ad2-469d-bc01-074845cdd261"/>
+   <entry name="kpi" id="d6566de5-a986-47e3-a4a5-63cfe695db88"/>
+   <entry name="kpi" id="88240dfb-2118-4795-86dd-490733e45576"/>
+</index>

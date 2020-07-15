@@ -1,0 +1,6 @@
+<element xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xmlns:zenta="http://magwas.rulez.org/zenta"
+         xsi:type="zenta:BasicObject"
+         name="Check bill"
+         id="01c05840-ea17-4fd7-bc4f-6ebc28e5da22"
+         ancestor="83af8497-bfef-451b-9bc6-f00d58c8df6a"/>

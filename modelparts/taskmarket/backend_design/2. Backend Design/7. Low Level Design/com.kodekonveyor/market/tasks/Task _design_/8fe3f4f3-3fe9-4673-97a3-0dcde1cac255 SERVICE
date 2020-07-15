@@ -1,0 +1,8 @@
+<element xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xmlns:zenta="http://magwas.rulez.org/zenta"
+         xsi:type="zenta:BasicObject"
+         name="SERVICE"
+         id="8fe3f4f3-3fe9-4673-97a3-0dcde1cac255"
+         ancestor="ffbe5058-5089-4c5a-965d-e996df089f8e">
+   <documentation>"UpdateTasksController"</documentation>
+</element>

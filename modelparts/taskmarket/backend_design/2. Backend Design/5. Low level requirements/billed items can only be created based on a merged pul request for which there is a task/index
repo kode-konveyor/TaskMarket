@@ -1,0 +1,5 @@
+<index xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:zenta="http://magwas.rulez.org/zenta">
+   <entry name="billed items can only be created based on a merged pul request for which there is a task"
+          id="18b95d84-08cd-4ce1-850b-57995887d93f"/>
+</index>

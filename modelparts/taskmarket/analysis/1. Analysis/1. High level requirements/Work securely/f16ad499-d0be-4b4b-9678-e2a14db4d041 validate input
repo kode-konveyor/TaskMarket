@@ -1,0 +1,6 @@
+<element xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xmlns:zenta="http://magwas.rulez.org/zenta"
+         xsi:type="zenta:BasicObject"
+         name="validate input"
+         id="f16ad499-d0be-4b4b-9678-e2a14db4d041"
+         ancestor="behaviour"/>

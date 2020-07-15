@@ -1,0 +1,25 @@
+<index xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:zenta="http://magwas.rulez.org/zenta">
+   <entry name="dashboard" id="bf33e580-cf84-4951-a40b-893e259d85ac"/>
+   <entry name="account balance" id="0a71e162-d204-44bb-a974-0fa503017186"/>
+   <entry name="address" id="0edf5926-b9b9-440f-9ee3-a3101a29cd2f"/>
+   <entry name="budget" id="bcff129b-17d0-4f11-bcf9-c461c1c8bb9c"/>
+   <entry name="dashboard" id="1c30890b-9062-42c6-b52a-88a152d397e7"/>
+   <entry name="edit" id="a931dcdf-e046-4a6c-9c41-3b9037bb5721"/>
+   <entry name="email" id="ede65963-d571-4076-b519-fee12de70509"/>
+   <entry name="github name" id="25035ef6-64bc-4b53-b0de-c01e665541fe"/>
+   <entry name="legal name" id="3826767f-1a57-4d45-82f0-f7a11134d7ac"/>
+   <entry name="myroles" id="b31635cc-49c2-4741-ac4a-90e4b3680209"/>
+   <entry name="name" id="ed5d3db4-4a8d-4d9a-87da-a40613043a0a"/>
+   <entry name="name" id="b834819a-d7ca-4857-b6e6-87729256a47e"/>
+   <entry name="new" id="cff4b972-7720-45f8-b705-6c74a72ce378"/>
+   <entry name="next step" id="6ee443f9-d892-45ed-b180-27d8b563c465"/>
+   <entry name="payment" id="84a8c608-b493-4522-9501-c34aab52a4f6"/>
+   <entry name="profile area" id="6e47ccd3-ad94-4765-9564-f62fc9766d39"/>
+   <entry name="project" id="601aeb17-47d5-4155-b6db-34ee57500815"/>
+   <entry name="projects" id="2cc9ece9-f4a2-41ce-8895-595433be692b"/>
+   <entry name="roles" id="930d1b23-2f75-4033-ba7f-7608b2e50e02"/>
+   <entry name="settings" id="2cda13cd-ea03-422f-9839-564de2e24023"/>
+   <entry name="update" id="06bb3093-a1f1-4b32-ab3e-e207ed233329"/>
+   <entry name="details" id="d8e80ea4-36b5-4f64-8613-b0b71e954632"/>
+</index>

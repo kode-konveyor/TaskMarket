@@ -1,0 +1,21 @@
+<index xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:zenta="http://magwas.rulez.org/zenta">
+   <entry name="Event (design)" id="90c41533-c68c-4607-a8fd-2a8f2a7b75d7"/>
+   <entry name="EventTestData" id="83907aca-4685-48a9-953b-c879df490ce5"/>
+   <entry name="EVENT_TYPE" id="6b193322-3726-4507-86d9-8c77d75f7e0b"/>
+   <entry id="12f45a19-69e0-4b8d-8be8-991d31ec3362"/>
+   <entry id="add2233b-133b-48bd-9fc9-1145bb3456b7"/>
+   <entry name="DATE" id="66cddd7c-e27c-42f4-9313-7c17f7710bb7"/>
+   <entry id="04529e64-24ed-42b7-a769-23587106cccd"/>
+   <entry id="35ecb46a-f0ba-427d-bca6-57cc1ea47115"/>
+   <entry name="OBJECT_ID" id="7fa409c9-866d-4e1d-af76-a945debf4cbd"/>
+   <entry id="e58f7877-3995-482a-875e-e8a920001a04"/>
+   <entry id="c27a5a0a-2f02-40b4-b61b-045e3b3c1646"/>
+   <entry id="c5c2884c-3353-43a9-af18-64cdc6272f51"/>
+   <entry name="java.util.Date" id="e0e12f41-89cb-43fa-8577-ed1e72ef5bd6"/>
+   <entry id="7521bc60-de26-4e4b-a3d2-40b552d8cb94"/>
+   <entry id="e2444a21-bb1e-4055-b482-af6623b0502c"/>
+   <entry id="d4f8af28-ab02-46e1-a4a9-572079ac651e"/>
+   <entry id="e1aa6388-ae40-4d0f-83d6-ce7b2e7a6db6"/>
+   <entry id="27b4eef5-0cc5-4f94-9e06-1bf721970410"/>
+</index>

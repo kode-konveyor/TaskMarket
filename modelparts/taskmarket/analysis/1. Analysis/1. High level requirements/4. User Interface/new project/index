@@ -1,0 +1,9 @@
+<index xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:zenta="http://magwas.rulez.org/zenta">
+   <entry name="new project" id="3326218b-8cc2-4d22-bb95-e06878d7d56e"/>
+   <entry name="budget" id="c2e0363b-b586-4bbe-aec5-4d7b18ca3a4f"/>
+   <entry name="name" id="fd3449ea-6e9f-4ec0-820d-a8015daae6c4"/>
+   <entry name="new project" id="0c81212b-679d-47c8-9d87-8e5c7e86ade9"/>
+   <entry name="public?" id="cf80d058-5797-45f3-b513-377d7864de20"/>
+   <entry name="submit" id="7e6f45dd-9975-41b2-8264-48cf08f6a6f9"/>
+</index>

@@ -1,0 +1,20 @@
+<element xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xmlns:zenta="http://magwas.rulez.org/zenta"
+         xsi:type="zenta:BasicObject"
+         name="Check grab eligibility"
+         id="e1c06a83-663e-45ac-8b7e-683729430446"
+         ancestor="behaviour">
+   <documentation>ungrab the task if 
+* it is grabbed for more than 3 days, and no pull request for it
+* it have a pull request, and
+  * the build is red, and there are more than 3 days sice the last commit
+  * there is a review since the last commit, and it is older than 3 days
+
+The last commit time, last review time, last commit time and its status can be retrieved by using GithubConstants.PULL_REQUEST_QUERY,
+substituing the project owner, project name and pull request id to it, and calling GithubGraphqlService with it. The relevant query string are 
+COMMIT_STATUS_QUERY, LAST_COMMIT_DATE_QUERY, LAST_REVIEW_DATE_QUERY, LAST_COMMENT_DATE_QUERY in GithubConstants.
+
+UngrabService must have a @Scheduled(fixedRate = GithubConstants.DAILY)
+GithubConstants.DAILY = 24*60*60*1000
+</documentation>
+</element>

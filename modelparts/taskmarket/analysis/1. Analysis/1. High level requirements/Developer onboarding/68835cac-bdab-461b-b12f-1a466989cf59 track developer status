@@ -1,0 +1,16 @@
+<element xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xmlns:zenta="http://magwas.rulez.org/zenta"
+         xsi:type="zenta:BasicObject"
+         name="track developer status"
+         id="68835cac-bdab-461b-b12f-1a466989cf59"
+         ancestor="e7c7a3b9-cc91-4d99-854a-d5eab68efd7c">
+   <documentation>with roles, like
+candidate (= can_be_paid)
+established
+mentor
+reviewer
+content provider
+designer
+analyst
+</documentation>
+</element>

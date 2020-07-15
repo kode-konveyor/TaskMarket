@@ -1,0 +1,16 @@
+<index xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:zenta="http://magwas.rulez.org/zenta">
+   <entry name="List leads" id="e1878423-9ac9-4eb7-899a-a79e0cf1173d"/>
+   <entry name="list leads" id="f7fd5482-699d-4ffa-81f4-6a07a07e1db0"/>
+   <entry id="de738b3f-1d5a-4ddd-a9ef-4806b5ca7d83"/>
+   <entry id="54252359-03ab-4759-a8cb-f1f2cd265258"/>
+   <entry id="781df570-02c9-4737-bd2b-53d206e73af9"/>
+   <entry id="36db74ba-2db3-400c-97ce-0fc9449c4c0b"/>
+   <entry id="064a9d9c-7fa0-4239-97ce-21c196a054de"/>
+   <entry id="7d583bb0-2e20-4eb1-a366-bd382ff10807"/>
+   <entry id="3644fdcf-f3f7-45c7-8b69-a98cc073cb12"/>
+   <entry name="List leads" id="da00a366-3bdb-4fa5-a29b-e84703ac09bd"/>
+   <entry name=";Ordered,Entity,Repo;" id="2770a5a6-a831-4586-8e03-9fe0a520f9cc"/>
+   <entry name=";Ordered,DTO,Interface;"
+          id="51d7d60c-6408-4d1e-9935-27c218cb7c9c"/>
+</index>

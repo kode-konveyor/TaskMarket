@@ -1,0 +1,33 @@
+<index xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:zenta="http://magwas.rulez.org/zenta">
+   <entry name="Project (design)" id="d8a8abd7-26e3-430a-b00e-54db703c3fb4"/>
+   <entry id="bc8cbeeb-6ea6-4582-8aeb-f508751da1c7"/>
+   <entry name="BUDGET_IN_CENTS" id="80d45df0-5c9e-4806-89e5-077d47e9e82f"/>
+   <entry id="bd785e76-fb2f-42cb-976b-57cacb3bacdb"/>
+   <entry id="a9a78109-f015-4b34-8bd9-1f1d78a83005"/>
+   <entry id="3ff8b513-e107-4940-b2f9-699382de98cb"/>
+   <entry name="IS_PUBLIC" id="4fd842b5-eb13-476c-9be6-2259e4b654f1"/>
+   <entry name="NAME" id="004cc9ba-1885-4865-bdee-b102d7a95c6a"/>
+   <entry name="ProjectTestData" id="a93bc35b-6893-4815-b26f-39573dc8933c"/>
+   <entry id="c02e707c-2f77-4b74-ade4-0b375067122f"/>
+   <entry id="e331e706-25bc-46bc-ac73-1ae3c1fb2df6"/>
+   <entry id="46cf0565-8691-4177-96f8-e3ddd40a791a"/>
+   <entry id="5d4aa19f-8e3f-4a1c-94c7-a87ce9bae8e3"/>
+   <entry id="e400f097-331b-4a2b-b11f-765aa853f865"/>
+   <entry id="8e9ea3c9-2720-40b2-9175-c58de9ce4b49"/>
+   <entry name="DESCRIPTION" id="92fa58dd-a805-4aed-8a0f-1dde81ea851d"/>
+   <entry id="51cd4034-ca5f-497d-8cb5-563c0796e197"/>
+   <entry name="PROJECT_ID" id="9aa49f4e-2806-40fe-9721-f80fa2465b9d"/>
+   <entry id="03323c32-15d6-4b75-a68e-fad07567a0d1"/>
+   <entry id="3b4b82c8-c9c5-4170-87fa-0aac418c0665"/>
+   <entry id="cbb24657-a3c6-4cfb-9ae9-e7f43daf8818"/>
+   <entry id="eeab9976-aa0b-4a72-add2-92d373eb2a48"/>
+   <entry name="URL" id="56b42cee-e24d-44b0-a842-33887269b740"/>
+   <entry id="0bbff817-0f2c-4002-bba3-263fb0e42ae7"/>
+   <entry id="3131768e-7407-44f2-b841-4ee0ca9a8de6"/>
+   <entry id="737c6cd4-de8a-4946-88c9-78c7db8b9778"/>
+   <entry name="MINIMUM_FOR_GRAB" id="70322d8c-b681-40f1-8597-6594abc71ce9"/>
+   <entry id="fff8bf79-9025-49ab-89f8-6fa3ccea2161"/>
+   <entry id="55679dd8-720b-4edb-b1d0-9bcc6625c062"/>
+   <entry id="5a39118f-e529-4c84-8d5f-6b4e2dfbe756"/>
+</index>

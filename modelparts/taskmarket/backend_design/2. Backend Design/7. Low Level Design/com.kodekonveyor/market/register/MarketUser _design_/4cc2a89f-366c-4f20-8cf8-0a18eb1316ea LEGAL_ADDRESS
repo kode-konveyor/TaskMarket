@@ -1,0 +1,8 @@
+<element xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xmlns:zenta="http://magwas.rulez.org/zenta"
+         xsi:type="zenta:BasicObject"
+         name="LEGAL_ADDRESS"
+         id="4cc2a89f-366c-4f20-8cf8-0a18eb1316ea"
+         ancestor="ffbe5058-5089-4c5a-965d-e996df089f8e">
+   <documentation>"Lectroid str. 25, 12345, Shelby, Alabama, US"</documentation>
+</element>

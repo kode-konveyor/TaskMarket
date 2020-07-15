@@ -1,0 +1,6 @@
+<element xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xmlns:zenta="http://magwas.rulez.org/zenta"
+         xsi:type="zenta:BasicObject"
+         name="billed items can only be created based on a merged pul request for which there is a task"
+         id="d58e2f2d-0dd6-477b-b01d-6c15a4da6c55"
+         ancestor="e7c7a3b9-cc91-4d99-854a-d5eab68efd7c"/>

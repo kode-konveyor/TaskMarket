@@ -1,0 +1,17 @@
+<index xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:zenta="http://magwas.rulez.org/zenta">
+   <entry name="TaskStatusEnum" id="ebaffa5c-1cae-44b2-a8d4-14f67dc9df5a"/>
+   <entry name="TaskStatusEnum" id="a1a103b8-562a-4a2c-a921-a0f184651f25"/>
+   <entry name="UP_FOR_GRAB" id="454997aa-c6e4-4287-826d-43e8867de009"/>
+   <entry id="d69e75b1-570c-4ed8-b67c-f07ce4a2bc68"/>
+   <entry name="IN_PROGRESS" id="0cba6e83-3276-4f56-8ca8-2c476108aefe"/>
+   <entry id="e8263267-047e-41c7-9b7b-075f4ee69b57"/>
+   <entry name="DONE" id="fbbf9e57-b5e3-41f8-b5bf-4149e59d134a"/>
+   <entry id="dfb557d6-0a05-4212-ba03-e5d9ea2377b0"/>
+   <entry name="OPEN" id="de66bc18-b128-4bcd-bc9a-276dad88edc3"/>
+   <entry id="09463d58-8a26-40f6-8a24-f1a62e3e3133"/>
+   <entry id="595c47e1-efb9-4e9f-ad13-263873fa8881"/>
+   <entry id="f34f7a76-2b08-493d-bc81-6c7d320fb6dd"/>
+   <entry id="aacd3336-e7ca-4b80-a4f1-aa8f324668fd"/>
+   <entry id="138c6d78-c255-4a8b-a233-1bb9dd268d7d"/>
+</index>

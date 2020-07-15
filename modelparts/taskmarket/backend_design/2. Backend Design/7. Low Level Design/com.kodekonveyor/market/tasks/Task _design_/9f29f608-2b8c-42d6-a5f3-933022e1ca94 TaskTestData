@@ -1,0 +1,6 @@
+<element xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xmlns:zenta="http://magwas.rulez.org/zenta"
+         xsi:type="zenta:BasicObject"
+         name="TaskTestData"
+         id="9f29f608-2b8c-42d6-a5f3-933022e1ca94"
+         ancestor="9ec42823-7056-4e73-b1f4-600a066c8d88"/>

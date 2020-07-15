@@ -1,0 +1,23 @@
+<index xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:zenta="http://magwas.rulez.org/zenta">
+   <entry name="Market User" id="f7d7a3ae-28bd-4739-96d7-5eb6840cf5c3"/>
+   <entry name="Market User" id="dd69f9d8-81fb-4ae0-af5f-1e1a623f4ef7"/>
+   <entry name="balance in cents" id="1a20cbd3-d106-429c-a3e6-a2715fa622bf"/>
+   <entry name=";Direct;" id="d0174fc9-362b-40e1-bd4d-375251eae6b2"/>
+   <entry name=";Direct;" id="a3f4e47f-095f-4b2c-a17f-6b3c8521bb6d"/>
+   <entry name=";Direct;" id="79e5b410-b2af-4936-af11-28243779765f"/>
+   <entry name=";Direct;" id="16032630-19a2-4922-908f-8cb0fb8a3ecd"/>
+   <entry name=";Direct;" id="5acd1699-9bae-4acf-8d30-2c95050262ca"/>
+   <entry name="email" id="c03c8f46-ae0a-4f37-8160-7ceb17e3b4ba"/>
+   <entry name="is terms accepted" id="1eece734-4ca7-4eae-8cef-e5d6ab40ac7a"/>
+   <entry name="legal address" id="972b3bec-3a26-4d73-bb95-c27ea1eb0216"/>
+   <entry name="legal name" id="2fdb7e75-bd42-4dae-8b17-6473dbec7b56"/>
+   <entry name="personal name" id="7e6ae88c-fb5d-4d66-a7d4-b362a05701c0"/>
+   <entry name="discord user" id="06be79e2-8c8c-4eaa-a537-3dee73d84d73"/>
+   <entry name=";Direct;" id="375860c7-6c44-4816-9381-d5a633bfa1d4"/>
+   <entry id="bf91477e-5cff-4032-b48a-d1be8ee54059"/>
+   <entry name=";Reference,Ordered;" id="c00a296c-252b-49b1-896e-a196eaab32f0"/>
+   <entry name=";Reference;" id="a2942b6f-f887-45f0-ba63-6a0bd1b0bbba"/>
+   <entry name=";Direct;" id="09fb5af6-4a07-43aa-83c4-d0fb0fe3dfcc"/>
+   <entry name=";Reference;" id="eab72ab9-5d12-4ae6-b451-aff1b1405c52"/>
+</index>

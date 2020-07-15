@@ -1,0 +1,11 @@
+<index xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:zenta="http://magwas.rulez.org/zenta">
+   <entry name="CreateProjectController"
+          id="2ea67f97-cc45-4d63-bae6-1f7c48f59029"/>
+   <entry name="CreateProjectController"
+          id="a65d9263-c1c1-4cb6-ba42-2147da29b7d2"/>
+   <entry id="264f024c-6919-4ffd-a479-9f5f4563a324"/>
+   <entry id="cb7ce474-898b-4252-a51d-0d4f6d0edeea"/>
+   <entry id="af9f56b1-3af9-4989-8158-8fd9ac81bbec"/>
+   <entry id="4b545aef-5e3b-4aa1-af86-152b1e2e7de3"/>
+</index>

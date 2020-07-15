@@ -1,0 +1,8 @@
+<element xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xmlns:zenta="http://magwas.rulez.org/zenta"
+         xsi:type="zenta:BasicObject"
+         name="EVENT_TYPE"
+         id="6b193322-3726-4507-86d9-8c77d75f7e0b"
+         ancestor="ffbe5058-5089-4c5a-965d-e996df089f8e">
+   <documentation>EventTypeEnum.GRAB</documentation>
+</element>

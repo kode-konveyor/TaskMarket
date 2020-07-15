@@ -1,0 +1,11 @@
+<element xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xmlns:zenta="http://magwas.rulez.org/zenta"
+         xsi:type="zenta:BasicObject"
+         name="compile output"
+         id="20ceb57f-c57a-496c-bca9-50cf4dedae1d"
+         ancestor="behaviour">
+   <documentation>The results are returned in a newly created DTO.
+
+All the relevant fields of the returned DTO are filled out properly.
+</documentation>
+</element>

@@ -1,0 +1,8 @@
+<element xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xmlns:zenta="http://magwas.rulez.org/zenta"
+         xsi:type="zenta:BasicObject"
+         name="storage"
+         id="0ee2a123-4972-40f6-9658-fd67ef93850e"
+         ancestor="behaviour">
+   <documentation>Store and retrieve Entities through Repositories</documentation>
+</element>

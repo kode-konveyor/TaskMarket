@@ -1,0 +1,8 @@
+<index xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:zenta="http://magwas.rulez.org/zenta">
+   <entry name="Performance" id="5486f976-5f75-4623-9ecd-202e4d2d99ea"/>
+   <entry name="Stateless backend" id="c0772d44-5e3f-4bb8-8ec8-42eb77b4ef17"/>
+   <entry name="Clusterable database" id="2ad5737d-8f6e-446b-b595-b52874787a43"/>
+   <entry name="No constraints in database"
+          id="6a795327-82eb-4627-9bc6-eeda4bbaa360"/>
+</index>

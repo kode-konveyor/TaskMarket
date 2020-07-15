@@ -1,0 +1,20 @@
+<index xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:zenta="http://magwas.rulez.org/zenta">
+   <entry name="GrabTaskController" id="c3263dfb-432e-4724-ad7d-9e48f3bc4137"/>
+   <entry name="GrabTaskController" id="90eac104-3715-4c31-9cdf-7191aaecf2c0"/>
+   <entry id="7350c870-1fba-493b-96cb-953d5b4b49d7"/>
+   <entry id="8c428a4a-3b77-4a25-bce4-ed71470f028c"/>
+   <entry id="ed01d84a-6b06-4f3f-8527-e04b6df11ab5"/>
+   <entry id="7496ee1c-d7ef-49de-9603-d57a49bcd635"/>
+   <entry id="2db5b2f5-6f2b-4b8f-b2a7-f4ee05b70492"/>
+   <entry id="bcd49d6f-8a2f-4e63-8ffc-6750ac8e4283"/>
+   <entry id="cda0821a-003f-4ad8-941f-d6805cb33001"/>
+   <entry id="61d45c0e-5c3d-49f8-acfd-63dbce6913b7"/>
+   <entry id="c2a1233b-6d25-43d0-aeec-14b3348c4e39"/>
+   <entry id="e9b74e2e-9d0d-4309-8907-78dada6a6843"/>
+   <entry id="85f551a6-63c2-4bfd-b19b-4ad1b89a1f32"/>
+   <entry id="589e9ced-0eec-45f4-aa3c-1f6b1188d1fe"/>
+   <entry name="taskId" id="2cc2ccc1-bf82-441c-b177-9dabd1d70237"/>
+   <entry id="afc1acf5-0d68-454e-abb6-7d3efdc26204"/>
+   <entry id="0da93706-af2c-4afa-b709-8f090e610d24"/>
+</index>

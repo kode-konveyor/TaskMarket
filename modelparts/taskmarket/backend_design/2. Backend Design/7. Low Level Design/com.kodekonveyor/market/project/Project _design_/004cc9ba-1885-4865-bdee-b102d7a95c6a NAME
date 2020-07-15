@@ -1,0 +1,8 @@
+<element xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xmlns:zenta="http://magwas.rulez.org/zenta"
+         xsi:type="zenta:BasicObject"
+         name="NAME"
+         id="004cc9ba-1885-4865-bdee-b102d7a95c6a"
+         ancestor="ffbe5058-5089-4c5a-965d-e996df089f8e">
+   <documentation>"kode-konveyor/TaskMarket"</documentation>
+</element>

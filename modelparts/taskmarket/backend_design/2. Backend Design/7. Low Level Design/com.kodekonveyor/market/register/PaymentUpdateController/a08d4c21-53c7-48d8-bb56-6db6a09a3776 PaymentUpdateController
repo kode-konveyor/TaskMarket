@@ -1,0 +1,6 @@
+<element xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xmlns:zenta="http://magwas.rulez.org/zenta"
+         xsi:type="zenta:BasicObject"
+         name="PaymentUpdateController"
+         id="a08d4c21-53c7-48d8-bb56-6db6a09a3776"
+         ancestor="5491f72b-93ec-4ad5-b6a9-2653fe808a03"/>

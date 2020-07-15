@@ -1,0 +1,9 @@
+<element xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xmlns:zenta="http://magwas.rulez.org/zenta"
+         xsi:type="zenta:BasicObject"
+         name="Support sales"
+         id="645e47fc-6a34-44de-bf2c-7be13d233477"
+         ancestor="107b9a83-1292-49ee-bf2f-542de02b2654">
+   <documentation>- administer the contacted companies and their response, show KPIs about it
+- same for VCs</documentation>
+</element>

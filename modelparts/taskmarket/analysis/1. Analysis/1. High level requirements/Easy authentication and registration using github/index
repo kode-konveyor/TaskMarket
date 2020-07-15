@@ -1,0 +1,18 @@
+<index xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:zenta="http://magwas.rulez.org/zenta">
+   <entry name="Easy authentication and registration using github"
+          id="ec8f6dfb-52e6-488c-883f-a0c7f48f2e40"/>
+   <entry name="store username" id="b97d27a5-0e49-49f9-89f6-7c7c0ad7654e"/>
+   <entry name="Protected resources have github authentication"
+          id="5bc0939c-48f7-43a0-a890-d2e9dd28ba25"/>
+   <entry name="redirect for login" id="525465e2-7b27-47af-b1a9-04ccb3658612"/>
+   <entry name="authenticated user" id="3f9b5e51-b3b3-42a8-aa54-4ed3b1195618"/>
+   <entry name="authentication infrastructure"
+          id="ae41ab47-cbfb-4053-bf32-d1b3f74dcde1"/>
+   <entry name="copy to company name" id="5de4a775-d0de-4af4-972d-080d49dfa8ba"/>
+   <entry name="fill in legal selection"
+          id="7cb3a145-0ebe-4406-9389-af8aaf6c474d"/>
+   <entry name="set iban/swift" id="b7051850-2ea9-4002-a597-50851ec50c89"/>
+   <entry name="store contract details" id="60d84108-319f-4bee-9943-e24a27242a44"/>
+   <entry name="Support registration" id="8529801e-d448-426a-aaa0-329ada6ba580"/>
+</index>

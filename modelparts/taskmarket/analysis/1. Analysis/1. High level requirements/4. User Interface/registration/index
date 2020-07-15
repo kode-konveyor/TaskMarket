@@ -1,0 +1,26 @@
+<index xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:zenta="http://magwas.rulez.org/zenta">
+   <entry name="registration" id="67ef1968-9f94-457c-9eaf-1b26f92f5ed5"/>
+   <entry name="accept terms&amp;conditions"
+          id="97866c11-4c18-461f-9223-813eff65c48b"/>
+   <entry name="Address" id="7c5d787b-c165-4f0c-a7fa-775fe63821c2"/>
+   <entry name="Company Name" id="773f22c6-9a4e-4850-a420-0c50d4089f14"/>
+   <entry name="email" id="c1b6c3bc-4146-4aeb-bfb3-0d990618b2b6"/>
+   <entry name="Full name" id="22d4c34d-0e44-4e4d-b909-104c90a79126"/>
+   <entry name="legal form" id="325e6c25-25a5-4de5-a900-56cc20b0a69b"/>
+   <entry name="edit profile" id="d5283979-773a-43d8-b720-67725b1ceab5"/>
+   <entry name="submit" id="0e5b5211-4fc0-406c-9a05-c1d486b5db65"/>
+   <entry id="81d3b974-1f7f-475c-99dd-595bfc018744"/>
+   <entry name="add" id="028c2410-30e1-409a-ba27-b85da8bdaad3"/>
+   <entry name="channels" id="1f70e4c7-c53f-484b-a3d4-b17f0537f127"/>
+   <entry name="default" id="af828f80-faff-4967-bca7-9ce5a0e90adb"/>
+   <entry name="iban" id="6ad37d1b-797e-4f2f-a175-84423c0fcbf2"/>
+   <entry name="name" id="7d4d9daa-7ab8-4bfd-9f5d-95ea1caa54e7"/>
+   <entry name="payment channels" id="6e79ff64-4256-436e-b1fe-c8e3f9864b7e"/>
+   <entry name="percentage" id="2d3a886a-a712-420f-8656-5c4b503ffbd2"/>
+   <entry name="swift" id="c4ca61d8-7ce7-4dd9-a71c-dd35845f9f21"/>
+   <entry name="transfer type" id="42f86369-8cf6-4be5-86c4-3a1bde05f4f7"/>
+   <entry name="submit" id="503ff341-3c1a-4ffb-b496-8fbffd0d95fb"/>
+   <entry name="edit" id="9687b667-0ca6-40c1-86ec-37c0a3986e72"/>
+   <entry name="remove" id="ac1da5be-35e1-4c5f-9bb6-5ee7ae729840"/>
+</index>

@@ -1,0 +1,6 @@
+<element xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xmlns:zenta="http://magwas.rulez.org/zenta"
+         xsi:type="zenta:BasicObject"
+         name="MessageUserOnDiscordService"
+         id="f67669fb-5b5a-4eb9-96f7-c4dbce44fade"
+         ancestor="service"/>

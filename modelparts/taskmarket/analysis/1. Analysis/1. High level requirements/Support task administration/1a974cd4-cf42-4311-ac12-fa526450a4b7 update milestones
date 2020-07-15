@@ -1,0 +1,9 @@
+<element xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xmlns:zenta="http://magwas.rulez.org/zenta"
+         xsi:type="zenta:BasicObject"
+         name="update milestones"
+         id="1a974cd4-cf42-4311-ac12-fa526450a4b7"
+         ancestor="behaviour">
+   <documentation>Update the milestones of the project.
+</documentation>
+</element>

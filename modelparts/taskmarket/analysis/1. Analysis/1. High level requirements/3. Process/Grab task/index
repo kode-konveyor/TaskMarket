@@ -1,0 +1,18 @@
+<index xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:zenta="http://magwas.rulez.org/zenta">
+   <entry name="Grab task" id="f02cee8e-cd20-45d3-89ae-fa697630878c"/>
+   <entry id="09c01e3f-31b3-420e-bac1-e3d7a9095029"/>
+   <entry name=";One,Entity,Repo;" id="a4dd4381-a9da-4237-b177-edb8cf869483"/>
+   <entry id="4ade426b-b963-4da0-9151-9bfbd5b65640"/>
+   <entry name=";One,Entity,Repo;" id="02fb7ea6-0598-4021-bb2f-ac073964fd4b"/>
+   <entry name=";One,Reference,Interface;"
+          id="e32673db-4224-4bf0-9b28-2c457d36a952"/>
+   <entry name=";One,Entity,Repo;" id="14c2f69f-5eac-483b-986b-9f2cb6edbdd6"/>
+   <entry name=";One,Entity,Repo;" id="a8e2b0d1-da9a-44b1-86da-14cb326fe621"/>
+   <entry name="grab the task" id="5877a236-16bf-415c-aca7-747112c7e670"/>
+   <entry name="grab task" id="5ed3c96e-3a7a-44b3-8bc3-3f5ba36afeb9"/>
+   <entry name="get pull request for issue"
+          id="84aae0df-6c27-455a-b44f-d07886229493"/>
+   <entry name=";One,Entity,Repo;" id="df382e9f-8c2f-402a-90d8-72c51f86284d"/>
+   <entry name=";One,Entity,Repo;" id="973dfa0d-d1ad-4e22-958d-788cedd6ae57"/>
+</index>

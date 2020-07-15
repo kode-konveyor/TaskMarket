@@ -1,0 +1,9 @@
+<index xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:zenta="http://magwas.rulez.org/zenta">
+   <entry name="Legal form" id="2d9b8afb-bc70-439a-89cd-654bdeae010a"/>
+   <entry name="country" id="5f4a06c3-a4c4-4cf6-9c91-f60abbcf872e"/>
+   <entry name="Legal form" id="25e6c921-0bbf-4730-b918-8d0110fec79c"/>
+   <entry name="legal form name" id="1564d77f-c284-433d-a483-b056ee35144d"/>
+   <entry name=";Direct;" id="434d0af1-ee38-461a-9b4e-7ed9a0ee5dc3"/>
+   <entry name=";Direct;" id="f69bb432-f139-4959-a0c6-5fe0cc1e79b3"/>
+</index>

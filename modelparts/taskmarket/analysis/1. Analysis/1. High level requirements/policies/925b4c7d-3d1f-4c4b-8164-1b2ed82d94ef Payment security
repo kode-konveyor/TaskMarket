@@ -1,0 +1,13 @@
+<element xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xmlns:zenta="http://magwas.rulez.org/zenta"
+         xsi:type="zenta:BasicObject"
+         name="Payment security"
+         id="925b4c7d-3d1f-4c4b-8164-1b2ed82d94ef"
+         ancestor="107b9a83-1292-49ee-bf2f-542de02b2654">
+   <documentation>no way to insert a false payment record:
+- no bill can get to checked status unless it is checked by an authorized peron
+- no billed item can be created if the pull request is not merged
+- no payment entity is created without a checked bill
+- na payment entity is paid without approval
+</documentation>
+</element>

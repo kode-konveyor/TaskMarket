@@ -1,0 +1,10 @@
+<element xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xmlns:zenta="http://magwas.rulez.org/zenta"
+         xsi:type="zenta:BasicObject"
+         name="Work securely"
+         id="2965ee01-2400-4a44-b6c9-4e18b61150c1"
+         ancestor="107b9a83-1292-49ee-bf2f-542de02b2654">
+   <documentation>The system should work securely while directly on the internet
+- people should only do what they are entitled to do
+- log important events</documentation>
+</element>

@@ -1,0 +1,27 @@
+<index xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:zenta="http://magwas.rulez.org/zenta">
+   <folder name="See dashboard" id="8efc91a4-7c87-4eaf-bafd-914a020eb53b"/>
+   <folder name="Register the user with the most important details"
+           id="ce7f2a77-d578-4417-b9a0-23c974bdde40"/>
+   <folder name="Register payout details"
+           id="b6dce9d4-e051-417b-a6a2-e13dce6cf21e"/>
+   <folder name="Create a project" id="8423fefd-50ed-4c3f-99ea-7b6be527c959"/>
+   <folder name="Lead Generation" id="78a9c464-88a0-42d7-a4b1-f0e815761e23"/>
+   <folder name="update project" id="917efa14-7324-458a-8743-09605498f279"/>
+   <folder name="manage project" id="ec5c0079-0d71-444e-a4aa-5e9d41853b55"/>
+   <folder name="Add user to a project with a role"
+           id="5c52ac77-0459-490d-8c22-6bbfc5b214d0"/>
+   <folder name="Add funds to the project"
+           id="a995f9cc-686c-4dbd-ac07-78e331278b6f"/>
+   <folder name="in progress" id="ee215f04-a946-4e78-a6c9-aee965ccd5ad"/>
+   <folder name="backend" id="3cea161e-002a-4bf1-bf92-f8eb3c419fe5"/>
+   <folder name="Grab task" id="f8d63268-c13b-4a41-ad93-dba3f09c63e4"/>
+   <folder name="ungrab timed out task" id="58608b1b-3d2d-45f0-b955-40f7ad4ca5c4"/>
+   <folder name="Check up for grab tasks"
+           id="3f582e76-a00b-44f4-ab1a-eec9fadd5ee8"/>
+   <folder name="Count up for grab tasks"
+           id="f135d11c-2876-4e22-b3a2-b1b71988ea40"/>
+   <entry name="Process overview" id="65f21c6f-7dc4-4c37-b7bd-f127e7343351"/>
+   <entry id="1ca95392-f470-45d6-93ff-a1450bc1abfa"/>
+   <entry id="cef09be5-3a9d-48c9-a1cb-224caedd3336"/>
+</index>

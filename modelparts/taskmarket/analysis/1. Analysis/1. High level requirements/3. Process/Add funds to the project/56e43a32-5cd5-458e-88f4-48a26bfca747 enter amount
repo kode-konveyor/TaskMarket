@@ -1,0 +1,6 @@
+<element xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xmlns:zenta="http://magwas.rulez.org/zenta"
+         xsi:type="zenta:BasicObject"
+         name="enter amount"
+         id="56e43a32-5cd5-458e-88f4-48a26bfca747"
+         ancestor="83af8497-bfef-451b-9bc6-f00d58c8df6a"/>

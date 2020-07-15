@@ -1,0 +1,33 @@
+<element xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xmlns:zenta="http://magwas.rulez.org/zenta"
+         xsi:type="zenta:ZentaDiagramModel"
+         name="payment transfers should be approved by authorized personnel"
+         id="734dd276-7a2d-4dd4-9be7-ee8cc7f08a08">
+   <child xsi:type="zenta:DiagramObject"
+          id="e3fa778b-e06b-408b-90d7-2193a4193a5b"
+          zentaElement="e566ed84-0afe-41b1-a827-4fd9ec6c80e8">
+      <bounds x="117" y="70" width="232" height="99"/>
+      <sourceConnection xsi:type="zenta:Connection"
+                        id="ce443e2e-c700-4ac5-baf3-241ab8d0b1b5"
+                        source="e3fa778b-e06b-408b-90d7-2193a4193a5b"
+                        target="d6ccc030-bece-4b87-ba21-c5043413f80c"
+                        relationship="d95648d9-62d3-412c-9f2c-c069dd905bd5"/>
+      <sourceConnection xsi:type="zenta:Connection"
+                        id="d462779a-9dac-4b58-9a69-948a92b74440"
+                        source="e3fa778b-e06b-408b-90d7-2193a4193a5b"
+                        target="8b27605b-5f84-4c17-b556-57d7d3fef9b9"
+                        relationship="79ef1385-20e7-4ee1-a941-01bb89f3bf58"/>
+   </child>
+   <child xsi:type="zenta:DiagramObject"
+          id="d6ccc030-bece-4b87-ba21-c5043413f80c"
+          targetConnections="ce443e2e-c700-4ac5-baf3-241ab8d0b1b5"
+          zentaElement="7b3d615e-cff0-4fa3-87d8-c4c901516451">
+      <bounds x="531" y="143" width="-1" height="-1"/>
+   </child>
+   <child xsi:type="zenta:DiagramObject"
+          id="8b27605b-5f84-4c17-b556-57d7d3fef9b9"
+          targetConnections="d462779a-9dac-4b58-9a69-948a92b74440"
+          zentaElement="7578bcf7-e0ef-4461-8809-4b742c1b7808">
+      <bounds x="681" y="143" width="-1" height="-1"/>
+   </child>
+</element>

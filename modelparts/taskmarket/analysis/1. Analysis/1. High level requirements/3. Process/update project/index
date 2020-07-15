@@ -1,0 +1,10 @@
+<index xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:zenta="http://magwas.rulez.org/zenta">
+   <entry name="update project" id="de36399f-58be-45d0-b947-6fb174050ce0"/>
+   <entry name="choose project model json"
+          id="8b179ff3-8704-4baf-b4fa-6cda5c385f35"/>
+   <entry name="update project" id="cac489e9-8bc1-4664-b71e-a38d67d16b8e"/>
+   <entry name="click update" id="fb84704a-5707-415d-8e89-3c1940d7f2bd"/>
+   <entry name="Update project model" id="e4f036eb-ed47-4d89-b3a4-62a8232fe185"/>
+   <entry name=";One,DTO,Interface;" id="cabebc18-1240-4c3e-bf88-cb7195eddedb"/>
+</index>

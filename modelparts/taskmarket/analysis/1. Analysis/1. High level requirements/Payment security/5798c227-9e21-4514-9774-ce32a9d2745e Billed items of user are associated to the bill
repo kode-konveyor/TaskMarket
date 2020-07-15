@@ -1,0 +1,6 @@
+<element xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xmlns:zenta="http://magwas.rulez.org/zenta"
+         xsi:type="zenta:BasicObject"
+         name="Billed items of user are associated to the bill"
+         id="5798c227-9e21-4514-9774-ce32a9d2745e"
+         ancestor="behaviour"/>

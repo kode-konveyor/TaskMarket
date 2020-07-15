@@ -1,0 +1,6 @@
+<element xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xmlns:zenta="http://magwas.rulez.org/zenta"
+         xsi:type="zenta:BasicObject"
+         name="fill in dashboard"
+         id="f0845277-9f02-47e0-8232-35e0cf2fb408"
+         ancestor="83af8497-bfef-451b-9bc6-f00d58c8df6a"/>

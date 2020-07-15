@@ -1,0 +1,11 @@
+<element xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xmlns:zenta="http://magwas.rulez.org/zenta"
+         xsi:type="zenta:BasicObject"
+         name="store data for KPIs"
+         id="4c1551ab-cfd3-4bdb-902b-1b1186d2a3ff"
+         ancestor="e7c7a3b9-cc91-4d99-854a-d5eab68efd7c">
+   <documentation>- mentoring session dates
+- pull request acceptance dates
+- developer status changes
+</documentation>
+</element>
