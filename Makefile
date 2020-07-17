@@ -9,6 +9,7 @@ BEFORE_CLEAN=removeGeneratedMetaInf
 include /usr/local/toolchain/rules.java
 
 checksource:
+	echo issuetoken;echo $(issuetoken)|sha1sum
 	if git grep "" :^Makefile; then echo windows delimiters used, failing build; exit 1 ;fi
 runapache:
 	-tools/killApache
