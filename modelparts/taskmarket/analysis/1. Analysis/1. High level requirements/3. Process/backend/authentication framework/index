@@ -1,0 +1,16 @@
+<index xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:zenta="http://magwas.rulez.org/zenta">
+   <entry name="authentication framework"
+          id="cc1951ab-9f04-4758-8cef-53b3805be83e"/>
+   <entry name="Authenticate based on auth0"
+          id="081a0bca-81e5-407f-b557-b8ee88518638"/>
+   <entry name="Conveys authentication information"
+          id="153d3e00-6b45-45e4-9c5a-f52aa938bc13"/>
+   <entry name="Conveys the error message to the user"
+          id="65a48c8b-046f-4ba8-8024-e34116a857d0"/>
+   <entry name="Log in" id="9993ad73-7a8f-4330-92cb-da11167aa552"/>
+   <entry name="Retrieves authenticated user"
+          id="01c14638-ac63-4be4-a171-c1c09128ee45"/>
+   <entry name="Signals unauthenticated condition"
+          id="15101279-7200-4199-a2b5-59138691bb31"/>
+</index>

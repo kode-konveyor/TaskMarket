@@ -1,0 +1,6 @@
+<element xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xmlns:zenta="http://magwas.rulez.org/zenta"
+         xsi:type="zenta:BasicObject"
+         name="assign budget"
+         id="62f0ed6a-4221-4e27-bfad-ed8b02777882"
+         ancestor="83af8497-bfef-451b-9bc6-f00d58c8df6a"/>

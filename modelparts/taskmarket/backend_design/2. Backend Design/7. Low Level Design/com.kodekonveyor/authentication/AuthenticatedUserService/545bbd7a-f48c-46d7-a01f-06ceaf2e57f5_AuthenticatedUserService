@@ -1,0 +1,6 @@
+<element xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xmlns:zenta="http://magwas.rulez.org/zenta"
+         xsi:type="zenta:BasicObject"
+         name="AuthenticatedUserService"
+         id="545bbd7a-f48c-46d7-a01f-06ceaf2e57f5"
+         ancestor="service"/>

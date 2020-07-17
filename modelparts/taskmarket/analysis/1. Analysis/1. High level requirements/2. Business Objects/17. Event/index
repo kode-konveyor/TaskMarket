@@ -1,0 +1,12 @@
+<index xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:zenta="http://magwas.rulez.org/zenta">
+   <entry name="Event" id="3a7d0a45-6155-4210-aa93-f2ac2d845450"/>
+   <entry name="Event" id="efd490e8-91f3-49c4-91b3-21e4d9ddf114"/>
+   <entry name="date" id="13461953-5d1e-401c-ba72-4ff2f78c86a9"/>
+   <entry name="event type" id="ae2129eb-0fe2-4043-a66c-eaeaf6c2a70a"/>
+   <entry name="object id" id="a658295a-d204-41e7-9efa-2fd726049ea3"/>
+   <entry name=";Direct;" id="dc262fdd-f598-453b-860e-a5cb9d36c08e"/>
+   <entry name=";Direct;" id="b59e13c8-a756-4830-8980-751e3ee3258f"/>
+   <entry name=";Direct;" id="61e0b7c0-966e-47e2-a547-2132e4eb86ff"/>
+   <entry name=";Reference;" id="adf508d3-7925-44fb-8a88-7eda0a3141f9"/>
+</index>

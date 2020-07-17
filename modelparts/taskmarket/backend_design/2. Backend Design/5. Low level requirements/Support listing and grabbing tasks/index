@@ -1,0 +1,9 @@
+<index xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:zenta="http://magwas.rulez.org/zenta">
+   <entry name="Support listing and grabbing tasks"
+          id="e84accad-c0f3-4398-8a4b-53845fe41511"/>
+   <entry id="befb66fc-8845-431e-a5ba-d5eb1d04c056"/>
+   <entry name="Check grab eligibility" id="e1c06a83-663e-45ac-8b7e-683729430446"/>
+   <entry name="grab eligibility" id="ec679888-2876-4d10-83e7-a70c7a639ed1"/>
+   <entry id="6325ec1f-5699-4222-9358-878b2d1e9420"/>
+</index>

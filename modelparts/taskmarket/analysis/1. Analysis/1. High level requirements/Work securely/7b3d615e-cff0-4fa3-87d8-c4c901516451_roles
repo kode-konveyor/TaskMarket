@@ -1,0 +1,75 @@
+<element xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xmlns:zenta="http://magwas.rulez.org/zenta"
+         xsi:type="zenta:BasicObject"
+         name="roles"
+         id="7b3d615e-cff0-4fa3-87d8-c4c901516451"
+         ancestor="behaviour">
+   <documentation>Before attempting to do any operation, all controllers should make sure that the user have appropriate rights.
+
+Roles belong to exactly one project. The project "Kode Konveyor" contains the system-level roles
+
+## registered
+
+- When the user registers itself with the github login name, it is added to the "registered" role in Kode Konveyor
+
+## Project roles
+
+- The resources of a private project can only be accessed by users in a role belonging to a project.
+
+Every project role in closed project, and all can_be_paid users in public projects can grab a task and issue a pull request
+
+## manager
+- The manager role is able to manage the given project (manage its roles, update model, add users)
+- Only this role can use UpdateTasksController
+- only this role can check bills
+
+## roles in the Kode Konveyor project
+
+### can_be_paid
+
+- Users with up to date contract information should be added to the can_be_paid role  , and whenever the information becomes outdated, they should be removed from that role
+
+### contract
+
+- The contract role  in Kode Konveyor can see all contract related data and the payment details of a user.
+- This does not include the payment history.
+
+### technical
+
+- The technical role  in Kode Konveyor can see all the technical data of the user, its legal name and github username.
+- This does not include other legal or any payment data.
+
+### projectmanager
+
+- Can create/delete/configure any aspect of any project
+- Can add/remove roles
+
+## sales
+
+- Can list leads
+
+## established
+established coder. can be invited to projects
+
+## mentor
+
+- can record mentoring dates
+
+## reviewer
+
+- can merge pull requests
+
+## designer
+
+- can update project models
+
+## analyst
+
+- established analyst
+
+The user is entitled to see all the data we are storing about her.
+
+## finance
+- can approve payment transfers
+</documentation>
+</element>

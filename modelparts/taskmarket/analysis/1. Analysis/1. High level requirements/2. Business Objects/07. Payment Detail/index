@@ -1,0 +1,15 @@
+<index xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:zenta="http://magwas.rulez.org/zenta">
+   <folder name="Payment Details" id="47896b44-40f7-457f-b1aa-a41b829a9413"/>
+   <entry name="Payment Detail" id="26cd31ce-c875-4138-b906-410dc5edf446"/>
+   <entry name="Payment Detail" id="fa9e083c-e45d-4770-9e65-0a03fdadcd6c"/>
+   <entry name="account id" id="2dbd0380-0feb-4412-986d-86ffe1848945"/>
+   <entry name="bank id" id="310277ed-6100-481b-aa04-ed1baac5c622"/>
+   <entry name="name" id="049ef583-982a-4606-a464-067f22b0f788"/>
+   <entry name="percentage" id="74dc68ff-5731-4c5a-8f8c-c843a822cc21"/>
+   <entry name=";Direct;" id="a150c2cd-d4f1-40b4-a1ae-db41e61209d2"/>
+   <entry name=";Direct;" id="491c459b-af04-4af4-9926-ba22bf4f2c60"/>
+   <entry name=";Direct;" id="d9101ae3-b48b-4a1f-99bf-f12c437cec74"/>
+   <entry name=";Direct;" id="1102a3d9-ffb6-4013-8317-24fb5d6b5c0a"/>
+   <entry name=";Reference;" id="1c78d91d-7d85-446f-8f3e-69679b81288a"/>
+</index>

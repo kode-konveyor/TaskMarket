@@ -1,0 +1,15 @@
+<index xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:zenta="http://magwas.rulez.org/zenta">
+   <entry name="LegalForm (design)" id="f9facb96-9f2c-4e4b-a6aa-4beb04568202"/>
+   <entry name="LegalFormTestData" id="d79431c8-e645-4e96-a846-5f8480842ae4"/>
+   <entry name="COUNTRY" id="491df362-3a26-4e09-80b5-f8c27ac54b3f"/>
+   <entry id="9636e937-a688-48a8-bb19-e99523f437a9"/>
+   <entry name="LEGAL_FORM_NAME" id="5f2fa951-dabd-4bcd-9f2e-d2648e2e48ef"/>
+   <entry id="1b8b8a8e-6f96-4532-94f5-eb0a2998e650"/>
+   <entry id="05d519ee-d9fe-44de-8006-5b477bb79d2e"/>
+   <entry id="a9cce391-937d-4794-93c9-df0135f56d6e"/>
+   <entry id="e90bfdfb-ce60-45f7-b67c-0e1525b5197b"/>
+   <entry id="bd710352-3d5a-4572-ad08-ace5f5f1e2ad"/>
+   <entry id="708c4dd2-636e-4092-ba27-8faf028de6d4"/>
+   <entry id="15e44735-78f1-44b3-8a54-b659b2a43c65"/>
+</index>

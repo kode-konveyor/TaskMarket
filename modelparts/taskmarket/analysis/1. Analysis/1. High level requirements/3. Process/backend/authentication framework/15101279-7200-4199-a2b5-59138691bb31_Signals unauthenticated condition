@@ -1,0 +1,6 @@
+<element xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xmlns:zenta="http://magwas.rulez.org/zenta"
+         xsi:type="zenta:BasicObject"
+         name="Signals unauthenticated condition"
+         id="15101279-7200-4199-a2b5-59138691bb31"
+         ancestor="83af8497-bfef-451b-9bc6-f00d58c8df6a"/>

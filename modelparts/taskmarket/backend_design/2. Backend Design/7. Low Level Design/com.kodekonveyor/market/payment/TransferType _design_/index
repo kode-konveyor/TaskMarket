@@ -1,0 +1,23 @@
+<index xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:zenta="http://magwas.rulez.org/zenta">
+   <entry name="TransferType (design)" id="64ccc601-f19d-44e7-89aa-2108e4a04d6e"/>
+   <entry name="TransferTypeTestData" id="b68dd1c1-acad-4a41-8c9a-961547eba1cc"/>
+   <entry name="TRANSFER_TYPE_NAME" id="4afeddeb-5124-42ee-9387-2ce5df2704ae"/>
+   <entry id="30346ed4-2443-4ed5-9a53-d0ec44ccf978"/>
+   <entry name="BANK_ID_LABEL" id="da5e1083-e299-431f-bdf0-8da23d91bef7"/>
+   <entry id="342b65f8-37e4-4611-b23b-4711393cd017"/>
+   <entry name="ACCOUNT_ID_LABEL" id="d8588bc3-12ca-4919-b3f3-ed75765cfb19"/>
+   <entry id="5934e7bf-da8b-422a-b0df-c289fc2af7ff"/>
+   <entry name="IS_BANK_ID_SHOWN" id="929c9e92-27fb-4a20-8995-0ef6383f519e"/>
+   <entry id="ddfccbb1-4213-425a-bdf0-0fbd2b74401c"/>
+   <entry id="765cb6ed-2e51-4957-b469-bd816c55812a"/>
+   <entry id="89d2cf02-dc03-4f49-b84a-b8395115701a"/>
+   <entry id="fea8ef9c-2e41-4779-ab80-00d3ae961d35"/>
+   <entry id="867266e3-604c-410b-b171-69d9f76e1c6c"/>
+   <entry id="b0e4717d-a782-44b3-9d69-8073624225ab"/>
+   <entry id="8d731f70-6a80-455d-b956-53ee9f21e330"/>
+   <entry id="d73734cc-024e-4b80-a146-c7e9d3af5f8a"/>
+   <entry id="09c561fd-90b9-4dfc-bbe3-f8f7fd343d86"/>
+   <entry id="ef42832e-47d6-4b5f-bb77-13fa315bc699"/>
+   <entry id="4d1c8a11-d42b-43e5-ae94-4ef7d124380f"/>
+</index>

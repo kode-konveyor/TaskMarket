@@ -1,0 +1,6 @@
+<element xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xmlns:zenta="http://magwas.rulez.org/zenta"
+         xsi:type="zenta:BasicObject"
+         name="TaskStatusEnum"
+         id="a1a103b8-562a-4a2c-a921-a0f184651f25"
+         ancestor="833d959e-228d-4954-a74f-90c355ac36a3"/>

@@ -1,0 +1,28 @@
+<index xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:zenta="http://magwas.rulez.org/zenta">
+   <entry name="project details" id="e95e1440-f16a-4029-a1b1-066e4188776a"/>
+   <entry name="add" id="467167b7-0c8e-4813-b15d-ea18af916a7a"/>
+   <entry name="add" id="0deadb25-806b-4640-8db5-2b7b2950ed6f"/>
+   <entry name="behaviour" id="9d0d78d4-a562-4238-ab3f-80ba8399e40d"/>
+   <entry name="budget" id="d3adcf72-74d2-429f-ab40-a990532659f7"/>
+   <entry name="description" id="bb89d0ff-9798-400c-b678-eb92df5c79b4"/>
+   <entry name="filter tasks" id="c4cb667a-b251-4bc5-a87c-bcf7134037d3"/>
+   <entry name="github id" id="e014735c-9401-4b4f-80f6-df99dac1bf62"/>
+   <entry name="github id" id="da6c4e1a-977a-4692-a8ef-487808204111"/>
+   <entry name="is public?" id="bd94185f-302f-4789-8b61-8ac544d561fb"/>
+   <entry name="milestone" id="b70283bd-d135-4338-986b-5cad5206e8f4"/>
+   <entry name="milestones" id="19e0a0c3-1b40-4af1-8608-f6e2028770cc"/>
+   <entry name="name" id="4da7655f-49c0-4470-b07d-b1f5499b98e4"/>
+   <entry name="name" id="b34625f2-d44c-4c80-90dc-2c616372a01f"/>
+   <entry name="order" id="3611b279-7fff-40f8-a986-986d00e22ea2"/>
+   <entry name="project details" id="6b40bc09-4472-4393-872f-4b7df9d289e1"/>
+   <entry name="projectuser" id="e537b168-842e-48c7-8475-93ae0cdd6650"/>
+   <entry name="roles" id="30260393-9986-4bc8-9a49-4e8b07a2b194"/>
+   <entry name="service" id="6047e926-336d-4f06-b7f1-923faaa246c0"/>
+   <entry name="task" id="6891a626-40ec-4815-bef9-58a6fa71ca83"/>
+   <entry name="tasks" id="6f6fa70f-0a22-426a-ae62-d983fc16b8da"/>
+   <entry name="tasks" id="1c0cd0e2-7cc3-4240-bc1a-6729eb282c56"/>
+   <entry name="users" id="c62faee3-ebfe-40b8-8478-981c35c22c04"/>
+   <entry name="+" id="217d4b30-50f8-4e3d-a45d-94b3b5a2b120"/>
+   <entry name="increase" id="cdb2da73-02cb-4d96-8221-e1a20083967a"/>
+</index>

@@ -1,0 +1,6 @@
+<element xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xmlns:zenta="http://magwas.rulez.org/zenta"
+         xsi:type="zenta:BasicObject"
+         name="record completion day for pull requests"
+         id="fd39a110-0491-4da0-94aa-084b0190f529"
+         ancestor="behaviour"/>

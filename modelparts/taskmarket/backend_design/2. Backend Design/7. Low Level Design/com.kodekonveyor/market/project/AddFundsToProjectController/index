@@ -1,0 +1,19 @@
+<index xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:zenta="http://magwas.rulez.org/zenta">
+   <entry name="AddFundsToProjectController"
+          id="332b73c7-efdb-4842-8cbc-0884826f6fc1"/>
+   <entry id="fae18c61-6cef-43f1-aed0-6a474a9ca9b1"/>
+   <entry id="713d90a2-4088-43c4-9112-fd6cc3effcfe"/>
+   <entry name="AddFundsToProjectController"
+          id="9b040ba0-e6f4-4549-b638-896f8701a98c"/>
+   <entry id="86e1a482-1f1d-4aba-99b1-dd5cee5a5ba1"/>
+   <entry id="e5b29f9d-6423-46e5-89b6-3da45b51efb7"/>
+   <entry id="2299ed80-b7bd-405b-9e99-19366ade16c6"/>
+   <entry id="11f8a0b4-18d2-4ad2-a88e-6a4d8bc8e665"/>
+   <entry id="e3a72f00-6a35-404d-a36b-87baab5122f1"/>
+   <entry id="b3f2963d-f1ea-4fc5-99fd-0767c6e2f9c9"/>
+   <entry id="5daeb214-cf38-4abc-abf6-193b6cdfb1a5"/>
+   <entry id="c9ddc909-fe49-4caf-8218-70318c6fdfa8"/>
+   <entry id="92ebe108-7ffa-45ba-8048-a4c7daca8aa2"/>
+   <entry name="projectName" id="f148a088-1197-4843-b3a7-0a6275c10997"/>
+</index>

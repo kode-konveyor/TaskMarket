@@ -1,0 +1,9 @@
+<element xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xmlns:zenta="http://magwas.rulez.org/zenta"
+         xsi:type="zenta:BasicObject"
+         name="count up for grab tasks"
+         id="afa05810-6f96-4ea3-9ddb-03847ebcb488"
+         ancestor="behaviour">
+   <documentation>count the number of up for grab tasks in the project, and decide whether it is below of minimum for grab
+</documentation>
+</element>

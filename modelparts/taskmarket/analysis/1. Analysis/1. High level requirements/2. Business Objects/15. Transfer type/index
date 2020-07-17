@@ -1,0 +1,13 @@
+<index xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:zenta="http://magwas.rulez.org/zenta">
+   <entry name="Transfer type" id="0435a011-3e35-4f08-9157-4e41e6f78940"/>
+   <entry name="transfer type name" id="6eb8c005-6d03-44ca-8c0b-af4c3ba96089"/>
+   <entry name="account id label" id="804481fa-2c2d-4360-83fb-2bcb9e1c808c"/>
+   <entry name="is bank id shown" id="1a53e024-5dab-4628-9ec3-8177ab0df4b8"/>
+   <entry name="bank id label" id="5675fe5c-4536-496a-87f6-8a3a196a06df"/>
+   <entry name="Transfer type" id="6384ae52-46e2-4b0b-8349-1d9de10c8691"/>
+   <entry name=";Direct;" id="4bf2ae4b-e976-4122-af6c-866f3e5c4d35"/>
+   <entry name=";Direct;" id="9e864140-4ad6-4bc3-8cee-b9aebbce870a"/>
+   <entry name=";Direct;" id="81a47ec2-73fa-4797-828e-70a5e27f95bd"/>
+   <entry name=";Direct;" id="fdf00702-778c-4174-897c-8ff04db6349d"/>
+</index>

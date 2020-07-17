@@ -1,0 +1,9 @@
+<index xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:zenta="http://magwas.rulez.org/zenta">
+   <entry name="AuthenticatedUserService"
+          id="545bbd7a-f48c-46d7-a01f-06ceaf2e57f5"/>
+   <entry name="AuthenticatedUserService"
+          id="9a0e9782-f2bf-49ed-b11b-ac5e3198843c"/>
+   <entry id="5b571747-7e1e-4183-9c8f-2ceb794881f9"/>
+   <entry id="4f2ba65b-45ed-4ff3-b1b3-bd64937966cd"/>
+</index>

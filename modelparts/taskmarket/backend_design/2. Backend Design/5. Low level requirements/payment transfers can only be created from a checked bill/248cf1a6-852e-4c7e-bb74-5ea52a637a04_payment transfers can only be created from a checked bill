@@ -1,0 +1,22 @@
+<element xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xmlns:zenta="http://magwas.rulez.org/zenta"
+         xsi:type="zenta:ZentaDiagramModel"
+         name="payment transfers can only be created from a checked bill"
+         id="248cf1a6-852e-4c7e-bb74-5ea52a637a04">
+   <child xsi:type="zenta:DiagramObject"
+          id="57496b1b-1638-4df4-be40-ecc7557359d3"
+          zentaElement="5a042704-512e-462c-a892-9276624a709d">
+      <bounds x="176" y="57" width="197" height="88"/>
+      <sourceConnection xsi:type="zenta:Connection"
+                        id="d79878c0-12d3-4ddd-981f-df01b25bb80e"
+                        source="57496b1b-1638-4df4-be40-ecc7557359d3"
+                        target="87012572-9654-4ac5-946b-15e7d2047f8d"
+                        relationship="5a4646c1-6d67-4e9c-86b4-376e3310c49e"/>
+   </child>
+   <child xsi:type="zenta:DiagramObject"
+          id="87012572-9654-4ac5-946b-15e7d2047f8d"
+          targetConnections="d79878c0-12d3-4ddd-981f-df01b25bb80e"
+          zentaElement="56d698d7-3931-4592-aefd-a3afee02ce6a">
+      <bounds x="506" y="144" width="215" height="95"/>
+   </child>
+</element>

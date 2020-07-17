@@ -1,0 +1,8 @@
+<element xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xmlns:zenta="http://magwas.rulez.org/zenta"
+         xsi:type="zenta:BasicObject"
+         name="LEAD_PATH"
+         id="a5bf867f-6fd1-41c7-9cce-05eeb89f3aab"
+         ancestor="2cb904ef-0cda-422b-82f6-0509c595b8fd">
+   <documentation>"/lead"</documentation>
+</element>

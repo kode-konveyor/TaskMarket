@@ -1,0 +1,33 @@
+<element xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xmlns:zenta="http://magwas.rulez.org/zenta"
+         xsi:type="zenta:ZentaDiagramModel"
+         name="Legal form"
+         id="2d9b8afb-bc70-439a-89cd-654bdeae010a">
+   <child xsi:type="zenta:DiagramObject"
+          id="989b7216-cf59-477d-8269-de2e343a3601"
+          zentaElement="25e6c921-0bbf-4730-b918-8d0110fec79c">
+      <bounds x="164" y="97" width="-1" height="-1"/>
+      <sourceConnection xsi:type="zenta:Connection"
+                        id="00355c6b-967a-4784-a1e7-9ef0acc53960"
+                        source="989b7216-cf59-477d-8269-de2e343a3601"
+                        target="e8e1b561-a97f-4ecc-bbf0-aa8858bf5436"
+                        relationship="434d0af1-ee38-461a-9b4e-7ed9a0ee5dc3"/>
+      <sourceConnection xsi:type="zenta:Connection"
+                        id="88865aea-180d-4772-b5fa-3cb464bdd211"
+                        source="989b7216-cf59-477d-8269-de2e343a3601"
+                        target="302a0efa-5958-4346-a41b-be54b610f1e2"
+                        relationship="f69bb432-f139-4959-a0c6-5fe0cc1e79b3"/>
+   </child>
+   <child xsi:type="zenta:DiagramObject"
+          id="e8e1b561-a97f-4ecc-bbf0-aa8858bf5436"
+          targetConnections="00355c6b-967a-4784-a1e7-9ef0acc53960"
+          zentaElement="1564d77f-c284-433d-a483-b056ee35144d">
+      <bounds x="45" y="204" width="-1" height="-1"/>
+   </child>
+   <child xsi:type="zenta:DiagramObject"
+          id="302a0efa-5958-4346-a41b-be54b610f1e2"
+          targetConnections="88865aea-180d-4772-b5fa-3cb464bdd211"
+          zentaElement="5f4a06c3-a4c4-4cf6-9c91-f60abbcf872e">
+      <bounds x="240" y="204" width="-1" height="-1"/>
+   </child>
+</element>

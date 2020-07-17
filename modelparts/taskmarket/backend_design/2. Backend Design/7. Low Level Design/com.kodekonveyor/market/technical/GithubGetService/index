@@ -1,0 +1,16 @@
+<index xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:zenta="http://magwas.rulez.org/zenta">
+   <entry name="GithubGetService" id="5cd290be-de1b-4b74-be21-7b2e1add789e"/>
+   <entry name="GithubGetService" id="acf5610c-78f3-49fa-8d96-1bdbbca704cd"/>
+   <entry id="8330558d-d301-4ffa-a0bb-20326ef74ae6"/>
+   <entry id="cb1d76bb-fc39-41b3-be4a-acf0d67eb30e"/>
+   <entry id="1414fd89-484d-46f7-a6eb-a0b2afec65fa"/>
+   <entry id="381931dd-47f7-400c-9120-24979db8fe3e"/>
+   <entry id="84bcbd44-340c-4b3a-8862-f5ab9bac179e"/>
+   <entry id="2dcceea8-f06f-46cb-b91e-dd29c4b3882e"/>
+   <entry id="58b01092-9f9b-48e6-9f01-f3f2abf46a9f"/>
+   <entry id="317edfd7-f883-49dc-8947-3304d1e69fdd"/>
+   <entry id="5cc41ae9-05e0-47ed-961e-e6760d302178"/>
+   <entry id="5aea1038-b625-491d-9ba3-6a979a583a2e"/>
+   <entry id="11b0d594-f51d-4295-a869-11a73b4979cc"/>
+</index>

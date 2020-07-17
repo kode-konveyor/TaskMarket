@@ -1,0 +1,6 @@
+<element xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xmlns:zenta="http://magwas.rulez.org/zenta"
+         xsi:type="zenta:BasicObject"
+         name="ungrab timed out task"
+         id="383970bb-c6a0-4321-b961-41f8bb4aaeef"
+         ancestor="83af8497-bfef-451b-9bc6-f00d58c8df6a"/>

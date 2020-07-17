@@ -1,0 +1,10 @@
+<element xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xmlns:zenta="http://magwas.rulez.org/zenta"
+         xsi:type="zenta:BasicObject"
+         name="store username"
+         id="b97d27a5-0e49-49f9-89f6-7c7c0ad7654e"
+         ancestor="behaviour">
+   <documentation>store the authenticated username from the request
+See
+https://www.baeldung.com/get-user-in-spring-security</documentation>
+</element>

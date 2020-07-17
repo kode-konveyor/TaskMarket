@@ -1,0 +1,6 @@
+<element xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xmlns:zenta="http://magwas.rulez.org/zenta"
+         xsi:type="zenta:BasicObject"
+         name="CheckUpforgrabTasksService"
+         id="421164a7-934b-4828-9772-c1e7440aca1c"
+         ancestor="service"/>

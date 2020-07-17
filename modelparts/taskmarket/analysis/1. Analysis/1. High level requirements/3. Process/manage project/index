@@ -1,0 +1,13 @@
+<index xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:zenta="http://magwas.rulez.org/zenta">
+   <entry name="manage project" id="6b84ac8b-141e-4d5f-93d8-383811c98f1f"/>
+   <entry name="list milestones of project"
+          id="6efc62b2-eefe-4624-9606-f14494d0164c"/>
+   <entry name="List tasks" id="8a83f492-9aa2-4264-8515-e9548ee80c0e"/>
+   <entry name="list users of project" id="08ff87a5-a775-4e27-91d0-70d93535154f"/>
+   <entry name="manage project" id="13a1f527-d649-4c11-add3-9b491d865f0e"/>
+   <entry name="see project details" id="5b712e57-0ddc-4b5b-b38f-cfe1c24a6c1a"/>
+   <entry id="b0608deb-4754-4d07-b5dd-dade24309373"/>
+   <entry name="probably turn milestone view to gantt chart later"
+          id="aef0525a-7d5d-4d9e-a113-ba622a7e9256"/>
+</index>

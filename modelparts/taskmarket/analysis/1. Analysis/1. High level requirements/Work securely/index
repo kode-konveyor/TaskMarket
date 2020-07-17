@@ -1,0 +1,18 @@
+<index xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:zenta="http://magwas.rulez.org/zenta">
+   <entry name="Work securely" id="2c182ee1-10d8-4202-a7ba-c79f896f2057"/>
+   <entry name="Logging" id="f22cec46-800c-4635-9310-b1f697083812"/>
+   <entry name="Log all activities" id="474eba13-2a5b-4b83-8156-26015edffab9"/>
+   <entry name="Validate data" id="4de68368-eae0-42c7-8933-951e4072f4c1"/>
+   <entry name="input validation" id="757624ad-e9ea-492a-9c97-7907db756128"/>
+   <entry name="validate input" id="f16ad499-d0be-4b4b-9678-e2a14db4d041"/>
+   <entry name="compile output" id="20ceb57f-c57a-496c-bca9-50cf4dedae1d"/>
+   <entry name="one role once" id="9c81d0ac-7f93-4fee-9685-da6701cf6bc4"/>
+   <entry name="Return the right data" id="b69651a2-a8a2-47c5-831d-0a64969d6795"/>
+   <entry name="Role-based access control"
+          id="f89e8787-9eb1-4085-94ff-2957c2ef094c"/>
+   <entry name="roles" id="7b3d615e-cff0-4fa3-87d8-c4c901516451"/>
+   <entry name="storage" id="0ee2a123-4972-40f6-9658-fd67ef93850e"/>
+   <entry name="Store all information needed"
+          id="e6f17d83-694e-423d-8df8-362b4bc33434"/>
+</index>

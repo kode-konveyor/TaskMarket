@@ -1,0 +1,27 @@
+<element xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xmlns:zenta="http://magwas.rulez.org/zenta"
+         xsi:type="zenta:ZentaDiagramModel"
+         name="in progress"
+         id="eacf1b41-9c48-449a-a774-85cc4b47b64e">
+   <child xsi:type="zenta:DiagramObject"
+          id="0ff1b8d9-32ae-4090-9215-fe71782fb537"
+          zentaElement="5877a236-16bf-415c-aca7-747112c7e670">
+      <bounds x="301" y="245" width="-1" height="-1"/>
+   </child>
+   <child xsi:type="zenta:DiagramObject"
+          id="3cdd5223-9b6c-4f69-8877-65eef98f624c"
+          zentaElement="5ed3c96e-3a7a-44b3-8bc3-3f5ba36afeb9">
+      <bounds x="451" y="245" width="-1" height="-1"/>
+      <sourceConnection xsi:type="zenta:Connection"
+                        id="db8b773e-9c2d-4af4-b35c-286c91138a46"
+                        source="3cdd5223-9b6c-4f69-8877-65eef98f624c"
+                        target="5ad32dd5-0e7f-40d7-ac48-a19f9560a277"
+                        relationship="f15c63dc-f337-4ce1-ba83-005cdda5ee85"/>
+   </child>
+   <child xsi:type="zenta:DiagramObject"
+          id="5ad32dd5-0e7f-40d7-ac48-a19f9560a277"
+          targetConnections="db8b773e-9c2d-4af4-b35c-286c91138a46"
+          zentaElement="ec812ee5-37d7-42b0-b489-775946e865b1">
+      <bounds x="860" y="247" width="-1" height="-1"/>
+   </child>
+</element>

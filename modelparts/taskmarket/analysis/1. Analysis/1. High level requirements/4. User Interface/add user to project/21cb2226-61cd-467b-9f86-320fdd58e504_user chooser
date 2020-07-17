@@ -1,0 +1,6 @@
+<element xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xmlns:zenta="http://magwas.rulez.org/zenta"
+         xsi:type="zenta:BasicObject"
+         name="user chooser"
+         id="21cb2226-61cd-467b-9f86-320fdd58e504"
+         ancestor="4753b1bb-fc45-4aa1-821d-f08baf8a1766"/>

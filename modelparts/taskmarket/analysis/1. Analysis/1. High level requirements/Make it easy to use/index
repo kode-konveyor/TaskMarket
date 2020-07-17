@@ -1,0 +1,18 @@
+<index xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:zenta="http://magwas.rulez.org/zenta">
+   <entry name="Make it easy to use" id="9ca857d1-38a5-47cd-80b1-a30a696c5f27"/>
+   <entry name="Show information in an easily comprehensible way"
+          id="c6bb4719-b407-49e8-82c4-9b7431339d56"/>
+   <entry name="fill in all the fields in profile area"
+          id="77d403a6-a881-4026-a077-6cc48eb94266"/>
+   <entry name="next step" id="7355db42-307a-4943-b8cc-0c0ad49d9f7d"/>
+   <entry name="Support integration with external services"
+          id="ffe9debd-401a-4132-9450-b975f74c8e22"/>
+   <entry name="exception handling" id="906f88cc-7dab-4e27-a2b0-92058eed3965"/>
+   <entry name="use github api" id="9b5875a9-4845-4d7a-885c-883dea7c2485"/>
+   <entry name="unhide controls" id="13d57563-2c16-4416-849e-045927bf3064"/>
+   <entry name="message on discord" id="9bd646ae-80ef-4820-be9f-1da96d7180a4"/>
+   <entry id="3205e41c-91b4-40c0-b6a5-a1c87d86c7fb"/>
+   <entry name="graphql" id="25ae8fe3-bb7e-4577-b1af-cf043ccca4db"/>
+   <entry name="get pull request" id="e3033225-558c-4c02-8e3c-debdb1fe1b98"/>
+</index>

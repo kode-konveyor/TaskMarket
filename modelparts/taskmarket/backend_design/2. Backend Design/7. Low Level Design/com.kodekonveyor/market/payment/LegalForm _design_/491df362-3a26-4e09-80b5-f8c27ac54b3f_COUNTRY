@@ -1,0 +1,8 @@
+<element xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xmlns:zenta="http://magwas.rulez.org/zenta"
+         xsi:type="zenta:BasicObject"
+         name="COUNTRY"
+         id="491df362-3a26-4e09-80b5-f8c27ac54b3f"
+         ancestor="ffbe5058-5089-4c5a-965d-e996df089f8e">
+   <documentation>"ee"</documentation>
+</element>

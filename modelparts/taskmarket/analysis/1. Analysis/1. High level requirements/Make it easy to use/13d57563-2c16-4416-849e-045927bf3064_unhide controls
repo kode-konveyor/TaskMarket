@@ -1,0 +1,10 @@
+<element xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xmlns:zenta="http://magwas.rulez.org/zenta"
+         xsi:type="zenta:BasicObject"
+         name="unhide controls"
+         id="13d57563-2c16-4416-849e-045927bf3064"
+         ancestor="behaviour">
+   <documentation>based on the amount of information already in the user entity and the roles the user have, unhide controls tied to those circumstances
+- new project can be created if the account balance is above eur 500
+</documentation>
+</element>

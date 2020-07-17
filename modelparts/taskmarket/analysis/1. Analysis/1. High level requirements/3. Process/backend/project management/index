@@ -1,0 +1,30 @@
+<index xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:zenta="http://magwas.rulez.org/zenta">
+   <entry name="Get raw data from an URL"
+          id="cec810a4-2a91-4b4f-a7e7-1e3e325770f2"/>
+   <entry name="get tasks for one repository"
+          id="68f46fc3-feec-4ee0-a723-f27b3d6cc4fe"/>
+   <entry name="list tasks in project" id="6a69a163-a04c-4764-ab1a-c676f0bc2e82"/>
+   <entry name="update a github issue" id="d1f9203f-779b-4a94-ad15-fc75f31cfd0b"/>
+   <entry name="update the project model"
+          id="994fba20-1037-41c8-9db3-7c39bb49d2d8"/>
+   <entry name="project management" id="5306bf7e-44a6-4ca1-b693-3813cf7aacba"/>
+   <entry name="add funds to project" id="f48f189a-b8ea-4618-8901-50ab4c79b1a3"/>
+   <entry name=";Ordered,Entity,Repo;" id="2499cf59-33dc-476a-9637-641431278076"/>
+   <entry id="3e32b3d2-d42b-4f9d-9867-ccfef09b54b6"/>
+   <entry name=";Unordered,Entity,Repo;"
+          id="381ca9b0-de81-4851-b63a-e67b76af7def"/>
+   <entry id="f4b484e3-980f-467c-b528-c11e03e86be6"/>
+   <entry name=";One,DTO,Interface;" id="75dc3b92-496a-49c6-a46d-39fe1fb4e212"/>
+   <entry name=";One,Entity,Repo;" id="28dc1e74-5ccd-4428-a9d9-c56e39809c5b"/>
+   <entry name=";Unordered,Entity,Repo;"
+          id="6d7caa04-7496-4281-891e-1509914eaec3"/>
+   <entry name=";One,Reference,Interface;"
+          id="dc2a943b-6b75-4b7c-8073-c96b50ea33bf"/>
+   <entry name=";One,DTO,Interface;" id="294cb635-0109-46ca-bc30-e09b02210eed"/>
+   <entry name=";One,Entity,Repo;" id="f78640a3-a80e-4908-a824-41b48b8a8e31"/>
+   <entry name=";One,Entity,Repo;" id="8f1d8d14-5db9-42d5-bfc1-9b1d5e7902b6"/>
+   <entry name=";One,Reference,Interface;"
+          id="6cfd6868-c8ef-422f-8445-50c6fb0ca00a"/>
+   <entry name=";One,Entity,Repo;" id="99f602d1-d00a-47fe-983d-2740fe72b9be"/>
+</index>

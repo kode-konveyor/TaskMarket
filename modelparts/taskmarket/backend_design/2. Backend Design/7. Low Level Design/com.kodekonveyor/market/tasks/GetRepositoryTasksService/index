@@ -1,0 +1,10 @@
+<index xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:zenta="http://magwas.rulez.org/zenta">
+   <entry name="GetRepositoryTasksService"
+          id="420820bf-ee52-4d41-ad83-aaa83b6dcf3f"/>
+   <entry name="GetRepositoryTasksService"
+          id="7cdfc7a3-eef3-409f-abb1-27e4947bc787"/>
+   <entry id="3dc7031d-6af6-44f5-bb40-15705c2d1bc9"/>
+   <entry id="606ca003-968b-4856-885f-56e0568044e8"/>
+   <entry id="3f2412d2-639f-496c-bb93-e3efe23d103f"/>
+</index>

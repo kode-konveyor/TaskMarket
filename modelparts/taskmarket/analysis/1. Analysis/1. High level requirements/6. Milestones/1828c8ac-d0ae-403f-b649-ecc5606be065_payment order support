@@ -1,0 +1,6 @@
+<element xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xmlns:zenta="http://magwas.rulez.org/zenta"
+         xsi:type="zenta:BasicObject"
+         name="payment order support"
+         id="1828c8ac-d0ae-403f-b649-ecc5606be065"
+         ancestor="36a15a23-a4a0-40b5-901b-310f3a1df0c7"/>

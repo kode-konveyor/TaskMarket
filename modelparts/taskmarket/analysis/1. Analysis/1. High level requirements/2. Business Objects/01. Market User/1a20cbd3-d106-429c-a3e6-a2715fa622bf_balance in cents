@@ -1,0 +1,6 @@
+<element xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xmlns:zenta="http://magwas.rulez.org/zenta"
+         xsi:type="zenta:BasicObject"
+         name="balance in cents"
+         id="1a20cbd3-d106-429c-a3e6-a2715fa622bf"
+         ancestor="267f4d47-e1e6-4af4-8677-3cf65fc8db86"/>

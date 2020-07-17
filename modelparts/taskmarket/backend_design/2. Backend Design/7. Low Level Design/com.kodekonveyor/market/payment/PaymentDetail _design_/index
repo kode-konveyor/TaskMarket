@@ -1,0 +1,24 @@
+<index xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:zenta="http://magwas.rulez.org/zenta">
+   <entry name="PaymentDetail (design)" id="9a022588-4508-4623-be9b-4f7f0fef17cd"/>
+   <entry name="PaymentDetailTestData" id="983452da-86f9-4e15-a8c5-03fb626d8a61"/>
+   <entry name="NAME" id="97d14d06-b898-4107-af2b-461f4b1a60ed"/>
+   <entry id="64ad2652-1ebc-47e5-9140-271991a7ea15"/>
+   <entry name="PERCENTAGE" id="c5dddbb9-1383-4fe6-afa5-9190de403603"/>
+   <entry id="765f8dc4-95fa-4096-97bc-6e8abce6ada4"/>
+   <entry name="ACCOUNT_ID" id="eca96435-7ebf-44ae-a59c-75720f96fe4a"/>
+   <entry id="6458587c-58cf-4d7b-a484-8558eb4d2c5f"/>
+   <entry name="BANK_ID" id="ec9c4f90-753a-4d84-b735-0338eaa6633c"/>
+   <entry id="0a9e45dc-0565-44c1-9fed-aeca5f38d11e"/>
+   <entry id="facb333e-5384-499e-b9ff-71c057d65295"/>
+   <entry id="e076595e-c2ce-4f1e-ac1d-4cc97fd70a6b"/>
+   <entry id="4a054edc-59d3-4f0a-9000-16d49a3f6ee0"/>
+   <entry id="abd48ca3-b943-460d-a451-9245e3fd718b"/>
+   <entry id="f029d406-907f-42d6-826f-0694291f96fd"/>
+   <entry id="62cacf13-7eca-4ff2-a43e-883ce4dd7e4c"/>
+   <entry id="c7bdfbec-d5eb-4d9d-ad4a-8c37e4e08605"/>
+   <entry id="3b2af640-6a79-4082-ac2f-28b08092c30f"/>
+   <entry id="236424e2-0f37-4bd4-9d73-e8d66b29e08d"/>
+   <entry id="3b7ea017-fc12-42b3-ad9d-070b58a26802"/>
+   <entry id="5450ac78-2dd1-489f-882d-6673c78fea1f"/>
+</index>

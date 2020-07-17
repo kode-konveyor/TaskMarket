@@ -1,0 +1,26 @@
+<element xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xmlns:zenta="http://magwas.rulez.org/zenta"
+         xsi:type="zenta:ZentaDiagramModel"
+         name="add user to project"
+         id="648d99ca-8ac9-4243-8612-59ab018100cf">
+   <child xsi:type="zenta:DiagramObject"
+          id="ea7d1fe1-2de7-47c3-9237-9875871bfb15"
+          zentaElement="b1548345-8292-4cfc-99fc-c5e720c0e8e1">
+      <bounds x="300" y="108" width="-1" height="-1"/>
+      <child xsi:type="zenta:DiagramObject"
+             id="9cc6cf4e-193b-4dd0-807d-c26704870fca"
+             zentaElement="21cb2226-61cd-467b-9f86-320fdd58e504">
+         <bounds x="24" y="36" width="-1" height="-1"/>
+      </child>
+      <child xsi:type="zenta:DiagramObject"
+             id="ed66d5b9-26d3-46d4-b207-9eae927fa679"
+             zentaElement="f3a3d1bd-2bec-4665-873d-5eb40cd1586b">
+         <bounds x="24" y="144" width="-1" height="-1"/>
+      </child>
+      <child xsi:type="zenta:DiagramObject"
+             id="1487dc0d-8534-4a5d-992e-c7a66f3d1456"
+             zentaElement="afcf9822-46f7-4870-9e28-8ecd979376c4">
+         <bounds x="24" y="90" width="-1" height="-1"/>
+      </child>
+   </child>
+</element>

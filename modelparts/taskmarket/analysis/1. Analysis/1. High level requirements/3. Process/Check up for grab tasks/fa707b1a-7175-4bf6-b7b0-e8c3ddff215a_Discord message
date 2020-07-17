@@ -1,0 +1,6 @@
+<element xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xmlns:zenta="http://magwas.rulez.org/zenta"
+         xsi:type="zenta:BasicObject"
+         name="Discord message"
+         id="fa707b1a-7175-4bf6-b7b0-e8c3ddff215a"
+         ancestor="bc81820d-6987-4d9b-918a-cf132a2c7bfb"/>

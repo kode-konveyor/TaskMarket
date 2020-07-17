@@ -1,0 +1,9 @@
+<index xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:zenta="http://magwas.rulez.org/zenta">
+   <folder name="RegisterInterestController"
+           id="87b718f7-7816-4551-b9f3-c04667ece66e"/>
+   <folder name="Lead (design)" id="a73f860a-d998-453b-855f-6831c7144038"/>
+   <folder name="ListLeadController" id="712f363a-d3dc-469f-a6c1-5e16a48dcec4"/>
+   <entry name="lead" id="c0b6d18e-6c18-4dff-a9d1-014c8731d93d"/>
+   <entry name="lead" id="2bda6c5a-570b-435b-8c73-b2ae63015005"/>
+</index>

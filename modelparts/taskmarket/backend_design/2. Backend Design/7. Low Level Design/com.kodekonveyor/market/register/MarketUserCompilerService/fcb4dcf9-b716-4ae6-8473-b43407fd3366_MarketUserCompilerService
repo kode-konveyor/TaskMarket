@@ -1,0 +1,6 @@
+<element xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xmlns:zenta="http://magwas.rulez.org/zenta"
+         xsi:type="zenta:BasicObject"
+         name="MarketUserCompilerService"
+         id="fcb4dcf9-b716-4ae6-8473-b43407fd3366"
+         ancestor="service"/>

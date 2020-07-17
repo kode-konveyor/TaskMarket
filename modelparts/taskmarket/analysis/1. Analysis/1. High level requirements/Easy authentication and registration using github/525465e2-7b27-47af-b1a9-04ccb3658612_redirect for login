@@ -1,0 +1,9 @@
+<element xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xmlns:zenta="http://magwas.rulez.org/zenta"
+         xsi:type="zenta:BasicObject"
+         name="redirect for login"
+         id="525465e2-7b27-47af-b1a9-04ccb3658612"
+         ancestor="behaviour">
+   <documentation>The login page redirects the user to the url received in the next parameter.
+(All other aspects of the authentication are handled by apache, auth0, and the com.kodekonveyor.authentication module.)</documentation>
+</element>

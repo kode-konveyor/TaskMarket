@@ -1,0 +1,9 @@
+<index xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:zenta="http://magwas.rulez.org/zenta">
+   <entry name="landing page" id="05e9184a-a084-4427-af90-18f17f7f6a35"/>
+   <entry name="email" id="e7eff9c1-3a81-4f93-b81e-58b8e3f63ca0"/>
+   <entry name="first name" id="30c18639-4731-4819-87d1-5bae0eef9e3c"/>
+   <entry name="interest" id="3aaf9b32-2f00-4989-9fd3-a91223d04a7c"/>
+   <entry name="landing page" id="3b239a6b-cb36-440c-859f-487571d7ae13"/>
+   <entry name="submit" id="a3528eee-7a5d-4169-b10e-97ee21884352"/>
+</index>

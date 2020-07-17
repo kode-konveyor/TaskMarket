@@ -1,0 +1,18 @@
+<index xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:zenta="http://magwas.rulez.org/zenta">
+   <entry name="LoggingMarkerConstants" id="41cb9850-083d-4266-bf06-a4f3fb76dee1"/>
+   <entry name="AUTHENTICATION" id="b6cbb1ed-de6b-4faa-9368-543f2c11f7d3"/>
+   <entry name="LoggingMarkerConstants" id="4ecbbdf1-36b3-48c0-b5e5-4c0eb4f2e8ff"/>
+   <entry id="0cbc2cc4-489f-4110-b831-96e16260479a"/>
+   <entry name="GITHUB" id="eece95ff-fc92-4650-95e8-7c486750b306"/>
+   <entry id="7daf8a60-585a-43cf-bb22-c9627d02654e"/>
+   <entry name="PROJECT" id="bf631956-3737-48e9-b9ef-380b9f198737"/>
+   <entry id="0458d4e4-4c93-4d84-8680-4c424b4a771b"/>
+   <entry name="LEAD" id="8d7beaa8-2131-4392-969a-064416b1801b"/>
+   <entry id="dcb8e5d8-3798-4593-80f4-118752a16dde"/>
+   <entry id="2f4219fc-8241-46f4-be10-7b2c2749d11c"/>
+   <entry id="543c572f-2224-4c45-ad81-c98984194e73"/>
+   <entry id="dd7e4c50-7acd-4ee1-a683-8a24b1b33afa"/>
+   <entry id="66d4458d-5ba0-4c76-8660-3a629da04aa8"/>
+   <entry id="f3335fa1-860b-4d00-87be-35bc607d6da9"/>
+</index>

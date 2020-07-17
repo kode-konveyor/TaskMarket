@@ -1,0 +1,9 @@
+<index xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:zenta="http://magwas.rulez.org/zenta">
+   <entry name="RestResponseEntityExceptionHandler"
+          id="b99e8788-97dc-403a-b35e-694f1048d6be"/>
+   <entry name="RestResponseEntityExceptionHandler"
+          id="0b7c97f6-08fd-4546-b80d-87ac07dbe1b3"/>
+   <entry id="9a62b222-7f37-4c1a-8b15-34f51a48e87b"/>
+   <entry id="b42c060d-a4e7-4d27-890f-b744c26f4590"/>
+</index>

@@ -1,0 +1,7 @@
+<element xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xmlns:zenta="http://magwas.rulez.org/zenta"
+         xsi:type="zenta:BasicRelationship"
+         id="b4c687b7-cfb2-4dfc-a307-476266e982db"
+         ancestor="aaea75b0-b480-4f6c-a884-1cb5547d2514"
+         source="fb84704a-5707-415d-8e89-3c1940d7f2bd"
+         target="06bb3093-a1f1-4b32-ab3e-e207ed233329"/>

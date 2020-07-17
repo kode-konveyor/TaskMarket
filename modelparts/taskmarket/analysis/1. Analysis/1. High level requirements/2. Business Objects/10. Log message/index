@@ -1,0 +1,11 @@
+<index xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:zenta="http://magwas.rulez.org/zenta">
+   <entry name="Log message" id="fada0303-e16d-4869-80bc-60f317d4eb23"/>
+   <entry name="argument" id="30a34daf-1a5a-429c-b3fc-069f723315c3"/>
+   <entry name="Log message" id="8004d81d-781f-4d45-bffd-75df29033a54"/>
+   <entry name="marker" id="7214f8d3-3dad-402f-a030-174e85a1928a"/>
+   <entry name="message" id="e5dc173e-4c28-47fd-817c-6fdb0a862f29"/>
+   <entry name=";Direct;" id="c1dfffb5-e424-4764-8b09-3047b86fda8c"/>
+   <entry name=";Direct;" id="1537f3dd-e4ed-4028-9c6a-66a6e030795f"/>
+   <entry name=";Direct,Ordered;" id="082db1d1-a59e-4d7a-a549-7716c8ab27bf"/>
+</index>

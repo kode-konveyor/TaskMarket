@@ -1,0 +1,6 @@
+<element xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xmlns:zenta="http://magwas.rulez.org/zenta"
+         xsi:type="zenta:BasicObject"
+         name="Project management (frontend)"
+         id="a96b4416-133c-4094-9bb2-9f0b3b766837"
+         ancestor="36a15a23-a4a0-40b5-901b-310f3a1df0c7"/>

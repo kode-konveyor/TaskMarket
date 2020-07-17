@@ -1,0 +1,12 @@
+<index xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:zenta="http://magwas.rulez.org/zenta">
+   <folder name="dashboard" id="9277197a-a21d-4518-83ff-d0141da0d8cb"/>
+   <folder name="registration" id="82692fd8-a525-49d9-9a96-1643f0b52451"/>
+   <folder name="new project" id="7bd97014-e55f-4487-99e5-2012134c7d1e"/>
+   <folder name="landing page" id="21b6841a-ef16-4679-a6f7-ea2023920c7e"/>
+   <folder name="leads" id="d664f94d-f37d-4ed3-b4e7-808fb3f8bf7b"/>
+   <folder name="update project" id="fbf97e5b-83a4-486f-879b-f58385cb5a5d"/>
+   <folder name="project details" id="db23f71e-6930-430b-9d67-cf26779d4428"/>
+   <folder name="add user to project" id="11311e18-83c0-4f9c-a082-a6f4bb76fa2b"/>
+   <folder name="tasks" id="ffcc2d78-d151-4a85-9250-d7ec2a4e2ca2"/>
+</index>

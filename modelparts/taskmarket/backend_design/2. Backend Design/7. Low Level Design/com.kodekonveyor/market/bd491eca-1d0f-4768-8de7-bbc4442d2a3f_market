@@ -1,0 +1,6 @@
+<element xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xmlns:zenta="http://magwas.rulez.org/zenta"
+         xsi:type="zenta:BasicObject"
+         name="market"
+         id="bd491eca-1d0f-4768-8de7-bbc4442d2a3f"
+         ancestor="d3d4e39d-09a6-4a0f-a985-be922245d850"/>

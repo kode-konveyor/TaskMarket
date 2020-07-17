@@ -1,0 +1,9 @@
+<index xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:zenta="http://magwas.rulez.org/zenta">
+   <folder name="project management" id="50a37874-fb98-496b-80f7-a2624109a5f3"/>
+   <folder name="registration" id="f0e81024-3dbc-4f68-a400-2960605c74ea"/>
+   <folder name="authentication framework"
+           id="b53d1f04-55bb-4f95-a6b3-38765a6bbc6f"/>
+   <folder name="logs events" id="96f9b740-2732-440a-a09e-58dc3a7f7378"/>
+   <entry name="list transfer types" id="72039c1a-d4a1-467a-bef5-c9a516c176eb"/>
+</index>

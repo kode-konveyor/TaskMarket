@@ -1,0 +1,13 @@
+<index xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:zenta="http://magwas.rulez.org/zenta">
+   <folder name="Leads" id="0b58dcc1-a435-469c-b3a5-f1909efe0f7e"/>
+   <entry name="Lead" id="9f6bb6fa-4e8c-487a-b075-099988fb1369"/>
+   <entry name="first name" id="a1f49ba9-0a1a-4df6-83f6-f987942c427a"/>
+   <entry name="email" id="53172721-d35d-47ea-8348-df550e9513d2"/>
+   <entry name="interest" id="13027d25-c4b0-4784-8913-601e62131fe0"/>
+   <entry name="Lead" id="ffecce78-1a12-4429-bfb7-02963714a9d3"/>
+   <entry name=";Direct,Ordered;" id="ec1ca77b-0870-46e5-9a06-6f7b49c5aca4"/>
+   <entry name=";Direct;" id="0064b35d-d37b-47fd-8d06-edec17c9bb6b"/>
+   <entry name=";Direct;" id="8d219c51-3821-4aa1-b192-2ec8bd0e5cfb"/>
+   <entry name=";Direct;" id="ddf7d020-3459-44bd-8155-be9ebc958235"/>
+</index>

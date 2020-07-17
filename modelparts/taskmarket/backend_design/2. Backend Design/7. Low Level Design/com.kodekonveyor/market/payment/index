@@ -1,0 +1,14 @@
+<index xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:zenta="http://magwas.rulez.org/zenta">
+   <folder name="Bill (design)" id="8d020888-d6b2-4d11-9d04-bb712f3965bc"/>
+   <folder name="PaymentDetail (design)" id="984ffd74-3c89-49e7-87ee-4e4b83166523"/>
+   <folder name="TransferType (design)" id="ef9be656-8010-4f78-8a11-5d6da8311d08"/>
+   <folder name="LegalForm (design)" id="44938ec7-8e85-4cdd-920b-51298ddd6fcf"/>
+   <folder name="BilledItem (design)" id="990f81dd-befb-4e65-98c4-b561c3f7f44e"/>
+   <folder name="ListLegalFormsController"
+           id="42aa0e80-9b5b-4b95-bd7f-698a15c739df"/>
+   <folder name="ListTransferTypesController"
+           id="c15a892e-4d26-4c77-910b-ac24ca4dc772"/>
+   <entry name="payment" id="f5d6a637-b7c9-4f0d-8b7a-1666e969c2d8"/>
+   <entry name="payment" id="228b4d2f-43df-408c-884c-0ff90e6f3ca0"/>
+</index>

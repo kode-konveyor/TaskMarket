@@ -1,0 +1,14 @@
+<element xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xmlns:zenta="http://magwas.rulez.org/zenta"
+         xsi:type="zenta:BasicObject"
+         name="Support task administration"
+         id="2d3525f3-d02f-4785-aa09-01b455653340"
+         ancestor="107b9a83-1292-49ee-bf2f-542de02b2654">
+   <documentation>- put up the tasks
+- should support the administration of the process of the coder's work
+ - grabbing
+ - ungrabbing
+ - when a pull request merged, identify that the task is done
+ -give payment details for the next steps
+</documentation>
+</element>

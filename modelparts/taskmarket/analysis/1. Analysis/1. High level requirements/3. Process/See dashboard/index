@@ -1,0 +1,14 @@
+<index xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:zenta="http://magwas.rulez.org/zenta">
+   <entry name="See dashboard" id="a6163dd0-1132-4470-af10-ed5eb0755751"/>
+   <entry name="fill in dashboard" id="f0845277-9f02-47e0-8232-35e0cf2fb408"/>
+   <entry name="fill next step" id="0bed9b31-ecd1-479e-8a75-4cbb0cd26d3f"/>
+   <entry name="get projects for the user"
+          id="b5d90c70-075b-4aa1-906b-f6868973d98a"/>
+   <entry name="get tasks for user" id="98981f77-f922-4290-93af-933ff5da3137"/>
+   <entry name="get the user" id="5edc2ce8-9eec-40e7-906d-4234ba988db2"/>
+   <entry name="See dashboard" id="6e110a6e-4572-43d6-b4d3-dba43ba5c489"/>
+   <entry name="unhide controls" id="a58614a4-c12f-4125-b545-d413fd021e5f"/>
+   <entry name="if we identify a role which needs a different dashboard, we create it"
+          id="6e5dce8e-5482-41d0-a817-20219b51dd42"/>
+</index>

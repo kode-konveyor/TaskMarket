@@ -1,0 +1,46 @@
+<element xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xmlns:zenta="http://magwas.rulez.org/zenta"
+         xsi:type="zenta:BasicObject"
+         name="DESCRIPTION"
+         id="6b2a5296-0e06-4ef1-9ab3-caca62a3d567"
+         ancestor="ffbe5058-5089-4c5a-965d-e996df089f8e">
+   <documentation>"Behaviour: UpdateTasksController/Get tasks from github
+
+Annotations for the test cases:
+
+    @TestedBehaviour("Get tasks from github")
+    @TestedService("UpdateTasksController")
+
+The production code is at com.kodekonveyor.market.tasks.UpdateTasksController.java
+The testcase base should be at com.kodekonveyor.market.tasks.UpdateTasksControllerTestBase.java
+The testcase should probably be at com.kodekonveyor.market.tasks.UpdateTasksControllerGetTasksFromGithubTest.java
+
+Issues for one repository are gathered with GetRepositoryTasksService
+
+Issues can be retrieved according to this documentation: https://developer.github.com/v3/issues/#list-repository-issues
+
+The newly obtained tasks are saved in the repository
+
+The status is set by the following rules:
+- open issues marked as "up for grab" are UP_FOR_GRAB
+- open issues marked as "in progress" are IN_PROGRESS
+- other open issues are OPEN
+- closed issues are CLOSED
+
+
+
+The service:
+        
+UpdateTasksController
+[![UpdateTasksController](https://repository.kodekonveyor.com/TaskMarket/kode-konveyor/develop/pics/8f9f8cc6-8c2c-4678-afee-a9cf1f8cc289.png)](https://repository.kodekonveyor.com/TaskMarket/kode-konveyor/develop/index.html#8f9f8cc6-8c2c-4678-afee-a9cf1f8cc289)
+    
+DTOs and Entities:
+        
+TaskDTO,  TaskListDTO, TaskEntity, TaskStatusEnum
+[![TaskDTO,  TaskListDTO, TaskEntity, TaskStatusEnum](https://repository.kodekonveyor.com/TaskMarket/kode-konveyor/develop/pics/ebaffa5c-1cae-44b2-a8d4-14f67dc9df5a.png)](https://repository.kodekonveyor.com/TaskMarket/kode-konveyor/develop/index.html#ebaffa5c-1cae-44b2-a8d4-14f67dc9df5a)
+    
+
+If you have questions, see the [FAQ](https://kodekonveyor.com/coder-faq/), or ask on the [development slack channel](https://app.slack.com/client/TDHQX8Q66/CH9KFMCMU/thread/GKCB5T7CJ-1567418169.000200) or ask your mentor.
+
+"</documentation>
+</element>

@@ -1,0 +1,8 @@
+<element xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xmlns:zenta="http://magwas.rulez.org/zenta"
+         xsi:type="zenta:BasicObject"
+         name="Add funds to the project"
+         id="80ce62bc-a239-4d68-8fe9-a073956e81eb"
+         ancestor="83af8497-bfef-451b-9bc6-f00d58c8df6a">
+   <documentation>Adding funds is done by sending money to the bank account of Kode Konveyor, with project:&lt;projectname&gt; as message</documentation>
+</element>
