@@ -1,18 +1,21 @@
-build_image: kodekonveyor/toolchain:3.6
-language: python
-python:
-  - 2.7
-integrations:
-  key:
-    - integrationName: kodekonveyor
-      type: sshKey
-  generic:
-    - integrationName: kkpipeline
-
-build:
-  ci:
-    - /usr/local/toolchain/tools/Script
-  on_success:
-    - /usr/local/toolchain/tools/publish
-  on_failure:
-    - /usr/local/toolchain/tools/publish
+jobs:
+  - name: kk_build
+    type: runSh
+    steps:
+    integrations:
+      key:
+        - integrationName: kodekonveyor
+          type: sshKey
+      generic:
+        - integrationName: kkpipeline
+      - TASK:
+          name: custom_container_opts
+          runtime:
+            options:
+              imageName: kodekonveyor/toolchain
+              imageTag: 3.6
+              options: --rm -e issuetoken -e sonarkey -v $(pwd):/build -w /build
+          script:
+            - /usr/local/toolchain/tools/Script
+            - /usr/local/toolchain/tools/publish
+  
