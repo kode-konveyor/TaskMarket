@@ -99,6 +99,9 @@
 				<artifactId>maven-surefire-plugin</artifactId>
 				<configuration>
 					<test>**/*Test.java</test>
+					<systemPropertyVariables>
+						<issuetoken>${env.issuetoken}</issuetoken>
+					</systemPropertyVariables>
 				</configuration>
 			</plugin>
 			<plugin>
