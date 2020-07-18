@@ -1,21 +1,17 @@
 jobs:
-  - name: kk_build
+  - name: use_custom_image
     type: runSh
-    runtime:
-       options:
-         imageName: kodekonveyor/toolchain
-         imageTag: 3.6
-         options: --rm -e issuetoken -e sonarkey -v $(pwd):/build -w /build
     steps:
-    integrations:
-      key:
-        - integrationName: kodekonveyor
-          type: sshKey
-      generic:
-        - integrationName: kkpipeline
-      TASK:
-          name: build
+      - TASK:
+          name: need_to_use_custom_container
+          runtime:
+            options:
+              imageName: kodekonveyor/toolchain
+              imageTag: 3.6
+              pull: true                                  # Set to true so it will be pulled
+              options: --rm -e issuetoken -e sonarkey -v $(pwd):/build -w /build
           script:
+            - echo "Checking runtime values"              # These commands will run in the container
+            - sudo docker info
             - /usr/local/toolchain/tools/Script
-            - /usr/local/toolchain/tools/publish
   
