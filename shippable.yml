@@ -7,7 +7,7 @@ jobs:
           name: build
           runtime:
             options:
-              imageName: kodekonveyor/toolchain:3.6
+              imageName: kodekonveyor/toolchain
               imageTag: 3.6
               pull: true                                  # Set to true so it will be pulled
               options: -e issuetoken
