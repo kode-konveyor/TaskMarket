@@ -2,6 +2,7 @@ jobs:
   - name: use_custom_image
     type: runSh
     steps:
+      - IN: TaskMarket_ciRepo
       - TASK:
           name: build
           runtime:
