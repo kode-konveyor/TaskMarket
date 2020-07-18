@@ -9,7 +9,7 @@ jobs:
       generic:
         - integrationName: kkpipeline
       - TASK:
-          name: custom_container_opts
+          name: build
           runtime:
             options:
               imageName: kodekonveyor/toolchain
