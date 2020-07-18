@@ -1,18 +1,17 @@
-build_image: kodekonveyor/toolchain:3.6
-language: python
-python:
-  - 2.7
-integrations:
-  key:
-    - integrationName: kodekonveyor
-      type: sshKey
-  generic:
-    - integrationName: kkpipeline
-
-build:
-  ci:
-    - /usr/local/toolchain/tools/Script
-  on_success:
-    - /usr/local/toolchain/tools/publish
-  on_failure:
-    - /usr/local/toolchain/tools/publish
+jobs:
+  - name: use_custom_image
+    type: runSh
+    steps:
+      - TASK:
+          name: build
+          runtime:
+            options:
+              imageName: kodekonveyor/toolchain
+              imageTag: 3.6
+              pull: true                                  # Set to true so it will be pulled
+              options: --rm -e issuetoken -e sonarkey -v $(pwd):/build -w /build
+          script:
+            - echo "Checking runtime values"              # These commands will run in the container
+            - sudo docker info
+            - /usr/local/toolchain/tools/Script
+  
