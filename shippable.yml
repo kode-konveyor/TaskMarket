@@ -8,7 +8,7 @@ jobs:
           type: sshKey
       generic:
         - integrationName: kkpipeline
-      - TASK:
+      TASK:
           name: build
           runtime:
             options:
