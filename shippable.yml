@@ -1,6 +1,11 @@
 jobs:
   - name: kk_build
     type: runSh
+    runtime:
+       options:
+         imageName: kodekonveyor/toolchain
+         imageTag: 3.6
+         options: --rm -e issuetoken -e sonarkey -v $(pwd):/build -w /build
     steps:
     integrations:
       key:
@@ -10,11 +15,6 @@ jobs:
         - integrationName: kkpipeline
       TASK:
           name: build
-          runtime:
-            options:
-              imageName: kodekonveyor/toolchain
-              imageTag: 3.6
-              options: --rm -e issuetoken -e sonarkey -v $(pwd):/build -w /build
           script:
             - /usr/local/toolchain/tools/Script
             - /usr/local/toolchain/tools/publish
