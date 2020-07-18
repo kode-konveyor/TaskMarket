@@ -10,7 +10,6 @@ jobs:
               imageName: kodekonveyor/toolchain
               imageTag: 3.6
               pull: true                                  # Set to true so it will be pulled
-              options: -e issuetoken
           script:
             - echo "Checking runtime values"              # These commands will run in the container
             - sudo docker info
