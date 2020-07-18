@@ -7,10 +7,10 @@ jobs:
           name: build
           runtime:
             options:
-              imageName: kodekonveyor/toolchain
+                    imageName: kodekonveyor/toolchain:3.6
               imageTag: 3.6
               pull: true                                  # Set to true so it will be pulled
-              options: --rm -e issuetoken -e sonarkey -v $(pwd):/build -w /build
+              options: -e issuetoken
           script:
             - echo "Checking runtime values"              # These commands will run in the container
             - sudo docker info
