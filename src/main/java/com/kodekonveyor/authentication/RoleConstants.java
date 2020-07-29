@@ -6,4 +6,6 @@ public class RoleConstants {
 
   public static final String ROLE_REGISTERED = "registered";
 
+  public static final String ROLE_CONTRACT = "contract";
+
 }

@@ -1,67 +1,51 @@
 package com.kodekonveyor.market.register;
 
-import java.util.ArrayList;
 import java.util.List;
-import java.util.stream.Collectors;
+import java.util.Set;
 
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RestController;
 
+import com.kodekonveyor.authentication.AuthenticatedUserService;
+import com.kodekonveyor.authentication.RoleConstants;
 import com.kodekonveyor.authentication.RoleEntity;
-import com.kodekonveyor.authentication.RoleEntityRepository;
 import com.kodekonveyor.authentication.UserEntity;
 import com.kodekonveyor.authentication.UserEntityRepository;
 import com.kodekonveyor.market.UrlMapConstants;
-import com.kodekonveyor.market.payment.PaymentDetailEntity;
 
 @RestController
 public class ListRegisteredUsersController {
 
   @Autowired
-  MarketUserEntityRepository marketUserEntityRepository;
+  MarketUserCompilerService marketUserCompilerService;
+
+  @Autowired
+  AuthenticatedUserService authenticatedUserService;
 
   @Autowired
   UserEntityRepository userEntityRepository;
 
-  @Autowired
-  RoleEntityRepository roleEntityRepository;
+  @PutMapping(UrlMapConstants.LIST_REGISTERED_USERS_PATH)
+  public List<MarketUserEntity> call() {
+    final UserEntity userEntity = authenticatedUserService.call();
+    final Set<RoleEntity> roleEntities = userEntity.getRole();
 
-  @GetMapping(UrlMapConstants.LIST_REGISTERED_USERS_PATH)
-  public List<MarketUserDTO> call() {
+    for (final RoleEntity role : roleEntities)
+      if (role.getName().equals(RoleConstants.ROLE_CONTRACT)) {
+        final List<UserEntity> usersList =
+            userEntityRepository.findByRole(role);
+        for (final UserEntity otherUser : usersList) {
+          final Object marketUserDTO =
+              marketUserCompilerService.call(otherUser.getId());
+          System.out.println("");
+        }
+      } else if (role.getName().equals(RoleConstants.ROLE_CONTRACT)) {
 
-    final RoleEntity role = roleEntityRepository
-        .findByName(RegisterConstants.REGISTERED_ROLE).get();
+      }
 
-    final List<UserEntity> userList = userEntityRepository.findByRole(role);
+    return null;
 
-    final List<MarketUserDTO> registeredMarketUserList = new ArrayList<>();
-
-    for (final UserEntity user : userList) {
-      final MarketUserEntity entity =
-          marketUserEntityRepository.findByUser(user).get();
-      registeredMarketUserList.add(convertEntityToDTO(entity));
-    }
-
-    return registeredMarketUserList;
-  }
-
-  private MarketUserDTO convertEntityToDTO(final MarketUserEntity entity) {
-    final MarketUserDTO dto = new MarketUserDTO();
-    dto.setBalanceInCents(entity.getBalanceInCents());
-    dto.setEmail(entity.getEmail());
-    dto.setId(entity.getId());
-    dto.setIsTermsAccepted(entity.getIsTermsAccepted());
-    dto.setLegalAddress(entity.getLegalAddress());
-    dto.setLegalForm(entity.getLegalForm().getId());
-    dto.setLegalName(entity.getLegalName());
-    dto.setLogin(entity.getUser().getLogin());
-    dto.setPaymentDetail(
-        entity.getPaymentDetail().stream().map(PaymentDetailEntity::getId).collect(Collectors.toSet())
-    );
-    dto.setPersonalName(entity.getPersonalName());
-    dto.setUser(entity.getUser().getId());
-    return dto;
   }
 
 }
