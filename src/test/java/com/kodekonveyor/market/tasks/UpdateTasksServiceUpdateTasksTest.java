@@ -2,7 +2,6 @@ package com.kodekonveyor.market.tasks;
 
 import static org.junit.Assert.assertEquals;
 
-import org.json.JSONException;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.extension.ExtendWith;
@@ -27,7 +26,7 @@ public class UpdateTasksServiceUpdateTasksTest
   @DisplayName(
     "If there is no github issue with the service/behaviour name, it is created."
   )
-  void test() throws JSONException {
+  void test() {
     TaskEntityRepositoryStubs.taskNotinRepository(taskEntityRepository);
     assertEquals(
         TaskEntityDescriptionsTestData.getDescriptionUpdatedNotInModel(),
@@ -39,7 +38,7 @@ public class UpdateTasksServiceUpdateTasksTest
   @DisplayName(
     "if the description of repository task is different from the task description,it is updated"
   )
-  void test7() throws JSONException {
+  void test7() {
     TaskEntityRepositoryStubs.behaviour(taskEntityRepository);
     assertEquals(
         TaskEntityDescriptionsTestData.getDescriptionDifferentUpdated(),
@@ -52,7 +51,7 @@ public class UpdateTasksServiceUpdateTasksTest
   @DisplayName(
     "if the description between delimiter is same as task descrition, nothing is done"
   )
-  void test2() throws JSONException {
+  void test2() {
     TaskEntityRepositoryStubs.delimiterDescription(taskEntityRepository);
     assertEquals(
         TaskEntityDescriptionsTestData.getDescritionUpdated(),
@@ -65,7 +64,7 @@ public class UpdateTasksServiceUpdateTasksTest
   @DisplayName(
     "if the description between delimiter is different from the task description,it is updated"
   )
-  void test6() throws JSONException {
+  void test6() {
     TaskEntityRepositoryStubs.delimiterDescription(taskEntityRepository);
     assertEquals(
         TaskEntityDescriptionsTestData.getDescriptionDifferentUpdated(),
@@ -79,7 +78,7 @@ public class UpdateTasksServiceUpdateTasksTest
   @DisplayName(
     "if description is different from the input task description and the START delimiter is not at the beginning,it is updated"
   )
-  void test8() throws JSONException {
+  void test8() {
     TaskEntityRepositoryStubs
         .delimiterNotAtStartDesctiptionTask(taskEntityRepository);
     assertEquals(
@@ -98,7 +97,7 @@ public class UpdateTasksServiceUpdateTasksTest
   @DisplayName(
     "if description is different from the input task description and there is no END delimiter,it is updated"
   )
-  void test9() throws JSONException {
+  void test9() {
     TaskEntityRepositoryStubs
         .getupdatedDescriptionNoEndDelimiter(taskEntityRepository);
     assertEquals(
@@ -115,7 +114,7 @@ public class UpdateTasksServiceUpdateTasksTest
   @DisplayName(
     "if description is different from the input task description and there is no START delimiter,it is updated"
   )
-  void test10() throws JSONException {
+  void test10() {
     TaskEntityRepositoryStubs
         .getupdatedDescriptionNoStartDelimiter(taskEntityRepository);
     assertEquals(
