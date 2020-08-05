@@ -35,4 +35,6 @@ public class RegisterConstants {
       "Failed to add role for user {}, error : {}";
   public static final String REGISTERED_ROLE = "registered";
 
+  public static final String NO_VALID_ROLE = "User does not have a valid role!";
+
 }

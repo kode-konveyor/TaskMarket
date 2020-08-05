@@ -11,6 +11,8 @@ import org.mockito.quality.Strictness;
 
 import com.kodekonveyor.annotations.TestedBehaviour;
 import com.kodekonveyor.annotations.TestedService;
+import com.kodekonveyor.authentication.AuthenticatedUserServiceStubs;
+import com.kodekonveyor.exception.ThrowableTester;
 
 @ExtendWith(MockitoExtension.class)
 @MockitoSettings(strictness = Strictness.LENIENT)
@@ -21,9 +23,25 @@ public class ListRegisteredUsersControllerRolesTest
     extends ListRegisteredUsersControllerTestBase {
 
   @Test
-  @DisplayName("")
-  public void testContractRole() {
+  @DisplayName(
+    "An exception is thrown when unsupported role user is logged in"
+  )
+  public void testNoRole() {
+    AuthenticatedUserServiceStubs
+        .registered(authenticatedUserService);
+    ThrowableTester.assertThrows(() -> listRegisteredUsersController.call())
+        .assertMessageContains(RegisterTestData.NO_VALID_ROLE);
 
   }
 
+  @Test
+  @DisplayName(
+    "An exception is thrown when unsupported role user is logged in"
+  )
+  public void testContractRole() {
+    AuthenticatedUserServiceStubs
+        .kodekonveyorContract(authenticatedUserService);
+    listRegisteredUsersController.call();
+
+  }
 }
