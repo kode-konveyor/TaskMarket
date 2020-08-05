@@ -11,4 +11,7 @@ public class UpdateTasksServiceTestBase {
   @Mock
   TaskEntityRepository taskEntityRepository;
 
+  @Mock
+  UpdateGithubIssueService updateGithubIssueService;
+
 }
