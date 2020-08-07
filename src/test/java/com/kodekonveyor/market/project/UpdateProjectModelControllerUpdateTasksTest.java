@@ -45,4 +45,17 @@ public class UpdateProjectModelControllerUpdateTasksTest
     );
   }
 
+  @Test
+  @DisplayName("Updates multiple tasks")
+  public void testMultipleTask() {
+    UpdateTasksServiceStubs.behaviour(updateTasksService);
+    updateProjectModelController
+        .call(
+            ProjectModelDTOTestData.getTwoTasks(), ProjectTestData.PROJECT_NAME
+        );
+    Mockito.verify(taskEntityRepository).save(
+        TaskEntityDescriptionsTestData.getDescriptionDifferent()
+    );
+  }
+
 }

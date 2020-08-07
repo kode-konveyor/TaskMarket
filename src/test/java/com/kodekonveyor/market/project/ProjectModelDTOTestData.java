@@ -18,4 +18,14 @@ public class ProjectModelDTOTestData {
     return projectModelDTO;
   };
 
+  public final static ProjectModelDTO getTwoTasks() {
+    final ProjectModelDTO projectModelDTO = new ProjectModelDTO();
+    projectModelDTO.setId(ProjectModelTestData.ID);
+    projectModelDTO.setTask(
+        Set.of(TaskDTOTestData.get(), TaskDTOTestData.getDifferentTask())
+    );
+    projectModelDTO.setMilestone(Set.of(MilestoneDTOTestData.get()));
+
+    return projectModelDTO;
+  };
 }

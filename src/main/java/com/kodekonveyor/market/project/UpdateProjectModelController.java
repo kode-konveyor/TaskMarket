@@ -58,12 +58,12 @@ public class UpdateProjectModelController {
     validateAuthoization(project);
 
     final Set<MilestoneDTO> milestones = projectModelDTO.getMilestone();
-    final Set<Long> milestonIds = new HashSet<>();
-    milestones.forEach((milestone) -> milestonIds.add(milestone.getId()));
+    final Set<Long> milestoneIds = new HashSet<>();
+    milestones.forEach((milestone) -> milestoneIds.add(milestone.getId()));
     project.setMilestone(
         Sets.newHashSet(
             milestoneEntityRepository
-                .findAllById(milestonIds)
+                .findAllById(milestoneIds)
         )
     );
 
@@ -93,21 +93,27 @@ public class UpdateProjectModelController {
   }
 
   private List<TaskEntity> convertTaskDTOs(final Set<TaskDTO> projectDTOTasks) {
-    final TaskEntity task = new TaskEntity();
+
     final List<TaskEntity> taskEntities = new ArrayList<>();
-    for (final TaskDTO taskDTO : projectDTOTasks) {
-      task.setId(taskDTO.getId());
-      task.setBehaviour(taskDTO.getBehaviour());
-      task.setDescription(taskDTO.getDescription());
-      task.setGithubId(taskDTO.getGithubId());
-      task.setService(taskDTO.getService());
-      task.setMarketUser(
-          marketUserEntityRepository.findById(taskDTO.getMarketUser()).get()
-      );
-      task.setStatus(taskDTO.getStatus());
-      taskEntities.add(task);
-    }
+    for (final TaskDTO taskDTO : projectDTOTasks)
+      taskEntities.add(convertTaskDTO(taskDTO));
     return taskEntities;
+  }
+
+  private TaskEntity convertTaskDTO(
+      final TaskDTO taskDTO
+  ) {
+    final TaskEntity task = new TaskEntity();
+    task.setId(taskDTO.getId());
+    task.setBehaviour(taskDTO.getBehaviour());
+    task.setDescription(taskDTO.getDescription());
+    task.setGithubId(taskDTO.getGithubId());
+    task.setService(taskDTO.getService());
+    task.setMarketUser(
+        marketUserEntityRepository.findById(taskDTO.getMarketUser()).get()
+    );
+    task.setStatus(taskDTO.getStatus());
+    return task;
   }
 
   private void validateAuthoization(final ProjectEntity projectEntity) {

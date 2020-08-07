@@ -16,4 +16,11 @@ public class TaskDTOTestData {
     return taskDTO;
 
   }
+
+  public final static TaskDTO getDifferentTask() {
+    final TaskDTO taskDTO = get();
+    taskDTO.setId(TaskTestData.ID_2);
+    return taskDTO;
+
+  }
 }
