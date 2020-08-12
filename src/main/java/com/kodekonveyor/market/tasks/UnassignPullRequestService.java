@@ -5,9 +5,11 @@ import com.kodekonveyor.market.project.PullRequestDTO;
 import com.kodekonveyor.market.project.PullRequestEntity;
 import com.kodekonveyor.market.project.PullrequestEntityRepository;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
 
 import static com.kodekonveyor.market.MarketConstants.PR_NOT_FOUND;
 
+@Service
 public class UnassignPullRequestService {
 
     @Autowired

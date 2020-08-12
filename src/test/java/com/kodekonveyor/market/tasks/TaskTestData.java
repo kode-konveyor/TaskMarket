@@ -10,6 +10,8 @@ public class TaskTestData {
 
   public final static Long ID = 1197L;
 
+  public final static Long ID_NOT_FOUND = 9999L;
+
   public final static String SERVICE = "UpdateTasksController";
 
   public final static String BEHAVIOUR = "Get tasks from github";
@@ -71,5 +73,7 @@ public class TaskTestData {
 
   public static final String EXP_LOG_GRAB_TASK_FAILURE_CALL =
           "API execution failed for grabbing task, error : {} .";
+
+  public static final String EXP_TASK_NOT_FOUND ="Task not found";
 
 }
