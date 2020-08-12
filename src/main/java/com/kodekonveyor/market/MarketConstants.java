@@ -99,4 +99,5 @@ public class MarketConstants {
   public static final String UNAUTHORIZED_PROJECT_MODIFICATION =
       "Project model can only be modified by project manager.";
 
+  public static final String PR_NOT_FOUND = "Pull Request not found.";
 }
