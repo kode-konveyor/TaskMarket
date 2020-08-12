@@ -1,12 +1,14 @@
 package com.kodekonveyor.market.project;
 
-import static org.mockito.Mockito.doReturn;
+import com.kodekonveyor.market.tasks.TaskEntityStatusesTestData;
+import com.kodekonveyor.market.tasks.TaskEntityTestData;
+import org.mockito.ArgumentCaptor;
 
 import java.util.List;
 import java.util.Optional;
 
-import com.kodekonveyor.market.tasks.TaskEntityStatusesTestData;
-import com.kodekonveyor.market.tasks.TaskEntityTestData;
+import static org.mockito.Mockito.doAnswer;
+import static org.mockito.Mockito.doReturn;
 
 public class PullRequestEntityStubs {
 
@@ -46,6 +48,15 @@ public class PullRequestEntityStubs {
     doReturn(List.of(PullrequestEntityTestData.getGrabbedExactlyThreeDays()))
         .when(pullrequestEntityRepository).findByTask(TaskEntityTestData.get());
 
+  }
+
+  public static void behaviourSaveAndCaptureArgs(
+          final PullrequestEntityRepository pullrequestEntityRepository,
+          final ArgumentCaptor<PullRequestEntity> captor
+  ) {
+    doAnswer(inv -> inv.getArgument(0))
+            .when(pullrequestEntityRepository)
+            .save(captor.capture());
   }
 
 }
