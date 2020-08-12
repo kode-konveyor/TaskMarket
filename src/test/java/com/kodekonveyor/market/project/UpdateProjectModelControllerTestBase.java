@@ -29,6 +29,6 @@ public class UpdateProjectModelControllerTestBase {
   void setUp() {
     ProjectEntityRepositoryStubs.behaviour(projectEntityRepository);
     MilestoneEntityRepositoryStubs.behaviour(milestoneEntityRepository);
-    AuthenticatedUserServiceStubs.projectManager(authenticatedUserService);
+    AuthenticatedUserServiceStubs.manager(authenticatedUserService);
   }
 }

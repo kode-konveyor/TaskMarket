@@ -17,7 +17,7 @@ public class ProjectEntityTestData {
     projectEntity.setRole(
         Set.of(
             RoleEntityTestData.get(),
-            RoleEntityTestData.getNameProjectManager()
+            RoleEntityTestData.getNameManager()
         )
     );
     projectEntity.setMilestone(Set.of(MilestoneEntityTestData.get()));
@@ -59,7 +59,7 @@ public class ProjectEntityTestData {
     projectEntity.setRole(
         Set.of(
             RoleEntityTestData.getNameCanbepaid(),
-            RoleEntityTestData.getNameProjectManager(),
+            RoleEntityTestData.getNameManager(),
             RoleEntityTestData.getRoleKodekonveyorContract(),
             RoleEntityTestData.getRoleSales()
         )
@@ -79,7 +79,7 @@ public class ProjectEntityTestData {
   public final static ProjectEntity getManagerRole() {
     final ProjectEntity projectEntity = get();
     projectEntity.setId(ProjectTestData.ID_BUDGET);
-    projectEntity.setRole(Set.of(RoleEntityTestData.getNameProjectManager()));
+    projectEntity.setRole(Set.of(RoleEntityTestData.getNameManager()));
     projectEntity.setBudgetInCents(ProjectTestData.BUDGET_IN_LESSER_AMOUNT);
     projectEntity.setPullRequest(Set.of(PullrequestEntityTestData.get()));
     return projectEntity;

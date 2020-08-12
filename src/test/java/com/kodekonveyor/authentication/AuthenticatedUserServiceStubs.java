@@ -43,6 +43,14 @@ public class AuthenticatedUserServiceStubs {
   }
 
   public static void
+      manager(final AuthenticatedUserService authenticatedUserService) {
+    doReturn(UserEntityTestData.getRoleManager())
+        .when(authenticatedUserService)
+        .call();
+
+  }
+
+  public static void
       projectManager(final AuthenticatedUserService authenticatedUserService) {
     doReturn(UserEntityTestData.getRoleProjectManager())
         .when(authenticatedUserService)
@@ -54,6 +62,14 @@ public class AuthenticatedUserServiceStubs {
       final AuthenticatedUserService authenticatedUserService
   ) {
     doReturn(UserEntityTestData.getRoleSales()).when(authenticatedUserService)
+        .call();
+  }
+
+  public static void technicalUser(
+      final AuthenticatedUserService authenticatedUserService
+  ) {
+    doReturn(UserEntityTestData.getRoleTechnical())
+        .when(authenticatedUserService)
         .call();
   }
 }
