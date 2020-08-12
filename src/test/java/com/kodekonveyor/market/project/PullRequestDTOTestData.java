@@ -19,7 +19,7 @@ public class PullRequestDTOTestData {
     return pullrequestDTO;
   };
 
-  public final static PullRequestDTO getTaskNotFound() {
+  public final static PullRequestDTO getIdNotExists() {
     final PullRequestDTO pullrequestDTO = get();
     pullrequestDTO.setId(ID_NOT_FOUND);
     return pullrequestDTO;

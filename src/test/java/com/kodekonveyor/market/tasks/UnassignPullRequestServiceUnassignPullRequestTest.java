@@ -51,14 +51,14 @@ public class UnassignPullRequestServiceUnassignPullRequestTest extends UnassignP
     @Test
     @DisplayName("If pull request is not found, ValidationException is thrown.")
     public void test3() {
-        ThrowableTester.assertThrows(() -> unassignPullRequestService.call(PullRequestDTOTestData.getTaskNotFound()))
+        ThrowableTester.assertThrows(() -> unassignPullRequestService.call(PullRequestDTOTestData.getIdNotExists()))
                 .assertException(ValidationException.class);
     }
 
     @Test
     @DisplayName("If pull request is not found, message is : Pull Request not found")
     public void test4() {
-        ThrowableTester.assertThrows(() -> unassignPullRequestService.call(PullRequestDTOTestData.getTaskNotFound()))
+        ThrowableTester.assertThrows(() -> unassignPullRequestService.call(PullRequestDTOTestData.getIdNotExists()))
                 .assertMessageIs(PullRequestTestData.EXP_PR_NOT_FOUND);
     }
 
