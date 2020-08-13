@@ -66,7 +66,7 @@ public class UnassignPullRequestServiceLoggingTest extends UnassignPullRequestSe
         ThrowableTester.assertThrows(() -> unassignPullRequestService.call(PullRequestDTOTestData.getIdNotExists()));
 
         Mockito.verify(logger)
-                .error(
+                .warn(
                         TASK,
                         TaskTestData.EXP_LOG_ASSIGN_PR_CALL_FAILURE,
                         PullRequestTestData.EXP_PR_NOT_FOUND
