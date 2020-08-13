@@ -5,6 +5,7 @@ import com.kodekonveyor.market.project.PullrequestEntityRepository;
 import org.junit.jupiter.api.BeforeEach;
 import org.mockito.InjectMocks;
 import org.mockito.Mock;
+import org.slf4j.Logger;
 
 public class UnassignPullRequestServiceTestBase {
 
@@ -13,6 +14,9 @@ public class UnassignPullRequestServiceTestBase {
 
     @Mock
     protected PullrequestEntityRepository pullrequestEntityRepository;
+
+    @Mock
+    protected Logger logger;
 
     @BeforeEach
     void setUp() {
