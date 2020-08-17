@@ -76,4 +76,13 @@ public class TaskTestData {
 
   public static final String EXP_TASK_NOT_FOUND ="Task not found";
 
+  public static final String EXP_LOG_ASSIGN_PR_CALL =
+          "Service execution starts for associating PR with task : {}.";
+
+  public static final String EXP_LOG_ASSIGN_PR_CALL_SUCCESS =
+          "Service execution successfully completed for associating PR with task : {}";
+
+  public static final String EXP_LOG_ASSIGN_PR_CALL_FAILURE =
+          "Service execution failed for associating PR with task, error : {} .";
+
 }
