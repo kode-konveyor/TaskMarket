@@ -1,15 +1,13 @@
 package com.kodekonveyor.market;
 
-import com.kodekonveyor.annotations.ExcludeFromCodeCoverage;
 import com.kodekonveyor.market.project.PullRequestDTO;
 import com.kodekonveyor.market.project.PullRequestEntity;
 import org.springframework.stereotype.Service;
 
 @Service
-@ExcludeFromCodeCoverage("pojo converter service")
-public class EntityToDTOConverterService {//NOPMD
+public class PullRequestEntityToDTOConverterService {
 
-    public PullRequestDTO convertPRToDTO(final PullRequestEntity pullRequestEntity) {//NOPMD
+    public PullRequestDTO call(final PullRequestEntity pullRequestEntity) {
         PullRequestDTO pullRequestDto = new PullRequestDTO();
         pullRequestDto.setId(pullRequestEntity.getId());
         pullRequestDto.setIsAccepted(pullRequestEntity.getIsAccepted());

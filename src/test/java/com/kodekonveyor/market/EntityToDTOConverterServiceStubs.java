@@ -6,9 +6,9 @@ import static org.mockito.ArgumentMatchers.any;
 
 public class EntityToDTOConverterServiceStubs {
 
-    public static void behaviour(final EntityToDTOConverterService entityToDTOConverterService) {
+    public static void behaviour(final PullRequestEntityToDTOConverterService pullRequestEntityToDTOConverterService) {
         Mockito.doCallRealMethod()
-                .when(entityToDTOConverterService)
-                .convertPRToDTO(any());
+                .when(pullRequestEntityToDTOConverterService)
+                .call(any());
     }
 }

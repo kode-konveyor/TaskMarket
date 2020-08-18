@@ -1,7 +1,7 @@
 package com.kodekonveyor.market.tasks;
 
 import com.kodekonveyor.market.DTOToEntityConverterService;
-import com.kodekonveyor.market.EntityToDTOConverterService;
+import com.kodekonveyor.market.PullRequestEntityToDTOConverterService;
 import com.kodekonveyor.market.ValidationException;
 import com.kodekonveyor.market.project.PullRequestDTO;
 import com.kodekonveyor.market.project.PullRequestEntity;
@@ -27,7 +27,7 @@ public class AssignPullRequestService {
     private UnassignPullRequestService unassignPullRequestService;
 
     @Autowired
-    private EntityToDTOConverterService entityToDTOConverterService;
+    private PullRequestEntityToDTOConverterService pullRequestEntityToDTOConverterService;
 
     @Autowired
     private DTOToEntityConverterService dtoToEntityConverterService;
@@ -46,7 +46,7 @@ public class AssignPullRequestService {
         List<PullRequestEntity> byTask = pullrequestEntityRepository.findByTask(taskEntity);
         if (!CollectionUtils.isEmpty(byTask)) {
             byTask.stream()
-                    .map(entityToDTOConverterService::convertPRToDTO)
+                    .map(pullRequestEntityToDTOConverterService::call)
                     .forEach(unassignPullRequestService::call);
         }
     }
