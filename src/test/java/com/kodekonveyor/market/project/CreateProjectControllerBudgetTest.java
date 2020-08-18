@@ -30,7 +30,7 @@ public class CreateProjectControllerBudgetTest
     "If the account balance of the user is less than project budget, exception is thrown"
   )
   public void test() {
-    AuthenticatedUserServiceStubs.projectManager(authenticatedUserService);
+    AuthenticatedUserServiceStubs.manager(authenticatedUserService);
     MarketUserEntityRepositoryStubs.behaviour(marketUserEntityRepository);
     ThrowableTester.assertThrows(
         () -> createProjectController
@@ -48,7 +48,7 @@ public class CreateProjectControllerBudgetTest
     "If the account balance of the user is equal to project budget, no exception is thrown"
   )
   public void test1() {
-    AuthenticatedUserServiceStubs.projectManager(authenticatedUserService);
+    AuthenticatedUserServiceStubs.manager(authenticatedUserService);
     MarketUserEntityRepositoryStubs
         .userBalanceEqualToBudget(marketUserEntityRepository);
     ThrowableTester.assertNoException(
@@ -62,7 +62,7 @@ public class CreateProjectControllerBudgetTest
     "If the account balance of the user is more than project budget, no exception is thrown"
   )
   public void test2() {
-    AuthenticatedUserServiceStubs.projectManager(authenticatedUserService);
+    AuthenticatedUserServiceStubs.manager(authenticatedUserService);
     MarketUserEntityRepositoryStubs
         .userBalanceMoreThanBudget(marketUserEntityRepository);
     ThrowableTester.assertNoException(
@@ -76,7 +76,7 @@ public class CreateProjectControllerBudgetTest
     "After budget manipulations, Market user with updated balance is saved successfully in repository"
   )
   public void test3() {
-    AuthenticatedUserServiceStubs.projectManager(authenticatedUserService);
+    AuthenticatedUserServiceStubs.manager(authenticatedUserService);
     MarketUserEntityRepositoryStubs
         .userBalanceMoreThanBudget(marketUserEntityRepository);
     createProjectController.call(ProjectDTOTestData.get());

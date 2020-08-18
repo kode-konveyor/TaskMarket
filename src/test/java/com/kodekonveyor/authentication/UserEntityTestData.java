@@ -47,13 +47,26 @@ public class UserEntityTestData {
     return userEntity;
   }
 
+  public static UserEntity getRoleManager() {
+    final UserEntity userEntity = get();
+    userEntity.setId(UserTestData.ID_PROJECTMANAGER);
+    userEntity.setLogin(UserTestData.LOGIN_PROJECTMANAGER);
+    userEntity.setRole(
+        Set.of(
+            RoleEntityTestData.getNameManager(),
+            RoleEntityTestData.getNameCanbepaid()
+        )
+    );
+    return userEntity;
+  }
+
   public static UserEntity getRoleProjectManager() {
     final UserEntity userEntity = get();
     userEntity.setId(UserTestData.ID_PROJECTMANAGER);
     userEntity.setLogin(UserTestData.LOGIN_PROJECTMANAGER);
     userEntity.setRole(
         Set.of(
-            RoleEntityTestData.getNameProjectManager(),
+            RoleEntityTestData.getNameManager(),
             RoleEntityTestData.getNameCanbepaid()
         )
     );
@@ -95,7 +108,7 @@ public class UserEntityTestData {
   };
 
   public static UserEntity getIdForZeroBalanceForProjectManager() {
-    final UserEntity userEntity = getRoleProjectManager();
+    final UserEntity userEntity = getRoleManager();
     userEntity.setId(UserTestData.ID_FOR_ZERO_BALANCE);
     return userEntity;
 
@@ -116,7 +129,12 @@ public class UserEntityTestData {
     final UserEntity userEntity = get();
     userEntity.setId(UserTestData.ID_TECHNICAL);
     userEntity.setLogin(UserTestData.LOGIN_TECHNICAL);
-    userEntity.setRole(Set.of(RoleEntityTestData.getNameTechnical()));
+    userEntity.setRole(
+        Set.of(
+            RoleEntityTestData.getNameRegistered(),
+            RoleEntityTestData.getNameTechnical()
+        )
+    );
     return userEntity;
   }
 

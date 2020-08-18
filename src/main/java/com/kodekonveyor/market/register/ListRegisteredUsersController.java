@@ -8,11 +8,15 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RestController;
 
+import com.kodekonveyor.authentication.AuthenticatedUserService;
+import com.kodekonveyor.authentication.RoleConstants;
 import com.kodekonveyor.authentication.RoleEntity;
 import com.kodekonveyor.authentication.RoleEntityRepository;
 import com.kodekonveyor.authentication.UserEntity;
 import com.kodekonveyor.authentication.UserEntityRepository;
+import com.kodekonveyor.market.UnauthorizedException;
 import com.kodekonveyor.market.UrlMapConstants;
+import com.kodekonveyor.market.lead.CheckRoleUtil;
 import com.kodekonveyor.market.payment.PaymentDetailEntity;
 
 @RestController
@@ -27,9 +31,13 @@ public class ListRegisteredUsersController {
   @Autowired
   RoleEntityRepository roleEntityRepository;
 
+  @Autowired
+  AuthenticatedUserService authenticatedUserService;
+
   @GetMapping(UrlMapConstants.LIST_REGISTERED_USERS_PATH)
   public List<MarketUserDTO> call() {
-
+    final UserEntity sessionUser = authenticatedUserService.call();
+    validateAuthorization(sessionUser);
     final RoleEntity role = roleEntityRepository
         .findByName(RegisterConstants.REGISTERED_ROLE).get();
 
@@ -38,12 +46,24 @@ public class ListRegisteredUsersController {
     final List<MarketUserDTO> registeredMarketUserList = new ArrayList<>();
 
     for (final UserEntity user : userList) {
+
       final MarketUserEntity entity =
           marketUserEntityRepository.findByUser(user).get();
       registeredMarketUserList.add(convertEntityToDTO(entity));
     }
 
     return registeredMarketUserList;
+  }
+
+  private void validateAuthorization(final UserEntity user) {
+    if (
+      !CheckRoleUtil.hasAnyRole(
+          user, RoleConstants.ROLE_CONTRACT, RoleConstants.ROLE_PROJECT_MANAGER,
+          RoleConstants.ROLE_MANAGER, RoleConstants.ROLE_TECHNICAL
+      )
+    )
+      throw new UnauthorizedException(RegisterConstants.NO_VALID_ROLE);
+
   }
 
   private MarketUserDTO convertEntityToDTO(final MarketUserEntity entity) {

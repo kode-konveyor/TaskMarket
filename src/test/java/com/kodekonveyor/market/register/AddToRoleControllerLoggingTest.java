@@ -31,7 +31,7 @@ public class AddToRoleControllerLoggingTest extends AddToRoleControllerTestBase 
             "Start of execution for AddToRoleController is logged."
     )
     void test1() {
-        AuthenticatedUserServiceStubs.projectManager(authenticatedUserService);
+        AuthenticatedUserServiceStubs.manager(authenticatedUserService);
 
         addToRoleController.call(
                 UserTestData.LOGIN_REGISTERED,
@@ -51,7 +51,7 @@ public class AddToRoleControllerLoggingTest extends AddToRoleControllerTestBase 
             "End of execution for AddToRoleController is logged."
     )
     void test2() {
-        AuthenticatedUserServiceStubs.projectManager(authenticatedUserService);
+        AuthenticatedUserServiceStubs.manager(authenticatedUserService);
 
         addToRoleController.call(
                 UserTestData.LOGIN_REGISTERED,
@@ -69,11 +69,11 @@ public class AddToRoleControllerLoggingTest extends AddToRoleControllerTestBase 
             "Error is logged when user is not found."
     )
     void test3() {
-        AuthenticatedUserServiceStubs.projectManager(authenticatedUserService);
+        AuthenticatedUserServiceStubs.manager(authenticatedUserService);
 
         ThrowableTester.assertThrows(
                 () -> addToRoleController
-                        .call(UserTestData.LOGIN_BAD, RoleTestData.ID_PROJECT_MANAGER)
+                        .call(UserTestData.LOGIN_BAD, RoleTestData.ID_MANAGER)
         );
 
         Mockito.verify(loggerService)
@@ -111,7 +111,7 @@ public class AddToRoleControllerLoggingTest extends AddToRoleControllerTestBase 
             "Error is logged when user to be added, does not has role can_be_paid."
     )
     void test() {
-        AuthenticatedUserServiceStubs.projectManager(authenticatedUserService);
+        AuthenticatedUserServiceStubs.manager(authenticatedUserService);
 
         ThrowableTester.assertThrows(
                 () -> addToRoleController

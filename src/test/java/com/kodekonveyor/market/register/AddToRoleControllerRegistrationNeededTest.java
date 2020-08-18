@@ -30,7 +30,7 @@ public class AddToRoleControllerRegistrationNeededTest
     "if the user does not have can_be_payed role, a UnauthorizedException is thrown"
   )
   void test() {
-    AuthenticatedUserServiceStubs.projectManager(authenticatedUserService);
+    AuthenticatedUserServiceStubs.manager(authenticatedUserService);
     ThrowableTester.assertThrows(
         () -> addToRoleController
             .call(
@@ -45,7 +45,7 @@ public class AddToRoleControllerRegistrationNeededTest
     "if the user does not have can_be_payed role, the message is 'Unregistered'"
   )
   void test1() {
-    AuthenticatedUserServiceStubs.projectManager(authenticatedUserService);
+    AuthenticatedUserServiceStubs.manager(authenticatedUserService);
 
     ThrowableTester.assertThrows(
         () -> addToRoleController
@@ -57,7 +57,7 @@ public class AddToRoleControllerRegistrationNeededTest
   @Test
   @DisplayName("if the user has can_be_paid role, no exception is thrown")
   void test2() {
-    AuthenticatedUserServiceStubs.projectManager(authenticatedUserService);
+    AuthenticatedUserServiceStubs.manager(authenticatedUserService);
 
     ThrowableTester.assertNoException(
         () -> addToRoleController

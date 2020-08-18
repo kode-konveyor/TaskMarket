@@ -39,7 +39,7 @@ public class AddFundsToProjectControllerBudget2Test
     "User is Project manager with the updated balance Amount as negative. "
   )
   public void testNegativeBalance() {
-    AuthenticatedUserServiceStubs.projectManager(authenticatedUserService);
+    AuthenticatedUserServiceStubs.manager(authenticatedUserService);
 
     assertTrue(
         addFundsToProjectController.call(
@@ -54,7 +54,7 @@ public class AddFundsToProjectControllerBudget2Test
     "When input budget in cents is zero, project budget and user balance remains unchanged. "
   )
   public void testForZeroBudgetIncents() {
-    AuthenticatedUserServiceStubs.projectManager(authenticatedUserService);
+    AuthenticatedUserServiceStubs.manager(authenticatedUserService);
 
     assertTrue(
         addFundsToProjectController.call(
@@ -86,7 +86,7 @@ public class AddFundsToProjectControllerBudget2Test
   )
   public void testEqualUserBalance() {
     AuthenticatedUserServiceStubs
-        .projectManager(authenticatedUserService);
+        .manager(authenticatedUserService);
     assertEquals(
         addFundsToProjectController.call(
             ProjectDTOTestData.getAddFunds().getId(),

@@ -15,7 +15,7 @@ public class ProjectDTOTestData {
     projectDTO.setRole(
         Set.of(
             RoleTestData.ID,
-            RoleTestData.ID_PROJECT_MANAGER
+            RoleTestData.ID_MANAGER
         )
     );
     projectDTO.setMilestone(Set.of(MilestoneTestData.ID));

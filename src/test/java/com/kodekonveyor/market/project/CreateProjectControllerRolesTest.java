@@ -49,7 +49,7 @@ public class CreateProjectControllerRolesTest
   @Test
   @DisplayName("if the user has can_be_payed role, no exception is thrown")
   void test2() {
-    AuthenticatedUserServiceStubs.projectManager(authenticatedUserService);
+    AuthenticatedUserServiceStubs.manager(authenticatedUserService);
     MarketUserEntityRepositoryStubs
         .userBalanceMoreThanBudget(marketUserEntityRepository);
     ThrowableTester.assertNoException(
