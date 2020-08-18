@@ -30,7 +30,7 @@ public class AddToRoleControllerRolesTest extends AddToRoleControllerTestBase {
     "if the calling user have manager role for the project, no exception is thrown"
   )
   void test2() {
-    AuthenticatedUserServiceStubs.projectManager(authenticatedUserService);
+    AuthenticatedUserServiceStubs.manager(authenticatedUserService);
     ThrowableTester.assertNoException(
         () -> addToRoleController
             .call(
@@ -45,11 +45,11 @@ public class AddToRoleControllerRolesTest extends AddToRoleControllerTestBase {
     "if the login is null, we throw ValidationException"
   )
   void test3() {
-    AuthenticatedUserServiceStubs.projectManager(authenticatedUserService);
+    AuthenticatedUserServiceStubs.manager(authenticatedUserService);
 
     ThrowableTester.assertThrows(
         () -> addToRoleController
-            .call(UserTestData.LOGIN_BAD, RoleTestData.ID_PROJECT_MANAGER)
+            .call(UserTestData.LOGIN_BAD, RoleTestData.ID_MANAGER)
     ).assertException(ValidationException.class)
         .assertMessageIs(AddToRoleControllerTestData.UNREGISERED);
   }

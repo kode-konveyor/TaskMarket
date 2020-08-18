@@ -27,7 +27,7 @@ public class CreateProjectControllerCompileOutputTest
   @Test
   @DisplayName("The project id is returned successfully")
   public void test() {
-    AuthenticatedUserServiceStubs.projectManager(authenticatedUserService);
+    AuthenticatedUserServiceStubs.manager(authenticatedUserService);
     MarketUserEntityRepositoryStubs
         .userBalanceMoreThanBudget(marketUserEntityRepository);
     final ProjectDTO ret =
@@ -40,7 +40,7 @@ public class CreateProjectControllerCompileOutputTest
   @Test
   @DisplayName("The project name is returned successfully")
   public void test1() {
-    AuthenticatedUserServiceStubs.projectManager(authenticatedUserService);
+    AuthenticatedUserServiceStubs.manager(authenticatedUserService);
     MarketUserEntityRepositoryStubs
         .userBalanceMoreThanBudget(marketUserEntityRepository);
 
@@ -53,7 +53,7 @@ public class CreateProjectControllerCompileOutputTest
   @Test
   @DisplayName("The controller returns project successfully")
   void test3() {
-    AuthenticatedUserServiceStubs.projectManager(authenticatedUserService);
+    AuthenticatedUserServiceStubs.manager(authenticatedUserService);
     MarketUserEntityRepositoryStubs
         .userBalanceMoreThanBudget(marketUserEntityRepository);
     final ProjectDTO ret =

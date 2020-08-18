@@ -16,7 +16,7 @@ import org.mockito.quality.Strictness;
 
 import com.kodekonveyor.annotations.TestedBehaviour;
 import com.kodekonveyor.annotations.TestedService;
-import com.kodekonveyor.authentication.RoleEntityRepositoryStubs;
+import com.kodekonveyor.authentication.AuthenticatedUserServiceStubs;
 import com.kodekonveyor.authentication.UserEntityRepositoryStubs;
 
 @ExtendWith(MockitoExtension.class)
@@ -29,9 +29,8 @@ public class ListRegisteredUsersControllerListRegisteredUsersTest
 
   @BeforeEach
   void setUp() {
-    RoleEntityRepositoryStubs.behaviour(roleEntityRepository);
-    UserEntityRepositoryStubs.behaviour(userEntityRepository);
-    MarketUserEntityRepositoryStubs.behaviour(marketUserEntityRepository);
+    AuthenticatedUserServiceStubs
+        .projectManager(authenticatedUserService);
   }
 
   @Test

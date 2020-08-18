@@ -11,8 +11,8 @@ public class RoleTestData {
   public static final Long ID_CAN_BE_PAID = 1195L;
   public static final String NAME_CAN_BE_PAID = "can_be_paid";
 
-  public static final Long ID_PROJECT_MANAGER = 1197L;
-  public static final String NAME_PROJECT_MANAGER =
+  public static final Long ID_MANAGER = 1197L;
+  public static final String NAME_MANAGER =
       "kode-konveyor/TaskMarket/manager";
 
   public static final Long ID_KODEKONVEYOR_CONTRACT = 1198L;
@@ -34,5 +34,9 @@ public class RoleTestData {
 
   public static final Long ID_REGISTERED_ROLE = 1201L;
   public static final String NAME_REGISTERED = "registered";
+
+  public static final Long ID_PROJECT_MANAGER = 1203L;
+  public static final String NAME_PROJECT_MANAGER =
+      "projectmanager";
 
 }

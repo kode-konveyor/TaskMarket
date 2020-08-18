@@ -19,6 +19,13 @@ public class RoleEntityTestData {
     return roleEntity;
   }
 
+  public static RoleEntity getNameManager() {
+    final RoleEntity roleEntity = new RoleEntity();
+    roleEntity.setId(RoleTestData.ID_MANAGER);
+    roleEntity.setName(RoleTestData.NAME_MANAGER);
+    return roleEntity;
+  }
+
   public static RoleEntity getNameProjectManager() {
     final RoleEntity roleEntity = new RoleEntity();
     roleEntity.setId(RoleTestData.ID_PROJECT_MANAGER);

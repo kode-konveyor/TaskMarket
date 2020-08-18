@@ -22,7 +22,7 @@ public class UserEntityRepositoryStubs {
     doReturn(Optional.of(UserEntityTestData.getRoleKodekonveyorContract()))
         .when(userEntityRepository)
         .findByLogin(UserTestData.LOGIN_CONTRACT);
-    doReturn(Optional.of(UserEntityTestData.getRoleProjectManager()))
+    doReturn(Optional.of(UserEntityTestData.getRoleManager()))
         .when(userEntityRepository)
         .findByLogin(UserTestData.LOGIN_PROJECTMANAGER);
     doReturn(Optional.empty()).when(userEntityRepository)
@@ -31,9 +31,9 @@ public class UserEntityRepositoryStubs {
         .when(userEntityRepository)
         .findByLogin(UserTestData.LOGIN_NO_MARKET_USER);
 
-    doReturn(List.of(UserEntityTestData.getRoleProjectManager()))
+    doReturn(List.of(UserEntityTestData.getRoleManager()))
         .when(userEntityRepository)
-        .findByRole(RoleEntityTestData.getNameProjectManager());
+        .findByRole(RoleEntityTestData.getNameManager());
 
     doReturn(List.of(UserEntityTestData.getRoleRegistered()))
         .when(userEntityRepository)

@@ -26,7 +26,7 @@ public class CreateProjectControllerInputValidationTest
   @Test
   @DisplayName("When project Id is just positive, we throw no exception")
   public void projectId1test() {
-    AuthenticatedUserServiceStubs.projectManager(authenticatedUserService);
+    AuthenticatedUserServiceStubs.manager(authenticatedUserService);
     MarketUserEntityRepositoryStubs
         .userBalanceMoreThanBudget(marketUserEntityRepository);
     ThrowableTester.assertNoException(
@@ -37,7 +37,7 @@ public class CreateProjectControllerInputValidationTest
   @Test
   @DisplayName("When project Id is non-positive, we throw an exception")
   public void projectIdtest() {
-    AuthenticatedUserServiceStubs.projectManager(authenticatedUserService);
+    AuthenticatedUserServiceStubs.manager(authenticatedUserService);
     ThrowableTester.assertThrows(
         () -> createProjectController.call(ProjectDTOTestData.getNonPositiveId())
     )
@@ -50,7 +50,7 @@ public class CreateProjectControllerInputValidationTest
   @Test
   @DisplayName("When project Id is zero, we throw an exception")
   public void projectIdZerotest() {
-    AuthenticatedUserServiceStubs.projectManager(authenticatedUserService);
+    AuthenticatedUserServiceStubs.manager(authenticatedUserService);
     ThrowableTester.assertThrows(
         () -> createProjectController.call(ProjectDTOTestData.getZeroId())
     ).assertMessageIs(
@@ -63,7 +63,7 @@ public class CreateProjectControllerInputValidationTest
     "When project name is invalid (Expected Format - '^kode-konveyor/\\\\b[A-Za-z0-9]*$'), we throw an exception"
   )
   public void projectNameInvalidtest() {
-    AuthenticatedUserServiceStubs.projectManager(authenticatedUserService);
+    AuthenticatedUserServiceStubs.manager(authenticatedUserService);
     ThrowableTester.assertThrows(
         () -> createProjectController.call(ProjectDTOTestData.getInvalidName())
     )
@@ -76,7 +76,7 @@ public class CreateProjectControllerInputValidationTest
   @Test
   @DisplayName("When project name is null, we throw an exception")
   public void projectNameNulltest() {
-    AuthenticatedUserServiceStubs.projectManager(authenticatedUserService);
+    AuthenticatedUserServiceStubs.manager(authenticatedUserService);
     ThrowableTester.assertThrows(
         () -> createProjectController.call(ProjectDTOTestData.getNullName())
     )
@@ -89,7 +89,7 @@ public class CreateProjectControllerInputValidationTest
   @Test
   @DisplayName("When project parameters are valid no exception is thrown")
   public void validProjecttest() {
-    AuthenticatedUserServiceStubs.projectManager(authenticatedUserService);
+    AuthenticatedUserServiceStubs.manager(authenticatedUserService);
     MarketUserEntityRepositoryStubs
         .userBalanceMoreThanBudget(marketUserEntityRepository);
     ThrowableTester.assertNoException(
