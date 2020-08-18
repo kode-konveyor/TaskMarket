@@ -30,7 +30,7 @@ public class CreateProjectControllerStorageTest
     "The project entity is saved successfully for application/json requests"
   )
   public void saveEntitytest() {
-    AuthenticatedUserServiceStubs.projectManager(authenticatedUserService);
+    AuthenticatedUserServiceStubs.manager(authenticatedUserService);
     MarketUserEntityRepositoryStubs
         .userBalanceMoreThanBudget(marketUserEntityRepository);
     createProjectController.call(ProjectDTOTestData.get());
@@ -41,7 +41,7 @@ public class CreateProjectControllerStorageTest
   @Test
   @DisplayName("The project id is saved successfully")
   public void test() {
-    AuthenticatedUserServiceStubs.projectManager(authenticatedUserService);
+    AuthenticatedUserServiceStubs.manager(authenticatedUserService);
     MarketUserEntityRepositoryStubs
         .userBalanceMoreThanBudget(marketUserEntityRepository);
     assertEquals(
@@ -53,7 +53,7 @@ public class CreateProjectControllerStorageTest
   @Test
   @DisplayName("The project name is saved successfully")
   public void test1() {
-    AuthenticatedUserServiceStubs.projectManager(authenticatedUserService);
+    AuthenticatedUserServiceStubs.manager(authenticatedUserService);
     MarketUserEntityRepositoryStubs
         .userBalanceMoreThanBudget(marketUserEntityRepository);
     createProjectController.call(ProjectDTOTestData.get());
@@ -67,7 +67,7 @@ public class CreateProjectControllerStorageTest
     "The project is stored when using application/x-www-form-urlencoded request"
   )
   void test2() {
-    AuthenticatedUserServiceStubs.projectManager(authenticatedUserService);
+    AuthenticatedUserServiceStubs.manager(authenticatedUserService);
     MarketUserEntityRepositoryStubs
         .userBalanceMoreThanBudget(marketUserEntityRepository);
     createProjectController.callForUrlencoded(ProjectDTOTestData.get());
@@ -80,7 +80,7 @@ public class CreateProjectControllerStorageTest
     "The stored project is returned for application/x-www-form-urlencoded requests"
   )
   void test21() {
-    AuthenticatedUserServiceStubs.projectManager(authenticatedUserService);
+    AuthenticatedUserServiceStubs.manager(authenticatedUserService);
     MarketUserEntityRepositoryStubs
         .userBalanceMoreThanBudget(marketUserEntityRepository);
     final ProjectDTO ret =
@@ -91,7 +91,7 @@ public class CreateProjectControllerStorageTest
   @Test
   @DisplayName("The stored project is returned for application/json requests")
   void test3() {
-    AuthenticatedUserServiceStubs.projectManager(authenticatedUserService);
+    AuthenticatedUserServiceStubs.manager(authenticatedUserService);
     MarketUserEntityRepositoryStubs
         .userBalanceMoreThanBudget(marketUserEntityRepository);
     final ProjectDTO ret =

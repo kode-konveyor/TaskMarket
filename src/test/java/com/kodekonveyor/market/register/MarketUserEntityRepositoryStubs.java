@@ -34,7 +34,7 @@ public class MarketUserEntityRepositoryStubs {
         .findById(MarketUserTestData.ID_CAN_BE_PAID);
     doReturn(Optional.of(MarketUserEntityTestData.getRoleProjectManager()))
         .when(marketUserEntityRepository)
-        .findByUser(UserEntityTestData.getRoleProjectManager());
+        .findByUser(UserEntityTestData.getRoleManager());
 
     doReturn(Optional.of(MarketUserEntityTestData.getIdInNullDatabase()))
         .when(marketUserEntityRepository)
@@ -56,7 +56,7 @@ public class MarketUserEntityRepositoryStubs {
         Optional.of(MarketUserEntityTestData.getRoleManager())
     )
         .when(marketUserEntityRepository)
-        .findByUser(UserEntityTestData.getRoleProjectManager());
+        .findByUser(UserEntityTestData.getRoleManager());
 
     doReturn(
         Optional.of(MarketUserEntityTestData.getRoleRegistered())
@@ -107,7 +107,7 @@ public class MarketUserEntityRepositoryStubs {
       ) {
     doReturn(Optional.of(MarketUserEntityTestData.getRoleManager()))
         .when(marketUserEntityRepository)
-        .findByUser(UserEntityTestData.getRoleProjectManager());
+        .findByUser(UserEntityTestData.getRoleManager());
     doReturn(Optional.of(MarketUserEntityTestData.getLessBalance()))
         .when(marketUserEntityRepository)
         .findByUser(UserEntityTestData.get());
@@ -129,7 +129,7 @@ public class MarketUserEntityRepositoryStubs {
         Optional.of(MarketUserEntityTestData.getRoleProjectManagerEqualBudget())
     )
         .when(marketUserEntityRepository)
-        .findByUser(UserEntityTestData.getRoleProjectManager());
+        .findByUser(UserEntityTestData.getRoleManager());
 
   }
 
@@ -141,7 +141,7 @@ public class MarketUserEntityRepositoryStubs {
             .of(MarketUserEntityTestData.getRoleProjectManagerMoreThanBudget())
     )
         .when(marketUserEntityRepository)
-        .findByUser(UserEntityTestData.getRoleProjectManager());
+        .findByUser(UserEntityTestData.getRoleManager());
 
   }
 

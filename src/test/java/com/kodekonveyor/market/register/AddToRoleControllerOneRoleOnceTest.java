@@ -35,7 +35,7 @@ public class AddToRoleControllerOneRoleOnceTest
     "When the user can be payed & registered , it is added to the role"
   )
   void test() {
-    AuthenticatedUserServiceStubs.projectManager(authenticatedUserService);
+    AuthenticatedUserServiceStubs.manager(authenticatedUserService);
     addToRoleController
         .call(
             UserTestData.LOGIN_REGISTERED, RoleTestData.ID_KODEKONVEYOR_CONTRACT
@@ -56,7 +56,7 @@ public class AddToRoleControllerOneRoleOnceTest
     "if the user already have the role, no exception is thrown"
   )
   void test2() {
-    AuthenticatedUserServiceStubs.projectManager(authenticatedUserService);
+    AuthenticatedUserServiceStubs.manager(authenticatedUserService);
     ThrowableTester.assertNoException(
         () -> addToRoleController
             .call(

@@ -28,7 +28,7 @@ public class CreateProjectControllerLoggingTest
   @Test
   @DisplayName("The call of the service is logged with the created entity")
   void test3() {
-    AuthenticatedUserServiceStubs.projectManager(authenticatedUserService);
+    AuthenticatedUserServiceStubs.manager(authenticatedUserService);
     MarketUserEntityRepositoryStubs
         .userBalanceMoreThanBudget(marketUserEntityRepository);
     createProjectController.call(ProjectDTOTestData.get());

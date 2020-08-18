@@ -14,13 +14,15 @@ public class RegisterTestData {
   public static final String PAYMENT_UPDATED_SUCCESSFULLY =
       "Payment updated successfully";
   public static final String EXP_USER_NOT_FOUND =
-          "User not found!";
+      "User not found!";
   public static final String EXP_LOG_SHOW_MARKET_USER_FAILURE =
-          "Failed to fetch market user for {}, error : {}";
+      "Failed to fetch market user for {}, error : {}";
   public static final String EXP_LOG_ADD_TO_ROLE_API_CALL =
-          "API execution to add role starts for user : {}, role : {}";
+      "API execution to add role starts for user : {}, role : {}";
   public static final String EXP_LOG_ADD_TO_ROLE_API_SUCCES_CALL =
-          "API execution to add role completed successfully.";
+      "API execution to add role completed successfully.";
   public static final String EXP_LOG_ADD_TO_ROLE_API_FAILURE_CALL =
-          "Failed to add role for user {}, error : {}";
+      "Failed to add role for user {}, error : {}";
+  public static final String NO_VALID_ROLE = "User does not have a valid role!";
+
 }

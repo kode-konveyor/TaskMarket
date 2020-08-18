@@ -14,8 +14,7 @@ import org.mockito.quality.Strictness;
 
 import com.kodekonveyor.annotations.TestedBehaviour;
 import com.kodekonveyor.annotations.TestedService;
-import com.kodekonveyor.authentication.RoleEntityRepositoryStubs;
-import com.kodekonveyor.authentication.UserEntityRepositoryStubs;
+import com.kodekonveyor.authentication.AuthenticatedUserServiceStubs;
 
 @ExtendWith(MockitoExtension.class)
 @MockitoSettings(strictness = Strictness.LENIENT)
@@ -27,14 +26,14 @@ public class ListRegisteredUsersControllerListRegisteredUsers2Test
 
   @BeforeEach
   void setUp() {
-    RoleEntityRepositoryStubs.behaviour(roleEntityRepository);
-    UserEntityRepositoryStubs.behaviour(userEntityRepository);
-    MarketUserEntityRepositoryStubs.behaviour(marketUserEntityRepository);
+    AuthenticatedUserServiceStubs
+        .projectManager(authenticatedUserService);
   }
 
   @Test
   @DisplayName("Successuly returned legal name of registered market user")
   public void test8() {
+
     assertEquals(
         MarketUserDTOTestData.getRoleRegistered().getLegalName(),
         listRegisteredUsersController.call().get(0).getLegalName()
