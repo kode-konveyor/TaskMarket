@@ -6,8 +6,8 @@ import com.kodekonveyor.market.project.PullRequestEntity;
 import org.springframework.stereotype.Service;
 
 @Service
-@ExcludeFromCodeCoverage("pojo converter service")
-public class PullRequestEntityToDTOConverterService {//NOPMD
+@ExcludeFromCodeCoverage("Separate task required for coverage.")
+public class PullRequestEntityToDTOConverterService {
 
     public PullRequestDTO call(final PullRequestEntity pullRequestEntity) {
         PullRequestDTO pullRequestDto = new PullRequestDTO();

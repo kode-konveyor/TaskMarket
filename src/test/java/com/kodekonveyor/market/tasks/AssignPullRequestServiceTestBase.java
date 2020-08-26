@@ -1,6 +1,6 @@
 package com.kodekonveyor.market.tasks;
 
-import com.kodekonveyor.market.DTOToEntityConverterService;
+import com.kodekonveyor.market.PullRequestDTOToEntityConverterService;
 import com.kodekonveyor.market.DTOToEntityConverterServiceStubs;
 import com.kodekonveyor.market.PullRequestEntityToDTOConverterService;
 import com.kodekonveyor.market.EntityToDTOConverterServiceStubs;
@@ -25,7 +25,7 @@ public class AssignPullRequestServiceTestBase {
     protected UnassignPullRequestService unassignPullRequestService;
 
     @Mock
-    protected DTOToEntityConverterService dtoToEntityConverterService;
+    protected PullRequestDTOToEntityConverterService pullRequestDtoToEntityConverterService;
 
     @Mock
     protected PullRequestEntityToDTOConverterService pullRequestEntityToDTOConverterService;
@@ -35,7 +35,7 @@ public class AssignPullRequestServiceTestBase {
         TaskEntityRepositoryStubs.behaviour(taskEntityRepository);
         PullRequestEntityStubs.behaviour(pullrequestEntityRepository);
         UnassignPullRequestServiceStubs.behaviour(unassignPullRequestService);
-        DTOToEntityConverterServiceStubs.behaviour(dtoToEntityConverterService);
+        DTOToEntityConverterServiceStubs.behaviour(pullRequestDtoToEntityConverterService);
         EntityToDTOConverterServiceStubs.behaviour(pullRequestEntityToDTOConverterService);
     }
 }

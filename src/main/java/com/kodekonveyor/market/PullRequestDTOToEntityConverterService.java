@@ -12,14 +12,14 @@ import java.util.Objects;
 
 import static com.kodekonveyor.market.tasks.TaskConstants.TASK_NOT_FOUND;
 
-@ExcludeFromCodeCoverage("pojo converter service")
+@ExcludeFromCodeCoverage("Separate task required for coverage.")
 @Service
-public class DTOToEntityConverterService {//NOPMD
+public class PullRequestDTOToEntityConverterService {
 
     @Autowired
     private TaskEntityRepository taskEntityRepository;
 
-    public PullRequestEntity convertPRToEntity(final PullRequestDTO pullRequestDTO) {//NOPMD
+    public PullRequestEntity call(final PullRequestDTO pullRequestDTO) {//NOPMD
         PullRequestEntity pullRequestEntity = new PullRequestEntity();
         pullRequestEntity.setId(pullRequestDTO.getId());
         pullRequestEntity.setIsAccepted(pullRequestDTO.getIsAccepted());

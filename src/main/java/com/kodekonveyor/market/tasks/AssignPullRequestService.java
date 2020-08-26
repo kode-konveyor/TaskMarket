@@ -1,6 +1,6 @@
 package com.kodekonveyor.market.tasks;
 
-import com.kodekonveyor.market.DTOToEntityConverterService;
+import com.kodekonveyor.market.PullRequestDTOToEntityConverterService;
 import com.kodekonveyor.market.PullRequestEntityToDTOConverterService;
 import com.kodekonveyor.market.ValidationException;
 import com.kodekonveyor.market.project.PullRequestDTO;
@@ -30,11 +30,11 @@ public class AssignPullRequestService {
     private PullRequestEntityToDTOConverterService pullRequestEntityToDTOConverterService;
 
     @Autowired
-    private DTOToEntityConverterService dtoToEntityConverterService;
+    private PullRequestDTOToEntityConverterService pullRequestDtoToEntityConverterService;
 
     public TaskEntity call(final PullRequestDTO pullRequestDTO) {
         checkAndRemoveAlreadyAssignedTask(pullRequestDTO);
-        PullRequestEntity pullRequestEntity = dtoToEntityConverterService.convertPRToEntity(pullRequestDTO);
+        PullRequestEntity pullRequestEntity = pullRequestDtoToEntityConverterService.call(pullRequestDTO);
         pullRequestEntity = pullrequestEntityRepository.save(pullRequestEntity);
         return pullRequestEntity.getTask();
     }
