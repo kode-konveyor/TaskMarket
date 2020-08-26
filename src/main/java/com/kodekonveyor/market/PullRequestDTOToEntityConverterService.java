@@ -19,7 +19,7 @@ public class PullRequestDTOToEntityConverterService {
     @Autowired
     private TaskEntityRepository taskEntityRepository;
 
-    public PullRequestEntity call(final PullRequestDTO pullRequestDTO) {//NOPMD
+    public PullRequestEntity call(final PullRequestDTO pullRequestDTO) {
         PullRequestEntity pullRequestEntity = new PullRequestEntity();
         pullRequestEntity.setId(pullRequestDTO.getId());
         pullRequestEntity.setIsAccepted(pullRequestDTO.getIsAccepted());
