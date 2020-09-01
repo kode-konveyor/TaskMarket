@@ -25,6 +25,8 @@ public class TaskConstants {
   public static final String LOG_GRAB_TASK_FAILURE_CALL =
           "API execution failed for grabbing task, error : {} .";
 
+  public static final String TASK_NOT_FOUND ="Task not found";
+
   public static final String LOG_ASSIGN_PR_CALL =
           "Service execution starts for associating PR with task : {}.";
 
