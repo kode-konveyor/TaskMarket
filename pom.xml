@@ -364,7 +364,7 @@
 		<dependency>
 			<groupId>org.postgresql</groupId>
 			<artifactId>postgresql</artifactId>
-			<version>42.2.8</version>
+			<version>42.3.3</version>
 			<type>pom</type>
 		</dependency>
 		<dependency>
